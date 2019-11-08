@@ -67,6 +67,12 @@
     <Compile Include="listaDoCaixa.Designer.cs">
       <DependentUpon>listaDoCaixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaDeEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TelaDeEstoque.Designer.cs">
+      <DependentUpon>TelaDeEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="listaDoCaixa.resx">
       <DependentUpon>listaDoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaDeEstoque.resx">
+      <DependentUpon>TelaDeEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDePagamento.resx">
       <DependentUpon>TelaDePagamento.cs</DependentUpon>
