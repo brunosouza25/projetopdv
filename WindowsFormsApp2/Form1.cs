@@ -57,7 +57,7 @@ namespace WindowsFormsApp2
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -68,6 +68,13 @@ namespace WindowsFormsApp2
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        //Timer para alterar a label de data e hora
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Lab_Hora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            timer1.Start();
         }
     }
 }

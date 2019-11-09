@@ -12,6 +12,7 @@ namespace WindowsFormsApp2
 {
     public partial class listaDoCaixa : UserControl
     {
+
         //criar uma lista com produtos pré inseridos
         //a partir do text box vou fazer uma pesquisa do produto na lista
         //se houver produto ele vai me retornar na list view, senão ele exibe um erro
@@ -25,6 +26,9 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+        List<Produto> produtos = new List<Produto>();
+
+        Produto prod1, prod2, prod3, prod4;
 
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
