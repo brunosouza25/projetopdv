@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btCaixa = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.painelPrincipal = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btCaixa = new System.Windows.Forms.Button();
             this.painel_hora = new System.Windows.Forms.Panel();
             this.Lab_Hora = new System.Windows.Forms.Label();
+            this.painelPrincipal = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,49 +60,6 @@
             this.panel2.Size = new System.Drawing.Size(1264, 100);
             this.panel2.TabIndex = 1;
             // 
-            // btCaixa
-            // 
-            this.btCaixa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btCaixa.Location = new System.Drawing.Point(3, 3);
-            this.btCaixa.Name = "btCaixa";
-            this.btCaixa.Size = new System.Drawing.Size(246, 94);
-            this.btCaixa.TabIndex = 0;
-            this.btCaixa.Text = "Caixa";
-            this.btCaixa.UseVisualStyleBackColor = true;
-            this.btCaixa.Click += new System.EventHandler(this.BtCaixa_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(255, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(246, 94);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Estoque";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.BtEstoque_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(507, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(246, 94);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Relatórios";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(759, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(246, 94);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Administrador";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
@@ -123,14 +80,50 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 100);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // painelPrincipal
+            // button4
             // 
-            this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(0, 100);
-            this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(1264, 581);
-            this.painelPrincipal.TabIndex = 2;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.Location = new System.Drawing.Point(759, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(246, 94);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Administrador";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Location = new System.Drawing.Point(507, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(246, 94);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Relatórios";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(255, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(246, 94);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Estoque";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.BtEstoque_Click);
+            // 
+            // btCaixa
+            // 
+            this.btCaixa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btCaixa.Location = new System.Drawing.Point(3, 3);
+            this.btCaixa.Name = "btCaixa";
+            this.btCaixa.Size = new System.Drawing.Size(246, 94);
+            this.btCaixa.TabIndex = 0;
+            this.btCaixa.Text = "Caixa";
+            this.btCaixa.UseVisualStyleBackColor = true;
+            this.btCaixa.Click += new System.EventHandler(this.BtCaixa_Click);
             // 
             // painel_hora
             // 
@@ -150,6 +143,14 @@
             this.Lab_Hora.Size = new System.Drawing.Size(70, 25);
             this.Lab_Hora.TabIndex = 0;
             this.Lab_Hora.Text = "label1";
+            // 
+            // painelPrincipal
+            // 
+            this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.painelPrincipal.Location = new System.Drawing.Point(0, 100);
+            this.painelPrincipal.Name = "painelPrincipal";
+            this.painelPrincipal.Size = new System.Drawing.Size(1264, 581);
+            this.painelPrincipal.TabIndex = 2;
             // 
             // timer1
             // 

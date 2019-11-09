@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
         public string prodCodBarras { get; set; }
 
         public Produto()
-        {
+         {
 
         }
 

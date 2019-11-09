@@ -34,8 +34,9 @@ namespace WindowsFormsApp2
             painelPrincipal.Controls.Add(lista);
            
         }
-                private void BtEstoque_Click(object sender, EventArgs e)
+        private void BtEstoque_Click(object sender, EventArgs e)
         {
+            
             TelaDeEstoque estoque = new TelaDeEstoque();
             painelPrincipal.Controls.Add(estoque);
 
@@ -73,8 +74,13 @@ namespace WindowsFormsApp2
         //Timer para alterar a label de data e hora
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Lab_Hora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            timer1.Start();
+           Lab_Hora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+           timer1.Start();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

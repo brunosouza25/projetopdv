@@ -39,8 +39,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.Bt_Criar_Prod = new System.Windows.Forms.Button();
@@ -93,6 +91,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.45161F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1046, 575);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // pesquisaProd
             // 
@@ -113,9 +112,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader6});
+            this.columnHeader8});
             this.listaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listaProdutos.GridLines = true;
             this.listaProdutos.HideSelection = false;
@@ -125,44 +122,37 @@
             this.listaProdutos.TabIndex = 2;
             this.listaProdutos.UseCompatibleStateImageBehavior = false;
             this.listaProdutos.View = System.Windows.Forms.View.Details;
+            this.listaProdutos.SelectedIndexChanged += new System.EventHandler(this.listaProdutos_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Código de Barras";
-            this.columnHeader1.Width = 105;
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 0;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Descrição";
-            this.columnHeader2.Width = 159;
+            this.columnHeader2.Text = "Produto";
+            this.columnHeader2.Width = 98;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Tamanho";
+            this.columnHeader3.Text = "Custo";
+            this.columnHeader3.Width = 79;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Cor";
+            this.columnHeader4.Text = "Valor";
+            this.columnHeader4.Width = 71;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Quantidade";
-            this.columnHeader5.Width = 71;
+            this.columnHeader5.Text = "Cod de Barras";
+            this.columnHeader5.Width = 97;
             // 
             // columnHeader8
             // 
-            this.columnHeader8.DisplayIndex = 7;
-            this.columnHeader8.Text = "Total";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.DisplayIndex = 5;
-            this.columnHeader9.Text = "Custo";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.DisplayIndex = 6;
-            this.columnHeader6.Text = "Valor";
+            this.columnHeader8.Text = "Quantidade";
+            this.columnHeader8.Width = 98;
             // 
             // tableLayoutPanel3
             // 
@@ -279,8 +269,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button Bt_Criar_Prod;

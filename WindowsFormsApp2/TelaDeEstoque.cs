@@ -16,42 +16,26 @@ namespace WindowsFormsApp2
         public TelaDeEstoque()
         {
             InitializeComponent();
-
         }
 
-
-        private Boolean criar = false;
-        Produto produtos = new Produto();
-        private void Bt_Criar_Prod_Click(object sender, EventArgs e)
+        private void carregarLista()
         {
-            //AINDA NÃO CONCLUIDO "TENTANDO BLOQUEAR PARA EXIBIR APENAS UM POR VEZ"
-            TelaCriarProd telaCriar = new TelaCriarProd();
-
-            if (!telaCriar.criado)
-            {
-                
-                telaCriar.Visible = true;
-                telaCriar.criado = true;
-            }
-
-        }
-
-        private void Bt_Entrar_Prod_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TelaDeEstoque_Load(object sender, EventArgs e)
-        {
-            string caminho = @"c:\arquivos\arquivo.txt";
+            listaProdutos.Items.Clear();
+            string caminho = @"c:\arquivos";
             string[] arquivo;
             try
             {
-                arquivo = File.ReadAllLines(caminho);
-
-                foreach (string linhas in arquivo)
+                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
+                Console.WriteLine(arquivos);
+                foreach (string prod in arquivos)
                 {
-                    listaProdutos.Items.Add(arquivo[1]);
+                    arquivo = File.ReadAllLines(prod);
+                    ListViewItem item = new ListViewItem();
+                    for (int i = 0; i < arquivo.Length; i++)
+                    {
+                        item.SubItems.Add(arquivo[i]);
+                    }
+                    listaProdutos.Items.Add(item);
                 }
             }
             catch (IOException er)
@@ -59,8 +43,46 @@ namespace WindowsFormsApp2
                 Console.WriteLine("Tivemos um erro ");
                 Console.WriteLine(er.Message);
             }
+        }
+        private Boolean criar = false;
+        Produto produtos = new Produto();
+        private void Bt_Criar_Prod_Click(object sender, EventArgs e)
+        {
+            //AINDA NÃO CONCLUIDO "TENTANDO BLOQUEAR PARA EXIBIR APENAS UM POR VEZ"
+            //If para verificação se a form já está aberta
+            if (Application.OpenForms.OfType<TelaCriarProd>().Count() > 0)
+            {
+                MessageBox.Show("A tela de cadastro já está aberta");
+            }
+            else
+            {
+                TelaCriarProd telaCriar = new TelaCriarProd();
+                telaCriar.ShowDialog();              
+            }
+            carregarLista();
+        }
+
+        private void Bt_Entrar_Prod_Click_1(object sender, EventArgs e)
+        {
 
         }
+
+        //função para ler os arquivos e colocar na listview
+        private void TelaDeEstoque_Load(object sender, EventArgs e)
+        {
+            carregarLista();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listaProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
