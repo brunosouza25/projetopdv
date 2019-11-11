@@ -30,16 +30,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pesquisaProd = new System.Windows.Forms.TextBox();
+            this.listaCaixa = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,8 +58,8 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.listView1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.pesquisaProd, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.listaCaixa, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.TxtBoxPesquisaProd, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -72,70 +70,69 @@
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // listView1
+            // listaCaixa
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 52);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(902, 520);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listaCaixa.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.listaCaixa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
+            this.listaCaixa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listaCaixa.FullRowSelect = true;
+            this.listaCaixa.GridLines = true;
+            this.listaCaixa.HideSelection = false;
+            this.listaCaixa.Location = new System.Drawing.Point(3, 52);
+            this.listaCaixa.Name = "listaCaixa";
+            this.listaCaixa.Size = new System.Drawing.Size(902, 520);
+            this.listaCaixa.TabIndex = 2;
+            this.listaCaixa.UseCompatibleStateImageBehavior = false;
+            this.listaCaixa.View = System.Windows.Forms.View.Details;
+            this.listaCaixa.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.listaCaixa_ControlRemoved);
             // 
-            // columnHeader1
+            // columnHeader9
             // 
-            this.columnHeader1.Text = "Código de Barras";
-            this.columnHeader1.Width = 105;
+            this.columnHeader9.Text = "";
+            this.columnHeader9.Width = 0;
             // 
-            // columnHeader2
+            // columnHeader10
             // 
-            this.columnHeader2.Text = "Descrição";
+            this.columnHeader10.Text = "Produto";
+            this.columnHeader10.Width = 100;
             // 
-            // columnHeader3
+            // columnHeader11
             // 
-            this.columnHeader3.Text = "Tamanho";
+            this.columnHeader11.Text = "Custo";
+            this.columnHeader11.Width = 95;
             // 
-            // columnHeader4
+            // columnHeader12
             // 
-            this.columnHeader4.Text = "Cor";
+            this.columnHeader12.Text = "Valor";
+            this.columnHeader12.Width = 90;
             // 
-            // columnHeader5
+            // columnHeader13
             // 
-            this.columnHeader5.Text = "Quantidade";
-            this.columnHeader5.Width = 71;
+            this.columnHeader13.Text = "Cod de Barras";
+            this.columnHeader13.Width = 95;
             // 
-            // columnHeader6
+            // columnHeader14
             // 
-            this.columnHeader6.Text = "Valor";
+            this.columnHeader14.Text = "Quantidade";
+            this.columnHeader14.Width = 95;
             // 
-            // columnHeader7
+            // TxtBoxPesquisaProd
             // 
-            this.columnHeader7.Text = "Desconto";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Total";
-            // 
-            // pesquisaProd
-            // 
-            this.pesquisaProd.BackColor = System.Drawing.SystemColors.Info;
-            this.pesquisaProd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pesquisaProd.Location = new System.Drawing.Point(3, 3);
-            this.pesquisaProd.Multiline = true;
-            this.pesquisaProd.Name = "pesquisaProd";
-            this.pesquisaProd.Size = new System.Drawing.Size(902, 43);
-            this.pesquisaProd.TabIndex = 1;
+            this.TxtBoxPesquisaProd.BackColor = System.Drawing.SystemColors.Info;
+            this.TxtBoxPesquisaProd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtBoxPesquisaProd.Location = new System.Drawing.Point(3, 3);
+            this.TxtBoxPesquisaProd.Multiline = true;
+            this.TxtBoxPesquisaProd.Name = "TxtBoxPesquisaProd";
+            this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(902, 43);
+            this.TxtBoxPesquisaProd.TabIndex = 1;
+            this.TxtBoxPesquisaProd.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProd_TextChanged);
+            this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
             // 
             // tableLayoutPanel1
             // 
@@ -198,6 +195,7 @@
             this.Bt_Cancelar_Venda.TabIndex = 3;
             this.Bt_Cancelar_Venda.Text = "Cancelar Venda";
             this.Bt_Cancelar_Venda.UseVisualStyleBackColor = true;
+            this.Bt_Cancelar_Venda.Click += new System.EventHandler(this.Bt_Cancelar_Venda_Click);
             // 
             // Bt_Vendas
             // 
@@ -218,6 +216,7 @@
             this.Bt_Add_Prod.TabIndex = 1;
             this.Bt_Add_Prod.Text = "Adicionar Produto";
             this.Bt_Add_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Add_Prod.Click += new System.EventHandler(this.Bt_Add_Prod_Click);
             // 
             // Bt_Remover_Prod
             // 
@@ -228,6 +227,7 @@
             this.Bt_Remover_Prod.TabIndex = 4;
             this.Bt_Remover_Prod.Text = "Remover Produto";
             this.Bt_Remover_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Remover_Prod.Click += new System.EventHandler(this.Bt_Remover_Prod_Click);
             // 
             // panel_Total
             // 
@@ -273,21 +273,19 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox pesquisaProd;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ListView listaCaixa;
         private System.Windows.Forms.Button Bt_Vendas;
         private System.Windows.Forms.Button Bt_Cancelar_Venda;
         private System.Windows.Forms.Button Bt_Remover_Prod;
         private System.Windows.Forms.Button Bt_Add_Prod;
         private System.Windows.Forms.Panel panel_Total;
         private System.Windows.Forms.Label Lab_Subt_Total;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.TextBox TxtBoxPesquisaProd;
     }
 }

@@ -23,3 +23,4 @@ C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Wi
 C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeEstoque.resources
 C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCadastroProd.resources
 C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCriarProd.resources
+C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaEntrarProd.resources

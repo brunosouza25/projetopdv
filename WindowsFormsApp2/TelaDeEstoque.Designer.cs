@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pesquisaProd = new System.Windows.Forms.TextBox();
+            this.TxtBoxPesquisaProdEstoque = new System.Windows.Forms.TextBox();
             this.listaProdutos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,7 +81,7 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.pesquisaProd, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.TxtBoxPesquisaProdEstoque, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.listaProdutos, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -93,15 +93,16 @@
             this.tableLayoutPanel2.TabIndex = 0;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // pesquisaProd
+            // TxtBoxPesquisaProdEstoque
             // 
-            this.pesquisaProd.BackColor = System.Drawing.SystemColors.Info;
-            this.pesquisaProd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pesquisaProd.Location = new System.Drawing.Point(3, 3);
-            this.pesquisaProd.Multiline = true;
-            this.pesquisaProd.Name = "pesquisaProd";
-            this.pesquisaProd.Size = new System.Drawing.Size(1040, 43);
-            this.pesquisaProd.TabIndex = 1;
+            this.TxtBoxPesquisaProdEstoque.BackColor = System.Drawing.SystemColors.Info;
+            this.TxtBoxPesquisaProdEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtBoxPesquisaProdEstoque.Location = new System.Drawing.Point(3, 3);
+            this.TxtBoxPesquisaProdEstoque.Multiline = true;
+            this.TxtBoxPesquisaProdEstoque.Name = "TxtBoxPesquisaProdEstoque";
+            this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(1040, 43);
+            this.TxtBoxPesquisaProdEstoque.TabIndex = 1;
+            this.TxtBoxPesquisaProdEstoque.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pesquisaProd_KeyDown);
             // 
             // listaProdutos
             // 
@@ -114,9 +115,11 @@
             this.columnHeader5,
             this.columnHeader8});
             this.listaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listaProdutos.FullRowSelect = true;
             this.listaProdutos.GridLines = true;
             this.listaProdutos.HideSelection = false;
             this.listaProdutos.Location = new System.Drawing.Point(3, 52);
+            this.listaProdutos.MultiSelect = false;
             this.listaProdutos.Name = "listaProdutos";
             this.listaProdutos.Size = new System.Drawing.Size(1040, 520);
             this.listaProdutos.TabIndex = 2;
@@ -219,7 +222,7 @@
             this.Bt_Entrar_Prod.TabIndex = 1;
             this.Bt_Entrar_Prod.Text = "Entrar Produto";
             this.Bt_Entrar_Prod.UseVisualStyleBackColor = true;
-            this.Bt_Entrar_Prod.Click += new System.EventHandler(this.Bt_Entrar_Prod_Click_1);
+            this.Bt_Entrar_Prod.Click += new System.EventHandler(this.Bt_Entrar_Prod_Click);
             // 
             // Bt_Retirar_Prod
             // 
@@ -261,7 +264,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox pesquisaProd;
+        private System.Windows.Forms.TextBox TxtBoxPesquisaProdEstoque;
         private System.Windows.Forms.ListView listaProdutos;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

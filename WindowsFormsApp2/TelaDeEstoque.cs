@@ -18,7 +18,36 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void carregarLista()
+        private string pesquisaListaCaixa(string pesquisa)
+        {
+            string caminho = @"c:\arquivos";
+            string[] arquivo;
+            try
+            {
+                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
+                Console.WriteLine(arquivos);
+                foreach (string prod in arquivos)
+                {
+                    arquivo = File.ReadAllLines(prod);
+                    if (arquivo[0] == pesquisa.Trim())
+                    {
+                        TxtBoxPesquisaProdEstoque.Text = "";
+                        ListViewItem item = new ListViewItem();
+                        for (int i = 0; i < arquivo.Length; i++)
+                        {
+                            item.SubItems.Add(arquivo[i]);
+                        }
+                    }
+                }
+            }
+            catch (IOException er)
+            {
+                Console.WriteLine("Tivemos um erro ");
+                Console.WriteLine(er.Message);
+            }
+            return "0";
+        }
+        private void carregarListaEstoque()
         {
             listaProdutos.Items.Clear();
             string caminho = @"c:\arquivos";
@@ -59,18 +88,46 @@ namespace WindowsFormsApp2
                 TelaCriarProd telaCriar = new TelaCriarProd();
                 telaCriar.ShowDialog();              
             }
-            carregarLista();
+            carregarListaEstoque();
         }
 
-        private void Bt_Entrar_Prod_Click_1(object sender, EventArgs e)
+        /*private void Bt_Entrar_Prod_Click_1(object sender, EventArgs e, string pesquisa)
         {
-
-        }
+            
+            string caminho = @"c:\arquivos";
+            string[] arquivo;
+            try
+            {
+                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
+                Console.WriteLine(arquivos);
+                foreach (string prod in arquivos)
+                {
+                    arquivo = File.ReadAllLines(prod);
+                    if (arquivo[0] == pesquisa.Trim())
+                    {
+                        TelaEntrarProd telaEntrar = new TelaEntrarProd(arquivo[0]);
+                        telaEntrar.ShowDialog();
+                        ListViewItem item = new ListViewItem();
+                        for (int i = 0; i < arquivo.Length; i++)
+                        {
+                            item.SubItems.Add(arquivo[i]);
+                        }
+                    }
+                }
+            }
+            catch (IOException er)
+            {
+                Console.WriteLine("Tivemos um erro ");
+                Console.WriteLine(er.Message);
+            }
+            
+            
+        }*/
 
         //função para ler os arquivos e colocar na listview
         private void TelaDeEstoque_Load(object sender, EventArgs e)
         {
-            carregarLista();
+            carregarListaEstoque();
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -83,6 +140,22 @@ namespace WindowsFormsApp2
 
         }
 
+        private void pesquisaProd_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
+        }
+
+        private void pesquisaProd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                pesquisaListaCaixa(TxtBoxPesquisaProdEstoque.Text);
+            }
+        }
+
+        private void Bt_Entrar_Prod_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

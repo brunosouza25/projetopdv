@@ -13,14 +13,31 @@ namespace WindowsFormsApp2
     public partial class Form1 : Form
     {
         String Hora = (DateTime.Now.ToString("HH:mm:ss"));
+        TelaDeEstoque estoque = new TelaDeEstoque();
+        listaDoCaixa caixa = new listaDoCaixa();
 
 
         public Form1()
         {
             InitializeComponent();
+
+            //caixa
+            painelPrincipal.Controls.Add(caixa);
+            caixa.Visible = false;
+            //estoque
+            painelPrincipal.Controls.Add(estoque);
+            estoque.Visible = false;
+
         }
 
-      
+        public void mudarEstoque()
+        {
+            estoque.Visible = !estoque.Visible;
+        }
+        public void mudarCaixa()
+        {
+            caixa.Visible = !caixa.Visible;
+        }
 
         private void Label2_Click(object sender, EventArgs e)
         {
@@ -30,16 +47,20 @@ namespace WindowsFormsApp2
 
         private void BtCaixa_Click(object sender, EventArgs e)
         {
-            listaDoCaixa lista = new listaDoCaixa();
-            painelPrincipal.Controls.Add(lista);
-           
+            if (estoque.Visible)
+            {
+                mudarEstoque();
+            }
+            caixa.Visible = true;
         }
-        private void BtEstoque_Click(object sender, EventArgs e)
-        {
-            
-            TelaDeEstoque estoque = new TelaDeEstoque();
-            painelPrincipal.Controls.Add(estoque);
+        private void BtEstoque_Click(object sender, EventArgs e){
+            if (caixa.Visible)
+            {
+                mudarCaixa();
+            }
 
+            estoque.Visible = true;
+            
         }
 
         private void PainelPrincipal_Paint(object sender, PaintEventArgs e)

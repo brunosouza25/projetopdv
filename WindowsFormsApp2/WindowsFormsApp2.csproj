@@ -97,6 +97,12 @@
     <Compile Include="TelaDePagamento.Designer.cs">
       <DependentUpon>TelaDePagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaEntrarProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaEntrarProd.Designer.cs">
+      <DependentUpon>TelaEntrarProd.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDePagamento.resx">
       <DependentUpon>TelaDePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaEntrarProd.resx">
+      <DependentUpon>TelaEntrarProd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
