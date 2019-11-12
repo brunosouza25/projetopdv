@@ -233,6 +233,7 @@
             this.Bt_Retirar_Prod.TabIndex = 4;
             this.Bt_Retirar_Prod.Text = "Retirar Produto";
             this.Bt_Retirar_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Retirar_Prod.Click += new System.EventHandler(this.Bt_Retirar_Prod_Click);
             // 
             // panel_Total
             // 

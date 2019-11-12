@@ -15,14 +15,16 @@ namespace WindowsFormsApp2
     {
 
         String produto;
-        int add;
+        int add, remove;
         String caminho;
+        Boolean tipo;
 
-        public TelaEntrarProd(String produto)
+        public TelaEntrarProd(String produto, Boolean tipo)
         {
             InitializeComponent();
             //this.produto = produto;
             this.produto = produto;
+            this.tipo = tipo;
         }
 
         private void addArquivos()
@@ -30,7 +32,7 @@ namespace WindowsFormsApp2
             List<string> arquivo = new List<string>();
             string[] arquivo2;
             try
-            {
+            { 
                 add = int.Parse(TxtBoxQuant.Text);
                 Console.WriteLine(produto);
                 int num1, num2;
@@ -42,10 +44,19 @@ namespace WindowsFormsApp2
                     {
                         arquivo.Add(sr.ReadLine());
                     }
-                
-                num1 = int.Parse(arquivo[4]);
-                num2 = num1 + add;
-                arquivo[4] = num2.ToString();
+
+                if (tipo)
+                {
+                    num1 = int.Parse(arquivo[4]);
+                    num2 = num1 + add;
+                    arquivo[4] = num2.ToString();
+                }
+                else
+                {
+                    num1 = int.Parse(arquivo[4]);
+                    num2 = num1 - add;
+                    arquivo[4] = num2.ToString();
+                }
 
 
                 Console.WriteLine(arquivo[4]+ "aaaaaaaaaaaaaa");

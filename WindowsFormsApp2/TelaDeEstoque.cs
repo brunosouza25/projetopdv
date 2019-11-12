@@ -123,7 +123,14 @@ namespace WindowsFormsApp2
         private void Bt_Entrar_Prod_Click(object sender, EventArgs e)
         {
 
-            TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text);
+            TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, true);
+            telaEntrar.ShowDialog();
+            carregarListaEstoque();
+        }
+
+        private void Bt_Retirar_Prod_Click(object sender, EventArgs e)
+        {
+            TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, false);
             telaEntrar.ShowDialog();
             carregarListaEstoque();
         }
