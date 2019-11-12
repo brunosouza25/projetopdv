@@ -16,49 +16,64 @@ namespace WindowsFormsApp2
 
         String produto;
         int add;
+        String caminho;
+
         public TelaEntrarProd(String produto)
         {
             InitializeComponent();
+            //this.produto = produto;
             this.produto = produto;
         }
 
-        private string addArquivos(string produto, int add)
+        private void addArquivos()
         {
-            string caminho = @"c:\arquivos";
-            string[] arquivo;
+            List<string> arquivo = new List<string>();
+            string[] arquivo2;
             try
             {
-                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
-                Console.WriteLine(arquivos);
-                foreach (string prod in arquivos)
-                {
-                    arquivo = File.ReadAllLines(prod);
-                    if (arquivo[0] == produto.Trim())
+                add = int.Parse(TxtBoxQuant.Text);
+                Console.WriteLine(produto);
+                int num1, num2;
+                string temp1, temp2;
+                caminho = @"c:\arquivos\" + produto + ".txt";
+                Console.WriteLine(caminho);
+                using (StreamReader sr = new StreamReader(caminho))
+                    while (!sr.EndOfStream)
                     {
-                        arquivo[3] = add + arquivo[3];
-                        caminho = @"c:\arquivos\" + produto + ".txt";
-                        try
+                        arquivo.Add(sr.ReadLine());
+                    }
+                
+                num1 = int.Parse(arquivo[4]);
+                num2 = num1 + add;
+                arquivo[4] = num2.ToString();
+
+
+                Console.WriteLine(arquivo[4]+ "aaaaaaaaaaaaaa");
+
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(caminho))
+                    {
+                        foreach (string linha in arquivo)
                         {
-                            using (StreamWriter sw = new StreamWriter(caminho))
-                            {
-                                sw.WriteLine(arquivo);
-                            }
+                            sw.WriteLine(linha);
                         }
-                        catch (IOException er)
-                        {
-                            Console.WriteLine("Tivemos um erro ");
-                            Console.WriteLine(er.Message);
-                        }
-                        Close();
                     }
                 }
+                catch (IOException er)
+                {
+                    Console.WriteLine("Tivemos um erro ");
+                    Console.WriteLine(er.Message);
+                }
+                Close();
             }
+
             catch (IOException er)
             {
                 Console.WriteLine("Tivemos um erro ");
                 Console.WriteLine(er.Message);
             }
-            return "0";
+
         }
         private void label3_Click(object sender, EventArgs e)
         {
@@ -72,8 +87,7 @@ namespace WindowsFormsApp2
 
         private void BtEntrarQuant_Click(object sender, EventArgs e)
         {
-            add = int.Parse(TxtBoxQuant.Text);
-            addArquivos(this.produto, add);
+            addArquivos();
         }
     }
 }

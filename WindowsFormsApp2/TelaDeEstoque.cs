@@ -86,43 +86,10 @@ namespace WindowsFormsApp2
             else
             {
                 TelaCriarProd telaCriar = new TelaCriarProd();
-                telaCriar.ShowDialog();              
+                telaCriar.ShowDialog();
             }
             carregarListaEstoque();
         }
-
-        /*private void Bt_Entrar_Prod_Click_1(object sender, EventArgs e, string pesquisa)
-        {
-            
-            string caminho = @"c:\arquivos";
-            string[] arquivo;
-            try
-            {
-                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
-                Console.WriteLine(arquivos);
-                foreach (string prod in arquivos)
-                {
-                    arquivo = File.ReadAllLines(prod);
-                    if (arquivo[0] == pesquisa.Trim())
-                    {
-                        TelaEntrarProd telaEntrar = new TelaEntrarProd(arquivo[0]);
-                        telaEntrar.ShowDialog();
-                        ListViewItem item = new ListViewItem();
-                        for (int i = 0; i < arquivo.Length; i++)
-                        {
-                            item.SubItems.Add(arquivo[i]);
-                        }
-                    }
-                }
-            }
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }
-            
-            
-        }*/
 
         //função para ler os arquivos e colocar na listview
         private void TelaDeEstoque_Load(object sender, EventArgs e)
@@ -156,6 +123,9 @@ namespace WindowsFormsApp2
         private void Bt_Entrar_Prod_Click(object sender, EventArgs e)
         {
 
+            TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text);
+            telaEntrar.ShowDialog();
+            carregarListaEstoque();
         }
     }
 }
