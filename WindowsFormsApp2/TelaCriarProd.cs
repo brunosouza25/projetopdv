@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -6,13 +7,53 @@ namespace WindowsFormsApp2
 {
     public partial class TelaCriarProd : Form
     {
-        public TelaCriarProd()
+        Boolean tipo;
+        String produto;
+        String caminho;
+        string quantidade;
+        private Produto prod = new Produto();
+        public TelaCriarProd(Boolean tipo)
         {
             InitializeComponent();
+            this.tipo = tipo;
+            BtCriar.Text = "Criar";
         }
+        public TelaCriarProd(Boolean tipo, string produto)
+        {
+            InitializeComponent();
+            this.tipo = tipo;
+            this.produto = produto;
+            BtCriar.Text = "Alterar";
+            if (!tipo)
+                carregarTela();
 
-        private Produto prod = new Produto();
-        public Boolean criado { get; set; }
+        }
+       
+        
+        private void carregarTela()
+        {
+            List<string> arquivo = new List<string>();
+            Produto prod = new Produto();
+            string caminho = @"c:\arquivos\" + produto + ".txt";
+            using (StreamReader sr = new StreamReader(caminho))
+                while (!sr.EndOfStream)
+                {
+                    arquivo.Add(sr.ReadLine());
+                }
+
+            TxtBoxNome.Text = arquivo[0];
+            TxtBoxCusto.Text = arquivo[1];
+            TxtBoxValor.Text = arquivo[2];
+            TxtBoxCodBarras.Text = arquivo[3];
+            /*if(arquivo.Count > 4)
+            {
+                quantidade = arquivo[4];
+            }
+            else
+            {
+                quantidade = "0";
+            }*/
+        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -21,14 +62,22 @@ namespace WindowsFormsApp2
 
         private void BtCriar_Click(object sender, EventArgs e)
         {
-
+            
             string[] arquivo;
+            if(TxtBoxNome.Text != produto && tipo == false)
+            {
+                System.IO.File.Delete(@"c:\arquivos\" + produto+ ".txt");
+            }
             prod.prodNome = TxtBoxNome.Text;
             prod.prodCusto = double.Parse(TxtBoxCusto.Text);
             prod.prodValor = double.Parse(TxtBoxValor.Text);
             prod.prodCodBarras = TxtBoxCodBarras.Text;
-            string caminho = @"c:\arquivos\"+prod.prodNome+".txt";
-            Console.WriteLine(prod.prodCodBarras);
+            string caminho = @"c:\arquivos\" + prod.prodNome + ".txt";
+            if (tipo)
+                prod.prodQuantidade = 0;
+            else
+                
+            Console.WriteLine(prod.prodQuantidade + "fafa");
             try
             {
                 using (StreamWriter sw = new StreamWriter(caminho))

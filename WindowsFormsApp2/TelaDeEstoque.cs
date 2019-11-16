@@ -85,7 +85,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                TelaCriarProd telaCriar = new TelaCriarProd();
+                TelaCriarProd telaCriar = new TelaCriarProd(true);
                 telaCriar.ShowDialog();
             }
             carregarListaEstoque();
@@ -133,6 +133,12 @@ namespace WindowsFormsApp2
             TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, false);
             telaEntrar.ShowDialog();
             carregarListaEstoque();
+        }
+
+        private void Bt_Editar_Prod_Click(object sender, EventArgs e)
+        {
+            TelaCriarProd telaCriar = new TelaCriarProd(false, listaProdutos.SelectedItems[0].SubItems[1].Text);
+            telaCriar.ShowDialog();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace WindowsFormsApp2
         String Hora = (DateTime.Now.ToString("HH:mm:ss"));
         TelaDeEstoque estoque = new TelaDeEstoque();
         listaDoCaixa caixa = new listaDoCaixa();
+        TelaDeRelatorios relatorio = new TelaDeRelatorios();
 
 
         public Form1()
@@ -27,6 +28,9 @@ namespace WindowsFormsApp2
             //estoque
             painelPrincipal.Controls.Add(estoque);
             estoque.Visible = false;
+            //relatorios
+            painelPrincipal.Controls.Add(relatorio);
+            relatorio.Visible = false;
 
         }
 
@@ -37,6 +41,10 @@ namespace WindowsFormsApp2
         public void mudarCaixa()
         {
             caixa.Visible = !caixa.Visible;
+        }
+        public void mudarRelatorio()
+        {
+            relatorio.Visible = !relatorio.Visible;
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -51,15 +59,26 @@ namespace WindowsFormsApp2
             {
                 mudarEstoque();
             }
+            if (relatorio.Visible)
+            {
+                mudarRelatorio();
+            }
+
             caixa.Visible = true;
+
         }
         private void BtEstoque_Click(object sender, EventArgs e){
             if (caixa.Visible)
             {
                 mudarCaixa();
             }
+            if (relatorio.Visible)
+            {
+                mudarRelatorio();
+            }
 
             estoque.Visible = true;
+
             
         }
 
@@ -101,7 +120,20 @@ namespace WindowsFormsApp2
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+            
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (estoque.Visible)
+            {
+                mudarEstoque();
+            }
+            if (caixa.Visible)
+            {
+                mudarCaixa();
+            }
+            relatorio.Visible = true;
         }
     }
 }

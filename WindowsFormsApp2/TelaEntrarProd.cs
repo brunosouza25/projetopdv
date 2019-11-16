@@ -58,9 +58,6 @@ namespace WindowsFormsApp2
                     arquivo[4] = num2.ToString();
                 }
 
-
-                Console.WriteLine(arquivo[4]+ "aaaaaaaaaaaaaa");
-
                 try
                 {
                     using (StreamWriter sw = new StreamWriter(caminho))

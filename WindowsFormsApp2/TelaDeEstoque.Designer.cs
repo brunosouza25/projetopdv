@@ -212,6 +212,7 @@
             this.Bt_Editar_Prod.TabIndex = 2;
             this.Bt_Editar_Prod.Text = "Editar Produto";
             this.Bt_Editar_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Editar_Prod.Click += new System.EventHandler(this.Bt_Editar_Prod_Click);
             // 
             // Bt_Entrar_Prod
             // 

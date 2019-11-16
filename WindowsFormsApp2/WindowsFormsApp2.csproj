@@ -73,6 +73,12 @@
     <Compile Include="listaDoCaixa.Designer.cs">
       <DependentUpon>listaDoCaixa.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaDeRelatorios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TelaDeRelatorios.Designer.cs">
+      <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaCadastroProd.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="listaDoCaixa.resx">
       <DependentUpon>listaDoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaDeRelatorios.resx">
+      <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastroProd.resx">
       <DependentUpon>TelaCadastroProd.cs</DependentUpon>
