@@ -135,5 +135,10 @@ namespace WindowsFormsApp2
             }
             relatorio.Visible = true;
         }
+
+        private void Lab_Hora_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

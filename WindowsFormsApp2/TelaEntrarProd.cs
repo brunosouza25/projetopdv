@@ -14,21 +14,41 @@ namespace WindowsFormsApp2
     public partial class TelaEntrarProd : Form
     {
 
-        String produto;
-        int add, remove;
-        String caminho;
-        Boolean tipo;
 
-        public TelaEntrarProd(String produto, Boolean tipo)
+        int add, remove, prodCodigo;
+        Boolean tipo;
+        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
+        public TelaEntrarProd(int prodCodigo, Boolean tipo)
         {
             InitializeComponent();
-            //this.produto = produto;
-            this.produto = produto;
+            this.prodCodigo = prodCodigo;
             this.tipo = tipo;
         }
 
         private void addArquivos()
         {
+            if (tipo)
+            {
+                int aux = Convert.ToInt32(TxtBoxQuant.Text);
+
+                var aux2 = dadosProdutos.PegaQuantidade(prodCodigo);
+
+                aux += Convert.ToInt32(aux2[0]["prodQuantidade"]);
+
+                dadosProdutos.AttQuantidade(aux, prodCodigo);
+            }
+            else
+            {
+                int aux = Convert.ToInt32(TxtBoxQuant.Text);
+
+                var aux2 = dadosProdutos.PegaQuantidade(prodCodigo);
+
+                aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) - aux;
+
+                dadosProdutos.AttQuantidade(aux, prodCodigo);
+            }
+            Close();
+            /*
             List<string> arquivo = new List<string>();
             string[] arquivo2;
             try
@@ -81,9 +101,14 @@ namespace WindowsFormsApp2
                 Console.WriteLine("Tivemos um erro ");
                 Console.WriteLine(er.Message);
             }
-
+            */
         }
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtBoxQuant_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -95,7 +120,23 @@ namespace WindowsFormsApp2
 
         private void BtEntrarQuant_Click(object sender, EventArgs e)
         {
-            addArquivos();
+            try
+            {
+                if (Convert.ToInt32(TxtBoxQuant.Text) < 1)
+                {
+                    MessageBox.Show("Não permitida a entrada de valores negativos");
+                    TxtBoxQuant.Text = "";
+                }
+                else
+                    addArquivos();
+            } catch (IOException er)
+            {
+                MessageBox.Show("Não é permitida a entrada de alfabeticos");
+                TxtBoxQuant.Text = "";
+            }
+            
+           Close();
+
         }
     }
 }

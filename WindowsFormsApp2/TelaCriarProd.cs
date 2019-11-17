@@ -8,7 +8,7 @@ namespace WindowsFormsApp2
     public partial class TelaCriarProd : Form
     {
         Boolean tipo;
-        String produto;
+        int codigoProd;
         String caminho;
         string quantidade;
         private Produto prod = new Produto();
@@ -19,33 +19,26 @@ namespace WindowsFormsApp2
             this.tipo = tipo;
             BtCriar.Text = "Criar";
         }
-        public TelaCriarProd(Boolean tipo, string produto)
+        public TelaCriarProd(Boolean tipo, int codigoProd)
         {
             InitializeComponent();
             this.tipo = tipo;
-            this.produto = produto;
+            this.codigoProd = codigoProd;
             BtCriar.Text = "Alterar";
-            if (!tipo)
-                carregarTela();
+            carregarTela();
 
         }
        
         
         private void carregarTela()
         {
-            List<string> arquivo = new List<string>();
-            Produto prod = new Produto();
-            string caminho = @"c:\arquivos\" + produto + ".txt";
-            using (StreamReader sr = new StreamReader(caminho))
-                while (!sr.EndOfStream)
-                {
-                    arquivo.Add(sr.ReadLine());
-                }
+            Console.WriteLine(this.codigoProd);
+            var varProd = dadosProdutos.GetDataById(this.codigoProd);
 
-            TxtBoxNome.Text = arquivo[0];
-            TxtBoxCusto.Text = arquivo[1];
-            TxtBoxValor.Text = arquivo[2];
-            TxtBoxCodBarras.Text = arquivo[3];
+            TxtBoxNome.Text = varProd[0]["prodNome"].ToString();
+            TxtBoxCusto.Text = varProd[0]["prodCusto"].ToString();
+            TxtBoxValor.Text = varProd[0]["prodValor"].ToString();
+            TxtBoxCodBarras.Text = varProd[0]["prodCodBarras"].ToString();
             /*if(arquivo.Count > 4)
             {
                 quantidade = arquivo[4];
@@ -63,13 +56,27 @@ namespace WindowsFormsApp2
 
         private void BtCriar_Click(object sender, EventArgs e)
         {
-            dadosProdutos.InserirDados(
-                prod.prodNome = TxtBoxNome.Text,
-                prod.prodValor = double.Parse(TxtBoxValor.Text),
-                prod.prodCusto = double.Parse(TxtBoxCusto.Text),
-                prod.prodQuantidade = 0,
-                prod.prodCodBarras = TxtBoxCodBarras.Text);
-
+            if (tipo)
+            {
+                dadosProdutos.InserirDados(
+                    prod.prodNome = TxtBoxNome.Text,
+                    prod.prodValor = double.Parse(TxtBoxValor.Text),
+                    prod.prodCusto = double.Parse(TxtBoxCusto.Text),
+                    prod.prodQuantidade = 0,
+                    prod.prodCodBarras = TxtBoxCodBarras.Text);
+                Close();
+            }
+            else
+            {
+                dadosProdutos.AttDados(
+                    TxtBoxNome.Text,
+                    Convert.ToDouble(TxtBoxValor.Text),
+                    Convert.ToDouble(TxtBoxCusto.Text),
+                    TxtBoxCodBarras.Text,
+                    codigoProd
+                    );
+                Close();
+            }
             /*
             string[] arquivo;
             if(TxtBoxNome.Text != produto && tipo == false)

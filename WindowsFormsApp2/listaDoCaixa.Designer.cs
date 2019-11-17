@@ -32,26 +32,30 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.listaCaixa = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.Bt_Cancelar_Venda = new System.Windows.Forms.Button();
-            this.Bt_Vendas = new System.Windows.Forms.Button();
-            this.Bt_Add_Prod = new System.Windows.Forms.Button();
             this.Bt_Remover_Prod = new System.Windows.Forms.Button();
-            this.panel_Total = new System.Windows.Forms.Panel();
-            this.Lab_Subt_Total = new System.Windows.Forms.Label();
+            this.Bt_Add_Prod = new System.Windows.Forms.Button();
+            this.Bt_Vendas = new System.Windows.Forms.Button();
+            this.Bt_Cancelar_Venda = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.LblTotal = new System.Windows.Forms.Label();
+            this.BtnFinalizarVenda = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.panel_Total.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -75,11 +79,10 @@
             this.listaCaixa.BackColor = System.Drawing.SystemColors.ControlLight;
             this.listaCaixa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
+            this.columnHeader1,
             this.columnHeader13,
-            this.columnHeader14});
+            this.columnHeader12,
+            this.columnHeader2});
             this.listaCaixa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaCaixa.FullRowSelect = true;
             this.listaCaixa.GridLines = true;
@@ -97,15 +100,9 @@
             this.columnHeader9.Text = "";
             this.columnHeader9.Width = 0;
             // 
-            // columnHeader10
+            // columnHeader1
             // 
-            this.columnHeader10.Text = "Produto";
-            this.columnHeader10.Width = 100;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Custo";
-            this.columnHeader11.Width = 95;
+            this.columnHeader1.Text = "Produto";
             // 
             // columnHeader12
             // 
@@ -116,11 +113,6 @@
             // 
             this.columnHeader13.Text = "Cod de Barras";
             this.columnHeader13.Width = 95;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Quantidade";
-            this.columnHeader14.Width = 95;
             // 
             // TxtBoxPesquisaProd
             // 
@@ -149,22 +141,10 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 601);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // tableLayoutPanel3
+            // columnHeader2
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.panel_Total, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(914, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(350, 601);
-            this.tableLayoutPanel3.TabIndex = 1;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            this.columnHeader2.Text = "0";
+            this.columnHeader2.Width = 0;
             // 
             // tableLayoutPanel4
             // 
@@ -186,26 +166,16 @@
             this.tableLayoutPanel4.TabIndex = 0;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
-            // Bt_Cancelar_Venda
+            // Bt_Remover_Prod
             // 
-            this.Bt_Cancelar_Venda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Cancelar_Venda.Location = new System.Drawing.Point(3, 150);
-            this.Bt_Cancelar_Venda.Name = "Bt_Cancelar_Venda";
-            this.Bt_Cancelar_Venda.Size = new System.Drawing.Size(166, 142);
-            this.Bt_Cancelar_Venda.TabIndex = 3;
-            this.Bt_Cancelar_Venda.Text = "Cancelar Venda";
-            this.Bt_Cancelar_Venda.UseVisualStyleBackColor = true;
-            this.Bt_Cancelar_Venda.Click += new System.EventHandler(this.Bt_Cancelar_Venda_Click);
-            // 
-            // Bt_Vendas
-            // 
-            this.Bt_Vendas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Vendas.Location = new System.Drawing.Point(175, 150);
-            this.Bt_Vendas.Name = "Bt_Vendas";
-            this.Bt_Vendas.Size = new System.Drawing.Size(166, 142);
-            this.Bt_Vendas.TabIndex = 2;
-            this.Bt_Vendas.Text = "Vendas";
-            this.Bt_Vendas.UseVisualStyleBackColor = true;
+            this.Bt_Remover_Prod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Bt_Remover_Prod.Location = new System.Drawing.Point(175, 3);
+            this.Bt_Remover_Prod.Name = "Bt_Remover_Prod";
+            this.Bt_Remover_Prod.Size = new System.Drawing.Size(166, 141);
+            this.Bt_Remover_Prod.TabIndex = 4;
+            this.Bt_Remover_Prod.Text = "Remover Produto";
+            this.Bt_Remover_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Remover_Prod.Click += new System.EventHandler(this.Bt_Remover_Prod_Click);
             // 
             // Bt_Add_Prod
             // 
@@ -218,35 +188,99 @@
             this.Bt_Add_Prod.UseVisualStyleBackColor = true;
             this.Bt_Add_Prod.Click += new System.EventHandler(this.Bt_Add_Prod_Click);
             // 
-            // Bt_Remover_Prod
+            // Bt_Vendas
             // 
-            this.Bt_Remover_Prod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Remover_Prod.Location = new System.Drawing.Point(175, 3);
-            this.Bt_Remover_Prod.Name = "Bt_Remover_Prod";
-            this.Bt_Remover_Prod.Size = new System.Drawing.Size(166, 141);
-            this.Bt_Remover_Prod.TabIndex = 4;
-            this.Bt_Remover_Prod.Text = "Remover Produto";
-            this.Bt_Remover_Prod.UseVisualStyleBackColor = true;
-            this.Bt_Remover_Prod.Click += new System.EventHandler(this.Bt_Remover_Prod_Click);
+            this.Bt_Vendas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Bt_Vendas.Location = new System.Drawing.Point(175, 150);
+            this.Bt_Vendas.Name = "Bt_Vendas";
+            this.Bt_Vendas.Size = new System.Drawing.Size(166, 142);
+            this.Bt_Vendas.TabIndex = 2;
+            this.Bt_Vendas.Text = "Vendas";
+            this.Bt_Vendas.UseVisualStyleBackColor = true;
             // 
-            // panel_Total
+            // Bt_Cancelar_Venda
             // 
-            this.panel_Total.Controls.Add(this.Lab_Subt_Total);
-            this.panel_Total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Total.Location = new System.Drawing.Point(3, 3);
-            this.panel_Total.Name = "panel_Total";
-            this.panel_Total.Size = new System.Drawing.Size(344, 294);
-            this.panel_Total.TabIndex = 1;
+            this.Bt_Cancelar_Venda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Bt_Cancelar_Venda.Location = new System.Drawing.Point(3, 150);
+            this.Bt_Cancelar_Venda.Name = "Bt_Cancelar_Venda";
+            this.Bt_Cancelar_Venda.Size = new System.Drawing.Size(166, 142);
+            this.Bt_Cancelar_Venda.TabIndex = 3;
+            this.Bt_Cancelar_Venda.Text = "Cancelar Venda";
+            this.Bt_Cancelar_Venda.UseVisualStyleBackColor = true;
+            this.Bt_Cancelar_Venda.Click += new System.EventHandler(this.Bt_Cancelar_Venda_Click);
             // 
-            // Lab_Subt_Total
+            // tableLayoutPanel3
             // 
-            this.Lab_Subt_Total.AutoSize = true;
-            this.Lab_Subt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Subt_Total.Location = new System.Drawing.Point(53, 90);
-            this.Lab_Subt_Total.Name = "Lab_Subt_Total";
-            this.Lab_Subt_Total.Size = new System.Drawing.Size(125, 31);
-            this.Lab_Subt_Total.TabIndex = 0;
-            this.Lab_Subt_Total.Text = "R$: 0,00";
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(914, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(350, 601);
+            this.tableLayoutPanel3.TabIndex = 1;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.76191F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.23809F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(344, 294);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.LblTotal);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(338, 155);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.BtnFinalizarVenda);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 164);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(338, 127);
+            this.panel2.TabIndex = 1;
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotal.Location = new System.Drawing.Point(73, 62);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(93, 33);
+            this.LblTotal.TabIndex = 0;
+            this.LblTotal.Text = "label1";
+            // 
+            // BtnFinalizarVenda
+            // 
+            this.BtnFinalizarVenda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnFinalizarVenda.Location = new System.Drawing.Point(0, 0);
+            this.BtnFinalizarVenda.Name = "BtnFinalizarVenda";
+            this.BtnFinalizarVenda.Size = new System.Drawing.Size(338, 127);
+            this.BtnFinalizarVenda.TabIndex = 2;
+            this.BtnFinalizarVenda.Text = "Finalizar Venda";
+            this.BtnFinalizarVenda.UseVisualStyleBackColor = true;
+            this.BtnFinalizarVenda.Click += new System.EventHandler(this.BtnFinalizarVenda_Click);
             // 
             // listaDoCaixa
             // 
@@ -259,10 +293,12 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.panel_Total.ResumeLayout(false);
-            this.panel_Total.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -271,21 +307,23 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.ListView listaCaixa;
-        private System.Windows.Forms.Button Bt_Vendas;
-        private System.Windows.Forms.Button Bt_Cancelar_Venda;
-        private System.Windows.Forms.Button Bt_Remover_Prod;
-        private System.Windows.Forms.Button Bt_Add_Prod;
-        private System.Windows.Forms.Panel panel_Total;
-        private System.Windows.Forms.Label Lab_Subt_Total;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.TextBox TxtBoxPesquisaProd;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button Bt_Cancelar_Venda;
+        private System.Windows.Forms.Button Bt_Vendas;
+        private System.Windows.Forms.Button Bt_Add_Prod;
+        private System.Windows.Forms.Button Bt_Remover_Prod;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label LblTotal;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnFinalizarVenda;
     }
 }

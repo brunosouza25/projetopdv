@@ -26,10 +26,11 @@ namespace WindowsFormsApp2
             listaProdutos.Items.Clear();
             string t = dadosProdutos.GetData().ToString();
             var varProd = dadosProdutos.GetData();
-            Console.WriteLine(varProd.Count);
             for (int i = 0; i < varProd.Count; i++)
             {
+
                 prod.idProduto = Convert.ToInt32(varProd[i]["idProduto"]);
+
                 prod.prodNome = varProd[i]["prodNome"].ToString();
                 prod.prodCusto = Convert.ToDouble(varProd[i]["prodCusto"]);
                 prod.prodValor = Convert.ToDouble(varProd[i]["prodValor"]);
@@ -38,16 +39,18 @@ namespace WindowsFormsApp2
 
 
                 ListViewItem item = new ListViewItem();
-                item.SubItems.Add(prod.prodCodBarras);
+                
                 item.SubItems.Add(prod.prodNome);
                 item.SubItems.Add(prod.prodCusto.ToString());
                 item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodQuantidade.ToString());
                 item.SubItems.Add(prod.idProduto.ToString());
-           
+
                 listaProdutos.Items.Add(item);
+
             }
 
-            Console.WriteLine(prod);
             //MessageBox.Show();
             /*string caminho = @"c:\arquivos";
             string[] arquivo;
@@ -153,7 +156,7 @@ namespace WindowsFormsApp2
         {
             if (listaProdutos.SelectedItems.Count > 0)
             {
-                TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, true);
+                TelaEntrarProd telaEntrar = new TelaEntrarProd(Convert.ToInt32(listaProdutos.SelectedItems[0].SubItems[6].Text), true);
                 telaEntrar.ShowDialog();
                 carregarListaEstoque();
             }
@@ -168,7 +171,7 @@ namespace WindowsFormsApp2
         {
             if (listaProdutos.SelectedItems.Count > 0)
             {
-                TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, false);
+                TelaEntrarProd telaEntrar = new TelaEntrarProd(Convert.ToInt32(listaProdutos.SelectedItems[0].SubItems[6].Text), false);
                 telaEntrar.ShowDialog();
                 carregarListaEstoque();
             }
@@ -183,7 +186,7 @@ namespace WindowsFormsApp2
         {
             if (listaProdutos.SelectedItems.Count > 0)
             {
-                TelaCriarProd telaCriar = new TelaCriarProd(false, Convert.ToInt32(listaProdutos.SelectedItems[0].SubItems[6]));
+                TelaCriarProd telaCriar = new TelaCriarProd(false, Convert.ToInt32(listaProdutos.SelectedItems[0].SubItems[6].Text));
                 telaCriar.ShowDialog();
                 carregarListaEstoque();
             }

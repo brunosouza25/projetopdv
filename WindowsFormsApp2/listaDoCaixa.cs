@@ -28,37 +28,43 @@ namespace WindowsFormsApp2
             InitializeComponent();
 
         }
+        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
+        Produto prod = new Produto();
         List<Produto> produtos = new List<Produto>();
-        int quantidade;
-        private string pesquisaListaCaixa(string pesquisa)
+
+        string pesquisa;
+        double total = 0;
+        public string[,] itensDaLista { get; set; }
+        private void pesquisaListaCaixa()
         {
-            string caminho = @"c:\arquivos";
-            string[] arquivo;
-            try
+            var varProd = dadosProdutos.pegarBanco(pesquisa.Trim());
+            if (varProd.Count < 1)
+                MessageBox.Show("Não existe esse produto no estoque");
+            else
             {
-                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
-                Console.WriteLine(arquivos);
-                foreach (string prod in arquivos)
-                {
-                    arquivo = File.ReadAllLines(prod);
-                    if (arquivo[0] == pesquisa.Trim())  
-                    {
-                        TxtBoxPesquisaProd.Text = "";
-                        ListViewItem item = new ListViewItem();
-                        for (int i = 0; i < arquivo.Length; i++)
-                        {
-                            item.SubItems.Add(arquivo[i]);
-                        }
-                        listaCaixa.Items.Add(item);
-                    }
-                }
+
+
+                prod.prodNome = varProd[0]["prodNome"].ToString();
+                prod.prodValor = Convert.ToDouble(varProd[0]["prodValor"]);
+                prod.prodCodBarras = varProd[0]["prodCodBarras"].ToString();
+                prod.idProduto = Convert.ToInt32(varProd[0]["idProduto"]);
+
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add(prod.idProduto.ToString());
+
+
+                total += prod.prodValor;
+                listaCaixa.Items.Add(item);
+
+
             }
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }
-            return "0";
+            LblTotal.Text = "R$: " + total.ToString("F2");
+
+            TxtBoxPesquisaProd.Text = "";
+
         }
 
         private void listaDoCaixa_Load(object sender, EventArgs e)
@@ -85,19 +91,25 @@ namespace WindowsFormsApp2
         {
             if (e.KeyCode == Keys.Enter)
             {
-                pesquisaListaCaixa(TxtBoxPesquisaProd.Text);
+                pesquisa = TxtBoxPesquisaProd.Text;
+                pesquisaListaCaixa();
             }
         }
 
         private void Bt_Cancelar_Venda_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
                 listaCaixa.Items.Clear();
+                LblTotal.Text = "R$: 0,00";
+                total = 0;
+            }
         }
 
         private void Bt_Add_Prod_Click(object sender, EventArgs e)
         {
-            pesquisaListaCaixa(TxtBoxPesquisaProd.Text);
+            pesquisa = TxtBoxPesquisaProd.Text;
+            pesquisaListaCaixa();
         }
 
         private void listaCaixa_ControlRemoved(object sender, ControlEventArgs e)
@@ -107,9 +119,15 @@ namespace WindowsFormsApp2
 
         private void Bt_Remover_Prod_Click(object sender, EventArgs e)
         {
-           if (listaCaixa.SelectedItems.Count > 0)
-                for(int i = listaCaixa.SelectedItems.Count; i >= 1; i--)
-                    listaCaixa.Items.Remove(listaCaixa.SelectedItems[i-1]);
+            if (listaCaixa.SelectedItems.Count > 0)
+                for (int i = listaCaixa.SelectedItems.Count; i >= 1; i--)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item = listaCaixa.SelectedItems[i - 1];
+                    listaCaixa.Items.Remove(listaCaixa.SelectedItems[i - 1]);
+                    total -= Convert.ToDouble(item.SubItems[3].Text);
+                    LblTotal.Text = "R$: " + total.ToString("F2");
+                }
             else
                 MessageBox.Show("Não tem nenhum item selecionado!");
             /* o trecho de  código sendo comentado aqui está dando problema, estou comentando
@@ -125,6 +143,32 @@ namespace WindowsFormsApp2
         private void TxtBoxPesquisaProd_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnFinalizarVenda_Click(object sender, EventArgs e)
+        {
+
+            if (listaCaixa.Items.Count > 0)
+            {
+                if (total > 0)
+                {
+                    itensDaLista = new string[this.listaCaixa.Items.Count, 5];
+                    Console.WriteLine(listaCaixa.Items[0].SubItems[4].Text + "oi");
+                    for (int i = 0; i < this.listaCaixa.Items.Count; i++)
+                    {
+                        for (int j = 0; j <= 4; j++)
+                        {
+                            itensDaLista[i, j] = listaCaixa.Items[i].SubItems[j].Text;
+                        }
+                    }
+                    TelaDePagamento telaDePagamento = new TelaDePagamento(itensDaLista, total);
+                    telaDePagamento.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não tem itens na venda");
+            }
         }
     }
 }

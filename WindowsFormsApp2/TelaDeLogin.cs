@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
         TelaPrincipal tela = new TelaPrincipal();
+
         public void validar(string login, string senha)
         {
             if (login == "admin" && senha == "admin")
@@ -31,12 +32,12 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             validar(TxtBoxPass.Text, TxtBoxUser.Text);
-            
+
         }
 
         private void TxtBoxUser_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)

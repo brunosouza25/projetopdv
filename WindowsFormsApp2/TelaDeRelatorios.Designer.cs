@@ -28,157 +28,170 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dados = new WindowsFormsApp2.Dados();
+            this.dataTable1TableAdapter = new WindowsFormsApp2.DadosTableAdapters.DataTable1TableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataTable1BindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.idVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodNomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fillByToolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource3)).BeginInit();
+            this.fillByToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // dataTable1BindingSource
             // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 581);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.dadosBindingSource;
             // 
-            // panel3
+            // dataTable1BindingSource1
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(198, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(809, 575);
-            this.panel3.TabIndex = 1;
+            this.dataTable1BindingSource1.DataMember = "DataTable1";
+            this.dataTable1BindingSource1.DataSource = this.dadosBindingSource;
             // 
-            // panel2
+            // dataTable1BindingSource2
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(189, 575);
-            this.panel2.TabIndex = 0;
+            this.dataTable1BindingSource2.DataMember = "DataTable1";
+            this.dataTable1BindingSource2.DataSource = this.dadosBindingSource;
             // 
-            // tableLayoutPanel1
+            // dadosBindingSource
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.42722F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.47785F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.01582F));
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 581);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.dadosBindingSource.DataSource = this.dados;
+            this.dadosBindingSource.Position = 0;
             // 
-            // monthCalendar1
+            // dados
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.dados.DataSetName = "Dados";
+            this.dados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // monthCalendar2
+            // dataTable1TableAdapter
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(9, 189);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 1;
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
-            // panel4
+            // dataGridView1
             // 
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.monthCalendar2);
-            this.panel4.Controls.Add(this.monthCalendar1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1013, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(248, 575);
-            this.panel4.TabIndex = 2;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idVendaDataGridViewTextBoxColumn,
+            this.vendDataDataGridViewTextBoxColumn,
+            this.valorCompraDataGridViewTextBoxColumn,
+            this.idProdutoDataGridViewTextBoxColumn,
+            this.prodNomeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.dataTable1BindingSource3;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1310, 553);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button1
+            // dataTable1BindingSource3
             // 
-            this.button1.Location = new System.Drawing.Point(0, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Relatório 1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataTable1BindingSource3.DataMember = "DataTable1";
+            this.dataTable1BindingSource3.DataSource = this.dadosBindingSource;
             // 
-            // button2
+            // idVendaDataGridViewTextBoxColumn
             // 
-            this.button2.Location = new System.Drawing.Point(0, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Relatório 2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.idVendaDataGridViewTextBoxColumn.DataPropertyName = "idVenda";
+            this.idVendaDataGridViewTextBoxColumn.HeaderText = "Código da Venda";
+            this.idVendaDataGridViewTextBoxColumn.Name = "idVendaDataGridViewTextBoxColumn";
+            this.idVendaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // button3
+            // vendDataDataGridViewTextBoxColumn
             // 
-            this.button3.Location = new System.Drawing.Point(20, 511);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 39);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Gerar Relatório";
-            this.button3.UseVisualStyleBackColor = true;
+            this.vendDataDataGridViewTextBoxColumn.DataPropertyName = "vendData";
+            this.vendDataDataGridViewTextBoxColumn.HeaderText = "Data da Venda";
+            this.vendDataDataGridViewTextBoxColumn.Name = "vendDataDataGridViewTextBoxColumn";
             // 
-            // button4
+            // valorCompraDataGridViewTextBoxColumn
             // 
-            this.button4.Location = new System.Drawing.Point(143, 511);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 39);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Salvar Relatório";
-            this.button4.UseVisualStyleBackColor = true;
+            this.valorCompraDataGridViewTextBoxColumn.DataPropertyName = "valorCompra";
+            this.valorCompraDataGridViewTextBoxColumn.HeaderText = "Valor da Compra";
+            this.valorCompraDataGridViewTextBoxColumn.Name = "valorCompraDataGridViewTextBoxColumn";
+            // 
+            // idProdutoDataGridViewTextBoxColumn
+            // 
+            this.idProdutoDataGridViewTextBoxColumn.DataPropertyName = "idProduto";
+            this.idProdutoDataGridViewTextBoxColumn.HeaderText = "Código do Produto";
+            this.idProdutoDataGridViewTextBoxColumn.Name = "idProdutoDataGridViewTextBoxColumn";
+            // 
+            // prodNomeDataGridViewTextBoxColumn
+            // 
+            this.prodNomeDataGridViewTextBoxColumn.DataPropertyName = "prodNome";
+            this.prodNomeDataGridViewTextBoxColumn.HeaderText = "Nome do Produto";
+            this.prodNomeDataGridViewTextBoxColumn.Name = "prodNomeDataGridViewTextBoxColumn";
+            // 
+            // fillByToolStrip1
+            // 
+            this.fillByToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton1});
+            this.fillByToolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip1.Name = "fillByToolStrip1";
+            this.fillByToolStrip1.Size = new System.Drawing.Size(1310, 25);
+            this.fillByToolStrip1.TabIndex = 2;
+            this.fillByToolStrip1.Text = "fillByToolStrip1";
+            // 
+            // fillByToolStripButton1
+            // 
+            this.fillByToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton1.Name = "fillByToolStripButton1";
+            this.fillByToolStripButton1.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton1.Text = "FillBy";
+            this.fillByToolStripButton1.Click += new System.EventHandler(this.fillByToolStripButton1_Click);
             // 
             // TelaDeRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.fillByToolStrip1);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "TelaDeRelatorios";
-            this.Size = new System.Drawing.Size(1264, 581);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(1310, 581);
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource3)).EndInit();
+            this.fillByToolStrip1.ResumeLayout(false);
+            this.fillByToolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private System.Windows.Forms.BindingSource dadosBindingSource;
+        private Dados dados;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource1;
+        private DadosTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVendaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vendDataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorCompraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProdutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodNomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStrip fillByToolStrip1;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton1;
     }
 }

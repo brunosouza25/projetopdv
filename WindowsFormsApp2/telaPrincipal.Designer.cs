@@ -144,6 +144,7 @@
             this.Lab_Hora.Size = new System.Drawing.Size(70, 25);
             this.Lab_Hora.TabIndex = 0;
             this.Lab_Hora.Text = "label1";
+            this.Lab_Hora.Click += new System.EventHandler(this.Lab_Hora_Click);
             // 
             // painelPrincipal
             // 

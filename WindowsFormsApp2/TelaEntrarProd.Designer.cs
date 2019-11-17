@@ -65,6 +65,7 @@
             this.TxtBoxQuant.Name = "TxtBoxQuant";
             this.TxtBoxQuant.Size = new System.Drawing.Size(92, 20);
             this.TxtBoxQuant.TabIndex = 8;
+            this.TxtBoxQuant.TextChanged += new System.EventHandler(this.TxtBoxQuant_TextChanged);
             // 
             // label3
             // 
