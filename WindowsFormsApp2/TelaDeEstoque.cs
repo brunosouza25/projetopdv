@@ -18,6 +18,60 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
+        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
+        private void carregarListaEstoque()
+        {
+            Produto prod = new Produto();
+            string[] produtos = new string[6];
+            listaProdutos.Items.Clear();
+            string t = dadosProdutos.GetData().ToString();
+            var varProd = dadosProdutos.GetData();
+            Console.WriteLine(varProd.Count);
+            for (int i = 0; i < varProd.Count; i++)
+            {
+                prod.idProduto = Convert.ToInt32(varProd[i]["idProduto"]);
+                prod.prodNome = varProd[i]["prodNome"].ToString();
+                prod.prodCusto = Convert.ToDouble(varProd[i]["prodCusto"]);
+                prod.prodValor = Convert.ToDouble(varProd[i]["prodValor"]);
+                prod.prodQuantidade = Convert.ToInt32(varProd[i]["prodQuantidade"]);
+                prod.prodCodBarras = varProd[i]["prodCodBarras"].ToString();
+
+
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCusto.ToString());
+                item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add(prod.idProduto.ToString());
+           
+                listaProdutos.Items.Add(item);
+            }
+
+            Console.WriteLine(prod);
+            //MessageBox.Show();
+            /*string caminho = @"c:\arquivos";
+            string[] arquivo;
+            try
+            {
+                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
+                Console.WriteLine(arquivos);
+                foreach (string prod in arquivos)
+                {
+                    arquivo = File.ReadAllLines(prod);
+                    ListViewItem item = new ListViewItem();
+                    for (int i = 0; i < arquivo.Length; i++)
+                    {
+                        item.SubItems.Add(arquivo[i]);
+                    }
+                    listaProdutos.Items.Add(item);
+                }
+            }
+            catch (IOException er)
+            {
+                Console.WriteLine("Tivemos um erro ");
+                Console.WriteLine(er.Message);
+            }*/
+        }
         private string pesquisaListaCaixa(string pesquisa)
         {
             string caminho = @"c:\arquivos";
@@ -47,32 +101,7 @@ namespace WindowsFormsApp2
             }
             return "0";
         }
-        private void carregarListaEstoque()
-        {
-            listaProdutos.Items.Clear();
-            string caminho = @"c:\arquivos";
-            string[] arquivo;
-            try
-            {
-                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
-                Console.WriteLine(arquivos);
-                foreach (string prod in arquivos)
-                {
-                    arquivo = File.ReadAllLines(prod);
-                    ListViewItem item = new ListViewItem();
-                    for (int i = 0; i < arquivo.Length; i++)
-                    {
-                        item.SubItems.Add(arquivo[i]);
-                    }
-                    listaProdutos.Items.Add(item);
-                }
-            }
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }
-        }
+
         private Boolean criar = false;
         Produto produtos = new Produto();
         private void Bt_Criar_Prod_Click(object sender, EventArgs e)
@@ -122,23 +151,52 @@ namespace WindowsFormsApp2
 
         private void Bt_Entrar_Prod_Click(object sender, EventArgs e)
         {
+            if (listaProdutos.SelectedItems.Count > 0)
+            {
+                TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, true);
+                telaEntrar.ShowDialog();
+                carregarListaEstoque();
+            }
+            else
+            {
+                MessageBox.Show("Não foi selecionado nenhum produto");
+            }
 
-            TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, true);
-            telaEntrar.ShowDialog();
-            carregarListaEstoque();
         }
 
         private void Bt_Retirar_Prod_Click(object sender, EventArgs e)
         {
-            TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, false);
-            telaEntrar.ShowDialog();
-            carregarListaEstoque();
+            if (listaProdutos.SelectedItems.Count > 0)
+            {
+                TelaEntrarProd telaEntrar = new TelaEntrarProd(listaProdutos.SelectedItems[0].SubItems[1].Text, false);
+                telaEntrar.ShowDialog();
+                carregarListaEstoque();
+            }
+            else
+            {
+                MessageBox.Show("Não foi selecionado nenhum produto");
+            }
+
         }
 
         private void Bt_Editar_Prod_Click(object sender, EventArgs e)
         {
-            TelaCriarProd telaCriar = new TelaCriarProd(false, listaProdutos.SelectedItems[0].SubItems[1].Text);
-            telaCriar.ShowDialog();
+            if (listaProdutos.SelectedItems.Count > 0)
+            {
+                TelaCriarProd telaCriar = new TelaCriarProd(false, Convert.ToInt32(listaProdutos.SelectedItems[0].SubItems[6]));
+                telaCriar.ShowDialog();
+                carregarListaEstoque();
+            }
+            else
+            {
+                MessageBox.Show("Não foi selecionado nenhum produto");
+            }
+
+        }
+
+        private void TxtBoxPesquisaProdEstoque_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

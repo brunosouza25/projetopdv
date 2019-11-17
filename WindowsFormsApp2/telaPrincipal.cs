@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class Form1 : Form
+    public partial class TelaPrincipal : Form
     {
         String Hora = (DateTime.Now.ToString("HH:mm:ss"));
         TelaDeEstoque estoque = new TelaDeEstoque();
@@ -18,7 +18,7 @@ namespace WindowsFormsApp2
         TelaDeRelatorios relatorio = new TelaDeRelatorios();
 
 
-        public Form1()
+        public TelaPrincipal()
         {
             InitializeComponent();
 

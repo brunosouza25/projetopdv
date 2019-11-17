@@ -12,6 +12,7 @@ namespace WindowsFormsApp2
         String caminho;
         string quantidade;
         private Produto prod = new Produto();
+        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         public TelaCriarProd(Boolean tipo)
         {
             InitializeComponent();
@@ -62,7 +63,14 @@ namespace WindowsFormsApp2
 
         private void BtCriar_Click(object sender, EventArgs e)
         {
-            
+            dadosProdutos.InserirDados(
+                prod.prodNome = TxtBoxNome.Text,
+                prod.prodValor = double.Parse(TxtBoxValor.Text),
+                prod.prodCusto = double.Parse(TxtBoxCusto.Text),
+                prod.prodQuantidade = 0,
+                prod.prodCodBarras = TxtBoxCodBarras.Text);
+
+            /*
             string[] arquivo;
             if(TxtBoxNome.Text != produto && tipo == false)
             {
@@ -91,6 +99,7 @@ namespace WindowsFormsApp2
                 Console.WriteLine(er.Message);
             }
             Close();
+            */
         }
 
         private void painel_CriarProd_Leave(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class Form1
+    partial class TelaPrincipal
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -57,7 +57,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1264, 100);
+            this.panel2.Size = new System.Drawing.Size(1264, 80);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 80);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -87,7 +87,7 @@
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button4.Location = new System.Drawing.Point(759, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(246, 94);
+            this.button4.Size = new System.Drawing.Size(246, 74);
             this.button4.TabIndex = 3;
             this.button4.Text = "Administrador";
             this.button4.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.BtRelatorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtRelatorio.Location = new System.Drawing.Point(507, 3);
             this.BtRelatorio.Name = "BtRelatorio";
-            this.BtRelatorio.Size = new System.Drawing.Size(246, 94);
+            this.BtRelatorio.Size = new System.Drawing.Size(246, 74);
             this.BtRelatorio.TabIndex = 2;
             this.BtRelatorio.Text = "Relatórios";
             this.BtRelatorio.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Location = new System.Drawing.Point(255, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(246, 94);
+            this.button2.Size = new System.Drawing.Size(246, 74);
             this.button2.TabIndex = 1;
             this.button2.Text = "Estoque";
             this.button2.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.btCaixa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btCaixa.Location = new System.Drawing.Point(3, 3);
             this.btCaixa.Name = "btCaixa";
-            this.btCaixa.Size = new System.Drawing.Size(246, 94);
+            this.btCaixa.Size = new System.Drawing.Size(246, 74);
             this.btCaixa.TabIndex = 0;
             this.btCaixa.Text = "Caixa";
             this.btCaixa.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.painel_hora.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painel_hora.Location = new System.Drawing.Point(1011, 3);
             this.painel_hora.Name = "painel_hora";
-            this.painel_hora.Size = new System.Drawing.Size(250, 94);
+            this.painel_hora.Size = new System.Drawing.Size(250, 74);
             this.painel_hora.TabIndex = 4;
             // 
             // Lab_Hora
@@ -148,9 +148,9 @@
             // painelPrincipal
             // 
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(0, 100);
+            this.painelPrincipal.Location = new System.Drawing.Point(0, 80);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(1264, 581);
+            this.painelPrincipal.Size = new System.Drawing.Size(1264, 601);
             this.painelPrincipal.TabIndex = 2;
             // 
             // timer1
@@ -158,14 +158,14 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Form1
+            // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.painelPrincipal);
             this.Controls.Add(this.panel2);
-            this.Name = "Form1";
+            this.Name = "TelaPrincipal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();

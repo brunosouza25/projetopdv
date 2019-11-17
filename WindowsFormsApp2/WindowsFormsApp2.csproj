@@ -46,23 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Dados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TelaDeLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TelaDeLogin.Designer.cs">
+      <DependentUpon>TelaDeLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="TelaPrincipal.Designer.cs">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
@@ -79,11 +78,12 @@
     <Compile Include="TelaDeRelatorios.Designer.cs">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaCadastroProd.cs">
+    <Compile Include=".cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TelaCadastroProd.Designer.cs">
-      <DependentUpon>TelaCadastroProd.cs</DependentUpon>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>.cs</DependentUpon>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TelaCriarProd.cs">
       <SubType>Form</SubType>
@@ -109,11 +109,11 @@
     <Compile Include="TelaEntrarProd.Designer.cs">
       <DependentUpon>TelaEntrarProd.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TelaDeLogin.resx">
+      <DependentUpon>TelaDeLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="TelaPrincipal.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,8 +130,8 @@
     <EmbeddedResource Include="TelaDeRelatorios.resx">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaCadastroProd.resx">
-      <DependentUpon>TelaCadastroProd.cs</DependentUpon>
+    <EmbeddedResource Include=".resx">
+      <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaCriarProd.resx">
       <DependentUpon>TelaCriarProd.cs</DependentUpon>
@@ -145,6 +145,17 @@
     <EmbeddedResource Include="TelaEntrarProd.resx">
       <DependentUpon>TelaEntrarProd.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Dados.xsc">
+      <DependentUpon>Dados.xsd</DependentUpon>
+    </None>
+    <None Include="Dados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dados.xss">
+      <DependentUpon>Dados.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

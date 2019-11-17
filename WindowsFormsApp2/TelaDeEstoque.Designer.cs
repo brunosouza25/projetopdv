@@ -46,6 +46,7 @@
             this.Bt_Entrar_Prod = new System.Windows.Forms.Button();
             this.Bt_Retirar_Prod = new System.Windows.Forms.Button();
             this.panel_Total = new System.Windows.Forms.Panel();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -102,6 +103,7 @@
             this.TxtBoxPesquisaProdEstoque.Name = "TxtBoxPesquisaProdEstoque";
             this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(1040, 43);
             this.TxtBoxPesquisaProdEstoque.TabIndex = 1;
+            this.TxtBoxPesquisaProdEstoque.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProdEstoque_TextChanged);
             this.TxtBoxPesquisaProdEstoque.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pesquisaProd_KeyDown);
             // 
             // listaProdutos
@@ -113,7 +115,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader6});
             this.listaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listaProdutos.FullRowSelect = true;
             this.listaProdutos.GridLines = true;
@@ -244,6 +247,11 @@
             this.panel_Total.Size = new System.Drawing.Size(206, 372);
             this.panel_Total.TabIndex = 1;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "";
+            this.columnHeader6.Width = 0;
+            // 
             // TelaDeEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +289,6 @@
         private System.Windows.Forms.Button Bt_Entrar_Prod;
         private System.Windows.Forms.Button Bt_Retirar_Prod;
         private System.Windows.Forms.Panel panel_Total;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

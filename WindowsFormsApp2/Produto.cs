@@ -44,7 +44,7 @@ namespace WindowsFormsApp2
         }
         public override string ToString()
         {
-            return this.prodNome + "\n" + this.prodCusto + "\n" + this.prodValor + "\n" + this.prodCodBarras;
+            return this.prodNome + "\n" + this.prodCusto + "\n" + this.prodValor + "\n" + this.prodCodBarras + "\n" + this.prodQuantidade;
         }
 
     }
