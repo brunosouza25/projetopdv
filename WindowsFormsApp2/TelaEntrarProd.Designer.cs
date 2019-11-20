@@ -66,6 +66,7 @@
             this.TxtBoxQuant.Size = new System.Drawing.Size(92, 20);
             this.TxtBoxQuant.TabIndex = 8;
             this.TxtBoxQuant.TextChanged += new System.EventHandler(this.TxtBoxQuant_TextChanged);
+            this.TxtBoxQuant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxQuant_KeyDown);
             // 
             // label3
             // 
@@ -95,6 +96,7 @@
             this.Controls.Add(this.painel_CriarProd);
             this.Name = "TelaEntrarProd";
             this.Text = "TelaEntrarProd";
+            this.Load += new System.EventHandler(this.TelaEntrarProd_Load);
             this.painel_CriarProd.ResumeLayout(false);
             this.painel_CriarProd.PerformLayout();
             this.ResumeLayout(false);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace WindowsFormsApp2
             this.itensDaLista = itensDaLista;
             this.total = total;
             LblTotal.Text = "R$: " + total.ToString("F2");
-            BtnFinalizar.Enabled = false;
+            BtnFinalizar.Enabled = true;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -36,54 +37,68 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        public bool valida()
+        {
+            bool ok = false;
+            double a;
+            if (double.TryParse(TxtBoxDinheiro.Text.Trim(), out a))
+            {
+                if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) == total)
+                {
+                    LblTroco.Text = "";
+                    LblFalta.Text = "";
+                    LblTroco.Text = "Troco R$: 0,00";
+                    ok = true;
+                }
+                else if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) > total)
+                {
+                    LblFalta.Text = "";
+                    LblTroco.Text = "Troco R$: " + (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) - total).ToString("F2");
+                    ok = true;
+                }
+                else
+                {
+                    LblTroco.Text = "";
+                    LblFalta.Text = "Falta: " + (total - Convert.ToDouble(TxtBoxDinheiro.Text.Trim())).ToString("F2");
+                    ok = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Deu ruim");
+            }
+            return ok;
         }
         public void confirmar()
         {
             dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy HH:mm"), total);
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
-            pagamento.InserirPagamento(Convert.ToDouble(TxtBoxDinheiro.Text.Trim()), Convert.ToInt32(aux2[0]["idVenda"]), 1);
+            //pagamento.InserirPagamento(Convert.ToDouble(TxtBoxDinheiro.Text.Trim()), Convert.ToInt32(aux2[0]["idVenda"]), 1);
+            pagamento.InserirPagamento(Convert.ToDouble(total), Convert.ToInt32(aux2[0]["idVenda"]), 1);
 
             int aux = itensDaLista.Length / 5;
             for (int i = 0; i < aux; i++)
             {
                 itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 4]), 1, total);
             }
-            for (int i = 0; i < aux; i++)
-            {
-                for (int j = 0; j <= 4; j++)
-                {
-                    Console.WriteLine(itensDaLista[i, j]);
 
-                    //inserir na tabela itensdavenda
-                }
-            }
+            Close();
         }
 
         private void TxtBoxDinheiro_Leave(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) >= total)
-            {
-                if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) == total)
-                {
-                    LblTroco.Text = "R$: 0,00";
-                    BtnFinalizar.Enabled = true;
-                }
-                
-            }
-            else
-            {
-                LblTroco.Text = "R$: " + (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) - total).ToString("F2");
-                BtnFinalizar.Enabled = true;
-                TxtBoxDinheiro.Text = "";
-            }
+            //valida();
         }
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
-            confirmar();
-            Close();
+            if (valida())
+                confirmar();
+
         }
 
         private void TxtBoxDinheiro_KeyPress(object sender, KeyPressEventArgs e)
@@ -95,24 +110,16 @@ namespace WindowsFormsApp2
         {
             if (e.KeyCode == Keys.Enter)
             {
-                
-                if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) >= total)
+                if (valida())
                 {
-                    if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) == total)
-                    {
-                        LblTroco.Text = "R$: 0,00";
-                        BtnFinalizar.Enabled = true;
-                    }
-
+                    this.TopMost = true;
+                    this.Activate();
+                    BtnFinalizar.Select();
                 }
-                else
-                {
-                    LblTroco.Text = "R$: " + (total - Convert.ToDouble(TxtBoxDinheiro.Text.Trim())).ToString("F2");
-                    BtnFinalizar.Enabled = false;
-                    TxtBoxDinheiro.Text = "";
-                }
-
             }
+
+
         }
     }
 }
+

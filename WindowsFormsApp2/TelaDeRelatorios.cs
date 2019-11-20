@@ -56,7 +56,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.dataTable1TableAdapter.FillBy(this.dados.DataTable1);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {
@@ -76,7 +76,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.dataTable1TableAdapter.FillBy(this.dados.DataTable1);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {
@@ -94,7 +94,20 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.dataTable1TableAdapter.FillBy(this.dados.DataTable1);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {

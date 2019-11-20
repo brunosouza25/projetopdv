@@ -75,35 +75,7 @@ namespace WindowsFormsApp2
                 Console.WriteLine(er.Message);
             }*/
         }
-        private string pesquisaListaCaixa(string pesquisa)
-        {
-            string caminho = @"c:\arquivos";
-            string[] arquivo;
-            try
-            {
-                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
-                Console.WriteLine(arquivos);
-                foreach (string prod in arquivos)
-                {
-                    arquivo = File.ReadAllLines(prod);
-                    if (arquivo[0] == pesquisa.Trim())
-                    {
-                        TxtBoxPesquisaProdEstoque.Text = "";
-                        ListViewItem item = new ListViewItem();
-                        for (int i = 0; i < arquivo.Length; i++)
-                        {
-                            item.SubItems.Add(arquivo[i]);
-                        }
-                    }
-                }
-            }
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }
-            return "0";
-        }
+
 
         private Boolean criar = false;
         Produto produtos = new Produto();
@@ -146,10 +118,7 @@ namespace WindowsFormsApp2
 
         private void pesquisaProd_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                pesquisaListaCaixa(TxtBoxPesquisaProdEstoque.Text);
-            }
+
         }
 
         private void Bt_Entrar_Prod_Click(object sender, EventArgs e)
@@ -194,11 +163,6 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Não foi selecionado nenhum produto");
             }
-
-        }
-
-        private void TxtBoxPesquisaProdEstoque_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

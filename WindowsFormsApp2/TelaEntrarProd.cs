@@ -23,8 +23,30 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.prodCodigo = prodCodigo;
             this.tipo = tipo;
-        }
 
+        }
+        private void valida()
+        {
+            int a;
+
+            if (int.TryParse(TxtBoxQuant.Text.Trim(), out a))
+            {
+                if (Convert.ToInt32(TxtBoxQuant.Text) < 1)
+                {
+                    MessageBox.Show("Não permitida a entrada de valores negativos");
+                    TxtBoxQuant.Text = "";
+                }
+                else
+                    addArquivos();
+            }
+            else
+            {
+                MessageBox.Show("Número invalido");
+            }
+
+
+            Close();
+        }
         private void addArquivos()
         {
             if (tipo)
@@ -42,10 +64,17 @@ namespace WindowsFormsApp2
                 int aux = Convert.ToInt32(TxtBoxQuant.Text);
 
                 var aux2 = dadosProdutos.PegaQuantidade(prodCodigo);
+                if (aux > Convert.ToInt32(aux2[0]["prodQuantidade"]))
+                {
+                    MessageBox.Show("Você está retirando um valor maior do que o contido em estoque");
+                }
+                else
+                {
+                    aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) - aux;
+                    dadosProdutos.AttQuantidade(aux, prodCodigo);
+                }
 
-                aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) - aux;
-
-                dadosProdutos.AttQuantidade(aux, prodCodigo);
+                
             }
             Close();
             /*
@@ -113,6 +142,23 @@ namespace WindowsFormsApp2
 
         }
 
+        private void TelaEntrarProd_Load(object sender, EventArgs e)
+        {
+
+            TxtBoxQuant.Select();
+
+        }
+
+        private void TxtBoxQuant_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                valida();
+                Close();
+            }
+
+        }
+
         private void BtCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -120,22 +166,7 @@ namespace WindowsFormsApp2
 
         private void BtEntrarQuant_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Convert.ToInt32(TxtBoxQuant.Text) < 1)
-                {
-                    MessageBox.Show("Não permitida a entrada de valores negativos");
-                    TxtBoxQuant.Text = "";
-                }
-                else
-                    addArquivos();
-            } catch (IOException er)
-            {
-                MessageBox.Show("Não é permitida a entrada de alfabeticos");
-                TxtBoxQuant.Text = "";
-            }
-            
-           Close();
+            valida();
 
         }
     }

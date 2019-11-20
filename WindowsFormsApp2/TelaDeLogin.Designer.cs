@@ -100,6 +100,7 @@
             this.TxtBoxPass.Name = "TxtBoxPass";
             this.TxtBoxPass.Size = new System.Drawing.Size(157, 20);
             this.TxtBoxPass.TabIndex = 4;
+            this.TxtBoxPass.UseSystemPasswordChar = true;
             this.TxtBoxPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPass_KeyDown);
             // 
             // TxtBoxUser
