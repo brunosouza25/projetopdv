@@ -5,6 +5,7 @@ CREATE TABLE MetodoDePagamento (
     idMPagamento INT PRIMARY KEY,
     pagamentoTipo VARCHAR(20)
 );
+insert into MetodoDePagamento VALUES (1, 'DINHEIRO')
 
 CREATE TABLE Pagamento (
     PagValor FLOAT,
@@ -41,16 +42,4 @@ ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idProduto) REFERENCES Produto (idProduto)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 
-select * from Venda
 
-SELECT prodQuantidade 
-FROM Produto
-WHERE  (idProduto = 1)
-
-drop database BD_PDV
-
-insert into MetodoDePagamento VALUES (1, 'DINHEIRO')
-
-select * from Pagamento
-
-select * from MetodoDePagamento
