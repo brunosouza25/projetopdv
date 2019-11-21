@@ -39,12 +39,16 @@
             this.TxtBoxNome = new System.Windows.Forms.TextBox();
             this.LabNomeProd = new System.Windows.Forms.Label();
             this.BtCriar = new System.Windows.Forms.Button();
+            this.ckboxInativo = new System.Windows.Forms.CheckBox();
+            this.lblInativo = new System.Windows.Forms.Label();
             this.painel_CriarProd.SuspendLayout();
             this.SuspendLayout();
             // 
             // painel_CriarProd
             // 
             this.painel_CriarProd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.painel_CriarProd.Controls.Add(this.lblInativo);
+            this.painel_CriarProd.Controls.Add(this.ckboxInativo);
             this.painel_CriarProd.Controls.Add(this.BtCancelar);
             this.painel_CriarProd.Controls.Add(this.TxtBoxCodBarras);
             this.painel_CriarProd.Controls.Add(this.label3);
@@ -74,7 +78,7 @@
             // 
             // TxtBoxCodBarras
             // 
-            this.TxtBoxCodBarras.Location = new System.Drawing.Point(240, 270);
+            this.TxtBoxCodBarras.Location = new System.Drawing.Point(239, 258);
             this.TxtBoxCodBarras.Name = "TxtBoxCodBarras";
             this.TxtBoxCodBarras.Size = new System.Drawing.Size(128, 20);
             this.TxtBoxCodBarras.TabIndex = 8;
@@ -82,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 273);
+            this.label3.Location = new System.Drawing.Point(83, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 7;
@@ -91,7 +95,7 @@
             // 
             // TxtBoxValor
             // 
-            this.TxtBoxValor.Location = new System.Drawing.Point(240, 197);
+            this.TxtBoxValor.Location = new System.Drawing.Point(239, 185);
             this.TxtBoxValor.Name = "TxtBoxValor";
             this.TxtBoxValor.Size = new System.Drawing.Size(128, 20);
             this.TxtBoxValor.TabIndex = 6;
@@ -99,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 204);
+            this.label2.Location = new System.Drawing.Point(83, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 5;
@@ -107,7 +111,7 @@
             // 
             // TxtBoxCusto
             // 
-            this.TxtBoxCusto.Location = new System.Drawing.Point(240, 126);
+            this.TxtBoxCusto.Location = new System.Drawing.Point(239, 114);
             this.TxtBoxCusto.Name = "TxtBoxCusto";
             this.TxtBoxCusto.Size = new System.Drawing.Size(128, 20);
             this.TxtBoxCusto.TabIndex = 4;
@@ -115,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 133);
+            this.label1.Location = new System.Drawing.Point(83, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 3;
@@ -123,7 +127,7 @@
             // 
             // TxtBoxNome
             // 
-            this.TxtBoxNome.Location = new System.Drawing.Point(240, 55);
+            this.TxtBoxNome.Location = new System.Drawing.Point(239, 43);
             this.TxtBoxNome.Name = "TxtBoxNome";
             this.TxtBoxNome.Size = new System.Drawing.Size(128, 20);
             this.TxtBoxNome.TabIndex = 2;
@@ -131,7 +135,7 @@
             // LabNomeProd
             // 
             this.LabNomeProd.AutoSize = true;
-            this.LabNomeProd.Location = new System.Drawing.Point(84, 62);
+            this.LabNomeProd.Location = new System.Drawing.Point(83, 50);
             this.LabNomeProd.Name = "LabNomeProd";
             this.LabNomeProd.Size = new System.Drawing.Size(93, 13);
             this.LabNomeProd.TabIndex = 1;
@@ -146,6 +150,24 @@
             this.BtCriar.Text = "Criar";
             this.BtCriar.UseVisualStyleBackColor = true;
             this.BtCriar.Click += new System.EventHandler(this.BtCriar_Click);
+            // 
+            // ckboxInativo
+            // 
+            this.ckboxInativo.AutoSize = true;
+            this.ckboxInativo.Location = new System.Drawing.Point(352, 317);
+            this.ckboxInativo.Name = "ckboxInativo";
+            this.ckboxInativo.Size = new System.Drawing.Size(15, 14);
+            this.ckboxInativo.TabIndex = 10;
+            this.ckboxInativo.UseVisualStyleBackColor = true;
+            // 
+            // lblInativo
+            // 
+            this.lblInativo.AutoSize = true;
+            this.lblInativo.Location = new System.Drawing.Point(307, 317);
+            this.lblInativo.Name = "lblInativo";
+            this.lblInativo.Size = new System.Drawing.Size(39, 13);
+            this.lblInativo.TabIndex = 11;
+            this.lblInativo.Text = "Inativo";
             // 
             // TelaCriarProd
             // 
@@ -174,5 +196,7 @@
         private System.Windows.Forms.TextBox TxtBoxCodBarras;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtCancelar;
+        private System.Windows.Forms.Label lblInativo;
+        private System.Windows.Forms.CheckBox ckboxInativo;
     }
 }

@@ -14,7 +14,7 @@ namespace WindowsFormsApp2
         public double prodValor { get; set; }
         public int prodQuantidade { get; set; }
         public string prodCodBarras { get; set; }
-
+        public Boolean prodEstado { get; set; }
         public Produto()
          {
 
