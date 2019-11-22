@@ -37,11 +37,11 @@ namespace WindowsFormsApp2
         public string[,] itensDaLista { get; set; }
         private void pesquisaListaCaixa()
         {
-            var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa);
-            var varPesquisa2 = dadosProdutos.pegarBancoCodigoBarras(pesquisa);
-            if (varPesquisa1.Count < 1 && varPesquisa2.Count < 1)
-                MessageBox.Show("Não existe esse produto no estoque");
-            else if (varPesquisa1.Count > 0)
+            var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
+            //var varPesquisa2 = dadosProdutos.pegarBancoCodigoBarras(pesquisa);
+            if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
+                MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
+            else
             { 
                 prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
                 prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
@@ -55,7 +55,7 @@ namespace WindowsFormsApp2
                 item.SubItems.Add(prod.idProduto.ToString());
                 total += prod.prodValor;
                 listaCaixa.Items.Add(item);
-            }else if(varPesquisa2.Count > 0){
+            }/*else if(varPesquisa2.Count > 0){
                 prod.prodNome = varPesquisa2[0]["prodNome"].ToString();
                 prod.prodValor = Convert.ToDouble(varPesquisa2[0]["prodValor"]);
                 prod.prodCodBarras = varPesquisa2[0]["prodCodBarras"].ToString();
@@ -68,7 +68,7 @@ namespace WindowsFormsApp2
                 item.SubItems.Add(prod.idProduto.ToString());
                 total += prod.prodValor;
                 listaCaixa.Items.Add(item);
-            }
+            }*/
             LblTotal.Text = "R$: " + total.ToString("F2");
 
             TxtBoxPesquisaProd.Text = "";
