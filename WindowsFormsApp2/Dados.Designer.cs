@@ -4617,13 +4617,13 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
-                " prodValor FROM Produto WHERE (prodNome = @prodNome)";
+                " prodEstado prodValor FROM Produto WHERE (prodNome = @prodNome)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
-                " prodValor FROM Produto WHERE (prodCodBarras = @prodCodBarras)";
+                " prodValor, prodEstado FROM Produto WHERE (prodCodBarras = @prodCodBarras)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
