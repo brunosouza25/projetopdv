@@ -37,53 +37,42 @@ namespace WindowsFormsApp2
         public string[,] itensDaLista { get; set; }
         private void pesquisaListaCaixa()
         {
-            var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa);
-            var varPesquisa2 = dadosProdutos.pegarBancoCodigoBarras(pesquisa);
+            var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
+            //var varPesquisa2 = dadosProdutos.pegarBancoCodigoBarras(pesquisa);
+            if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
+                MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
+            else
+            { 
+                prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
+                prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
+                prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
+                prod.idProduto = Convert.ToInt32(varPesquisa1[0]["idProduto"]);
 
-            if (varPesquisa1 == null)
-            {
-                MessageBox.Show("este produto está inativo");
-                if (varPesquisa1.Count < 1 && varPesquisa2.Count < 1)
-                    else
-                    MessageBox.Show("Não existe esse produto no estoque");
-                else if (varPesquisa1 != null && varPesquisa1[0]["prodEstado"] == "Inativo")
-                {
-                    MessageBox.Show("Este produto está inativo");
-                }
-                else if (varPesquisa1.Count > 0)
-                {
-                    prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
-                    prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
-                    prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
-                    prod.idProduto = Convert.ToInt32(varPesquisa1[0]["idProduto"]);
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add(prod.idProduto.ToString());
+                total += prod.prodValor;
+                listaCaixa.Items.Add(item);
+            }/*else if(varPesquisa2.Count > 0){
+                prod.prodNome = varPesquisa2[0]["prodNome"].ToString();
+                prod.prodValor = Convert.ToDouble(varPesquisa2[0]["prodValor"]);
+                prod.prodCodBarras = varPesquisa2[0]["prodCodBarras"].ToString();
+                prod.idProduto = Convert.ToInt32(varPesquisa2[0]["idProduto"]);
 
-                    ListViewItem item = new ListViewItem();
-                    item.SubItems.Add(prod.prodNome);
-                    item.SubItems.Add(prod.prodCodBarras);
-                    item.SubItems.Add(prod.prodValor.ToString());
-                    item.SubItems.Add(prod.idProduto.ToString());
-                    total += prod.prodValor;
-                    listaCaixa.Items.Add(item);
-                }
-                else if (varPesquisa2.Count > 0)
-                {
-                    prod.prodNome = varPesquisa2[0]["prodNome"].ToString();
-                    prod.prodValor = Convert.ToDouble(varPesquisa2[0]["prodValor"]);
-                    prod.prodCodBarras = varPesquisa2[0]["prodCodBarras"].ToString();
-                    prod.idProduto = Convert.ToInt32(varPesquisa2[0]["idProduto"]);
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add(prod.idProduto.ToString());
+                total += prod.prodValor;
+                listaCaixa.Items.Add(item);
+            }*/
+            LblTotal.Text = "R$: " + total.ToString("F2");
 
-                    ListViewItem item = new ListViewItem();
-                    item.SubItems.Add(prod.prodNome);
-                    item.SubItems.Add(prod.prodCodBarras);
-                    item.SubItems.Add(prod.prodValor.ToString());
-                    item.SubItems.Add(prod.idProduto.ToString());
-                    total += prod.prodValor;
-                    listaCaixa.Items.Add(item);
-                }
-                LblTotal.Text = "R$: " + total.ToString("F2");
+            TxtBoxPesquisaProd.Text = "";
 
-                TxtBoxPesquisaProd.Text = "";
-            }
         }
 
         private void listaDoCaixa_Load(object sender, EventArgs e)
@@ -109,7 +98,7 @@ namespace WindowsFormsApp2
         private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            { 
+            {
                 pesquisa = TxtBoxPesquisaProd.Text;
                 pesquisaListaCaixa();
             }
@@ -141,7 +130,6 @@ namespace WindowsFormsApp2
         private void Bt_Remover_Prod_Click(object sender, EventArgs e)
         {
             if (listaCaixa.SelectedItems.Count > 0)
-            {
                 for (int i = listaCaixa.SelectedItems.Count; i >= 1; i--)
                 {
                     ListViewItem item = new ListViewItem();
@@ -150,7 +138,6 @@ namespace WindowsFormsApp2
                     total -= Convert.ToDouble(item.SubItems[3].Text);
                     LblTotal.Text = "R$: " + total.ToString("F2");
                 }
-            }
             else
                 MessageBox.Show("Não tem nenhum item selecionado!");
             /* o trecho de  código sendo comentado aqui está dando problema, estou comentando

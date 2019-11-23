@@ -25,3 +25,20 @@ C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Wi
 C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeRelatorios.resources
 C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipal.resources
 C:\Users\bruno\Documents\Projetos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeLogin.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeLogin.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipal.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.listaDoCaixa.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeRelatorios.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCadastroProd.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCriarProd.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeEstoque.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDePagamento.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaEntrarProd.resources
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\bruno\Desktop\Nova pasta\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
