@@ -29,24 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabelaRelatoriosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dados = new WindowsFormsApp2.Dados();
-            this.tabelaRelatoriosTableAdapter = new WindowsFormsApp2.DadosTableAdapters.TabelaRelatoriosTableAdapter();
-            this.tableAdapterManager = new WindowsFormsApp2.DadosTableAdapters.TableAdapterManager();
-            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable2TableAdapter = new WindowsFormsApp2.DadosTableAdapters.DataTable2TableAdapter();
             this.idVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamentoTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaRelatoriosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dadosBindingSource)).BeginInit();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
             this.fillBy1ToolStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dados
+            // 
+            this.dados.DataSetName = "Dados";
+            this.dados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridView1
             // 
@@ -58,7 +60,7 @@
             this.vendDataDataGridViewTextBoxColumn,
             this.valorCompraDataGridViewTextBoxColumn,
             this.pagamentoTipoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tabelaRelatoriosBindingSource;
+            this.dataGridView1.DataSource = this.dataTable2BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
@@ -67,53 +69,14 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // tabelaRelatoriosBindingSource
+            // dataTable2BindingSource
             // 
-            this.tabelaRelatoriosBindingSource.DataMember = "TabelaRelatorios";
-            this.tabelaRelatoriosBindingSource.DataSource = this.dadosBindingSource;
+            this.dataTable2BindingSource.DataMember = "DataTable2";
+            this.dataTable2BindingSource.DataSource = this.dados;
             // 
-            // dadosBindingSource
+            // dataTable2TableAdapter
             // 
-            this.dadosBindingSource.DataSource = this.dados;
-            this.dadosBindingSource.Position = 0;
-            // 
-            // dados
-            // 
-            this.dados.DataSetName = "Dados";
-            this.dados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabelaRelatoriosTableAdapter
-            // 
-            this.tabelaRelatoriosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.ItensDaVendaTableAdapter = null;
-            this.tableAdapterManager.MetodoDePagamentoTableAdapter = null;
-            this.tableAdapterManager.PagamentoTableAdapter = null;
-            this.tableAdapterManager.ProdutoTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApp2.DadosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VendaTableAdapter = null;
-            // 
-            // fillBy1ToolStrip
-            // 
-            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillBy1ToolStripButton});
-            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.Size = new System.Drawing.Size(1310, 25);
-            this.fillBy1ToolStrip.TabIndex = 1;
-            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
-            // 
-            // fillBy1ToolStripButton
-            // 
-            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
-            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(45, 22);
-            this.fillBy1ToolStripButton.Text = "FillBy1";
-            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
+            this.dataTable2TableAdapter.ClearBeforeFill = true;
             // 
             // idVendaDataGridViewTextBoxColumn
             // 
@@ -143,6 +106,24 @@
             this.pagamentoTipoDataGridViewTextBoxColumn.Name = "pagamentoTipoDataGridViewTextBoxColumn";
             this.pagamentoTipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // fillBy1ToolStrip
+            // 
+            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy1ToolStripButton});
+            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(111, 25);
+            this.fillBy1ToolStrip.TabIndex = 1;
+            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
+            // 
+            // fillBy1ToolStripButton
+            // 
+            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
+            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy1ToolStripButton.Text = "FillBy1";
+            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
+            // 
             // TelaDeRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,10 +132,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "TelaDeRelatorios";
             this.Size = new System.Drawing.Size(1310, 581);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaRelatoriosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
             this.fillBy1ToolStrip.ResumeLayout(false);
             this.fillBy1ToolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -163,17 +143,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
         private Dados dados;
-        private DadosTableAdapters.TabelaRelatoriosTableAdapter tabelaRelatoriosTableAdapter;
-        private DadosTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
-        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
-        private System.Windows.Forms.BindingSource tabelaRelatoriosBindingSource;
-        private System.Windows.Forms.BindingSource dadosBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodNomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodValorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource dataTable2BindingSource;
+        private DadosTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVendaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vendDataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorCompraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamentoTipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
+        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
     }
 }

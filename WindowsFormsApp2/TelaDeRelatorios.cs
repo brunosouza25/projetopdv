@@ -56,7 +56,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.tabelaRelatoriosTableAdapter.FillBy1(this.dados.TabelaRelatorios);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {
@@ -76,7 +76,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.tabelaRelatoriosTableAdapter.FillBy1(this.dados.TabelaRelatorios);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {
@@ -94,7 +94,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.tabelaRelatoriosTableAdapter.FillBy1(this.dados.TabelaRelatorios);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {
@@ -107,7 +107,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.tabelaRelatoriosTableAdapter.FillBy1(this.dados.TabelaRelatorios);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {
@@ -120,7 +120,7 @@ namespace WindowsFormsApp2
         {
             try
             {
-                this.tabelaRelatoriosTableAdapter.FillBy1(this.dados.TabelaRelatorios);
+                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
             }
             catch (System.Exception ex)
             {

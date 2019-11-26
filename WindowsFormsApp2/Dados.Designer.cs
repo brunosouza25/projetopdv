@@ -34,7 +34,7 @@ namespace WindowsFormsApp2 {
         
         private ItensDaVendaDataTable tableItensDaVenda;
         
-        private TabelaRelatoriosDataTable tableTabelaRelatorios;
+        private DataTable2DataTable tableDataTable2;
         
         private global::System.Data.DataRelation relationFK__Pagamento__idMPa__5165187F;
         
@@ -89,8 +89,8 @@ namespace WindowsFormsApp2 {
                 if ((ds.Tables["ItensDaVenda"] != null)) {
                     base.Tables.Add(new ItensDaVendaDataTable(ds.Tables["ItensDaVenda"]));
                 }
-                if ((ds.Tables["TabelaRelatorios"] != null)) {
-                    base.Tables.Add(new TabelaRelatoriosDataTable(ds.Tables["TabelaRelatorios"]));
+                if ((ds.Tables["DataTable2"] != null)) {
+                    base.Tables.Add(new DataTable2DataTable(ds.Tables["DataTable2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -164,9 +164,9 @@ namespace WindowsFormsApp2 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TabelaRelatoriosDataTable TabelaRelatorios {
+        public DataTable2DataTable DataTable2 {
             get {
-                return this.tableTabelaRelatorios;
+                return this.tableDataTable2;
             }
         }
         
@@ -252,8 +252,8 @@ namespace WindowsFormsApp2 {
                 if ((ds.Tables["ItensDaVenda"] != null)) {
                     base.Tables.Add(new ItensDaVendaDataTable(ds.Tables["ItensDaVenda"]));
                 }
-                if ((ds.Tables["TabelaRelatorios"] != null)) {
-                    base.Tables.Add(new TabelaRelatoriosDataTable(ds.Tables["TabelaRelatorios"]));
+                if ((ds.Tables["DataTable2"] != null)) {
+                    base.Tables.Add(new DataTable2DataTable(ds.Tables["DataTable2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -318,10 +318,10 @@ namespace WindowsFormsApp2 {
                     this.tableItensDaVenda.InitVars();
                 }
             }
-            this.tableTabelaRelatorios = ((TabelaRelatoriosDataTable)(base.Tables["TabelaRelatorios"]));
+            this.tableDataTable2 = ((DataTable2DataTable)(base.Tables["DataTable2"]));
             if ((initTable == true)) {
-                if ((this.tableTabelaRelatorios != null)) {
-                    this.tableTabelaRelatorios.InitVars();
+                if ((this.tableDataTable2 != null)) {
+                    this.tableDataTable2.InitVars();
                 }
             }
             this.relationFK__Pagamento__idMPa__5165187F = this.Relations["FK__Pagamento__idMPa__5165187F"];
@@ -349,8 +349,8 @@ namespace WindowsFormsApp2 {
             base.Tables.Add(this.tableMetodoDePagamento);
             this.tableItensDaVenda = new ItensDaVendaDataTable();
             base.Tables.Add(this.tableItensDaVenda);
-            this.tableTabelaRelatorios = new TabelaRelatoriosDataTable();
-            base.Tables.Add(this.tableTabelaRelatorios);
+            this.tableDataTable2 = new DataTable2DataTable();
+            base.Tables.Add(this.tableDataTable2);
             this.relationFK__Pagamento__idMPa__5165187F = new global::System.Data.DataRelation("FK__Pagamento__idMPa__5165187F", new global::System.Data.DataColumn[] {
                         this.tableMetodoDePagamento.idMPagamentoColumn}, new global::System.Data.DataColumn[] {
                         this.tablePagamento.idMPagamentoColumn}, false);
@@ -369,7 +369,7 @@ namespace WindowsFormsApp2 {
             this.Relations.Add(this.relationFK__ItensDaVe__idVen__52593CB8);
             this.relationFK__ItensDaVe__idVen__5441852A = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__5441852A", new global::System.Data.DataColumn[] {
                         this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTabelaRelatorios.idVendaColumn}, false);
+                        this.tableDataTable2.idVendaColumn}, false);
             this.Relations.Add(this.relationFK__ItensDaVe__idVen__5441852A);
         }
         
@@ -405,7 +405,7 @@ namespace WindowsFormsApp2 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeTabelaRelatorios() {
+        private bool ShouldSerializeDataTable2() {
             return false;
         }
         
@@ -480,7 +480,7 @@ namespace WindowsFormsApp2 {
         public delegate void ItensDaVendaRowChangeEventHandler(object sender, ItensDaVendaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void TabelaRelatoriosRowChangeEventHandler(object sender, TabelaRelatoriosRowChangeEvent e);
+        public delegate void DataTable2RowChangeEventHandler(object sender, DataTable2RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2016,7 +2016,7 @@ namespace WindowsFormsApp2 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TabelaRelatoriosDataTable : global::System.Data.TypedTableBase<TabelaRelatoriosRow> {
+        public partial class DataTable2DataTable : global::System.Data.TypedTableBase<DataTable2Row> {
             
             private global::System.Data.DataColumn columnvendData;
             
@@ -2028,8 +2028,8 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosDataTable() {
-                this.TableName = "TabelaRelatorios";
+            public DataTable2DataTable() {
+                this.TableName = "DataTable2";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2037,7 +2037,7 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TabelaRelatoriosDataTable(global::System.Data.DataTable table) {
+            internal DataTable2DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2054,7 +2054,7 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected TabelaRelatoriosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DataTable2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2102,34 +2102,34 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosRow this[int index] {
+            public DataTable2Row this[int index] {
                 get {
-                    return ((TabelaRelatoriosRow)(this.Rows[index]));
+                    return ((DataTable2Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TabelaRelatoriosRowChangeEventHandler TabelaRelatoriosRowChanging;
+            public event DataTable2RowChangeEventHandler DataTable2RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TabelaRelatoriosRowChangeEventHandler TabelaRelatoriosRowChanged;
+            public event DataTable2RowChangeEventHandler DataTable2RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TabelaRelatoriosRowChangeEventHandler TabelaRelatoriosRowDeleting;
+            public event DataTable2RowChangeEventHandler DataTable2RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TabelaRelatoriosRowChangeEventHandler TabelaRelatoriosRowDeleted;
+            public event DataTable2RowChangeEventHandler DataTable2RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddTabelaRelatoriosRow(TabelaRelatoriosRow row) {
+            public void AddDataTable2Row(DataTable2Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosRow AddTabelaRelatoriosRow(System.DateTime vendData, double valorCompra, VendaRow parentVendaRowByFK__ItensDaVe__idVen__5441852A, string pagamentoTipo) {
-                TabelaRelatoriosRow rowTabelaRelatoriosRow = ((TabelaRelatoriosRow)(this.NewRow()));
+            public DataTable2Row AddDataTable2Row(System.DateTime vendData, double valorCompra, VendaRow parentVendaRowByFK__ItensDaVe__idVen__5441852A, string pagamentoTipo) {
+                DataTable2Row rowDataTable2Row = ((DataTable2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         vendData,
                         valorCompra,
@@ -2138,15 +2138,15 @@ namespace WindowsFormsApp2 {
                 if ((parentVendaRowByFK__ItensDaVe__idVen__5441852A != null)) {
                     columnValuesArray[2] = parentVendaRowByFK__ItensDaVe__idVen__5441852A[0];
                 }
-                rowTabelaRelatoriosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTabelaRelatoriosRow);
-                return rowTabelaRelatoriosRow;
+                rowDataTable2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDataTable2Row);
+                return rowDataTable2Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TabelaRelatoriosDataTable cln = ((TabelaRelatoriosDataTable)(base.Clone()));
+                DataTable2DataTable cln = ((DataTable2DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2154,7 +2154,7 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TabelaRelatoriosDataTable();
+                return new DataTable2DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2182,28 +2182,28 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosRow NewTabelaRelatoriosRow() {
-                return ((TabelaRelatoriosRow)(this.NewRow()));
+            public DataTable2Row NewDataTable2Row() {
+                return ((DataTable2Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TabelaRelatoriosRow(builder);
+                return new DataTable2Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TabelaRelatoriosRow);
+                return typeof(DataTable2Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TabelaRelatoriosRowChanged != null)) {
-                    this.TabelaRelatoriosRowChanged(this, new TabelaRelatoriosRowChangeEvent(((TabelaRelatoriosRow)(e.Row)), e.Action));
+                if ((this.DataTable2RowChanged != null)) {
+                    this.DataTable2RowChanged(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -2211,8 +2211,8 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TabelaRelatoriosRowChanging != null)) {
-                    this.TabelaRelatoriosRowChanging(this, new TabelaRelatoriosRowChangeEvent(((TabelaRelatoriosRow)(e.Row)), e.Action));
+                if ((this.DataTable2RowChanging != null)) {
+                    this.DataTable2RowChanging(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -2220,8 +2220,8 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TabelaRelatoriosRowDeleted != null)) {
-                    this.TabelaRelatoriosRowDeleted(this, new TabelaRelatoriosRowChangeEvent(((TabelaRelatoriosRow)(e.Row)), e.Action));
+                if ((this.DataTable2RowDeleted != null)) {
+                    this.DataTable2RowDeleted(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -2229,14 +2229,14 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TabelaRelatoriosRowDeleting != null)) {
-                    this.TabelaRelatoriosRowDeleting(this, new TabelaRelatoriosRowChangeEvent(((TabelaRelatoriosRow)(e.Row)), e.Action));
+                if ((this.DataTable2RowDeleting != null)) {
+                    this.DataTable2RowDeleting(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveTabelaRelatoriosRow(TabelaRelatoriosRow row) {
+            public void RemoveDataTable2Row(DataTable2Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -2263,7 +2263,7 @@ namespace WindowsFormsApp2 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TabelaRelatoriosDataTable";
+                attribute2.FixedValue = "DataTable2DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2409,12 +2409,12 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosRow[] GetTabelaRelatoriosRows() {
+            public DataTable2Row[] GetDataTable2Rows() {
                 if ((this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"] == null)) {
-                    return new TabelaRelatoriosRow[0];
+                    return new DataTable2Row[0];
                 }
                 else {
-                    return ((TabelaRelatoriosRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"])));
+                    return ((DataTable2Row[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"])));
                 }
             }
         }
@@ -2984,15 +2984,15 @@ namespace WindowsFormsApp2 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TabelaRelatoriosRow : global::System.Data.DataRow {
+        public partial class DataTable2Row : global::System.Data.DataRow {
             
-            private TabelaRelatoriosDataTable tableTabelaRelatorios;
+            private DataTable2DataTable tableDataTable2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TabelaRelatoriosRow(global::System.Data.DataRowBuilder rb) : 
+            internal DataTable2Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTabelaRelatorios = ((TabelaRelatoriosDataTable)(this.Table));
+                this.tableDataTable2 = ((DataTable2DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3000,14 +3000,14 @@ namespace WindowsFormsApp2 {
             public System.DateTime vendData {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableTabelaRelatorios.vendDataColumn]));
+                        return ((global::System.DateTime)(this[this.tableDataTable2.vendDataColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'vendData\' na tabela \'TabelaRelatorios\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'vendData\' na tabela \'DataTable2\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTabelaRelatorios.vendDataColumn] = value;
+                    this[this.tableDataTable2.vendDataColumn] = value;
                 }
             }
             
@@ -3016,14 +3016,14 @@ namespace WindowsFormsApp2 {
             public double valorCompra {
                 get {
                     try {
-                        return ((double)(this[this.tableTabelaRelatorios.valorCompraColumn]));
+                        return ((double)(this[this.tableDataTable2.valorCompraColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valorCompra\' na tabela \'TabelaRelatorios\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valorCompra\' na tabela \'DataTable2\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTabelaRelatorios.valorCompraColumn] = value;
+                    this[this.tableDataTable2.valorCompraColumn] = value;
                 }
             }
             
@@ -3032,14 +3032,14 @@ namespace WindowsFormsApp2 {
             public int idVenda {
                 get {
                     try {
-                        return ((int)(this[this.tableTabelaRelatorios.idVendaColumn]));
+                        return ((int)(this[this.tableDataTable2.idVendaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idVenda\' na tabela \'TabelaRelatorios\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idVenda\' na tabela \'DataTable2\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTabelaRelatorios.idVendaColumn] = value;
+                    this[this.tableDataTable2.idVendaColumn] = value;
                 }
             }
             
@@ -3048,14 +3048,14 @@ namespace WindowsFormsApp2 {
             public string pagamentoTipo {
                 get {
                     try {
-                        return ((string)(this[this.tableTabelaRelatorios.pagamentoTipoColumn]));
+                        return ((string)(this[this.tableDataTable2.pagamentoTipoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'pagamentoTipo\' na tabela \'TabelaRelatorios\' é DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'pagamentoTipo\' na tabela \'DataTable2\' é DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTabelaRelatorios.pagamentoTipoColumn] = value;
+                    this[this.tableDataTable2.pagamentoTipoColumn] = value;
                 }
             }
             
@@ -3073,49 +3073,49 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsvendDataNull() {
-                return this.IsNull(this.tableTabelaRelatorios.vendDataColumn);
+                return this.IsNull(this.tableDataTable2.vendDataColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetvendDataNull() {
-                this[this.tableTabelaRelatorios.vendDataColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable2.vendDataColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsvalorCompraNull() {
-                return this.IsNull(this.tableTabelaRelatorios.valorCompraColumn);
+                return this.IsNull(this.tableDataTable2.valorCompraColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetvalorCompraNull() {
-                this[this.tableTabelaRelatorios.valorCompraColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable2.valorCompraColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidVendaNull() {
-                return this.IsNull(this.tableTabelaRelatorios.idVendaColumn);
+                return this.IsNull(this.tableDataTable2.idVendaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidVendaNull() {
-                this[this.tableTabelaRelatorios.idVendaColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable2.idVendaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IspagamentoTipoNull() {
-                return this.IsNull(this.tableTabelaRelatorios.pagamentoTipoColumn);
+                return this.IsNull(this.tableDataTable2.pagamentoTipoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpagamentoTipoNull() {
-                this[this.tableTabelaRelatorios.pagamentoTipoColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable2.pagamentoTipoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3293,22 +3293,22 @@ namespace WindowsFormsApp2 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class TabelaRelatoriosRowChangeEvent : global::System.EventArgs {
+        public class DataTable2RowChangeEvent : global::System.EventArgs {
             
-            private TabelaRelatoriosRow eventRow;
+            private DataTable2Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosRowChangeEvent(TabelaRelatoriosRow row, global::System.Data.DataRowAction action) {
+            public DataTable2RowChangeEvent(DataTable2Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TabelaRelatoriosRow Row {
+            public DataTable2Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -4007,7 +4007,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
                 " prodValor FROM Produto WHERE ((prodNome = @prodNome or prodCodBarras = @prodCod" +
-                "Barras)  and prodEstado = 0 and prodQuantidade > 0)";
+                "Barras) and prodEstado = 0 and prodQuantidade > 0)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5802,7 +5802,7 @@ SELECT idItens, idVenda, idProduto, itensQtd, ItensTotal FROM ItensDaVenda WHERE
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TabelaRelatoriosTableAdapter : global::System.ComponentModel.Component {
+    public partial class DataTable2TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -5816,7 +5816,7 @@ SELECT idItens, idVenda, idProduto, itensQtd, ItensTotal FROM ItensDaVenda WHERE
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public TabelaRelatoriosTableAdapter() {
+        public DataTable2TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -5913,7 +5913,7 @@ SELECT idItens, idVenda, idProduto, itensQtd, ItensTotal FROM ItensDaVenda WHERE
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "TabelaRelatorios";
+            tableMapping.DataSetTable = "DataTable2";
             tableMapping.ColumnMappings.Add("vendData", "vendData");
             tableMapping.ColumnMappings.Add("valorCompra", "valorCompra");
             tableMapping.ColumnMappings.Add("idVenda", "idVenda");
@@ -5934,14 +5934,14 @@ SELECT idItens, idVenda, idProduto, itensQtd, ItensTotal FROM ItensDaVenda WHERE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.vendData, Venda.valorCompra
-FROM            MetodoDePagamento INNER JOIN
-                         Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
-                         Venda ON Pagamento.idVenda = Venda.idVenda";
+            this._commandCollection[0].CommandText = @"SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData
+FROM            Venda INNER JOIN
+                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
+                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        Venda.vendData, Venda.valorCompra, MetodoDePagamento.pagamentoTipo, Pagamento.idVenda
+            this._commandCollection[1].CommandText = @"SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData
 FROM            Venda INNER JOIN
                          Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
                          MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento";
@@ -5952,7 +5952,7 @@ FROM            Venda INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillRelatorio(Dados.TabelaRelatoriosDataTable dataTable) {
+        public virtual int FillRelatorio(Dados.DataTable2DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5965,9 +5965,9 @@ FROM            Venda INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Dados.TabelaRelatoriosDataTable GetData() {
+        public virtual Dados.DataTable2DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Dados.TabelaRelatoriosDataTable dataTable = new Dados.TabelaRelatoriosDataTable();
+            Dados.DataTable2DataTable dataTable = new Dados.DataTable2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5976,7 +5976,7 @@ FROM            Venda INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(Dados.TabelaRelatoriosDataTable dataTable) {
+        public virtual int FillBy1(Dados.DataTable2DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5989,9 +5989,9 @@ FROM            Venda INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.TabelaRelatoriosDataTable GetDataBy1() {
+        public virtual Dados.DataTable2DataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            Dados.TabelaRelatoriosDataTable dataTable = new Dados.TabelaRelatoriosDataTable();
+            Dados.DataTable2DataTable dataTable = new Dados.DataTable2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
