@@ -1,0 +1,115 @@
+[33mcommit f47190b45fbe57ef3c1a0fe0110ac010244dc76b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: f519d86 41a3c3e
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Tue Nov 26 19:48:30 2019 -0300
+
+    Implementado o desconto no estoque a cada item vendido
+
+[33mcommit f519d862926c7de2184f62ac03e854117a1c89f2[m
+Merge: 1b172c3 46931a1
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Tue Nov 26 19:40:11 2019 -0300
+
+    Implementado o desconto no estoque a cada item vendido
+
+[33mcommit 41a3c3ef38cc1b3ddff74537529cf872268782f5[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sat Nov 23 23:17:45 2019 -0300
+
+    implementado a geração de pdfs
+
+[33mcommit 631ed3b7ef34da9917129c4e0ca174d0f5c03854[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sat Nov 23 08:12:10 2019 -0300
+
+    Correções do commit anterior
+
+[33mcommit 1b172c3b86c3f10356f366ee0845adbea55fa09a[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Fri Nov 22 20:33:44 2019 -0300
+
+    melhorias no relatório do banco e na pesquisa para adicionar itens ao caixa
+
+[33mcommit 46931a11ed32db7fda0ff4d62df1b4723d32134d[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Fri Nov 22 14:31:31 2019 -0300
+
+    Melhorado a consulta de produtos no caixa
+
+[33mcommit a6de7b1f14a427e6046b57580928ffde92089704[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Wed Nov 20 22:47:48 2019 -0300
+
+    Implementado a funcionalidade de inativar produto, tanto no banco como no estoque do sistema
+
+[33mcommit 62b8e6785964a3df923241bd8e606c1f803c9f62[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Wed Nov 20 17:29:20 2019 -0300
+
+    Implementado leitura por código de barras na venda
+
+[33mcommit d123b43ceb031b8f13bb241d9f7db0506e405bbe[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Tue Nov 19 22:43:45 2019 -0300
+
+    Realizado várias validações e alterações na interface
+
+[33mcommit 41591fe1d1070350ea56169a69032881d8fd7b8b[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sun Nov 17 20:47:36 2019 -0300
+
+    Projeto já funcional
+
+[33mcommit ffe8c3e675dbf3ce9c0424436cb8aa4ce82f7abb[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sun Nov 17 05:53:07 2019 -0300
+
+    Trocando arquivo por BDD
+
+[33mcommit 6eabc5a94b7ba359fd64d8b732c9b80822d4bbee[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Fri Nov 15 23:55:00 2019 -0300
+
+    Implementado a tela de relatórios
+
+[33mcommit ff38ff9877b8563cdbe8d35b387f01df3f5cbf68[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Mon Nov 11 21:27:05 2019 -0300
+
+    Função retirar produtos do estoque implementada
+
+[33mcommit cb944c4b6973eae3d0493ccacce4a89b8263637c[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Mon Nov 11 21:16:53 2019 -0300
+
+    Função adicionar produtos ao estoque implementada
+
+[33mcommit 8e1228fba35759c8df55b780e7d9db3623ac5a03[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sun Nov 10 23:19:40 2019 -0300
+
+    tentando implementar a funcionalidade de entrar produtos ao estoque
+
+[33mcommit ed1dc2f6d5fcc773a6bce013408881aa2496ea0a[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sat Nov 9 20:20:05 2019 -0300
+
+    Implementado os métodos para criação de arquivo e atualização dda listview do estoque
+
+[33mcommit bea93e04ba542ea9e5f97208ed5f214c989a5303[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Sat Nov 9 00:04:14 2019 -0300
+
+    Implementando leitura e escrita de arquivos para manipular os dados
+
+[33mcommit 8a2e1c1ba57940dd4b9d0ad0fdf75fda644bd718[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Thu Nov 7 21:02:57 2019 -0300
+
+    Implementando as estruturas de interfaces
+
+[33mcommit f4ed05a37940f8cedae663990dfb4905ab5a8065[m
+Author: Bruno Souza <brunopw25@gmail.com>
+Date:   Tue Nov 5 20:21:58 2019 -0300
+
+    Primeiro Commit

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dados = new WindowsFormsApp2.Dados();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.idVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +41,16 @@
             this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.BtnSalvarPDF = new System.Windows.Forms.Button();
+=======
+            this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable2TableAdapter = new WindowsFormsApp2.DadosTableAdapters.DataTable2TableAdapter();
+            this.idVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagamentoTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
+>>>>>>> origin
             ((System.ComponentModel.ISupportInitialize)(this.dados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
@@ -69,6 +80,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1310, 495);
             this.dataGridView1.TabIndex = 0;
             // 
+<<<<<<< HEAD
             // idVendaDataGridViewTextBoxColumn
             // 
             this.idVendaDataGridViewTextBoxColumn.DataPropertyName = "idVenda";
@@ -78,6 +90,26 @@
             // 
             // vendDataDataGridViewTextBoxColumn
             // 
+=======
+            // dataTable2BindingSource
+            // 
+            this.dataTable2BindingSource.DataMember = "DataTable2";
+            this.dataTable2BindingSource.DataSource = this.dados;
+            // 
+            // dataTable2TableAdapter
+            // 
+            this.dataTable2TableAdapter.ClearBeforeFill = true;
+            // 
+            // idVendaDataGridViewTextBoxColumn
+            // 
+            this.idVendaDataGridViewTextBoxColumn.DataPropertyName = "idVenda";
+            this.idVendaDataGridViewTextBoxColumn.HeaderText = "Código da Venda";
+            this.idVendaDataGridViewTextBoxColumn.Name = "idVendaDataGridViewTextBoxColumn";
+            this.idVendaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vendDataDataGridViewTextBoxColumn
+            // 
+>>>>>>> origin
             this.vendDataDataGridViewTextBoxColumn.DataPropertyName = "vendData";
             this.vendDataDataGridViewTextBoxColumn.HeaderText = "Data da Venda";
             this.vendDataDataGridViewTextBoxColumn.Name = "vendDataDataGridViewTextBoxColumn";
@@ -97,6 +129,7 @@
             this.pagamentoTipoDataGridViewTextBoxColumn.Name = "pagamentoTipoDataGridViewTextBoxColumn";
             this.pagamentoTipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+<<<<<<< HEAD
             // dataTable2BindingSource
             // 
             this.dataTable2BindingSource.DataMember = "DataTable2";
@@ -106,13 +139,19 @@
             // 
             this.dataTable2TableAdapter.ClearBeforeFill = true;
             // 
+=======
+>>>>>>> origin
             // fillBy1ToolStrip
             // 
             this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fillBy1ToolStripButton});
             this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+<<<<<<< HEAD
             this.fillBy1ToolStrip.Size = new System.Drawing.Size(1310, 25);
+=======
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(111, 25);
+>>>>>>> origin
             this.fillBy1ToolStrip.TabIndex = 1;
             this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
             // 
@@ -120,6 +159,7 @@
             // 
             this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
+<<<<<<< HEAD
             this.fillBy1ToolStripButton.Size = new System.Drawing.Size(142, 22);
             this.fillBy1ToolStripButton.Text = "Gerar relatório de vendas";
             this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
@@ -134,6 +174,11 @@
             this.BtnSalvarPDF.TabIndex = 2;
             this.BtnSalvarPDF.UseVisualStyleBackColor = true;
             this.BtnSalvarPDF.Click += new System.EventHandler(this.BtnSalvarPDF_Click);
+=======
+            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy1ToolStripButton.Text = "FillBy1";
+            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
+>>>>>>> origin
             // 
             // TelaDeRelatorios
             // 
@@ -167,6 +212,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamentoTipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
         private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
+<<<<<<< HEAD
         private System.Windows.Forms.Button BtnSalvarPDF;
+=======
+>>>>>>> origin
     }
 }

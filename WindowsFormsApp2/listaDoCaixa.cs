@@ -38,11 +38,19 @@ namespace WindowsFormsApp2
         private void pesquisaListaCaixa()
         {
             var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
+<<<<<<< HEAD
             if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
                 MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
             else
             {
                 Produto prod = new Produto();
+=======
+            //var varPesquisa2 = dadosProdutos.pegarBancoCodigoBarras(pesquisa);
+            if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
+                MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
+            else
+            { 
+>>>>>>> origin
                 prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
                 prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
                 prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
@@ -53,6 +61,7 @@ namespace WindowsFormsApp2
                 item.SubItems.Add(prod.prodCodBarras);
                 item.SubItems.Add(prod.prodValor.ToString());
                 item.SubItems.Add(prod.idProduto.ToString());
+<<<<<<< HEAD
 
                 bool permitido = false;
                 bool achou = false;
@@ -108,6 +117,28 @@ namespace WindowsFormsApp2
               Console.WriteLine(listaProduto[0].prodQuantidade);*/
             }
             TxtBoxPesquisaProd.Text = "";
+=======
+                total += prod.prodValor;
+                listaCaixa.Items.Add(item);
+            }/*else if(varPesquisa2.Count > 0){
+                prod.prodNome = varPesquisa2[0]["prodNome"].ToString();
+                prod.prodValor = Convert.ToDouble(varPesquisa2[0]["prodValor"]);
+                prod.prodCodBarras = varPesquisa2[0]["prodCodBarras"].ToString();
+                prod.idProduto = Convert.ToInt32(varPesquisa2[0]["idProduto"]);
+
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add(prod.idProduto.ToString());
+                total += prod.prodValor;
+                listaCaixa.Items.Add(item);
+            }*/
+            LblTotal.Text = "R$: " + total.ToString("F2");
+
+            TxtBoxPesquisaProd.Text = "";
+
+>>>>>>> origin
         }
 
         private void listaDoCaixa_Load(object sender, EventArgs e)
