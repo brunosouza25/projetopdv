@@ -109,7 +109,6 @@
             this.TxtBoxUser.Name = "TxtBoxUser";
             this.TxtBoxUser.Size = new System.Drawing.Size(157, 20);
             this.TxtBoxUser.TabIndex = 2;
-            this.TxtBoxUser.Enter += new System.EventHandler(this.TxtBoxUser_Enter);
             // 
             // label1
             // 
@@ -128,7 +127,8 @@
             this.ClientSize = new System.Drawing.Size(474, 313);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDeLogin";
-            this.Text = "TelaDeLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PDV";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

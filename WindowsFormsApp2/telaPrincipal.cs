@@ -37,6 +37,7 @@ namespace WindowsFormsApp2
         public void mudarEstoque()
         {
             estoque.Visible = !estoque.Visible;
+            estoque.carregarListaEstoque();
         }
         public void mudarCaixa()
         {
@@ -47,12 +48,18 @@ namespace WindowsFormsApp2
             relatorio.Visible = !relatorio.Visible;
         }
 
-        private void Label2_Click(object sender, EventArgs e)
+        private void BtRelatorio_Click(object sender, EventArgs e)
         {
-
+            if (estoque.Visible)
+            {
+                mudarEstoque();
+            }
+            if (caixa.Visible)
+            {
+                mudarCaixa();
+            }
+            relatorio.Visible = true;
         }
-
-
         private void BtCaixa_Click(object sender, EventArgs e)
         {
             if (estoque.Visible)
@@ -78,36 +85,8 @@ namespace WindowsFormsApp2
             }
 
             estoque.Visible = true;
+            estoque.carregarListaEstoque();
 
-            
-        }
-
-        private void PainelPrincipal_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
@@ -116,29 +95,6 @@ namespace WindowsFormsApp2
         {
            Lab_Hora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
            timer1.Start();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (estoque.Visible)
-            {
-                mudarEstoque();
-            }
-            if (caixa.Visible)
-            {
-                mudarCaixa();
-            }
-            relatorio.Visible = true;
-        }
-
-        private void Lab_Hora_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

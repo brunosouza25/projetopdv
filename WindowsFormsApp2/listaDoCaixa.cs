@@ -26,7 +26,6 @@ namespace WindowsFormsApp2
         public listaDoCaixa()
         {
             InitializeComponent();
-
         }
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         Produto prod = new Produto();
@@ -35,14 +34,15 @@ namespace WindowsFormsApp2
         string pesquisa;
         double total = 0;
         public string[,] itensDaLista { get; set; }
+        List<Produto> listaProduto = new List<Produto>();
         private void pesquisaListaCaixa()
         {
             var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
-            //var varPesquisa2 = dadosProdutos.pegarBancoCodigoBarras(pesquisa);
             if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
                 MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
             else
-            { 
+            {
+                Produto prod = new Produto();
                 prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
                 prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
                 prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
@@ -53,46 +53,66 @@ namespace WindowsFormsApp2
                 item.SubItems.Add(prod.prodCodBarras);
                 item.SubItems.Add(prod.prodValor.ToString());
                 item.SubItems.Add(prod.idProduto.ToString());
-                total += prod.prodValor;
-                listaCaixa.Items.Add(item);
-            }/*else if(varPesquisa2.Count > 0){
-                prod.prodNome = varPesquisa2[0]["prodNome"].ToString();
-                prod.prodValor = Convert.ToDouble(varPesquisa2[0]["prodValor"]);
-                prod.prodCodBarras = varPesquisa2[0]["prodCodBarras"].ToString();
-                prod.idProduto = Convert.ToInt32(varPesquisa2[0]["idProduto"]);
 
-                ListViewItem item = new ListViewItem();
-                item.SubItems.Add(prod.prodNome);
-                item.SubItems.Add(prod.prodCodBarras);
-                item.SubItems.Add(prod.prodValor.ToString());
-                item.SubItems.Add(prod.idProduto.ToString());
-                total += prod.prodValor;
-                listaCaixa.Items.Add(item);
-            }*/
-            LblTotal.Text = "R$: " + total.ToString("F2");
+                bool permitido = false;
+                bool achou = false;
+                for (int j = 0; j < listaProduto.Count; j++)
+                {
+                    if (listaProduto[j].prodNome == prod.prodNome)
+                    {
+                        int aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
 
+                        if (listaProduto[j].prodQuantidade < aux)
+                        {
+                            listaProduto[j].prodQuantidade += 1;
+                            achou = true;
+                            permitido = true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não tem mais esse item em estoque para ser adicionado a venda");
+                            permitido = false;
+                            achou = true;
+                        }
+                    }
+                }
+                if (!achou)
+                {
+                    prod.prodQuantidade = 1;
+                    listaProduto.Add(prod);
+                    permitido = true;
+                }
+                if (permitido)
+                {
+                    total += prod.prodValor;
+                    LblTotal.Text = "R$: " + total.ToString("F2");
+                    listaCaixa.Items.Add(item);
+                }
+                /*  //int i = listaProduto.IndexOf(prod);
+                  if (listaProduto[i].prodQuantidade >= aux)
+                  {
+                  }
+                  else
+                  {
+                      listaProduto[i].prodQuantidade += 1;
+                      listaCaixa.Items.Add(item);
+                  }
+              }
+              else
+              {
+                  prod.prodQuantidade = 1;
+                  listaProduto.Add(prod);
+                  listaCaixa.Items.Add(item);
+              }
+              Console.WriteLine(listaProduto[0].prodQuantidade);*/
+            }
             TxtBoxPesquisaProd.Text = "";
-
         }
 
         private void listaDoCaixa_Load(object sender, EventArgs e)
         {
             TxtBoxPesquisaProd.Select();
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
@@ -111,6 +131,7 @@ namespace WindowsFormsApp2
                 listaCaixa.Items.Clear();
                 LblTotal.Text = "R$: 0,00";
                 total = 0;
+                listaProduto.Clear();
             }
             TxtBoxPesquisaProd.Select();
         }
@@ -122,11 +143,6 @@ namespace WindowsFormsApp2
             TxtBoxPesquisaProd.Select();
         }
 
-        private void listaCaixa_ControlRemoved(object sender, ControlEventArgs e)
-        {
-
-        }
-
         private void Bt_Remover_Prod_Click(object sender, EventArgs e)
         {
             if (listaCaixa.SelectedItems.Count > 0)
@@ -134,9 +150,17 @@ namespace WindowsFormsApp2
                 {
                     ListViewItem item = new ListViewItem();
                     item = listaCaixa.SelectedItems[i - 1];
+                    for (int j = 0; j < listaProduto.Count; j++)
+                    {
+                        if (listaProduto[j].prodNome == listaCaixa.SelectedItems[i-1].SubItems[1].Text)
+                        {
+                            listaProduto[j].prodQuantidade -= 1;
+                        }
+                    }
                     listaCaixa.Items.Remove(listaCaixa.SelectedItems[i - 1]);
                     total -= Convert.ToDouble(item.SubItems[3].Text);
                     LblTotal.Text = "R$: " + total.ToString("F2");
+
                 }
             else
                 MessageBox.Show("Não tem nenhum item selecionado!");
@@ -151,17 +175,6 @@ namespace WindowsFormsApp2
             TxtBoxPesquisaProd.Select();
         }
 
-        private void TxtBoxPesquisaProd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnFinalizarVenda_Click(object sender, EventArgs e)
-        {
-
-        
-        }
-
         private void BtnFinalizarVenda_Click_1(object sender, EventArgs e)
         {
             if (listaCaixa.Items.Count > 0)
@@ -169,7 +182,6 @@ namespace WindowsFormsApp2
                 if (total > 0)
                 {
                     itensDaLista = new string[this.listaCaixa.Items.Count, 5];
-                    Console.WriteLine(listaCaixa.Items[0].SubItems[4].Text + "oi");
                     for (int i = 0; i < this.listaCaixa.Items.Count; i++)
                     {
                         for (int j = 0; j <= 4; j++)
@@ -179,13 +191,23 @@ namespace WindowsFormsApp2
                     }
                     TelaDePagamento telaDePagamento = new TelaDePagamento(itensDaLista, total);
                     telaDePagamento.ShowDialog();
+                    listaProduto.Clear();
+                    listaCaixa.Items.Clear();
                 }
+
             }
             else
             {
                 MessageBox.Show("Não tem itens na venda");
             }
+            total = 0;
+            LblTotal.Text = "";
             TxtBoxPesquisaProd.Select();
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

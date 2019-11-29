@@ -21,6 +21,8 @@ namespace WindowsFormsApp2
             BtCriar.Text = "Criar";
             lblInativo.Visible = false;
             ckboxInativo.Visible = false;
+            prod.prodNome = "bruno ";
+            Console.WriteLine(prod.prodNome);
         }
         public TelaCriarProd(Boolean tipo, int codigoProd)
         {
@@ -53,46 +55,49 @@ namespace WindowsFormsApp2
             }*/
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtCriar_Click(object sender, EventArgs e)
         {
-            if (tipo)
+            double a, b;
+            if (TxtBoxCodBarras.Text == "" | TxtBoxCusto.Text == "" | TxtBoxNome.Text == "" | TxtBoxValor.Text == "")
+                MessageBox.Show("Por favor, preencha todos os campos!");
+            else if (double.TryParse(TxtBoxCusto.Text.Trim(), out a) && (double.TryParse(TxtBoxValor.Text.Trim(), out b)))
             {
-                dadosProdutos.InserirDados(
-                    prod.prodNome = TxtBoxNome.Text,
-                    prod.prodValor = double.Parse(TxtBoxValor.Text),
-                    prod.prodCusto = double.Parse(TxtBoxCusto.Text),
-                    prod.prodQuantidade = 0,
-                    prod.prodCodBarras = TxtBoxCodBarras.Text,
-                    0);
-                Close();
+                if (tipo)
+                {
+                    dadosProdutos.InserirDados(
+                        prod.prodNome = TxtBoxNome.Text,
+                        prod.prodValor = double.Parse(TxtBoxValor.Text),
+                        prod.prodCusto = double.Parse(TxtBoxCusto.Text),
+                        prod.prodQuantidade = 0,
+                        prod.prodCodBarras = TxtBoxCodBarras.Text,
+                        0);
+                    Close();
+                }
+                else
+                {
+                    if (ckboxInativo.Checked)
+                        checkbox = 1;
+                    else
+                        checkbox = 0;
+
+
+                    /*if (Convert.ToInt32(varProd[0]["prodQuantidade"]) > 0 && ckboxInativo.Checked)
+                        MessageBox.Show("Não foi possível inativar pois ainda tem o produto em estoque");
+                    */
+
+                    dadosProdutos.AttDados(
+                        TxtBoxNome.Text,
+                        Convert.ToDouble(TxtBoxValor.Text),
+                        Convert.ToDouble(TxtBoxCusto.Text),
+                        TxtBoxCodBarras.Text,
+                        checkbox,
+                        codigoProd);
+                    Close();
+
+                }
             }
             else
-            {
-                if (ckboxInativo.Checked)
-                    checkbox = 1;
-                else
-                    checkbox = 0;
-
-
-                /*if (Convert.ToInt32(varProd[0]["prodQuantidade"]) > 0 && ckboxInativo.Checked)
-                    MessageBox.Show("Não foi possível inativar pois ainda tem o produto em estoque");
-                */
-
-                dadosProdutos.AttDados(
-                    TxtBoxNome.Text,
-                    Convert.ToDouble(TxtBoxValor.Text),
-                    Convert.ToDouble(TxtBoxCusto.Text),
-                    TxtBoxCodBarras.Text,
-                    checkbox,
-                    codigoProd);
-                Close();
-
-            }
+                MessageBox.Show("Valores não permitidos");
             /*
             string[] arquivo;
             if(TxtBoxNome.Text != produto && tipo == false)
@@ -123,11 +128,6 @@ namespace WindowsFormsApp2
             }
             Close();
             */
-        }
-
-        private void painel_CriarProd_Leave(object sender, EventArgs e)
-        {
-
         }
 
         private void BtCancelar_Click(object sender, EventArgs e)

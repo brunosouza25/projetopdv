@@ -63,12 +63,11 @@
             this.pagamentoTipoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.dataTable2BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1310, 553);
+            this.dataGridView1.Size = new System.Drawing.Size(1310, 495);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idVendaDataGridViewTextBoxColumn
             // 
@@ -127,11 +126,12 @@
             // 
             // BtnSalvarPDF
             // 
+            this.BtnSalvarPDF.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.pdf;
+            this.BtnSalvarPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnSalvarPDF.Location = new System.Drawing.Point(205, 3);
             this.BtnSalvarPDF.Name = "BtnSalvarPDF";
-            this.BtnSalvarPDF.Size = new System.Drawing.Size(105, 25);
+            this.BtnSalvarPDF.Size = new System.Drawing.Size(81, 77);
             this.BtnSalvarPDF.TabIndex = 2;
-            this.BtnSalvarPDF.Text = "Salvar PDF";
             this.BtnSalvarPDF.UseVisualStyleBackColor = true;
             this.BtnSalvarPDF.Click += new System.EventHandler(this.BtnSalvarPDF_Click);
             // 

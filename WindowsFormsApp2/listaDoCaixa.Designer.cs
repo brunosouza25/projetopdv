@@ -40,18 +40,30 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.Bt_Cancelar_Venda = new System.Windows.Forms.Button();
-            this.Bt_Add_Prod = new System.Windows.Forms.Button();
-            this.Bt_Remover_Prod = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblTotal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Bt_Remover_Prod = new System.Windows.Forms.Button();
+            this.Bt_Add_Prod = new System.Windows.Forms.Button();
             this.BtnFinalizarVenda = new System.Windows.Forms.Button();
+            this.Bt_Cancelar_Venda = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,9 +80,8 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.548388F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.45161F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(908, 595);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1016, 575);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // listaCaixa
             // 
@@ -86,13 +97,12 @@
             this.listaCaixa.FullRowSelect = true;
             this.listaCaixa.GridLines = true;
             this.listaCaixa.HideSelection = false;
-            this.listaCaixa.Location = new System.Drawing.Point(3, 53);
+            this.listaCaixa.Location = new System.Drawing.Point(3, 52);
             this.listaCaixa.Name = "listaCaixa";
-            this.listaCaixa.Size = new System.Drawing.Size(902, 539);
+            this.listaCaixa.Size = new System.Drawing.Size(1010, 520);
             this.listaCaixa.TabIndex = 2;
             this.listaCaixa.UseCompatibleStateImageBehavior = false;
             this.listaCaixa.View = System.Windows.Forms.View.Details;
-            this.listaCaixa.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.listaCaixa_ControlRemoved);
             // 
             // columnHeader9
             // 
@@ -102,11 +112,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Produto";
+            this.columnHeader1.Width = 123;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Cod de Barras";
-            this.columnHeader13.Width = 95;
+            this.columnHeader13.Width = 159;
             // 
             // columnHeader12
             // 
@@ -125,16 +136,15 @@
             this.TxtBoxPesquisaProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBoxPesquisaProd.Location = new System.Drawing.Point(3, 3);
             this.TxtBoxPesquisaProd.Name = "TxtBoxPesquisaProd";
-            this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(902, 44);
+            this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(1010, 44);
             this.TxtBoxPesquisaProd.TabIndex = 1;
-            this.TxtBoxPesquisaProd.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProd_TextChanged);
             this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.31013F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.68987F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.93355F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.06646F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,7 +152,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 601);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 581);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -152,68 +162,114 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(914, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1022, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(350, 601);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.80723F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.19277F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(242, 581);
             this.tableLayoutPanel3.TabIndex = 1;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.BtnFinalizarVenda, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Bt_Cancelar_Venda, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Bt_Add_Prod, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Bt_Remover_Prod, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel4, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel5, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.panel6, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 303);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 304);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(344, 295);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(236, 274);
             this.tableLayoutPanel4.TabIndex = 0;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
-            // Bt_Cancelar_Venda
+            // panel4
             // 
-            this.Bt_Cancelar_Venda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Cancelar_Venda.Location = new System.Drawing.Point(175, 150);
-            this.Bt_Cancelar_Venda.Name = "Bt_Cancelar_Venda";
-            this.Bt_Cancelar_Venda.Size = new System.Drawing.Size(166, 142);
-            this.Bt_Cancelar_Venda.TabIndex = 3;
-            this.Bt_Cancelar_Venda.Text = "Cancelar Venda";
-            this.Bt_Cancelar_Venda.UseVisualStyleBackColor = true;
-            this.Bt_Cancelar_Venda.Click += new System.EventHandler(this.Bt_Cancelar_Venda_Click);
+            this.panel4.Controls.Add(this.Bt_Remover_Prod);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(121, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(112, 131);
+            this.panel4.TabIndex = 7;
             // 
-            // Bt_Add_Prod
+            // label2
             // 
-            this.Bt_Add_Prod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Add_Prod.Location = new System.Drawing.Point(3, 3);
-            this.Bt_Add_Prod.Name = "Bt_Add_Prod";
-            this.Bt_Add_Prod.Size = new System.Drawing.Size(166, 141);
-            this.Bt_Add_Prod.TabIndex = 1;
-            this.Bt_Add_Prod.Text = "Adicionar Produto";
-            this.Bt_Add_Prod.UseVisualStyleBackColor = true;
-            this.Bt_Add_Prod.Click += new System.EventHandler(this.Bt_Add_Prod_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Retirar item";
             // 
-            // Bt_Remover_Prod
+            // panel3
             // 
-            this.Bt_Remover_Prod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Bt_Remover_Prod.Location = new System.Drawing.Point(175, 3);
-            this.Bt_Remover_Prod.Name = "Bt_Remover_Prod";
-            this.Bt_Remover_Prod.Size = new System.Drawing.Size(166, 141);
-            this.Bt_Remover_Prod.TabIndex = 4;
-            this.Bt_Remover_Prod.Text = "Remover Produto";
-            this.Bt_Remover_Prod.UseVisualStyleBackColor = true;
-            this.Bt_Remover_Prod.Click += new System.EventHandler(this.Bt_Remover_Prod_Click);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.Bt_Add_Prod);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(112, 131);
+            this.panel3.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Adicionar item";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.BtnFinalizarVenda);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 140);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(112, 131);
+            this.panel5.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Finalizar venda";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.Bt_Cancelar_Venda);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(121, 140);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(112, 131);
+            this.panel6.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(-2, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 16);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Cancelar venda";
             // 
             // tableLayoutPanel5
             // 
@@ -229,7 +285,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.67347F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.32653F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(344, 294);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(236, 295);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // panel1
@@ -238,14 +294,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 240);
+            this.panel1.Size = new System.Drawing.Size(230, 240);
             this.panel1.TabIndex = 0;
             // 
             // LblTotal
             // 
             this.LblTotal.AutoSize = true;
             this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.Location = new System.Drawing.Point(66, 125);
+            this.LblTotal.Location = new System.Drawing.Point(3, 144);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(197, 33);
             this.LblTotal.TabIndex = 0;
@@ -256,19 +312,58 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 249);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(338, 42);
+            this.panel2.Size = new System.Drawing.Size(230, 43);
             this.panel2.TabIndex = 1;
+            // 
+            // Bt_Remover_Prod
+            // 
+            this.Bt_Remover_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.remover_do_carrinho1;
+            this.Bt_Remover_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bt_Remover_Prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Remover_Prod.Location = new System.Drawing.Point(0, 0);
+            this.Bt_Remover_Prod.Name = "Bt_Remover_Prod";
+            this.Bt_Remover_Prod.Size = new System.Drawing.Size(112, 104);
+            this.Bt_Remover_Prod.TabIndex = 6;
+            this.Bt_Remover_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Remover_Prod.Click += new System.EventHandler(this.Bt_Remover_Prod_Click);
+            // 
+            // Bt_Add_Prod
+            // 
+            this.Bt_Add_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.adicionar_ao_carrinho1;
+            this.Bt_Add_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bt_Add_Prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Add_Prod.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Bt_Add_Prod.Location = new System.Drawing.Point(0, 0);
+            this.Bt_Add_Prod.Name = "Bt_Add_Prod";
+            this.Bt_Add_Prod.Size = new System.Drawing.Size(112, 104);
+            this.Bt_Add_Prod.TabIndex = 2;
+            this.Bt_Add_Prod.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Bt_Add_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Add_Prod.Click += new System.EventHandler(this.Bt_Add_Prod_Click);
             // 
             // BtnFinalizarVenda
             // 
-            this.BtnFinalizarVenda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnFinalizarVenda.Location = new System.Drawing.Point(3, 150);
+            this.BtnFinalizarVenda.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.shopping_bag;
+            this.BtnFinalizarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnFinalizarVenda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnFinalizarVenda.Location = new System.Drawing.Point(0, 0);
             this.BtnFinalizarVenda.Name = "BtnFinalizarVenda";
-            this.BtnFinalizarVenda.Size = new System.Drawing.Size(166, 142);
-            this.BtnFinalizarVenda.TabIndex = 5;
-            this.BtnFinalizarVenda.Text = "Finalizar Venda";
+            this.BtnFinalizarVenda.Size = new System.Drawing.Size(112, 97);
+            this.BtnFinalizarVenda.TabIndex = 8;
             this.BtnFinalizarVenda.UseVisualStyleBackColor = true;
             this.BtnFinalizarVenda.Click += new System.EventHandler(this.BtnFinalizarVenda_Click_1);
+            // 
+            // Bt_Cancelar_Venda
+            // 
+            this.Bt_Cancelar_Venda.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.error;
+            this.Bt_Cancelar_Venda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bt_Cancelar_Venda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Cancelar_Venda.Location = new System.Drawing.Point(0, 0);
+            this.Bt_Cancelar_Venda.Name = "Bt_Cancelar_Venda";
+            this.Bt_Cancelar_Venda.Size = new System.Drawing.Size(112, 94);
+            this.Bt_Cancelar_Venda.TabIndex = 7;
+            this.Bt_Cancelar_Venda.UseVisualStyleBackColor = true;
+            this.Bt_Cancelar_Venda.Click += new System.EventHandler(this.Bt_Cancelar_Venda_Click);
             // 
             // listaDoCaixa
             // 
@@ -276,13 +371,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "listaDoCaixa";
-            this.Size = new System.Drawing.Size(1264, 601);
+            this.Size = new System.Drawing.Size(1264, 581);
             this.Load += new System.EventHandler(this.listaDoCaixa_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -302,14 +405,22 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button Bt_Cancelar_Venda;
-        private System.Windows.Forms.Button Bt_Add_Prod;
-        private System.Windows.Forms.Button Bt_Remover_Prod;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LblTotal;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button Bt_Add_Prod;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button Bt_Remover_Prod;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnFinalizarVenda;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Bt_Cancelar_Venda;
     }
 }

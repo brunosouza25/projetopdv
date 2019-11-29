@@ -132,19 +132,13 @@ namespace WindowsFormsApp2
             }
             */
         }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtBoxQuant_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void TelaEntrarProd_Load(object sender, EventArgs e)
         {
-
+            if (tipo)
+                this.Text = "Entrada de Produtos";
+            else
+                this.Text = "Retirada de Produtos";
             TxtBoxQuant.Select();
 
         }
@@ -157,6 +151,11 @@ namespace WindowsFormsApp2
                 Close();
             }
 
+        }
+
+        private void digitouAlgo(object sender, KeyEventArgs e)
+        {
+            valida();
         }
 
         private void BtCancelar_Click(object sender, EventArgs e)

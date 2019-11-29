@@ -32,18 +32,22 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.BtRelatorio = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btCaixa = new System.Windows.Forms.Button();
             this.painel_hora = new System.Windows.Forms.Panel();
             this.Lab_Hora = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.painelPrincipal = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btCaixa = new System.Windows.Forms.Button();
+            this.BtEstoque = new System.Windows.Forms.Button();
+            this.BtRelatorio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.painel_hora.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // fileSystemWatcher1
@@ -57,107 +61,134 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1264, 80);
+            this.panel2.Size = new System.Drawing.Size(1264, 104);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.button4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BtRelatorio, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btCaixa, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.painel_hora, 4, 0);
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.painel_hora, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 104);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(759, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(246, 74);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Administrador";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // BtRelatorio
-            // 
-            this.BtRelatorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtRelatorio.Location = new System.Drawing.Point(507, 3);
-            this.BtRelatorio.Name = "BtRelatorio";
-            this.BtRelatorio.Size = new System.Drawing.Size(246, 74);
-            this.BtRelatorio.TabIndex = 2;
-            this.BtRelatorio.Text = "Relatórios";
-            this.BtRelatorio.UseVisualStyleBackColor = true;
-            this.BtRelatorio.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(255, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(246, 74);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Estoque";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.BtEstoque_Click);
-            // 
-            // btCaixa
-            // 
-            this.btCaixa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btCaixa.Location = new System.Drawing.Point(3, 3);
-            this.btCaixa.Name = "btCaixa";
-            this.btCaixa.Size = new System.Drawing.Size(246, 74);
-            this.btCaixa.TabIndex = 0;
-            this.btCaixa.Text = "Caixa";
-            this.btCaixa.UseVisualStyleBackColor = true;
-            this.btCaixa.Click += new System.EventHandler(this.BtCaixa_Click);
             // 
             // painel_hora
             // 
             this.painel_hora.Controls.Add(this.Lab_Hora);
             this.painel_hora.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painel_hora.Location = new System.Drawing.Point(1011, 3);
+            this.painel_hora.Location = new System.Drawing.Point(845, 3);
             this.painel_hora.Name = "painel_hora";
-            this.painel_hora.Size = new System.Drawing.Size(250, 74);
+            this.painel_hora.Size = new System.Drawing.Size(416, 98);
             this.painel_hora.TabIndex = 4;
             // 
             // Lab_Hora
             // 
             this.Lab_Hora.AutoSize = true;
-            this.Lab_Hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Hora.Location = new System.Drawing.Point(14, 31);
+            this.Lab_Hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lab_Hora.Location = new System.Drawing.Point(93, 25);
             this.Lab_Hora.Name = "Lab_Hora";
-            this.Lab_Hora.Size = new System.Drawing.Size(70, 25);
+            this.Lab_Hora.Size = new System.Drawing.Size(100, 37);
             this.Lab_Hora.TabIndex = 0;
             this.Lab_Hora.Text = "label1";
-            this.Lab_Hora.Click += new System.EventHandler(this.Lab_Hora_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btCaixa);
+            this.panel1.Controls.Add(this.BtEstoque);
+            this.panel1.Controls.Add(this.BtRelatorio);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(415, 98);
+            this.panel1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(278, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Relatórios";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(147, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Estoque";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "PDV";
             // 
             // painelPrincipal
             // 
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(0, 80);
+            this.painelPrincipal.Location = new System.Drawing.Point(0, 104);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(1264, 601);
+            this.painelPrincipal.Size = new System.Drawing.Size(1264, 577);
             this.painelPrincipal.TabIndex = 2;
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btCaixa
+            // 
+            this.btCaixa.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.caixa_de_dinheiro;
+            this.btCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btCaixa.Location = new System.Drawing.Point(0, 0);
+            this.btCaixa.Name = "btCaixa";
+            this.btCaixa.Size = new System.Drawing.Size(95, 74);
+            this.btCaixa.TabIndex = 1;
+            this.btCaixa.UseVisualStyleBackColor = true;
+            this.btCaixa.Click += new System.EventHandler(this.BtCaixa_Click);
+            // 
+            // BtEstoque
+            // 
+            this.BtEstoque.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.estoque;
+            this.BtEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtEstoque.Location = new System.Drawing.Point(138, 0);
+            this.BtEstoque.Name = "BtEstoque";
+            this.BtEstoque.Size = new System.Drawing.Size(95, 74);
+            this.BtEstoque.TabIndex = 1;
+            this.BtEstoque.UseVisualStyleBackColor = true;
+            this.BtEstoque.Click += new System.EventHandler(this.BtEstoque_Click);
+            // 
+            // BtRelatorio
+            // 
+            this.BtRelatorio.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.relatorios;
+            this.BtRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtRelatorio.Location = new System.Drawing.Point(276, 0);
+            this.BtRelatorio.Name = "BtRelatorio";
+            this.BtRelatorio.Size = new System.Drawing.Size(95, 74);
+            this.BtRelatorio.TabIndex = 2;
+            this.BtRelatorio.UseVisualStyleBackColor = true;
+            this.BtRelatorio.Click += new System.EventHandler(this.BtRelatorio_Click);
             // 
             // TelaPrincipal
             // 
@@ -167,13 +198,16 @@
             this.Controls.Add(this.painelPrincipal);
             this.Controls.Add(this.panel2);
             this.Name = "TelaPrincipal";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PDV";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.painel_hora.ResumeLayout(false);
             this.painel_hora.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -183,14 +217,17 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button BtRelatorio;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btCaixa;
         private System.Windows.Forms.Panel painelPrincipal;
         private System.Windows.Forms.Panel painel_hora;
         private System.Windows.Forms.Label Lab_Hora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button BtEstoque;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btCaixa;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

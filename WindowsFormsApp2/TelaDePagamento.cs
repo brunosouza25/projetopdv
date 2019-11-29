@@ -20,6 +20,7 @@ namespace WindowsFormsApp2
         DadosTableAdapters.VendaTableAdapter dadosVenda = new DadosTableAdapters.VendaTableAdapter();
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
+        DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
 
         public TelaDePagamento(string[,] itensDaLista, double total)
         {
@@ -30,10 +31,6 @@ namespace WindowsFormsApp2
             BtnFinalizar.Enabled = true;
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -68,41 +65,39 @@ namespace WindowsFormsApp2
             }
             else
             {
-                MessageBox.Show("Deu ruim");
+                MessageBox.Show("Dados invalidos");
             }
             return ok;
         }
         public void confirmar()
         {
-            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy HH:mm"), total);
+            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total);
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
+            var itens = itensVenda.GetData();
             //pagamento.InserirPagamento(Convert.ToDouble(TxtBoxDinheiro.Text.Trim()), Convert.ToInt32(aux2[0]["idVenda"]), 1);
             pagamento.InserirPagamento(Convert.ToDouble(total), Convert.ToInt32(aux2[0]["idVenda"]), 1);
 
             int aux = itensDaLista.Length / 5;
             for (int i = 0; i < aux; i++)
             {
+                
                 itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 4]), 1, total);
-            }
+                var prodQuant = produto.PegaQuantidadePorCod(itensDaLista[i, 2].ToString());
 
+                produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"])-1, itensDaLista[i, 2].ToString()); 
+            }
+            MessageBox.Show("Venda realizada com sucesso!");
             Close();
         }
 
-        private void TxtBoxDinheiro_Leave(object sender, EventArgs e)
-        {
-            //valida();
-        }
+
+
 
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             if (valida())
                 confirmar();
-
-        }
-
-        private void TxtBoxDinheiro_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
         }
 

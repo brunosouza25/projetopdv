@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
         }
 
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        private void carregarListaEstoque()
+        public void carregarListaEstoque()
         {
             Produto prod = new Produto();
             string[] produtos = new string[6];
@@ -113,26 +113,6 @@ namespace WindowsFormsApp2
             carregarListaEstoque();
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void listaProdutos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pesquisaProd_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void pesquisaProd_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void Bt_Entrar_Prod_Click(object sender, EventArgs e)
         {
             if (listaProdutos.SelectedItems.Count > 0)
@@ -199,5 +179,9 @@ namespace WindowsFormsApp2
 
         }
 
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

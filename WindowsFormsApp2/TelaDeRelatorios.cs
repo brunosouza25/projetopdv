@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
-using System.Drawing;
+
 
 namespace WindowsFormsApp2
 {
@@ -20,40 +20,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void painelExibirRelatorio_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void painelTiposRelatorios_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
@@ -68,12 +34,6 @@ namespace WindowsFormsApp2
 
         }
 
-       
-
-    
-        
-
-
 
         private void fillByToolStripButton_Click_1(object sender, EventArgs e)
         {
@@ -85,11 +45,6 @@ namespace WindowsFormsApp2
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -144,7 +99,9 @@ namespace WindowsFormsApp2
                 //colocando margens no pdf
                 doc.SetMargins(40, 40, 40, 80);
 
-                string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio.pdf";
+                string aux = DateTime.Now.ToString("dd-MM-yyyy");
+
+                string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio_" + aux.ToString()+".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -166,16 +123,16 @@ namespace WindowsFormsApp2
 
                 for (int i = 0; i < varProd.Count(); i++)
                 {
-                    table.AddCell(varProd[i]["vendData"].ToString());
+                    table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy"));
                     table.AddCell(varProd[i]["idVenda"].ToString());
-                    table.AddCell(varProd[i]["valorCompra"].ToString());
+                    table.AddCell("R$ "+Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                     table.AddCell(varProd[i]["pagamentoTipo"].ToString());
 
 
                 }
                 doc.Add(table);
                 doc.Close();
-
+                MessageBox.Show("Relatório gerado com sucesso!");
             }catch(IOException er)
             {
                 MessageBox.Show("Não foi possível criar o arquivo, o mesmo pode estar sendo executado por outro programa");

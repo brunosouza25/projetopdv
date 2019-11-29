@@ -35,20 +35,13 @@ namespace WindowsFormsApp2
 
         }
 
-        private void TxtBoxUser_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void TxtBoxPass_Enter(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void TxtBoxPass_KeyDown(object sender, KeyEventArgs e)
         {

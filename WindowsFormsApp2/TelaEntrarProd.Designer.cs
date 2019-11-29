@@ -38,7 +38,7 @@
             // 
             // painel_CriarProd
             // 
-            this.painel_CriarProd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.painel_CriarProd.BackColor = System.Drawing.SystemColors.Highlight;
             this.painel_CriarProd.Controls.Add(this.BtCancelar);
             this.painel_CriarProd.Controls.Add(this.TxtBoxQuant);
             this.painel_CriarProd.Controls.Add(this.label3);
@@ -53,7 +53,7 @@
             // 
             this.BtCancelar.Location = new System.Drawing.Point(267, 158);
             this.BtCancelar.Name = "BtCancelar";
-            this.BtCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtCancelar.Size = new System.Drawing.Size(75, 40);
             this.BtCancelar.TabIndex = 9;
             this.BtCancelar.Text = "Cancelar";
             this.BtCancelar.UseVisualStyleBackColor = true;
@@ -65,24 +65,23 @@
             this.TxtBoxQuant.Name = "TxtBoxQuant";
             this.TxtBoxQuant.Size = new System.Drawing.Size(92, 20);
             this.TxtBoxQuant.TabIndex = 8;
-            this.TxtBoxQuant.TextChanged += new System.EventHandler(this.TxtBoxQuant_TextChanged);
             this.TxtBoxQuant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxQuant_KeyDown);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 75);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(39, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.Size = new System.Drawing.Size(155, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Quantidade:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // BtEntrarQuant
             // 
             this.BtEntrarQuant.Location = new System.Drawing.Point(72, 158);
             this.BtEntrarQuant.Name = "BtEntrarQuant";
-            this.BtEntrarQuant.Size = new System.Drawing.Size(75, 23);
+            this.BtEntrarQuant.Size = new System.Drawing.Size(80, 40);
             this.BtEntrarQuant.TabIndex = 0;
             this.BtEntrarQuant.Text = "Entrar";
             this.BtEntrarQuant.UseVisualStyleBackColor = true;
@@ -95,7 +94,6 @@
             this.ClientSize = new System.Drawing.Size(419, 248);
             this.Controls.Add(this.painel_CriarProd);
             this.Name = "TelaEntrarProd";
-            this.Text = "TelaEntrarProd";
             this.Load += new System.EventHandler(this.TelaEntrarProd_Load);
             this.painel_CriarProd.ResumeLayout(false);
             this.painel_CriarProd.PerformLayout();
