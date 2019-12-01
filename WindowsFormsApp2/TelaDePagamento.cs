@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -21,6 +13,7 @@ namespace WindowsFormsApp2
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
+        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();   
 
         public TelaDePagamento(string[,] itensDaLista, double total)
         {
@@ -41,9 +34,16 @@ namespace WindowsFormsApp2
         {
             bool ok = false;
             double a;
+            string valor = TxtBoxDinheiro.Text;
+            string valor2 = total.ToString("F2");
             if (double.TryParse(TxtBoxDinheiro.Text.Trim(), out a))
             {
-                if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) == total)
+                
+                /*if (TxtBoxDinheiro.Text.Contains(","))
+                {
+                    valor = TxtBoxDinheiro.Text.Replace(",", ".");
+                }*/
+                if (Convert.ToDouble(valor) == Convert.ToDouble(valor2))
                 {
                     LblTroco.Text = "";
                     LblFalta.Text = "";
@@ -87,6 +87,9 @@ namespace WindowsFormsApp2
 
                 produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"])-1, itensDaLista[i, 2].ToString()); 
             }
+            var idCaixa = caixa.pegarIDUltimoCaixa();
+            var totalCaixa = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+            caixa.attValorAtual(total + Convert.ToDouble(totalCaixa[0]["valorAtual"]), Convert.ToInt32(idCaixa[0]["idCaixa"]));
             MessageBox.Show("Venda realizada com sucesso!");
             Close();
         }

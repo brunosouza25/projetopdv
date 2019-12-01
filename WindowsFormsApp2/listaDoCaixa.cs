@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
+using System.Windows.Forms; 
 
 namespace WindowsFormsApp2
 {
@@ -26,15 +20,55 @@ namespace WindowsFormsApp2
         public listaDoCaixa()
         {
             InitializeComponent();
+            BtnFinalizarVenda.Enabled = false;
+            Bt_Add_Prod.Enabled = false;
+            Bt_Remover_Prod.Enabled = false;
+            Bt_Cancelar_Venda.Enabled = false;
+            TxtBoxPesquisaProd.Enabled = false;
         }
+        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         Produto prod = new Produto();
         List<Produto> produtos = new List<Produto>();
+        
 
         string pesquisa;
         double total = 0;
         public string[,] itensDaLista { get; set; }
         List<Produto> listaProduto = new List<Produto>();
+        public void travarBotoes()
+        {
+            if (BtnFinalizarVenda.Enabled)
+            {
+
+                var idCaixa = caixa.pegarIDUltimoCaixa();
+                var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+
+                caixa.fecharCaixa(Convert.ToDouble(aux[0]["valorAtual"]), Convert.ToByte(0), Convert.ToInt32(aux[0]["idCaixa"]));
+                MessageBox.Show("Caixa fechado com Sucesso");
+                btnFecharCaixa.Visible = false;
+                btnAbrirCaixa.Visible = true;
+                lblCaixa.Text = "Abrir Caixa";
+
+            }
+            else
+            {
+
+                var idCaixa = caixa.pegarIDUltimoCaixa();
+                var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+                caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyy"), 1);
+                MessageBox.Show("Caixa aberto com sucesso");
+                btnFecharCaixa.Visible = true;
+                btnAbrirCaixa.Visible = false;
+                lblCaixa.Text = "Fechar Caixa";
+            }
+            BtnFinalizarVenda.Enabled = !BtnFinalizarVenda.Enabled;
+            Bt_Add_Prod.Enabled = !Bt_Add_Prod.Enabled;
+            Bt_Cancelar_Venda.Enabled = !Bt_Cancelar_Venda.Enabled;
+            Bt_Remover_Prod.Enabled = !Bt_Remover_Prod.Enabled;
+            TxtBoxPesquisaProd.Enabled = !TxtBoxPesquisaProd.Enabled;
+
+        }
         private void pesquisaListaCaixa()
         {
             var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
@@ -209,6 +243,23 @@ namespace WindowsFormsApp2
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+
+        private void btnAbrirCaixa_Click(object sender, EventArgs e)
+        {
+            travarBotoes();
+        }
+
+        private void btnFecharCaixa_Click(object sender, EventArgs e)
+        {
+            travarBotoes();
+        }
+
+        private void btnSangria_Click(object sender, EventArgs e)
+        {
+            TelaDeSangria sangria = new TelaDeSangria();
+            sangria.ShowDialog();
         }
     }
 }

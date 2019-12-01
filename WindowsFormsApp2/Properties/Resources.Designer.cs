@@ -63,6 +63,16 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap abrir {
+            get {
+                object obj = ResourceManager.GetObject("abrir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adicionar_ao_carrinho {
             get {
                 object obj = ResourceManager.GetObject("adicionar-ao-carrinho", resourceCulture);
@@ -163,6 +173,16 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fechar_caixa {
+            get {
+                object obj = ResourceManager.GetObject("fechar caixa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lapis {
             get {
                 object obj = ResourceManager.GetObject("lapis", resourceCulture);
@@ -206,6 +226,16 @@ namespace WindowsFormsApp2.Properties {
         internal static System.Drawing.Bitmap remover_do_carrinho1 {
             get {
                 object obj = ResourceManager.GetObject("remover-do-carrinho1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap retirar {
+            get {
+                object obj = ResourceManager.GetObject("retirar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
