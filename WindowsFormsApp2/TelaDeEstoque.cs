@@ -19,16 +19,16 @@ namespace WindowsFormsApp2
         }
 
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
+
+        //CARREGA A LISTVIEW COM OS PRODUTOS NO BANCO
         public void carregarListaEstoque()
         {
             Produto prod = new Produto();
-            string[] produtos = new string[6];
             listaProdutos.Items.Clear();
-            string t = dadosProdutos.GetData().ToString();
             var varProd = dadosProdutos.GetData();
+
             for (int i = 0; i < varProd.Count; i++)
             {
-
                 prod.idProduto = Convert.ToInt32(varProd[i]["idProduto"]);
 
                 prod.prodNome = varProd[i]["prodNome"].ToString();
@@ -62,49 +62,14 @@ namespace WindowsFormsApp2
 
 
             }
-
-            //MessageBox.Show();
-            /*string caminho = @"c:\arquivos";
-            string[] arquivo;
-            try
-            {
-                IEnumerable<string> arquivos = Directory.EnumerateFiles(caminho, "*.txt", SearchOption.AllDirectories);
-                Console.WriteLine(arquivos);
-                foreach (string prod in arquivos)
-                {
-                    arquivo = File.ReadAllLines(prod);
-                    ListViewItem item = new ListViewItem();
-                    for (int i = 0; i < arquivo.Length; i++)
-                    {
-                        item.SubItems.Add(arquivo[i]);
-                    }
-                    listaProdutos.Items.Add(item);
-                }
-            }
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }*/
         }
 
-
-        private Boolean criar = false;
         Produto produtos = new Produto();
         private void Bt_Criar_Prod_Click(object sender, EventArgs e)
         {
-            //AINDA NÃO CONCLUIDO "TENTANDO BLOQUEAR PARA EXIBIR APENAS UM POR VEZ"
-            //If para verificação se a form já está aberta
-            if (Application.OpenForms.OfType<TelaCriarProd>().Count() > 0)
-            {
-                MessageBox.Show("A tela de cadastro já está aberta");
-            }
-            else
-            {
                 TelaCriarProd telaCriar = new TelaCriarProd(true);
                 telaCriar.ShowDialog();
-            }
-            carregarListaEstoque();
+                carregarListaEstoque();
         }
 
         //função para ler os arquivos e colocar na listview
@@ -117,7 +82,6 @@ namespace WindowsFormsApp2
         {
             if (listaProdutos.SelectedItems.Count > 0)
             {
-
                 if (listaProdutos.SelectedItems[0].SubItems[7].Text == "Ativo")
                 {
 
@@ -135,9 +99,6 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Não foi selecionado nenhum produto");
             }
         }
-
-
-
 
         private void Bt_Retirar_Prod_Click(object sender, EventArgs e)
         {
@@ -166,11 +127,9 @@ namespace WindowsFormsApp2
         {
             if (listaProdutos.SelectedItems.Count > 0)
             {
-
                 TelaCriarProd telaCriar = new TelaCriarProd(false, Convert.ToInt32(listaProdutos.SelectedItems[0].SubItems[6].Text));
                 telaCriar.ShowDialog();
                 carregarListaEstoque();
-
             }
             else
             {

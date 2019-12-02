@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.BtnEntrar = new System.Windows.Forms.Button();
             this.BtnSair = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.BtnEntrar);
             this.panel1.Controls.Add(this.BtnSair);
             this.panel1.Controls.Add(this.label2);
@@ -52,17 +50,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 313);
+            this.panel1.Size = new System.Drawing.Size(474, 266);
             this.panel1.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(168, 241);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 27);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Esqueci Minha Senha";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // BtnEntrar
             // 
@@ -124,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 313);
+            this.ClientSize = new System.Drawing.Size(474, 266);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDeLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -138,7 +127,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button BtnEntrar;
         private System.Windows.Forms.Button BtnSair;
         private System.Windows.Forms.Label label2;

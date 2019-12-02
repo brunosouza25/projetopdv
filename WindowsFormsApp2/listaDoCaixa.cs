@@ -40,6 +40,8 @@ namespace WindowsFormsApp2
         double total = 0;
         public string[,] itensDaLista { get; set; }
         List<Produto> listaProduto = new List<Produto>();
+
+        //FUNÇÃO PARA ALTERNAR ABRIR E FECHAR CAIXA
         public void travarBotoes()
         {
             var idCaixa = caixa.pegarIDUltimoCaixa();
@@ -66,7 +68,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                //var idCaixa = caixa.pegarIDUltimoCaixa();
+                
                 var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
                 caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyy"), 1);
                 MessageBox.Show("Caixa aberto com sucesso");
@@ -81,8 +83,9 @@ namespace WindowsFormsApp2
                 Bt_Remover_Prod.Enabled = true;
                 TxtBoxPesquisaProd.Enabled = true;
             }
-
+            TxtBoxPesquisaProd.Select();
         }
+        //FUNÇÃO PARA FAZER PESQUISA NO BANCO QUANDO DIGITADO NO TXTBOX
         private void pesquisaListaCaixa()
         {
             var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
@@ -195,14 +198,6 @@ namespace WindowsFormsApp2
                 }
             else
                 MessageBox.Show("Não tem nenhum item selecionado!");
-            /* o trecho de  código sendo comentado aqui está dando problema, estou comentando
-             * para tentar entender melhor o porque
-            if (listaCaixa.SelectedItems.Count > 0)
-                for (int i = 0; i <= listaCaixa.SelectedItems.Count; i++)
-                    listaCaixa.Items.Remove(listaCaixa.SelectedItems[i]);
-            else
-                MessageBox.Show("Não tem nenhum item selecionado!");
-                */
             TxtBoxPesquisaProd.Select();
         }
 
@@ -257,6 +252,7 @@ namespace WindowsFormsApp2
         {
             TelaDeSangria sangria = new TelaDeSangria();
             sangria.ShowDialog();
+            TxtBoxPesquisaProd.Select();
         }
     }
 }

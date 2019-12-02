@@ -42,26 +42,26 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel_Total = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Bt_Entrar_Prod = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Bt_Retirar_Prod = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.Bt_Editar_Prod = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.Bt_Criar_Prod = new System.Windows.Forms.Button();
+            this.panel_Total = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -164,7 +164,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Cod de Barras";
-            this.columnHeader5.Width = 97;
+            this.columnHeader5.Width = 152;
             // 
             // columnHeader8
             // 
@@ -197,24 +197,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(289, 581);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // panel_Total
-            // 
-            this.panel_Total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Total.Location = new System.Drawing.Point(3, 3);
-            this.panel_Total.Name = "panel_Total";
-            this.panel_Total.Size = new System.Drawing.Size(283, 259);
-            this.panel_Total.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.Bt_Entrar_Prod);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(135, 149);
-            this.panel2.TabIndex = 5;
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
@@ -235,35 +217,15 @@
             this.tableLayoutPanel4.TabIndex = 0;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.Bt_Retirar_Prod);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(144, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(136, 149);
-            this.panel3.TabIndex = 6;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.Bt_Editar_Prod);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(144, 158);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(136, 149);
-            this.panel4.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.Bt_Criar_Prod);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 158);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(135, 149);
-            this.panel5.TabIndex = 8;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.Bt_Entrar_Prod);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(135, 149);
+            this.panel2.TabIndex = 5;
             // 
             // label2
             // 
@@ -274,36 +236,6 @@
             this.label2.Size = new System.Drawing.Size(114, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Entrar produtos";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Remover produtos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Criar produto";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Editar produto";
             // 
             // Bt_Entrar_Prod
             // 
@@ -317,6 +249,26 @@
             this.Bt_Entrar_Prod.UseVisualStyleBackColor = true;
             this.Bt_Entrar_Prod.Click += new System.EventHandler(this.Bt_Entrar_Prod_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.Bt_Retirar_Prod);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(144, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(136, 149);
+            this.panel3.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 126);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Remover produtos";
+            // 
             // Bt_Retirar_Prod
             // 
             this.Bt_Retirar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.seta_para_cima;
@@ -328,6 +280,26 @@
             this.Bt_Retirar_Prod.TabIndex = 5;
             this.Bt_Retirar_Prod.UseVisualStyleBackColor = true;
             this.Bt_Retirar_Prod.Click += new System.EventHandler(this.Bt_Retirar_Prod_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.Bt_Editar_Prod);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(144, 158);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(136, 149);
+            this.panel4.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Editar produto";
             // 
             // Bt_Editar_Prod
             // 
@@ -341,6 +313,26 @@
             this.Bt_Editar_Prod.UseVisualStyleBackColor = true;
             this.Bt_Editar_Prod.Click += new System.EventHandler(this.Bt_Editar_Prod_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.Bt_Criar_Prod);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 158);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(135, 149);
+            this.panel5.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Criar produto";
+            // 
             // Bt_Criar_Prod
             // 
             this.Bt_Criar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.criar_produto;
@@ -352,6 +344,14 @@
             this.Bt_Criar_Prod.TabIndex = 4;
             this.Bt_Criar_Prod.UseVisualStyleBackColor = true;
             this.Bt_Criar_Prod.Click += new System.EventHandler(this.Bt_Criar_Prod_Click);
+            // 
+            // panel_Total
+            // 
+            this.panel_Total.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Total.Location = new System.Drawing.Point(3, 3);
+            this.panel_Total.Name = "panel_Total";
+            this.panel_Total.Size = new System.Drawing.Size(283, 259);
+            this.panel_Total.TabIndex = 1;
             // 
             // TelaDeEstoque
             // 
@@ -366,9 +366,9 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);

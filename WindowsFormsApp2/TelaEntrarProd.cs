@@ -7,7 +7,7 @@ namespace WindowsFormsApp2
     {
 
 
-        int add, remove, prodCodigo;
+        int prodCodigo;
         Boolean tipo;
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         public TelaEntrarProd(int prodCodigo, Boolean tipo)
@@ -66,63 +66,8 @@ namespace WindowsFormsApp2
                     dadosProdutos.AttQuantidade(aux, prodCodigo);
                 }
 
-                
             }
             Close();
-            /*
-            List<string> arquivo = new List<string>();
-            string[] arquivo2;
-            try
-            { 
-                add = int.Parse(TxtBoxQuant.Text);
-                Console.WriteLine(produto);
-                int num1, num2;
-                string temp1, temp2;
-                caminho = @"c:\arquivos\" + produto + ".txt";
-                Console.WriteLine(caminho);
-                using (StreamReader sr = new StreamReader(caminho))
-                    while (!sr.EndOfStream)
-                    {
-                        arquivo.Add(sr.ReadLine());
-                    }
-
-                if (tipo)
-                {
-                    num1 = int.Parse(arquivo[4]);
-                    num2 = num1 + add;
-                    arquivo[4] = num2.ToString();
-                }
-                else
-                {
-                    num1 = int.Parse(arquivo[4]);
-                    num2 = num1 - add;
-                    arquivo[4] = num2.ToString();
-                }
-
-                try
-                {
-                    using (StreamWriter sw = new StreamWriter(caminho))
-                    {
-                        foreach (string linha in arquivo)
-                        {
-                            sw.WriteLine(linha);
-                        }
-                    }
-                }
-                catch (IOException er)
-                {
-                    Console.WriteLine("Tivemos um erro ");
-                    Console.WriteLine(er.Message);
-                }
-                Close();
-            }
-
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }
-            */
         }
 
         private void TelaEntrarProd_Load(object sender, EventArgs e)
