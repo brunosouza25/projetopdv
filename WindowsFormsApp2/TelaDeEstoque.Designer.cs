@@ -115,6 +115,7 @@
             this.TxtBoxPesquisaProdEstoque.Name = "TxtBoxPesquisaProdEstoque";
             this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(963, 43);
             this.TxtBoxPesquisaProdEstoque.TabIndex = 1;
+            this.TxtBoxPesquisaProdEstoque.Visible = false;
             // 
             // listaProdutos
             // 

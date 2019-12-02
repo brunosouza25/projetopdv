@@ -99,7 +99,7 @@
             this.TxtBoxCodBarras.Location = new System.Drawing.Point(293, 44);
             this.TxtBoxCodBarras.Name = "TxtBoxCodBarras";
             this.TxtBoxCodBarras.Size = new System.Drawing.Size(128, 20);
-            this.TxtBoxCodBarras.TabIndex = 8;
+            this.TxtBoxCodBarras.TabIndex = 1;
             // 
             // label3
             // 
@@ -167,7 +167,7 @@
             this.BtCriar.Location = new System.Drawing.Point(62, 356);
             this.BtCriar.Name = "BtCriar";
             this.BtCriar.Size = new System.Drawing.Size(98, 47);
-            this.BtCriar.TabIndex = 0;
+            this.BtCriar.TabIndex = 7;
             this.BtCriar.Text = "Criar";
             this.BtCriar.UseVisualStyleBackColor = true;
             this.BtCriar.Click += new System.EventHandler(this.BtCriar_Click);

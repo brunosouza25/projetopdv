@@ -206,33 +206,39 @@ namespace WindowsFormsApp2
 
         private void BtnFinalizarVenda_Click_1(object sender, EventArgs e)
         {
-            if (listaCaixa.Items.Count > 0)
+            try
             {
-                if (total > 0)
+                if (listaCaixa.Items.Count > 0)
                 {
-                    itensDaLista = new string[this.listaCaixa.Items.Count, 5];
-                    for (int i = 0; i < this.listaCaixa.Items.Count; i++)
+                    if (total > 0)
                     {
-                        for (int j = 0; j <= 4; j++)
+                        itensDaLista = new string[this.listaCaixa.Items.Count, 5];
+                        for (int i = 0; i < this.listaCaixa.Items.Count; i++)
                         {
-                            itensDaLista[i, j] = listaCaixa.Items[i].SubItems[j].Text;
+                            for (int j = 0; j <= 4; j++)
+                            {
+                                itensDaLista[i, j] = listaCaixa.Items[i].SubItems[j].Text;
+                            }
                         }
+                        TelaDePagamento telaDePagamento = new TelaDePagamento(itensDaLista, total);
+                        telaDePagamento.ShowDialog();
+                        listaProduto.Clear();
+                        listaCaixa.Items.Clear();
                     }
-                    TelaDePagamento telaDePagamento = new TelaDePagamento(itensDaLista, total);
-                    telaDePagamento.ShowDialog();
-                    listaProduto.Clear();
-                    listaCaixa.Items.Clear();
+
                 }
-
+                else
+                {
+                    MessageBox.Show("Não tem itens na venda");
+                }
+                total = 0;
+                LblTotal.Text = "";
+                TxtBoxPesquisaProd.Select();
             }
-            else
+            catch
             {
-                MessageBox.Show("Não tem itens na venda");
+                MessageBox.Show("Temos um erro aqui");
             }
-            total = 0;
-            LblTotal.Text = "";
-            TxtBoxPesquisaProd.Select();
-
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)

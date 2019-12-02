@@ -21,8 +21,9 @@ namespace WindowsFormsApp2
             BtCriar.Text = "Criar";
             lblInativo.Visible = false;
             ckboxInativo.Visible = false;
-            prod.prodNome = "bruno ";
-            Console.WriteLine(prod.prodNome);
+            TxtBoxCodBarras.Select();
+
+
         }
         public TelaCriarProd(Boolean tipo, int codigoProd)
         {
@@ -98,36 +99,7 @@ namespace WindowsFormsApp2
             }
             else
                 MessageBox.Show("Valores não permitidos");
-            /*
-            string[] arquivo;
-            if(TxtBoxNome.Text != produto && tipo == false)
-            {
-                System.IO.File.Delete(@"c:\arquivos\" + produto+ ".txt");
-            }
-            prod.prodNome = TxtBoxNome.Text;
-            prod.prodCusto = double.Parse(TxtBoxCusto.Text);
-            prod.prodValor = double.Parse(TxtBoxValor.Text);
-            prod.prodCodBarras = TxtBoxCodBarras.Text;
-            string caminho = @"c:\arquivos\" + prod.prodNome + ".txt";
-            if (tipo)
-                prod.prodQuantidade = 0;
-            else
-                
-            Console.WriteLine(prod.prodQuantidade + "fafa");
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(caminho))
-                {
-                    sw.WriteLine(prod);
-                }
-            }
-            catch (IOException er)
-            {
-                Console.WriteLine("Tivemos um erro ");
-                Console.WriteLine(er.Message);
-            }
-            Close();
-            */
+            
         }
 
         private void BtCancelar_Click(object sender, EventArgs e)

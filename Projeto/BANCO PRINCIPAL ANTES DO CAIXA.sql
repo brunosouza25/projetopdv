@@ -4,7 +4,7 @@ use BD_PDV
 CREATE TABLE MetodoDePagamento (
     idMPagamento INT PRIMARY KEY,
     pagamentoTipo VARCHAR(20),
-	prodEstado tinyint
+
 );
 
 CREATE TABLE Pagamento (
@@ -35,7 +35,8 @@ CREATE TABLE Produto (
     prodValor FLOAT,
     prodCusto FLOAT,
     prodQuantidade INT,
-    prodCodBarras VARCHAR(13)
+    prodCodBarras VARCHAR(13),
+	prodEstado tinyint
 );
 
 CREATE TABLE Caixa (
