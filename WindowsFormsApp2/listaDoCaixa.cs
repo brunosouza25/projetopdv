@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms; 
+using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
     public partial class listaDoCaixa : UserControl
     {
-
-        //criar uma lista com produtos pré inseridos
-        //a partir do text box vou fazer uma pesquisa do produto na lista
-        //se houver produto ele vai me retornar na list view, senão ele exibe um erro
-        //atualizar o total
-        //se clicar em finalizar venda, os produtos da list view e o valor total devem ser carregados para a tela de pagamento
-        // se o valor inserido for abatido pelo valor total da compra, libera o botão finalizar
-        //clicando em finalizar, será salvo as informações de valor da compra, horario, se der os itens da venda
-        // retornar para a tela de venda e limpa a list view e o valor total
-
         public listaDoCaixa()
         {
             InitializeComponent();
@@ -25,12 +15,26 @@ namespace WindowsFormsApp2
             Bt_Remover_Prod.Enabled = false;
             Bt_Cancelar_Venda.Enabled = false;
             TxtBoxPesquisaProd.Enabled = false;
+            var idCaixa = caixa.pegarIDUltimoCaixa();
+            var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+            if (Convert.ToByte(aux[0]["estadoCaixa"]) == 1)
+            {
+                btnFecharCaixa.Visible = true;
+                btnAbrirCaixa.Visible = false;
+                lblCaixa.Text = "Fechar Caixa";
+            }
+            else
+            {
+                btnFecharCaixa.Visible = false;
+                btnAbrirCaixa.Visible = true;
+                lblCaixa.Text = "Abrir Caixa";
+            }
         }
         DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         Produto prod = new Produto();
         List<Produto> produtos = new List<Produto>();
-        
+
 
         string pesquisa;
         double total = 0;
@@ -38,35 +42,45 @@ namespace WindowsFormsApp2
         List<Produto> listaProduto = new List<Produto>();
         public void travarBotoes()
         {
-            if (BtnFinalizarVenda.Enabled)
-            {
+            var idCaixa = caixa.pegarIDUltimoCaixa();
+            var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
 
-                var idCaixa = caixa.pegarIDUltimoCaixa();
-                var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+
+            if (btnFecharCaixa.Visible)
+            {
+                //var idCaixa = caixa.pegarIDUltimoCaixa();
+                //var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
 
                 caixa.fecharCaixa(Convert.ToDouble(aux[0]["valorAtual"]), Convert.ToByte(0), Convert.ToInt32(aux[0]["idCaixa"]));
                 MessageBox.Show("Caixa fechado com Sucesso");
                 btnFecharCaixa.Visible = false;
                 btnAbrirCaixa.Visible = true;
                 lblCaixa.Text = "Abrir Caixa";
+                listaCaixa.Items.Clear();
 
+                BtnFinalizarVenda.Enabled = false;
+                Bt_Add_Prod.Enabled = false;
+                Bt_Cancelar_Venda.Enabled = false;
+                Bt_Remover_Prod.Enabled = false;
+                TxtBoxPesquisaProd.Enabled = false;
             }
             else
             {
-
-                var idCaixa = caixa.pegarIDUltimoCaixa();
+                //var idCaixa = caixa.pegarIDUltimoCaixa();
                 var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
                 caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyy"), 1);
                 MessageBox.Show("Caixa aberto com sucesso");
                 btnFecharCaixa.Visible = true;
                 btnAbrirCaixa.Visible = false;
                 lblCaixa.Text = "Fechar Caixa";
+                MessageBox.Show("Caixa aberto com: R$" + saldoAnterior[0]["fechamentoCaixa"]);
+
+                BtnFinalizarVenda.Enabled = true;
+                Bt_Add_Prod.Enabled = true;
+                Bt_Cancelar_Venda.Enabled = true;
+                Bt_Remover_Prod.Enabled = true;
+                TxtBoxPesquisaProd.Enabled = true;
             }
-            BtnFinalizarVenda.Enabled = !BtnFinalizarVenda.Enabled;
-            Bt_Add_Prod.Enabled = !Bt_Add_Prod.Enabled;
-            Bt_Cancelar_Venda.Enabled = !Bt_Cancelar_Venda.Enabled;
-            Bt_Remover_Prod.Enabled = !Bt_Remover_Prod.Enabled;
-            TxtBoxPesquisaProd.Enabled = !TxtBoxPesquisaProd.Enabled;
 
         }
         private void pesquisaListaCaixa()
@@ -123,23 +137,6 @@ namespace WindowsFormsApp2
                     LblTotal.Text = "R$: " + total.ToString("F2");
                     listaCaixa.Items.Add(item);
                 }
-                /*  //int i = listaProduto.IndexOf(prod);
-                  if (listaProduto[i].prodQuantidade >= aux)
-                  {
-                  }
-                  else
-                  {
-                      listaProduto[i].prodQuantidade += 1;
-                      listaCaixa.Items.Add(item);
-                  }
-              }
-              else
-              {
-                  prod.prodQuantidade = 1;
-                  listaProduto.Add(prod);
-                  listaCaixa.Items.Add(item);
-              }
-              Console.WriteLine(listaProduto[0].prodQuantidade);*/
             }
             TxtBoxPesquisaProd.Text = "";
         }
@@ -186,7 +183,7 @@ namespace WindowsFormsApp2
                     item = listaCaixa.SelectedItems[i - 1];
                     for (int j = 0; j < listaProduto.Count; j++)
                     {
-                        if (listaProduto[j].prodNome == listaCaixa.SelectedItems[i-1].SubItems[1].Text)
+                        if (listaProduto[j].prodNome == listaCaixa.SelectedItems[i - 1].SubItems[1].Text)
                         {
                             listaProduto[j].prodQuantidade -= 1;
                         }

@@ -7468,7 +7468,8 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataCaixa", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT valorAtual, fechamentoCaixa, idCaixa from CAIXA\r\nWHERE idCaixa = @idCaixa";
+            this._commandCollection[7].CommandText = "SELECT valorAtual, fechamentoCaixa, idCaixa, estadoCaixa from CAIXA\r\nWHERE idCaix" +
+                "a = @idCaixa";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCaixa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
