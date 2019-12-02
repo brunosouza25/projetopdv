@@ -15,6 +15,7 @@ namespace WindowsFormsApp2
             Bt_Remover_Prod.Enabled = false;
             Bt_Cancelar_Venda.Enabled = false;
             TxtBoxPesquisaProd.Enabled = false;
+            btnSangria.Enabled = false;
             var idCaixa = caixa.pegarIDUltimoCaixa();
             var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
             if (Convert.ToByte(aux[0]["estadoCaixa"]) == 1)
@@ -65,10 +66,11 @@ namespace WindowsFormsApp2
                 Bt_Cancelar_Venda.Enabled = false;
                 Bt_Remover_Prod.Enabled = false;
                 TxtBoxPesquisaProd.Enabled = false;
+                btnSangria.Enabled = false;
             }
             else
             {
-                
+
                 var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
                 caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyy"), 1);
                 MessageBox.Show("Caixa aberto com sucesso");
@@ -82,6 +84,7 @@ namespace WindowsFormsApp2
                 Bt_Cancelar_Venda.Enabled = true;
                 Bt_Remover_Prod.Enabled = true;
                 TxtBoxPesquisaProd.Enabled = true;
+                btnSangria.Enabled = true;
             }
             TxtBoxPesquisaProd.Select();
         }
