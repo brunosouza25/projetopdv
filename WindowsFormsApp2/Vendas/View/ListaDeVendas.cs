@@ -46,7 +46,7 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void listaVendas_DoubleClick(object sender, EventArgs e)
         {
-            TelaDetalhesDaVenda tela = new TelaDetalhesDaVenda(Convert.ToInt32(listaVendas.SelectedItems[1]));
+            TelaDetalhesDaVenda tela = new TelaDetalhesDaVenda(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[1]));
             tela.ShowDialog();
         }
     }

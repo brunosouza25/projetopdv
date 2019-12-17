@@ -23,5 +23,10 @@ namespace WindowsFormsApp2.Vendas.View
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
