@@ -3,8 +3,7 @@ create database BD_PDV
 use BD_PDV
 CREATE TABLE MetodoDePagamento (
     idMPagamento INT PRIMARY KEY,
-    pagamentoTipo VARCHAR(20),
-
+    pagamentoTipo VARCHAR(20)
 );
 
 CREATE TABLE Pagamento (

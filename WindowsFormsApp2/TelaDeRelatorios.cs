@@ -112,7 +112,6 @@ namespace WindowsFormsApp2
                         table.AddCell("R$ " + Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                         table.AddCell(varProd[i]["pagamentoTipo"].ToString());
 
-
                     }
                     doc.Add(table);
                     doc.Close();

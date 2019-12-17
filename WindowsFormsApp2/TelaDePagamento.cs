@@ -38,11 +38,6 @@ namespace WindowsFormsApp2
             string valor2 = total.ToString("F2");
             if (double.TryParse(TxtBoxDinheiro.Text.Trim(), out a))
             {
-                
-                /*if (TxtBoxDinheiro.Text.Contains(","))
-                {
-                    valor = TxtBoxDinheiro.Text.Replace(",", ".");
-                }*/
                 if (Convert.ToDouble(valor) == Convert.ToDouble(valor2))
                 {
                     LblTroco.Text = "";
@@ -75,7 +70,7 @@ namespace WindowsFormsApp2
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
             var itens = itensVenda.GetData();
-            //pagamento.InserirPagamento(Convert.ToDouble(TxtBoxDinheiro.Text.Trim()), Convert.ToInt32(aux2[0]["idVenda"]), 1);
+            
             pagamento.InserirPagamento(Convert.ToDouble(total), Convert.ToInt32(aux2[0]["idVenda"]), 1);
 
             int aux = itensDaLista.Length / 5;
@@ -93,15 +88,10 @@ namespace WindowsFormsApp2
             MessageBox.Show("Venda realizada com sucesso!");
             Close();
         }
-
-
-
-
         private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             if (valida())
                 confirmar();
-
         }
 
         private void TxtBoxDinheiro_KeyDown(object sender, KeyEventArgs e)
@@ -115,7 +105,6 @@ namespace WindowsFormsApp2
                     BtnFinalizar.Select();
                 }
             }
-
 
         }
     }

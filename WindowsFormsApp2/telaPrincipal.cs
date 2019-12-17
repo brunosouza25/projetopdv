@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using WindowsFormsApp2.Vendas;
 namespace WindowsFormsApp2
 {
     public partial class TelaPrincipal : Form
     {
         String Hora = (DateTime.Now.ToString("HH:mm:ss"));
         TelaDeEstoque estoque = new TelaDeEstoque();
-        listaDoCaixa caixa = new listaDoCaixa();
         TelaDeRelatorios relatorio = new TelaDeRelatorios();
+        TelaDeVendas telaDoPdv = new TelaDeVendas();
 
 
         public TelaPrincipal()
@@ -16,14 +16,16 @@ namespace WindowsFormsApp2
             InitializeComponent();
 
             //caixa
-            painelPrincipal.Controls.Add(caixa);
-            caixa.Visible = false;
+
             //estoque
             painelPrincipal.Controls.Add(estoque);
             estoque.Visible = false;
             //relatorios
             painelPrincipal.Controls.Add(relatorio);
             relatorio.Visible = false;
+            //vendas
+            painelPrincipal.Controls.Add(telaDoPdv);
+            telaDoPdv.Visible = false;
 
         }
 
@@ -34,7 +36,7 @@ namespace WindowsFormsApp2
         }
         public void mudarCaixa()
         {
-            caixa.Visible = !caixa.Visible;
+            telaDoPdv.Visible = !telaDoPdv.Visible;
         }
         public void mudarRelatorio()
         {
@@ -47,7 +49,7 @@ namespace WindowsFormsApp2
             {
                 mudarEstoque();
             }
-            if (caixa.Visible)
+            if (telaDoPdv.Visible)
             {
                 mudarCaixa();
             }
@@ -64,11 +66,11 @@ namespace WindowsFormsApp2
                 mudarRelatorio();
             }
 
-            caixa.Visible = true;
+            telaDoPdv.Visible = true;
 
         }
         private void BtEstoque_Click(object sender, EventArgs e){
-            if (caixa.Visible)
+            if (telaDoPdv.Visible)
             {
                 mudarCaixa();
             }

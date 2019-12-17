@@ -106,11 +106,23 @@
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="listaDoCaixa.cs">
+    <Compile Include="Vendas\View\ListaDeVendas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="listaDoCaixa.Designer.cs">
-      <DependentUpon>listaDoCaixa.cs</DependentUpon>
+    <Compile Include="Vendas\View\ListaDeVendas.Designer.cs">
+      <DependentUpon>ListaDeVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\View\TelaDetalhesDaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\View\TelaDetalhesDaVenda.Designer.cs">
+      <DependentUpon>TelaDetalhesDaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas\View\TelaDoPdv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendas\View\TelaDoPdv.Designer.cs">
+      <DependentUpon>TelaDoPdv.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaDeRelatorios.cs">
       <SubType>UserControl</SubType>
@@ -149,6 +161,12 @@
     <Compile Include="TelaEntrarProd.Designer.cs">
       <DependentUpon>TelaEntrarProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vendas\View\TelaDeVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vendas\View\TelaDeVendas.Designer.cs">
+      <DependentUpon>TelaDeVendas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +186,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="listaDoCaixa.resx">
-      <DependentUpon>listaDoCaixa.cs</DependentUpon>
+    <EmbeddedResource Include="Vendas\View\ListaDeVendas.resx">
+      <DependentUpon>ListaDeVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\View\TelaDetalhesDaVenda.resx">
+      <DependentUpon>TelaDetalhesDaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\View\TelaDoPdv.resx">
+      <DependentUpon>TelaDoPdv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDeRelatorios.resx">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
@@ -188,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaEntrarProd.resx">
       <DependentUpon>TelaEntrarProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\View\TelaDeVendas.resx">
+      <DependentUpon>TelaDeVendas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Dados.xsc">
       <DependentUpon>Dados.xsd</DependentUpon>

@@ -38,11 +38,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.painelPrincipal = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btCaixa = new System.Windows.Forms.Button();
             this.BtEstoque = new System.Windows.Forms.Button();
             this.BtRelatorio = new System.Windows.Forms.Button();
+            this.painelPrincipal = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -66,12 +66,11 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.painel_hora, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.painel_hora, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -85,16 +84,17 @@
             // 
             this.painel_hora.Controls.Add(this.Lab_Hora);
             this.painel_hora.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painel_hora.Location = new System.Drawing.Point(845, 3);
+            this.painel_hora.Location = new System.Drawing.Point(635, 3);
             this.painel_hora.Name = "painel_hora";
-            this.painel_hora.Size = new System.Drawing.Size(416, 98);
+            this.painel_hora.Size = new System.Drawing.Size(626, 98);
             this.painel_hora.TabIndex = 4;
             // 
             // Lab_Hora
             // 
             this.Lab_Hora.AutoSize = true;
+            this.Lab_Hora.Dock = System.Windows.Forms.DockStyle.Right;
             this.Lab_Hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Hora.Location = new System.Drawing.Point(93, 25);
+            this.Lab_Hora.Location = new System.Drawing.Point(526, 0);
             this.Lab_Hora.Name = "Lab_Hora";
             this.Lab_Hora.Size = new System.Drawing.Size(100, 37);
             this.Lab_Hora.TabIndex = 0;
@@ -111,7 +111,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(415, 98);
+            this.panel1.Size = new System.Drawing.Size(626, 98);
             this.panel1.TabIndex = 5;
             // 
             // label3
@@ -140,22 +140,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "PDV";
-            // 
-            // painelPrincipal
-            // 
-            this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(0, 104);
-            this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(1264, 577);
-            this.painelPrincipal.TabIndex = 2;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.label1.Text = "Vendas";
             // 
             // btCaixa
             // 
@@ -189,6 +176,19 @@
             this.BtRelatorio.TabIndex = 2;
             this.BtRelatorio.UseVisualStyleBackColor = true;
             this.BtRelatorio.Click += new System.EventHandler(this.BtRelatorio_Click);
+            // 
+            // painelPrincipal
+            // 
+            this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.painelPrincipal.Location = new System.Drawing.Point(0, 104);
+            this.painelPrincipal.Name = "painelPrincipal";
+            this.painelPrincipal.Size = new System.Drawing.Size(1264, 577);
+            this.painelPrincipal.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // TelaPrincipal
             // 
