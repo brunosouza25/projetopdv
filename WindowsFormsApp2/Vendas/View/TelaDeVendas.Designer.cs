@@ -90,6 +90,7 @@
             this.BtnPdv.TabIndex = 3;
             this.BtnPdv.Text = "\'";
             this.BtnPdv.UseVisualStyleBackColor = true;
+            this.BtnPdv.Click += new System.EventHandler(this.BtnPdv_Click);
             // 
             // BtnVendas
             // 

@@ -7,7 +7,6 @@ namespace WindowsFormsApp2
     {
         public string[,] itensDaLista { get; set; }
         double total;
-        Boolean permicao = false;
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.VendaTableAdapter dadosVenda = new DadosTableAdapters.VendaTableAdapter();
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
@@ -33,28 +32,55 @@ namespace WindowsFormsApp2
         public bool valida()
         {
             bool ok = false;
-            double a;
-            string valor = TxtBoxDinheiro.Text;
-            string valor2 = total.ToString("F2");
-            if (double.TryParse(TxtBoxDinheiro.Text.Trim(), out a))
+            double a, b, c, d;
+            double valorDin, valorCredVista, valorCredParc, valorDeb;
+
+            if (TxtBoxDinheiro.Text == "")
+                valorDin = 0;
+            else
+                valorDin = Convert.ToDouble(TxtBoxDinheiro.Text);
+
+            if (txtCredVista.Text == "")
+                valorCredVista = 0;
+            else
+                valorCredVista = Convert.ToDouble(txtCredVista.Text);
+
+            if (txtCredParc.Text == "")
+                valorCredParc = 0;
+            else
+                valorCredParc = Convert.ToDouble(txtCredParc.Text);
+
+            if (txtDeb.Text == "")
+                valorDeb = 0;
+            else
+                valorDeb = Convert.ToDouble(txtDeb.Text);
+
+
+
+            double somaTotal = valorDin + valorCredVista + valorCredParc + valorDeb;
+
+            string valorTotal = total.ToString("F2");
+
+            if ((double.TryParse(TxtBoxDinheiro.Text.Trim(), out a) || TxtBoxDinheiro.Text == "") && ((double.TryParse(txtCredVista.Text.Trim(), out b) || txtCredVista.Text == "")) 
+                && ((double.TryParse(txtCredParc.Text.Trim(), out c) || txtCredParc.Text == "")) && ((double.TryParse(txtDeb.Text.Trim(), out d) || txtDeb.Text == "")))
             {
-                if (Convert.ToDouble(valor) == Convert.ToDouble(valor2))
+                if (somaTotal == Convert.ToDouble(valorTotal))
                 {
                     LblTroco.Text = "";
                     LblFalta.Text = "";
                     LblTroco.Text = "Troco R$: 0,00";
                     ok = true;
                 }
-                else if (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) > total)
+                else if (somaTotal > total)
                 {
                     LblFalta.Text = "";
-                    LblTroco.Text = "Troco R$: " + (Convert.ToDouble(TxtBoxDinheiro.Text.Trim()) - total).ToString("F2");
+                    LblTroco.Text = "Troco R$: " + (somaTotal - total).ToString("F2");
                     ok = true;
                 }
                 else
                 {
                     LblTroco.Text = "";
-                    LblFalta.Text = "Falta: " + (total - Convert.ToDouble(TxtBoxDinheiro.Text.Trim())).ToString("F2");
+                    LblFalta.Text = "Falta: " + (total - somaTotal).ToString("F2");
                     ok = false;
                 }
             }
@@ -69,9 +95,25 @@ namespace WindowsFormsApp2
             dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total);
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
-            var itens = itensVenda.GetData();
             
-            pagamento.InserirPagamento(Convert.ToDouble(total), Convert.ToInt32(aux2[0]["idVenda"]), 1);
+            if(TxtBoxDinheiro.Text == "" || TxtBoxDinheiro.Text == "0")
+                pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 1);
+            else
+                pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(TxtBoxDinheiro.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 1);
+
+            if (txtCredVista.Text == "" || txtCredVista.Text == "0")
+                pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 2);
+            else
+                pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredVista.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 2);
+            if (txtCredParc.Text == "" || txtCredParc.Text == "0")
+                pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 3);
+            else
+                pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredParc.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 3);
+            if (txtDeb.Text == "" || txtDeb.Text == "0")
+                pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 4);
+            else
+                pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtDeb.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 4);
+
 
             int aux = itensDaLista.Length / 5;
             for (int i = 0; i < aux; i++)

@@ -21,6 +21,9 @@ namespace WindowsFormsApp2.Vendas
             InitializeComponent();
             painelPrincipalDeVendas.Controls.Add(vendas);
             vendas.Visible = true;
+
+            painelPrincipalDeVendas.Controls.Add(pdv);
+            pdv.Visible = false;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,6 +39,14 @@ namespace WindowsFormsApp2.Vendas
         private void button1_Click_1(object sender, EventArgs e)
         {
             vendas.Visible = true;
+            vendas.carregarListaVendas();
+            pdv.Visible = false;
+        }
+
+        private void BtnPdv_Click(object sender, EventArgs e)
+        {
+            vendas.Visible = false;
+            pdv.Visible = true;
         }
     }
 }
