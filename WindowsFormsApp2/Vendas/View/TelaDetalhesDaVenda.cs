@@ -12,9 +12,7 @@ namespace WindowsFormsApp2.Vendas.View
 {
     public partial class TelaDetalhesDaVenda : Form
     {
-        DadosTableAdapters.VendaTableAdapter venda = new DadosTableAdapters.VendaTableAdapter();
-        DadosTableAdapters.PagamentoTableAdapter pagVenda = new DadosTableAdapters.PagamentoTableAdapter();
-        DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
+        DadosTableAdapters.DataRelatorioTableAdapter detalheVenda = new DadosTableAdapters.DataRelatorioTableAdapter();
 
         int codVenda;
         public TelaDetalhesDaVenda(int codVenda)
@@ -40,14 +38,13 @@ namespace WindowsFormsApp2.Vendas.View
         }
         private void carregarTela()
         {
-            var auxVenda = venda.retornarVendaPorId(codVenda);
-            var auxPag = pagVenda.retornarTiposPagamentos(codVenda);
-            var auxItens = itensVenda.itensVenda(codVenda);
+            var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
+            var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
 
-            lblDin.Text = auxPag[0]["PagValor"].ToString();
-            lblCredVista.Text = auxPag[1]["PagValor"].ToString();
-            lblCredParc.Text = auxPag[2]["PagValor"].ToString();
-            lblDebt.Text = auxPag[3]["PagValor"].ToString();
+            lblDin.Text = auxVenda[0]["PagValor"].ToString();
+            lblCredVista.Text = auxVenda[1]["PagValor"].ToString();
+            lblCredParc.Text = auxVenda[2]["PagValor"].ToString();
+            lblDebt.Text = auxVenda[3]["PagValor"].ToString();
 
             lblNumVenda.Text = auxVenda[0]["idVenda"].ToString();
 
@@ -55,14 +52,14 @@ namespace WindowsFormsApp2.Vendas.View
 
             lblData.Text = Convert.ToDateTime(auxVenda[0]["vendData"]).ToString("dd/MM/yyyy");
 
-            for(int i = 0; i <= auxItens.Count; i++)
+            for(int i = 0; i < auxProdutosVenda.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
 
-
-                item.SubItems.Add(auxItens[i]["idVenda"].ToString());
-                item.SubItems.Add(Convert.ToDateTime(varVendas[i]["vendData"]).ToString("dd/MM/yyyy"));
-                item.SubItems.Add(Convert.ToDouble(varVendas[i]["valorCompra"]).ToString("F2"));
+                item.SubItems.Add(auxProdutosVenda[i]["prodNome"].ToString());
+                item.SubItems.Add(auxProdutosVenda[i]["prodCodBarras"].ToString());
+                item.SubItems.Add(Convert.ToDateTime(auxVenda[i]["vendData"]).ToString("dd/MM/yyyy"));
+                item.SubItems.Add(Convert.ToDouble(auxVenda[i]["valorCompra"]).ToString("F2"));
 
                 listaVendas.Items.Add(item);
             }

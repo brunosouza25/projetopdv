@@ -38,7 +38,6 @@ namespace WindowsFormsApp2.Vendas.View
             }
         }
 
-
         private void listaVendas_SelectedIndexChanged(object sender, EventArgs e)
         {
 

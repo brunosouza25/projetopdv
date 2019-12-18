@@ -7,9 +7,12 @@
     }
 }
 
-namespace WindowsFormsApp2.DadosTableAdapters {
-    
-    
+namespace WindowsFormsApp2.DadosTableAdapters
+{
+    partial class DataRelatorioTableAdapter
+    {
+    }
+
     public partial class ProdutoTableAdapter {
     }
 }
