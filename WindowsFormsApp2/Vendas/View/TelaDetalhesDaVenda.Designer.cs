@@ -48,10 +48,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDebt = new System.Windows.Forms.Label();
-            this.lblCredVista = new System.Windows.Forms.Label();
-            this.lblCredParc = new System.Windows.Forms.Label();
-            this.lblDin = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,6 +60,10 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxDin = new System.Windows.Forms.TextBox();
+            this.txtBoxCredParc = new System.Windows.Forms.TextBox();
+            this.txtBoxDebt = new System.Windows.Forms.TextBox();
+            this.txtBoxCredVista = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -251,10 +251,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblDebt);
-            this.panel2.Controls.Add(this.lblCredVista);
-            this.panel2.Controls.Add(this.lblCredParc);
-            this.panel2.Controls.Add(this.lblDin);
+            this.panel2.Controls.Add(this.txtBoxDebt);
+            this.panel2.Controls.Add(this.txtBoxCredVista);
+            this.panel2.Controls.Add(this.txtBoxCredParc);
+            this.panel2.Controls.Add(this.txtBoxDin);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -273,52 +273,12 @@
             this.panel2.Size = new System.Drawing.Size(820, 136);
             this.panel2.TabIndex = 0;
             // 
-            // lblDebt
-            // 
-            this.lblDebt.AutoSize = true;
-            this.lblDebt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDebt.Location = new System.Drawing.Point(688, 110);
-            this.lblDebt.Name = "lblDebt";
-            this.lblDebt.Size = new System.Drawing.Size(75, 24);
-            this.lblDebt.TabIndex = 15;
-            this.lblDebt.Text = "9999,99";
-            // 
-            // lblCredVista
-            // 
-            this.lblCredVista.AutoSize = true;
-            this.lblCredVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCredVista.Location = new System.Drawing.Point(688, 86);
-            this.lblCredVista.Name = "lblCredVista";
-            this.lblCredVista.Size = new System.Drawing.Size(75, 24);
-            this.lblCredVista.TabIndex = 14;
-            this.lblCredVista.Text = "9999,99";
-            // 
-            // lblCredParc
-            // 
-            this.lblCredParc.AutoSize = true;
-            this.lblCredParc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCredParc.Location = new System.Drawing.Point(688, 62);
-            this.lblCredParc.Name = "lblCredParc";
-            this.lblCredParc.Size = new System.Drawing.Size(75, 24);
-            this.lblCredParc.TabIndex = 13;
-            this.lblCredParc.Text = "9999,99";
-            this.lblCredParc.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lblDin
-            // 
-            this.lblDin.AutoSize = true;
-            this.lblDin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDin.Location = new System.Drawing.Point(688, 38);
-            this.lblDin.Name = "lblDin";
-            this.lblDin.Size = new System.Drawing.Size(75, 24);
-            this.lblDin.TabIndex = 12;
-            this.lblDin.Text = "9999,99";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(466, 111);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(466, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 24);
             this.label8.TabIndex = 11;
@@ -328,7 +288,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(466, 86);
+            this.label7.ForeColor = System.Drawing.Color.DeepPink;
+            this.label7.Location = new System.Drawing.Point(466, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(159, 24);
             this.label7.TabIndex = 10;
@@ -338,7 +299,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(466, 62);
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(466, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(193, 24);
             this.label6.TabIndex = 9;
@@ -348,7 +310,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(466, 38);
+            this.label5.ForeColor = System.Drawing.Color.Green;
+            this.label5.Location = new System.Drawing.Point(466, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 24);
             this.label5.TabIndex = 8;
@@ -432,6 +395,50 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente: ";
             // 
+            // txtBoxDin
+            // 
+            this.txtBoxDin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDin.ForeColor = System.Drawing.Color.Green;
+            this.txtBoxDin.Location = new System.Drawing.Point(692, 33);
+            this.txtBoxDin.Name = "txtBoxDin";
+            this.txtBoxDin.ReadOnly = true;
+            this.txtBoxDin.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxDin.TabIndex = 12;
+            this.txtBoxDin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtBoxCredParc
+            // 
+            this.txtBoxCredParc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCredParc.ForeColor = System.Drawing.Color.Blue;
+            this.txtBoxCredParc.Location = new System.Drawing.Point(692, 57);
+            this.txtBoxCredParc.Name = "txtBoxCredParc";
+            this.txtBoxCredParc.ReadOnly = true;
+            this.txtBoxCredParc.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxCredParc.TabIndex = 13;
+            this.txtBoxCredParc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtBoxDebt
+            // 
+            this.txtBoxDebt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDebt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.txtBoxDebt.Location = new System.Drawing.Point(692, 105);
+            this.txtBoxDebt.Name = "txtBoxDebt";
+            this.txtBoxDebt.ReadOnly = true;
+            this.txtBoxDebt.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxDebt.TabIndex = 15;
+            this.txtBoxDebt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtBoxCredVista
+            // 
+            this.txtBoxCredVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCredVista.ForeColor = System.Drawing.Color.DeepPink;
+            this.txtBoxCredVista.Location = new System.Drawing.Point(692, 81);
+            this.txtBoxCredVista.Name = "txtBoxCredVista";
+            this.txtBoxCredVista.ReadOnly = true;
+            this.txtBoxCredVista.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxCredVista.TabIndex = 14;
+            this.txtBoxCredVista.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // TelaDetalhesDaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,13 +488,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Label lblDebt;
-        private System.Windows.Forms.Label lblCredVista;
-        private System.Windows.Forms.Label lblCredParc;
-        private System.Windows.Forms.Label lblDin;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBoxDebt;
+        private System.Windows.Forms.TextBox txtBoxCredVista;
+        private System.Windows.Forms.TextBox txtBoxCredParc;
+        private System.Windows.Forms.TextBox txtBoxDin;
     }
 }

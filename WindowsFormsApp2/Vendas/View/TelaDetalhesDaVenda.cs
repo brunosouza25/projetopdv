@@ -20,7 +20,7 @@ namespace WindowsFormsApp2.Vendas.View
             InitializeComponent();
             this.codVenda = codVenda;
             carregarTela();
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -40,11 +40,12 @@ namespace WindowsFormsApp2.Vendas.View
         {
             var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
+            var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
 
-            lblDin.Text = auxVenda[0]["PagValor"].ToString();
-            lblCredVista.Text = auxVenda[1]["PagValor"].ToString();
-            lblCredParc.Text = auxVenda[2]["PagValor"].ToString();
-            lblDebt.Text = auxVenda[3]["PagValor"].ToString();
+            txtBoxDin.Text =  Convert.ToDouble(pagamentosVenda[0]["PagValor"]).ToString("F2");
+            txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[1]["PagValor"]).ToString("F2");
+            txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[2]["PagValor"]).ToString("F2");
+            txtBoxDebt.Text = Convert.ToDouble(pagamentosVenda[3]["PagValor"]).ToString("F2");
 
             lblNumVenda.Text = auxVenda[0]["idVenda"].ToString();
 
@@ -55,13 +56,27 @@ namespace WindowsFormsApp2.Vendas.View
             for(int i = 0; i < auxProdutosVenda.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
+                int qnt = 0;
+
+                for (int j = 0; j <= auxProdutosVenda.Count - 1; j++)
+                {
+                    if (auxProdutosVenda[i]["prodNome"].ToString() == auxProdutosVenda[j]["prodNome"].ToString())
+                    {
+                        qnt += 1;
+
+                    }
+                }
 
                 item.SubItems.Add(auxProdutosVenda[i]["prodNome"].ToString());
                 item.SubItems.Add(auxProdutosVenda[i]["prodCodBarras"].ToString());
+                item.SubItems.Add(auxProdutosVenda[i]["prodValor"].ToString());
+                item.SubItems.Add("");
+
+
+                item.SubItems.Add(qnt.ToString());
                 item.SubItems.Add(Convert.ToDateTime(auxVenda[i]["vendData"]).ToString("dd/MM/yyyy"));
                 item.SubItems.Add(Convert.ToDouble(auxVenda[i]["valorCompra"]).ToString("F2"));
 
-                listaVendas.Items.Add(item);
             }
 
 
