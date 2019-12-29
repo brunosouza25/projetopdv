@@ -94,12 +94,16 @@ namespace WindowsFormsApp2
         private void pesquisaListaCaixa()
         {
             var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
-            int aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
+            int aux = 0;
+            if (varPesquisa1.Count > 0)
+                aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
+            
 
             if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1 || Convert.ToInt32(txtBoxQnt.Text) > aux)
                 MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo ou a quantidade inserida é maior do que contem no estoque");
             else
             {
+
                 Produto prod = new Produto();
                 prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
                 prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
@@ -284,7 +288,7 @@ namespace WindowsFormsApp2
                 pesquisa = TxtBoxPesquisaProd.Text;
                 pesquisaListaCaixa();
             }
-            TxtBoxPesquisaProd.Select();
+            txtBoxQnt.Select();
         }
 
         private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)

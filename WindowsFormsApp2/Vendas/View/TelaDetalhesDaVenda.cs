@@ -49,14 +49,14 @@ namespace WindowsFormsApp2.Vendas.View
 
             lblNumVenda.Text = auxVenda[0]["idVenda"].ToString();
 
-            lblTotal.Text = auxVenda[0]["valorCompra"].ToString();
+            lblTotal.Text = Convert.ToDouble(auxVenda[0]["valorCompra"]).ToString("F2");
 
             lblData.Text = Convert.ToDateTime(auxVenda[0]["vendData"]).ToString("dd/MM/yyyy");
 
             for(int i = 0; i < auxProdutosVenda.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
-                int qnt = 0;
+                /*int qnt = 0;
                 
                 for (int j = 0; j <= auxProdutosVenda.Count - 1; j++)
                 {
@@ -65,18 +65,24 @@ namespace WindowsFormsApp2.Vendas.View
                         qnt += 1;
                     }
                 }
-                
+                */
                 item.SubItems.Add(auxProdutosVenda[i]["prodNome"].ToString());
                 item.SubItems.Add(auxProdutosVenda[i]["prodCodBarras"].ToString());
                 item.SubItems.Add(auxProdutosVenda[i]["prodValor"].ToString());
                 item.SubItems.Add("");
+                item.SubItems.Add(auxProdutosVenda[i]["itensQtd"].ToString());
 
+                double aux = Convert.ToDouble(auxVenda[i]["prodValor"]) * Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
+                item.SubItems.Add(aux.ToString("F2"));
 
-                item.SubItems.Add(qnt.ToString());
-                item.SubItems.Add(Convert.ToDouble(auxVenda[i]["valorCompra"]).ToString("F2"));
                 listaVendas.Items.Add(item);
             }
 
+
+        }
+
+        private void listaVendas_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

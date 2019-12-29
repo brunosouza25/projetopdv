@@ -9246,10 +9246,10 @@ WHERE        (Pagamento.idVenda = @idVenda)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Produto.prodNome, Produto.prodCodBarras, Produto.prodValor\r\nFROM   " +
-                "         Produto INNER JOIN\r\n                         ItensDaVenda ON Produto.id" +
-                "Produto = ItensDaVenda.idProduto\r\nWHERE        (ItensDaVenda.idVenda = @idVenda)" +
-                "";
+            this._commandCollection[2].CommandText = @"SELECT        Produto.prodNome, Produto.prodCodBarras, Produto.prodValor, ItensDaVenda.itensQtd
+FROM            Produto INNER JOIN
+                         ItensDaVenda ON Produto.idProduto = ItensDaVenda.idProduto
+WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

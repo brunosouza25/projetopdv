@@ -36,8 +36,10 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel8 = new System.Windows.Forms.Panel();
+            this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -65,8 +67,6 @@
             this.btnSangria = new System.Windows.Forms.Button();
             this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.btnAbrirCaixa = new System.Windows.Forms.Button();
-            this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -146,6 +146,12 @@
             this.columnHeader3.Text = "Qnt";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Sub Total";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader4.Width = 119;
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "0";
@@ -161,6 +167,17 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1010, 43);
             this.panel8.TabIndex = 3;
+            // 
+            // txtBoxQnt
+            // 
+            this.txtBoxQnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxQnt.Location = new System.Drawing.Point(915, 3);
+            this.txtBoxQnt.Mask = "00000";
+            this.txtBoxQnt.Name = "txtBoxQnt";
+            this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
+            this.txtBoxQnt.TabIndex = 5;
+            this.txtBoxQnt.ValidatingType = typeof(int);
+            this.txtBoxQnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxQnt_KeyDown);
             // 
             // label5
             // 
@@ -475,23 +492,6 @@
             this.btnAbrirCaixa.TabIndex = 0;
             this.btnAbrirCaixa.UseVisualStyleBackColor = true;
             this.btnAbrirCaixa.Click += new System.EventHandler(this.btnAbrirCaixa_Click);
-            // 
-            // txtBoxQnt
-            // 
-            this.txtBoxQnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxQnt.Location = new System.Drawing.Point(915, 3);
-            this.txtBoxQnt.Mask = "00000";
-            this.txtBoxQnt.Name = "txtBoxQnt";
-            this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
-            this.txtBoxQnt.TabIndex = 5;
-            this.txtBoxQnt.ValidatingType = typeof(int);
-            this.txtBoxQnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxQnt_KeyDown);
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Sub Total";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader4.Width = 119;
             // 
             // listaDoCaixa
             // 
