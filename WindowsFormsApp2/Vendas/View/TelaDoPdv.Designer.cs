@@ -35,7 +35,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,7 +65,10 @@
             this.btnSangria = new System.Windows.Forms.Button();
             this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.btnAbrirCaixa = new System.Windows.Forms.Button();
+            this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -81,7 +87,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.listaCaixa, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.TxtBoxPesquisaProd, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel8, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -99,6 +105,8 @@
             this.columnHeader1,
             this.columnHeader13,
             this.columnHeader12,
+            this.columnHeader3,
+            this.columnHeader4,
             this.columnHeader2});
             this.listaCaixa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,22 +138,49 @@
             // columnHeader12
             // 
             this.columnHeader12.Text = "Valor";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader12.Width = 90;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Qnt";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "0";
             this.columnHeader2.Width = 0;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.txtBoxQnt);
+            this.panel8.Controls.Add(this.label5);
+            this.panel8.Controls.Add(this.TxtBoxPesquisaProd);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1010, 43);
+            this.panel8.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(876, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 39);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "X";
+            // 
             // TxtBoxPesquisaProd
             // 
             this.TxtBoxPesquisaProd.BackColor = System.Drawing.SystemColors.Info;
-            this.TxtBoxPesquisaProd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxPesquisaProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBoxPesquisaProd.Location = new System.Drawing.Point(3, 3);
+            this.TxtBoxPesquisaProd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TxtBoxPesquisaProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBoxPesquisaProd.Location = new System.Drawing.Point(0, 0);
             this.TxtBoxPesquisaProd.Name = "TxtBoxPesquisaProd";
-            this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(1010, 44);
-            this.TxtBoxPesquisaProd.TabIndex = 1;
+            this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(873, 40);
+            this.TxtBoxPesquisaProd.TabIndex = 2;
             this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
             // 
             // tableLayoutPanel1
@@ -441,6 +476,23 @@
             this.btnAbrirCaixa.UseVisualStyleBackColor = true;
             this.btnAbrirCaixa.Click += new System.EventHandler(this.btnAbrirCaixa_Click);
             // 
+            // txtBoxQnt
+            // 
+            this.txtBoxQnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxQnt.Location = new System.Drawing.Point(915, 3);
+            this.txtBoxQnt.Mask = "00000";
+            this.txtBoxQnt.Name = "txtBoxQnt";
+            this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
+            this.txtBoxQnt.TabIndex = 5;
+            this.txtBoxQnt.ValidatingType = typeof(int);
+            this.txtBoxQnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxQnt_KeyDown);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Sub Total";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader4.Width = 119;
+            // 
             // listaDoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,7 +502,8 @@
             this.Size = new System.Drawing.Size(1264, 581);
             this.Load += new System.EventHandler(this.listaDoCaixa_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -480,7 +533,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.TextBox TxtBoxPesquisaProd;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -507,5 +559,11 @@
         private System.Windows.Forms.Button btnAbrirCaixa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblCaixa;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtBoxPesquisaProd;
+        private System.Windows.Forms.MaskedTextBox txtBoxQnt;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

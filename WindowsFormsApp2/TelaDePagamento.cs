@@ -115,11 +115,11 @@ namespace WindowsFormsApp2
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtDeb.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 4);
 
 
-            int aux = itensDaLista.Length / 5;
+            int aux = itensDaLista.Length / 7;
             for (int i = 0; i < aux; i++)
             {
                 
-                itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 4]), 1, total);
+                itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 6]), 1, total);
                 var prodQuant = produto.PegaQuantidadePorCod(itensDaLista[i, 2].ToString());
 
                 produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"])-1, itensDaLista[i, 2].ToString()); 

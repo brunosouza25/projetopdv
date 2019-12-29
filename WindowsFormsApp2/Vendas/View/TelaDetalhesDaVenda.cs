@@ -57,16 +57,15 @@ namespace WindowsFormsApp2.Vendas.View
             {
                 ListViewItem item = new ListViewItem();
                 int qnt = 0;
-
+                
                 for (int j = 0; j <= auxProdutosVenda.Count - 1; j++)
                 {
                     if (auxProdutosVenda[i]["prodNome"].ToString() == auxProdutosVenda[j]["prodNome"].ToString())
                     {
                         qnt += 1;
-
                     }
                 }
-
+                
                 item.SubItems.Add(auxProdutosVenda[i]["prodNome"].ToString());
                 item.SubItems.Add(auxProdutosVenda[i]["prodCodBarras"].ToString());
                 item.SubItems.Add(auxProdutosVenda[i]["prodValor"].ToString());
@@ -74,9 +73,8 @@ namespace WindowsFormsApp2.Vendas.View
 
 
                 item.SubItems.Add(qnt.ToString());
-                item.SubItems.Add(Convert.ToDateTime(auxVenda[i]["vendData"]).ToString("dd/MM/yyyy"));
                 item.SubItems.Add(Convert.ToDouble(auxVenda[i]["valorCompra"]).ToString("F2"));
-
+                listaVendas.Items.Add(item);
             }
 
 
