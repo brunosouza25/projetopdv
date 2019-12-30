@@ -26,3 +26,4 @@ C:\Users\bruno\Documents\Projetos\Ponto de Venda\projetopdv\WindowsFormsApp2\obj
 C:\Users\bruno\Documents\Projetos\Ponto de Venda\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\Users\bruno\Documents\Projetos\Ponto de Venda\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.ListaDeVendas.resources
 C:\Users\bruno\Documents\Projetos\Ponto de Venda\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDetalhesDaVenda.resources
+C:\Users\bruno\Documents\Projetos\Ponto de Venda\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipalEstoque.resources

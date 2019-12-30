@@ -165,7 +165,7 @@ namespace WindowsFormsApp2
 
                 for (int i = 0; i < varProd.Count(); i++)
                 {
-                    table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss.fff"));
+                    table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
                     table.AddCell(varProd[i]["idVenda"].ToString());
                     table.AddCell("R$ "+Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                     table.AddCell(varProd[i]["pagamentoTipo"].ToString());
