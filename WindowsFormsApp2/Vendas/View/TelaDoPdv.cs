@@ -74,7 +74,7 @@ namespace WindowsFormsApp2
             {
 
                 var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
-                caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyy"), 1);
+                caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"), 1);
                 MessageBox.Show("Caixa aberto com sucesso");
                 btnFecharCaixa.Visible = true;
                 btnAbrirCaixa.Visible = false;

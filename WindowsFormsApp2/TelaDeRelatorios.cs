@@ -107,7 +107,7 @@ namespace WindowsFormsApp2
 
                     for (int i = 0; i < varProd.Count(); i++)
                     {
-                        table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy"));
+                        table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
                         table.AddCell(varProd[i]["idVenda"].ToString());
                         table.AddCell("R$ " + Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                         table.AddCell(varProd[i]["pagamentoTipo"].ToString());
@@ -165,7 +165,7 @@ namespace WindowsFormsApp2
 
                 for (int i = 0; i < varProd.Count(); i++)
                 {
-                    table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy"));
+                    table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss.fff"));
                     table.AddCell(varProd[i]["idVenda"].ToString());
                     table.AddCell("R$ "+Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                     table.AddCell(varProd[i]["pagamentoTipo"].ToString());
@@ -241,7 +241,7 @@ namespace WindowsFormsApp2
 
                     for (int i = 0; i < aux1.Count(); i++)
                     {
-                        table.AddCell(Convert.ToDateTime(aux1[i]["dataCaixa"]).ToString("dd/MM/yyyy"));
+                        table.AddCell(Convert.ToDateTime(aux1[i]["dataCaixa"]).ToString("dd/MM/yyyy HH:mm:ss.fff"));
                         table.AddCell(aux1[i]["idCaixa"].ToString());
                         table.AddCell("R$ " + Convert.ToDouble(aux1[i]["aberturaCaixa"]).ToString("F2"));
                         table.AddCell("R$ " + Convert.ToDouble(aux1[i]["valorAtual"]).ToString("F2"));

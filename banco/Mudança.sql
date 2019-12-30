@@ -43,8 +43,44 @@ CREATE TABLE Caixa (
     aberturaCaixa FLOAT,
     fechamentoCaixa FLOAT,
     valorAtual FLOAT,
-    dataCaixa DATE,
+    dataCaixa DATETIME,
     estadoCaixa TINYINT
+);
+
+CREATE TABLE ItensDeEntrada (
+    idItensEntrada INT PRIMARY KEY IDENTITY (1,1),
+    idProduto INT,
+    entradaEstado TINYINT,
+    qntItem INT,
+    dataEntrada DATETIME,
+    observacoes VARCHAR(300)
+);
+
+CREATE TABLE ItensDeSaida (
+    idItensSaida INT PRIMARY KEY IDENTITY (1,1),
+    idProduto INT,
+    saidaEstado INT,
+    qntItem INT,
+    dataSaida DATETIME,
+    observacoes VARCHAR(300)
+);
+
+CREATE TABLE Funcionario (
+    idFuncionario INT PRIMARY KEY IDENTITY (1,1),
+    idCargo INT,
+    nomeFunc VARCHAR(54),
+    dataNasc DATE,
+    sexo TINYINT,
+    login VARCHAR(54),
+    senha VARCHAR(54),
+    dataCriacao DATETIME,
+    funcEstado TINYINT
+);
+
+CREATE TABLE Cargo (
+    idCargo INT PRIMARY KEY IDENTITY (1,1),
+    cargoNome VARCHAR(54),
+    estadoCargo TINYINT
 );
  
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
@@ -52,41 +88,15 @@ ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idProduto) REFERENCES Produto (idProduto)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 ALTER TABLE Venda ADD FOREIGN KEY (idCaixa) REFERENCES Caixa(idCaixa)
+ALTER TABLE ItensDeEntrada ADD FOREIGN KEY (idProduto) REFERENCES Produto(idProduto)
+ALTER TABLE ItensDeSaida ADD FOREIGN KEY (idProduto) REFERENCES Produto(idProduto)
+ALTER TABLE Funcionario ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
 
 INSERT INTO MetodoDePagamento VALUES (1,'DINHEIRO')
-INSERT INTO Caixa VALUES (200, 0, 0, '01/12/2019', 0)
+INSERT INTO Caixa VALUES (0, 0, 0, '01/12/2019', 0)
 
 INSERT INTO MetodoDePagamento VALUES (2,'CREDITO A VISTA')
 INSERT INTO MetodoDePagamento VALUES (3,'CREDITO PARCELADO')
 INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 
-DELETE FROM Venda
-
-select * from ItensDaVenda
-
-SELECT        Produto.prodNome, Produto.prodValor, Produto.prodCodBarras, ItensDaVenda.idVenda, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, Venda.vendData, MetodoDePagamento.pagamentoTipo, Pagamento.PagValor
-FROM            MetodoDePagamento INNER JOIN
-                         Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
-                         Venda ON Pagamento.idVenda = Venda.idVenda INNER JOIN
-                         ItensDaVenda INNER JOIN
-                         Produto ON ItensDaVenda.idProduto = Produto.idProduto ON Venda.idVenda = ItensDaVenda.idVenda
-WHERE Pagamento.idVenda = 172
-
-SELECT        Produto.prodNome, Produto.prodValor, Produto.prodCodBarras, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, Venda.vendData, MetodoDePagamento.pagamentoTipo, Pagamento.PagValor, Venda.idVenda
-FROM            MetodoDePagamento INNER JOIN
-                         Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
-                         Venda ON Pagamento.idVenda = Venda.idVenda INNER JOIN
-                         ItensDaVenda INNER JOIN
-                         Produto ON ItensDaVenda.idProduto = Produto.idProduto ON Venda.idVenda = ItensDaVenda.idVenda
-WHERE        (Pagamento.idVenda = 172)
-
-SELECT        Produto.prodNome, Produto.prodValor, Produto.prodCodBarras, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, Venda.vendData, MetodoDePagamento.pagamentoTipo, Pagamento.PagValor, 
-                         ItensDaVenda.idVenda AS idVenda
-FROM            MetodoDePagamento INNER JOIN
-                         Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
-                         Venda ON Pagamento.idVenda = Venda.idVenda INNER JOIN
-                         ItensDaVenda INNER JOIN
-                         Produto ON ItensDaVenda.idProduto = Produto.idProduto ON Venda.idVenda = ItensDaVenda.idVenda
-WHERE        (ItensDaVenda.idVenda = 174)
-
-select * from Caixa
+/*DELETE FROM Venda*/
