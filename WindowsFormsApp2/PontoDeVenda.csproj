@@ -85,43 +85,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EntradaDeProdutos.cs">
+    <Compile Include="Estoque\View\EntradaDeProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EntradaDeProdutos.Designer.cs">
+    <Compile Include="Estoque\View\EntradaDeProdutos.Designer.cs">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaidaDeProdutos.cs">
+    <Compile Include="Estoque\View\SaidaDeProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SaidaDeProdutos.Designer.cs">
+    <Compile Include="Estoque\View\SaidaDeProdutos.Designer.cs">
       <DependentUpon>SaidaDeProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaDeSangria.cs">
+    <Compile Include="Vendas\View\TelaDeSangria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaDeSangria.Designer.cs">
+    <Compile Include="Vendas\View\TelaDeSangria.Designer.cs">
       <DependentUpon>TelaDeSangria.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaDeLogin.cs">
+    <Compile Include="Principal\View\TelaDeLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaDeLogin.Designer.cs">
+    <Compile Include="Principal\View\TelaDeLogin.Designer.cs">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaPrincipal.cs">
+    <Compile Include="Principal\View\TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaPrincipal.Designer.cs">
+    <Compile Include="Principal\View\TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produto.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Estoque\Classes\Produto.cs" />
+    <Compile Include="Principal\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TelaPrincipalEstoque.cs">
+    <Compile Include="Estoque\View\TelaPrincipalEstoque.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TelaPrincipalEstoque.Designer.cs">
+    <Compile Include="Estoque\View\TelaPrincipalEstoque.Designer.cs">
       <DependentUpon>TelaPrincipalEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Vendas\View\ListaDeVendas.cs">
@@ -142,10 +142,10 @@
     <Compile Include="Vendas\View\TelaDoPdv.Designer.cs">
       <DependentUpon>TelaDoPdv.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaDeRelatorios.cs">
+    <Compile Include="Principal\View\TelaDeRelatorios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TelaDeRelatorios.Designer.cs">
+    <Compile Include="Principal\View\TelaDeRelatorios.Designer.cs">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
     </Compile>
     <Compile Include=".cs">
@@ -155,28 +155,28 @@
       <DependentUpon>.cs</DependentUpon>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TelaCriarProd.cs">
+    <Compile Include="Estoque\View\TelaCriarProd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaCriarProd.Designer.cs">
+    <Compile Include="Estoque\View\TelaCriarProd.Designer.cs">
       <DependentUpon>TelaCriarProd.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaDeEstoque.cs">
+    <Compile Include="Estoque\View\TelaDeEstoque.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TelaDeEstoque.Designer.cs">
+    <Compile Include="Estoque\View\TelaDeEstoque.Designer.cs">
       <DependentUpon>TelaDeEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaDePagamento.cs">
+    <Compile Include="Vendas\View\TelaDePagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaDePagamento.Designer.cs">
+    <Compile Include="Vendas\View\TelaDePagamento.Designer.cs">
       <DependentUpon>TelaDePagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaEntrarProd.cs">
+    <Compile Include="Estoque\View\TelaEntrarProd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaEntrarProd.Designer.cs">
+    <Compile Include="Estoque\View\TelaEntrarProd.Designer.cs">
       <DependentUpon>TelaEntrarProd.cs</DependentUpon>
     </Compile>
     <Compile Include="Vendas\View\TelaDeVendas.cs">
@@ -185,19 +185,19 @@
     <Compile Include="Vendas\View\TelaDeVendas.Designer.cs">
       <DependentUpon>TelaDeVendas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EntradaDeProdutos.resx">
+    <EmbeddedResource Include="Estoque\View\EntradaDeProdutos.resx">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SaidaDeProdutos.resx">
+    <EmbeddedResource Include="Estoque\View\SaidaDeProdutos.resx">
       <DependentUpon>SaidaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaDeLogin.resx">
+    <EmbeddedResource Include="Principal\View\TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaDeSangria.resx">
+    <EmbeddedResource Include="Vendas\View\TelaDeSangria.resx">
       <DependentUpon>TelaDeSangria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaPrincipal.resx">
+    <EmbeddedResource Include="Principal\View\TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -210,7 +210,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TelaPrincipalEstoque.resx">
+    <EmbeddedResource Include="Estoque\View\TelaPrincipalEstoque.resx">
       <DependentUpon>TelaPrincipalEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\View\ListaDeVendas.resx">
@@ -222,22 +222,22 @@
     <EmbeddedResource Include="Vendas\View\TelaDoPdv.resx">
       <DependentUpon>TelaDoPdv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaDeRelatorios.resx">
+    <EmbeddedResource Include="Principal\View\TelaDeRelatorios.resx">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include=".resx">
       <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaCriarProd.resx">
+    <EmbeddedResource Include="Estoque\View\TelaCriarProd.resx">
       <DependentUpon>TelaCriarProd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaDeEstoque.resx">
+    <EmbeddedResource Include="Estoque\View\TelaDeEstoque.resx">
       <DependentUpon>TelaDeEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaDePagamento.resx">
+    <EmbeddedResource Include="Vendas\View\TelaDePagamento.resx">
       <DependentUpon>TelaDePagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaEntrarProd.resx">
+    <EmbeddedResource Include="Estoque\View\TelaEntrarProd.resx">
       <DependentUpon>TelaEntrarProd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\View\TelaDeVendas.resx">
@@ -249,7 +249,7 @@
     <None Include="Dados.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Dados.Designer.cs</LastGenOutput>
+      <LastGenOutput>Dados1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Dados.xss">
       <DependentUpon>Dados.xsd</DependentUpon>
@@ -344,5 +344,6 @@
   <ItemGroup>
     <None Include="Resources\retirar.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

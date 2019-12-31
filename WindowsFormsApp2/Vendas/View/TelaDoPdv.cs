@@ -275,7 +275,6 @@ namespace WindowsFormsApp2
             total = 0;
             listaProduto.Clear();
             TxtBoxPesquisaProd.Select();
-
         }
 
         private void btnSangria_Click(object sender, EventArgs e)

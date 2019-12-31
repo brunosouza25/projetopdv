@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp2
 {
     public partial class TelaDePagamento : Form
@@ -33,33 +34,7 @@ namespace WindowsFormsApp2
         {
             bool ok = false;
             double a, b, c, d, f;
-            double valorDin, valorCredVista, valorCredParc, valorDeb, valorDesc, valorPagar;
-
-            if (TxtBoxDinheiro.Text == "")
-                valorDin = 0;
-            else
-                valorDin = Convert.ToDouble(TxtBoxDinheiro.Text);
-
-            if (txtCredVista.Text == "")
-                valorCredVista = 0;
-            else
-                valorCredVista = Convert.ToDouble(txtCredVista.Text);
-
-            if (txtCredParc.Text == "")
-                valorCredParc = 0;
-            else
-                valorCredParc = Convert.ToDouble(txtCredParc.Text);
-
-            if (txtDeb.Text == "")
-                valorDeb = 0;
-            else
-                valorDeb = Convert.ToDouble(txtDeb.Text);
-
-            if (txtBoxDesc.Text == "")
-                valorDesc = 0;
-            else
-                valorDesc = Convert.ToDouble(txtBoxDesc.Text);
-
+            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, valorDesc = 0, valorPagar = 0;
 
 
             double somaTotal = valorDin + valorCredVista + valorCredParc + valorDeb;
@@ -72,6 +47,7 @@ namespace WindowsFormsApp2
                 && ((double.TryParse(txtCredParc.Text.Trim(), out c) || txtCredParc.Text == "")) && ((double.TryParse(txtDeb.Text.Trim(), out d) || txtDeb.Text == ""))
                 && ((double.TryParse(txtBoxDesc.Text.Trim(), out f )|| txtBoxDesc.Text == "")))
             {
+
                 if (somaTotal == Convert.ToDouble(valorTotal))
                 {
                     LblFalta.Text = "Falta: R$";
