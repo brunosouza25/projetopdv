@@ -88,7 +88,7 @@
             this.BtnPdv.Name = "BtnPdv";
             this.BtnPdv.Size = new System.Drawing.Size(170, 56);
             this.BtnPdv.TabIndex = 3;
-            this.BtnPdv.Text = "\'";
+            this.BtnPdv.Text = "PDV";
             this.BtnPdv.UseVisualStyleBackColor = true;
             this.BtnPdv.Click += new System.EventHandler(this.BtnPdv_Click);
             // 
@@ -98,7 +98,7 @@
             this.BtnVendas.Name = "BtnVendas";
             this.BtnVendas.Size = new System.Drawing.Size(170, 56);
             this.BtnVendas.TabIndex = 2;
-            this.BtnVendas.Text = "\'";
+            this.BtnVendas.Text = "Vendas";
             this.BtnVendas.UseVisualStyleBackColor = true;
             this.BtnVendas.Click += new System.EventHandler(this.button1_Click_1);
             // 

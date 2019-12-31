@@ -171,7 +171,7 @@ namespace WindowsFormsApp2
             TxtBoxPesquisaProd.Select();
         }
 
-        private void Bt_Cancelar_Venda_Click(object sender, EventArgs e)
+        private void cancelarVenda()
         {
             if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -181,6 +181,11 @@ namespace WindowsFormsApp2
                 listaProduto.Clear();
             }
             TxtBoxPesquisaProd.Select();
+        }
+
+        private void Bt_Cancelar_Venda_Click(object sender, EventArgs e)
+        {
+            cancelarVenda();
         }
 
         private void Bt_Add_Prod_Click(object sender, EventArgs e)
@@ -265,6 +270,12 @@ namespace WindowsFormsApp2
         private void btnFecharCaixa_Click(object sender, EventArgs e)
         {
             travarBotoes();
+            listaCaixa.Items.Clear();
+            LblTotal.Text = "R$: 0,00";
+            total = 0;
+            listaProduto.Clear();
+            TxtBoxPesquisaProd.Select();
+
         }
 
         private void btnSangria_Click(object sender, EventArgs e)

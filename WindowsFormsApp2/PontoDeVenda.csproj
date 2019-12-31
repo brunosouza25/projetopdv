@@ -91,6 +91,12 @@
     <Compile Include="EntradaDeProdutos.Designer.cs">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaidaDeProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SaidaDeProdutos.Designer.cs">
+      <DependentUpon>SaidaDeProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaDeSangria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
     <EmbeddedResource Include="EntradaDeProdutos.resx">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaidaDeProdutos.resx">
+      <DependentUpon>SaidaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>

@@ -95,7 +95,7 @@
             // 
             // btnEntradaProduto
             // 
-            this.btnEntradaProduto.Location = new System.Drawing.Point(114, 3);
+            this.btnEntradaProduto.Location = new System.Drawing.Point(102, 3);
             this.btnEntradaProduto.Name = "btnEntradaProduto";
             this.btnEntradaProduto.Size = new System.Drawing.Size(83, 55);
             this.btnEntradaProduto.TabIndex = 1;
@@ -105,7 +105,7 @@
             // 
             // btnEstoque
             // 
-            this.btnEstoque.Location = new System.Drawing.Point(25, 2);
+            this.btnEstoque.Location = new System.Drawing.Point(3, 3);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(83, 55);
             this.btnEstoque.TabIndex = 0;
