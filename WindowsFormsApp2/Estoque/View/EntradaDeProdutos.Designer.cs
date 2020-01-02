@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPerso = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxAteMes = new System.Windows.Forms.MaskedTextBox();
+            this.txtBoxDeMes = new System.Windows.Forms.MaskedTextBox();
+            this.btnMesPassado = new System.Windows.Forms.Button();
+            this.btnEsteMes = new System.Windows.Forms.Button();
+            this.btn7Dias = new System.Windows.Forms.Button();
             this.btnOntem = new System.Windows.Forms.Button();
             this.btnHoje = new System.Windows.Forms.Button();
             this.lblData = new System.Windows.Forms.Label();
@@ -43,15 +51,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEntrarProd = new System.Windows.Forms.Button();
-            this.btn7Dias = new System.Windows.Forms.Button();
-            this.btnEsteMes = new System.Windows.Forms.Button();
-            this.btnMesPassado = new System.Windows.Forms.Button();
-            this.txtBoxDeMes = new System.Windows.Forms.MaskedTextBox();
-            this.txtBoxAteMes = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnPerso = new System.Windows.Forms.Button();
+            this.btnEntradaDeProduto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -78,6 +78,80 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 402);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPerso
+            // 
+            this.btnPerso.Location = new System.Drawing.Point(3, 364);
+            this.btnPerso.Name = "btnPerso";
+            this.btnPerso.Size = new System.Drawing.Size(228, 35);
+            this.btnPerso.TabIndex = 10;
+            this.btnPerso.Text = "Personalizado";
+            this.btnPerso.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(134, 293);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Até";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 293);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "De";
+            // 
+            // txtBoxAteMes
+            // 
+            this.txtBoxAteMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxAteMes.Location = new System.Drawing.Point(125, 315);
+            this.txtBoxAteMes.Mask = "00/00/0000";
+            this.txtBoxAteMes.Name = "txtBoxAteMes";
+            this.txtBoxAteMes.Size = new System.Drawing.Size(100, 35);
+            this.txtBoxAteMes.TabIndex = 7;
+            this.txtBoxAteMes.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtBoxDeMes
+            // 
+            this.txtBoxDeMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDeMes.Location = new System.Drawing.Point(3, 315);
+            this.txtBoxDeMes.Mask = "00/00/0000";
+            this.txtBoxDeMes.Name = "txtBoxDeMes";
+            this.txtBoxDeMes.Size = new System.Drawing.Size(100, 35);
+            this.txtBoxDeMes.TabIndex = 6;
+            this.txtBoxDeMes.ValidatingType = typeof(System.DateTime);
+            // 
+            // btnMesPassado
+            // 
+            this.btnMesPassado.Location = new System.Drawing.Point(0, 238);
+            this.btnMesPassado.Name = "btnMesPassado";
+            this.btnMesPassado.Size = new System.Drawing.Size(228, 35);
+            this.btnMesPassado.TabIndex = 5;
+            this.btnMesPassado.Text = "Mês passado";
+            this.btnMesPassado.UseVisualStyleBackColor = true;
+            // 
+            // btnEsteMes
+            // 
+            this.btnEsteMes.Location = new System.Drawing.Point(0, 197);
+            this.btnEsteMes.Name = "btnEsteMes";
+            this.btnEsteMes.Size = new System.Drawing.Size(228, 35);
+            this.btnEsteMes.TabIndex = 4;
+            this.btnEsteMes.Text = "Este mês";
+            this.btnEsteMes.UseVisualStyleBackColor = true;
+            // 
+            // btn7Dias
+            // 
+            this.btn7Dias.Location = new System.Drawing.Point(0, 157);
+            this.btn7Dias.Name = "btn7Dias";
+            this.btn7Dias.Size = new System.Drawing.Size(228, 35);
+            this.btn7Dias.TabIndex = 3;
+            this.btn7Dias.Text = "Ultimos 7 dias";
+            this.btn7Dias.UseVisualStyleBackColor = true;
             // 
             // btnOntem
             // 
@@ -118,7 +192,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.30508F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 256F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 408F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(234, 408);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
@@ -214,95 +288,22 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnEntrarProd);
+            this.panel2.Controls.Add(this.btnEntradaDeProduto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 417);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 87);
             this.panel2.TabIndex = 2;
             // 
-            // btnEntrarProd
+            // btnEntradaDeProduto
             // 
-            this.btnEntrarProd.Location = new System.Drawing.Point(61, 3);
-            this.btnEntrarProd.Name = "btnEntrarProd";
-            this.btnEntrarProd.Size = new System.Drawing.Size(112, 81);
-            this.btnEntrarProd.TabIndex = 0;
-            this.btnEntrarProd.Text = "Entrar Produto";
-            this.btnEntrarProd.UseVisualStyleBackColor = true;
-            // 
-            // btn7Dias
-            // 
-            this.btn7Dias.Location = new System.Drawing.Point(0, 157);
-            this.btn7Dias.Name = "btn7Dias";
-            this.btn7Dias.Size = new System.Drawing.Size(228, 35);
-            this.btn7Dias.TabIndex = 3;
-            this.btn7Dias.Text = "Ultimos 7 dias";
-            this.btn7Dias.UseVisualStyleBackColor = true;
-            // 
-            // btnEsteMes
-            // 
-            this.btnEsteMes.Location = new System.Drawing.Point(0, 197);
-            this.btnEsteMes.Name = "btnEsteMes";
-            this.btnEsteMes.Size = new System.Drawing.Size(228, 35);
-            this.btnEsteMes.TabIndex = 4;
-            this.btnEsteMes.Text = "Este mês";
-            this.btnEsteMes.UseVisualStyleBackColor = true;
-            // 
-            // btnMesPassado
-            // 
-            this.btnMesPassado.Location = new System.Drawing.Point(0, 238);
-            this.btnMesPassado.Name = "btnMesPassado";
-            this.btnMesPassado.Size = new System.Drawing.Size(228, 35);
-            this.btnMesPassado.TabIndex = 5;
-            this.btnMesPassado.Text = "Mês passado";
-            this.btnMesPassado.UseVisualStyleBackColor = true;
-            // 
-            // txtBoxDeMes
-            // 
-            this.txtBoxDeMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDeMes.Location = new System.Drawing.Point(3, 315);
-            this.txtBoxDeMes.Mask = "00/00/0000";
-            this.txtBoxDeMes.Name = "txtBoxDeMes";
-            this.txtBoxDeMes.Size = new System.Drawing.Size(100, 35);
-            this.txtBoxDeMes.TabIndex = 6;
-            this.txtBoxDeMes.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtBoxAteMes
-            // 
-            this.txtBoxAteMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxAteMes.Location = new System.Drawing.Point(125, 315);
-            this.txtBoxAteMes.Mask = "00/00/0000";
-            this.txtBoxAteMes.Name = "txtBoxAteMes";
-            this.txtBoxAteMes.Size = new System.Drawing.Size(100, 35);
-            this.txtBoxAteMes.TabIndex = 7;
-            this.txtBoxAteMes.ValidatingType = typeof(System.DateTime);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 293);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "De";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 293);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Até";
-            // 
-            // btnPerso
-            // 
-            this.btnPerso.Location = new System.Drawing.Point(3, 364);
-            this.btnPerso.Name = "btnPerso";
-            this.btnPerso.Size = new System.Drawing.Size(228, 35);
-            this.btnPerso.TabIndex = 10;
-            this.btnPerso.Text = "Personalizado";
-            this.btnPerso.UseVisualStyleBackColor = true;
+            this.btnEntradaDeProduto.Location = new System.Drawing.Point(61, 3);
+            this.btnEntradaDeProduto.Name = "btnEntradaDeProduto";
+            this.btnEntradaDeProduto.Size = new System.Drawing.Size(112, 81);
+            this.btnEntradaDeProduto.TabIndex = 0;
+            this.btnEntradaDeProduto.Text = "Nova Entrada de Produto";
+            this.btnEntradaDeProduto.UseVisualStyleBackColor = true;
+            this.btnEntradaDeProduto.Click += new System.EventHandler(this.btnEntrarProd_Click);
             // 
             // EntradaDeProdutos
             // 
@@ -336,7 +337,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnEntrarProd;
+        private System.Windows.Forms.Button btnEntradaDeProduto;
         private System.Windows.Forms.Button btnOntem;
         private System.Windows.Forms.Button btnHoje;
         private System.Windows.Forms.ColumnHeader columnHeader2;

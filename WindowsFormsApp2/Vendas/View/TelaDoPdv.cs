@@ -34,8 +34,6 @@ namespace WindowsFormsApp2
         }
         DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        Produto prod = new Produto();
-        List<Produto> produtos = new List<Produto>();
 
 
         string pesquisa;
