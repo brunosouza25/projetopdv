@@ -54,7 +54,7 @@ namespace WindowsFormsApp2
                 if (txtCredVista.Text == "")
                     valorCredVista = 0;
                 else
-                    valorCredVista = Convert.ToDouble(txtCredParc.Text);
+                    valorCredVista = Convert.ToDouble(txtCredVista.Text);
 
                 if (txtCredParc.Text == "")
                     valorCredParc = 0;
@@ -123,6 +123,7 @@ namespace WindowsFormsApp2
                 pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 2, valorDesc);
             else
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredVista.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 2, valorDesc);
+            
             if (txtCredParc.Text == "" || txtCredParc.Text == "0")
                 pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 3, valorDesc);
             else

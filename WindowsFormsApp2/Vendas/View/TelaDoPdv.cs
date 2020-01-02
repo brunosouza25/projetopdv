@@ -219,8 +219,8 @@ namespace WindowsFormsApp2
 
         private void BtnFinalizarVenda_Click_1(object sender, EventArgs e)
         {
-            try
-            {
+           // try
+            //{
                 if (listaCaixa.Items.Count > 0)
                 {
                     if (total > 0)
@@ -247,11 +247,12 @@ namespace WindowsFormsApp2
                 total = 0;
                 LblTotal.Text = "";
                 TxtBoxPesquisaProd.Select();
-            }
-            catch
+            //}
+            /*catch(IOExeption er)
             {
                 MessageBox.Show("Temos um erro aqui");
             }
+            }*/
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)

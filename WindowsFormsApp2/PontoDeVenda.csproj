@@ -80,16 +80,11 @@
     <Compile Include="Dados.cs">
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dados.Designer.cs">
+    <Compile Include="Dados1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
-    <None Include="Dados1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dados.xsd</DependentUpon>
-    </None>
     <Compile Include="Estoque\View\EntradaDeProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
