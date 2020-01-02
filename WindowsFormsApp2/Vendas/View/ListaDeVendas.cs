@@ -24,7 +24,7 @@ namespace WindowsFormsApp2.Vendas.View
         {
             listaVendas.Items.Clear();
             var varVendas = listaDeVendas.retornarVendas();
-
+            
             for (int i = 0; i < varVendas.Count; i++)
             {
                 ListViewItem item = new ListViewItem();

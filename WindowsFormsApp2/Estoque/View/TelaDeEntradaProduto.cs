@@ -7,35 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp2.DadosTableAdapters;
 
 namespace WindowsFormsApp2.Estoque.View
 {
     public partial class TelaDeEntradaProduto : Form
     {
+        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
+        DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
         public TelaDeEntradaProduto()
         {
             InitializeComponent();
+            ultimoId();
         }
-        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        
 
 
-        int idEntrada = 0;
+        int idEntrada;
         string pesquisa;
         double total = 0;
         int qnt = 0;
         public string[,] itensDaLista { get; set; }
         List<Produto> listaProduto = new List<Produto>();
 
+        private void ultimoId()
+        {
+            var aux = dadosEntrada.retornarIdUltimaEntrada();
+            if (aux.Count < 1)
+                this.idEntrada = 1;
+            else
+                this.idEntrada = Convert.ToInt32(aux[0]["idItensEntrada"])+1;
+
+            lblNumEntrada.Text = idEntrada.ToString();
+
+        }
         private void pesquisaEstoque()
         {
+
+            
             var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
             int aux = 0;
             /*
             if (varPesquisa1.Count > 0)
                 aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
                 */
-
+            
             if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
                 MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
             else
@@ -94,7 +109,6 @@ namespace WindowsFormsApp2.Estoque.View
                 item.SubItems.Add(prod.idProduto.ToString());
 
             }
-            TxtBoxPesquisaProd.Text = "";
             txtBoxQnt.Text = "1";
         }
         private void button1_Click(object sender, EventArgs e)

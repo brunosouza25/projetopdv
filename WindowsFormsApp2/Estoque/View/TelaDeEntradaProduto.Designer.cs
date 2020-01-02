@@ -54,13 +54,15 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxFunc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblNumEntrada = new System.Windows.Forms.Label();
+            this.lbln = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,8 +81,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -342,14 +342,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtBoxFunc
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(154, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(266, 31);
-            this.textBox1.TabIndex = 7;
+            this.txtBoxFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxFunc.Location = new System.Drawing.Point(154, 47);
+            this.txtBoxFunc.Name = "txtBoxFunc";
+            this.txtBoxFunc.ReadOnly = true;
+            this.txtBoxFunc.Size = new System.Drawing.Size(266, 31);
+            this.txtBoxFunc.TabIndex = 7;
             // 
             // label1
             // 
@@ -361,25 +361,25 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Funcionário: ";
             // 
-            // label5
+            // lblNumEntrada
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(136, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "99999";
+            this.lblNumEntrada.AutoSize = true;
+            this.lblNumEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumEntrada.Location = new System.Drawing.Point(138, 10);
+            this.lblNumEntrada.Name = "lblNumEntrada";
+            this.lblNumEntrada.Size = new System.Drawing.Size(65, 24);
+            this.lblNumEntrada.TabIndex = 5;
+            this.lblNumEntrada.Text = "99999";
             // 
-            // label6
+            // lbln
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 24);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Nº da Entrada:";
+            this.lbln.AutoSize = true;
+            this.lbln.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbln.Location = new System.Drawing.Point(9, 10);
+            this.lbln.Name = "lbln";
+            this.lbln.Size = new System.Drawing.Size(132, 24);
+            this.lbln.TabIndex = 4;
+            this.lbln.Text = "Nº da Entrada:";
             // 
             // label7
             // 
@@ -406,10 +406,10 @@
             this.panel5.Controls.Add(this.txtBoxQnt);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxtBoxPesquisaProd);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txtBoxFunc);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.lblNumEntrada);
+            this.panel5.Controls.Add(this.lbln);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -417,6 +417,26 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(855, 129);
             this.panel5.TabIndex = 0;
+            // 
+            // txtBoxQnt
+            // 
+            this.txtBoxQnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxQnt.Location = new System.Drawing.Point(758, 91);
+            this.txtBoxQnt.Mask = "00000";
+            this.txtBoxQnt.Name = "txtBoxQnt";
+            this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
+            this.txtBoxQnt.TabIndex = 10;
+            this.txtBoxQnt.ValidatingType = typeof(int);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(716, 88);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 39);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "X";
             // 
             // TxtBoxPesquisaProd
             // 
@@ -588,26 +608,6 @@
             this.panel8.Size = new System.Drawing.Size(861, 525);
             this.panel8.TabIndex = 3;
             // 
-            // txtBoxQnt
-            // 
-            this.txtBoxQnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxQnt.Location = new System.Drawing.Point(758, 91);
-            this.txtBoxQnt.Mask = "00000";
-            this.txtBoxQnt.Name = "txtBoxQnt";
-            this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
-            this.txtBoxQnt.TabIndex = 10;
-            this.txtBoxQnt.ValidatingType = typeof(int);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(716, 88);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 39);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "X";
-            // 
             // TelaDeEntradaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,10 +663,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxFunc;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNumEntrada;
+        private System.Windows.Forms.Label lbln;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
