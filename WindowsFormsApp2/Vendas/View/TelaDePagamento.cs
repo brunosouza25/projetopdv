@@ -7,7 +7,7 @@ namespace WindowsFormsApp2
     public partial class TelaDePagamento : Form
     {
         public string[,] itensDaLista { get; set; }
-        double total;
+        double total, valorDesc = 0;
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.VendaTableAdapter dadosVenda = new DadosTableAdapters.VendaTableAdapter();
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
         {
             bool ok = false;
             double a, b, c, d, f;
-            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, valorDesc = 0, valorPagar = 0;
+            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, valorPagar = 0;
 
 
 
@@ -104,11 +104,15 @@ namespace WindowsFormsApp2
         }
         public void confirmar()
         {
+            
             dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy HH:mm"), total);
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
-            double valorDesc = Convert.ToDouble(txtBoxDesc.Text);
 
+            if (txtBoxDesc.Text == "")
+                valorDesc = 0;
+            else
+                valorDesc = Convert.ToDouble(txtBoxDesc.Text);
 
             if (TxtBoxDinheiro.Text == "" || TxtBoxDinheiro.Text == "0")
                 pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 1, valorDesc);
@@ -127,8 +131,8 @@ namespace WindowsFormsApp2
                 pagamento.InserirPagamento(0, Convert.ToInt32(aux2[0]["idVenda"]), 4, valorDesc);
             else
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtDeb.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 4, valorDesc);
-            
 
+            
             int aux = itensDaLista.Length / 7;
             for (int i = 0; i < aux; i++)
             {

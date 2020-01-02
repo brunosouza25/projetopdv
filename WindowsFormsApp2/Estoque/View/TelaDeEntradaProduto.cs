@@ -19,6 +19,8 @@ namespace WindowsFormsApp2.Estoque.View
         {
             InitializeComponent();
             ultimoId();
+            txtBoxQnt.Text = "1";
+            lblData2.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
         }
 
 
@@ -72,7 +74,7 @@ namespace WindowsFormsApp2.Estoque.View
                 ListViewItem item = new ListViewItem();
                 item.SubItems.Add(prod.prodNome);
                 item.SubItems.Add(prod.prodCodBarras);
-                item.SubItems.Add(prod.prodValor.ToString());
+                item.SubItems.Add("R$"+prod.prodValor.ToString("F2"));
                 bool permitido = false;
                 bool achou = false;
 
@@ -106,10 +108,13 @@ namespace WindowsFormsApp2.Estoque.View
                      //item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
                     listaDeEntrada.Items.Add(item);
                 }
+                item.SubItems.Add("R$"+(qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
                 item.SubItems.Add(prod.idProduto.ToString());
 
             }
             txtBoxQnt.Text = "1";
+            TxtBoxPesquisaProd.Text = "";
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -120,8 +125,44 @@ namespace WindowsFormsApp2.Estoque.View
         {
             if (e.KeyCode == Keys.Enter)
             {
-                pesquisaEstoque();
+                int a;
+                if(int.TryParse(txtBoxQnt.Text.Trim(), out a))
+                {
+                    this.pesquisa = TxtBoxPesquisaProd.Text;
+                    pesquisaEstoque();
+                }
+                else
+                {
+                    MessageBox.Show("Valor incorreto inserido na quantidade");
+                }
+
             }
+            TxtBoxPesquisaProd.Select();
+
+        }
+
+        private void txtBoxQnt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                pesquisa = TxtBoxPesquisaProd.Text;
+                pesquisaEstoque();
+                TxtBoxPesquisaProd.Select();
+
+            }else
+                txtBoxQnt.Select();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (listaDeEntrada.Items.Count > 0)
+            {
+                /*for()
+                dadosEntrada.inserirItensEntrada()
+            */        
+    }
+            else
+                MessageBox.Show("Não tem nenhum item para ser adicionado");
         }
     }
 }

@@ -58,7 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumEntrada = new System.Windows.Forms.Label();
             this.lbln = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblData2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
@@ -79,7 +79,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxObs = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -381,21 +381,21 @@
             this.lbln.TabIndex = 4;
             this.lbln.Text = "Nº da Entrada:";
             // 
-            // label7
+            // lblData2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(658, 1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 33);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "99/99/9999";
+            this.lblData2.AutoSize = true;
+            this.lblData2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData2.Location = new System.Drawing.Point(597, 1);
+            this.lblData2.Name = "lblData2";
+            this.lblData2.Size = new System.Drawing.Size(159, 33);
+            this.lblData2.TabIndex = 3;
+            this.lblData2.Text = "99/99/9999";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(575, 1);
+            this.label8.Location = new System.Drawing.Point(514, 1);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 33);
             this.label8.TabIndex = 2;
@@ -410,7 +410,7 @@
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.lblNumEntrada);
             this.panel5.Controls.Add(this.lbln);
-            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.lblData2);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
@@ -427,6 +427,7 @@
             this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
             this.txtBoxQnt.TabIndex = 10;
             this.txtBoxQnt.ValidatingType = typeof(int);
+            this.txtBoxQnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxQnt_KeyDown);
             // 
             // label12
             // 
@@ -536,7 +537,7 @@
             this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.label10);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.textBoxObs);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 436);
             this.panel7.Name = "panel7";
@@ -560,6 +561,7 @@
             this.btnEntrar.TabIndex = 11;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // label9
             // 
@@ -591,13 +593,13 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Observações";
             // 
-            // textBox2
+            // textBoxObs
             // 
-            this.textBox2.Location = new System.Drawing.Point(2, 25);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(439, 58);
-            this.textBox2.TabIndex = 0;
+            this.textBoxObs.Location = new System.Drawing.Point(2, 25);
+            this.textBoxObs.Multiline = true;
+            this.textBoxObs.Name = "textBoxObs";
+            this.textBoxObs.Size = new System.Drawing.Size(439, 58);
+            this.textBoxObs.TabIndex = 0;
             // 
             // panel8
             // 
@@ -667,7 +669,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumEntrada;
         private System.Windows.Forms.Label lbln;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblData2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox TxtBoxPesquisaProd;
@@ -686,7 +688,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxObs;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.MaskedTextBox txtBoxQnt;
         private System.Windows.Forms.Label label12;
