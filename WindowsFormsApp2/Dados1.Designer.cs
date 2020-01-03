@@ -8692,7 +8692,7 @@ SELECT PagValor, idPagamento, idVenda, idMPagamento, valorDesconto FROM Pagament
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        PagValor, idPagamento, idVenda, idMPagamento, valorDesconto\r\nFROM  " +
@@ -8701,19 +8701,24 @@ SELECT PagValor, idPagamento, idVenda, idMPagamento, valorDesconto FROM Pagament
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO Pagamento\r\n                         (PagValor, idVenda, idMPagamento," +
-                " valorDesconto)\r\nVALUES        (@PagValor,@idVenda,@idMPagamento, @valorDesconto" +
-                "); \r\n";
+                " valorDesconto, idPagamento)\r\nVALUES        (@PagValor,@idVenda,@idMPagamento,@v" +
+                "alorDesconto,@idPagamento);  \r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PagValor", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "PagValor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMPagamento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMPagamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorDesconto", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorDesconto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPagamento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPagamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT PagValor, idMPagamento, idPagamento, idVenda, valorDesconto FROM Pagamento" +
                 " WHERE (idVenda = @idVenda)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT top 1 idPagamento FROM Pagamento\r\nORDER BY idPagamento desc ";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8752,6 +8757,17 @@ SELECT PagValor, idPagamento, idVenda, idMPagamento, valorDesconto FROM Pagament
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
+            Dados.PagamentoDataTable dataTable = new Dados.PagamentoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.PagamentoDataTable retornaUltimoIdPagamento() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             Dados.PagamentoDataTable dataTable = new Dados.PagamentoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8976,7 +8992,7 @@ SELECT PagValor, idPagamento, idVenda, idMPagamento, valorDesconto FROM Pagament
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InserirPagamento(global::System.Nullable<double> PagValor, global::System.Nullable<int> idVenda, global::System.Nullable<int> idMPagamento, global::System.Nullable<double> valorDesconto) {
+        public virtual int InserirPagamento(global::System.Nullable<double> PagValor, global::System.Nullable<int> idVenda, global::System.Nullable<int> idMPagamento, global::System.Nullable<double> valorDesconto, global::System.Nullable<int> idPagamento) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((PagValor.HasValue == true)) {
                 command.Parameters[0].Value = ((double)(PagValor.Value));
@@ -9001,6 +9017,12 @@ SELECT PagValor, idPagamento, idVenda, idMPagamento, valorDesconto FROM Pagament
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((idPagamento.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idPagamento.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

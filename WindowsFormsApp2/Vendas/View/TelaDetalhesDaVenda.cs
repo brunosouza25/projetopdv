@@ -41,6 +41,11 @@ namespace WindowsFormsApp2.Vendas.View
             var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
+            int idDin, idCredVista, idDeb, idCredParc;
+            for(int i = 0; i < pagamentosVenda.Count; i++)
+            {
+               // if()
+            }
 
             txtBoxDin.Text =  Convert.ToDouble(pagamentosVenda[0]["PagValor"]).ToString("F2");
             txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[1]["PagValor"]).ToString("F2");

@@ -65,3 +65,36 @@ C:\Users\bruno\Desktop\Nova pasta (5)\projetopdv\WindowsFormsApp2\obj\Debug\Wind
 C:\Users\bruno\Desktop\Nova pasta (5)\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CopyComplete
 C:\Users\bruno\Desktop\Nova pasta (5)\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\bruno\Desktop\Nova pasta (5)\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.manifest
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.application
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\itextsharp.dll
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\itextsharp.xml
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.EntradaDeProdutos.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.SaidaDeProdutos.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaDeEntradaProduto.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaSaidaDeProduto.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeLogin.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeSangria.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipal.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipalEstoque.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.ListaDeVendas.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDetalhesDaVenda.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.listaDoCaixa.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeRelatorios.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCadastroProd.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCriarProd.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeEstoque.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDePagamento.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaEntrarProd.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.TelaDeVendas.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.GenerateResource.cache
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe.manifest
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.application
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CopyComplete
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb

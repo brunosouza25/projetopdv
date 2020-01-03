@@ -8,9 +8,10 @@ CREATE TABLE MetodoDePagamento (
 
 CREATE TABLE Pagamento (
     PagValor FLOAT ,
-    idPagamento INT PRIMARY KEY IDENTITY (1,1),
+    idPagamento INT,
     idVenda INT,
-    idMPagamento INT
+    idMPagamento INT,
+	valorDesconto FLOAT
 );
 
 CREATE TABLE Venda (
@@ -48,7 +49,7 @@ CREATE TABLE Caixa (
 );
 
 CREATE TABLE ItensDeEntrada (
-    idItensEntrada INT PRIMARY KEY IDENTITY (1,1),
+    idItensEntrada INT,
     idProduto INT,
     entradaEstado TINYINT,
     qntItem INT,
@@ -57,7 +58,7 @@ CREATE TABLE ItensDeEntrada (
 );
 
 CREATE TABLE ItensDeSaida (
-    idItensSaida INT PRIMARY KEY IDENTITY (1,1),
+    idItensSaida INT,
     idProduto INT,
     saidaEstado INT,
     qntItem INT,
@@ -100,3 +101,11 @@ INSERT INTO MetodoDePagamento VALUES (3,'CREDITO PARCELADO')
 INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 
 /*DELETE FROM Venda*/
+
+select * from Pagamento
+
+SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Pagamento.PagValor
+FROM            MetodoDePagamento INNER JOIN
+                         Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
+                         Venda ON Pagamento.idVenda = Venda.idVenda
+WHERE        (Pagamento.idVenda = 3)
