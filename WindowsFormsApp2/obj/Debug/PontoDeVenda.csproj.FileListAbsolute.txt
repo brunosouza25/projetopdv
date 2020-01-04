@@ -86,7 +86,6 @@ C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDetalhesDaVenda.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.listaDoCaixa.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeRelatorios.resources
-C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCadastroProd.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCriarProd.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeEstoque.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDePagamento.resources

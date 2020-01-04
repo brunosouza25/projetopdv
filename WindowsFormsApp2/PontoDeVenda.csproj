@@ -160,13 +160,6 @@
     <Compile Include="Principal\View\TelaDeRelatorios.Designer.cs">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
     </Compile>
-    <Compile Include=".cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>.cs</DependentUpon>
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Estoque\View\TelaCriarProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\TelaDeRelatorios.resx">
       <DependentUpon>TelaDeRelatorios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include=".resx">
-      <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaCriarProd.resx">
       <DependentUpon>TelaCriarProd.cs</DependentUpon>

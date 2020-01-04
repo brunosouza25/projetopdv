@@ -15,6 +15,8 @@ namespace WindowsFormsApp2.Vendas.View
         DadosTableAdapters.DataRelatorioTableAdapter detalheVenda = new DadosTableAdapters.DataRelatorioTableAdapter();
 
         int codVenda;
+        int idDin = -1, idCredVista = -1, idDeb = -1, idCredParc = -1;
+
         public TelaDetalhesDaVenda(int codVenda)
         {
             InitializeComponent();
@@ -41,16 +43,31 @@ namespace WindowsFormsApp2.Vendas.View
             var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
-            int idDin, idCredVista, idDeb, idCredParc;
+            List<string> tipos = new List<string>();
             for(int i = 0; i < pagamentosVenda.Count; i++)
             {
-               // if()
+                tipos.Add(pagamentosVenda[i]["pagamentoTipo"].ToString());
+                if (tipos[i] == "DINHEIRO")
+                    idDin = i;
+                if (tipos[i] == "CREDITO A VISTA")
+                    idCredVista = i;
+                if (tipos[i] == "CREDITO PARCELADO")
+                    idCredParc = i;
+                if (tipos[i] == "DEBITO")
+                    idDeb = i;
             }
 
-            txtBoxDin.Text =  Convert.ToDouble(pagamentosVenda[0]["PagValor"]).ToString("F2");
-            txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[1]["PagValor"]).ToString("F2");
-            txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[2]["PagValor"]).ToString("F2");
-            txtBoxDebt.Text = Convert.ToDouble(pagamentosVenda[3]["PagValor"]).ToString("F2");
+            if(idDin >=0)
+            {
+                txtBoxDin.Text = Convert.ToDouble(pagamentosVenda[idDin]["PagValor"]).ToString("F2");
+
+            }
+            if(idCredVista >= 0)
+                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2"); 
+            if(idCredParc >= 0)
+                txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[idCredVista]["PagValor"]).ToString("F2");
+            if(idDeb >= 0)
+                txtBoxDebt.Text = Convert.ToDouble(pagamentosVenda[idDeb]["PagValor"]).ToString("F2");
 
             lblNumVenda.Text = auxVenda[0]["idVenda"].ToString();
 
