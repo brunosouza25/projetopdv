@@ -25,8 +25,8 @@ namespace WindowsFormsApp2
             this.total = total;
             LblTotal.Text = "R$: " + total.ToString("F2");
             BtnFinalizar.Enabled = true;
-
-            this.idPagamento = 1; //Convert.ToInt32(pagamento.retornaUltimoIdPagamento())+1;
+            var auxId = pagamento.retornaUltimoIdPagamento();
+            this.idPagamento = Convert.ToInt32(auxId[0]["idPagamento"])+1;
         }
 
 

@@ -15,16 +15,22 @@ namespace WindowsFormsApp2.Estoque.View
     {
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
+        int idEntrada;
         public TelaDeEntradaProduto()
         {
             InitializeComponent();
             ultimoId();
             txtBoxQnt.Text = "1";
             lblData2.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            var auxId = dadosEntrada.retornarIdUltimaEntrada();
+            if (auxId.Count > 0)
+                this.idEntrada = Convert.ToInt32(auxId[0]["idItensEntrada"]) + 1;
+            else
+                idEntrada = 1;
+            lblNumEntrada.Text = idEntrada.ToString();
         }
 
 
-        int idEntrada;
         string pesquisa;
         double total = 0;
         int qnt = 0;
@@ -157,10 +163,8 @@ namespace WindowsFormsApp2.Estoque.View
         {
             if (listaDeEntrada.Items.Count > 0)
             {
-                /*for()
-                dadosEntrada.inserirItensEntrada()
-            */        
-    }
+
+            }
             else
                 MessageBox.Show("Não tem nenhum item para ser adicionado");
         }
