@@ -11660,17 +11660,19 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entradaEstado", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "entradaEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT dataEntrada, entradaEstado, horaEntrada, idPrimarioItensEntrada, idProduto" +
-                ", idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (idSe" +
-                "cundarioItensEntrada = @idSecundarioItensEntrada)";
+            this._commandCollection[2].CommandText = "SELECT        idSecundarioItensEntrada, idPrimarioItensEntrada, idProduto, entrad" +
+                "aEstado, qntItem, dataEntrada, horaEntrada, observacoes\r\nFROM            ItensDe" +
+                "Entrada\r\nWHERE        (idSecundarioItensEntrada = @idSecundarioItensEntrada)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensEntrada", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT dataEntrada, entradaEstado, horaEntrada, idPrimarioItensEntrada, idProduto" +
-                ", idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada GROUP BY id" +
-                "SecundarioItensEntrada HAVING (SUM(idSecundarioItensEntrada) > 1)";
+            this._commandCollection[3].CommandText = "SELECT idSecundarioItensEntrada, dataEntrada\r\nFROM            ItensDeEntrada\r\nWHE" +
+                "RE dataEntrada between @dataPesquisa1 and @dataPesquisa2\r\ngroup by idSecundarioI" +
+                "tensEntrada, dataEntrada\r\nhaving SUM(idSecundarioItensEntrada) > 0";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT TOP (1) dataEntrada, entradaEstado, horaEntrada, idPrimarioItensEntrada, i" +
@@ -11711,8 +11713,20 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.ItensDeEntradaDataTable retornarEntradas() {
+        public virtual Dados.ItensDeEntradaDataTable retornarEntradas(string dataPesquisa1, string dataPesquisa2) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((dataPesquisa1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(dataPesquisa1));
+            }
+            if ((dataPesquisa2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(dataPesquisa2));
+            }
             Dados.ItensDeEntradaDataTable dataTable = new Dados.ItensDeEntradaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

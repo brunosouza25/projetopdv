@@ -89,7 +89,7 @@ namespace WindowsFormsApp2
             {
                 mudarEstoque();
             }
-            saida.Visible = true;
+            saida.Visible = true; 
         }
     }
 }

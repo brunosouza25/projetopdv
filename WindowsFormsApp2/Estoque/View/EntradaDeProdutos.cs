@@ -9,22 +9,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp2.Estoque.View;
 
+
 namespace WindowsFormsApp2
 {
     public partial class EntradaDeProdutos : UserControl
     {
         DadosTableAdapters.ItensDeEntradaTableAdapter entradas = new DadosTableAdapters.ItensDeEntradaTableAdapter();
+        string dataPesquisa1;
+        string dataPesquisa2;
+        DateTime data;
+
+
         public EntradaDeProdutos()
         {
+            dataPesquisa1 = DateTime.Now.ToString("dd-MM-yyyy");
+            dataPesquisa2 = DateTime.Now.AddMonths(-1).ToString();
+
             InitializeComponent();
             carregarEntradas();
         }
-
         public void carregarEntradas()
         {
 
             listaEntradas.Items.Clear();
-            var varEntradas = entradas.retornarEntradas();
+            var varEntradas = entradas.retornarEntradas(dataPesquisa1, dataPesquisa2);
 
             for (int i = 0; i < varEntradas.Count; i++)
             {
@@ -36,7 +44,7 @@ namespace WindowsFormsApp2
                 var auxEntradas = entradas.retornarEntradaPorId(Convert.ToInt32(varEntradas[i]["idSecundarioItensEntrada"]));
 
                 item.SubItems.Add(auxEntradas[i]["idSecundarioItensEntrada"].ToString());
-                item.SubItems.Add(Convert.ToDateTime(auxEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy HH:mm"));
+                item.SubItems.Add(Convert.ToDateTime(auxEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy")+" "+ auxEntradas[i]["horaEntrada"].ToString().Substring(0,5));
                 item.SubItems.Add("Funcionario padrão");
                 if (auxEntradas[i]["observacoes"].ToString().Length >= 69)
                     item.SubItems.Add(auxEntradas[i]["observacoes"].ToString().Substring(0, 69));
@@ -63,6 +71,58 @@ namespace WindowsFormsApp2
         {
             TelaDeEntradaProduto tela = new TelaDeEntradaProduto(false, Convert.ToInt32(listaEntradas.SelectedItems[0].SubItems[1].Text));
             tela.ShowDialog();
+        }
+
+        private void btnHoje_Click(object sender, EventArgs e)
+        {
+            dataPesquisa1 = DateTime.Now.ToString("dd-MM-yyyy");
+            dataPesquisa2 = DateTime.Now.ToString("dd-MM-yyyy");
+            carregarEntradas();
+        }
+
+        private void btnOntem_Click(object sender, EventArgs e)
+        {
+            dataPesquisa1 = DateTime.Now.ToString("dd/MM/yyyy");
+            dataPesquisa2 = DateTime.Now.AddDays(-1).ToString();
+            carregarEntradas();
+        }
+
+        private void btn7Dias_Click(object sender, EventArgs e)
+        {
+            dataPesquisa1 = DateTime.Now.ToString("dd/MM/yyyy");
+            dataPesquisa2 = DateTime.Now.AddDays(-7).ToString();
+            carregarEntradas();
+        }
+
+        private void btnEsteMes_Click(object sender, EventArgs e)
+        {
+            dataPesquisa1 = DateTime.Now.ToString("dd/MM/yyyy");
+            dataPesquisa2 = DateTime.Now.ToString("01/MM/yyyy");
+            carregarEntradas();
+        }
+
+        private void btnMesPassado_Click(object sender, EventArgs e)
+        {
+
+            //DateTime ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
+
+            var data = DateTime.Now.AddMonths(-1);
+            var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
+            var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia);
+
+            dataPesquisa1 = (dataUltimoDia.ToString("01/MM/yyyy"));
+            dataPesquisa2 = (dataUltimoDia.ToString("dd/MM/yyyy"));
+
+        }
+
+        private void btnUltimos3Meses_Click(object sender, EventArgs e)
+        {
+
+            var data = DateTime.Now.AddMonths(-3);
+
+            dataPesquisa1 = (DateTime.Now.ToString());
+            dataPesquisa2 = (data.ToString("dd/MM/yyyy"));
+
         }
     }
 }

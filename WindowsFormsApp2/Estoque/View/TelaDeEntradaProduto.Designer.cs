@@ -79,7 +79,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxObs = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -371,7 +371,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lblHora);
             this.panel5.Controls.Add(this.txtBoxQnt);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxtBoxPesquisaProd);
@@ -585,15 +585,15 @@
             this.panel8.Size = new System.Drawing.Size(861, 525);
             this.panel8.TabIndex = 3;
             // 
-            // label5
+            // lblHora
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(555, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 33);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "99/99/9999";
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(759, 2);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(87, 33);
+            this.lblHora.TabIndex = 11;
+            this.lblHora.Text = "24:24";
             // 
             // TelaDeEntradaProduto
             // 
@@ -675,6 +675,6 @@
         private System.Windows.Forms.MaskedTextBox txtBoxQnt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHora;
     }
 }

@@ -45,6 +45,7 @@ namespace WindowsFormsApp2.Estoque.View
         {
             var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
             lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
+            lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
             lblNumEntrada.Text = idEntrada.ToString();
             int soma = 0;
 
@@ -55,9 +56,9 @@ namespace WindowsFormsApp2.Estoque.View
                 ListViewItem item = new ListViewItem();
                 item.SubItems.Add(aux2[0]["prodNome"].ToString());
                 item.SubItems.Add(aux2[0]["prodCodBarras"].ToString());
-                item.SubItems.Add(aux2[0]["prodValor"].ToString());
+                item.SubItems.Add("R$" + Convert.ToDouble(aux2[0]["prodValor"]).ToString("F2"));
                 item.SubItems.Add(aux[i]["qntItem"].ToString());
-                item.SubItems.Add((Convert.ToInt32(aux[i]["qntItem"]) * Convert.ToDouble(aux2[0]["prodValor"])).ToString());
+                item.SubItems.Add("R$"+(Convert.ToInt32(aux[i]["qntItem"]) * Convert.ToDouble(aux2[0]["prodValor"])).ToString("F2"));
                 listaDeEntrada.Items.Add(item);
                 soma = soma + Convert.ToInt32(aux[i]["qntItem"]);
             }
@@ -241,16 +242,24 @@ namespace WindowsFormsApp2.Estoque.View
             {
                 for (int i = 0; i < listaDeEntrada.Items.Count; i++)
                 {
+                    string auxObs;
                     int aux = Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text);
                     MessageBox.Show(listaDeEntrada.Items[i].SubItems[6].Text);
                     var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text));
                     aux += Convert.ToInt32(aux2[0]["prodQuantidade"]);
                     dadosProdutos.AttQuantidade(aux, Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text));
-                    if (txtBoxObs.Text.Length > 299)
+                    if (txtBoxObs.Text.Length < 300)
+                    {
+                        auxObs = txtBoxObs.Text;
+                    }
+                    else
+                    {
                         MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
+                        auxObs = txtBoxObs.Text.Substring(0, 299);
+                    }
 
-                    dadosEntrada.inserirItensEntrada( idEntrada ,Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text), DateTime.Today.ToString()
-                    , DateTime.Now.TimeOfDay.ToString("HH:mm")
+                    dadosEntrada.inserirItensEntrada( idEntrada ,Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text), DateTime.Now.ToString("dd/MM/yyyy")
+                    , DateTime.Now.ToString("HH:mm")
                     , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text, 1);
                 }
                 MessageBox.Show("Produtos inserido com sucesso!");

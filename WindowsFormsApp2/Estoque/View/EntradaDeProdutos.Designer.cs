@@ -39,7 +39,6 @@
             this.btn7Dias = new System.Windows.Forms.Button();
             this.btnOntem = new System.Windows.Forms.Button();
             this.btnHoje = new System.Windows.Forms.Button();
-            this.lblData = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.listaEntradas = new System.Windows.Forms.ListView();
@@ -52,6 +51,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEntradaDeProduto = new System.Windows.Forms.Button();
+            this.btnUltimos3Meses = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -62,6 +62,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnUltimos3Meses);
             this.panel1.Controls.Add(this.btnPerso);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -72,7 +73,6 @@
             this.panel1.Controls.Add(this.btn7Dias);
             this.panel1.Controls.Add(this.btnOntem);
             this.panel1.Controls.Add(this.btnHoje);
-            this.panel1.Controls.Add(this.lblData);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -128,58 +128,53 @@
             // 
             // btnMesPassado
             // 
-            this.btnMesPassado.Location = new System.Drawing.Point(0, 238);
+            this.btnMesPassado.Location = new System.Drawing.Point(0, 188);
             this.btnMesPassado.Name = "btnMesPassado";
             this.btnMesPassado.Size = new System.Drawing.Size(228, 35);
             this.btnMesPassado.TabIndex = 5;
             this.btnMesPassado.Text = "Mês passado";
             this.btnMesPassado.UseVisualStyleBackColor = true;
+            this.btnMesPassado.Click += new System.EventHandler(this.btnMesPassado_Click);
             // 
             // btnEsteMes
             // 
-            this.btnEsteMes.Location = new System.Drawing.Point(0, 197);
+            this.btnEsteMes.Location = new System.Drawing.Point(0, 147);
             this.btnEsteMes.Name = "btnEsteMes";
             this.btnEsteMes.Size = new System.Drawing.Size(228, 35);
             this.btnEsteMes.TabIndex = 4;
             this.btnEsteMes.Text = "Este mês";
             this.btnEsteMes.UseVisualStyleBackColor = true;
+            this.btnEsteMes.Click += new System.EventHandler(this.btnEsteMes_Click);
             // 
             // btn7Dias
             // 
-            this.btn7Dias.Location = new System.Drawing.Point(0, 157);
+            this.btn7Dias.Location = new System.Drawing.Point(0, 107);
             this.btn7Dias.Name = "btn7Dias";
             this.btn7Dias.Size = new System.Drawing.Size(228, 35);
             this.btn7Dias.TabIndex = 3;
             this.btn7Dias.Text = "Ultimos 7 dias";
             this.btn7Dias.UseVisualStyleBackColor = true;
+            this.btn7Dias.Click += new System.EventHandler(this.btn7Dias_Click);
             // 
             // btnOntem
             // 
-            this.btnOntem.Location = new System.Drawing.Point(0, 118);
+            this.btnOntem.Location = new System.Drawing.Point(0, 68);
             this.btnOntem.Name = "btnOntem";
             this.btnOntem.Size = new System.Drawing.Size(228, 35);
             this.btnOntem.TabIndex = 2;
             this.btnOntem.Text = "Ontem";
             this.btnOntem.UseVisualStyleBackColor = true;
+            this.btnOntem.Click += new System.EventHandler(this.btnOntem_Click);
             // 
             // btnHoje
             // 
-            this.btnHoje.Location = new System.Drawing.Point(0, 81);
+            this.btnHoje.Location = new System.Drawing.Point(0, 31);
             this.btnHoje.Name = "btnHoje";
             this.btnHoje.Size = new System.Drawing.Size(228, 35);
             this.btnHoje.TabIndex = 1;
             this.btnHoje.Text = "Hoje";
             this.btnHoje.UseVisualStyleBackColor = true;
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(10, 10);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(215, 33);
-            this.lblData.TabIndex = 0;
-            this.lblData.Text = "99/99/99  99:99";
+            this.btnHoje.Click += new System.EventHandler(this.btnHoje_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -306,6 +301,16 @@
             this.btnEntradaDeProduto.UseVisualStyleBackColor = true;
             this.btnEntradaDeProduto.Click += new System.EventHandler(this.btnEntrarProd_Click);
             // 
+            // btnUltimos3Meses
+            // 
+            this.btnUltimos3Meses.Location = new System.Drawing.Point(0, 229);
+            this.btnUltimos3Meses.Name = "btnUltimos3Meses";
+            this.btnUltimos3Meses.Size = new System.Drawing.Size(228, 35);
+            this.btnUltimos3Meses.TabIndex = 11;
+            this.btnUltimos3Meses.Text = "Ultimos 3 meses";
+            this.btnUltimos3Meses.UseVisualStyleBackColor = true;
+            this.btnUltimos3Meses.Click += new System.EventHandler(this.btnUltimos3Meses_Click);
+            // 
             // EntradaDeProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +332,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ListView listaEntradas;
@@ -350,5 +354,6 @@
         private System.Windows.Forms.Button btnMesPassado;
         private System.Windows.Forms.Button btnEsteMes;
         private System.Windows.Forms.Button btn7Dias;
+        private System.Windows.Forms.Button btnUltimos3Meses;
     }
 }
