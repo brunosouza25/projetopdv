@@ -31,6 +31,7 @@ namespace WindowsFormsApp2
         private void mudarEntrada()
         {
             entrada.Visible = !entrada.Visible;
+
         }
 
         private void mudarSaida()
@@ -60,7 +61,7 @@ namespace WindowsFormsApp2
                 mudarSaida();
             }
 
-            mudarEstoque();
+            estoque.Visible = true;
             estoque.carregarListaEstoque();
         }
 
@@ -74,7 +75,8 @@ namespace WindowsFormsApp2
             {
                 mudarSaida();
             }
-            mudarEntrada();
+            entrada.Visible = true;
+            entrada.carregarEntradas();
         }
 
         private void btnSaidaProduto_Click(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace WindowsFormsApp2
             {
                 mudarEstoque();
             }
-            mudarSaida();
+            saida.Visible = true;
         }
     }
 }

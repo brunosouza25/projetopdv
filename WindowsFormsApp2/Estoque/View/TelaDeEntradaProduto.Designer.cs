@@ -69,6 +69,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxObs = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -369,6 +371,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.txtBoxQnt);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxtBoxPesquisaProd);
@@ -444,7 +447,8 @@
             this.columnHeader11,
             this.columnHeader12,
             this.columnHeader8,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader13});
             this.listaDeEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listaDeEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaDeEntrada.FullRowSelect = true;
@@ -477,6 +481,10 @@
             this.columnHeader12.Text = "Valor de venda";
             this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader12.Width = 126;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "";
             // 
             // tableLayoutPanel2
             // 
@@ -577,6 +585,16 @@
             this.panel8.Size = new System.Drawing.Size(861, 525);
             this.panel8.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(555, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(159, 33);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "99/99/9999";
+            // 
             // TelaDeEntradaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,5 +674,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.MaskedTextBox txtBoxQnt;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.Label label5;
     }
 }

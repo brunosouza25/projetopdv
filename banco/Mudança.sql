@@ -49,20 +49,24 @@ CREATE TABLE Caixa (
 );
 
 CREATE TABLE ItensDeEntrada (
-    idItensEntrada INT,
+    idPrimarioItensEntrada INT PRIMARY KEY IDENTITY (1,1),
+	idSecundarioItensEntrada INT,
     idProduto INT,
     entradaEstado TINYINT,
     qntItem INT,
-    dataEntrada DATETIME,
+    dataEntrada DATE,
+	horaEntrada TIME,
     observacoes VARCHAR(300)
 );
 
 CREATE TABLE ItensDeSaida (
-    idItensSaida INT,
-    idProduto INT,
+    idPrimarioItensSaida INT PRIMARY KEY IDENTITY (1,1),
+    idSecundarioItensSaida INT,
+	idProduto INT,
     saidaEstado INT,
     qntItem INT,
-    dataSaida DATETIME,
+    dataSaida DATE,
+	horaSaida TIME,
     observacoes VARCHAR(300)
 );
 
@@ -101,11 +105,12 @@ INSERT INTO MetodoDePagamento VALUES (3,'CREDITO PARCELADO')
 INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 
 INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, 'primeira linha para retorno de 0')
+INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, 'primeira linha para retorno de 0')
 
 /*DELETE FROM Venda*/
 /*
-delete from caixa
-delete from cargo
+delete from Caixa
+delete from Cargo
 delete from Funcionario
 delete from ItensDaVenda
 delete from ItensDeEntrada
@@ -115,3 +120,25 @@ delete from Pagamento
 delete from produto
 delete from Venda
 */
+
+drop database BD_PDV
+
+select * from ItensDeEntrada
+
+SELECT        TOP (1) idPrimarioItensEntrada, idSecundarioItensEntrada,idProduto, entradaEstado, qntItem, dataEntrada, observacoes
+FROM            ItensDeEntrada
+ORDER BY idPrimarioItensEntrada DESC
+
+SELECT dataEntrada, entradaEstado, idPrimarioItensEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem 
+FROM ItensDeEntrada
+WHERE (idSecundarioItensEntrada = 1)
+
+
+
+
+
+SELECT idSecundarioItensEntrada, dataEntrada
+FROM            ItensDeEntrada
+where dataEntrada = 2020-01-05
+group by idSecundarioItensEntrada, dataEntrada
+having SUM(idSecundarioItensEntrada) > 0

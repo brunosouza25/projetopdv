@@ -28,19 +28,23 @@ namespace WindowsFormsApp2
 
             for (int i = 0; i < varEntradas.Count; i++)
             {
-                ListViewItem item = new ListViewItem();
                 //num entrada, data, funcionario, obs
 
-                item.SubItems.Add(varEntradas[i]["idItensEntrada"].ToString());
-                item.SubItems.Add(Convert.ToDateTime(varEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy HH:mm"));
-                item.SubItems.Add("Funcionario padrão");
-                if(varEntradas[i]["observacoes"].ToString().Length >= 69)
-                    item.SubItems.Add(varEntradas[i]["observacoes"].ToString().Substring(0,69));
-                else
-                    item.SubItems.Add(varEntradas[i]["observacoes"].ToString());
-                listaEntradas.Items.Add(item);
-            }
+                //MessageBox.Show("id1: " + varEntradas[j]["idSecundarioItensEntrada"] + "id2: " + varEntradas[i]["idSecundarioItensEntrada"]);
 
+                ListViewItem item = new ListViewItem();
+                var auxEntradas = entradas.retornarEntradaPorId(Convert.ToInt32(varEntradas[i]["idSecundarioItensEntrada"]));
+
+                item.SubItems.Add(auxEntradas[i]["idSecundarioItensEntrada"].ToString());
+                item.SubItems.Add(Convert.ToDateTime(auxEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy HH:mm"));
+                item.SubItems.Add("Funcionario padrão");
+                if (auxEntradas[i]["observacoes"].ToString().Length >= 69)
+                    item.SubItems.Add(auxEntradas[i]["observacoes"].ToString().Substring(0, 69));
+                else
+                    item.SubItems.Add(auxEntradas[i]["observacoes"].ToString());
+                listaEntradas.Items.Add(item);
+
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -52,6 +56,7 @@ namespace WindowsFormsApp2
         {
             TelaDeEntradaProduto telaEntrada = new TelaDeEntradaProduto();
             telaEntrada.ShowDialog();
+            carregarEntradas();
         }
 
         private void listaEntradas_DoubleClick(object sender, EventArgs e)

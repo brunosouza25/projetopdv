@@ -16,6 +16,8 @@ namespace WindowsFormsApp2.Estoque.View
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
         int idEntrada;
+        public string[,] itensDaLista { get; set; }
+
         bool tipo;
         public TelaDeEntradaProduto()
         {
@@ -42,7 +44,7 @@ namespace WindowsFormsApp2.Estoque.View
         private void carregarEntrada()
         {
             var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
-            lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy HH:mm");
+            lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
             lblNumEntrada.Text = idEntrada.ToString();
             int soma = 0;
 
@@ -65,7 +67,6 @@ namespace WindowsFormsApp2.Estoque.View
         string pesquisa;
         double total = 0;
         int qnt = 0;
-        public string[,] itensDaLista { get; set; }
         List<Produto> listaProduto = new List<Produto>();
         private void valida()
         {
@@ -94,7 +95,7 @@ namespace WindowsFormsApp2.Estoque.View
 
             if (aux.Count > 0)
             {
-                int aux2 = Convert.ToInt32(aux[0]["idItensEntrada"]);
+                int aux2 = Convert.ToInt32(aux[0]["idSecundarioItensEntrada"]);
                 this.idEntrada = aux2 + 1;
             }
             else
@@ -102,152 +103,166 @@ namespace WindowsFormsApp2.Estoque.View
 
             lblNumEntrada.Text = idEntrada.ToString();
         }
-    private void pesquisaEstoque()
-    {
-
-
-        var varPesquisa1 = dadosProdutos.pegarBancoParaEntrada(pesquisa, pesquisa);
-        int aux = 0;
-        /*
-        if (varPesquisa1.Count > 0)
-            aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
-            */
-
-        if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
-            MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
-        else
+        private void pesquisaEstoque()
         {
 
-            Produto prod = new Produto();
-            int qnt = Convert.ToInt32(txtBoxQnt.Text);
 
-            prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
-            prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
-            prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
-            prod.idProduto = Convert.ToInt32(varPesquisa1[0]["idProduto"]);
-            //prod.prodQuantidade = ;
+            var varPesquisa1 = dadosProdutos.pegarBancoParaEntrada(pesquisa, pesquisa);
+            int aux = 0;
+            /*
+            if (varPesquisa1.Count > 0)
+                aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
+                */
 
-            if (txtBoxQnt.Text == "")
-                prod.prodQuantidade = 1;
+            if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1)
+                MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo");
             else
-                prod.prodQuantidade = Convert.ToInt32(txtBoxQnt.Text);
-
-
-            ListViewItem item = new ListViewItem();
-            item.SubItems.Add(prod.prodNome);
-            item.SubItems.Add(prod.prodCodBarras);
-            item.SubItems.Add("R$" + prod.prodValor.ToString("F2"));
-            bool permitido = false;
-            bool achou = false;
-
-
-            for (int j = 0; j < listaProduto.Count; j++)
             {
-                if (listaProduto[j].prodNome == prod.prodNome)
+
+                Produto prod = new Produto();
+                int qnt = Convert.ToInt32(txtBoxQnt.Text);
+
+                prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
+                prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
+                prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
+                prod.idProduto = Convert.ToInt32(varPesquisa1[0]["idProduto"]);
+                //prod.prodQuantidade = ;
+
+                if (txtBoxQnt.Text == "")
+                    prod.prodQuantidade = 1;
+                else
+                    prod.prodQuantidade = Convert.ToInt32(txtBoxQnt.Text);
+
+
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add("R$" + prod.prodValor.ToString("F2"));
+                bool permitido = false;
+                bool achou = false;
+
+
+                for (int j = 0; j < listaProduto.Count; j++)
                 {
+                    if (listaProduto[j].prodNome == prod.prodNome)
+                    {
+                        achou = true;
+
+                        listaProduto[j].prodQuantidade = qnt + listaProduto[j].prodQuantidade;
+
+                        permitido = true;
+
+                    }
+                }
+                item.SubItems.Add(qnt.ToString());
+                if (listaProduto.Count == 0)
+                {
+                    prod.prodQuantidade = qnt;
+                    listaProduto.Add(prod);
                     achou = true;
+                    //item.SubItems.Add("R$" + (qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
 
-                    listaProduto[j].prodQuantidade = qnt + listaProduto[j].prodQuantidade;
+                    //item.SubItems.Add(prod.idProduto.ToString());
 
-                    permitido = true;
+                    listaDeEntrada.Items.Add(item);
+                }
+
+
+
+                if (!achou)
+                {
+                    //item.SubItems.Add("R$" + (qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
+
+                    //item.SubItems.Add(prod.idProduto.ToString());
+
+                    listaProduto.Add(prod);
+                    listaDeEntrada.Items.Add(item);
 
                 }
-            }
-            item.SubItems.Add(qnt.ToString());
-            if (listaProduto.Count == 0)
-            {
-                prod.prodQuantidade = qnt;
-                listaProduto.Add(prod);
-                achou = true;
-                listaDeEntrada.Items.Add(item);
-            }
+                if (permitido)
+                {
+                    total += prod.prodValor * qnt;
+                    //item.SubItems.Add("R$" + (qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
+
+                    //item.SubItems.Add(prod.idProduto.ToString());
+
+                    listaDeEntrada.Items.Add(item);
+                }
+                item.SubItems.Add("R$" + (qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
+                item.SubItems.Add(prod.idProduto.ToString());
 
 
-
-            if (!achou)
-            {
-                listaProduto.Add(prod);
-                listaDeEntrada.Items.Add(item);
-
             }
-            if (permitido)
-            {
-                total += prod.prodValor * qnt;
-                //item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
-                listaDeEntrada.Items.Add(item);
-            }
-            item.SubItems.Add("R$" + (qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
-            item.SubItems.Add(prod.idProduto.ToString());
+            txtBoxQnt.Text = "1";
+            TxtBoxPesquisaProd.Text = "";
 
         }
-        txtBoxQnt.Text = "1";
-        TxtBoxPesquisaProd.Text = "";
-
-    }
-    private void button1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
-    {
-        if (e.KeyCode == Keys.Enter)
+        private void button1_Click(object sender, EventArgs e)
         {
-            int a;
-            if (int.TryParse(txtBoxQnt.Text.Trim(), out a))
-            {
-                this.pesquisa = TxtBoxPesquisaProd.Text;
-                valida();
-            }
-            else
-            {
-                MessageBox.Show("Valor incorreto inserido na quantidade");
-            }
 
         }
-        TxtBoxPesquisaProd.Select();
 
-    }
-
-    private void txtBoxQnt_KeyDown(object sender, KeyEventArgs e)
-    {
-        if (e.KeyCode == Keys.Enter)
+        private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
         {
-            pesquisa = TxtBoxPesquisaProd.Text;
-            valida();
+            if (e.KeyCode == Keys.Enter)
+            {
+                int a;
+                if (int.TryParse(txtBoxQnt.Text.Trim(), out a))
+                {
+                    this.pesquisa = TxtBoxPesquisaProd.Text;
+                    valida();
+                }
+                else
+                {
+                    MessageBox.Show("Valor incorreto inserido na quantidade");
+                }
+
+            }
             TxtBoxPesquisaProd.Select();
 
         }
-        else
-            txtBoxQnt.Select();
-    }
 
-    private void btnEntrar_Click(object sender, EventArgs e)
-    {
-        if (listaDeEntrada.Items.Count > 0)
+        private void txtBoxQnt_KeyDown(object sender, KeyEventArgs e)
         {
-            for (int i = 0; i < listaProduto.Count; i++)
+            if (e.KeyCode == Keys.Enter)
             {
-                int aux = listaProduto[i].prodQuantidade;
-                var aux2 = dadosProdutos.PegaQuantidade(listaProduto[i].idProduto);
-                aux += Convert.ToInt32(aux2[0]["prodQuantidade"]);
-                dadosProdutos.AttQuantidade(aux, listaProduto[i].idProduto);
-                if (txtBoxObs.Text.Length > 299)
-                    MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
-                
-                    dadosEntrada.inserirItensEntrada(idEntrada, listaProduto[i].prodQuantidade, DateTime.Now
-                , listaProduto[i].idProduto, txtBoxObs.Text, 1);
+                pesquisa = TxtBoxPesquisaProd.Text;
+                valida();
+                TxtBoxPesquisaProd.Select();
+
             }
-            MessageBox.Show("Produtos inserido com sucesso!");
+            else
+                txtBoxQnt.Select();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (listaDeEntrada.Items.Count > 0)
+            {
+                for (int i = 0; i < listaDeEntrada.Items.Count; i++)
+                {
+                    int aux = Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text);
+                    MessageBox.Show(listaDeEntrada.Items[i].SubItems[6].Text);
+                    var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text));
+                    aux += Convert.ToInt32(aux2[0]["prodQuantidade"]);
+                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text));
+                    if (txtBoxObs.Text.Length > 299)
+                        MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
+
+                    dadosEntrada.inserirItensEntrada( idEntrada ,Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text), DateTime.Today.ToString()
+                    , DateTime.Now.TimeOfDay.ToString("HH:mm")
+                    , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text, 1);
+                }
+                MessageBox.Show("Produtos inserido com sucesso!");
+                Close();
+            }
+            else
+                MessageBox.Show("Não tem nenhum item para ser adicionado");
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
             Close();
         }
-        else
-            MessageBox.Show("Não tem nenhum item para ser adicionado");
     }
-
-    private void btnSair_Click(object sender, EventArgs e)
-    {
-        Close();
-    }
-}
 }
