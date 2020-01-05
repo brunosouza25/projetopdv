@@ -42,7 +42,7 @@
             this.lblData = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.listaCaixa = new System.Windows.Forms.ListView();
+            this.listaEntradas = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -200,7 +200,7 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.listaCaixa, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.listaEntradas, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -209,26 +209,26 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1012, 501);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // listaCaixa
+            // listaEntradas
             // 
-            this.listaCaixa.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listaCaixa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listaEntradas.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.listaEntradas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
             this.columnHeader1,
             this.columnHeader13,
             this.columnHeader12,
             this.columnHeader2});
-            this.listaCaixa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listaCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaCaixa.FullRowSelect = true;
-            this.listaCaixa.GridLines = true;
-            this.listaCaixa.HideSelection = false;
-            this.listaCaixa.Location = new System.Drawing.Point(3, 3);
-            this.listaCaixa.Name = "listaCaixa";
-            this.listaCaixa.Size = new System.Drawing.Size(1006, 495);
-            this.listaCaixa.TabIndex = 3;
-            this.listaCaixa.UseCompatibleStateImageBehavior = false;
-            this.listaCaixa.View = System.Windows.Forms.View.Details;
+            this.listaEntradas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listaEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaEntradas.FullRowSelect = true;
+            this.listaEntradas.GridLines = true;
+            this.listaEntradas.HideSelection = false;
+            this.listaEntradas.Location = new System.Drawing.Point(3, 3);
+            this.listaEntradas.Name = "listaEntradas";
+            this.listaEntradas.Size = new System.Drawing.Size(1006, 495);
+            this.listaEntradas.TabIndex = 3;
+            this.listaEntradas.UseCompatibleStateImageBehavior = false;
+            this.listaEntradas.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader9
             // 
@@ -237,23 +237,23 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Número entrada";
-            this.columnHeader1.Width = 123;
+            this.columnHeader1.Text = "Nº Entrada";
+            this.columnHeader1.Width = 86;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Data Entrada";
-            this.columnHeader13.Width = 106;
+            this.columnHeader13.Width = 164;
             // 
             // columnHeader12
             // 
             this.columnHeader12.Text = "Funcionario";
-            this.columnHeader12.Width = 154;
+            this.columnHeader12.Width = 147;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Observação";
-            this.columnHeader2.Width = 617;
+            this.columnHeader2.Width = 598;
             // 
             // tableLayoutPanel1
             // 
@@ -329,7 +329,7 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ListView listaCaixa;
+        private System.Windows.Forms.ListView listaEntradas;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader13;

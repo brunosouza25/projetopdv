@@ -14,7 +14,7 @@ namespace WindowsFormsApp2
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
-        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();   
+        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
 
 
 
@@ -25,10 +25,19 @@ namespace WindowsFormsApp2
             this.total = total;
             LblTotal.Text = "R$: " + total.ToString("F2");
             BtnFinalizar.Enabled = true;
-            var auxId = pagamento.retornaUltimoIdPagamento();
-            this.idPagamento = Convert.ToInt32(auxId[0]["idPagamento"])+1;
+            ultimoId();
         }
 
+        private void ultimoId()
+        {
+
+            var aux = pagamento.retornaUltimoIdPagamento();
+            if (aux.Count > 0)
+                this.idPagamento = Convert.ToInt32(aux[0]["idPagamento"]) + 1;
+            else
+                this.idPagamento = 1;
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -47,9 +56,9 @@ namespace WindowsFormsApp2
             string valorTotal = total.ToString("F2");
 
 
-            if ((double.TryParse(TxtBoxDinheiro.Text.Trim(), out a) || TxtBoxDinheiro.Text == "") && ((double.TryParse(txtCredVista.Text.Trim(), out b) || txtCredVista.Text == "")) 
+            if ((double.TryParse(TxtBoxDinheiro.Text.Trim(), out a) || TxtBoxDinheiro.Text == "") && ((double.TryParse(txtCredVista.Text.Trim(), out b) || txtCredVista.Text == ""))
                 && ((double.TryParse(txtCredParc.Text.Trim(), out c) || txtCredParc.Text == "")) && ((double.TryParse(txtDeb.Text.Trim(), out d) || txtDeb.Text == ""))
-                && ((double.TryParse(txtBoxDesc.Text.Trim(), out f )|| txtBoxDesc.Text == "")))
+                && ((double.TryParse(txtBoxDesc.Text.Trim(), out f) || txtBoxDesc.Text == "")))
             {
                 if (TxtBoxDinheiro.Text == "")
                     valorDin = 0;
@@ -109,7 +118,7 @@ namespace WindowsFormsApp2
         }
         public void confirmar()
         {
-            
+
             dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy HH:mm"), total);
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
@@ -124,21 +133,21 @@ namespace WindowsFormsApp2
 
             if (txtCredVista.Text != "" && txtCredVista.Text != "0")
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredVista.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 2, valorDesc, idPagamento);
-            
+
             if (txtCredParc.Text != "" && txtCredParc.Text != "0")
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredParc.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 3, valorDesc, idPagamento);
             if (txtDeb.Text != "" && txtDeb.Text != "0")
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtDeb.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 4, valorDesc, idPagamento);
 
-            
+
             int aux = itensDaLista.Length / 7;
             for (int i = 0; i < aux; i++)
             {
-                
+
                 itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 6]), Convert.ToInt32(itensDaLista[i, 4]), total);
                 var prodQuant = produto.PegaQuantidadePorCod(itensDaLista[i, 2].ToString());
 
-                produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"])- Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString()); 
+                produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"]) - Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString());
             }
             var idCaixa = caixa.pegarIDUltimoCaixa();
             var totalCaixa = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));

@@ -40,8 +40,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +51,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.txtBoxFunc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNumEntrada = new System.Windows.Forms.Label();
@@ -74,12 +72,12 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxObs = new System.Windows.Forms.TextBox();
+            this.txtBoxObs = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -205,8 +203,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnSair);
-            this.panel4.Controls.Add(this.btnSalvar);
             this.panel4.Controls.Add(this.lblTotal);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
@@ -216,24 +212,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(855, 86);
             this.panel4.TabIndex = 2;
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(692, 39);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(94, 44);
-            this.btnSair.TabIndex = 12;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(484, 39);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(94, 44);
-            this.btnSalvar.TabIndex = 11;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // lblTotal
             // 
@@ -332,15 +310,15 @@
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader4.Width = 101;
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(617, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 44);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSalvar.Location = new System.Drawing.Point(617, 39);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(94, 44);
+            this.btnSalvar.TabIndex = 13;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtBoxFunc
             // 
@@ -531,27 +509,28 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button1);
-            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.btnSalvar);
+            this.panel7.Controls.Add(this.btnSair);
             this.panel7.Controls.Add(this.btnEntrar);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.label10);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.textBoxObs);
+            this.panel7.Controls.Add(this.txtBoxObs);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(3, 436);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(855, 86);
             this.panel7.TabIndex = 2;
             // 
-            // button2
+            // btnSair
             // 
-            this.button2.Location = new System.Drawing.Point(758, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 44);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Sair";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSair.Location = new System.Drawing.Point(758, 39);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(94, 44);
+            this.btnSair.TabIndex = 12;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnEntrar
             // 
@@ -593,13 +572,13 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Observações";
             // 
-            // textBoxObs
+            // txtBoxObs
             // 
-            this.textBoxObs.Location = new System.Drawing.Point(2, 25);
-            this.textBoxObs.Multiline = true;
-            this.textBoxObs.Name = "textBoxObs";
-            this.textBoxObs.Size = new System.Drawing.Size(439, 58);
-            this.textBoxObs.TabIndex = 0;
+            this.txtBoxObs.Location = new System.Drawing.Point(2, 25);
+            this.txtBoxObs.Multiline = true;
+            this.txtBoxObs.Name = "txtBoxObs";
+            this.txtBoxObs.Size = new System.Drawing.Size(439, 58);
+            this.txtBoxObs.TabIndex = 0;
             // 
             // panel8
             // 
@@ -651,8 +630,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -664,7 +641,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtBoxFunc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNumEntrada;
@@ -683,12 +660,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxObs;
+        private System.Windows.Forms.TextBox txtBoxObs;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.MaskedTextBox txtBoxQnt;
         private System.Windows.Forms.Label label12;
