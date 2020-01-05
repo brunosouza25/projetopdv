@@ -100,12 +100,18 @@ INSERT INTO MetodoDePagamento VALUES (2,'CREDITO A VISTA')
 INSERT INTO MetodoDePagamento VALUES (3,'CREDITO PARCELADO')
 INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 
+INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, 'primeira linha para retorno de 0')
+
 /*DELETE FROM Venda*/
-
-select * from Pagamento
-
-SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Pagamento.PagValor
-FROM            MetodoDePagamento INNER JOIN
-                         Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
-                         Venda ON Pagamento.idVenda = Venda.idVenda
-WHERE        (Pagamento.idVenda = 3)
+/*
+delete from caixa
+delete from cargo
+delete from Funcionario
+delete from ItensDaVenda
+delete from ItensDeEntrada
+delete from ItensDeSaida
+delete from MetodoDePagamento
+delete from Pagamento
+delete from produto
+delete from Venda
+*/

@@ -16,17 +16,51 @@ namespace WindowsFormsApp2.Estoque.View
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
         int idEntrada;
+        bool tipo;
         public TelaDeEntradaProduto()
         {
             InitializeComponent();
             ultimoId();
             txtBoxQnt.Text = "1";
-            lblData2.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             lblNumEntrada.Text = idEntrada.ToString();
             TxtBoxPesquisaProd.Select();
 
         }
+        public TelaDeEntradaProduto(bool tipo, int idEntrada)
+        {
+            InitializeComponent();
 
+            this.tipo = tipo;
+            this.idEntrada = idEntrada;
+            btnEntrar.Enabled = false;
+            txtBoxQnt.Enabled = false;
+            TxtBoxPesquisaProd.Enabled = false;
+            carregarEntrada();
+        }
+
+        private void carregarEntrada()
+        {
+            var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
+            lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy HH:mm");
+            lblNumEntrada.Text = idEntrada.ToString();
+            int soma = 0;
+
+            for (int i = 0; i < aux.Count; i++)
+            {
+                //cod barras, valor de venda, qnt, total
+                var aux2 = dadosProdutos.retornarProdutoPorId(Convert.ToInt32(aux[i]["idProduto"]));
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(aux2[0]["prodNome"].ToString());
+                item.SubItems.Add(aux2[0]["prodCodBarras"].ToString());
+                item.SubItems.Add(aux2[0]["prodValor"].ToString());
+                item.SubItems.Add(aux[i]["qntItem"].ToString());
+                item.SubItems.Add((Convert.ToInt32(aux[i]["qntItem"]) * Convert.ToDouble(aux2[0]["prodValor"])).ToString());
+                listaDeEntrada.Items.Add(item);
+                soma = soma + Convert.ToInt32(aux[i]["qntItem"]);
+            }
+            lblTotalItens.Text = soma.ToString();
+        }
 
         string pesquisa;
         double total = 0;

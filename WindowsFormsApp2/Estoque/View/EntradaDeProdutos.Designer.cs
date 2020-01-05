@@ -229,6 +229,7 @@
             this.listaEntradas.TabIndex = 3;
             this.listaEntradas.UseCompatibleStateImageBehavior = false;
             this.listaEntradas.View = System.Windows.Forms.View.Details;
+            this.listaEntradas.DoubleClick += new System.EventHandler(this.listaEntradas_DoubleClick);
             // 
             // columnHeader9
             // 

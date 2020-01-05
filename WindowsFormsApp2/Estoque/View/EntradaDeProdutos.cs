@@ -53,5 +53,11 @@ namespace WindowsFormsApp2
             TelaDeEntradaProduto telaEntrada = new TelaDeEntradaProduto();
             telaEntrada.ShowDialog();
         }
+
+        private void listaEntradas_DoubleClick(object sender, EventArgs e)
+        {
+            TelaDeEntradaProduto tela = new TelaDeEntradaProduto(false, Convert.ToInt32(listaEntradas.SelectedItems[0].SubItems[1].Text));
+            tela.ShowDialog();
+        }
     }
 }
