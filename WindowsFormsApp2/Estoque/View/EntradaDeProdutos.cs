@@ -44,7 +44,7 @@ namespace WindowsFormsApp2
                 var auxEntradas = entradas.retornarEntradaPorId(Convert.ToInt32(varEntradas[i]["idSecundarioItensEntrada"]));
 
                 item.SubItems.Add(auxEntradas[i]["idSecundarioItensEntrada"].ToString());
-                item.SubItems.Add(Convert.ToDateTime(auxEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy")+" "+ auxEntradas[i]["horaEntrada"].ToString().Substring(0,5));
+                item.SubItems.Add(Convert.ToDateTime(auxEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy") + " " + auxEntradas[i]["horaEntrada"].ToString().Substring(0, 5));
                 item.SubItems.Add("Funcionario padrão");
                 if (auxEntradas[i]["observacoes"].ToString().Length >= 69)
                     item.SubItems.Add(auxEntradas[i]["observacoes"].ToString().Substring(0, 69));
@@ -123,6 +123,33 @@ namespace WindowsFormsApp2
             dataPesquisa1 = (DateTime.Now.ToString());
             dataPesquisa2 = (data.ToString("dd/MM/yyyy"));
 
+        }
+
+        private void btnPerso_Click(object sender, EventArgs e)
+        {
+
+            DateTime deData, ateData;
+
+            if (DateTime.TryParse(txtBoxDeMes.Text.ToString(), out deData).Equals(true) &&
+                DateTime.TryParse(txtBoxAteMes.Text.ToString(), out ateData).Equals(true))
+            {
+                if (deData > ateData)
+                {
+                    dataPesquisa1 = deData.ToString("dd/MM/yyyy");
+                    dataPesquisa2 = ateData.ToString("dd/MM/yyyy");
+                }
+                else
+                    MessageBox.Show("Data(s) inválida(s)");
+
+                MessageBox.Show(dataPesquisa1 + "          " + dataPesquisa2);
+
+
+            }
+            else
+            {
+                MessageBox.Show("Data(s) inválida(s)");
+            }
+            carregarEntradas();
         }
     }
 }

@@ -87,6 +87,7 @@
             this.btnPerso.TabIndex = 10;
             this.btnPerso.Text = "Personalizado";
             this.btnPerso.UseVisualStyleBackColor = true;
+            this.btnPerso.Click += new System.EventHandler(this.btnPerso_Click);
             // 
             // label2
             // 
