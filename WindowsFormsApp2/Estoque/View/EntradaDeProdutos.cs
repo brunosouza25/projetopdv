@@ -128,28 +128,6 @@ namespace WindowsFormsApp2
         private void btnPerso_Click(object sender, EventArgs e)
         {
 
-            DateTime deData, ateData;
-
-            if (DateTime.TryParse(txtBoxDeMes.Text.ToString(), out deData).Equals(true) &&
-                DateTime.TryParse(txtBoxAteMes.Text.ToString(), out ateData).Equals(true))
-            {
-                if (deData > ateData)
-                {
-                    dataPesquisa1 = deData.ToString("dd/MM/yyyy");
-                    dataPesquisa2 = ateData.ToString("dd/MM/yyyy");
-                }
-                else
-                    MessageBox.Show("Data(s) inválida(s)");
-
-                MessageBox.Show(dataPesquisa1 + "          " + dataPesquisa2);
-
-
-            }
-            else
-            {
-                MessageBox.Show("Data(s) inválida(s)");
-            }
-            carregarEntradas();
         }
     }
 }

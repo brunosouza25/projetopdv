@@ -91,12 +91,6 @@
     <Compile Include="Estoque\View\EntradaDeProdutos.Designer.cs">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estoque\View\SaidaDeProdutos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Estoque\View\SaidaDeProdutos.Designer.cs">
-      <DependentUpon>SaidaDeProdutos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Estoque\View\TelaDeEntradaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,9 +186,6 @@
     </Compile>
     <EmbeddedResource Include="Estoque\View\EntradaDeProdutos.resx">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estoque\View\SaidaDeProdutos.resx">
-      <DependentUpon>SaidaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaDeEntradaProduto.resx">
       <DependentUpon>TelaDeEntradaProduto.cs</DependentUpon>

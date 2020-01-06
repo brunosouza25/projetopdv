@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WindowsFormsApp2.Estoque.View;
 namespace WindowsFormsApp2
 {
     public partial class TelaPrincipalEstoque : UserControl
     {
+        //public TelaDeEstoque estoque = new TelaDeEstoque();
         public TelaDeEstoque estoque = new TelaDeEstoque();
         EntradaDeProdutos entrada = new EntradaDeProdutos();
         SaidaDeProdutos saida = new SaidaDeProdutos();
@@ -90,6 +91,26 @@ namespace WindowsFormsApp2
                 mudarEstoque();
             }
             saida.Visible = true; 
+        }
+
+        private void painelPrincipalEstoque_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void painelPrincipalDoEstoque_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

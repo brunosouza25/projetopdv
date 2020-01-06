@@ -48,6 +48,7 @@
             this.painelPrincipalEstoque.Name = "painelPrincipalEstoque";
             this.painelPrincipalEstoque.Size = new System.Drawing.Size(1264, 577);
             this.painelPrincipalEstoque.TabIndex = 0;
+            this.painelPrincipalEstoque.Paint += new System.Windows.Forms.PaintEventHandler(this.painelPrincipalEstoque_Paint);
             // 
             // tableLayoutPanel1
             // 
@@ -63,6 +64,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.73483F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 577);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // painelPrincipalDoEstoque
             // 
@@ -71,6 +73,7 @@
             this.painelPrincipalDoEstoque.Name = "painelPrincipalDoEstoque";
             this.painelPrincipalDoEstoque.Size = new System.Drawing.Size(1258, 507);
             this.painelPrincipalDoEstoque.TabIndex = 2;
+            this.painelPrincipalDoEstoque.Paint += new System.Windows.Forms.PaintEventHandler(this.painelPrincipalDoEstoque_Paint);
             // 
             // panel2
             // 
@@ -82,6 +85,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1258, 58);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnSaidaProduto
             // 
