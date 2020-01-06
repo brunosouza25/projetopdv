@@ -49,8 +49,8 @@ CREATE TABLE Caixa (
 );
 
 CREATE TABLE ItensDeEntrada (
-    idPrimarioItensEntrada INT PRIMARY KEY IDENTITY (1,1),
-	idSecundarioItensEntrada INT,
+    /*idPrimarioItensEntrada INT PRIMARY KEY IDENTITY (1,1),*/
+	idSecundarioItensEntrada INT PRIMARY KEY,
     idProduto INT,
     entradaEstado TINYINT,
     qntItem INT,
@@ -60,8 +60,8 @@ CREATE TABLE ItensDeEntrada (
 );
 
 CREATE TABLE ItensDeSaida (
-    idPrimarioItensSaida INT PRIMARY KEY IDENTITY (1,1),
-    idSecundarioItensSaida INT,
+    /*idPrimarioItensSaida INT PRIMARY KEY IDENTITY (1,1),*/
+    idSecundarioItensSaida INT PRIMARY KEY,
 	idProduto INT,
     saidaEstado INT,
     qntItem INT,
@@ -104,8 +104,8 @@ INSERT INTO MetodoDePagamento VALUES (2,'CREDITO A VISTA')
 INSERT INTO MetodoDePagamento VALUES (3,'CREDITO PARCELADO')
 INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 
-INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, 'primeira linha para retorno de 0')
-INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, 'primeira linha para retorno de 0')
+INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
+INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 
 /*DELETE FROM Venda*/
 /*
@@ -139,6 +139,17 @@ WHERE (idSecundarioItensEntrada = 1)
 
 SELECT idSecundarioItensEntrada, dataEntrada
 FROM            ItensDeEntrada
-where dataEntrada = 2020-01-05
 group by idSecundarioItensEntrada, dataEntrada
 having SUM(idSecundarioItensEntrada) > 0
+
+
+SELECT idSecundarioItensEntrada, dataEntrada
+FROM            ItensDeEntrada
+WHERE dataEntrada between '05-01-2020' and '05-01-2020'
+group by idSecundarioItensEntrada, dataEntrada
+having SUM(idSecundarioItensEntrada) > 0
+
+select * from ItensDeEntrada
+where idSecundarioItensEntrada = 5
+
+select * from Pagamento

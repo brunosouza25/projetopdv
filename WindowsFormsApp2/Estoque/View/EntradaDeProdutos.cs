@@ -75,15 +75,15 @@ namespace WindowsFormsApp2
 
         private void btnHoje_Click(object sender, EventArgs e)
         {
-            dataPesquisa1 = DateTime.Now.ToString("dd-MM-yyyy");
             dataPesquisa2 = DateTime.Now.ToString("dd-MM-yyyy");
+            dataPesquisa1 = DateTime.Now.ToString("dd-MM-yyyy");
             carregarEntradas();
         }
 
         private void btnOntem_Click(object sender, EventArgs e)
         {
-            dataPesquisa1 = DateTime.Now.ToString("dd/MM/yyyy");
-            dataPesquisa2 = DateTime.Now.AddDays(-1).ToString();
+            dataPesquisa2 = DateTime.Now.ToString("dd/MM/yyyy");
+            dataPesquisa1 = DateTime.Now.AddDays(-1).ToString();
             carregarEntradas();
         }
 

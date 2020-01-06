@@ -15,7 +15,7 @@ namespace WindowsFormsApp2
         //public TelaDeEstoque estoque = new TelaDeEstoque();
         public TelaDeEstoque estoque = new TelaDeEstoque();
         EntradaDeProdutos entrada = new EntradaDeProdutos();
-        SaidaDeProdutos saida = new SaidaDeProdutos();
+        //SaidaDeProdutos saida = new SaidaDeProdutos();
         public TelaPrincipalEstoque()
         {
             InitializeComponent();
@@ -24,8 +24,8 @@ namespace WindowsFormsApp2
             entrada.Visible = false;
             painelPrincipalDoEstoque.Controls.Add(entrada);
 
-            saida.Visible = false;
-            painelPrincipalDoEstoque.Controls.Add(saida);
+           // saida.Visible = false;
+            // painelPrincipalDoEstoque.Controls.Add(saida);
 
         }
 
@@ -37,7 +37,7 @@ namespace WindowsFormsApp2
 
         private void mudarSaida()
         {
-            saida.Visible = !saida.Visible;
+           // saida.Visible = !saida.Visible;
         }
 
         private void mudarEstoque()
@@ -57,11 +57,11 @@ namespace WindowsFormsApp2
             {
                 mudarEntrada();
             }
-            if (saida.Visible)
+            /*if (saida.Visible)
             {
                 mudarSaida();
             }
-
+*/
             estoque.Visible = true;
             estoque.carregarListaEstoque();
         }
@@ -72,10 +72,10 @@ namespace WindowsFormsApp2
             {
                 mudarEstoque();
             }
-            if (saida.Visible)
+           /* if (saida.Visible)
             {
                 mudarSaida();
-            }
+            }*/
             entrada.Visible = true;
             entrada.carregarEntradas();
         }
@@ -90,7 +90,7 @@ namespace WindowsFormsApp2
             {
                 mudarEstoque();
             }
-            saida.Visible = true; 
+           // saida.Visible = true; 
         }
 
         private void painelPrincipalEstoque_Paint(object sender, PaintEventArgs e)

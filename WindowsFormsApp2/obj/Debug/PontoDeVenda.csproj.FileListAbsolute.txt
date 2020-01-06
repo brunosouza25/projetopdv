@@ -74,7 +74,6 @@ C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\itextsha
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\itextsharp.xml
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.EntradaDeProdutos.resources
-C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.SaidaDeProdutos.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaDeEntradaProduto.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaSaidaDeProduto.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeLogin.resources
