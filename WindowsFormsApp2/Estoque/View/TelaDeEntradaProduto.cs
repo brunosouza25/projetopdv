@@ -244,10 +244,10 @@ namespace WindowsFormsApp2.Estoque.View
                 {
                     string auxObs;
                     int aux = Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text);
-                    MessageBox.Show(listaDeEntrada.Items[i].SubItems[6].Text);
+                    MessageBox.Show(listaDeEntrada.Items[i].SubItems[4].Text);
                     var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text));
                     aux += Convert.ToInt32(aux2[0]["prodQuantidade"]);
-                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text));
+                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text));
                     if (txtBoxObs.Text.Length < 300)
                     {
                         auxObs = txtBoxObs.Text;

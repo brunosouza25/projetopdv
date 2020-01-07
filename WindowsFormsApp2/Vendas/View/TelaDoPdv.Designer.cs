@@ -258,7 +258,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(121, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(112, 128);
+            this.panel4.Size = new System.Drawing.Size(112, 129);
             this.panel4.TabIndex = 7;
             // 
             // Bt_Remover_Prod
@@ -290,7 +290,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(112, 128);
+            this.panel3.Size = new System.Drawing.Size(112, 129);
             this.panel3.TabIndex = 6;
             // 
             // label1
@@ -322,9 +322,9 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.BtnFinalizarVenda);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 137);
+            this.panel5.Location = new System.Drawing.Point(3, 138);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(112, 215);
+            this.panel5.Size = new System.Drawing.Size(112, 214);
             this.panel5.TabIndex = 8;
             // 
             // label3
@@ -354,9 +354,9 @@
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.Bt_Cancelar_Venda);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(121, 137);
+            this.panel6.Location = new System.Drawing.Point(121, 138);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(112, 215);
+            this.panel6.Size = new System.Drawing.Size(112, 214);
             this.panel6.TabIndex = 9;
             // 
             // label4

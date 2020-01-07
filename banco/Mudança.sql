@@ -22,7 +22,7 @@ CREATE TABLE Venda (
 );
 
 CREATE TABLE ItensDaVenda (
-    idItens INT PRIMARY KEY IDENTITY (1,1),
+    /*idItens INT PRIMARY KEY IDENTITY (1,1),*/
     idVenda INT,
     idProduto INT,
     itensQtd INT,
@@ -50,7 +50,7 @@ CREATE TABLE Caixa (
 
 CREATE TABLE ItensDeEntrada (
     /*idPrimarioItensEntrada INT PRIMARY KEY IDENTITY (1,1),*/
-	idSecundarioItensEntrada INT PRIMARY KEY,
+	idSecundarioItensEntrada INT,
     idProduto INT,
     entradaEstado TINYINT,
     qntItem INT,
@@ -61,7 +61,7 @@ CREATE TABLE ItensDeEntrada (
 
 CREATE TABLE ItensDeSaida (
     /*idPrimarioItensSaida INT PRIMARY KEY IDENTITY (1,1),*/
-    idSecundarioItensSaida INT PRIMARY KEY,
+    idSecundarioItensSaida INT,
 	idProduto INT,
     saidaEstado INT,
     qntItem INT,
@@ -153,3 +153,13 @@ select * from ItensDeEntrada
 where idSecundarioItensEntrada = 5
 
 select * from Pagamento
+
+
+select * from Produto
+
+SELECT dataEntrada, entradaEstado, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem 
+FROM ItensDeEntrada 
+WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensEntrada, dataEntrada 
+HAVING (SUM(idSecundarioItensEntrada) > 0)
+
+select * from ItensDeEntrada

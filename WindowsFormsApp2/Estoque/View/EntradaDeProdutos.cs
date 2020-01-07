@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
             listaEntradas.Items.Clear();
             var varEntradas = entradas.retornarEntradas(dataPesquisa1, dataPesquisa2);
 
-            for (int i = 0; i < varEntradas.Count; i++)
+            for (int i = 0; i < varEntradas.Count -1; i++)
             {
                 //num entrada, data, funcionario, obs
 
@@ -43,13 +43,13 @@ namespace WindowsFormsApp2
                 ListViewItem item = new ListViewItem();
                 var auxEntradas = entradas.retornarEntradaPorId(Convert.ToInt32(varEntradas[i]["idSecundarioItensEntrada"]));
 
-                item.SubItems.Add(auxEntradas[i]["idSecundarioItensEntrada"].ToString());
-                item.SubItems.Add(Convert.ToDateTime(auxEntradas[i]["dataEntrada"]).ToString("dd/MM/yyyy") + " " + auxEntradas[i]["horaEntrada"].ToString().Substring(0, 5));
+                item.SubItems.Add(auxEntradas[0]["idSecundarioItensEntrada"].ToString());
+                item.SubItems.Add(Convert.ToDateTime(auxEntradas[0]["dataEntrada"]).ToString("dd/MM/yyyy") + " " + auxEntradas[0]["horaEntrada"].ToString().Substring(0, 5));
                 item.SubItems.Add("Funcionario padrão");
-                if (auxEntradas[i]["observacoes"].ToString().Length >= 69)
-                    item.SubItems.Add(auxEntradas[i]["observacoes"].ToString().Substring(0, 69));
+                if (auxEntradas[0]["observacoes"].ToString().Length >= 69)
+                    item.SubItems.Add(auxEntradas[0]["observacoes"].ToString().Substring(0, 69));
                 else
-                    item.SubItems.Add(auxEntradas[i]["observacoes"].ToString());
+                    item.SubItems.Add(auxEntradas[0]["observacoes"].ToString());
                 listaEntradas.Items.Add(item);
 
             }
@@ -106,9 +106,11 @@ namespace WindowsFormsApp2
 
             //DateTime ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
 
+
+
             var data = DateTime.Now.AddMonths(-1);
             var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
-            var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia);
+            var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia); //possibilidade de remoção desta linha
 
             dataPesquisa1 = (dataUltimoDia.ToString("01/MM/yyyy"));
             dataPesquisa2 = (dataUltimoDia.ToString("dd/MM/yyyy"));
