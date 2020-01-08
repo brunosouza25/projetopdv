@@ -91,17 +91,23 @@
     <Compile Include="Estoque\View\EntradaDeProdutos.Designer.cs">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estoque\View\SaidaDeProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Estoque\View\SaidaDeProduto.Designer.cs">
+      <DependentUpon>SaidaDeProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estoque\View\TelaDeEntradaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estoque\View\TelaDeEntradaProduto.Designer.cs">
       <DependentUpon>TelaDeEntradaProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estoque\View\TelaSaidaDeProduto.cs">
+    <Compile Include="Estoque\View\TelaDeSaidaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estoque\View\TelaSaidaDeProduto.Designer.cs">
-      <DependentUpon>TelaSaidaDeProduto.cs</DependentUpon>
+    <Compile Include="Estoque\View\TelaDeSaidaProduto.Designer.cs">
+      <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Vendas\View\TelaDeSangria.cs">
       <SubType>Form</SubType>
@@ -187,11 +193,14 @@
     <EmbeddedResource Include="Estoque\View\EntradaDeProdutos.resx">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\View\SaidaDeProduto.resx">
+      <DependentUpon>SaidaDeProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaDeEntradaProduto.resx">
       <DependentUpon>TelaDeEntradaProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estoque\View\TelaSaidaDeProduto.resx">
-      <DependentUpon>TelaSaidaDeProduto.cs</DependentUpon>
+    <EmbeddedResource Include="Estoque\View\TelaDeSaidaProduto.resx">
+      <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>

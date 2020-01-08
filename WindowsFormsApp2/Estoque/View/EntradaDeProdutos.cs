@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp2.Estoque.View;
 
@@ -15,15 +8,13 @@ namespace WindowsFormsApp2
     public partial class EntradaDeProdutos : UserControl
     {
         DadosTableAdapters.ItensDeEntradaTableAdapter entradas = new DadosTableAdapters.ItensDeEntradaTableAdapter();
-        string dataPesquisa1;
-        string dataPesquisa2;
-        DateTime data;
-
+        string deData;
+        string ateData;
 
         public EntradaDeProdutos()
         {
-            dataPesquisa1 = DateTime.Now.ToString("dd-MM-yyyy");
-            dataPesquisa2 = DateTime.Now.AddMonths(-1).ToString();
+            ateData = DateTime.Now.ToString("dd-MM-yyyy");
+            deData = DateTime.Now.AddMonths(-1).ToString();
 
             InitializeComponent();
             carregarEntradas();
@@ -32,9 +23,9 @@ namespace WindowsFormsApp2
         {
 
             listaEntradas.Items.Clear();
-            var varEntradas = entradas.retornarEntradas(dataPesquisa1, dataPesquisa2);
+            var varEntradas = entradas.retornarEntradas(deData, ateData);
 
-            for (int i = 0; i < varEntradas.Count -1; i++)
+            for (int i = 0; i < varEntradas.Count - 1; i++)
             {
                 //num entrada, data, funcionario, obs
 
@@ -75,29 +66,29 @@ namespace WindowsFormsApp2
 
         private void btnHoje_Click(object sender, EventArgs e)
         {
-            dataPesquisa2 = DateTime.Now.ToString("dd-MM-yyyy");
-            dataPesquisa1 = DateTime.Now.ToString("dd-MM-yyyy");
+            deData = DateTime.Now.ToString("dd-MM-yyyy");
+            ateData = DateTime.Now.ToString("dd-MM-yyyy");
             carregarEntradas();
         }
 
         private void btnOntem_Click(object sender, EventArgs e)
         {
-            dataPesquisa2 = DateTime.Now.ToString("dd/MM/yyyy");
-            dataPesquisa1 = DateTime.Now.AddDays(-1).ToString();
+            ateData = DateTime.Now.AddDays(-1).ToString();
+            deData = DateTime.Now.AddDays(-1).ToString();
             carregarEntradas();
         }
 
         private void btn7Dias_Click(object sender, EventArgs e)
         {
-            dataPesquisa1 = DateTime.Now.ToString("dd/MM/yyyy");
-            dataPesquisa2 = DateTime.Now.AddDays(-7).ToString();
+            deData = DateTime.Now.AddDays(-7).ToString();
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
             carregarEntradas();
         }
 
         private void btnEsteMes_Click(object sender, EventArgs e)
         {
-            dataPesquisa1 = DateTime.Now.ToString("dd/MM/yyyy");
-            dataPesquisa2 = DateTime.Now.ToString("01/MM/yyyy");
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            deData = DateTime.Now.ToString("01/MM/yyyy");
             carregarEntradas();
         }
 
@@ -112,8 +103,9 @@ namespace WindowsFormsApp2
             var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
             var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia); //possibilidade de remoção desta linha
 
-            dataPesquisa1 = (dataUltimoDia.ToString("01/MM/yyyy"));
-            dataPesquisa2 = (dataUltimoDia.ToString("dd/MM/yyyy"));
+            ateData = (dataUltimoDia.ToString("01/MM/yyyy"));
+            deData = (dataUltimoDia.ToString("dd/MM/yyyy"));
+            carregarEntradas();
 
         }
 
@@ -122,14 +114,20 @@ namespace WindowsFormsApp2
 
             var data = DateTime.Now.AddMonths(-3);
 
-            dataPesquisa1 = (DateTime.Now.ToString());
-            dataPesquisa2 = (data.ToString("dd/MM/yyyy"));
-
+            ateData = (DateTime.Now.ToString());
+            deData = (data.ToString("dd/MM/yyyy"));
+            carregarEntradas();
         }
 
         private void btnPerso_Click(object sender, EventArgs e)
         {
-
+            DateTime a, b;
+            if (DateTime.TryParse(txtBoxDeMes.Text, out a) && DateTime.TryParse(txtBoxAteMes.Text, out b) && b > a){
+                deData = txtBoxDeMes.Text;
+                ateData = txtBoxAteMes.Text;
+                carregarEntradas();
+            } else
+                MessageBox.Show("Datas invalidas");
         }
     }
 }

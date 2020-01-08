@@ -1,52 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp2.DadosTableAdapters;
+using System.Collections.Generic;
 
 namespace WindowsFormsApp2.Estoque.View
 {
-    public partial class TelaDeEntradaProduto : Form
+    public partial class TelaDeSaidaProduto : Form
     {
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
-        int idEntrada;
+        DadosTableAdapters.ItensDeSaidaTableAdapter dadosSaida = new DadosTableAdapters.ItensDeSaidaTableAdapter();
+
+        int idSaida;
         public string[,] itensDaLista { get; set; }
 
-        bool tipo;
-        public TelaDeEntradaProduto()
+        public TelaDeSaidaProduto()
         {
             InitializeComponent();
             ultimoId();
             txtBoxQnt.Text = "1";
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            lblNumEntrada.Text = idEntrada.ToString();
+            lblNumSaida.Text = idSaida.ToString();
             TxtBoxPesquisaProd.Select();
-
         }
-        public TelaDeEntradaProduto(bool tipo, int idEntrada)
+        public TelaDeSaidaProduto(bool tipo, int idSaida)
         {
             InitializeComponent();
 
-            this.tipo = tipo;
-            this.idEntrada = idEntrada;
-            btnEntrar.Enabled = false;
+            this.idSaida = idSaida;
+            btnSaida.Enabled = false;
             txtBoxQnt.Enabled = false;
             TxtBoxPesquisaProd.Enabled = false;
-            carregarEntrada();
+            carregarSaida();
         }
 
-        private void carregarEntrada()
+        private void carregarSaida()
         {
-            var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
-            lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
-            lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
-            lblNumEntrada.Text = idEntrada.ToString();
+            var aux = dadosSaida.retornarSaidaPorId(idSaida);
+            lblData.Text = Convert.ToDateTime(aux[0]["dataSaida"]).ToString("dd/MM/yyyy");
+            lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0, 5);
+            lblNumSaida.Text = idSaida.ToString();
             int soma = 0;
 
             for (int i = 0; i < aux.Count; i++)
@@ -58,8 +49,8 @@ namespace WindowsFormsApp2.Estoque.View
                 item.SubItems.Add(aux2[0]["prodCodBarras"].ToString());
                 item.SubItems.Add("R$" + Convert.ToDouble(aux2[0]["prodValor"]).ToString("F2"));
                 item.SubItems.Add(aux[i]["qntItem"].ToString());
-                item.SubItems.Add("R$"+(Convert.ToInt32(aux[i]["qntItem"]) * Convert.ToDouble(aux2[0]["prodValor"])).ToString("F2"));
-                listaDeEntrada.Items.Add(item);
+                item.SubItems.Add("R$" + (Convert.ToInt32(aux[i]["qntItem"]) * Convert.ToDouble(aux2[0]["prodValor"])).ToString("F2"));
+                listaDeSaida.Items.Add(item);
                 soma = soma + Convert.ToInt32(aux[i]["qntItem"]);
             }
             lblTotalItens.Text = soma.ToString();
@@ -69,6 +60,7 @@ namespace WindowsFormsApp2.Estoque.View
         double total = 0;
         int qnt = 0;
         List<Produto> listaProduto = new List<Produto>();
+
         private void valida()
         {
             int a;
@@ -77,7 +69,7 @@ namespace WindowsFormsApp2.Estoque.View
             {
                 if (Convert.ToInt32(txtBoxQnt.Text) < 1)
                 {
-                    MessageBox.Show("Não permitida a entrada de valores negativos");
+                    MessageBox.Show("Não permitida a Saida de valores negativos");
                     txtBoxQnt.Text = "";
                 }
                 else
@@ -92,17 +84,17 @@ namespace WindowsFormsApp2.Estoque.View
 
         private void ultimoId()
         {
-            var aux = dadosEntrada.retornarIdUltimaEntrada();
+            var aux = dadosSaida.retornarIdUltimaSaida();
 
             if (aux.Count > 0)
             {
-                int aux2 = Convert.ToInt32(aux[0]["idSecundarioItensEntrada"]);
-                this.idEntrada = aux2 + 1;
+                int aux2 = Convert.ToInt32(aux[0]["idSecundarioItensSaida"]);
+                this.idSaida = aux2 + 1;
             }
             else
-                this.idEntrada = 1;
+                this.idSaida = 1;
 
-            lblNumEntrada.Text = idEntrada.ToString();
+            lblNumSaida.Text = idSaida.ToString();
         }
         private void pesquisaEstoque()
         {
@@ -165,7 +157,7 @@ namespace WindowsFormsApp2.Estoque.View
 
                     //item.SubItems.Add(prod.idProduto.ToString());
 
-                    listaDeEntrada.Items.Add(item);
+                    listaDeSaida.Items.Add(item);
                 }
 
 
@@ -177,7 +169,7 @@ namespace WindowsFormsApp2.Estoque.View
                     //item.SubItems.Add(prod.idProduto.ToString());
 
                     listaProduto.Add(prod);
-                    listaDeEntrada.Items.Add(item);
+                    listaDeSaida.Items.Add(item);
 
                 }
                 if (permitido)
@@ -187,7 +179,7 @@ namespace WindowsFormsApp2.Estoque.View
 
                     //item.SubItems.Add(prod.idProduto.ToString());
 
-                    listaDeEntrada.Items.Add(item);
+                    listaDeSaida.Items.Add(item);
                 }
                 item.SubItems.Add("R$" + (qnt * Convert.ToDouble(varPesquisa1[0]["prodValor"])).ToString("F2"));
                 item.SubItems.Add(prod.idProduto.ToString());
@@ -196,10 +188,6 @@ namespace WindowsFormsApp2.Estoque.View
             }
             txtBoxQnt.Text = "1";
             TxtBoxPesquisaProd.Text = "";
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -222,7 +210,6 @@ namespace WindowsFormsApp2.Estoque.View
             TxtBoxPesquisaProd.Select();
 
         }
-
         private void txtBoxQnt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -236,42 +223,67 @@ namespace WindowsFormsApp2.Estoque.View
                 txtBoxQnt.Select();
         }
 
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (listaDeEntrada.Items.Count > 0)
-            {
-                for (int i = 0; i < listaDeEntrada.Items.Count; i++)
-                {
-                    string auxObs;
-                    int aux = Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text);
-                    MessageBox.Show(listaDeEntrada.Items[i].SubItems[4].Text);
-                    var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text));
-                    aux += Convert.ToInt32(aux2[0]["prodQuantidade"]);
-                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text));
-                    if (txtBoxObs.Text.Length < 300)
-                    {
-                        auxObs = txtBoxObs.Text;
-                    }
-                    else
-                    {
-                        MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
-                        auxObs = txtBoxObs.Text.Substring(0, 299);
-                    }
 
-                    dadosEntrada.inserirItensEntrada( idEntrada ,Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text), DateTime.Now.ToString("dd/MM/yyyy")
-                    , DateTime.Now.ToString("HH:mm")
-                    , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text, 1);
-                }
-                MessageBox.Show("Produtos inserido com sucesso!");
-                Close();
-            }
-            else
-                MessageBox.Show("Não tem nenhum item para ser adicionado");
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaida_Click(object sender, EventArgs e)
+        {
+            if (listaDeSaida.Items.Count > 0)
+            {
+                int auxQnt;
+                for (int j = 0; j < listaProduto.Count; j++)
+                {
+                    var auxQntBanco = dadosProdutos.PegaQuantidadePorCod(listaProduto[j].prodCodBarras);
+                    auxQnt = Convert.ToInt32(auxQntBanco[0]["prodQuantidade"]);
+
+                    if (listaProduto[j].prodQuantidade <= auxQnt)
+                    {
+                        for (int i = 0; i < listaDeSaida.Items.Count; i++)
+                        {
+                            string auxObs;
+                            int aux = Convert.ToInt32(listaDeSaida.Items[i].SubItems[4].Text);
+                            MessageBox.Show(listaDeSaida.Items[i].SubItems[4].Text);
+                            var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaDeSaida.Items[i].SubItems[6].Text));
+                            aux = Convert.ToInt32(aux2[0]["prodQuantidade"] ) - aux;
+                            dadosProdutos.AttQuantidade(aux, Convert.ToInt32(listaDeSaida.Items[i].SubItems[6].Text));
+                            if (txtBoxObs.Text.Length < 300)
+                            {
+                                auxObs = txtBoxObs.Text;
+                            }
+                            else
+                            {
+                                MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
+                                auxObs = txtBoxObs.Text.Substring(0, 299);
+                            }
+
+                            dadosSaida.inserirItensSaida(idSaida, Convert.ToInt32(listaDeSaida.Items[i].SubItems[4].Text), DateTime.Now.ToString("dd/MM/yyyy")
+                            , DateTime.Now.ToString("HH:mm")
+                            , Convert.ToInt32(listaDeSaida.Items[i].SubItems[6].Text), txtBoxObs.Text, 1);
+                        }
+                        MessageBox.Show("Produtos inserido com sucesso!");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Valor para ser retirado maior que o contido em estoque: "+ listaProduto[j].prodNome );
+
+                    }
+                    }
+            }
+        }
     }
 }
+

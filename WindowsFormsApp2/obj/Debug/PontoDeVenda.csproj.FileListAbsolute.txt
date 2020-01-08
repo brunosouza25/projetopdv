@@ -75,7 +75,6 @@ C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\bin\Debug\itextsha
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.EntradaDeProdutos.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaDeEntradaProduto.resources
-C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaSaidaDeProduto.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeLogin.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeSangria.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipal.resources
@@ -96,3 +95,5 @@ C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CopyComplete
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.SaidaDeProduto.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaDeSaidaProduto.resources
