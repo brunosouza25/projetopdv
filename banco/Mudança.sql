@@ -163,3 +163,15 @@ WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecunda
 HAVING (SUM(idSecundarioItensEntrada) > 0)
 
 select * from ItensDeEntrada
+
+INSERT INTO ItensDeSaida
+                         (idSecundarioItensSaida ,qntItem, dataSaida, horaSaida,idProduto, observacoes, saidaEstado)
+VALUES        (2, 15 ,'07/01/2020', '19:42',1, '', 1)
+
+select * from ItensDeSaida
+
+SELECT dataSaida, idSecundarioItensSaida
+FROM ItensDeSaida
+WHERE (dataSaida BETWEEN '07/01/2020' AND '07/01/2020') 
+GROUP BY idSecundarioItensSaida, dataSaida
+HAVING (SUM(idSecundarioItensSaida) > 0)

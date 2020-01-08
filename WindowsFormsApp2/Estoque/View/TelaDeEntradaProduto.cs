@@ -27,7 +27,7 @@ namespace WindowsFormsApp2.Estoque.View
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             lblNumEntrada.Text = idEntrada.ToString();
             TxtBoxPesquisaProd.Select();
-
+            btnSalvar.Visible = false;
         }
         public TelaDeEntradaProduto(bool tipo, int idEntrada)
         {
@@ -47,6 +47,7 @@ namespace WindowsFormsApp2.Estoque.View
             lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
             lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
             lblNumEntrada.Text = idEntrada.ToString();
+            txtBoxObs.Text = aux[0]["observacoes"].ToString();
             int soma = 0;
 
             for (int i = 0; i < aux.Count; i++)
@@ -271,6 +272,30 @@ namespace WindowsFormsApp2.Estoque.View
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            listaDeEntrada.Items.Clear();
+            listaProduto.Clear();
+            TxtBoxPesquisaProd.Select();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            string auxObs;
+            if (txtBoxObs.Text.Length < 300)
+            {
+                auxObs = txtBoxObs.Text;
+                dadosEntrada.attObs(auxObs, idEntrada);
+            }
+            else
+            {
+                MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
+                auxObs = txtBoxObs.Text.Substring(0, 299);
+                dadosEntrada.attObs(auxObs, idEntrada);
+            }
             Close();
         }
     }

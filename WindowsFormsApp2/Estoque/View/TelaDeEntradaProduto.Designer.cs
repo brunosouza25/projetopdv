@@ -58,6 +58,7 @@
             this.lblData = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
@@ -72,6 +73,7 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lblTotalItens = new System.Windows.Forms.Label();
@@ -79,7 +81,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxObs = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -308,7 +309,7 @@
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.button1_Click);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtBoxFunc
             // 
@@ -386,6 +387,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(855, 129);
             this.panel5.TabIndex = 0;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(759, 2);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(87, 33);
+            this.lblHora.TabIndex = 11;
+            this.lblHora.Text = "24:24";
             // 
             // txtBoxQnt
             // 
@@ -505,6 +516,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnLimpar);
             this.panel7.Controls.Add(this.btnSalvar);
             this.panel7.Controls.Add(this.btnSair);
             this.panel7.Controls.Add(this.btnEntrar);
@@ -517,6 +529,16 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(855, 86);
             this.panel7.TabIndex = 2;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(781, 0);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(71, 30);
+            this.btnLimpar.TabIndex = 14;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSair
             // 
@@ -584,16 +606,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(861, 525);
             this.panel8.TabIndex = 3;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(759, 2);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(87, 33);
-            this.lblHora.TabIndex = 11;
-            this.lblHora.Text = "24:24";
             // 
             // TelaDeEntradaProduto
             // 
@@ -676,5 +688,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

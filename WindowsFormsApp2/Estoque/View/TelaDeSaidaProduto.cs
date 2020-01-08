@@ -20,6 +20,7 @@ namespace WindowsFormsApp2.Estoque.View
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             lblNumSaida.Text = idSaida.ToString();
             TxtBoxPesquisaProd.Select();
+            btnSalvar.Visible = false;
         }
         public TelaDeSaidaProduto(bool tipo, int idSaida)
         {
@@ -236,7 +237,19 @@ namespace WindowsFormsApp2.Estoque.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            string auxObs;
+            if (txtBoxObs.Text.Length < 300)
+            {
+                auxObs = txtBoxObs.Text;
+                dadosSaida.attObs(auxObs, idSaida);
+            }
+            else
+            {
+                MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
+                auxObs = txtBoxObs.Text.Substring(0, 299);
+                dadosSaida.attObs(auxObs, idSaida);
+            }
+            Close();
         }
 
         private void btnSaida_Click(object sender, EventArgs e)
@@ -283,6 +296,13 @@ namespace WindowsFormsApp2.Estoque.View
                     }
                     }
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            listaDeSaida.Items.Clear();
+            listaProduto.Clear();
+            TxtBoxPesquisaProd.Select();
         }
     }
 }
