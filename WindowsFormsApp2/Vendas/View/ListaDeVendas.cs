@@ -63,14 +63,17 @@ namespace WindowsFormsApp2.Vendas.View
 
                 if (varVendas.Count > 0)
                 {
-                    ListViewItem item = new ListViewItem();
+                    for (int i = 0; i < varVendas.Count; i++)
+                    {
+                        ListViewItem item = new ListViewItem();
 
 
-                    item.SubItems.Add(varVendas[0]["idVenda"].ToString());
-                    item.SubItems.Add(Convert.ToDateTime(varVendas[0]["vendData"]).ToString("dd/MM/yyyy"));
-                    item.SubItems.Add(Convert.ToDouble(varVendas[0]["valorCompra"]).ToString("F2"));
+                        item.SubItems.Add(varVendas[i]["idVenda"].ToString());
+                        item.SubItems.Add(Convert.ToDateTime(varVendas[i]["vendData"]).ToString("dd/MM/yyyy"));
+                        item.SubItems.Add(Convert.ToDouble(varVendas[i]["valorCompra"]).ToString("F2"));
 
-                    listaVendas.Items.Add(item);
+                        listaVendas.Items.Add(item);
+                    }
                 }
             }
             else

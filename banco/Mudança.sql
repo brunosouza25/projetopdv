@@ -18,7 +18,8 @@ CREATE TABLE Venda (
     idVenda INT PRIMARY KEY IDENTITY (1,1),
     vendData DATETIME,
     valorCompra FLOAT,
-	idCaixa INT
+	idCaixa INT,
+	observacoes VARCHAR(300)
 );
 
 CREATE TABLE ItensDaVenda (
@@ -168,10 +169,20 @@ INSERT INTO ItensDeSaida
                          (idSecundarioItensSaida ,qntItem, dataSaida, horaSaida,idProduto, observacoes, saidaEstado)
 VALUES        (2, 15 ,'07/01/2020', '19:42',1, '', 1)
 
-select * from ItensDeSaida
+select * from ItensDeEntrada
 
 SELECT dataSaida, idSecundarioItensSaida
 FROM ItensDeSaida
 WHERE (dataSaida BETWEEN '07/01/2020' AND '07/01/2020') 
 GROUP BY idSecundarioItensSaida, dataSaida
 HAVING (SUM(idSecundarioItensSaida) > 0)
+
+SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado FROM Produto
+WHERE prodNome like '%Blusa%'
+
+select * from Pagamento
+
+SELECT idVenda, vendData, valorCompra FROM dbo.Venda
+WHERE idVenda like '%'+1+'%'
+
+
