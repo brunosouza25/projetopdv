@@ -25,7 +25,7 @@ namespace WindowsFormsApp2
             listaEntradas.Items.Clear();
             var varEntradas = entradas.retornarEntradas(deData, ateData);
 
-            for (int i = 0; i < varEntradas.Count - 1; i++)
+            for (int i = 0; i <= varEntradas.Count - 1; i++)
             {
                 //num entrada, data, funcionario, obs
 
@@ -62,6 +62,7 @@ namespace WindowsFormsApp2
         {
             TelaDeEntradaProduto tela = new TelaDeEntradaProduto(false, Convert.ToInt32(listaEntradas.SelectedItems[0].SubItems[1].Text));
             tela.ShowDialog();
+            carregarEntradas();
         }
 
         private void btnHoje_Click(object sender, EventArgs e)

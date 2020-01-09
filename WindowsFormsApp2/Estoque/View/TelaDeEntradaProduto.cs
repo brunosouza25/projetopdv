@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp2.DadosTableAdapters;
 
 namespace WindowsFormsApp2.Estoque.View
 {
@@ -43,6 +36,7 @@ namespace WindowsFormsApp2.Estoque.View
 
         private void carregarEntrada()
         {
+            listaDeEntrada.Items.Clear();
             var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
             lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
             lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);

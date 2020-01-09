@@ -37,7 +37,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtObs = new System.Windows.Forms.TextBox();
+            this.txtBoxObs = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listaVendas = new System.Windows.Forms.ListView();
             this.nulo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,6 +48,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBoxCredParc = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtBoxDebt = new System.Windows.Forms.TextBox();
             this.txtBoxCredVista = new System.Windows.Forms.TextBox();
             this.txtBoxDin = new System.Windows.Forms.TextBox();
@@ -62,8 +64,6 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxCredParc = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -106,7 +106,7 @@
             this.panel4.Controls.Add(this.lblTotal);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.txtObs);
+            this.panel4.Controls.Add(this.txtBoxObs);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 436);
             this.panel4.Name = "panel4";
@@ -171,13 +171,14 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Observações";
             // 
-            // txtObs
+            // txtBoxObs
             // 
-            this.txtObs.Location = new System.Drawing.Point(0, 25);
-            this.txtObs.Multiline = true;
-            this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(439, 58);
-            this.txtObs.TabIndex = 0;
+            this.txtBoxObs.Location = new System.Drawing.Point(0, 25);
+            this.txtBoxObs.Multiline = true;
+            this.txtBoxObs.Name = "txtBoxObs";
+            this.txtBoxObs.Size = new System.Drawing.Size(439, 58);
+            this.txtBoxObs.TabIndex = 0;
+            this.txtBoxObs.TextChanged += new System.EventHandler(this.txtObs_TextChanged);
             // 
             // panel3
             // 
@@ -273,6 +274,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(855, 159);
             this.panel2.TabIndex = 0;
+            // 
+            // txtBoxCredParc
+            // 
+            this.txtBoxCredParc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCredParc.ForeColor = System.Drawing.Color.Blue;
+            this.txtBoxCredParc.Location = new System.Drawing.Point(692, 116);
+            this.txtBoxCredParc.Name = "txtBoxCredParc";
+            this.txtBoxCredParc.ReadOnly = true;
+            this.txtBoxCredParc.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxCredParc.TabIndex = 17;
+            this.txtBoxCredParc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(467, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(193, 24);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Crédito Parcelado: R$";
             // 
             // txtBoxDebt
             // 
@@ -418,28 +441,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente: ";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(467, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 24);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Crédito Parcelado: R$";
-            // 
-            // txtBoxCredParc
-            // 
-            this.txtBoxCredParc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCredParc.ForeColor = System.Drawing.Color.Blue;
-            this.txtBoxCredParc.Location = new System.Drawing.Point(692, 116);
-            this.txtBoxCredParc.Name = "txtBoxCredParc";
-            this.txtBoxCredParc.ReadOnly = true;
-            this.txtBoxCredParc.Size = new System.Drawing.Size(100, 22);
-            this.txtBoxCredParc.TabIndex = 17;
-            this.txtBoxCredParc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // TelaDetalhesDaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,7 +486,7 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtObs;
+        private System.Windows.Forms.TextBox txtBoxObs;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;

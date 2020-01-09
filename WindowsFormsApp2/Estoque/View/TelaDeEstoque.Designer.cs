@@ -118,7 +118,7 @@
             this.TxtBoxPesquisaProdEstoque.Name = "TxtBoxPesquisaProdEstoque";
             this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(959, 36);
             this.TxtBoxPesquisaProdEstoque.TabIndex = 1;
-            this.TxtBoxPesquisaProdEstoque.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProdEstoque_TextChanged);
+            this.TxtBoxPesquisaProdEstoque.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProdEstoque_KeyUp);
             // 
             // listaProdutos
             // 

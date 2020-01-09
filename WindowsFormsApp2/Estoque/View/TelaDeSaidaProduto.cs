@@ -35,10 +35,12 @@ namespace WindowsFormsApp2.Estoque.View
 
         private void carregarSaida()
         {
+            listaDeSaida.Items.Clear();
             var aux = dadosSaida.retornarSaidaPorId(idSaida);
             lblData.Text = Convert.ToDateTime(aux[0]["dataSaida"]).ToString("dd/MM/yyyy");
             lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0, 5);
             lblNumSaida.Text = idSaida.ToString();
+            txtObs.Text = aux[0]["observacoes"].ToString();
             int soma = 0;
 
             for (int i = 0; i < aux.Count; i++)

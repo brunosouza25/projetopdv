@@ -158,11 +158,6 @@ namespace WindowsFormsApp2
 
         }
 
-        private void TxtBoxPesquisaProdEstoque_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
@@ -216,6 +211,48 @@ namespace WindowsFormsApp2
         private void listaProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtBoxPesquisaProdEstoque_KeyUp(object sender, KeyEventArgs e)
+        {
+            Produto prod = new Produto();
+            listaProdutos.Items.Clear();
+            var varProd = dadosProdutos.pesquisaNome(TxtBoxPesquisaProdEstoque.Text);
+
+            if (varProd.Count > 0)
+            {
+                prod.idProduto = Convert.ToInt32(varProd[0]["idProduto"]);
+
+                prod.prodNome = varProd[0]["prodNome"].ToString();
+                prod.prodCusto = Convert.ToDouble(varProd[0]["prodCusto"]);
+                prod.prodValor = Convert.ToDouble(varProd[0]["prodValor"]);
+                prod.prodQuantidade = Convert.ToInt32(varProd[0]["prodQuantidade"]);
+                prod.prodCodBarras = varProd[0]["prodCodBarras"].ToString();
+                prod.prodEstado = Convert.ToBoolean(varProd[0]["prodEstado"]);
+
+                ListViewItem item = new ListViewItem();
+
+
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add("R$" + prod.prodCusto.ToString("F2"));
+                item.SubItems.Add("R$" + prod.prodValor.ToString("F2"));
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodQuantidade.ToString());
+                item.SubItems.Add(prod.idProduto.ToString());
+
+                if (!prod.prodEstado)
+                {
+                    item.SubItems.Add("Ativo");
+                }
+                else
+                {
+                    item.SubItems.Add("Inativo");
+                    item.BackColor = System.Drawing.Color.Gray;
+
+                }
+                listaProdutos.Items.Add(item);
+
+            }
         }
     }
 }

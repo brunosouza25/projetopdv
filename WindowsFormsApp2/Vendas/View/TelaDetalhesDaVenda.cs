@@ -29,8 +29,26 @@ namespace WindowsFormsApp2.Vendas.View
 
         }
 
+        private void txtObs_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            string auxObs;
+            if (txtBoxObs.Text.Length < 300)
+            {
+                auxObs = txtBoxObs.Text;
+                detalheVenda.attObs(auxObs, codVenda);
+            }
+            else
+            {
+                MessageBox.Show("O limite de caracteres no campo observação é maior de 300, será cortado o restante");
+                auxObs = txtBoxObs.Text.Substring(0, 299);
+                detalheVenda.attObs(auxObs, codVenda);
+            }
+            Close();
         }
         private void carregarTela()
         {

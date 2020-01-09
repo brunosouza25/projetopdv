@@ -20,11 +20,12 @@ namespace WindowsFormsApp2.Vendas.View
             InitializeComponent();
             carregarListaVendas();
         }
+        int pesquisa;
         public void carregarListaVendas()
         {
             listaVendas.Items.Clear();
             var varVendas = listaDeVendas.retornarVendas();
-            
+
             for (int i = 0; i < varVendas.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
@@ -38,6 +39,7 @@ namespace WindowsFormsApp2.Vendas.View
             }
         }
 
+
         private void listaVendas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -47,6 +49,42 @@ namespace WindowsFormsApp2.Vendas.View
         {
             TelaDetalhesDaVenda tela = new TelaDetalhesDaVenda(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[1].Text));
             tela.ShowDialog();
+        }
+
+        private void TxtBoxPesquisaProd_KeyUp(object sender, KeyEventArgs e)
+        {
+            int pesquisa;
+            if (Int32.TryParse(TxtBoxPesquisaProd.Text.Trim(), out pesquisa) || TxtBoxPesquisaProd.Text == "")
+            {
+                TxtBoxPesquisaProd.Select();
+                listaVendas.Items.Clear();
+
+                var varVendas = listaDeVendas.retornarVendaPorId(Convert.ToInt32(pesquisa));
+
+                if (varVendas.Count > 0)
+                {
+                    ListViewItem item = new ListViewItem();
+
+
+                    item.SubItems.Add(varVendas[0]["idVenda"].ToString());
+                    item.SubItems.Add(Convert.ToDateTime(varVendas[0]["vendData"]).ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(Convert.ToDouble(varVendas[0]["valorCompra"]).ToString("F2"));
+
+                    listaVendas.Items.Add(item);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este campo não aceita letras, somente número");
+                TxtBoxPesquisaProd.Text = "";
+                TxtBoxPesquisaProd.Select();
+            }
+
+        }
+
+        private void btnPerso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

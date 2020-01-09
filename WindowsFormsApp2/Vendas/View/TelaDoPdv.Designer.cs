@@ -198,6 +198,7 @@
             this.TxtBoxPesquisaProd.Name = "TxtBoxPesquisaProd";
             this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(873, 40);
             this.TxtBoxPesquisaProd.TabIndex = 2;
+            this.TxtBoxPesquisaProd.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProd_TextChanged);
             this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
             // 
             // tableLayoutPanel1

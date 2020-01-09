@@ -29,7 +29,7 @@ namespace WindowsFormsApp2.Estoque.View
             listaSaidas.Items.Clear();
             var varSaidas = saidas.retornarSaidas(ateData, deData);
 
-            for (int i = 0; i < varSaidas.Count - 1; i++)
+            for (int i = 0; i <= varSaidas.Count - 1; i++)
             {
                 //num entrada, data, funcionario, obs
 
@@ -63,6 +63,7 @@ namespace WindowsFormsApp2.Estoque.View
         {
             TelaDeSaidaProduto tela = new TelaDeSaidaProduto(false, Convert.ToInt32(listaSaidas.SelectedItems[0].SubItems[1].Text));
             tela.ShowDialog();
+            carregarSaidas();
         }
 
         private void btnHoje_Click(object sender, EventArgs e)

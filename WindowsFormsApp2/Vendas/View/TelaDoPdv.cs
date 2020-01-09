@@ -11,6 +11,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             BtnFinalizarVenda.Enabled = false;
+            txtBoxQnt.Enabled = false;
             Bt_Add_Prod.Enabled = false;
             Bt_Remover_Prod.Enabled = false;
             Bt_Cancelar_Venda.Enabled = false;
@@ -60,7 +61,7 @@ namespace WindowsFormsApp2
                 btnAbrirCaixa.Visible = true;
                 lblCaixa.Text = "Abrir Caixa";
                 listaCaixa.Items.Clear();
-
+                txtBoxQnt.Enabled = false;
                 BtnFinalizarVenda.Enabled = false;
                 Bt_Add_Prod.Enabled = false;
                 Bt_Cancelar_Venda.Enabled = false;
@@ -79,6 +80,7 @@ namespace WindowsFormsApp2
                 lblCaixa.Text = "Fechar Caixa";
                 MessageBox.Show("Caixa aberto com: R$" + saldoAnterior[0]["fechamentoCaixa"]);
 
+                txtBoxQnt.Enabled = true;
                 BtnFinalizarVenda.Enabled = true;
                 Bt_Add_Prod.Enabled = true;
                 Bt_Cancelar_Venda.Enabled = true;
@@ -308,6 +310,11 @@ namespace WindowsFormsApp2
                 pesquisaListaCaixa();
             }
             TxtBoxPesquisaProd.Select();
+        }
+
+        private void TxtBoxPesquisaProd_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
