@@ -31,8 +31,13 @@ namespace WindowsFormsApp2.Vendas.View
 
             for (int i = 0; i < varVendas.Count; i++)
             {
-                ListViewItem item = new ListViewItem();
 
+                ListViewItem item = new ListViewItem();
+                if (Convert.ToByte(varVendas[i]["vendaEstado"]) == 0)
+                {
+                    item.BackColor = System.Drawing.Color.Gray;
+
+                }
 
                 item.SubItems.Add(varVendas[i]["idVenda"].ToString());
                 item.SubItems.Add(Convert.ToDateTime(varVendas[i]["vendData"]).ToString("dd/MM/yyyy"));
@@ -52,6 +57,7 @@ namespace WindowsFormsApp2.Vendas.View
         {
             TelaDetalhesDaVenda tela = new TelaDetalhesDaVenda(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[1].Text));
             tela.ShowDialog();
+            carregarListaVendas();
         }
 
         private void TxtBoxPesquisaProd_KeyUp(object sender, KeyEventArgs e)

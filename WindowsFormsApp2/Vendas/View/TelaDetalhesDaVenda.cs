@@ -49,6 +49,7 @@ namespace WindowsFormsApp2.Vendas.View
                     dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
 
                 }
+                detalheVenda.cancelarVenda(Convert.ToByte(0), codVenda);
             }
             Close();
         }
@@ -74,6 +75,8 @@ namespace WindowsFormsApp2.Vendas.View
             var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
+            if (Convert.ToByte(auxVenda[0]["vendaEstado"]) == 0)
+                btnCancelarVenda.Enabled = false;
             List<string> tipos = new List<string>();
             for (int i = 0; i < pagamentosVenda.Count; i++)
             {

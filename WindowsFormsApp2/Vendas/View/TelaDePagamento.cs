@@ -119,7 +119,7 @@ namespace WindowsFormsApp2
         public void confirmar()
         {
 
-            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy HH:mm"), total);
+            dadosVenda.InserirVenda(DateTime.Now.Date, total, Convert.ToByte(1));
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
 

@@ -19,7 +19,8 @@ CREATE TABLE Venda (
     vendData DATETIME,
     valorCompra FLOAT,
 	idCaixa INT,
-	observacoes VARCHAR(300)
+	observacoes VARCHAR(300),
+	vendaEstado TINYINT
 );
 
 CREATE TABLE ItensDaVenda (
@@ -186,3 +187,6 @@ SELECT idVenda, vendData, valorCompra FROM dbo.Venda
 WHERE idVenda like '%'+1+'%'
 
 
+select* from Venda
+
+select * from Produto

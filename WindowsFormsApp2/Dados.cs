@@ -4,6 +4,9 @@
 
     partial class Dados
     {
+        partial class ProdutoDataTable
+        {
+        }
     }
 }
 
