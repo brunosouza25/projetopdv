@@ -45,8 +45,8 @@ namespace WindowsFormsApp2.Vendas.View
                 for (int i = 0; i < listaProduto.Count; i++)
                 {
                     var aux2 = dadosProdutos.PegaQuantidadePorCod(listaProduto[i].prodCodBarras);
-                    aux = Convert.ToInt32(aux2[i]["prodQuantidade"]) + listaProduto[i].prodQuantidade;
-                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[i]["idProduto"]));
+                    aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) + listaProduto[i].prodQuantidade;
+                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
 
                 }
             }
@@ -130,26 +130,19 @@ namespace WindowsFormsApp2.Vendas.View
                 item.SubItems.Add(prod.prodValor.ToString("F2"));
                 item.SubItems.Add("");
                 item.SubItems.Add(prod.prodQuantidade.ToString());
+                bool achou = false;
 
-                if (listaProduto.Count == 0)
+                for (int j = 0; j < listaProduto.Count; j++)
                 {
-                    //prod.prodQuantidade = 0;
-                    listaProduto.Add(prod);
-                }
-                else
-                {
-
-                    for (int j = 0; j < listaProduto.Count; j++)
+                    if (listaProduto[j].prodNome == prod.prodNome)
                     {
-                        if (listaProduto[j].prodNome == prod.prodNome)
-                        {
-                            listaProduto[j].prodQuantidade = prod.prodQuantidade + listaProduto[j].prodQuantidade;
-                        }
-                        else
-                            listaProduto.Add(prod);
-
-
+                        achou = true;
+                        listaProduto[j].prodQuantidade = prod.prodQuantidade + listaProduto[j].prodQuantidade;
                     }
+                }
+                if (!achou)
+                {
+                    listaProduto.Add(prod);
                 }
                 double aux = Convert.ToDouble(auxVenda[i]["prodValor"]) * Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
                 item.SubItems.Add(aux.ToString("F2"));

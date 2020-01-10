@@ -123,14 +123,15 @@ namespace WindowsFormsApp2
                 bool permitido = false;
                 bool achou = false;
 
-                if (listaProduto.Count == 0)
+
+               /* if (listaProduto.Count == 0)
                 {
                     //prod.prodQuantidade = 0;
                     listaProduto.Add(prod);
                     permitido = true;
                 }
                 else
-                {
+                {*/
 
                     for (int j = 0; j < listaProduto.Count; j++)
                     {
@@ -148,14 +149,17 @@ namespace WindowsFormsApp2
                             }
                         }
                     }
-                }
+                //}
                 item.SubItems.Add(qnt.ToString());
 
 
 
                 if (!achou)
+                {
+                    prod.prodQuantidade = 1;
                     listaProduto.Add(prod);
-
+                    permitido = true;
+                }
                 if (permitido)
                 {
                     total += prod.prodValor * qnt;
@@ -163,6 +167,45 @@ namespace WindowsFormsApp2
                     LblTotal.Text = "R$: " + total.ToString("F2");
                     listaCaixa.Items.Add(item);
                 }
+
+                //=======================================================================================
+                /*permitido = false;
+                achou = false;
+                for (int j = 0; j < listaProduto.Count; j++)
+                {
+                    if (listaProduto[j].prodNome == prod.prodNome)
+                    {
+                        aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
+
+                        if (listaProduto[j].prodQuantidade < aux)
+                        {
+                            listaProduto[j].prodQuantidade += 1;
+                            achou = true;
+                            permitido = true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não tem mais esse item em estoque para ser adicionado a venda");
+                            permitido = false;
+                            achou = true;
+                        }
+                    }
+                }
+                if (!achou)
+                {
+                    prod.prodQuantidade = 1;
+                    listaProduto.Add(prod);
+                    permitido = true;
+                }
+                if (permitido)
+                {
+                    total += prod.prodValor * qnt;
+                    item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
+                    LblTotal.Text = "R$: " + total.ToString("F2");
+                    listaCaixa.Items.Add(item);
+                }/***/
+                //========================================================================================
                 item.SubItems.Add(prod.idProduto.ToString());
 
             }
