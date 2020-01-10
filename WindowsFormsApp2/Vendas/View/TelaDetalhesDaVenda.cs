@@ -7,9 +7,11 @@ namespace WindowsFormsApp2.Vendas.View
     public partial class TelaDetalhesDaVenda : Form
     {
         DadosTableAdapters.DataRelatorioTableAdapter detalheVenda = new DadosTableAdapters.DataRelatorioTableAdapter();
-
+        DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         int codVenda;
         int idDin = -1, idCredVista = -1, idDeb = -1, idCredParc = -1;
+        List<Produto> listaProduto = new List<Produto>();
+
 
         public TelaDetalhesDaVenda(int codVenda)
         {
@@ -34,6 +36,23 @@ namespace WindowsFormsApp2.Vendas.View
 
         }
 
+        private void btnCancelarVenda_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int aux = 0;
+                int idprod;
+                for (int i = 0; i < listaProduto.Count; i++)
+                {
+                    var aux2 = dadosProdutos.PegaQuantidadePorCod(listaProduto[i].prodCodBarras);
+                    aux = Convert.ToInt32(aux2[i]["prodQuantidade"]) + listaProduto[i].prodQuantidade;
+                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[i]["idProduto"]));
+
+                }
+            }
+            Close();
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string auxObs;
@@ -56,7 +75,7 @@ namespace WindowsFormsApp2.Vendas.View
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
             List<string> tipos = new List<string>();
-            for(int i = 0; i < pagamentosVenda.Count; i++)
+            for (int i = 0; i < pagamentosVenda.Count; i++)
             {
                 tipos.Add(pagamentosVenda[i]["pagamentoTipo"].ToString());
                 if (tipos[i] == "DINHEIRO")
@@ -69,16 +88,16 @@ namespace WindowsFormsApp2.Vendas.View
                     idDeb = i;
             }
 
-            if(idDin >=0)
+            if (idDin >= 0)
             {
                 txtBoxDin.Text = Convert.ToDouble(pagamentosVenda[idDin]["PagValor"]).ToString("F2");
 
             }
-            if(idCredVista >= 0)
-                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2"); 
-            if(idCredParc >= 0)
+            if (idCredVista >= 0)
+                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2");
+            if (idCredParc >= 0)
                 txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[idCredVista]["PagValor"]).ToString("F2");
-            if(idDeb >= 0)
+            if (idDeb >= 0)
                 txtBoxDebt.Text = Convert.ToDouble(pagamentosVenda[idDeb]["PagValor"]).ToString("F2");
 
             lblNumVenda.Text = auxVenda[0]["idVenda"].ToString();
@@ -87,7 +106,7 @@ namespace WindowsFormsApp2.Vendas.View
 
             lblData.Text = Convert.ToDateTime(auxVenda[0]["vendData"]).ToString("dd/MM/yyyy HH:mm");
 
-            for(int i = 0; i < auxProdutosVenda.Count; i++)
+            for (int i = 0; i < auxProdutosVenda.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
                 /*int qnt = 0;
@@ -100,19 +119,44 @@ namespace WindowsFormsApp2.Vendas.View
                     }
                 }
                 */
-                item.SubItems.Add(auxProdutosVenda[i]["prodNome"].ToString());
-                item.SubItems.Add(auxProdutosVenda[i]["prodCodBarras"].ToString());
-                item.SubItems.Add(auxProdutosVenda[i]["prodValor"].ToString());
-                item.SubItems.Add("");
-                item.SubItems.Add(auxProdutosVenda[i]["itensQtd"].ToString());
+                Produto prod = new Produto();
+                prod.prodNome = auxProdutosVenda[i]["prodNome"].ToString();
+                prod.prodCodBarras = auxProdutosVenda[i]["prodCodBarras"].ToString();
+                prod.prodValor = Convert.ToDouble(auxProdutosVenda[i]["prodValor"]);
+                prod.prodQuantidade = Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
 
+                item.SubItems.Add(prod.prodNome);
+                item.SubItems.Add(prod.prodCodBarras);
+                item.SubItems.Add(prod.prodValor.ToString("F2"));
+                item.SubItems.Add("");
+                item.SubItems.Add(prod.prodQuantidade.ToString());
+
+                if (listaProduto.Count == 0)
+                {
+                    //prod.prodQuantidade = 0;
+                    listaProduto.Add(prod);
+                }
+                else
+                {
+
+                    for (int j = 0; j < listaProduto.Count; j++)
+                    {
+                        if (listaProduto[j].prodNome == prod.prodNome)
+                        {
+                            listaProduto[j].prodQuantidade = prod.prodQuantidade + listaProduto[j].prodQuantidade;
+                        }
+                        else
+                            listaProduto.Add(prod);
+
+
+                    }
+                }
+                MessageBox.Show(listaProduto[0].prodQuantidade.ToString());
                 double aux = Convert.ToDouble(auxVenda[i]["prodValor"]) * Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
                 item.SubItems.Add(aux.ToString("F2"));
 
                 listaVendas.Items.Add(item);
             }
-
-
         }
 
         private void listaVendas_SelectedIndexChanged(object sender, EventArgs e)

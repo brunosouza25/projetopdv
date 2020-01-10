@@ -40,7 +40,7 @@ namespace WindowsFormsApp2.Estoque.View
             lblData.Text = Convert.ToDateTime(aux[0]["dataSaida"]).ToString("dd/MM/yyyy");
             lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0, 5);
             lblNumSaida.Text = idSaida.ToString();
-            txtObs.Text = aux[0]["observacoes"].ToString();
+            txtBoxObs.Text = aux[0]["observacoes"].ToString();
             int soma = 0;
 
             for (int i = 0; i < aux.Count; i++)
@@ -263,6 +263,7 @@ namespace WindowsFormsApp2.Estoque.View
                 {
                     var auxQntBanco = dadosProdutos.PegaQuantidadePorCod(listaProduto[j].prodCodBarras);
                     auxQnt = Convert.ToInt32(auxQntBanco[0]["prodQuantidade"]);
+                    
 
                     if (listaProduto[j].prodQuantidade <= auxQnt)
                     {

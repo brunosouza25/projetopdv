@@ -17,8 +17,8 @@ namespace WindowsFormsApp2.Estoque.View
         string ateData;
         public SaidaDeProduto()
         {
-            deData = DateTime.Now.ToString("dd-MM-yyyy");
-            ateData = DateTime.Now.AddMonths(-1).ToString();
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            deData = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
 
             InitializeComponent();
             carregarSaidas();
@@ -27,7 +27,7 @@ namespace WindowsFormsApp2.Estoque.View
         {
 
             listaSaidas.Items.Clear();
-            var varSaidas = saidas.retornarSaidas(ateData, deData);
+            var varSaidas = saidas.retornarSaidas(deData, ateData);
 
             for (int i = 0; i <= varSaidas.Count - 1; i++)
             {
@@ -68,15 +68,15 @@ namespace WindowsFormsApp2.Estoque.View
 
         private void btnHoje_Click(object sender, EventArgs e)
         {
-            deData = DateTime.Now.ToString("dd-MM-yyyy");
-            ateData = DateTime.Now.ToString("dd-MM-yyyy");
+            deData = DateTime.Now.ToString("dd/MM/yyyy");
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
             carregarSaidas();
         }
 
         private void btnOntem_Click(object sender, EventArgs e)
         {
-            ateData = DateTime.Now.AddDays(-1).ToString();
-            deData = DateTime.Now.AddDays(-1).ToString();
+            ateData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
+            deData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
             carregarSaidas();
         }
 
@@ -106,8 +106,8 @@ namespace WindowsFormsApp2.Estoque.View
 
             var data = DateTime.Now.AddMonths(-3);
 
-            ateData = (DateTime.Now.ToString());
-            deData = (data.ToString("dd/MM/yyyy"));
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            deData = data.ToString("dd/MM/yyyy");
             carregarSaidas();
         }
         private void btnPerso_Click(object sender, EventArgs e)
@@ -121,6 +121,13 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
                 MessageBox.Show("Datas invalidas");
+        }
+
+        private void btn7Dias_Click(object sender, EventArgs e)
+        {
+            deData = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            carregarSaidas();
         }
     }
 }

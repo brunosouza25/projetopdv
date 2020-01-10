@@ -13,8 +13,8 @@ namespace WindowsFormsApp2
 
         public EntradaDeProdutos()
         {
-            ateData = DateTime.Now.ToString("dd-MM-yyyy");
-            deData = DateTime.Now.AddMonths(-1).ToString();
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            deData = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
 
             InitializeComponent();
             carregarEntradas();
@@ -67,21 +67,21 @@ namespace WindowsFormsApp2
 
         private void btnHoje_Click(object sender, EventArgs e)
         {
-            deData = DateTime.Now.ToString("dd-MM-yyyy");
-            ateData = DateTime.Now.ToString("dd-MM-yyyy");
+            deData = DateTime.Now.ToString("dd/MM/yyyy");
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
             carregarEntradas();
         }
 
         private void btnOntem_Click(object sender, EventArgs e)
         {
-            ateData = DateTime.Now.AddDays(-1).ToString();
-            deData = DateTime.Now.AddDays(-1).ToString();
+            ateData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
+            deData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
             carregarEntradas();
         }
 
         private void btn7Dias_Click(object sender, EventArgs e)
         {
-            deData = DateTime.Now.AddDays(-7).ToString();
+            deData = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
             ateData = DateTime.Now.ToString("dd/MM/yyyy");
             carregarEntradas();
         }
@@ -115,7 +115,7 @@ namespace WindowsFormsApp2
 
             var data = DateTime.Now.AddMonths(-3);
 
-            ateData = (DateTime.Now.ToString());
+            ateData = (DateTime.Now.ToString("dd/MM/yyyy"));
             deData = (data.ToString("dd/MM/yyyy"));
             carregarEntradas();
         }

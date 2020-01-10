@@ -78,6 +78,7 @@
             this.btnUltimos3Meses.TabIndex = 11;
             this.btnUltimos3Meses.Text = "Ultimos 3 meses";
             this.btnUltimos3Meses.UseVisualStyleBackColor = true;
+            this.btnUltimos3Meses.Click += new System.EventHandler(this.btnUltimos3Meses_Click);
             // 
             // btnPerso
             // 
@@ -87,6 +88,7 @@
             this.btnPerso.TabIndex = 10;
             this.btnPerso.Text = "Personalizado";
             this.btnPerso.UseVisualStyleBackColor = true;
+            this.btnPerso.Click += new System.EventHandler(this.btnPerso_Click);
             // 
             // label2
             // 
@@ -136,6 +138,7 @@
             this.btnMesPassado.TabIndex = 5;
             this.btnMesPassado.Text = "Mês passado";
             this.btnMesPassado.UseVisualStyleBackColor = true;
+            this.btnMesPassado.Click += new System.EventHandler(this.btnMesPassado_Click);
             // 
             // btnEsteMes
             // 
@@ -145,6 +148,7 @@
             this.btnEsteMes.TabIndex = 4;
             this.btnEsteMes.Text = "Este mês";
             this.btnEsteMes.UseVisualStyleBackColor = true;
+            this.btnEsteMes.Click += new System.EventHandler(this.btnEsteMes_Click);
             // 
             // btn7Dias
             // 
@@ -154,6 +158,7 @@
             this.btn7Dias.TabIndex = 3;
             this.btn7Dias.Text = "Ultimos 7 dias";
             this.btn7Dias.UseVisualStyleBackColor = true;
+            this.btn7Dias.Click += new System.EventHandler(this.btn7Dias_Click);
             // 
             // btnOntem
             // 
@@ -163,6 +168,7 @@
             this.btnOntem.TabIndex = 2;
             this.btnOntem.Text = "Ontem";
             this.btnOntem.UseVisualStyleBackColor = true;
+            this.btnOntem.Click += new System.EventHandler(this.btnOntem_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -222,6 +228,7 @@
             this.btnHoje.TabIndex = 1;
             this.btnHoje.Text = "Hoje";
             this.btnHoje.UseVisualStyleBackColor = true;
+            this.btnHoje.Click += new System.EventHandler(this.btnHoje_Click);
             // 
             // panel2
             // 

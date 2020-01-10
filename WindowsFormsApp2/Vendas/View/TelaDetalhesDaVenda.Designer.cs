@@ -140,6 +140,7 @@
             this.btnCancelarVenda.TabIndex = 10;
             this.btnCancelarVenda.Text = "Cancelar venda";
             this.btnCancelarVenda.UseVisualStyleBackColor = true;
+            this.btnCancelarVenda.Click += new System.EventHandler(this.btnCancelarVenda_Click);
             // 
             // lblTotal
             // 
@@ -212,7 +213,6 @@
             this.listaVendas.TabIndex = 4;
             this.listaVendas.UseCompatibleStateImageBehavior = false;
             this.listaVendas.View = System.Windows.Forms.View.Details;
-            this.listaVendas.SelectedIndexChanged += new System.EventHandler(this.listaVendas_SelectedIndexChanged);
             // 
             // nulo
             // 

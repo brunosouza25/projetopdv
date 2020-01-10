@@ -7460,8 +7460,11 @@ SELECT idVenda, vendData, valorCompra FROM Venda WHERE (idVenda = @idVenda)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT idVenda, vendData, valorCompra FROM dbo.Venda";
+            this._commandCollection[4].CommandText = "SELECT idVenda, vendData, valorCompra FROM dbo.Venda\r\nWHERE (vendData BETWEEN @da" +
+                "taPesquisa1 AND @dataPesquisa2)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7528,8 +7531,20 @@ SELECT idVenda, vendData, valorCompra FROM Venda WHERE (idVenda = @idVenda)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.VendaDataTable retornarVendas() {
+        public virtual Dados.VendaDataTable retornarVendas(global::System.Nullable<global::System.DateTime> dataPesquisa1, global::System.Nullable<global::System.DateTime> dataPesquisa2) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((dataPesquisa1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(dataPesquisa1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((dataPesquisa2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(dataPesquisa2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             Dados.VendaDataTable dataTable = new Dados.VendaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11024,7 +11039,7 @@ FROM            MetodoDePagamento INNER JOIN
                          Venda ON Pagamento.idVenda = Venda.idVenda INNER JOIN
                          ItensDaVenda INNER JOIN
                          Produto ON ItensDaVenda.idProduto = Produto.idProduto ON Venda.idVenda = ItensDaVenda.idVenda
-WHERE        (ItensDaVenda.idVenda  like '%'+@idVenda+'%')";
+WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Expr1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
