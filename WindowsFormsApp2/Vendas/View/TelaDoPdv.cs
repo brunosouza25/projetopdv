@@ -127,29 +127,33 @@ namespace WindowsFormsApp2
                 {
                     //prod.prodQuantidade = 0;
                     listaProduto.Add(prod);
+                    permitido = true;
                 }
-
-                for (int j = 0; j < listaProduto.Count; j++)
+                else
                 {
-                    if (listaProduto[j].prodNome == prod.prodNome)
+
+                    for (int j = 0; j < listaProduto.Count; j++)
                     {
-                        achou = true;
-                        if (aux + 1 > listaProduto[j].prodQuantidade + qnt)
+                        if (listaProduto[j].prodNome == prod.prodNome)
                         {
-                            listaProduto[j].prodQuantidade = qnt + listaProduto[j].prodQuantidade;
-                            permitido = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Não tem mais deste produto suficiente no estoque para ser adicionado a venda");
+                            achou = true;
+                            if (aux + 1 > listaProduto[j].prodQuantidade + qnt)
+                            {
+                                listaProduto[j].prodQuantidade = qnt + listaProduto[j].prodQuantidade;
+                                permitido = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Não tem mais deste produto suficiente no estoque para ser adicionado a venda");
+                            }
                         }
                     }
                 }
                 item.SubItems.Add(qnt.ToString());
 
-                
-                
-                if(!achou)
+
+
+                if (!achou)
                     listaProduto.Add(prod);
 
                 if (permitido)

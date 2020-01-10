@@ -151,7 +151,6 @@ namespace WindowsFormsApp2.Vendas.View
 
                     }
                 }
-                MessageBox.Show(listaProduto[0].prodQuantidade.ToString());
                 double aux = Convert.ToDouble(auxVenda[i]["prodValor"]) * Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
                 item.SubItems.Add(aux.ToString("F2"));
 
