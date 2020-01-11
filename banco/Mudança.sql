@@ -1,6 +1,8 @@
 /* Lógico 2 versão: */
+drop DATABASE BD_PDV
 create database BD_PDV
 use BD_PDV
+
 CREATE TABLE MetodoDePagamento (
     idMPagamento INT PRIMARY KEY,
     pagamentoTipo VARCHAR(20)
@@ -58,7 +60,9 @@ CREATE TABLE ItensDeEntrada (
     qntItem INT,
     dataEntrada DATE,
 	horaEntrada TIME,
-    observacoes VARCHAR(300)
+    observacoes VARCHAR(300),
+	/*itemEstado TINYINT,
+	qntCancelado int*/
 );
 
 CREATE TABLE ItensDeSaida (
@@ -110,6 +114,14 @@ CREATE TABLE Observacoes_Entrada_Prod (
     idSecundarioItensEntrada INT,
     observacoes VARCHAR(300)
 );
+
+CREATE TABLE Itens_Devolucao (
+    idItensDevolucao INT,
+    idVenda INT,
+    idProduto INT,
+	quantidadeDevolucao INT,
+    observacoes VARCHAR(300)
+);
  
  
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
@@ -121,7 +133,7 @@ ALTER TABLE ItensDeEntrada ADD FOREIGN KEY (idProduto) REFERENCES Produto(idProd
 ALTER TABLE ItensDeSaida ADD FOREIGN KEY (idProduto) REFERENCES Produto(idProduto)
 ALTER TABLE Funcionario ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
 ALTER TABLE Observacoes_Sangria ADD FOREIGN KEY (idCaixa) REFERENCES Caixa(idCaixa)
-
+ALTER TABLE Itens_Devolucao ADD FOREIGN KEY (idVenda) REFERENCES Venda(idVenda)
 
 INSERT INTO MetodoDePagamento VALUES (1,'DINHEIRO')
 INSERT INTO Caixa VALUES (0, 0, 0, '01/12/2019', 0)
@@ -133,8 +145,15 @@ INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 
+INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null)
+
+
+
+select * from ItensDeEntrada
+
 /*DELETE FROM Venda*/
 /*
+delete from Observacoes_Sangria
 delete from Caixa
 delete from Cargo
 delete from Funcionario
@@ -211,8 +230,4 @@ SELECT idVenda, vendData, valorCompra FROM dbo.Venda
 WHERE idVenda like '%'+1+'%'
 
 
-select* from Venda
-
-select * from Caixa
-
-select * from Venda
+select* from ItensDaVenda

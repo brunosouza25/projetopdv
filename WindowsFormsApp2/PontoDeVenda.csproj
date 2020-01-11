@@ -148,6 +148,12 @@
     <Compile Include="Vendas\View\TelaDetalhesDaVenda.Designer.cs">
       <DependentUpon>TelaDetalhesDaVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vendas\View\TelaDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\View\TelaDevolucao.Designer.cs">
+      <DependentUpon>TelaDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendas\View\TelaDoPdv.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\View\TelaDetalhesDaVenda.resx">
       <DependentUpon>TelaDetalhesDaVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\View\TelaDevolucao.resx">
+      <DependentUpon>TelaDevolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\View\TelaDoPdv.resx">
       <DependentUpon>TelaDoPdv.cs</DependentUpon>

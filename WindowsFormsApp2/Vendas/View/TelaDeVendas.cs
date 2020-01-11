@@ -16,6 +16,7 @@ namespace WindowsFormsApp2.Vendas
     {
         ListaDeVendas vendas = new ListaDeVendas();
         listaDoCaixa pdv = new listaDoCaixa();
+        TelaDevolucao devolucao = new TelaDevolucao();
         public TelaDeVendas()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace WindowsFormsApp2.Vendas
 
             painelPrincipalDeVendas.Controls.Add(pdv);
             pdv.Visible = false;
+
+
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,6 +50,11 @@ namespace WindowsFormsApp2.Vendas
         {
             vendas.Visible = false;
             pdv.Visible = true;
+        }
+
+        private void btnDevolucao_Click(object sender, EventArgs e)
+        {
+            devolucao.ShowDialog();
         }
     }
 }

@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtnPdv = new System.Windows.Forms.Button();
             this.BtnVendas = new System.Windows.Forms.Button();
+            this.btnDevolucao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.painelP.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnDevolucao);
             this.panel3.Controls.Add(this.BtnPdv);
             this.panel3.Controls.Add(this.BtnVendas);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -102,6 +104,16 @@
             this.BtnVendas.UseVisualStyleBackColor = true;
             this.BtnVendas.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // btnDevolucao
+            // 
+            this.btnDevolucao.Location = new System.Drawing.Point(360, 0);
+            this.btnDevolucao.Name = "btnDevolucao";
+            this.btnDevolucao.Size = new System.Drawing.Size(170, 56);
+            this.btnDevolucao.TabIndex = 4;
+            this.btnDevolucao.Text = "Devoluções";
+            this.btnDevolucao.UseVisualStyleBackColor = true;
+            this.btnDevolucao.Click += new System.EventHandler(this.btnDevolucao_Click);
+            // 
             // TelaDeVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BtnVendas;
         private System.Windows.Forms.Button BtnPdv;
+        private System.Windows.Forms.Button btnDevolucao;
     }
 }
