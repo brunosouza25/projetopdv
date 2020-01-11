@@ -54,6 +54,14 @@ namespace WindowsFormsApp2.Vendas.View
             Close();
         }
 
+        private void btnCancelarItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+            }
+
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string auxObs;
@@ -75,6 +83,7 @@ namespace WindowsFormsApp2.Vendas.View
             var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
+            txtBoxObs.Text = auxVenda[0]["observacoes"].ToString();
             if (Convert.ToByte(auxVenda[0]["vendaEstado"]) == 0)
                 btnCancelarVenda.Enabled = false;
             List<string> tipos = new List<string>();
@@ -97,9 +106,9 @@ namespace WindowsFormsApp2.Vendas.View
 
             }
             if (idCredVista >= 0)
-                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2");
+                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredVista]["PagValor"]).ToString("F2");
             if (idCredParc >= 0)
-                txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[idCredVista]["PagValor"]).ToString("F2");
+                txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2");
             if (idDeb >= 0)
                 txtBoxDebt.Text = Convert.ToDouble(pagamentosVenda[idDeb]["PagValor"]).ToString("F2");
 

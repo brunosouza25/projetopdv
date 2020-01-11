@@ -64,6 +64,7 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelarItem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -100,6 +101,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnCancelarItem);
             this.panel4.Controls.Add(this.btnSair);
             this.panel4.Controls.Add(this.btnSalvar);
             this.panel4.Controls.Add(this.btnCancelarVenda);
@@ -441,6 +443,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente: ";
             // 
+            // btnCancelarItem
+            // 
+            this.btnCancelarItem.Location = new System.Drawing.Point(750, 3);
+            this.btnCancelarItem.Name = "btnCancelarItem";
+            this.btnCancelarItem.Size = new System.Drawing.Size(96, 32);
+            this.btnCancelarItem.TabIndex = 13;
+            this.btnCancelarItem.Text = "Cancelar Item";
+            this.btnCancelarItem.UseVisualStyleBackColor = true;
+            this.btnCancelarItem.Click += new System.EventHandler(this.btnCancelarItem_Click);
+            // 
             // TelaDetalhesDaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,5 +510,6 @@
         private System.Windows.Forms.TextBox txtBoxDin;
         private System.Windows.Forms.TextBox txtBoxCredParc;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCancelarItem;
     }
 }

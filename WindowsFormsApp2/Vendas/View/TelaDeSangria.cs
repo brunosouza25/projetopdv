@@ -5,11 +5,21 @@ namespace WindowsFormsApp2
 {
     public partial class TelaDeSangria : Form
     {
+        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
+        DadosTableAdapters.Observacoes_SangriaTableAdapter obs = new DadosTableAdapters.Observacoes_SangriaTableAdapter();
         public TelaDeSangria()
         {
             InitializeComponent();
+            carregarSangria();
         }
-        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
+
+        private void carregarSangria()
+        {
+
+            var idCaixa = caixa.pegarIDUltimoCaixa();
+            var aux = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+            txtBoxCaixaAtual.Text = ("R$:"+ Convert.ToDouble(aux[0]["valorAtual"]).ToString("F2"));
+        }
         private void valida()
         {
             double a;
@@ -22,12 +32,27 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Não é permitida a entrada de valores negativo");
                 else if(a > Convert.ToDouble(aux[0]["valorAtual"]))
                     MessageBox.Show("O valor inserido é maior que o contido em caixa");
+                else if(txtBoxObs.Text.Length < 9)
+                {
+                    MessageBox.Show("O campo Motivo não deve ficar em branco e deve conter mais de 10 caracteres");
+                }
                 else
                 {
-                    
+                    string auxObs;
+                    if (txtBoxObs.Text.Length < 299) {
+                        auxObs = txtBoxObs.Text;
+                    }
+                    else
+                    {
+                        auxObs = txtBoxObs.Text.Substring(0, 299);
+
+                    }
+                    obs.addObsCaixa(Convert.ToInt32(aux[0]["idCaixa"]),auxObs);
                     double total = Convert.ToDouble(aux[0]["valorAtual"]);  
                     caixa.attValorAtual(total - a,  Convert.ToInt32(idCaixa[0]["idCaixa"]));
                     MessageBox.Show("Sobrou R$" + (total - a) + " de fundo de caixa");
+                    MessageBox.Show("Sangria realizado com sucesso!");
+                    Close();
                 }
 
             }
@@ -48,7 +73,6 @@ namespace WindowsFormsApp2
         private void btnConcluir_Click(object sender, EventArgs e)
         {
             valida();
-            Close();
         }
 
         private void txtBoxSangria_KeyDown(object sender, KeyEventArgs e)
@@ -56,8 +80,12 @@ namespace WindowsFormsApp2
             if (e.KeyCode == Keys.Enter)
             {
                 valida();
-                Close();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

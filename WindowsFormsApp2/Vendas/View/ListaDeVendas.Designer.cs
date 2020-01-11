@@ -52,6 +52,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -254,7 +255,8 @@
             this.nulo,
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader4});
             this.listaVendas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVendas.FullRowSelect = true;
@@ -263,7 +265,7 @@
             this.listaVendas.Location = new System.Drawing.Point(3, 3);
             this.listaVendas.MultiSelect = false;
             this.listaVendas.Name = "listaVendas";
-            this.listaVendas.Size = new System.Drawing.Size(1258, 453);
+            this.listaVendas.Size = new System.Drawing.Size(940, 453);
             this.listaVendas.TabIndex = 4;
             this.listaVendas.UseCompatibleStateImageBehavior = false;
             this.listaVendas.View = System.Windows.Forms.View.Details;
@@ -309,6 +311,11 @@
             this.TxtBoxPesquisaProd.TabIndex = 3;
             this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
             this.TxtBoxPesquisaProd.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyUp);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Observações";
+            this.columnHeader4.Width = 450;
             // 
             // ListaDeVendas
             // 
@@ -356,5 +363,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtBoxAteMes;
         private System.Windows.Forms.MaskedTextBox txtBoxDeMes;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

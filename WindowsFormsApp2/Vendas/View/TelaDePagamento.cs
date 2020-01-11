@@ -118,8 +118,8 @@ namespace WindowsFormsApp2
         }
         public void confirmar()
         {
-
-            dadosVenda.InserirVenda(DateTime.Now.Date, total, Convert.ToByte(1));
+            var idCaixa = caixa.pegarIDUltimoCaixa();
+            dadosVenda.InserirVenda(DateTime.Now.Date, total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]));
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
 
@@ -129,8 +129,13 @@ namespace WindowsFormsApp2
                 valorDesc = Convert.ToDouble(txtBoxDesc.Text);
 
             if (TxtBoxDinheiro.Text != "" && TxtBoxDinheiro.Text != "0")
+            {
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(TxtBoxDinheiro.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 1, valorDesc, idPagamento);
-
+                var totalCaixa = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+                double tempTotal = Convert.ToDouble(TxtBoxDinheiro.Text) + Convert.ToDouble(totalCaixa[0]["valorAtual"]);
+                string tempTotalString = tempTotal.ToString("F2");
+                caixa.attValorAtual(Convert.ToDouble(tempTotalString), Convert.ToInt32(idCaixa[0]["idCaixa"]));
+            }
             if (txtCredVista.Text != "" && txtCredVista.Text != "0")
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredVista.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 2, valorDesc, idPagamento);
 
@@ -149,11 +154,7 @@ namespace WindowsFormsApp2
 
                 produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"]) - Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString());
             }
-            var idCaixa = caixa.pegarIDUltimoCaixa();
-            var totalCaixa = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
-            double tempTotal = total + Convert.ToDouble(totalCaixa[0]["valorAtual"]);
-            string tempTotalString = tempTotal.ToString("F2");
-            caixa.attValorAtual(Convert.ToDouble(tempTotalString), Convert.ToInt32(idCaixa[0]["idCaixa"]));
+            
             MessageBox.Show("Venda realizada com sucesso!");
             Close();
         }

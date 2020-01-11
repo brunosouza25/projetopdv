@@ -42,6 +42,7 @@ namespace WindowsFormsApp2.Vendas.View
                 item.SubItems.Add(varVendas[i]["idVenda"].ToString());
                 item.SubItems.Add(Convert.ToDateTime(varVendas[i]["vendData"]).ToString("dd/MM/yyyy"));
                 item.SubItems.Add(Convert.ToDouble(varVendas[i]["valorCompra"]).ToString("F2"));
+                item.SubItems.Add(varVendas[i]["observacoes"].ToString());
 
                 listaVendas.Items.Add(item);
             }
