@@ -39,13 +39,14 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idProd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idItens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDevolver = new System.Windows.Forms.Button();
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.idProd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnDevolver = new System.Windows.Forms.Button();
             this.painelBase.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -121,7 +122,8 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.idProd});
+            this.idProd,
+            this.idItens});
             this.listaVendas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listaVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVendas.FullRowSelect = true;
@@ -160,6 +162,16 @@
             this.columnHeader4.Text = "Qnt";
             this.columnHeader4.Width = 174;
             // 
+            // idProd
+            // 
+            this.idProd.Text = "idprod";
+            this.idProd.Width = 15;
+            // 
+            // idItens
+            // 
+            this.idItens.Text = "idItens";
+            this.idItens.Width = 40;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.TxtBoxPesquisaProd);
@@ -191,16 +203,6 @@
             this.panel2.Size = new System.Drawing.Size(116, 444);
             this.panel2.TabIndex = 1;
             // 
-            // btnDevolver
-            // 
-            this.btnDevolver.Location = new System.Drawing.Point(6, 382);
-            this.btnDevolver.Name = "btnDevolver";
-            this.btnDevolver.Size = new System.Drawing.Size(104, 59);
-            this.btnDevolver.TabIndex = 0;
-            this.btnDevolver.Text = "Devolver";
-            this.btnDevolver.UseVisualStyleBackColor = true;
-            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
-            // 
             // txtBoxQnt
             // 
             this.txtBoxQnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,6 +211,7 @@
             this.txtBoxQnt.Name = "txtBoxQnt";
             this.txtBoxQnt.Size = new System.Drawing.Size(92, 38);
             this.txtBoxQnt.TabIndex = 7;
+            this.txtBoxQnt.Text = "1";
             this.txtBoxQnt.ValidatingType = typeof(int);
             // 
             // label5
@@ -221,9 +224,15 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "X";
             // 
-            // idProd
+            // btnDevolver
             // 
-            this.idProd.Text = "";
+            this.btnDevolver.Location = new System.Drawing.Point(6, 382);
+            this.btnDevolver.Name = "btnDevolver";
+            this.btnDevolver.Size = new System.Drawing.Size(104, 59);
+            this.btnDevolver.TabIndex = 0;
+            this.btnDevolver.Text = "Devolver";
+            this.btnDevolver.UseVisualStyleBackColor = true;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // TelaDevolucao
             // 
@@ -266,5 +275,6 @@
         private System.Windows.Forms.MaskedTextBox txtBoxQnt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ColumnHeader idProd;
+        private System.Windows.Forms.ColumnHeader idItens;
     }
 }

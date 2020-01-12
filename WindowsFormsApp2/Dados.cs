@@ -4,6 +4,10 @@
 
     partial class Dados
     {
+        partial class relatórioVendasDataTable
+        {
+        }
+
         partial class ProdutoDataTable
         {
         }

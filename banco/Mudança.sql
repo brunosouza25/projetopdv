@@ -26,11 +26,13 @@ CREATE TABLE Venda (
 );
 
 CREATE TABLE ItensDaVenda (
-    /*idItens INT PRIMARY KEY IDENTITY (1,1),*/
+    idItens INT PRIMARY KEY IDENTITY (1,1),
     idVenda INT,
     idProduto INT,
     itensQtd INT,
-    ItensTotal FLOAT
+    ItensTotal FLOAT,
+	estadoDevolucao TINYINT,
+	quantidadeRetirada INT
 );
 
 CREATE TABLE Produto (
@@ -120,7 +122,8 @@ CREATE TABLE Itens_Devolucao (
     idVenda INT,
     idProduto INT,
 	quantidadeDevolucao INT,
-    observacoes VARCHAR(300)
+    observacoes VARCHAR(300),
+	dataDevolucao DATE
 );
  
  
@@ -145,7 +148,7 @@ INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 
-INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null)
+INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null)
 
 
 
@@ -231,3 +234,4 @@ WHERE idVenda like '%'+1+'%'
 
 
 select* from ItensDaVenda
+

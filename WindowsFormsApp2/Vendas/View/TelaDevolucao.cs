@@ -36,9 +36,9 @@ namespace WindowsFormsApp2.Vendas.View
         {
             bool ok = false;
             quantidade = Convert.ToInt32(txtBoxQnt.Text);
-            if(quantidade > Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[4].Text) && quantidade < 0)
+            if (listaVendas.SelectedItems.Count > 0 && quantidade >= Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[4].Text))
             {
-                ok = false;
+                ok = true;
             }
             return ok;
         }
@@ -92,14 +92,21 @@ namespace WindowsFormsApp2.Vendas.View
                         Produto prod = new Produto();
                         prod.prodNome = auxProdutosVenda[i]["prodNome"].ToString();
                         prod.prodCodBarras = auxProdutosVenda[i]["prodCodBarras"].ToString();
-                        prod.prodValor = Convert.ToDouble(auxProdutosVenda[i]["prodValor"]);
+                        //prod.prodValor = Convert.ToDouble(auxProdutosVenda[i]["prodValor"]);
                         prod.prodQuantidade = Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
                         prod.idProduto = Convert.ToInt32(auxProdutosVenda[i]["idProduto"]);
 
+                        if (Convert.ToByte(auxProdutosVenda[i]["estadoDevolucao"]) == 1)
+                        {
+                            item.BackColor = System.Drawing.Color.Gray;
+                        }
+
+                        item.SubItems.Add(codVenda.ToString());
+                        item.SubItems.Add(auxProdutosVenda[i]["vendData"].ToString());
                         item.SubItems.Add(prod.prodNome);
-                        item.SubItems.Add(prod.prodCodBarras);
-                        item.SubItems.Add(prod.prodValor.ToString("F2"));
-                        item.SubItems.Add("");
+                        //item.SubItems.Add(prod.prodCodBarras);
+                        //item.SubItems.Add(prod.prodValor.ToString("F2"));
+                        //item.SubItems.Add("");
                         item.SubItems.Add(prod.prodQuantidade.ToString());
                         bool achou = false;
 
@@ -118,6 +125,7 @@ namespace WindowsFormsApp2.Vendas.View
                         //double aux = Convert.ToDouble(auxVenda[i]["prodValor"]) * Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
                         //item.SubItems.Add(aux.ToString("F2"));
                         item.SubItems.Add(prod.idProduto.ToString());
+                        item.SubItems.Add(auxProdutosVenda[i]["idItens"].ToString());
                         listaVendas.Items.Add(item);
                     }
                 }
@@ -133,16 +141,42 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            if(valida())
+            if (valida())
             {
+                int aux;
                 if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    var auxDevolucao = devolucao.retornarUltimoIdDevolucao();
-                    dadosProdutos.AttQuantidade(Convert.ToInt32(txtBoxQnt.Text), codVenda);
-                    devolucao.inserirDevolucao(Convert.ToInt32(auxDevolucao[0]["idDevolucao"])+1, codVenda, Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text), Convert.ToInt32(txtBoxQnt.Text));
+                    var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
+                    int aux3 = 0;
+                    if (auxProdutosVenda[0]["quantidadeRetirada"] == null)
+                    {
+                        aux = Convert.ToInt32(auxProdutosVenda[0]["quantidadeRetirada"]);
+                    }
+                    if (Convert.ToInt32(auxProdutosVenda[0]["itensQtd"]) >= Convert.ToInt32(txtBoxQnt.Text) +
+                        aux3){
+
+
+                        detalheVenda.attItensVenda(1, Convert.ToInt32(txtBoxQnt.Text), Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text));
+                        var auxDevolucao = devolucao.retornarUltimoIdDevolucao();
+                        devolucao.inserirDevolucao(Convert.ToInt32(auxDevolucao[0]["idItensDevolucao"]) + 1, codVenda
+                        , Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text), Convert.ToInt32(txtBoxQnt.Text)
+                        , DateTime.Now.Date.ToString("dd/MM/yyyy"));
+
+
+
+                        var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text));
+                        MessageBox.Show(aux2[0]["prodQuantidade"].ToString());
+                        aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) + quantidade;
+                        dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
+                    }
+                    else
+                    {
+                        MessageBox.Show("A quantidade de item a ser devolvida é maior do que a quantidade que foi vendida");
+                    }
+                    
                 }
             }
         }
-        
+
     }
 }

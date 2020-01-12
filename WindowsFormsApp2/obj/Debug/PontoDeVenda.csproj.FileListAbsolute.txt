@@ -98,3 +98,4 @@ C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsF
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.SaidaDeProduto.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaDeSaidaProduto.resources
 C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDevolucao.resources
+C:\Users\bruno\Documents\Projetos\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDeDevolucoes.resources
