@@ -149,7 +149,7 @@ namespace WindowsFormsApp2
             for (int i = 0; i < aux; i++)
             {
 
-                itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 6]), Convert.ToInt32(itensDaLista[i, 4]), total, 0);
+                itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 6]), Convert.ToInt32(itensDaLista[i, 4]), total, 0, 0);
                 var prodQuant = produto.PegaQuantidadePorCod(itensDaLista[i, 2].ToString());
 
                 produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"]) - Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString());
