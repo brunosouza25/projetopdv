@@ -134,6 +134,12 @@ namespace WindowsFormsApp2.Vendas.View
             else
                 MessageBox.Show("Datas invalidas");
         }
+
+        private void btnValeTroca_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

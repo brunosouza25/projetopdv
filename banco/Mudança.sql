@@ -126,7 +126,14 @@ CREATE TABLE Itens_Devolucao (
 	dataDevolucao DATE
 );
  
- 
+ /*verificar sobre as fk*/
+ CREATE TABLE Vale_Troca (
+    idValeTroca INT PRIMARY KEY,
+    idItensDevolucao INT,
+    idProduto INT,
+    valorValeTroca FLOAT
+);
+
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
 ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idProduto) REFERENCES Produto (idProduto)
