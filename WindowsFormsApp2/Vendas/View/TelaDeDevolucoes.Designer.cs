@@ -51,9 +51,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHoje = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDevo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDevo = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,14 +75,13 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Observações";
-            this.columnHeader4.Width = 450;
+            this.columnHeader4.Text = "Produto";
+            this.columnHeader4.Width = 359;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Total";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader3.Width = 98;
+            this.columnHeader3.Text = "Data da Devolução";
+            this.columnHeader3.Width = 155;
             // 
             // btnPerso
             // 
@@ -176,12 +175,12 @@
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Data da venda";
+            this.columnHeader2.Text = "Código da Venda";
             this.columnHeader2.Width = 183;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Código da venda";
+            this.columnHeader1.Text = "Código Devolução";
             this.columnHeader1.Width = 204;
             // 
             // nulo
@@ -292,6 +291,16 @@
             this.panel4.Size = new System.Drawing.Size(292, 503);
             this.panel4.TabIndex = 1;
             // 
+            // btnDevo
+            // 
+            this.btnDevo.Location = new System.Drawing.Point(4, 432);
+            this.btnDevo.Name = "btnDevo";
+            this.btnDevo.Size = new System.Drawing.Size(280, 68);
+            this.btnDevo.TabIndex = 23;
+            this.btnDevo.Text = "Nova Devolução";
+            this.btnDevo.UseVisualStyleBackColor = true;
+            this.btnDevo.Click += new System.EventHandler(this.btnDevo_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -315,16 +324,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1258, 509);
             this.panel1.TabIndex = 1;
-            // 
-            // btnDevo
-            // 
-            this.btnDevo.Location = new System.Drawing.Point(4, 432);
-            this.btnDevo.Name = "btnDevo";
-            this.btnDevo.Size = new System.Drawing.Size(280, 68);
-            this.btnDevo.TabIndex = 23;
-            this.btnDevo.Text = "Nova Devolução";
-            this.btnDevo.UseVisualStyleBackColor = true;
-            this.btnDevo.Click += new System.EventHandler(this.btnDevo_Click);
             // 
             // TelaDeDevolucoes
             // 

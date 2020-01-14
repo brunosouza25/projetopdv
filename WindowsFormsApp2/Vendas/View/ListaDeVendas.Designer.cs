@@ -44,24 +44,20 @@
             this.btnHoje = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.listaVendas = new System.Windows.Forms.ListView();
             this.nulo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
-            this.btnValeTroca = new System.Windows.Forms.Button();
-            this.btnRetirarDinheiroCaixa = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -230,27 +226,17 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.listaVendas, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.listaVendas, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.9823F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.0177F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 392F));
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 452F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(954, 503);
             this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.TxtBoxPesquisaProd);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 62);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(948, 45);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // listaVendas
             // 
@@ -266,13 +252,14 @@
             this.listaVendas.FullRowSelect = true;
             this.listaVendas.GridLines = true;
             this.listaVendas.HideSelection = false;
-            this.listaVendas.Location = new System.Drawing.Point(3, 113);
+            this.listaVendas.Location = new System.Drawing.Point(3, 54);
             this.listaVendas.MultiSelect = false;
             this.listaVendas.Name = "listaVendas";
-            this.listaVendas.Size = new System.Drawing.Size(948, 387);
+            this.listaVendas.Size = new System.Drawing.Size(948, 446);
             this.listaVendas.TabIndex = 5;
             this.listaVendas.UseCompatibleStateImageBehavior = false;
             this.listaVendas.View = System.Windows.Forms.View.Details;
+            this.listaVendas.DoubleClick += new System.EventHandler(this.listaVendas_DoubleClick);
             // 
             // nulo
             // 
@@ -299,15 +286,14 @@
             this.columnHeader4.Text = "Observações";
             this.columnHeader4.Width = 450;
             // 
-            // panel3
+            // flowLayoutPanel1
             // 
-            this.panel3.Controls.Add(this.btnRetirarDinheiroCaixa);
-            this.panel3.Controls.Add(this.btnValeTroca);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(948, 53);
-            this.panel3.TabIndex = 0;
+            this.flowLayoutPanel1.Controls.Add(this.TxtBoxPesquisaProd);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(948, 45);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // TxtBoxPesquisaProd
             // 
@@ -318,25 +304,8 @@
             this.TxtBoxPesquisaProd.Name = "TxtBoxPesquisaProd";
             this.TxtBoxPesquisaProd.Size = new System.Drawing.Size(948, 40);
             this.TxtBoxPesquisaProd.TabIndex = 4;
-            // 
-            // btnValeTroca
-            // 
-            this.btnValeTroca.Location = new System.Drawing.Point(3, 3);
-            this.btnValeTroca.Name = "btnValeTroca";
-            this.btnValeTroca.Size = new System.Drawing.Size(104, 47);
-            this.btnValeTroca.TabIndex = 0;
-            this.btnValeTroca.Text = "Vale Troca";
-            this.btnValeTroca.UseVisualStyleBackColor = true;
-            this.btnValeTroca.Click += new System.EventHandler(this.btnValeTroca_Click);
-            // 
-            // btnRetirarDinheiroCaixa
-            // 
-            this.btnRetirarDinheiroCaixa.Location = new System.Drawing.Point(145, 3);
-            this.btnRetirarDinheiroCaixa.Name = "btnRetirarDinheiroCaixa";
-            this.btnRetirarDinheiroCaixa.Size = new System.Drawing.Size(104, 47);
-            this.btnRetirarDinheiroCaixa.TabIndex = 1;
-            this.btnRetirarDinheiroCaixa.Text = "Retirar Dinheiro do Caixa para Devolução";
-            this.btnRetirarDinheiroCaixa.UseVisualStyleBackColor = true;
+            this.TxtBoxPesquisaProd.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProd_TextChanged);
+            this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
             // 
             // ListaDeVendas
             // 
@@ -353,7 +322,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -384,8 +352,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox TxtBoxPesquisaProd;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnRetirarDinheiroCaixa;
-        private System.Windows.Forms.Button btnValeTroca;
     }
 }

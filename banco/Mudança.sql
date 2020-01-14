@@ -123,16 +123,17 @@ CREATE TABLE Itens_Devolucao (
     idProduto INT,
 	quantidadeDevolucao INT,
     observacoes VARCHAR(300),
-	dataDevolucao DATE
+	dataDevolucao DATE,
+	/*valorDevolucao FLOAT*/
 );
  
- /*verificar sobre as fk*/
+ /*verificar sobre as fk
  CREATE TABLE Vale_Troca (
     idValeTroca INT PRIMARY KEY,
     idItensDevolucao INT,
     idProduto INT,
     valorValeTroca FLOAT
-);
+);*/
 
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
 ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
@@ -219,9 +220,7 @@ HAVING (SUM(idSecundarioItensEntrada) > 0)
 
 select * from ItensDeEntrada
 
-INSERT INTO ItensDeSaida
-                         (idSecundarioItensSaida ,qntItem, dataSaida, horaSaida,idProduto, observacoes, saidaEstado)
-VALUES        (2, 15 ,'07/01/2020', '19:42',1, '', 1)
+
 
 select * from ItensDeEntrada
 
@@ -242,3 +241,9 @@ WHERE idVenda like '%'+1+'%'
 
 select* from ItensDaVenda
 
+select * from Caixa
+
+select * from Itens_Devolucao
+
+
+SELECT TOP (1) idItensDevolucao, idProduto, idVenda, quantidadeDevolucao FROM Itens_Devolucao ORDER BY idItensDevolucao

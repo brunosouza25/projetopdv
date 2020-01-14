@@ -140,6 +140,11 @@ namespace WindowsFormsApp2.Vendas.View
 
         }
 
+        private void TxtBoxPesquisaProd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void TxtBoxPesquisaProd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

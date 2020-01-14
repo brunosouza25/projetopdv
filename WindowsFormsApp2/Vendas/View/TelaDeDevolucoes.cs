@@ -13,6 +13,7 @@ namespace WindowsFormsApp2.Vendas.View
     public partial class TelaDeDevolucoes : UserControl
     {
         DadosTableAdapters.Itens_DevolucaoTableAdapter dadosDevolucao = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
+        DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
         string deData, ateData;
         public TelaDeDevolucoes()
         {
@@ -35,7 +36,8 @@ namespace WindowsFormsApp2.Vendas.View
                 item.SubItems.Add(auxDevo[i]["idVenda"].ToString());
                 item.SubItems.Add(Convert.ToDateTime(auxDevo[i]["dataDevolucao"]).ToString("dd/MM/yyyy"));
                 //item.SubItems.Add(auxDevo[i]["observacoes"].ToString());
-
+                var aux = produto.retornarProdutoPorId(Convert.ToInt32(auxDevo[i]["idProduto"]));
+                item.SubItems.Add(aux[0]["prodNome"].ToString());
                 listaDevolucoes.Items.Add(item);
             }
         }
@@ -72,7 +74,6 @@ namespace WindowsFormsApp2.Vendas.View
         {
 
             //DateTime ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
-
 
 
             var data = DateTime.Now.AddMonths(-1);

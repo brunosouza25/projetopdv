@@ -20,6 +20,8 @@ namespace WindowsFormsApp2.Vendas.View
 
         DadosTableAdapters.Itens_DevolucaoTableAdapter devolucao = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
 
+        DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
+
         string deData, ateData;
         int codVenda, idDevolucao;
         public TelaDevolucao()
@@ -67,7 +69,7 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void carregarTela()
         {
-            var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
+            var auxVenda = detalheVenda.retornarVendId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
             if (auxVenda.Count > 0)
@@ -126,6 +128,8 @@ namespace WindowsFormsApp2.Vendas.View
                         //item.SubItems.Add(aux.ToString("F2"));
                         item.SubItems.Add(prod.idProduto.ToString());
                         item.SubItems.Add(auxProdutosVenda[i]["idItens"].ToString());
+                        var auxProdutosVenda2 = detalheVenda.retornarVendaPorIdeCodItensVenda(codVenda, Convert.ToInt32(auxProdutosVenda[i]["idItens"]));
+                        item.SubItems.Add(auxProdutosVenda2[0]["quantidadeRetirada"].ToString());
                         listaVendas.Items.Add(item);
                     }
                 }
@@ -146,6 +150,11 @@ namespace WindowsFormsApp2.Vendas.View
                 int aux;
                 if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    var idCaixa = caixa.pegarIDUltimoCaixa();
+                    var caixaAtual = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+                    var produto = dadosProdutos.retornarProdutoPorId(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text));
+
+
                     var auxProdutosVenda = detalheVenda.retornarVendaPorIdeCodItensVenda(codVenda, Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text));
                     int aux3 = 0;
                     MessageBox.Show(auxProdutosVenda[0]["quantidadeRetirada"].ToString());
@@ -162,18 +171,22 @@ namespace WindowsFormsApp2.Vendas.View
                     {
 
 
-                        detalheVenda.attItensVenda(1, Convert.ToInt32(txtBoxQnt.Text)+Convert.ToInt32(auxProdutosVenda[0]["quantidadeRetirada"]), Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text));
+                        detalheVenda.attItensVenda(1, Convert.ToInt32(txtBoxQnt.Text)+Convert.ToInt32(auxProdutosVenda[0]["quantidadeRetirada"])
+                        , Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text));
                         var auxDevolucao = devolucao.retornarUltimoIdDevolucao();
                         devolucao.inserirDevolucao(Convert.ToInt32(auxDevolucao[0]["idItensDevolucao"]) + 1, codVenda
                         , Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text), Convert.ToInt32(txtBoxQnt.Text)
                         , DateTime.Now.Date.ToString("dd/MM/yyyy"));
 
-                         
-
+                        
                         var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text));
                         MessageBox.Show(aux2[0]["prodQuantidade"].ToString());
                         aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) + quantidade;
                         dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
+
+                        caixa.attValorAtual(Convert.ToDouble(caixaAtual[0]["valorAtual"]) - Convert.ToDouble(produto[0]["prodValor"])*Convert.ToInt32(txtBoxQnt.Text)
+                        , Convert.ToInt32(idCaixa[0]["idCaixa"]));
+
                     }
                     else
                     {

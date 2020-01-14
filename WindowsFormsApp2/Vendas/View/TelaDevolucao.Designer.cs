@@ -47,6 +47,7 @@
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnDevolver = new System.Windows.Forms.Button();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.painelBase.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,7 +124,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.idProd,
-            this.idItens});
+            this.idItens,
+            this.columnHeader5});
             this.listaVendas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listaVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVendas.FullRowSelect = true;
@@ -160,17 +162,17 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Qnt";
-            this.columnHeader4.Width = 174;
+            this.columnHeader4.Width = 83;
             // 
             // idProd
             // 
             this.idProd.Text = "idprod";
-            this.idProd.Width = 15;
+            this.idProd.Width = 0;
             // 
             // idItens
             // 
             this.idItens.Text = "idItens";
-            this.idItens.Width = 40;
+            this.idItens.Width = 0;
             // 
             // panel4
             // 
@@ -234,6 +236,11 @@
             this.btnDevolver.UseVisualStyleBackColor = true;
             this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Qnt Retirada";
+            this.columnHeader5.Width = 163;
+            // 
             // TelaDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +283,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ColumnHeader idProd;
         private System.Windows.Forms.ColumnHeader idItens;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
