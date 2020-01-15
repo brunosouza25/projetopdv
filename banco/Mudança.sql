@@ -18,7 +18,8 @@ CREATE TABLE Pagamento (
 
 CREATE TABLE Venda (
     idVenda INT PRIMARY KEY IDENTITY (1,1),
-    vendData DATETIME,
+    vendData DATE,
+	vendHora TIME,
     valorCompra FLOAT,
 	idCaixa INT,
 	observacoes VARCHAR(300),
@@ -233,7 +234,7 @@ HAVING (SUM(idSecundarioItensSaida) > 0)
 SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado FROM Produto
 WHERE prodNome like '%Blusa%'
 
-select * from Pagamento
+select * from Venda
 
 SELECT idVenda, vendData, valorCompra FROM dbo.Venda
 WHERE idVenda like '%'+1+'%'
@@ -247,3 +248,10 @@ select * from Itens_Devolucao
 
 
 SELECT TOP (1) idItensDevolucao, idProduto, idVenda, quantidadeDevolucao FROM Itens_Devolucao ORDER BY idItensDevolucao
+
+SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda AS Expr1, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes AS Expr2, Pagamento.PagValor, Pagamento.idPagamento, 
+                         Pagamento.idMPagamento, Pagamento.valorDesconto, Venda.vendHora
+FROM            Venda INNER JOIN
+                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
+                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento
+						 where pagamentoTipo = @pagamentoTipo and vendData = between @vendData1 and @vendData2

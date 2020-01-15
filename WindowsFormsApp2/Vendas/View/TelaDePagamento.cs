@@ -119,7 +119,7 @@ namespace WindowsFormsApp2
         public void confirmar()
         {
             var idCaixa = caixa.pegarIDUltimoCaixa();
-            dadosVenda.InserirVenda(DateTime.Now.Date, total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "");
+            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "", DateTime.Now.ToString("HH:mm:ss"));
             //inserir em pagamentos
             var aux2 = dadosVenda.GetDataByVenda();
 

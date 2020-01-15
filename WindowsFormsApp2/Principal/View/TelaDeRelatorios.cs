@@ -105,13 +105,13 @@ namespace WindowsFormsApp2
             Paragraph informacao = new Paragraph();
             informacao.Font = FontFactory.GetFont("Arial", 12);
             informacao.Alignment = Element.ALIGN_LEFT;
-            
+
             doc.Add(informacao);
 
             Paragraph metodoPagamento = new Paragraph();
             metodoPagamento.Font = FontFactory.GetFont("Arial", 14);
             metodoPagamento.Alignment = Element.ALIGN_LEFT;
-            metodoPagamento.add()
+            //metodoPagamento.add();
             doc.Add(metodoPagamento);
 
             PdfPTable table = new PdfPTable(4);
@@ -133,14 +133,12 @@ namespace WindowsFormsApp2
             doc.Add(table);
             doc.Close();
             MessageBox.Show("Relatório gerado com sucesso!");
-        }catch(IOException er)
-            {
-                MessageBox.Show("Não foi possível criar o arquivo, o mesmo pode estar sendo executado por outro programa");
-            }
+        }
 
-}
 
-private void BtnSalvarPDF_Click(object sender, EventArgs e)
+
+
+        private void BtnSalvarPDF_Click(object sender, EventArgs e)
         {
             try
             {
@@ -154,7 +152,7 @@ private void BtnSalvarPDF_Click(object sender, EventArgs e)
 
                 string aux = DateTime.Now.ToString("dd-MM-yyyy");
 
-                string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio_vendas_" + aux.ToString()+".pdf";
+                string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio_vendas_" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -178,7 +176,7 @@ private void BtnSalvarPDF_Click(object sender, EventArgs e)
                 {
                     table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
                     table.AddCell(varProd[i]["idVenda"].ToString());
-                    table.AddCell("R$ "+Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
+                    table.AddCell("R$ " + Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                     table.AddCell(varProd[i]["pagamentoTipo"].ToString());
 
 
@@ -186,12 +184,14 @@ private void BtnSalvarPDF_Click(object sender, EventArgs e)
                 doc.Add(table);
                 doc.Close();
                 MessageBox.Show("Relatório gerado com sucesso!");
-            }catch(IOException er)
+            }
+            catch (IOException er)
             {
                 MessageBox.Show("Não foi possível criar o arquivo, o mesmo pode estar sendo executado por outro programa");
             }
-
         }
+
+
 
         private void relatorioCaixaToolStripButton_Click(object sender, EventArgs e)
         {
@@ -232,3 +232,4 @@ private void BtnSalvarPDF_Click(object sender, EventArgs e)
         }
     }
 }
+
