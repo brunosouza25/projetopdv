@@ -13,61 +13,10 @@ namespace WindowsFormsApp2
         public TelaDeRelatorios()
         {
             InitializeComponent();
-        }
-
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
         }
 
 
-        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStripButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dataTable2TableAdapter.FillBy1(this.dados.DataTable2);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
         {
@@ -129,7 +78,69 @@ namespace WindowsFormsApp2
 
         }
 
-        private void BtnSalvarPDF_Click(object sender, EventArgs e)
+        private void fechamentoCaixa()
+        {
+            DadosTableAdapters.DataTable2TableAdapter fechamento = new DadosTableAdapters.DataTable2TableAdapter();
+            var varProd = fechamento.relatorio();
+            //instanciando e setando o tipo de página que vou utilizar
+            Document doc = new Document(PageSize.A4);
+            //colocando margens no pdf
+            doc.SetMargins(40, 40, 40, 80);
+
+            string aux = DateTime.Now.ToString("dd-MM-yyyy");
+
+            string caminho = @"C:\Users\bruno\Desktop\relatorios\fechamento" + aux.ToString() + ".pdf";
+
+
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+
+            doc.Open();
+
+            Paragraph titulo = new Paragraph();
+            titulo.Font = FontFactory.GetFont("Arial", 18);
+            titulo.Alignment = Element.ALIGN_CENTER;
+            titulo.Add("Fechamento do dia \n\n");
+            doc.Add(titulo);
+
+            Paragraph informacao = new Paragraph();
+            informacao.Font = FontFactory.GetFont("Arial", 12);
+            informacao.Alignment = Element.ALIGN_LEFT;
+            
+            doc.Add(informacao);
+
+            Paragraph metodoPagamento = new Paragraph();
+            metodoPagamento.Font = FontFactory.GetFont("Arial", 14);
+            metodoPagamento.Alignment = Element.ALIGN_LEFT;
+            metodoPagamento.add()
+            doc.Add(metodoPagamento);
+
+            PdfPTable table = new PdfPTable(4);
+            table.AddCell("Data da venda");
+            table.AddCell("Código da venda");
+            table.AddCell("Valor da venda");
+            table.AddCell("Tipo de pagamento");
+
+
+            for (int i = 0; i < varProd.Count(); i++)
+            {
+                table.AddCell(Convert.ToDateTime(varProd[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                table.AddCell(varProd[i]["idVenda"].ToString());
+                table.AddCell("R$ " + Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
+                table.AddCell(varProd[i]["pagamentoTipo"].ToString());
+
+
+            }
+            doc.Add(table);
+            doc.Close();
+            MessageBox.Show("Relatório gerado com sucesso!");
+        }catch(IOException er)
+            {
+                MessageBox.Show("Não foi possível criar o arquivo, o mesmo pode estar sendo executado por outro programa");
+            }
+
+}
+
+private void BtnSalvarPDF_Click(object sender, EventArgs e)
         {
             try
             {
@@ -202,68 +213,21 @@ namespace WindowsFormsApp2
 
         private void relatorioCaixaToolStripButton_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                try
-                {
-                    DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
-                    var idCaixa = caixa.pegarIDUltimoCaixa();
-                    var aux1 = caixa.pegarCaixaCompleto();
 
-                    //instanciando e setando o tipo de página que vou utilizar
-                    Document doc = new Document(PageSize.A4);
-                    //colocando margens no pdf
-                    doc.SetMargins(40, 40, 40, 80);
+        }
 
-                    string aux = DateTime.Now.ToString("dd-MM-yyyy");
+        private void btnPerso_Click(object sender, EventArgs e)
+        {
 
-                    string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio_caixa_" + aux.ToString() + ".pdf";
+        }
 
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
 
-                    PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+        }
 
-                    doc.Open();
-
-                    Paragraph titulo = new Paragraph();
-                    titulo.Font = FontFactory.GetFont("Arial", 18);
-                    titulo.Alignment = Element.ALIGN_CENTER;
-                    titulo.Add("Relatório de caixas\n\n");
-                    doc.Add(titulo);
-
-                    PdfPTable table = new PdfPTable(6);
-                    table.AddCell("Data da caixa");
-                    table.AddCell("Código do caixa");
-                    table.AddCell("Valor incial do caixa");
-                    table.AddCell("Valor total do caixa");
-                    table.AddCell("Valor final do caixa");
-                    table.AddCell("Estado do caixa");
-
-
-                    for (int i = 0; i < aux1.Count(); i++)
-                    {
-                        table.AddCell(Convert.ToDateTime(aux1[i]["dataCaixa"]).ToString("dd/MM/yyyy HH:mm:ss.fff"));
-                        table.AddCell(aux1[i]["idCaixa"].ToString());
-                        table.AddCell("R$ " + Convert.ToDouble(aux1[i]["aberturaCaixa"]).ToString("F2"));
-                        table.AddCell("R$ " + Convert.ToDouble(aux1[i]["valorAtual"]).ToString("F2"));
-                        table.AddCell("R$ " + Convert.ToDouble(aux1[i]["fechamentoCaixa"]).ToString("F2"));
-                        if (Convert.ToInt32(aux1[i]["estadoCaixa"]) == 0)
-                            table.AddCell("Fechado");
-                        else
-                            table.AddCell("Aberto");
-                    }
-                    doc.Add(table);
-                    doc.Close();
-                    MessageBox.Show("Relatório gerado com sucesso!");
-                }
-                catch (IOException er)
-                {
-                    MessageBox.Show("Não foi possível criar o arquivo, o mesmo pode estar sendo executado por outro programa");
-                }
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
     }

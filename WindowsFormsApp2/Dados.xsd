@@ -560,13 +560,16 @@ VALUES        (@idVenda,@idProduto,@itensQtd,@ItensTotal,@estadoDevulcao, @quant
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BD_PDVConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillRelatorio" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillRelatorio" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillRelatorio">
+              <DbSource ConnectionRef="BD_PDVConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="relatorio" GetMethodModifier="Public" GetMethodName="relatorio" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="relatorio" UserSourceName="relatorio">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData
+                    <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
+                         Pagamento.idMPagamento, Pagamento.valorDesconto, Itens_Devolucao.idItensDevolucao, Itens_Devolucao.idVenda AS Expr1, Itens_Devolucao.idProduto, Itens_Devolucao.quantidadeDevolucao, 
+                         Itens_Devolucao.observacoes AS Expr2, Itens_Devolucao.dataDevolucao
 FROM            Venda INNER JOIN
                          Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
-                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento</CommandText>
+                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento INNER JOIN
+                         Itens_Devolucao ON Venda.idVenda = Itens_Devolucao.idVenda</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -577,8 +580,35 @@ FROM            Venda INNER JOIN
               <Mapping SourceColumn="valorCompra" DataSetColumn="valorCompra" />
               <Mapping SourceColumn="idVenda" DataSetColumn="idVenda" />
               <Mapping SourceColumn="pagamentoTipo" DataSetColumn="pagamentoTipo" />
+              <Mapping SourceColumn="idCaixa" DataSetColumn="idCaixa" />
+              <Mapping SourceColumn="vendaEstado" DataSetColumn="vendaEstado" />
+              <Mapping SourceColumn="observacoes" DataSetColumn="observacoes" />
+              <Mapping SourceColumn="PagValor" DataSetColumn="PagValor" />
+              <Mapping SourceColumn="idPagamento" DataSetColumn="idPagamento" />
+              <Mapping SourceColumn="idMPagamento" DataSetColumn="idMPagamento" />
+              <Mapping SourceColumn="valorDesconto" DataSetColumn="valorDesconto" />
+              <Mapping SourceColumn="idItensDevolucao" DataSetColumn="idItensDevolucao" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="idProduto" DataSetColumn="idProduto" />
+              <Mapping SourceColumn="quantidadeDevolucao" DataSetColumn="quantidadeDevolucao" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="dataDevolucao" DataSetColumn="dataDevolucao" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="BD_PDVConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
+                         Pagamento.idMPagamento, Pagamento.valorDesconto, Itens_Devolucao.idItensDevolucao, Itens_Devolucao.idVenda AS Expr1, Itens_Devolucao.idProduto, Itens_Devolucao.quantidadeDevolucao, 
+                         Itens_Devolucao.observacoes AS Expr2, Itens_Devolucao.dataDevolucao
+FROM            Venda INNER JOIN
+                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
+                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento INNER JOIN
+                         Itens_Devolucao ON Venda.idVenda = Itens_Devolucao.idVenda</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="BD_PDVConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -1357,6 +1387,31 @@ WHERE (dataDevolucao BETWEEN @dataPesquisa1 AND @dataPesquisa2)
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="idCaixa" msprop:Generator_ColumnVarNameInTable="columnidCaixa" msprop:Generator_ColumnPropNameInRow="idCaixa" msprop:Generator_ColumnPropNameInTable="idCaixaColumn" msprop:Generator_UserColumnName="idCaixa" type="xs:int" minOccurs="0" />
+              <xs:element name="vendaEstado" msprop:Generator_ColumnVarNameInTable="columnvendaEstado" msprop:Generator_ColumnPropNameInRow="vendaEstado" msprop:Generator_ColumnPropNameInTable="vendaEstadoColumn" msprop:Generator_UserColumnName="vendaEstado" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="observacoes" msprop:Generator_ColumnVarNameInTable="columnobservacoes" msprop:Generator_ColumnPropNameInRow="observacoes" msprop:Generator_ColumnPropNameInTable="observacoesColumn" msprop:Generator_UserColumnName="observacoes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PagValor" msprop:Generator_ColumnVarNameInTable="columnPagValor" msprop:Generator_ColumnPropNameInRow="PagValor" msprop:Generator_ColumnPropNameInTable="PagValorColumn" msprop:Generator_UserColumnName="PagValor" type="xs:double" minOccurs="0" />
+              <xs:element name="idPagamento" msprop:Generator_ColumnVarNameInTable="columnidPagamento" msprop:Generator_ColumnPropNameInRow="idPagamento" msprop:Generator_ColumnPropNameInTable="idPagamentoColumn" msprop:Generator_UserColumnName="idPagamento" type="xs:int" minOccurs="0" />
+              <xs:element name="idMPagamento" msprop:Generator_ColumnVarNameInTable="columnidMPagamento" msprop:Generator_ColumnPropNameInRow="idMPagamento" msprop:Generator_ColumnPropNameInTable="idMPagamentoColumn" msprop:Generator_UserColumnName="idMPagamento" type="xs:int" minOccurs="0" />
+              <xs:element name="valorDesconto" msprop:Generator_ColumnVarNameInTable="columnvalorDesconto" msprop:Generator_ColumnPropNameInRow="valorDesconto" msprop:Generator_ColumnPropNameInTable="valorDescontoColumn" msprop:Generator_UserColumnName="valorDesconto" type="xs:double" minOccurs="0" />
+              <xs:element name="idItensDevolucao" msprop:Generator_ColumnVarNameInTable="columnidItensDevolucao" msprop:Generator_ColumnPropNameInRow="idItensDevolucao" msprop:Generator_ColumnPropNameInTable="idItensDevolucaoColumn" msprop:Generator_UserColumnName="idItensDevolucao" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="idProduto" msprop:Generator_ColumnVarNameInTable="columnidProduto" msprop:Generator_ColumnPropNameInRow="idProduto" msprop:Generator_ColumnPropNameInTable="idProdutoColumn" msprop:Generator_UserColumnName="idProduto" type="xs:int" minOccurs="0" />
+              <xs:element name="quantidadeDevolucao" msprop:Generator_ColumnVarNameInTable="columnquantidadeDevolucao" msprop:Generator_ColumnPropNameInRow="quantidadeDevolucao" msprop:Generator_ColumnPropNameInTable="quantidadeDevolucaoColumn" msprop:Generator_UserColumnName="quantidadeDevolucao" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dataDevolucao" msprop:Generator_ColumnVarNameInTable="columndataDevolucao" msprop:Generator_ColumnPropNameInRow="dataDevolucao" msprop:Generator_ColumnPropNameInTable="dataDevolucaoColumn" msprop:Generator_UserColumnName="dataDevolucao" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
