@@ -11471,7 +11471,7 @@ WHERE pagamentoTipo = @pagamentoTipo and vendData between @vendData1 and @vendDa
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = @"
-SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda AS Expr1, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes AS Expr2, Pagamento.PagValor, Pagamento.idPagamento, 
+SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
                          Pagamento.idMPagamento, Pagamento.valorDesconto, Venda.vendHora
 FROM            Venda INNER JOIN
                          Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
