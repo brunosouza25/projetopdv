@@ -109,103 +109,113 @@ namespace WindowsFormsApp2
                 informacao.Font = FontFactory.GetFont("Arial", 12, BaseColor.BLUE);
                 informacao.Alignment = Element.ALIGN_LEFT;
 
-                //para o dinheiro==================================================================
-
                 Paragraph metodoPagamento = new Paragraph();
                 metodoPagamento.Font = FontFactory.GetFont("Arial", 14);
                 metodoPagamento.Alignment = Element.ALIGN_LEFT;
-                metodoPagamento.Add("Dinheiro \n\n");
-                doc.Add(metodoPagamento);
 
-                PdfPTable table = new PdfPTable(5);
-                table.AddCell("Data da venda");
-                table.AddCell("Código da venda");
-                table.AddCell("Tipo de pagamento");
-                table.AddCell("Vendedor");
-                table.AddCell("Valor da venda");
-
+                //para o dinheiro==================================================================
                 var dinheiro = fechamento.retornarFechamentoComDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
                 if (dinheiro.Count < 1)
                     dinheiro = fechamento.retornarFechamentoSemDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
-                for (int i = 0; i < dinheiro.Count(); i++)
+                if (dinheiro.Count > 0)
                 {
-                    table.AddCell(Convert.ToDateTime(dinheiro[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
-                    table.AddCell(dinheiro[i]["idVenda"].ToString());
-                    table.AddCell("Dinheiro");
-                    table.AddCell("Vendedor padrão");
-                    table.AddCell("R$ " + Convert.ToDouble(dinheiro[i]["valorCompra"]).ToString("F2"));
-                    totalDin = totalDin + Convert.ToDouble(dinheiro[i]["valorCompra"]);
-                }
-                doc.Add(table);
-                informacao.Add("\n\n"+"Total Dinheiro: R$"+ totalDin.ToString("F2"));
-                doc.Add(informacao);
+                    metodoPagamento.Add("Dinheiro \n\n");
+                    doc.Add(metodoPagamento);
 
+                    PdfPTable table = new PdfPTable(5);
+                    table.AddCell("Data da venda");
+                    table.AddCell("Código da venda");
+                    table.AddCell("Tipo de pagamento");
+                    table.AddCell("Vendedor");
+                    table.AddCell("Valor da venda");
+
+                    for (int i = 0; i < dinheiro.Count(); i++)
+                    {
+                        table.AddCell(Convert.ToDateTime(dinheiro[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                        table.AddCell(dinheiro[i]["idVenda"].ToString());
+                        table.AddCell("Dinheiro");
+                        table.AddCell("Vendedor padrão");
+                        table.AddCell("R$ " + Convert.ToDouble(dinheiro[i]["PagValor"]).ToString("F2"));
+                        totalDin = totalDin + Convert.ToDouble(dinheiro[i]["PagValor"]);
+                    }
+                    doc.Add(table);
+                    informacao.Add("\n\n" + "Total Dinheiro: R$" + totalDin.ToString("F2"));
+                    doc.Add(informacao);
+                }
                 //para credito a vista ==================================================================
                 PdfPTable table2 = new PdfPTable(5);
 
-                metodoPagamento.Clear();
-                metodoPagamento.Add("\n\nCrédito à vista\n\n");
-                doc.Add(metodoPagamento);
-
-                table2.AddCell("Data da venda");
-                table2.AddCell("Código da venda");
-                table2.AddCell("Tipo de pagamento");
-                table2.AddCell("Vendedor");
-                table2.AddCell("Valor da venda");
-
                 var creditoVista = fechamento.retornarFechamentoComDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
-                    , DateTime.Now.ToString("dd/MM/yyyy"));
+                , DateTime.Now.ToString("dd/MM/yyyy"));
                 if (creditoVista.Count < 1)
                     creditoVista = fechamento.retornarFechamentoSemDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
-                for (int i = 0; i < creditoVista.Count(); i++)
+                if (creditoVista.Count > 0)
                 {
-                    table2.AddCell(Convert.ToDateTime(creditoVista[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
-                    table2.AddCell(creditoVista[i]["idVenda"].ToString());
-                    table2.AddCell("Crédito à vista");
-                    table2.AddCell("Vendedor padrão");
-                    table2.AddCell("R$ " + Convert.ToDouble(dinheiro[i]["valorCompra"]).ToString("F2"));
-                    totalCredVista = totalCredVista + Convert.ToDouble(dinheiro[i]["valorCompra"]);
+                    metodoPagamento.Clear();
+                    metodoPagamento.Add("\n\nCrédito à vista\n\n");
+                    doc.Add(metodoPagamento);
+
+                    table2.AddCell("Data da venda");
+                    table2.AddCell("Código da venda");
+                    table2.AddCell("Tipo de pagamento");
+                    table2.AddCell("Vendedor");
+                    table2.AddCell("Valor da venda");
+
+
+
+                    for (int i = 0; i < creditoVista.Count(); i++)
+                    {
+                        table2.AddCell(Convert.ToDateTime(creditoVista[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                        table2.AddCell(creditoVista[i]["idVenda"].ToString());
+                        table2.AddCell("Crédito à vista");
+                        table2.AddCell("Vendedor padrão");
+                        table2.AddCell("R$ " + Convert.ToDouble(dinheiro[i]["PagValor"]).ToString("F2"));
+                        totalCredVista = totalCredVista + Convert.ToDouble(dinheiro[i]["PagValor"]);
+                    }
+                    doc.Add(table2);
+                    informacao.Clear();
+                    informacao.Add("\n\n" + "Total Crédito à Vista: R$" + totalCredVista.ToString("F2"));
+                    doc.Add(informacao);
                 }
-                doc.Add(table2);
-                informacao.Clear();
-                informacao.Add("\n\n" + "Total Crédito à Vista: R$" + totalCredVista.ToString("F2"));
-                doc.Add(informacao);
 
                 //para credito parcelado ==================================================================
                 PdfPTable table3 = new PdfPTable(5);
 
-                metodoPagamento.Clear();
-                metodoPagamento.Add("\n\nCrédito parcelado\n\n");
-                doc.Add(metodoPagamento);
-
-                table3.AddCell("Data da venda");
-                table3.AddCell("Código da venda");
-                table3.AddCell("Tipo de pagamento");
-                table3.AddCell("Vendedor");
-                table3.AddCell("Valor da venda");
-
                 var creditoParc = fechamento.retornarFechamentoComDevolucao("CREDITO PARCELADO", DateTime.Now.ToString("dd/MM/yyyy")
-                    , DateTime.Now.ToString("dd/MM/yyyy"));
+                , DateTime.Now.ToString("dd/MM/yyyy"));
                 if (creditoParc.Count < 1)
                     creditoParc = fechamento.retornarFechamentoSemDevolucao("CREDITO PARCELADO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
-                for (int i = 0; i < creditoParc.Count(); i++)
-                {
-                    table3.AddCell(Convert.ToDateTime(creditoParc[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
-                    table3.AddCell(creditoParc[i]["idVenda"].ToString());
-                    table3.AddCell("Crédito à vista");
-                    table3.AddCell("Vendedor padrão");
-                    table3.AddCell("R$ " + Convert.ToDouble(creditoParc[i]["valorCompra"]).ToString("F2"));
-                    totalCredParc = totalCredParc + Convert.ToDouble(creditoParc[i]["valorCompra"]);
-                }
-                doc.Add(table3);
+                if (creditoParc.Count > 0) {
+                    metodoPagamento.Clear();
+                    metodoPagamento.Add("\n\nCrédito parcelado\n\n");
+                    doc.Add(metodoPagamento);
 
+                    table3.AddCell("Data da venda");
+                    table3.AddCell("Código da venda");
+                    table3.AddCell("Tipo de pagamento");
+                    table3.AddCell("Vendedor");
+                    table3.AddCell("Valor da venda");
+
+
+
+                    for (int i = 0; i < creditoParc.Count(); i++)
+                    {
+                        table3.AddCell(Convert.ToDateTime(creditoParc[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                        table3.AddCell(creditoParc[i]["idVenda"].ToString());
+                        table3.AddCell("Crédito à vista");
+                        table3.AddCell("Vendedor padrão");
+                        table3.AddCell("R$ " + Convert.ToDouble(creditoParc[i]["PagValor"]).ToString("F2"));
+                        totalCredParc = totalCredParc + Convert.ToDouble(creditoParc[i]["PagValor"]);
+                    }
+                    doc.Add(table3);
+                }
 
                 informacao.Clear();
                 informacao.Add("\n\n" + "Total Crédito Parcelado: R$" + totalCredParc.ToString("F2"));
@@ -214,37 +224,41 @@ namespace WindowsFormsApp2
                 //para credito parcelado ==================================================================
                 PdfPTable table4 = new PdfPTable(5);
 
-                metodoPagamento.Clear();
-                metodoPagamento.Add("\n\nDébito\n\n");
-                doc.Add(metodoPagamento);
-
-                table4.AddCell("Data da venda");
-                table4.AddCell("Código da venda");
-                table4.AddCell("Tipo de pagamento");
-                table4.AddCell("Vendedor");
-                table2.AddCell("Valor da venda");
-
                 var debito = fechamento.retornarFechamentoComDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
-                    , DateTime.Now.ToString("dd/MM/yyyy"));
-                if (creditoParc.Count < 1)
-                    creditoParc = fechamento.retornarFechamentoSemDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
+    , DateTime.Now.ToString("dd/MM/yyyy"));
+                if (debito.Count < 1)
+                    debito = fechamento.retornarFechamentoSemDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
-                for (int i = 0; i < creditoParc.Count(); i++)
+                if (debito.Count > 0)
                 {
-                    table4.AddCell(Convert.ToDateTime(debito[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
-                    table4.AddCell(debito[i]["idVenda"].ToString());
-                    table4.AddCell("Débito");
-                    table4.AddCell("Vendedor padrão");
-                    table4.AddCell("R$ " + Convert.ToDouble(debito[i]["valorCompra"]).ToString("F2"));
-                    totalDebt = totalDebt + Convert.ToDouble(debito[i]["valorCompra"]);
+                    metodoPagamento.Clear();
+                    metodoPagamento.Add("\n\nDébito\n\n");
+                    doc.Add(metodoPagamento);
+
+                    table4.AddCell("Data da venda");
+                    table4.AddCell("Código da venda");
+                    table4.AddCell("Tipo de pagamento");
+                    table4.AddCell("Vendedor");
+                    table2.AddCell("Valor da venda");
+
+
+
+                    for (int i = 0; i < debito.Count(); i++)
+                    {
+                        table4.AddCell(Convert.ToDateTime(debito[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                        table4.AddCell(debito[i]["idVenda"].ToString());
+                        table4.AddCell("Débito");
+                        table4.AddCell("Vendedor padrão");
+                        table4.AddCell("R$ " + Convert.ToDouble(debito[i]["PagValor"]).ToString("F2"));
+                        totalDebt = totalDebt + Convert.ToDouble(debito[i]["PagValor"]);
+                    }
+                    doc.Add(table4);
+
+                    informacao.Clear();
+                    informacao.Add("\n\n" + "Total Débito: R$" + totalDebt.ToString("F2"));
+                    doc.Add(informacao);
                 }
-                doc.Add(table4);
-
-                informacao.Clear();
-                informacao.Add("\n\n" + "Total Débito: R$" + totalDebt.ToString("F2"));
-                doc.Add(informacao);
-
                 informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.GREEN);
 
                 informacao.Clear();
