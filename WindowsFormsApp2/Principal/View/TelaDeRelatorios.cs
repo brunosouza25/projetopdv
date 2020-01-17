@@ -221,7 +221,7 @@ namespace WindowsFormsApp2
                 informacao.Add("\n\n" + "Total Crédito Parcelado: R$" + totalCredParc.ToString("F2"));
                 doc.Add(informacao);
 
-                //para credito parcelado ==================================================================
+                //para credito débito ==================================================================
                 PdfPTable table4 = new PdfPTable(5);
 
                 var debito = fechamento.retornarFechamentoComDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
@@ -240,7 +240,7 @@ namespace WindowsFormsApp2
                     table4.AddCell("Código da venda");
                     table4.AddCell("Tipo de pagamento");
                     table4.AddCell("Vendedor");
-                    table2.AddCell("Valor da venda");
+                    table4.AddCell("Valor da venda");
 
 
 
