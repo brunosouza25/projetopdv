@@ -291,8 +291,7 @@ namespace WindowsFormsApp2
 
                         table5.AddCell(devolucao[i]["quantidadeDevolucao"].ToString());
 
-
-                        var itens = auxItensVenda.retornarItensDevolvidos(Convert.ToInt32(devolucao[i]["idVenda"]));
+                        //var itens = auxItensVenda.retornarItensDevolvidos(Convert.ToInt32(devolucao[i]["idVenda"]));
 
                         totalDevolucao += Convert.ToDouble(produto[0][""]);
                     }

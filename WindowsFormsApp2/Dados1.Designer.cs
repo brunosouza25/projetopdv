@@ -4962,6 +4962,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnquantidadeDevolucao;
             
+            private global::System.Data.DataColumn columnvalorProduto;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Itens_DevolucaoDataTable() {
@@ -5029,6 +5031,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorProdutoColumn {
+                get {
+                    return this.columnvalorProduto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5064,13 +5074,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Itens_DevolucaoRow AddItens_DevolucaoRow(int idItensDevolucao, VendaRow parentVendaRowByFK__Itens_Dev__idVen__6477ECF3, int idProduto, int quantidadeDevolucao) {
+            public Itens_DevolucaoRow AddItens_DevolucaoRow(int idItensDevolucao, VendaRow parentVendaRowByFK__Itens_Dev__idVen__6477ECF3, int idProduto, int quantidadeDevolucao, double valorProduto) {
                 Itens_DevolucaoRow rowItens_DevolucaoRow = ((Itens_DevolucaoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idItensDevolucao,
                         null,
                         idProduto,
-                        quantidadeDevolucao};
+                        quantidadeDevolucao,
+                        valorProduto};
                 if ((parentVendaRowByFK__Itens_Dev__idVen__6477ECF3 != null)) {
                     columnValuesArray[1] = parentVendaRowByFK__Itens_Dev__idVen__6477ECF3[0];
                 }
@@ -5100,6 +5111,7 @@ namespace WindowsFormsApp2 {
                 this.columnidVenda = base.Columns["idVenda"];
                 this.columnidProduto = base.Columns["idProduto"];
                 this.columnquantidadeDevolucao = base.Columns["quantidadeDevolucao"];
+                this.columnvalorProduto = base.Columns["valorProduto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5113,6 +5125,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnidProduto);
                 this.columnquantidadeDevolucao = new global::System.Data.DataColumn("quantidadeDevolucao", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquantidadeDevolucao);
+                this.columnvalorProduto = new global::System.Data.DataColumn("valorProduto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalorProduto);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8205,6 +8219,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double valorProduto {
+                get {
+                    try {
+                        return ((double)(this[this.tableItens_Devolucao.valorProdutoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valorProduto\' na tabela \'Itens_Devolucao\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableItens_Devolucao.valorProdutoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VendaRow VendaRow {
                 get {
                     return ((VendaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Itens_Dev__idVen__6477ECF3"])));
@@ -8260,6 +8290,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetquantidadeDevolucaoNull() {
                 this[this.tableItens_Devolucao.quantidadeDevolucaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorProdutoNull() {
+                return this.IsNull(this.tableItens_Devolucao.valorProdutoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorProdutoNull() {
+                this[this.tableItens_Devolucao.valorProdutoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14539,17 +14581,19 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
             tableMapping.ColumnMappings.Add("idVenda", "idVenda");
             tableMapping.ColumnMappings.Add("idProduto", "idProduto");
             tableMapping.ColumnMappings.Add("quantidadeDevolucao", "quantidadeDevolucao");
+            tableMapping.ColumnMappings.Add("valorProduto", "valorProduto");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [Itens_Devolucao] ([idItensDevolucao], [idVenda], [idProduto], [quant" +
-                "idadeDevolucao]) VALUES (@idItensDevolucao, @idVenda, @idProduto, @quantidadeDev" +
-                "olucao)";
+                "idadeDevolucao], [valorProduto]) VALUES (@idItensDevolucao, @idVenda, @idProduto" +
+                ", @quantidadeDevolucao, @valorProduto)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idItensDevolucao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idItensDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantidadeDevolucao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "quantidadeDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorProduto", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14562,36 +14606,47 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        idItensDevolucao, idVenda, idProduto, quantidadeDevolucao\r\nFROM    " +
-                "        Itens_Devolucao";
+            this._commandCollection[0].CommandText = "SELECT        idItensDevolucao, idVenda, idProduto, quantidadeDevolucao, valorPro" +
+                "duto\r\nFROM            Itens_Devolucao";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO Itens_Devolucao\r\n                         (idItensDevolucao, idVenda," +
-                " idProduto, quantidadeDevolucao, dataDevolucao)\r\nVALUES        (@idItensDevoluca" +
-                "o,@idVenda,@idProduto,@quantidadeDevolucao, @dataDevolucao)";
+                " idProduto, quantidadeDevolucao, dataDevolucao, valorProduto)\r\nVALUES        (@i" +
+                "dItensDevolucao,@idVenda,@idProduto,@quantidadeDevolucao,@dataDevolucao,@valorPr" +
+                "od)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idItensDevolucao", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idItensDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@quantidadeDevolucao", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "quantidadeDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataDevolucao", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorProd", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idItensDevolucao, idVenda, idProduto, quantidadeDevolucao, dataDevo" +
-                "lucao\r\nFROM            Itens_Devolucao\r\nWHERE (dataDevolucao BETWEEN @dataPesqui" +
-                "sa1 AND @dataPesquisa2)\r\n";
+            this._commandCollection[2].CommandText = "SELECT idItensDevolucao, idProduto, idVenda, quantidadeDevolucao, valorProduto FR" +
+                "OM Itens_Devolucao WHERE (dataDevolucao BETWEEN @dataPesquisa1 AND @dataPesquisa" +
+                "2)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "dataDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "dataDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT TOP (1) idItensDevolucao, idProduto, idVenda, quantidadeDevolucao FROM Ite" +
-                "ns_Devolucao ORDER BY idItensDevolucao DESC";
+            this._commandCollection[3].CommandText = @"SELECT        Itens_Devolucao.idItensDevolucao, Itens_Devolucao.idVenda, Itens_Devolucao.idProduto, Itens_Devolucao.quantidadeDevolucao, Itens_Devolucao.dataDevolucao, ItensDaVenda.valorDeVenda
+FROM            Itens_Devolucao CROSS JOIN
+                         ItensDaVenda
+WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_devolucao.IdVenda = @idVenda and ItensDaVenda.idVenda = @idVenda";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataDevolucao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT TOP (1) idItensDevolucao, idProduto, idVenda, quantidadeDevolucao, valorPr" +
+                "oduto FROM Itens_Devolucao ORDER BY idItensDevolucao DESC";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14632,8 +14687,31 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.Itens_DevolucaoDataTable retornarUltimoIdDevolucao() {
+        public virtual Dados.Itens_DevolucaoDataTable retornarItensDevolucao(string data, global::System.Nullable<int> idVenda) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((data == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(data));
+            }
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Dados.Itens_DevolucaoDataTable dataTable = new Dados.Itens_DevolucaoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.Itens_DevolucaoDataTable retornarUltimoIdDevolucao() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             Dados.Itens_DevolucaoDataTable dataTable = new Dados.Itens_DevolucaoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14672,7 +14750,7 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idItensDevolucao, global::System.Nullable<int> idVenda, global::System.Nullable<int> idProduto, global::System.Nullable<int> quantidadeDevolucao) {
+        public virtual int Insert(global::System.Nullable<int> idItensDevolucao, global::System.Nullable<int> idVenda, global::System.Nullable<int> idProduto, global::System.Nullable<int> quantidadeDevolucao, global::System.Nullable<double> valorProduto) {
             if ((idItensDevolucao.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idItensDevolucao.Value));
             }
@@ -14697,6 +14775,12 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
+            if ((valorProduto.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(valorProduto.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14717,7 +14801,7 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirDevolucao(global::System.Nullable<int> idItensDevolucao, global::System.Nullable<int> idVenda, global::System.Nullable<int> idProduto, global::System.Nullable<int> quantidadeDevolucao, string dataDevolucao) {
+        public virtual int inserirDevolucao(global::System.Nullable<int> idItensDevolucao, global::System.Nullable<int> idVenda, global::System.Nullable<int> idProduto, global::System.Nullable<int> quantidadeDevolucao, string dataDevolucao, global::System.Nullable<double> valorProd) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((idItensDevolucao.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(idItensDevolucao.Value));
@@ -14748,6 +14832,12 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
             }
             else {
                 command.Parameters[4].Value = ((string)(dataDevolucao));
+            }
+            if ((valorProd.HasValue == true)) {
+                command.Parameters[5].Value = ((double)(valorProd.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

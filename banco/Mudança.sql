@@ -47,6 +47,7 @@ CREATE TABLE Produto (
     prodQuantidade INT,
     prodCodBarras VARCHAR(13),
 	prodEstado tinyint
+
 );
 
 CREATE TABLE Caixa (
@@ -129,6 +130,7 @@ CREATE TABLE Itens_Devolucao (
 	quantidadeDevolucao INT,
     observacoes VARCHAR(300),
 	dataDevolucao DATE,
+	valorVenda FLOAT
 	/*valorDevolucao FLOAT*/
 );
  
@@ -259,3 +261,32 @@ FROM            Venda INNER JOIN
                          Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
                          MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento
 						 where pagamentoTipo = @pagamentoTipo and vendData = between @vendData1 and @vendData2
+
+
+
+SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
+                         Pagamento.idMPagamento, Pagamento.valorDesconto, Itens_Devolucao.idItensDevolucao, Itens_Devolucao.idVenda AS Expr1, Itens_Devolucao.idProduto, Itens_Devolucao.quantidadeDevolucao, 
+                         Itens_Devolucao.observacoes AS Expr2, Itens_Devolucao.dataDevolucao, Venda.vendHora
+FROM            Venda INNER JOIN
+                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
+                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento INNER JOIN
+                         Itens_Devolucao ON Venda.idVenda = Itens_Devolucao.idVenda
+
+						 
+SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
+                         Pagamento.idMPagamento, Pagamento.valorDesconto, Venda.vendHora
+FROM            Venda INNER JOIN
+                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
+                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento
+
+WHERE pagamentoTipo = @pagamentoTipo and vendData between @vendData1 and @vendData2
+
+
+WHERE pagamentoTipo = @pagamentoTipo and vendData between @vendData1 and @vendData2
+
+
+SELECT        ItensDaVenda.idVenda, ItensDaVenda.idProduto, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeCusto, ItensDaVenda.valorDeVenda, 
+                         ItensDaVenda.codBarras, Itens_Devolucao.idVenda AS Expr1
+FROM            ItensDaVenda CROSS JOIN
+                         Itens_Devolucao
+WHERE        (ItensDaVenda.idVenda = 1 and Itens_Devolucao.idVenda = 1)
