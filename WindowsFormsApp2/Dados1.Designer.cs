@@ -11105,7 +11105,7 @@ SELECT idMPagamento, pagamentoTipo FROM MetodoDePagamento WHERE (idMPagamento = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idVenda, idProduto, itensQtd, ItensTotal, estadoDevolucao, quantida" +
@@ -11142,6 +11142,16 @@ VALUES        (@idVenda,@idProduto,@itensQtd,@ItensTotal,@estadoDevulcao,@quanti
                 "dVenda)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"
+SELECT        ItensDaVenda.idVenda, ItensDaVenda.idProduto, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeCusto, ItensDaVenda.valorDeVenda, 
+                         ItensDaVenda.codBarras, Itens_Devolucao.idVenda AS Expr1
+FROM            ItensDaVenda CROSS JOIN
+                         Itens_Devolucao
+WHERE        (ItensDaVenda.idVenda = @idVenda and Itens_Devolucao.idVenda = @idVenda)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11161,6 +11171,23 @@ VALUES        (@idVenda,@idProduto,@itensQtd,@ItensTotal,@estadoDevulcao,@quanti
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Dados.ItensDaVendaDataTable itensVenda(global::System.Nullable<int> idVenda) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            Dados.ItensDaVendaDataTable dataTable = new Dados.ItensDaVendaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.ItensDaVendaDataTable retornarItensDevolvidos(global::System.Nullable<int> idVenda) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((idVenda.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
             }

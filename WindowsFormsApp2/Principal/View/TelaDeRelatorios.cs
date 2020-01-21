@@ -114,10 +114,10 @@ namespace WindowsFormsApp2
                 metodoPagamento.Alignment = Element.ALIGN_LEFT;
 
                 //para o dinheiro==================================================================
-                var dinheiro = fechamento.retornarFechamentoComDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
+                /*var dinheiro = fechamento.retornarFechamentoComDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
-                if (dinheiro.Count < 1)
-                    dinheiro = fechamento.retornarFechamentoSemDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
+                if (dinheiro.Count < 1)*/
+                  var  dinheiro = fechamento.retornarFechamentoSemDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
                 if (dinheiro.Count > 0)
@@ -148,10 +148,10 @@ namespace WindowsFormsApp2
                 //para credito a vista ==================================================================
                 PdfPTable table2 = new PdfPTable(5);
 
-                var creditoVista = fechamento.retornarFechamentoComDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
+                /*var creditoVista = fechamento.retornarFechamentoComDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
                 , DateTime.Now.ToString("dd/MM/yyyy"));
-                if (creditoVista.Count < 1)
-                    creditoVista = fechamento.retornarFechamentoSemDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
+                if (creditoVista.Count < 1)*/
+                    var creditoVista = fechamento.retornarFechamentoSemDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
                 if (creditoVista.Count > 0)
@@ -186,10 +186,11 @@ namespace WindowsFormsApp2
                 //para credito parcelado ==================================================================
                 PdfPTable table3 = new PdfPTable(5);
 
-                var creditoParc = fechamento.retornarFechamentoComDevolucao("CREDITO PARCELADO", DateTime.Now.ToString("dd/MM/yyyy")
+               /* var creditoParc = fechamento.retornarFechamentoComDevolucao("CREDITO PARCELADO", DateTime.Now.ToString("dd/MM/yyyy")
                 , DateTime.Now.ToString("dd/MM/yyyy"));
-                if (creditoParc.Count < 1)
-                    creditoParc = fechamento.retornarFechamentoSemDevolucao("CREDITO PARCELADO", DateTime.Now.ToString("dd/MM/yyyy")
+                if (creditoParc.Count < 1)*/
+
+                var    creditoParc = fechamento.retornarFechamentoSemDevolucao("CREDITO PARCELADO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
                 if (creditoParc.Count > 0) {
@@ -224,10 +225,10 @@ namespace WindowsFormsApp2
                 //para credito débito ==================================================================
                 PdfPTable table4 = new PdfPTable(5);
 
-                var debito = fechamento.retornarFechamentoComDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
+                /*var debito = fechamento.retornarFechamentoComDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
     , DateTime.Now.ToString("dd/MM/yyyy"));
-                if (debito.Count < 1)
-                    debito = fechamento.retornarFechamentoSemDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
+                if (debito.Count < 1)*/
+                    var debito = fechamento.retornarFechamentoSemDevolucao("DEBITO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
 
                 if (debito.Count > 0)
@@ -262,8 +263,10 @@ namespace WindowsFormsApp2
                 informacao.Clear();
 
                 informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
+               
                 DadosTableAdapters.Itens_DevolucaoTableAdapter auxDevo = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
-                var devolucao = auxDevo.retornarDevolucoes(DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
+                DadosTableAdapters.ItensDaVendaTableAdapter auxItensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
+                var devolucao = auxDevo.retornarDevolucoes(Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy")), Convert.ToDateTime(DateTime.Now.ToString("dd/MM/yyyy")));
                 if(devolucao.Count > 0)
                 {
                     DadosTableAdapters.ProdutoTableAdapter dadosProduto = new DadosTableAdapters.ProdutoTableAdapter();
@@ -277,6 +280,7 @@ namespace WindowsFormsApp2
 
                     for (int i = 0; i < devolucao.Count; i++)
                     {
+                        //planejar melhor essa parte de colocar os itens devolvidos no fechamento.
                         table5.AddCell(devolucao[i]["idItensDevolucao"].ToString());
 
                         table5.AddCell(devolucao[i]["idVenda"].ToString());
@@ -285,9 +289,12 @@ namespace WindowsFormsApp2
                         
                         table5.AddCell(produto[0]["prodNome"].ToString());
 
-                        table5.AddCell(devolucao[i]["quantidadeRetirada"].ToString());
+                        table5.AddCell(devolucao[i]["quantidadeDevolucao"].ToString());
 
-                        totalDevolucao += Convert.ToDouble(devolucao[i]["valorDeVenda"]);
+
+                        var itens = auxItensVenda.retornarItensDevolvidos(Convert.ToInt32(devolucao[i]["idVenda"]));
+
+                        totalDevolucao += Convert.ToDouble(produto[0][""]);
                     }
                     informacao.Add("\n\n-R$"+ totalDevolucao.ToString("F2"));
                 }

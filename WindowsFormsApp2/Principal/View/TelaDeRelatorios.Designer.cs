@@ -85,7 +85,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.78978F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.21021F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 294F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.painelPrincipal, 1, 0);
@@ -111,9 +111,9 @@
             this.panel4.Controls.Add(this.btnOntem);
             this.panel4.Controls.Add(this.btnHoje);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1018, 3);
+            this.panel4.Location = new System.Drawing.Point(1017, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(289, 603);
+            this.panel4.Size = new System.Drawing.Size(290, 603);
             this.panel4.TabIndex = 2;
             // 
             // btnPerso
@@ -290,7 +290,7 @@
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painelPrincipal.Location = new System.Drawing.Point(234, 3);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(778, 603);
+            this.painelPrincipal.Size = new System.Drawing.Size(777, 603);
             this.painelPrincipal.TabIndex = 0;
             // 
             // caixa1BindingSource
