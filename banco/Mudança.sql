@@ -33,7 +33,10 @@ CREATE TABLE ItensDaVenda (
     itensQtd INT,
     ItensTotal FLOAT,
 	estadoDevolucao TINYINT,
-	quantidadeRetirada INT
+	quantidadeRetirada INT,
+	valorDeVenda FLOAT,
+	valorDeCusto FLOAT,
+	codBarras VARCHAR(13)
 );
 
 CREATE TABLE Produto (
@@ -76,7 +79,8 @@ CREATE TABLE ItensDeSaida (
     qntItem INT,
     dataSaida DATE,
 	horaSaida TIME,
-    observacoes VARCHAR(300)
+    observacoes VARCHAR(300),
+
 );
 
 CREATE TABLE Funcionario (

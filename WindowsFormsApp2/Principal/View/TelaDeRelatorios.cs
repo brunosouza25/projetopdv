@@ -259,6 +259,42 @@ namespace WindowsFormsApp2
                     informacao.Add("\n\n" + "Total Débito: R$" + totalDebt.ToString("F2"));
                     doc.Add(informacao);
                 }
+                informacao.Clear();
+
+                informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
+                DadosTableAdapters.Itens_DevolucaoTableAdapter auxDevo = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
+                var devolucao = auxDevo.retornarDevolucoes(DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
+                if(devolucao.Count > 0)
+                {
+                    DadosTableAdapters.ProdutoTableAdapter dadosProduto = new DadosTableAdapters.ProdutoTableAdapter();
+                    PdfPTable table5 = new PdfPTable(3);
+                    table5.AddCell("Código da devolução");
+                    table5.AddCell("Código da Venda");
+                    table5.AddCell("Produto");
+                    table5.AddCell("Quantidade");
+
+                    double totalDevolucao = 0;
+
+                    for (int i = 0; i < devolucao.Count; i++)
+                    {
+                        table5.AddCell(devolucao[i]["idItensDevolucao"].ToString());
+
+                        table5.AddCell(devolucao[i]["idVenda"].ToString());
+
+                        var produto = dadosProduto.retornarProdutoPorId(Convert.ToInt32(devolucao[i]["idProduto"]));    
+                        
+                        table5.AddCell(produto[0]["prodNome"].ToString());
+
+                        table5.AddCell(devolucao[i]["quantidadeRetirada"].ToString());
+
+                        totalDevolucao += Convert.ToDouble(devolucao[i]["valorDeVenda"]);
+                    }
+                    informacao.Add("\n\n-R$"+ totalDevolucao.ToString("F2"));
+                }
+                informacao.Clear();
+                informacao.Add("\n\n" + (totalDin + totalDebt + totalCredVista + totalCredParc).ToString("F2"));
+
+
                 informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.GREEN);
 
                 informacao.Clear();
@@ -317,8 +353,8 @@ namespace WindowsFormsApp2
                         table.AddCell("R$ " + Convert.ToDouble(varProd[i]["valorCompra"]).ToString("F2"));
                         table.AddCell(varProd[i]["pagamentoTipo"].ToString());
 
-
                     }
+                    
                     doc.Add(table);
                     doc.Close();
                     MessageBox.Show("Relatório gerado com sucesso!");

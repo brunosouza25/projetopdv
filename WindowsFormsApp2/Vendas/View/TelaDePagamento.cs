@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
         DadosTableAdapters.VendaTableAdapter dadosVenda = new DadosTableAdapters.VendaTableAdapter();
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
-        DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
+        DadosTableAdapters.ProdutoTableAdapter produto2 = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
 
 
@@ -148,11 +148,11 @@ namespace WindowsFormsApp2
             int aux = itensDaLista.Length / 7;
             for (int i = 0; i < aux; i++)
             {
-
-                itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 6]), Convert.ToInt32(itensDaLista[i, 4]), total, 0, 0);
-                var prodQuant = produto.PegaQuantidadePorCod(itensDaLista[i, 2].ToString());
-
-                produto.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"]) - Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString());
+                var produto = dadosProdutos.pegarBancoCodigoBarras(itensDaLista[i, 2].ToString());
+                itensVenda.InserirItensVenda(Convert.ToInt32(aux2[0]["idVenda"]), Convert.ToInt32(itensDaLista[i, 6]), Convert.ToInt32(itensDaLista[i, 4]), total, 0, 0, Convert.ToDouble(itensDaLista[i, 3]), Convert.ToDouble(produto[0]["prodCusto"].ToString()), itensDaLista[i, 2].ToString());
+                var prodQuant = produto2.PegaQuantidadePorCod(itensDaLista[i, 2].ToString());
+                
+                produto2.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"]) - Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString());
             }
             
             MessageBox.Show("Venda realizada com sucesso!");

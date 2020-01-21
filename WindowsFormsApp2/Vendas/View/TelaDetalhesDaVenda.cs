@@ -64,7 +64,7 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string auxObs;
+                string auxObs;
             if (txtBoxObs.Text.Length < 300)
             {
                 auxObs = txtBoxObs.Text;
@@ -133,8 +133,9 @@ namespace WindowsFormsApp2.Vendas.View
                 */
                 Produto prod = new Produto();
                 prod.prodNome = auxProdutosVenda[i]["prodNome"].ToString();
-                prod.prodCodBarras = auxProdutosVenda[i]["prodCodBarras"].ToString();
-                prod.prodValor = Convert.ToDouble(auxProdutosVenda[i]["prodValor"]);
+                prod.prodCodBarras = auxProdutosVenda[i]["codBarras"].ToString();
+                prod.prodValor = Convert.ToDouble(auxProdutosVenda[i]["valorDeVenda"]);
+                //prod.prodValor = Convert.ToDouble(auxProdutosVenda[i]["prodValor"]);
                 prod.prodQuantidade = Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
 
                 item.SubItems.Add(prod.prodNome);

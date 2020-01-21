@@ -44,13 +44,13 @@
             this.btnOntem = new System.Windows.Forms.Button();
             this.btnHoje = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnFechamentoDiario = new System.Windows.Forms.ToolStripButton();
             this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.relatorioCaixaToolStrip = new System.Windows.Forms.ToolStrip();
             this.relatorioCaixaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.painelPrincipal = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnFechamentoDiario = new System.Windows.Forms.ToolStripButton();
             this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dados1 = new WindowsFormsApp2.Dados();
             this.caixa1TableAdapter = new WindowsFormsApp2.DadosTableAdapters.Caixa1TableAdapter();
@@ -62,9 +62,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.fillBy1ToolStrip.SuspendLayout();
             this.relatorioCaixaToolStrip.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dados1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
@@ -231,6 +231,24 @@
             this.panel3.Size = new System.Drawing.Size(225, 603);
             this.panel3.TabIndex = 1;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnFechamentoDiario});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 50);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(225, 25);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnFechamentoDiario
+            // 
+            this.btnFechamentoDiario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFechamentoDiario.Name = "btnFechamentoDiario";
+            this.btnFechamentoDiario.Size = new System.Drawing.Size(139, 22);
+            this.btnFechamentoDiario.Text = "Gerar fechamento diário";
+            this.btnFechamentoDiario.Click += new System.EventHandler(this.btnFechamentoDiario_Click);
+            // 
             // fillBy1ToolStrip
             // 
             this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -274,24 +292,6 @@
             this.painelPrincipal.Name = "painelPrincipal";
             this.painelPrincipal.Size = new System.Drawing.Size(778, 603);
             this.painelPrincipal.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFechamentoDiario});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 50);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(225, 25);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnFechamentoDiario
-            // 
-            this.btnFechamentoDiario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnFechamentoDiario.Name = "btnFechamentoDiario";
-            this.btnFechamentoDiario.Size = new System.Drawing.Size(139, 22);
-            this.btnFechamentoDiario.Text = "Gerar fechamento diário";
-            this.btnFechamentoDiario.Click += new System.EventHandler(this.btnFechamentoDiario_Click);
             // 
             // caixa1BindingSource
             // 
@@ -351,12 +351,12 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.fillBy1ToolStrip.ResumeLayout(false);
             this.fillBy1ToolStrip.PerformLayout();
             this.relatorioCaixaToolStrip.ResumeLayout(false);
             this.relatorioCaixaToolStrip.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dados1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
