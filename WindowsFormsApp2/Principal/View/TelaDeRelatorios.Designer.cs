@@ -52,12 +52,7 @@
             this.relatorioCaixaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.painelPrincipal = new System.Windows.Forms.Panel();
             this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dados1 = new WindowsFormsApp2.Dados();
-            this.caixa1TableAdapter = new WindowsFormsApp2.DadosTableAdapters.Caixa1TableAdapter();
-            this.tableAdapterManager = new WindowsFormsApp2.DadosTableAdapters.TableAdapterManager();
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dados = new WindowsFormsApp2.Dados();
-            this.dataTable2TableAdapter = new WindowsFormsApp2.DadosTableAdapters.DataTable2TableAdapter();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -66,9 +61,7 @@
             this.fillBy1ToolStrip.SuspendLayout();
             this.relatorioCaixaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dados1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,7 +78,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.78978F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.21021F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.painelPrincipal, 1, 0);
@@ -111,9 +104,9 @@
             this.panel4.Controls.Add(this.btnOntem);
             this.panel4.Controls.Add(this.btnHoje);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1017, 3);
+            this.panel4.Location = new System.Drawing.Point(1015, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(290, 603);
+            this.panel4.Size = new System.Drawing.Size(292, 603);
             this.panel4.TabIndex = 2;
             // 
             // btnPerso
@@ -219,6 +212,7 @@
             this.btnHoje.TabIndex = 23;
             this.btnHoje.Text = "Hoje";
             this.btnHoje.UseVisualStyleBackColor = true;
+            this.btnHoje.Click += new System.EventHandler(this.btnHoje_Click);
             // 
             // panel3
             // 
@@ -228,7 +222,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 603);
+            this.panel3.Size = new System.Drawing.Size(224, 603);
             this.panel3.TabIndex = 1;
             // 
             // toolStrip1
@@ -237,7 +231,7 @@
             this.btnFechamentoDiario});
             this.toolStrip1.Location = new System.Drawing.Point(0, 50);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(225, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(224, 25);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -255,7 +249,7 @@
             this.fillBy1ToolStripButton});
             this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 25);
             this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.Size = new System.Drawing.Size(225, 25);
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(224, 25);
             this.fillBy1ToolStrip.TabIndex = 6;
             this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
             // 
@@ -273,7 +267,7 @@
             this.relatorioCaixaToolStripButton});
             this.relatorioCaixaToolStrip.Location = new System.Drawing.Point(0, 0);
             this.relatorioCaixaToolStrip.Name = "relatorioCaixaToolStrip";
-            this.relatorioCaixaToolStrip.Size = new System.Drawing.Size(225, 25);
+            this.relatorioCaixaToolStrip.Size = new System.Drawing.Size(224, 25);
             this.relatorioCaixaToolStrip.TabIndex = 7;
             this.relatorioCaixaToolStrip.Text = "relatorioCaixaToolStrip";
             // 
@@ -288,54 +282,18 @@
             // painelPrincipal
             // 
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(234, 3);
+            this.painelPrincipal.Location = new System.Drawing.Point(233, 3);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(777, 603);
+            this.painelPrincipal.Size = new System.Drawing.Size(776, 603);
             this.painelPrincipal.TabIndex = 0;
             // 
             // caixa1BindingSource
             // 
             this.caixa1BindingSource.DataMember = "Caixa1";
-            this.caixa1BindingSource.DataSource = this.dados1;
-            // 
-            // dados1
-            // 
-            this.dados1.DataSetName = "Dados";
-            this.dados1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // caixa1TableAdapter
-            // 
-            this.caixa1TableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Caixa1TableAdapter = this.caixa1TableAdapter;
-            this.tableAdapterManager.CaixaTableAdapter = null;
-            this.tableAdapterManager.Itens_DevolucaoTableAdapter = null;
-            this.tableAdapterManager.ItensDaVendaTableAdapter = null;
-            this.tableAdapterManager.ItensDeEntradaTableAdapter = null;
-            this.tableAdapterManager.ItensDeSaidaTableAdapter = null;
-            this.tableAdapterManager.MetodoDePagamentoTableAdapter = null;
-            this.tableAdapterManager.Observacoes_SangriaTableAdapter = null;
-            this.tableAdapterManager.PagamentoTableAdapter = null;
-            this.tableAdapterManager.ProdutoTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApp2.DadosTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VendaTableAdapter = null;
             // 
             // dataTable2BindingSource
             // 
             this.dataTable2BindingSource.DataMember = "DataTable2";
-            this.dataTable2BindingSource.DataSource = this.dados;
-            // 
-            // dados
-            // 
-            this.dados.DataSetName = "Dados";
-            this.dados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable2TableAdapter
-            // 
-            this.dataTable2TableAdapter.ClearBeforeFill = true;
             // 
             // TelaDeRelatorios
             // 
@@ -358,9 +316,7 @@
             this.relatorioCaixaToolStrip.ResumeLayout(false);
             this.relatorioCaixaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dados1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dados)).EndInit();
             this.ResumeLayout(false);
 
         }

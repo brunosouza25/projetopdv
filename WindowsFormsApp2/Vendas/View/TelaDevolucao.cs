@@ -130,6 +130,7 @@ namespace WindowsFormsApp2.Vendas.View
                         item.SubItems.Add(auxProdutosVenda[i]["idItens"].ToString());
                         var auxProdutosVenda2 = detalheVenda.retornarVendaPorIdeCodItensVenda(codVenda, Convert.ToInt32(auxProdutosVenda[i]["idItens"]));
                         item.SubItems.Add(auxProdutosVenda2[0]["quantidadeRetirada"].ToString());
+                        item.SubItems.Add(auxProdutosVenda[i]["valorDeVenda"].ToString());
                         listaVendas.Items.Add(item);
                     }
                 }
@@ -170,13 +171,14 @@ namespace WindowsFormsApp2.Vendas.View
                         aux)
                     {
 
-                        //tenho que planejar o valor do produto para a devolução no fechamento do caixa
+                        //tenho que planejar o valor do produto para a devolução no fechamento do caixa*
                         detalheVenda.attItensVenda(1, Convert.ToInt32(txtBoxQnt.Text)+Convert.ToInt32(auxProdutosVenda[0]["quantidadeRetirada"])
                         , Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text));
                         var auxDevolucao = devolucao.retornarUltimoIdDevolucao();
+
                         devolucao.inserirDevolucao(Convert.ToInt32(auxDevolucao[0]["idItensDevolucao"]) + 1, codVenda
                         , Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text), Convert.ToInt32(txtBoxQnt.Text)
-                        , DateTime.Now.Date.ToString("dd/MM/yyyy"), );
+                        , DateTime.Now.Date.ToString("dd/MM/yyyy"), Convert.ToDouble(listaVendas.SelectedItems[0].SubItems[8].Text));
 
                         
                         var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text));

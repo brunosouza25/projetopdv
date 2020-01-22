@@ -130,7 +130,7 @@ CREATE TABLE Itens_Devolucao (
 	quantidadeDevolucao INT,
     observacoes VARCHAR(300),
 	dataDevolucao DATE,
-	valorVenda FLOAT
+	valorProduto FLOAT
 	/*valorDevolucao FLOAT*/
 );
  
@@ -163,7 +163,7 @@ INSERT INTO MetodoDePagamento VALUES (4,'DEBITO')
 INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 
-INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null)
+INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 
 

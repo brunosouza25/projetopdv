@@ -159,7 +159,6 @@ namespace WindowsFormsApp2.Vendas.View
                 }
                 double aux = Convert.ToDouble(auxVenda[i]["prodValor"]) * Convert.ToInt32(auxProdutosVenda[i]["itensQtd"]);
                 item.SubItems.Add(aux.ToString("F2"));
-
                 listaVendas.Items.Add(item);
             }
         }

@@ -41,13 +41,14 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idProd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idItens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnDevolver = new System.Windows.Forms.Button();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.painelBase.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -125,7 +126,8 @@
             this.columnHeader4,
             this.idProd,
             this.idItens,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
             this.listaVendas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listaVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVendas.FullRowSelect = true;
@@ -145,24 +147,24 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Código da venda";
-            this.columnHeader1.Width = 131;
+            this.columnHeader1.Text = "Cód da venda";
+            this.columnHeader1.Width = 105;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Data da venda";
-            this.columnHeader2.Width = 183;
+            this.columnHeader2.Width = 128;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Produto";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.columnHeader3.Width = 98;
+            this.columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Qnt";
-            this.columnHeader4.Width = 83;
+            this.columnHeader4.Width = 72;
             // 
             // idProd
             // 
@@ -173,6 +175,11 @@
             // 
             this.idItens.Text = "idItens";
             this.idItens.Width = 0;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Qnt Retirada";
+            this.columnHeader5.Width = 110;
             // 
             // panel4
             // 
@@ -236,10 +243,10 @@
             this.btnDevolver.UseVisualStyleBackColor = true;
             this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
-            // columnHeader5
+            // columnHeader6
             // 
-            this.columnHeader5.Text = "Qnt Retirada";
-            this.columnHeader5.Width = 163;
+            this.columnHeader6.Text = "Valor de Venda";
+            this.columnHeader6.Width = 120;
             // 
             // TelaDevolucao
             // 
@@ -284,5 +291,6 @@
         private System.Windows.Forms.ColumnHeader idProd;
         private System.Windows.Forms.ColumnHeader idItens;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

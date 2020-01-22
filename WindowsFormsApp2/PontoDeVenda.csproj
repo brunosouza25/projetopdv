@@ -80,10 +80,10 @@
     <Compile Include="Dados.cs">
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dados1.Designer.cs">
+    <Compile Include="Dados.Designer.cs">
+      <DependentUpon>Dados.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
     <Compile Include="Estoque\View\EntradaDeProdutos.cs">
       <SubType>UserControl</SubType>
@@ -275,7 +275,7 @@
     <None Include="Dados.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Dados1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Dados.Designer.cs</LastGenOutput>
     </None>
     <None Include="Dados.xss">
       <DependentUpon>Dados.xsd</DependentUpon>
