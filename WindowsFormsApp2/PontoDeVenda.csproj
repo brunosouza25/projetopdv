@@ -81,9 +81,9 @@
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
     <Compile Include="Dados.Designer.cs">
-      <DependentUpon>Dados.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
     <Compile Include="Estoque\View\EntradaDeProdutos.cs">
       <SubType>UserControl</SubType>
@@ -273,9 +273,9 @@
       <DependentUpon>Dados.xsd</DependentUpon>
     </None>
     <None Include="Dados.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Dados.xss">
       <DependentUpon>Dados.xsd</DependentUpon>
@@ -370,6 +370,14 @@
   <ItemGroup>
     <None Include="Resources\retirar.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

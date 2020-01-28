@@ -4,27 +4,5 @@
 
     partial class Dados
     {
-        partial class relatórioVendasDataTable
-        {
-        }
-
-        partial class ProdutoDataTable
-        {
-        }
-    }
-}
-
-namespace WindowsFormsApp2.DadosTableAdapters
-{
-    partial class ItensDeEntradaTableAdapter
-    {
-    }
-
-    partial class DataRelatorioTableAdapter
-    {
-    }
-
-    public partial class ProdutoTableAdapter
-    {
     }
 }

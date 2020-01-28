@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WindowsFormsApp2;
 namespace WindowsFormsApp2.Vendas.View
 {
     public partial class TelaDevolucao : Form

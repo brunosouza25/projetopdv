@@ -54,24 +54,42 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApp2.exe" size="760800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApp2.exe" size="761824">
       <assemblyIdentity name="WindowsFormsApp2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ztIZ18ojle9dSoaZosZy+JuVweWE1z6MKjz0jhoMRmc=</dsig:DigestValue>
+        <dsig:DigestValue>kRk59OKh+meESwYn7ii7YYEM3d8pzV6duxq5VxSlqHk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="WindowsFormsApp2.exe.config" size="538">
+  <file name="Database.mdf" size="8388608" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>XsAExyDMNDpTQRpsy5vzkJ9kBloUjbHDlFgw5lY876s=</dsig:DigestValue>
+      <dsig:DigestValue>h7PY0KGVhc/EguyOCYFHz/41DfrOqgm1i83N2DCHuF8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Database_log.ldf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>osIHNeyuVtogRn1zYNMRjk9T+Ieps4KLYY5CrKtOWCM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="WindowsFormsApp2.exe.config" size="559">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>RUod47joZD3ioUbuQ8yVvi0mFosH7RIb9assnueur/k=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

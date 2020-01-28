@@ -6,6 +6,7 @@ using iTextSharp.text.pdf;
 using System.IO;
 
 
+
 namespace WindowsFormsApp2
 {
     public partial class TelaDeRelatorios : UserControl
@@ -24,6 +25,7 @@ namespace WindowsFormsApp2
             {
                 try
                 {
+                    
                     DadosTableAdapters.DataTable2TableAdapter dadosProdutos = new DadosTableAdapters.DataTable2TableAdapter();
                     var varProd = dadosProdutos.GetDataBy1();
 

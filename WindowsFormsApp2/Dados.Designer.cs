@@ -50,29 +50,29 @@ namespace WindowsFormsApp2 {
         
         private Itens_DevolucaoDataTable tableItens_Devolucao;
         
-        private global::System.Data.DataRelation relationFK__Pagamento__idMPa__5165187F;
-        
-        private global::System.Data.DataRelation relationFK__Pagamento__idVen__5441852A;
-        
-        private global::System.Data.DataRelation relationFK__ItensDaVe__idPro__534D60F1;
-        
-        private global::System.Data.DataRelation relationFK__ItensDaVe__idVen__52593CB8;
-        
-        private global::System.Data.DataRelation relationFK__ItensDaVe__idVen__5441852A;
-        
-        private global::System.Data.DataRelation relationFK__Venda__idCaixa__5DCAEF64;
-        
-        private global::System.Data.DataRelation relationFK__ItensDaVe__idVen__5441852A1;
-        
-        private global::System.Data.DataRelation relationFK__ItensDeEn__idPro__5EBF139D;
-        
-        private global::System.Data.DataRelation relationFK__ItensDeSa__idPro__5CD6CB2B;
-        
-        private global::System.Data.DataRelation relationFK__Observaco__idCai__02084FDA;
+        private global::System.Data.DataRelation relationFK__ItensDaVe__idPro__5DCAEF64;
         
         private global::System.Data.DataRelation relationFK__Itens_Dev__idVen__6477ECF3;
         
-        private global::System.Data.DataRelation relationFK__ItensDaVe__idPro__5DCAEF64;
+        private global::System.Data.DataRelation relationFK__Observaco__idCai__02084FDA;
+        
+        private global::System.Data.DataRelation relationFK__ItensDeSa__idPro__5CD6CB2B;
+        
+        private global::System.Data.DataRelation relationFK__ItensDeEn__idPro__5EBF139D;
+        
+        private global::System.Data.DataRelation relationFK__ItensDaVe__idVen__5441852A1;
+        
+        private global::System.Data.DataRelation relationFK__Venda__idCaixa__5DCAEF64;
+        
+        private global::System.Data.DataRelation relationFK__ItensDaVe__idVen__5441852A;
+        
+        private global::System.Data.DataRelation relationFK__ItensDaVe__idVen__52593CB8;
+        
+        private global::System.Data.DataRelation relationFK__ItensDaVe__idPro__534D60F1;
+        
+        private global::System.Data.DataRelation relationFK__Pagamento__idVen__5441852A;
+        
+        private global::System.Data.DataRelation relationFK__Pagamento__idMPa__5165187F;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -506,18 +506,18 @@ namespace WindowsFormsApp2 {
                     this.tableItens_Devolucao.InitVars();
                 }
             }
-            this.relationFK__Pagamento__idMPa__5165187F = this.Relations["FK__Pagamento__idMPa__5165187F"];
-            this.relationFK__Pagamento__idVen__5441852A = this.Relations["FK__Pagamento__idVen__5441852A"];
-            this.relationFK__ItensDaVe__idPro__534D60F1 = this.Relations["FK__ItensDaVe__idPro__534D60F1"];
-            this.relationFK__ItensDaVe__idVen__52593CB8 = this.Relations["FK__ItensDaVe__idVen__52593CB8"];
-            this.relationFK__ItensDaVe__idVen__5441852A = this.Relations["FK__ItensDaVe__idVen__5441852A"];
-            this.relationFK__Venda__idCaixa__5DCAEF64 = this.Relations["FK__Venda__idCaixa__5DCAEF64"];
-            this.relationFK__ItensDaVe__idVen__5441852A1 = this.Relations["FK__ItensDaVe__idVen__5441852A1"];
-            this.relationFK__ItensDeEn__idPro__5EBF139D = this.Relations["FK__ItensDeEn__idPro__5EBF139D"];
-            this.relationFK__ItensDeSa__idPro__5CD6CB2B = this.Relations["FK__ItensDeSa__idPro__5CD6CB2B"];
-            this.relationFK__Observaco__idCai__02084FDA = this.Relations["FK__Observaco__idCai__02084FDA"];
-            this.relationFK__Itens_Dev__idVen__6477ECF3 = this.Relations["FK__Itens_Dev__idVen__6477ECF3"];
             this.relationFK__ItensDaVe__idPro__5DCAEF64 = this.Relations["FK__ItensDaVe__idPro__5DCAEF64"];
+            this.relationFK__Itens_Dev__idVen__6477ECF3 = this.Relations["FK__Itens_Dev__idVen__6477ECF3"];
+            this.relationFK__Observaco__idCai__02084FDA = this.Relations["FK__Observaco__idCai__02084FDA"];
+            this.relationFK__ItensDeSa__idPro__5CD6CB2B = this.Relations["FK__ItensDeSa__idPro__5CD6CB2B"];
+            this.relationFK__ItensDeEn__idPro__5EBF139D = this.Relations["FK__ItensDeEn__idPro__5EBF139D"];
+            this.relationFK__ItensDaVe__idVen__5441852A1 = this.Relations["FK__ItensDaVe__idVen__5441852A1"];
+            this.relationFK__Venda__idCaixa__5DCAEF64 = this.Relations["FK__Venda__idCaixa__5DCAEF64"];
+            this.relationFK__ItensDaVe__idVen__5441852A = this.Relations["FK__ItensDaVe__idVen__5441852A"];
+            this.relationFK__ItensDaVe__idVen__52593CB8 = this.Relations["FK__ItensDaVe__idVen__52593CB8"];
+            this.relationFK__ItensDaVe__idPro__534D60F1 = this.Relations["FK__ItensDaVe__idPro__534D60F1"];
+            this.relationFK__Pagamento__idVen__5441852A = this.Relations["FK__Pagamento__idVen__5441852A"];
+            this.relationFK__Pagamento__idMPa__5165187F = this.Relations["FK__Pagamento__idMPa__5165187F"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,54 +554,54 @@ namespace WindowsFormsApp2 {
             base.Tables.Add(this.tableObservacoes_Sangria);
             this.tableItens_Devolucao = new Itens_DevolucaoDataTable();
             base.Tables.Add(this.tableItens_Devolucao);
-            this.relationFK__Pagamento__idMPa__5165187F = new global::System.Data.DataRelation("FK__Pagamento__idMPa__5165187F", new global::System.Data.DataColumn[] {
-                        this.tableMetodoDePagamento.idMPagamentoColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePagamento.idMPagamentoColumn}, false);
-            this.Relations.Add(this.relationFK__Pagamento__idMPa__5165187F);
-            this.relationFK__Pagamento__idVen__5441852A = new global::System.Data.DataRelation("FK__Pagamento__idVen__5441852A", new global::System.Data.DataColumn[] {
-                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePagamento.idVendaColumn}, false);
-            this.Relations.Add(this.relationFK__Pagamento__idVen__5441852A);
-            this.relationFK__ItensDaVe__idPro__534D60F1 = new global::System.Data.DataRelation("FK__ItensDaVe__idPro__534D60F1", new global::System.Data.DataColumn[] {
-                        this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItensDaVenda.idProdutoColumn}, false);
-            this.Relations.Add(this.relationFK__ItensDaVe__idPro__534D60F1);
-            this.relationFK__ItensDaVe__idVen__52593CB8 = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__52593CB8", new global::System.Data.DataColumn[] {
-                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItensDaVenda.idVendaColumn}, false);
-            this.Relations.Add(this.relationFK__ItensDaVe__idVen__52593CB8);
-            this.relationFK__ItensDaVe__idVen__5441852A = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__5441852A", new global::System.Data.DataColumn[] {
-                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDataTable2.idVendaColumn}, false);
-            this.Relations.Add(this.relationFK__ItensDaVe__idVen__5441852A);
-            this.relationFK__Venda__idCaixa__5DCAEF64 = new global::System.Data.DataRelation("FK__Venda__idCaixa__5DCAEF64", new global::System.Data.DataColumn[] {
-                        this.tableCaixa.idCaixaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableVenda.idCaixaColumn}, false);
-            this.Relations.Add(this.relationFK__Venda__idCaixa__5DCAEF64);
-            this.relationFK__ItensDaVe__idVen__5441852A1 = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__5441852A1", new global::System.Data.DataColumn[] {
-                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
-                        this.tablerelatórioVendas.idVendaColumn}, false);
-            this.Relations.Add(this.relationFK__ItensDaVe__idVen__5441852A1);
-            this.relationFK__ItensDeEn__idPro__5EBF139D = new global::System.Data.DataRelation("FK__ItensDeEn__idPro__5EBF139D", new global::System.Data.DataColumn[] {
-                        this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItensDeEntrada.idProdutoColumn}, false);
-            this.Relations.Add(this.relationFK__ItensDeEn__idPro__5EBF139D);
-            this.relationFK__ItensDeSa__idPro__5CD6CB2B = new global::System.Data.DataRelation("FK__ItensDeSa__idPro__5CD6CB2B", new global::System.Data.DataColumn[] {
-                        this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItensDeSaida.idProdutoColumn}, false);
-            this.Relations.Add(this.relationFK__ItensDeSa__idPro__5CD6CB2B);
-            this.relationFK__Observaco__idCai__02084FDA = new global::System.Data.DataRelation("FK__Observaco__idCai__02084FDA", new global::System.Data.DataColumn[] {
-                        this.tableCaixa.idCaixaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableObservacoes_Sangria.idCaixaColumn}, false);
-            this.Relations.Add(this.relationFK__Observaco__idCai__02084FDA);
-            this.relationFK__Itens_Dev__idVen__6477ECF3 = new global::System.Data.DataRelation("FK__Itens_Dev__idVen__6477ECF3", new global::System.Data.DataColumn[] {
-                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItens_Devolucao.idVendaColumn}, false);
-            this.Relations.Add(this.relationFK__Itens_Dev__idVen__6477ECF3);
             this.relationFK__ItensDaVe__idPro__5DCAEF64 = new global::System.Data.DataRelation("FK__ItensDaVe__idPro__5DCAEF64", new global::System.Data.DataColumn[] {
                         this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
                         this.tablerelatórioVendas.idProdutoColumn}, false);
             this.Relations.Add(this.relationFK__ItensDaVe__idPro__5DCAEF64);
+            this.relationFK__Itens_Dev__idVen__6477ECF3 = new global::System.Data.DataRelation("FK__Itens_Dev__idVen__6477ECF3", new global::System.Data.DataColumn[] {
+                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItens_Devolucao.idVendaColumn}, false);
+            this.Relations.Add(this.relationFK__Itens_Dev__idVen__6477ECF3);
+            this.relationFK__Observaco__idCai__02084FDA = new global::System.Data.DataRelation("FK__Observaco__idCai__02084FDA", new global::System.Data.DataColumn[] {
+                        this.tableCaixa.idCaixaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableObservacoes_Sangria.idCaixaColumn}, false);
+            this.Relations.Add(this.relationFK__Observaco__idCai__02084FDA);
+            this.relationFK__ItensDeSa__idPro__5CD6CB2B = new global::System.Data.DataRelation("FK__ItensDeSa__idPro__5CD6CB2B", new global::System.Data.DataColumn[] {
+                        this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItensDeSaida.idProdutoColumn}, false);
+            this.Relations.Add(this.relationFK__ItensDeSa__idPro__5CD6CB2B);
+            this.relationFK__ItensDeEn__idPro__5EBF139D = new global::System.Data.DataRelation("FK__ItensDeEn__idPro__5EBF139D", new global::System.Data.DataColumn[] {
+                        this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItensDeEntrada.idProdutoColumn}, false);
+            this.Relations.Add(this.relationFK__ItensDeEn__idPro__5EBF139D);
+            this.relationFK__ItensDaVe__idVen__5441852A1 = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__5441852A1", new global::System.Data.DataColumn[] {
+                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
+                        this.tablerelatórioVendas.idVendaColumn}, false);
+            this.Relations.Add(this.relationFK__ItensDaVe__idVen__5441852A1);
+            this.relationFK__Venda__idCaixa__5DCAEF64 = new global::System.Data.DataRelation("FK__Venda__idCaixa__5DCAEF64", new global::System.Data.DataColumn[] {
+                        this.tableCaixa.idCaixaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVenda.idCaixaColumn}, false);
+            this.Relations.Add(this.relationFK__Venda__idCaixa__5DCAEF64);
+            this.relationFK__ItensDaVe__idVen__5441852A = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__5441852A", new global::System.Data.DataColumn[] {
+                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDataTable2.idVendaColumn}, false);
+            this.Relations.Add(this.relationFK__ItensDaVe__idVen__5441852A);
+            this.relationFK__ItensDaVe__idVen__52593CB8 = new global::System.Data.DataRelation("FK__ItensDaVe__idVen__52593CB8", new global::System.Data.DataColumn[] {
+                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItensDaVenda.idVendaColumn}, false);
+            this.Relations.Add(this.relationFK__ItensDaVe__idVen__52593CB8);
+            this.relationFK__ItensDaVe__idPro__534D60F1 = new global::System.Data.DataRelation("FK__ItensDaVe__idPro__534D60F1", new global::System.Data.DataColumn[] {
+                        this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItensDaVenda.idProdutoColumn}, false);
+            this.Relations.Add(this.relationFK__ItensDaVe__idPro__534D60F1);
+            this.relationFK__Pagamento__idVen__5441852A = new global::System.Data.DataRelation("FK__Pagamento__idVen__5441852A", new global::System.Data.DataColumn[] {
+                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePagamento.idVendaColumn}, false);
+            this.Relations.Add(this.relationFK__Pagamento__idVen__5441852A);
+            this.relationFK__Pagamento__idMPa__5165187F = new global::System.Data.DataRelation("FK__Pagamento__idMPa__5165187F", new global::System.Data.DataColumn[] {
+                        this.tableMetodoDePagamento.idMPagamentoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePagamento.idMPagamentoColumn}, false);
+            this.Relations.Add(this.relationFK__Pagamento__idMPa__5165187F);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5503,34 +5503,12 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PagamentoRow[] GetPagamentoRows() {
-                if ((this.Table.ChildRelations["FK__Pagamento__idVen__5441852A"] == null)) {
-                    return new PagamentoRow[0];
+            public Itens_DevolucaoRow[] GetItens_DevolucaoRows() {
+                if ((this.Table.ChildRelations["FK__Itens_Dev__idVen__6477ECF3"] == null)) {
+                    return new Itens_DevolucaoRow[0];
                 }
                 else {
-                    return ((PagamentoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Pagamento__idVen__5441852A"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ItensDaVendaRow[] GetItensDaVendaRows() {
-                if ((this.Table.ChildRelations["FK__ItensDaVe__idVen__52593CB8"] == null)) {
-                    return new ItensDaVendaRow[0];
-                }
-                else {
-                    return ((ItensDaVendaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idVen__52593CB8"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable2Row[] GetDataTable2Rows() {
-                if ((this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"] == null)) {
-                    return new DataTable2Row[0];
-                }
-                else {
-                    return ((DataTable2Row[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"])));
+                    return ((Itens_DevolucaoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Itens_Dev__idVen__6477ECF3"])));
                 }
             }
             
@@ -5547,12 +5525,34 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Itens_DevolucaoRow[] GetItens_DevolucaoRows() {
-                if ((this.Table.ChildRelations["FK__Itens_Dev__idVen__6477ECF3"] == null)) {
-                    return new Itens_DevolucaoRow[0];
+            public DataTable2Row[] GetDataTable2Rows() {
+                if ((this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"] == null)) {
+                    return new DataTable2Row[0];
                 }
                 else {
-                    return ((Itens_DevolucaoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Itens_Dev__idVen__6477ECF3"])));
+                    return ((DataTable2Row[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idVen__5441852A"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ItensDaVendaRow[] GetItensDaVendaRows() {
+                if ((this.Table.ChildRelations["FK__ItensDaVe__idVen__52593CB8"] == null)) {
+                    return new ItensDaVendaRow[0];
+                }
+                else {
+                    return ((ItensDaVendaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idVen__52593CB8"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PagamentoRow[] GetPagamentoRows() {
+                if ((this.Table.ChildRelations["FK__Pagamento__idVen__5441852A"] == null)) {
+                    return new PagamentoRow[0];
+                }
+                else {
+                    return ((PagamentoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Pagamento__idVen__5441852A"])));
                 }
             }
         }
@@ -5752,23 +5752,12 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ItensDaVendaRow[] GetItensDaVendaRows() {
-                if ((this.Table.ChildRelations["FK__ItensDaVe__idPro__534D60F1"] == null)) {
-                    return new ItensDaVendaRow[0];
+            public relatórioVendasRow[] GetrelatórioVendasRows() {
+                if ((this.Table.ChildRelations["FK__ItensDaVe__idPro__5DCAEF64"] == null)) {
+                    return new relatórioVendasRow[0];
                 }
                 else {
-                    return ((ItensDaVendaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idPro__534D60F1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ItensDeEntradaRow[] GetItensDeEntradaRows() {
-                if ((this.Table.ChildRelations["FK__ItensDeEn__idPro__5EBF139D"] == null)) {
-                    return new ItensDeEntradaRow[0];
-                }
-                else {
-                    return ((ItensDeEntradaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDeEn__idPro__5EBF139D"])));
+                    return ((relatórioVendasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idPro__5DCAEF64"])));
                 }
             }
             
@@ -5785,12 +5774,23 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public relatórioVendasRow[] GetrelatórioVendasRows() {
-                if ((this.Table.ChildRelations["FK__ItensDaVe__idPro__5DCAEF64"] == null)) {
-                    return new relatórioVendasRow[0];
+            public ItensDeEntradaRow[] GetItensDeEntradaRows() {
+                if ((this.Table.ChildRelations["FK__ItensDeEn__idPro__5EBF139D"] == null)) {
+                    return new ItensDeEntradaRow[0];
                 }
                 else {
-                    return ((relatórioVendasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idPro__5DCAEF64"])));
+                    return ((ItensDeEntradaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDeEn__idPro__5EBF139D"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ItensDaVendaRow[] GetItensDaVendaRows() {
+                if ((this.Table.ChildRelations["FK__ItensDaVe__idPro__534D60F1"] == null)) {
+                    return new ItensDaVendaRow[0];
+                }
+                else {
+                    return ((ItensDaVendaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__ItensDaVe__idPro__534D60F1"])));
                 }
             }
         }
@@ -5891,23 +5891,23 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MetodoDePagamentoRow MetodoDePagamentoRow {
-                get {
-                    return ((MetodoDePagamentoRow)(this.GetParentRow(this.Table.ParentRelations["FK__Pagamento__idMPa__5165187F"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Pagamento__idMPa__5165187F"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VendaRow VendaRow {
                 get {
                     return ((VendaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Pagamento__idVen__5441852A"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Pagamento__idVen__5441852A"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MetodoDePagamentoRow MetodoDePagamentoRow {
+                get {
+                    return ((MetodoDePagamentoRow)(this.GetParentRow(this.Table.ParentRelations["FK__Pagamento__idMPa__5165187F"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Pagamento__idMPa__5165187F"]);
                 }
             }
             
@@ -6197,23 +6197,23 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProdutoRow ProdutoRow {
-                get {
-                    return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idPro__534D60F1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__ItensDaVe__idPro__534D60F1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VendaRow VendaRow {
                 get {
                     return ((VendaRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idVen__52593CB8"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__ItensDaVe__idVen__52593CB8"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ProdutoRow ProdutoRow {
+                get {
+                    return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idPro__534D60F1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__ItensDaVe__idPro__534D60F1"]);
                 }
             }
             
@@ -7023,23 +7023,23 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VendaRow[] GetVendaRows() {
-                if ((this.Table.ChildRelations["FK__Venda__idCaixa__5DCAEF64"] == null)) {
-                    return new VendaRow[0];
-                }
-                else {
-                    return ((VendaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Venda__idCaixa__5DCAEF64"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Observacoes_SangriaRow[] GetObservacoes_SangriaRows() {
                 if ((this.Table.ChildRelations["FK__Observaco__idCai__02084FDA"] == null)) {
                     return new Observacoes_SangriaRow[0];
                 }
                 else {
                     return ((Observacoes_SangriaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Observaco__idCai__02084FDA"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VendaRow[] GetVendaRows() {
+                if ((this.Table.ChildRelations["FK__Venda__idCaixa__5DCAEF64"] == null)) {
+                    return new VendaRow[0];
+                }
+                else {
+                    return ((VendaRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Venda__idCaixa__5DCAEF64"])));
                 }
             }
         }
@@ -7471,23 +7471,23 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VendaRow VendaRow {
-                get {
-                    return ((VendaRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idVen__5441852A1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__ItensDaVe__idVen__5441852A1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProdutoRow ProdutoRow {
                 get {
                     return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idPro__5DCAEF64"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__ItensDaVe__idPro__5DCAEF64"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VendaRow VendaRow {
+                get {
+                    return ((VendaRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idVen__5441852A1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__ItensDaVe__idVen__5441852A1"]);
                 }
             }
             
@@ -9032,7 +9032,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9673,7 +9673,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9731,8 +9731,8 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodEstado", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "prodEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        prodQuantidade AS Expr1, Produto.*\r\nFROM            Produto\r\nWHERE " +
-                "       (idProduto = @idProduto)";
+            this._commandCollection[6].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
+                " prodValor FROM Produto WHERE (idProduto = @idProduto)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
@@ -9743,9 +9743,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
-                " prodValor FROM Produto WHERE ((prodNome = @prodNome or prodCodBarras = @prodCod" +
-                "Barras) and prodEstado = 0 and prodQuantidade > 0)";
+            this._commandCollection[8].CommandText = @"SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, prodValor FROM Produto WHERE (prodNome = @prodNome) AND (prodEstado = 0) AND (prodQuantidade > 0) OR (prodEstado = 0) AND (prodQuantidade > 0) AND (prodCodBarras = @prodCodBarras)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9758,21 +9756,21 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[10].Connection = this.Connection;
             this._commandCollection[10].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
-                " prodValor FROM Produto WHERE ((prodNome = @prodNome or prodCodBarras = @prodCod" +
-                "Barras) and prodEstado = 0)";
+                " prodValor FROM Produto WHERE (prodNome = @prodNome) AND (prodEstado = 0) OR (pr" +
+                "odEstado = 0) AND (prodCodBarras = @prodCodBarras)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, " +
-                "prodEstado FROM Produto\r\nWHERE prodNome like \'%\'+@prodNome+\'%\'";
+            this._commandCollection[11].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
+                " prodValor FROM Produto WHERE (prodNome LIKE \'%\' + @prodNome + \'%\')";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = "SELECT        prodNome, prodCodBarras, idProduto, prodValor\r\nFROM            Prod" +
-                "uto\r\nWHERE        (idProduto = @idProduto)";
+            this._commandCollection[12].CommandText = "SELECT idProduto, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade," +
+                " prodValor FROM Produto WHERE (idProduto = @idProduto)";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -10542,7 +10540,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10921,7 +10919,7 @@ SELECT idMPagamento, pagamentoTipo FROM MetodoDePagamento WHERE (idMPagamento = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11241,7 +11239,7 @@ SELECT idMPagamento, pagamentoTipo FROM MetodoDePagamento WHERE (idMPagamento = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11710,7 +11708,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda and Itens_Devolucao.idVenda = @idV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12095,7 +12093,7 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12141,24 +12139,25 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCaixa", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCaix" +
-                "a FROM dbo.Caixa";
+            this._commandCollection[5].CommandText = "SELECT aberturaCaixa, dataCaixa, estadoCaixa, fechamentoCaixa, idCaixa, valorAtua" +
+                "l FROM Caixa";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCaix" +
-                "a FROM dbo.Caixa\r\nWHERE dataCaixa = @dataCaixa";
+            this._commandCollection[6].CommandText = "SELECT aberturaCaixa, dataCaixa, estadoCaixa, fechamentoCaixa, idCaixa, valorAtua" +
+                "l FROM Caixa WHERE (dataCaixa = @dataCaixa)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataCaixa", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT valorAtual, fechamentoCaixa, idCaixa, estadoCaixa from CAIXA\r\nWHERE idCaix" +
-                "a = @idCaixa";
+            this._commandCollection[7].CommandText = "SELECT aberturaCaixa, dataCaixa, estadoCaixa, fechamentoCaixa, idCaixa, valorAtua" +
+                "l FROM Caixa WHERE (idCaixa = @idCaixa)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCaixa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT top 1 idCaixa FROM Caixa\r\nORDER BY idCaixa desc \r\n\r\n";
+            this._commandCollection[8].CommandText = "SELECT TOP (1) aberturaCaixa, dataCaixa, estadoCaixa, fechamentoCaixa, idCaixa, v" +
+                "alorAtual FROM Caixa ORDER BY idCaixa DESC";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12774,7 +12773,7 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13055,7 +13054,7 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13496,7 +13495,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13955,7 +13954,7 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13990,13 +13989,13 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saidaEstado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "saidaEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT TOP (1) dataSaida, saidaEstado, horaSaida, idProduto, idSecundarioItensSai" +
-                "da, observacoes, qntItem FROM ItensDeSaida ORDER BY idSecundarioItensSaida DESC";
+            this._commandCollection[3].CommandText = "SELECT TOP (1) dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observaco" +
+                "es, qntItem, saidaEstado FROM ItensDeSaida ORDER BY idSecundarioItensSaida DESC";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT dataSaida, saidaEstado, horaSaida, idProduto, idSecundarioItensSaida, obse" +
-                "rvacoes, qntItem FROM ItensDeSaida WHERE (idSecundarioItensSaida = @idSecundario" +
+            this._commandCollection[4].CommandText = "SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntI" +
+                "tem, saidaEstado FROM ItensDeSaida WHERE (idSecundarioItensSaida = @idSecundario" +
                 "ItensSaida)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensSaida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14415,7 +14414,7 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14703,13 +14702,13 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.BD_PDVConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idItensDevolucao, idVenda, idProduto, quantidadeDevolucao, valorPro" +
@@ -14750,6 +14749,11 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
             this._commandCollection[4].CommandText = "SELECT TOP (1) dataDevolucao, idItensDevolucao, idProduto, idVenda, quantidadeDev" +
                 "olucao, valorProduto FROM Itens_Devolucao ORDER BY idItensDevolucao DESC";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        idVenda\r\nFROM            Itens_Devolucao\r\nWHERE idVenda = @idVenda";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14815,6 +14819,23 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Dados.Itens_DevolucaoDataTable retornarUltimoIdDevolucao() {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            Dados.Itens_DevolucaoDataTable dataTable = new Dados.Itens_DevolucaoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.Itens_DevolucaoDataTable verificarDevolucao(global::System.Nullable<int> idVenda) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             Dados.Itens_DevolucaoDataTable dataTable = new Dados.Itens_DevolucaoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
