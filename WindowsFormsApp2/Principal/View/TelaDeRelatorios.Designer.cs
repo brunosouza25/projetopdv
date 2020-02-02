@@ -239,8 +239,8 @@
             // 
             this.btnFechamentoDiario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnFechamentoDiario.Name = "btnFechamentoDiario";
-            this.btnFechamentoDiario.Size = new System.Drawing.Size(139, 22);
-            this.btnFechamentoDiario.Text = "Gerar fechamento diário";
+            this.btnFechamentoDiario.Size = new System.Drawing.Size(113, 22);
+            this.btnFechamentoDiario.Text = " Fechamento diário";
             this.btnFechamentoDiario.Click += new System.EventHandler(this.btnFechamentoDiario_Click);
             // 
             // fillBy1ToolStrip

@@ -158,7 +158,6 @@ namespace WindowsFormsApp2.Vendas.View
 
                     var auxProdutosVenda = detalheVenda.retornarVendaPorIdeCodItensVenda(codVenda, Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[6].Text));
                     int aux3 = 0;
-                    MessageBox.Show(auxProdutosVenda[0]["quantidadeRetirada"].ToString());
                     if (Convert.ToInt32(auxProdutosVenda[0]["quantidadeRetirada"]) != 0)
                     {
                         aux = Convert.ToInt32(auxProdutosVenda[0]["quantidadeRetirada"]);
@@ -182,7 +181,6 @@ namespace WindowsFormsApp2.Vendas.View
 
                         
                         var aux2 = dadosProdutos.PegaQuantidade(Convert.ToInt32(listaVendas.SelectedItems[0].SubItems[5].Text));
-                        MessageBox.Show(aux2[0]["prodQuantidade"].ToString());
                         aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) + quantidade;
                         dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
 

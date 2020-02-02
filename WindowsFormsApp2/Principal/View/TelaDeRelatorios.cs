@@ -5,8 +5,6 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 
-
-
 namespace WindowsFormsApp2
 {
     public partial class TelaDeRelatorios : UserControl
@@ -16,8 +14,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
 
         }
-
-
 
         private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
         {
@@ -86,6 +82,7 @@ namespace WindowsFormsApp2
             {
                 double totalDin = 0, totalCredVista = 0, totalCredParc = 0, totalDebt = 0, descontoDevolucao = 0;
                 DadosTableAdapters.DataTable2TableAdapter fechamento = new DadosTableAdapters.DataTable2TableAdapter();
+                DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
                 var varProd = fechamento.relatorio();
                 //instanciando e setando o tipo de página que vou utilizar
                 Document doc = new Document(PageSize.A4);
@@ -219,11 +216,12 @@ namespace WindowsFormsApp2
                         totalCredParc = totalCredParc + Convert.ToDouble(creditoParc[i]["PagValor"]);
                     }
                     doc.Add(table3);
+                    informacao.Clear();
+                    informacao.Add("\n\n" + "Total Crédito Parcelado: R$" + totalCredParc.ToString("F2"));
+                    doc.Add(informacao);
                 }
 
-                informacao.Clear();
-                informacao.Add("\n\n" + "Total Crédito Parcelado: R$" + totalCredParc.ToString("F2"));
-                doc.Add(informacao);
+
 
                 //para credito débito ==================================================================
                 PdfPTable table4 = new PdfPTable(5);
@@ -304,10 +302,50 @@ namespace WindowsFormsApp2
                     informacao.Add("\n\nDevoluções: R$-" + totalDevolucao.ToString("F2"));
                     doc.Add(informacao);
                 }
+
+                /***************************************************************************************/
+
+                DadosTableAdapters.Vendas_CanceladasTableAdapter venda = new DadosTableAdapters.Vendas_CanceladasTableAdapter();
+                var vendasCanceladas = venda.retornarCancelamentosPorData(DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
+
+                if(vendasCanceladas.Count > 0)
+                {
+                    DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
+
+                    PdfPTable table6 = new PdfPTable(4);
+                    table6.AddCell("Código da Venda");
+                    table6.AddCell("Data da Venda");
+                    table6.AddCell("Data do Cancelamento");
+                    table6.AddCell("Valor da Venda");
+                    for(int i = 0;  i < vendasCanceladas.Count; i++)
+                    {
+                        table6.AddCell(vendasCanceladas[i]["idVenda"].ToString());
+                        table6.AddCell(vendasCanceladas[i]["dataVenda"].ToString());
+                        table6.AddCell(vendasCanceladas[i]["dataCancelamento"].ToString());
+                        var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
+                        table6.AddCell("R$"+Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"]) - Convert.ToDouble(desconto[0]["valorDesconto"])).ToString("F2"));
+                    }
+                    informacao.Clear();
+                    informacao.Add("\n\nVendas Canceladas \n\n" );
+                    doc.Add(informacao);
+
+                    doc.Add(table6);
+                }
+
+                /***************************************************************************************/
+
                 informacao.Clear();
                 informacao.Add("\n\n" + (totalDin + totalDebt + totalCredVista + totalCredParc).ToString("F2"));
 
 
+                var caixaAtual = caixa.pegarCaixaPorData(DateTime.Now.ToString("dd/MM/yyyy"));
+                if (caixaAtual.Count > 0)
+                {
+                    informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.GRAY);
+                    informacao.Clear();
+                    informacao.Add("\n\nCaixa Atual: R$" + Convert.ToDouble(caixaAtual[0]["valorAtual"]).ToString("F2"));
+                    doc.Add(informacao);
+                }
                 informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.GREEN);
 
                 informacao.Clear();

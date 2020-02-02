@@ -52,6 +52,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -246,7 +247,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.listaVendas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listaVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaVendas.FullRowSelect = true;
@@ -283,8 +285,9 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Observações";
-            this.columnHeader4.Width = 450;
+            this.columnHeader4.Text = "Desconto";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader4.Width = 80;
             // 
             // flowLayoutPanel1
             // 
@@ -306,6 +309,11 @@
             this.TxtBoxPesquisaProd.TabIndex = 4;
             this.TxtBoxPesquisaProd.TextChanged += new System.EventHandler(this.TxtBoxPesquisaProd_TextChanged);
             this.TxtBoxPesquisaProd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPesquisaProd_KeyDown);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Observações";
+            this.columnHeader5.Width = 374;
             // 
             // ListaDeVendas
             // 
@@ -352,5 +360,6 @@
         private System.Windows.Forms.Button btn7Dias;
         private System.Windows.Forms.Button btnOntem;
         private System.Windows.Forms.Button btnHoje;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

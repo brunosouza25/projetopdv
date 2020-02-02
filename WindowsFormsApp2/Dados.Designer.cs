@@ -50,6 +50,8 @@ namespace WindowsFormsApp2 {
         
         private Itens_DevolucaoDataTable tableItens_Devolucao;
         
+        private Vendas_CanceladasDataTable tableVendas_Canceladas;
+        
         private global::System.Data.DataRelation relationFK__ItensDaVe__idPro__5DCAEF64;
         
         private global::System.Data.DataRelation relationFK__Itens_Dev__idVen__6477ECF3;
@@ -73,6 +75,8 @@ namespace WindowsFormsApp2 {
         private global::System.Data.DataRelation relationFK__Pagamento__idVen__5441852A;
         
         private global::System.Data.DataRelation relationFK__Pagamento__idMPa__5165187F;
+        
+        private global::System.Data.DataRelation relationFK__Vendas_Ca__idVen__49C3F6B7;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -140,6 +144,9 @@ namespace WindowsFormsApp2 {
                 }
                 if ((ds.Tables["Itens_Devolucao"] != null)) {
                     base.Tables.Add(new Itens_DevolucaoDataTable(ds.Tables["Itens_Devolucao"]));
+                }
+                if ((ds.Tables["Vendas_Canceladas"] != null)) {
+                    base.Tables.Add(new Vendas_CanceladasDataTable(ds.Tables["Vendas_Canceladas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -291,6 +298,16 @@ namespace WindowsFormsApp2 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Vendas_CanceladasDataTable Vendas_Canceladas {
+            get {
+                return this.tableVendas_Canceladas;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -394,6 +411,9 @@ namespace WindowsFormsApp2 {
                 }
                 if ((ds.Tables["Itens_Devolucao"] != null)) {
                     base.Tables.Add(new Itens_DevolucaoDataTable(ds.Tables["Itens_Devolucao"]));
+                }
+                if ((ds.Tables["Vendas_Canceladas"] != null)) {
+                    base.Tables.Add(new Vendas_CanceladasDataTable(ds.Tables["Vendas_Canceladas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -506,6 +526,12 @@ namespace WindowsFormsApp2 {
                     this.tableItens_Devolucao.InitVars();
                 }
             }
+            this.tableVendas_Canceladas = ((Vendas_CanceladasDataTable)(base.Tables["Vendas_Canceladas"]));
+            if ((initTable == true)) {
+                if ((this.tableVendas_Canceladas != null)) {
+                    this.tableVendas_Canceladas.InitVars();
+                }
+            }
             this.relationFK__ItensDaVe__idPro__5DCAEF64 = this.Relations["FK__ItensDaVe__idPro__5DCAEF64"];
             this.relationFK__Itens_Dev__idVen__6477ECF3 = this.Relations["FK__Itens_Dev__idVen__6477ECF3"];
             this.relationFK__Observaco__idCai__02084FDA = this.Relations["FK__Observaco__idCai__02084FDA"];
@@ -518,6 +544,7 @@ namespace WindowsFormsApp2 {
             this.relationFK__ItensDaVe__idPro__534D60F1 = this.Relations["FK__ItensDaVe__idPro__534D60F1"];
             this.relationFK__Pagamento__idVen__5441852A = this.Relations["FK__Pagamento__idVen__5441852A"];
             this.relationFK__Pagamento__idMPa__5165187F = this.Relations["FK__Pagamento__idMPa__5165187F"];
+            this.relationFK__Vendas_Ca__idVen__49C3F6B7 = this.Relations["FK__Vendas_Ca__idVen__49C3F6B7"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,6 +581,8 @@ namespace WindowsFormsApp2 {
             base.Tables.Add(this.tableObservacoes_Sangria);
             this.tableItens_Devolucao = new Itens_DevolucaoDataTable();
             base.Tables.Add(this.tableItens_Devolucao);
+            this.tableVendas_Canceladas = new Vendas_CanceladasDataTable();
+            base.Tables.Add(this.tableVendas_Canceladas);
             this.relationFK__ItensDaVe__idPro__5DCAEF64 = new global::System.Data.DataRelation("FK__ItensDaVe__idPro__5DCAEF64", new global::System.Data.DataColumn[] {
                         this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
                         this.tablerelatórioVendas.idProdutoColumn}, false);
@@ -602,6 +631,10 @@ namespace WindowsFormsApp2 {
                         this.tableMetodoDePagamento.idMPagamentoColumn}, new global::System.Data.DataColumn[] {
                         this.tablePagamento.idMPagamentoColumn}, false);
             this.Relations.Add(this.relationFK__Pagamento__idMPa__5165187F);
+            this.relationFK__Vendas_Ca__idVen__49C3F6B7 = new global::System.Data.DataRelation("FK__Vendas_Ca__idVen__49C3F6B7", new global::System.Data.DataColumn[] {
+                        this.tableVenda.idVendaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVendas_Canceladas.idVendaColumn}, false);
+            this.Relations.Add(this.relationFK__Vendas_Ca__idVen__49C3F6B7);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -679,6 +712,12 @@ namespace WindowsFormsApp2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeItens_Devolucao() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeVendas_Canceladas() {
             return false;
         }
         
@@ -775,6 +814,9 @@ namespace WindowsFormsApp2 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Itens_DevolucaoRowChangeEventHandler(object sender, Itens_DevolucaoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Vendas_CanceladasRowChangeEventHandler(object sender, Vendas_CanceladasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3597,6 +3639,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnvalorDeVenda;
             
+            private global::System.Data.DataColumn columnvalorDesconto;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public relatórioVendasDataTable() {
@@ -3760,6 +3804,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorDescontoColumn {
+                get {
+                    return this.columnvalorDesconto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3811,7 +3863,8 @@ namespace WindowsFormsApp2 {
                         ProdutoRow parentProdutoRowByFK__ItensDaVe__idPro__5DCAEF64, 
                         byte estadoDevolucao, 
                         int quantidadeRetirada, 
-                        double valorDeVenda) {
+                        double valorDeVenda, 
+                        double valorDesconto) {
                 relatórioVendasRow rowrelatórioVendasRow = ((relatórioVendasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         prodNome,
@@ -3829,7 +3882,8 @@ namespace WindowsFormsApp2 {
                         null,
                         estadoDevolucao,
                         quantidadeRetirada,
-                        valorDeVenda};
+                        valorDeVenda,
+                        valorDesconto};
                 if ((parentVendaRowByFK__ItensDaVe__idVen__5441852A1 != null)) {
                     columnValuesArray[8] = parentVendaRowByFK__ItensDaVe__idVen__5441852A1[0];
                 }
@@ -3874,6 +3928,7 @@ namespace WindowsFormsApp2 {
                 this.columnestadoDevolucao = base.Columns["estadoDevolucao"];
                 this.columnquantidadeRetirada = base.Columns["quantidadeRetirada"];
                 this.columnvalorDeVenda = base.Columns["valorDeVenda"];
+                this.columnvalorDesconto = base.Columns["valorDesconto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3911,6 +3966,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnquantidadeRetirada);
                 this.columnvalorDeVenda = new global::System.Data.DataColumn("valorDeVenda", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalorDeVenda);
+                this.columnvalorDesconto = new global::System.Data.DataColumn("valorDesconto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalorDesconto);
                 this.columnprodNome.MaxLength = 50;
                 this.columnprodCodBarras.MaxLength = 13;
                 this.columnpagamentoTipo.MaxLength = 20;
@@ -5298,6 +5355,341 @@ namespace WindowsFormsApp2 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Vendas_CanceladasDataTable : global::System.Data.TypedTableBase<Vendas_CanceladasRow> {
+            
+            private global::System.Data.DataColumn columnidVendaCancelada;
+            
+            private global::System.Data.DataColumn columnidVenda;
+            
+            private global::System.Data.DataColumn columndataVenda;
+            
+            private global::System.Data.DataColumn columndataCancelamento;
+            
+            private global::System.Data.DataColumn columnhoraCancelamento;
+            
+            private global::System.Data.DataColumn columnvalorDaVenda;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasDataTable() {
+                this.TableName = "Vendas_Canceladas";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Vendas_CanceladasDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Vendas_CanceladasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idVendaCanceladaColumn {
+                get {
+                    return this.columnidVendaCancelada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idVendaColumn {
+                get {
+                    return this.columnidVenda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dataVendaColumn {
+                get {
+                    return this.columndataVenda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dataCancelamentoColumn {
+                get {
+                    return this.columndataCancelamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn horaCancelamentoColumn {
+                get {
+                    return this.columnhoraCancelamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorDaVendaColumn {
+                get {
+                    return this.columnvalorDaVenda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRow this[int index] {
+                get {
+                    return ((Vendas_CanceladasRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Vendas_CanceladasRowChangeEventHandler Vendas_CanceladasRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Vendas_CanceladasRowChangeEventHandler Vendas_CanceladasRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Vendas_CanceladasRowChangeEventHandler Vendas_CanceladasRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Vendas_CanceladasRowChangeEventHandler Vendas_CanceladasRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddVendas_CanceladasRow(Vendas_CanceladasRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRow AddVendas_CanceladasRow(VendaRow parentVendaRowByFK__Vendas_Ca__idVen__49C3F6B7, System.DateTime dataVenda, System.DateTime dataCancelamento, System.TimeSpan horaCancelamento, double valorDaVenda) {
+                Vendas_CanceladasRow rowVendas_CanceladasRow = ((Vendas_CanceladasRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        dataVenda,
+                        dataCancelamento,
+                        horaCancelamento,
+                        valorDaVenda};
+                if ((parentVendaRowByFK__Vendas_Ca__idVen__49C3F6B7 != null)) {
+                    columnValuesArray[1] = parentVendaRowByFK__Vendas_Ca__idVen__49C3F6B7[0];
+                }
+                rowVendas_CanceladasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVendas_CanceladasRow);
+                return rowVendas_CanceladasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRow FindByidVendaCancelada(int idVendaCancelada) {
+                return ((Vendas_CanceladasRow)(this.Rows.Find(new object[] {
+                            idVendaCancelada})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Vendas_CanceladasDataTable cln = ((Vendas_CanceladasDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Vendas_CanceladasDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnidVendaCancelada = base.Columns["idVendaCancelada"];
+                this.columnidVenda = base.Columns["idVenda"];
+                this.columndataVenda = base.Columns["dataVenda"];
+                this.columndataCancelamento = base.Columns["dataCancelamento"];
+                this.columnhoraCancelamento = base.Columns["horaCancelamento"];
+                this.columnvalorDaVenda = base.Columns["valorDaVenda"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnidVendaCancelada = new global::System.Data.DataColumn("idVendaCancelada", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidVendaCancelada);
+                this.columnidVenda = new global::System.Data.DataColumn("idVenda", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidVenda);
+                this.columndataVenda = new global::System.Data.DataColumn("dataVenda", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndataVenda);
+                this.columndataCancelamento = new global::System.Data.DataColumn("dataCancelamento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndataCancelamento);
+                this.columnhoraCancelamento = new global::System.Data.DataColumn("horaCancelamento", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhoraCancelamento);
+                this.columnvalorDaVenda = new global::System.Data.DataColumn("valorDaVenda", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalorDaVenda);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidVendaCancelada}, true));
+                this.columnidVendaCancelada.AutoIncrement = true;
+                this.columnidVendaCancelada.AutoIncrementSeed = -1;
+                this.columnidVendaCancelada.AutoIncrementStep = -1;
+                this.columnidVendaCancelada.AllowDBNull = false;
+                this.columnidVendaCancelada.ReadOnly = true;
+                this.columnidVendaCancelada.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRow NewVendas_CanceladasRow() {
+                return ((Vendas_CanceladasRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Vendas_CanceladasRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Vendas_CanceladasRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Vendas_CanceladasRowChanged != null)) {
+                    this.Vendas_CanceladasRowChanged(this, new Vendas_CanceladasRowChangeEvent(((Vendas_CanceladasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Vendas_CanceladasRowChanging != null)) {
+                    this.Vendas_CanceladasRowChanging(this, new Vendas_CanceladasRowChangeEvent(((Vendas_CanceladasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Vendas_CanceladasRowDeleted != null)) {
+                    this.Vendas_CanceladasRowDeleted(this, new Vendas_CanceladasRowChangeEvent(((Vendas_CanceladasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Vendas_CanceladasRowDeleting != null)) {
+                    this.Vendas_CanceladasRowDeleting(this, new Vendas_CanceladasRowChangeEvent(((Vendas_CanceladasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveVendas_CanceladasRow(Vendas_CanceladasRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dados ds = new Dados();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Vendas_CanceladasDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class VendaRow : global::System.Data.DataRow {
@@ -5553,6 +5945,17 @@ namespace WindowsFormsApp2 {
                 }
                 else {
                     return ((PagamentoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Pagamento__idVen__5441852A"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRow[] GetVendas_CanceladasRows() {
+                if ((this.Table.ChildRelations["FK__Vendas_Ca__idVen__49C3F6B7"] == null)) {
+                    return new Vendas_CanceladasRow[0];
+                }
+                else {
+                    return ((Vendas_CanceladasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Vendas_Ca__idVen__49C3F6B7"])));
                 }
             }
         }
@@ -7471,6 +7874,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double valorDesconto {
+                get {
+                    try {
+                        return ((double)(this[this.tablerelatórioVendas.valorDescontoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valorDesconto\' na tabela \'relatórioVendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerelatórioVendas.valorDescontoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProdutoRow ProdutoRow {
                 get {
                     return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idPro__5DCAEF64"])));
@@ -7681,6 +8100,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetvalorDeVendaNull() {
                 this[this.tablerelatórioVendas.valorDeVendaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorDescontoNull() {
+                return this.IsNull(this.tablerelatórioVendas.valorDescontoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorDescontoNull() {
+                this[this.tablerelatórioVendas.valorDescontoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8406,6 +8837,183 @@ namespace WindowsFormsApp2 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Vendas_CanceladasRow : global::System.Data.DataRow {
+            
+            private Vendas_CanceladasDataTable tableVendas_Canceladas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Vendas_CanceladasRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVendas_Canceladas = ((Vendas_CanceladasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idVendaCancelada {
+                get {
+                    return ((int)(this[this.tableVendas_Canceladas.idVendaCanceladaColumn]));
+                }
+                set {
+                    this[this.tableVendas_Canceladas.idVendaCanceladaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idVenda {
+                get {
+                    try {
+                        return ((int)(this[this.tableVendas_Canceladas.idVendaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idVenda\' na tabela \'Vendas_Canceladas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVendas_Canceladas.idVendaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime dataVenda {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVendas_Canceladas.dataVendaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataVenda\' na tabela \'Vendas_Canceladas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVendas_Canceladas.dataVendaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime dataCancelamento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableVendas_Canceladas.dataCancelamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataCancelamento\' na tabela \'Vendas_Canceladas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVendas_Canceladas.dataCancelamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.TimeSpan horaCancelamento {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableVendas_Canceladas.horaCancelamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'horaCancelamento\' na tabela \'Vendas_Canceladas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVendas_Canceladas.horaCancelamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double valorDaVenda {
+                get {
+                    try {
+                        return ((double)(this[this.tableVendas_Canceladas.valorDaVendaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valorDaVenda\' na tabela \'Vendas_Canceladas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVendas_Canceladas.valorDaVendaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VendaRow VendaRow {
+                get {
+                    return ((VendaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Vendas_Ca__idVen__49C3F6B7"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Vendas_Ca__idVen__49C3F6B7"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidVendaNull() {
+                return this.IsNull(this.tableVendas_Canceladas.idVendaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidVendaNull() {
+                this[this.tableVendas_Canceladas.idVendaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdataVendaNull() {
+                return this.IsNull(this.tableVendas_Canceladas.dataVendaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdataVendaNull() {
+                this[this.tableVendas_Canceladas.dataVendaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdataCancelamentoNull() {
+                return this.IsNull(this.tableVendas_Canceladas.dataCancelamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdataCancelamentoNull() {
+                this[this.tableVendas_Canceladas.dataCancelamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IshoraCancelamentoNull() {
+                return this.IsNull(this.tableVendas_Canceladas.horaCancelamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SethoraCancelamentoNull() {
+                this[this.tableVendas_Canceladas.horaCancelamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorDaVendaNull() {
+                return this.IsNull(this.tableVendas_Canceladas.valorDaVendaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorDaVendaNull() {
+                this[this.tableVendas_Canceladas.valorDaVendaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -8846,6 +9454,40 @@ namespace WindowsFormsApp2 {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Vendas_CanceladasRowChangeEvent : global::System.EventArgs {
+            
+            private Vendas_CanceladasRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRowChangeEvent(Vendas_CanceladasRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Vendas_CanceladasRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace WindowsFormsApp2.DadosTableAdapters {
@@ -9038,7 +9680,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora\r" +
@@ -9058,8 +9700,8 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "INSERT INTO Venda\r\n                         (vendData, valorCompra, vendaEstado, " +
-                "idCaixa, observacoes, vendHora)\r\nVALUES        (@vendData,@valorCompra,@vendaEst" +
-                "ado,@idCaixa,@observacoes,@vendHora);      \r\n";
+                "idCaixa, observacoes, vendHora, valorPago)\r\nVALUES        (@vendData,@valorCompr" +
+                "a,@vendaEstado,@idCaixa,@observacoes,@vendHora,@valorPago);       \r\n";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendData", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorCompra", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9067,6 +9709,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCaixa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendHora", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorPago", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT idVenda, observacoes, valorCompra, vendData, vendHora, vendaEstado FROM Ve" +
@@ -9080,6 +9723,14 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT idVenda, observacoes, valorCompra, vendData, vendHora, vendaEstado FROM Ve" +
+                "nda WHERE (vendData BETWEEN @dataPesquisa1 AND @dataPesquisa2) AND vendaEstado =" +
+                " 0";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9146,6 +9797,29 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Dados.VendaDataTable dataTable = new Dados.VendaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.VendaDataTable retornarVendasCanceladas(string dataPesquisa1, string dataPesquisa2) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((dataPesquisa1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(dataPesquisa1));
+            }
+            if ((dataPesquisa2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(dataPesquisa2));
             }
             Dados.VendaDataTable dataTable = new Dados.VendaDataTable();
             this.Adapter.Fill(dataTable);
@@ -9429,7 +10103,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InserirVenda(string vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, global::System.Nullable<int> idCaixa, string observacoes, string vendHora) {
+        public virtual int InserirVenda(string vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, global::System.Nullable<int> idCaixa, string observacoes, string vendHora, global::System.Nullable<double> valorPago) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((vendData == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -9466,6 +10140,12 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             }
             else {
                 command.Parameters[5].Value = ((string)(vendHora));
+            }
+            if ((valorPago.HasValue == true)) {
+                command.Parameters[6].Value = ((double)(valorPago.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10546,7 +11226,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        PagValor, idVenda, idMPagamento, valorDesconto, idPagamento\r\nFROM  " +
@@ -10565,15 +11245,20 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPagamento", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPagamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT PagValor, idMPagamento, idPagamento, idVenda, valorDesconto FROM Pagamento" +
-                " WHERE (idVenda = @idVenda)";
+            this._commandCollection[2].CommandText = "SELECT        valorDesconto\r\nFROM            Pagamento\r\nWHERE idVenda = @idVenda";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT TOP (1) PagValor, idMPagamento, idPagamento, idVenda, valorDesconto FROM P" +
-                "agamento ORDER BY idPagamento DESC";
+            this._commandCollection[3].CommandText = "SELECT PagValor, idMPagamento, idPagamento, idVenda, valorDesconto FROM Pagamento" +
+                " WHERE (idVenda = @idVenda)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT TOP (1) PagValor, idMPagamento, idPagamento, idVenda, valorDesconto FROM P" +
+                "agamento ORDER BY idPagamento DESC";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10604,7 +11289,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.PagamentoDataTable retornarTiposPagamentos(global::System.Nullable<int> idVenda) {
+        public virtual Dados.PagamentoDataTable retornarDescPorIdVenda(global::System.Nullable<int> idVenda) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((idVenda.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
@@ -10621,8 +11306,25 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.PagamentoDataTable retornaUltimoIdPagamento() {
+        public virtual Dados.PagamentoDataTable retornarTiposPagamentos(global::System.Nullable<int> idVenda) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            Dados.PagamentoDataTable dataTable = new Dados.PagamentoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.PagamentoDataTable retornaUltimoIdPagamento() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             Dados.PagamentoDataTable dataTable = new Dados.PagamentoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -13047,6 +13749,7 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
             tableMapping.ColumnMappings.Add("estadoDevolucao", "estadoDevolucao");
             tableMapping.ColumnMappings.Add("quantidadeRetirada", "quantidadeRetirada");
             tableMapping.ColumnMappings.Add("valorDeVenda", "valorDeVenda");
+            tableMapping.ColumnMappings.Add("valorDesconto", "valorDesconto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13064,7 +13767,7 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Produto.prodNome, Produto.prodValor, Produto.prodCodBarras, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, Venda.vendData, MetodoDePagamento.pagamentoTipo, Pagamento.PagValor, ItensDaVenda.idVenda AS Expr1, 
-                         Venda.valorCompra, Venda.vendaEstado, Venda.observacoes, ItensDaVenda.idProduto, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeVenda
+                         Venda.valorCompra, Venda.vendaEstado, Venda.observacoes, ItensDaVenda.idProduto, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeVenda, Pagamento.valorDesconto
 FROM            MetodoDePagamento INNER JOIN
                          Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
                          Venda ON Pagamento.idVenda = Venda.idVenda INNER JOIN
@@ -13095,7 +13798,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Pagamento.PagValor
+            this._commandCollection[4].CommandText = @"SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Pagamento.PagValor, Pagamento.valorDesconto
 FROM            MetodoDePagamento INNER JOIN
                          Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
                          Venda ON Pagamento.idVenda = Venda.idVenda
@@ -14988,6 +15691,587 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Vendas_CanceladasTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public Vendas_CanceladasTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Vendas_Canceladas";
+            tableMapping.ColumnMappings.Add("idVendaCancelada", "idVendaCancelada");
+            tableMapping.ColumnMappings.Add("idVenda", "idVenda");
+            tableMapping.ColumnMappings.Add("dataVenda", "dataVenda");
+            tableMapping.ColumnMappings.Add("dataCancelamento", "dataCancelamento");
+            tableMapping.ColumnMappings.Add("horaCancelamento", "horaCancelamento");
+            tableMapping.ColumnMappings.Add("valorDaVenda", "valorDaVenda");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Vendas_Canceladas] WHERE (([idVendaCancelada] = @Original_idVendaCancelada) AND ((@IsNull_idVenda = 1 AND [idVenda] IS NULL) OR ([idVenda] = @Original_idVenda)) AND ((@IsNull_dataVenda = 1 AND [dataVenda] IS NULL) OR ([dataVenda] = @Original_dataVenda)) AND ((@IsNull_dataCancelamento = 1 AND [dataCancelamento] IS NULL) OR ([dataCancelamento] = @Original_dataCancelamento)) AND ((@IsNull_horaCancelamento = 1 AND [horaCancelamento] IS NULL) OR ([horaCancelamento] = @Original_horaCancelamento)) AND ((@IsNull_valorDaVenda = 1 AND [valorDaVenda] IS NULL) OR ([valorDaVenda] = @Original_valorDaVenda)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVendaCancelada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVendaCancelada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dataVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dataVenda", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dataCancelamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dataCancelamento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_horaCancelamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_horaCancelamento", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_valorDaVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valorDaVenda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Vendas_Canceladas] ([idVenda], [dataVenda], [dataCancelamento], [horaCancelamento], [valorDaVenda]) VALUES (@idVenda, @dataVenda, @dataCancelamento, @horaCancelamento, @valorDaVenda);
+SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento, valorDaVenda FROM Vendas_Canceladas WHERE (idVendaCancelada = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataVenda", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataCancelamento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaCancelamento", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorDaVenda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Vendas_Canceladas] SET [idVenda] = @idVenda, [dataVenda] = @dataVenda, [dataCancelamento] = @dataCancelamento, [horaCancelamento] = @horaCancelamento, [valorDaVenda] = @valorDaVenda WHERE (([idVendaCancelada] = @Original_idVendaCancelada) AND ((@IsNull_idVenda = 1 AND [idVenda] IS NULL) OR ([idVenda] = @Original_idVenda)) AND ((@IsNull_dataVenda = 1 AND [dataVenda] IS NULL) OR ([dataVenda] = @Original_dataVenda)) AND ((@IsNull_dataCancelamento = 1 AND [dataCancelamento] IS NULL) OR ([dataCancelamento] = @Original_dataCancelamento)) AND ((@IsNull_horaCancelamento = 1 AND [horaCancelamento] IS NULL) OR ([horaCancelamento] = @Original_horaCancelamento)) AND ((@IsNull_valorDaVenda = 1 AND [valorDaVenda] IS NULL) OR ([valorDaVenda] = @Original_valorDaVenda)));
+SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento, valorDaVenda FROM Vendas_Canceladas WHERE (idVendaCancelada = @idVendaCancelada)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataVenda", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataCancelamento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaCancelamento", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorDaVenda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVendaCancelada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVendaCancelada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dataVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dataVenda", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dataCancelamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dataCancelamento", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_horaCancelamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_horaCancelamento", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_valorDaVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valorDaVenda", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVendaCancelada", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVendaCancelada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento, " +
+                "valorDaVenda FROM dbo.Vendas_Canceladas";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Vendas_Canceladas] ([idVenda], [dataVenda], [dataCancelamento]" +
+                ", [horaCancelamento], [valorDaVenda]) VALUES (@idVenda, @dataVenda, @dataCancela" +
+                "mento, @horaCancelamento, @valorDaVenda);\r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataVenda", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataCancelamento", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaCancelamento", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "horaCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorDaVenda", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorDaVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento, " +
+                "valorDaVenda FROM dbo.Vendas_Canceladas\r\nWHERE (dataCancelamento BETWEEN @dataPe" +
+                "squisa1 AND @dataPesquisa2) ";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataCancelamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        idVenda, dataVenda, dataCancelamento, horaCancelamento, valorDaVend" +
+                "a\r\nFROM            Vendas_Canceladas\r\nWHERE idVenda = @idVenda";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dados.Vendas_CanceladasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dados.Vendas_CanceladasDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Dados.Vendas_CanceladasDataTable dataTable = new Dados.Vendas_CanceladasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.Vendas_CanceladasDataTable retornarCancelamentosPorData(string dataPesquisa1, string dataPesquisa2) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((dataPesquisa1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(dataPesquisa1));
+            }
+            if ((dataPesquisa2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(dataPesquisa2));
+            }
+            Dados.Vendas_CanceladasDataTable dataTable = new Dados.Vendas_CanceladasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.Vendas_CanceladasDataTable retornarVendaCanceladaPorId(global::System.Nullable<int> idVenda) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            Dados.Vendas_CanceladasDataTable dataTable = new Dados.Vendas_CanceladasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Dados.Vendas_CanceladasDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Dados dataSet) {
+            return this.Adapter.Update(dataSet, "Vendas_Canceladas");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_idVendaCancelada, global::System.Nullable<int> Original_idVenda, global::System.Nullable<global::System.DateTime> Original_dataVenda, global::System.Nullable<global::System.DateTime> Original_dataCancelamento, global::System.Nullable<global::System.TimeSpan> Original_horaCancelamento, global::System.Nullable<double> Original_valorDaVenda) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idVendaCancelada));
+            if ((Original_idVenda.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idVenda.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_dataVenda.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_dataVenda.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_dataCancelamento.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_dataCancelamento.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_horaCancelamento.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.TimeSpan)(Original_horaCancelamento.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_valorDaVenda.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((double)(Original_valorDaVenda.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> idVenda, global::System.Nullable<global::System.DateTime> dataVenda, global::System.Nullable<global::System.DateTime> dataCancelamento, global::System.Nullable<global::System.TimeSpan> horaCancelamento, global::System.Nullable<double> valorDaVenda) {
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((dataVenda.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(dataVenda.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dataCancelamento.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(dataCancelamento.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((horaCancelamento.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.TimeSpan)(horaCancelamento.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((valorDaVenda.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(valorDaVenda.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> idVenda, global::System.Nullable<global::System.DateTime> dataVenda, global::System.Nullable<global::System.DateTime> dataCancelamento, global::System.Nullable<global::System.TimeSpan> horaCancelamento, global::System.Nullable<double> valorDaVenda, int Original_idVendaCancelada, global::System.Nullable<int> Original_idVenda, global::System.Nullable<global::System.DateTime> Original_dataVenda, global::System.Nullable<global::System.DateTime> Original_dataCancelamento, global::System.Nullable<global::System.TimeSpan> Original_horaCancelamento, global::System.Nullable<double> Original_valorDaVenda, int idVendaCancelada) {
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((dataVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(dataVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((dataCancelamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(dataCancelamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((horaCancelamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.TimeSpan)(horaCancelamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((valorDaVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(valorDaVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idVendaCancelada));
+            if ((Original_idVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_dataVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_dataVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_dataCancelamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_dataCancelamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_horaCancelamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.TimeSpan)(Original_horaCancelamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_valorDaVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_valorDaVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(idVendaCancelada));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> idVenda, global::System.Nullable<global::System.DateTime> dataVenda, global::System.Nullable<global::System.DateTime> dataCancelamento, global::System.Nullable<global::System.TimeSpan> horaCancelamento, global::System.Nullable<double> valorDaVenda, int Original_idVendaCancelada, global::System.Nullable<int> Original_idVenda, global::System.Nullable<global::System.DateTime> Original_dataVenda, global::System.Nullable<global::System.DateTime> Original_dataCancelamento, global::System.Nullable<global::System.TimeSpan> Original_horaCancelamento, global::System.Nullable<double> Original_valorDaVenda) {
+            return this.Update(idVenda, dataVenda, dataCancelamento, horaCancelamento, valorDaVenda, Original_idVendaCancelada, Original_idVenda, Original_dataVenda, Original_dataCancelamento, Original_horaCancelamento, Original_valorDaVenda, Original_idVendaCancelada);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InserirCancelamento(global::System.Nullable<int> idVenda, string dataVenda, string dataCancelamento, string horaCancelamento, global::System.Nullable<double> valorDaVenda) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((idVenda.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((dataVenda == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(dataVenda));
+            }
+            if ((dataCancelamento == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(dataCancelamento));
+            }
+            if ((horaCancelamento == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(horaCancelamento));
+            }
+            if ((valorDaVenda.HasValue == true)) {
+                command.Parameters[4].Value = ((double)(valorDaVenda.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15020,6 +16304,8 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
         private Observacoes_SangriaTableAdapter _observacoes_SangriaTableAdapter;
         
         private Itens_DevolucaoTableAdapter _itens_DevolucaoTableAdapter;
+        
+        private Vendas_CanceladasTableAdapter _vendas_CanceladasTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -15192,6 +16478,20 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public Vendas_CanceladasTableAdapter Vendas_CanceladasTableAdapter {
+            get {
+                return this._vendas_CanceladasTableAdapter;
+            }
+            set {
+                this._vendas_CanceladasTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -15253,6 +16553,10 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                             && (this._itens_DevolucaoTableAdapter.Connection != null))) {
                     return this._itens_DevolucaoTableAdapter.Connection;
                 }
+                if (((this._vendas_CanceladasTableAdapter != null) 
+                            && (this._vendas_CanceladasTableAdapter.Connection != null))) {
+                    return this._vendas_CanceladasTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -15297,6 +16601,9 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                     count = (count + 1);
                 }
                 if ((this._itens_DevolucaoTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._vendas_CanceladasTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -15409,6 +16716,15 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._vendas_CanceladasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._vendas_CanceladasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -15507,6 +16823,14 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._vendas_CanceladasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._vendas_CanceladasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -15517,6 +16841,14 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(Dados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._vendas_CanceladasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._vendas_CanceladasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._itens_DevolucaoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -15699,6 +17031,11 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
+            if (((this._vendas_CanceladasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._vendas_CanceladasTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager não contém informações de conexão. Defina cada propriedade Ta" +
@@ -15830,6 +17167,15 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                         adaptersWithAcceptChangesDuringUpdate.Add(this._itens_DevolucaoTableAdapter.Adapter);
                     }
                 }
+                if ((this._vendas_CanceladasTableAdapter != null)) {
+                    revertConnections.Add(this._vendas_CanceladasTableAdapter, this._vendas_CanceladasTableAdapter.Connection);
+                    this._vendas_CanceladasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._vendas_CanceladasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._vendas_CanceladasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._vendas_CanceladasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._vendas_CanceladasTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -15931,6 +17277,10 @@ WHERE        (Itens_Devolucao.dataDevolucao BETWEEN @data AND @data) AND itens_d
                 if ((this._itens_DevolucaoTableAdapter != null)) {
                     this._itens_DevolucaoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._itens_DevolucaoTableAdapter]));
                     this._itens_DevolucaoTableAdapter.Transaction = null;
+                }
+                if ((this._vendas_CanceladasTableAdapter != null)) {
+                    this._vendas_CanceladasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vendas_CanceladasTableAdapter]));
+                    this._vendas_CanceladasTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

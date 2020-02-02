@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCancelarItem = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelarVenda = new System.Windows.Forms.Button();
@@ -64,7 +65,8 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancelarItem = new System.Windows.Forms.Button();
+            this.txtBoxDesc = new System.Windows.Forms.TextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -93,8 +95,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.10742F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.89258F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.72748F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.27252F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(861, 525);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -114,6 +116,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(855, 86);
             this.panel4.TabIndex = 2;
+            // 
+            // btnCancelarItem
+            // 
+            this.btnCancelarItem.Location = new System.Drawing.Point(750, 3);
+            this.btnCancelarItem.Name = "btnCancelarItem";
+            this.btnCancelarItem.Size = new System.Drawing.Size(96, 32);
+            this.btnCancelarItem.TabIndex = 13;
+            this.btnCancelarItem.Text = "Cancelar Item";
+            this.btnCancelarItem.UseVisualStyleBackColor = true;
+            this.btnCancelarItem.Click += new System.EventHandler(this.btnCancelarItem_Click);
             // 
             // btnSair
             // 
@@ -187,9 +199,9 @@
             // 
             this.panel3.Controls.Add(this.listaVendas);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 168);
+            this.panel3.Location = new System.Drawing.Point(3, 201);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(855, 262);
+            this.panel3.Size = new System.Drawing.Size(855, 229);
             this.panel3.TabIndex = 1;
             // 
             // listaVendas
@@ -211,7 +223,7 @@
             this.listaVendas.Location = new System.Drawing.Point(0, 0);
             this.listaVendas.MultiSelect = false;
             this.listaVendas.Name = "listaVendas";
-            this.listaVendas.Size = new System.Drawing.Size(855, 262);
+            this.listaVendas.Size = new System.Drawing.Size(855, 229);
             this.listaVendas.TabIndex = 4;
             this.listaVendas.UseCompatibleStateImageBehavior = false;
             this.listaVendas.View = System.Windows.Forms.View.Details;
@@ -255,6 +267,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtBoxDesc);
+            this.panel2.Controls.Add(this.lblDesc);
             this.panel2.Controls.Add(this.txtBoxCredParc);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtBoxDebt);
@@ -274,7 +288,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(855, 159);
+            this.panel2.Size = new System.Drawing.Size(855, 192);
             this.panel2.TabIndex = 0;
             // 
             // txtBoxCredParc
@@ -443,15 +457,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente: ";
             // 
-            // btnCancelarItem
+            // txtBoxDesc
             // 
-            this.btnCancelarItem.Location = new System.Drawing.Point(750, 3);
-            this.btnCancelarItem.Name = "btnCancelarItem";
-            this.btnCancelarItem.Size = new System.Drawing.Size(96, 32);
-            this.btnCancelarItem.TabIndex = 13;
-            this.btnCancelarItem.Text = "Cancelar Item";
-            this.btnCancelarItem.UseVisualStyleBackColor = true;
-            this.btnCancelarItem.Click += new System.EventHandler(this.btnCancelarItem_Click);
+            this.txtBoxDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDesc.ForeColor = System.Drawing.Color.Red;
+            this.txtBoxDesc.Location = new System.Drawing.Point(692, 145);
+            this.txtBoxDesc.Name = "txtBoxDesc";
+            this.txtBoxDesc.ReadOnly = true;
+            this.txtBoxDesc.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxDesc.TabIndex = 19;
+            this.txtBoxDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.ForeColor = System.Drawing.Color.Red;
+            this.lblDesc.Location = new System.Drawing.Point(467, 146);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(123, 24);
+            this.lblDesc.TabIndex = 18;
+            this.lblDesc.Text = "Desconto: R$";
             // 
             // TelaDetalhesDaVenda
             // 
@@ -511,5 +537,7 @@
         private System.Windows.Forms.TextBox txtBoxCredParc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancelarItem;
+        private System.Windows.Forms.TextBox txtBoxDesc;
+        private System.Windows.Forms.Label lblDesc;
     }
 }

@@ -15,6 +15,7 @@ namespace WindowsFormsApp2.Vendas.View
     public partial class ListaDeVendas : UserControl
     {
         DadosTableAdapters.VendaTableAdapter listaDeVendas = new DadosTableAdapters.VendaTableAdapter();
+        DadosTableAdapters.PagamentoTableAdapter pagamentos = new DadosTableAdapters.PagamentoTableAdapter();
         string deData, ateData;
         public ListaDeVendas()
         {
@@ -31,7 +32,7 @@ namespace WindowsFormsApp2.Vendas.View
 
             for (int i = 0; i < varVendas.Count; i++)
             {
-
+                var auxPagamento = pagamentos.retornarDescPorIdVenda(Convert.ToInt32(varVendas[i]["idVenda"]));
                 ListViewItem item = new ListViewItem();
                 if (Convert.ToByte(varVendas[i]["vendaEstado"]) == 0)
                 {
@@ -41,9 +42,9 @@ namespace WindowsFormsApp2.Vendas.View
 
                 item.SubItems.Add(varVendas[i]["idVenda"].ToString());
                 item.SubItems.Add(Convert.ToDateTime(varVendas[i]["vendData"]).ToString("dd/MM/yyyy"));
-                item.SubItems.Add(Convert.ToDouble(varVendas[i]["valorCompra"]).ToString("F2"));
+                item.SubItems.Add("R$"+Convert.ToDouble(varVendas[i]["valorCompra"]).ToString("F2"));
+                item.SubItems.Add("R$"+Convert.ToDouble(auxPagamento[0]["valorDesconto"]).ToString("F2"));
                 item.SubItems.Add(varVendas[i]["observacoes"].ToString());
-
                 listaVendas.Items.Add(item);
             }
         }

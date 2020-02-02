@@ -245,6 +245,7 @@
             this.label2.Size = new System.Drawing.Size(114, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Entrar produtos";
+            this.label2.Visible = false;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Bt_Entrar_Prod
@@ -252,11 +253,13 @@
             this.Bt_Entrar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.seta_de_download;
             this.Bt_Entrar_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Bt_Entrar_Prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Entrar_Prod.Enabled = false;
             this.Bt_Entrar_Prod.Location = new System.Drawing.Point(0, 0);
             this.Bt_Entrar_Prod.Name = "Bt_Entrar_Prod";
             this.Bt_Entrar_Prod.Size = new System.Drawing.Size(134, 123);
             this.Bt_Entrar_Prod.TabIndex = 2;
             this.Bt_Entrar_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Entrar_Prod.Visible = false;
             this.Bt_Entrar_Prod.Click += new System.EventHandler(this.Bt_Entrar_Prod_Click);
             // 
             // panel3
@@ -279,6 +282,7 @@
             this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "Remover produtos";
+            this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Bt_Retirar_Prod
@@ -286,11 +290,13 @@
             this.Bt_Retirar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.seta_para_cima;
             this.Bt_Retirar_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Bt_Retirar_Prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Retirar_Prod.Enabled = false;
             this.Bt_Retirar_Prod.Location = new System.Drawing.Point(0, 0);
             this.Bt_Retirar_Prod.Name = "Bt_Retirar_Prod";
             this.Bt_Retirar_Prod.Size = new System.Drawing.Size(135, 123);
             this.Bt_Retirar_Prod.TabIndex = 5;
             this.Bt_Retirar_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Retirar_Prod.Visible = false;
             this.Bt_Retirar_Prod.Click += new System.EventHandler(this.Bt_Retirar_Prod_Click);
             // 
             // panel4

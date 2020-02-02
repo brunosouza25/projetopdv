@@ -8,6 +8,7 @@ namespace WindowsFormsApp2.Vendas.View
     {
         DadosTableAdapters.DataRelatorioTableAdapter detalheVenda = new DadosTableAdapters.DataRelatorioTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
+        DadosTableAdapters.Itens_DevolucaoTableAdapter devolucao = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
         int codVenda;
         int idDin = -1, idCredVista = -1, idDeb = -1, idCredParc = -1;
         List<Produto> listaProduto = new List<Produto>();
@@ -38,27 +39,40 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void btnCancelarVenda_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                int aux = 0;
-                int idprod;
-                for (int i = 0; i < listaProduto.Count; i++)
-                {
-                    var aux2 = dadosProdutos.PegaQuantidadePorCod(listaProduto[i].prodCodBarras);
-                    aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) + listaProduto[i].prodQuantidade;
-                    dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
 
+            if (devolucao.verificarDevolucao(codVenda).Count < 1)
+            {
+                if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    DadosTableAdapters.Vendas_CanceladasTableAdapter cancelamento = new DadosTableAdapters.Vendas_CanceladasTableAdapter();
+                    DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
+                    int aux = 0;
+                    int idprod;
+                    for (int i = 0; i < listaProduto.Count; i++)
+                    {
+                        var aux2 = dadosProdutos.PegaQuantidadePorCod(listaProduto[i].prodCodBarras);
+                        aux = Convert.ToInt32(aux2[0]["prodQuantidade"]) + listaProduto[i].prodQuantidade;
+                        dadosProdutos.AttQuantidade(aux, Convert.ToInt32(aux2[0]["idProduto"]));
+                    }
+                    detalheVenda.cancelarVenda(Convert.ToByte(0), codVenda);
+                    var venda = detalheVenda.retornarVendaPorId(codVenda);
+                    cancelamento.InserirCancelamento(codVenda, venda[0]["vendData"].ToString(), DateTime.Now.ToString("dd/MM/yyyy")
+                    , DateTime.Now.ToString("HH:mm"), Convert.ToDouble(venda[0]["valorCompra"]) - Convert.ToDouble(txtBoxDesc.Text));
+                    var idCaixa = caixa.pegarIDUltimoCaixa();
+                    var caixaAtual = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+                    var valorPago = cancelamento.retornarVendaCanceladaPorId(codVenda);
+                    caixa.attValorAtual(Convert.ToDouble(caixaAtual[0]["valorAtual"]) - Convert.ToDouble(valorPago[0]["valorDaVenda"]), Convert.ToInt32(idCaixa[0]["idCaixa"]));
                 }
-                detalheVenda.cancelarVenda(Convert.ToByte(0), codVenda);
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível cancelar esta venda, pois a mesma tem itens devolvidos, devolva o restante para simular um cancelamento!");
             }
             Close();
         }
 
         private void btnCancelarItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-            }
 
         }
 
@@ -99,6 +113,8 @@ namespace WindowsFormsApp2.Vendas.View
                 if (tipos[i] == "DEBITO")
                     idDeb = i;
             }
+
+            txtBoxDesc.Text = Convert.ToDouble(pagamentosVenda[0]["valorDesconto"]).ToString("F2");
 
             if (idDin >= 0)
             {

@@ -24,7 +24,7 @@ namespace WindowsFormsApp2
             this.itensDaLista = itensDaLista;
             this.total = total;
             LblTotal.Text = "R$: " + total.ToString("F2");
-            BtnFinalizar.Enabled = true;
+            BtnFinalizar.Enabled = false;
             ultimoId();
         }
 
@@ -48,7 +48,7 @@ namespace WindowsFormsApp2
         {
             bool ok = false;
             double a, b, c, d, f;
-            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, valorPagar = 0;
+            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, valorPagar = 0, totalvalidar = 0;
 
 
 
@@ -88,19 +88,20 @@ namespace WindowsFormsApp2
 
                 double somaTotal = valorDin + valorCredVista + valorCredParc + valorDeb;
 
-                total = total - valorDesc;
+                
+                totalvalidar = total - valorDesc;
 
 
-                if (somaTotal == total)
+                if (somaTotal == totalvalidar)
                 {
                     LblFalta.Text = "Falta: R$0,00";
                     LblTroco.Text = "Troco R$0,00";
                     ok = true;
                 }
-                else if (somaTotal >= total)
+                else if (somaTotal >= totalvalidar)
                 {
                     LblFalta.Text = "Falta: R$0,00";
-                    LblTroco.Text = "Troco R$" + (somaTotal - total).ToString("F2");
+                    LblTroco.Text = "Troco R$" + (somaTotal - total - valorDesc).ToString("F2");
                     ok = true;
                 }
                 else
@@ -119,14 +120,17 @@ namespace WindowsFormsApp2
         public void confirmar()
         {
             var idCaixa = caixa.pegarIDUltimoCaixa();
-            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "", DateTime.Now.ToString("HH:mm:ss"));
+            double valorpago = total - valorDesc;
+
             //inserir em pagamentos
-            var aux2 = dadosVenda.GetDataByVenda();
 
             if (txtBoxDesc.Text == "")
                 valorDesc = 0;
             else
                 valorDesc = Convert.ToDouble(txtBoxDesc.Text);
+            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "", DateTime.Now.ToString("HH:mm:ss"), valorpago);
+            var aux2 = dadosVenda.GetDataByVenda();
+
 
             if (TxtBoxDinheiro.Text != "" && TxtBoxDinheiro.Text != "0")
             {
@@ -159,6 +163,7 @@ namespace WindowsFormsApp2
             Close();
         }
         private void BtnFinalizar_Click(object sender, EventArgs e)
+        
         {
             if (valida())
                 confirmar();
@@ -172,6 +177,7 @@ namespace WindowsFormsApp2
                 {
                     this.TopMost = true;
                     this.Activate();
+                    BtnFinalizar.Enabled = true;
                     BtnFinalizar.Select();
                 }
             }
@@ -186,6 +192,7 @@ namespace WindowsFormsApp2
                 {
                     this.TopMost = true;
                     this.Activate();
+                    BtnFinalizar.Enabled = true;
                     BtnFinalizar.Select();
                 }
             }
@@ -199,6 +206,7 @@ namespace WindowsFormsApp2
                 {
                     this.TopMost = true;
                     this.Activate();
+                    BtnFinalizar.Enabled = true;
                     BtnFinalizar.Select();
                 }
             }
@@ -212,6 +220,7 @@ namespace WindowsFormsApp2
                 {
                     this.TopMost = true;
                     this.Activate();
+                    BtnFinalizar.Enabled = true;
                     BtnFinalizar.Select();
                 }
             }
@@ -225,6 +234,7 @@ namespace WindowsFormsApp2
                 {
                     this.TopMost = true;
                     this.Activate();
+                    BtnFinalizar.Enabled = true;
                     BtnFinalizar.Select();
                 }
             }
