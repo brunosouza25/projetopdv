@@ -109,6 +109,12 @@
     <Compile Include="Estoque\View\TelaDeSaidaProduto.Designer.cs">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal\View\Desbloqueio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Desbloqueio.Designer.cs">
+      <DependentUpon>Desbloqueio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vendas\View\TelaDeDevolucoes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaDeSaidaProduto.resx">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Desbloqueio.resx">
+      <DependentUpon>Desbloqueio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>

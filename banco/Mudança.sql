@@ -142,6 +142,15 @@ CREATE TABLE Itens_Devolucao (
     valorValeTroca FLOAT
 );*/
 
+CREATE TABLE Config_Sistema(
+	idConfig TINYINT,
+	a_Bloquear TINYINT,
+	bloqueado TINYINT,
+	senha VARCHAR(20),
+	dataUltimoBloqueio DATE
+);
+
+
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
 ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idProduto) REFERENCES Produto (idProduto)
@@ -165,9 +174,8 @@ INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para 
 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
+INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
-
-select * from ItensDeEntrada
 
 /*DELETE FROM Venda*/
 /*
@@ -184,109 +192,3 @@ delete from produto
 delete from Venda
 */
 
-drop database BD_PDV
-
-select * from ItensDeEntrada
-
-SELECT        TOP (1) idPrimarioItensEntrada, idSecundarioItensEntrada,idProduto, entradaEstado, qntItem, dataEntrada, observacoes
-FROM            ItensDeEntrada
-ORDER BY idPrimarioItensEntrada DESC
-
-SELECT dataEntrada, entradaEstado, idPrimarioItensEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem 
-FROM ItensDeEntrada
-WHERE (idSecundarioItensEntrada = 1)
-
-
-
-
-
-SELECT idSecundarioItensEntrada, dataEntrada
-FROM            ItensDeEntrada
-group by idSecundarioItensEntrada, dataEntrada
-having SUM(idSecundarioItensEntrada) > 0
-
-
-SELECT idSecundarioItensEntrada, dataEntrada
-FROM            ItensDeEntrada
-WHERE dataEntrada between '05-01-2020' and '05-01-2020'
-group by idSecundarioItensEntrada, dataEntrada
-having SUM(idSecundarioItensEntrada) > 0
-
-select * from ItensDeEntrada
-where idSecundarioItensEntrada = 5
-
-select * from Pagamento
-
-
-select * from Produto
-
-SELECT dataEntrada, entradaEstado, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem 
-FROM ItensDeEntrada 
-WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensEntrada, dataEntrada 
-HAVING (SUM(idSecundarioItensEntrada) > 0)
-
-select * from ItensDeEntrada
-
-
-
-select * from ItensDeEntrada
-
-SELECT dataSaida, idSecundarioItensSaida
-FROM ItensDeSaida
-WHERE (dataSaida BETWEEN '07/01/2020' AND '07/01/2020') 
-GROUP BY idSecundarioItensSaida, dataSaida
-HAVING (SUM(idSecundarioItensSaida) > 0)
-
-SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado FROM Produto
-WHERE prodNome like '%Blusa%'
-
-select * from Venda
-
-SELECT idVenda, vendData, valorCompra FROM dbo.Venda
-WHERE idVenda like '%'+1+'%'
-
-
-select* from ItensDaVenda
-
-select * from Caixa
-
-select * from Itens_Devolucao
-
-
-SELECT TOP (1) idItensDevolucao, idProduto, idVenda, quantidadeDevolucao FROM Itens_Devolucao ORDER BY idItensDevolucao
-
-SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda AS Expr1, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes AS Expr2, Pagamento.PagValor, Pagamento.idPagamento, 
-                         Pagamento.idMPagamento, Pagamento.valorDesconto, Venda.vendHora
-FROM            Venda INNER JOIN
-                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
-                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento
-						 where pagamentoTipo = @pagamentoTipo and vendData = between @vendData1 and @vendData2
-
-
-
-SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
-                         Pagamento.idMPagamento, Pagamento.valorDesconto, Itens_Devolucao.idItensDevolucao, Itens_Devolucao.idVenda AS Expr1, Itens_Devolucao.idProduto, Itens_Devolucao.quantidadeDevolucao, 
-                         Itens_Devolucao.observacoes AS Expr2, Itens_Devolucao.dataDevolucao, Venda.vendHora
-FROM            Venda INNER JOIN
-                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
-                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento INNER JOIN
-                         Itens_Devolucao ON Venda.idVenda = Itens_Devolucao.idVenda
-
-						 
-SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
-                         Pagamento.idMPagamento, Pagamento.valorDesconto, Venda.vendHora
-FROM            Venda INNER JOIN
-                         Pagamento ON Venda.idVenda = Pagamento.idVenda INNER JOIN
-                         MetodoDePagamento ON Pagamento.idMPagamento = MetodoDePagamento.idMPagamento
-
-WHERE pagamentoTipo = @pagamentoTipo and vendData between @vendData1 and @vendData2
-
-
-WHERE pagamentoTipo = @pagamentoTipo and vendData between @vendData1 and @vendData2
-
-
-SELECT        ItensDaVenda.idVenda, ItensDaVenda.idProduto, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeCusto, ItensDaVenda.valorDeVenda, 
-                         ItensDaVenda.codBarras, Itens_Devolucao.idVenda AS Expr1
-FROM            ItensDaVenda CROSS JOIN
-                         Itens_Devolucao
-WHERE        (ItensDaVenda.idVenda = 1 and Itens_Devolucao.idVenda = 1)

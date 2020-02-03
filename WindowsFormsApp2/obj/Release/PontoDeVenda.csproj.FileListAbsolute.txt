@@ -34,3 +34,4 @@ C:\projetopdv\WindowsFormsApp2\obj\Release\PontoDeVenda.csproj.CopyComplete
 C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.exe
 C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.pdb
 C:\projetopdv\WindowsFormsApp2\obj\Release\PontoDeVenda.csprojAssemblyReference.cache
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Desbloqueio.resources

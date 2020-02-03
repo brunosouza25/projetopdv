@@ -591,7 +591,7 @@ VALUES        (@idVenda,@idProduto,@itensQtd,@ItensTotal,@estadoDevulcao,@quanti
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarItensDevolvidos" GetMethodModifier="Public" GetMethodName="retornarItensDevolvidos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarItensDevolvidos" UserSourceName="retornarItensDevolvidos">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarItensDevolvidos" GetMethodModifier="Public" GetMethodName="retornarItensDevolvidos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarItensDevolvidos" UserSourceName="retornarItensDevolvidos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>
@@ -610,7 +610,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda and Itens_Devolucao.idVenda = @idV
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="relatorio" GetMethodModifier="Public" GetMethodName="relatorio" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="relatorio" UserSourceName="relatorio">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="relatorio" GetMethodModifier="Public" GetMethodName="relatorio" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="relatorio" UserSourceName="relatorio">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
@@ -646,7 +646,7 @@ FROM            Venda INNER JOIN
               <Mapping SourceColumn="vendHora" DataSetColumn="vendHora" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
@@ -660,7 +660,7 @@ FROM            Venda INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData
@@ -671,7 +671,7 @@ FROM            Venda INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetDataBy2">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetDataBy2">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
@@ -685,7 +685,7 @@ FROM            Venda INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarFechamentoComDevolucao" GetMethodModifier="Public" GetMethodName="retornarFechamentoComDevolucao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarFechamentoComDevolucao" UserSourceName="retornarFechamentoComDevolucao">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarFechamentoComDevolucao" GetMethodModifier="Public" GetMethodName="retornarFechamentoComDevolucao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarFechamentoComDevolucao" UserSourceName="retornarFechamentoComDevolucao">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        MetodoDePagamento.pagamentoTipo, Pagamento.idVenda, Venda.valorCompra, Venda.vendData, Venda.idCaixa, Venda.vendaEstado, Venda.observacoes, Pagamento.PagValor, Pagamento.idPagamento, 
@@ -705,7 +705,7 @@ WHERE pagamentoTipo = @pagamentoTipo and vendData between @vendData1 and @vendDa
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarFechamentoSemDevolucao" GetMethodModifier="Public" GetMethodName="retornarFechamentoSemDevolucao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarFechamentoSemDevolucao" UserSourceName="retornarFechamentoSemDevolucao">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarFechamentoSemDevolucao" GetMethodModifier="Public" GetMethodName="retornarFechamentoSemDevolucao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarFechamentoSemDevolucao" UserSourceName="retornarFechamentoSemDevolucao">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>
@@ -1034,7 +1034,7 @@ WHERE idVenda = @idVenda</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarItensDaVenda" GetMethodModifier="Public" GetMethodName="retornarItensDaVenda" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarItensDaVenda" UserSourceName="retornarItensDaVenda">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarItensDaVenda" GetMethodModifier="Public" GetMethodName="retornarItensDaVenda" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarItensDaVenda" UserSourceName="retornarItensDaVenda">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        Produto.prodNome, Produto.prodCodBarras, Produto.prodValor, ItensDaVenda.itensQtd, ItensDaVenda.idProduto, ItensDaVenda.idItens, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, 
@@ -1048,7 +1048,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarVendaPorIdeCodItensVenda" GetMethodModifier="Public" GetMethodName="retornarVendaPorIdeCodItensVenda" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarVendaPorIdeCodItensVenda" UserSourceName="retornarVendaPorIdeCodItensVenda">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarVendaPorIdeCodItensVenda" GetMethodModifier="Public" GetMethodName="retornarVendaPorIdeCodItensVenda" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarVendaPorIdeCodItensVenda" UserSourceName="retornarVendaPorIdeCodItensVenda">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        Produto.prodNome, Produto.prodCodBarras, Produto.prodValor, ItensDaVenda.itensQtd, ItensDaVenda.idProduto, ItensDaVenda.idItens, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada
@@ -1062,7 +1062,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda) and (ItensDaVenda.idItens = @idIt
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarVendId" GetMethodModifier="Public" GetMethodName="retornarVendId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarVendId" UserSourceName="retornarVendId">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarVendId" GetMethodModifier="Public" GetMethodName="retornarVendId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarVendId" UserSourceName="retornarVendId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        Produto.prodNome, Produto.prodValor, Produto.prodCodBarras, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, Venda.vendData, MetodoDePagamento.pagamentoTipo, Pagamento.PagValor, ItensDaVenda.idVenda AS Expr1, 
@@ -1379,7 +1379,7 @@ VALUES        (@idItensDevolucao,@idVenda,@idProduto,@quantidadeDevolucao,@dataD
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarItensDevolucao" GetMethodModifier="Public" GetMethodName="retornarItensDevolucao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarItensDevolucao" UserSourceName="retornarItensDevolucao">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarItensDevolucao" GetMethodModifier="Public" GetMethodName="retornarItensDevolucao" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarItensDevolucao" UserSourceName="retornarItensDevolucao">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        Itens_Devolucao.idItensDevolucao, Itens_Devolucao.idVenda, Itens_Devolucao.idProduto, Itens_Devolucao.quantidadeDevolucao, Itens_Devolucao.dataDevolucao, ItensDaVenda.valorDeVenda
@@ -1532,6 +1532,71 @@ WHERE idVenda = @idVenda</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Config_SistemaTableAdapter" GeneratorDataComponentClassName="Config_SistemaTableAdapter" Name="Config_Sistema" UserDataComponentName="Config_SistemaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Config_Sistema" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarConfig" GetMethodModifier="Public" GetMethodName="retornarConfig" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarConfig" UserSourceName="retornarConfig">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@a_Bloquear" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="a_Bloquear" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@bloqueado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="bloqueado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataUltimoBloqueio" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataUltimoBloqueio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio
+FROM            Config_Sistema</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="a_Bloquear" DataSetColumn="a_Bloquear" />
+              <Mapping SourceColumn="bloqueado" DataSetColumn="bloqueado" />
+              <Mapping SourceColumn="senha" DataSetColumn="senha" />
+              <Mapping SourceColumn="dataUltimoBloqueio" DataSetColumn="dataUltimoBloqueio" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="alterarConfig" Modifier="Public" Name="alterarConfig" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="alterarConfig">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Config_Sistema] SET  [bloqueado] = @bloqueado
+WHERE idConfig = 1</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="bloqueado" ColumnName="bloqueado" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@bloqueado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="bloqueado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attData" Modifier="Public" Name="attData" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="attData">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Config_Sistema] SET  [dataUltimoBloqueio] = @dataUltimoBloqueio
+WHERE idConfig = 1</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataUltimoBloqueio" ColumnName="dataUltimoBloqueio" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataUltimoBloqueio" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataUltimoBloqueio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attSenha" Modifier="Public" Name="attSenha" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="attSenha">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [dbo].[Config_Sistema] SET  [senha] = @senha
+WHERE idConfig = 1</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="senha" ColumnName="senha" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1540,7 +1605,7 @@ WHERE idVenda = @idVenda</CommandText>
   <xs:element name="Dados" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Dados" msprop:Generator_UserDSName="Dados">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Venda" msprop:Generator_TableClassName="VendaDataTable" msprop:Generator_TableVarName="tableVenda" msprop:Generator_TablePropName="Venda" msprop:Generator_RowDeletingName="VendaRowDeleting" msprop:Generator_RowChangingName="VendaRowChanging" msprop:Generator_RowEvHandlerName="VendaRowChangeEventHandler" msprop:Generator_RowDeletedName="VendaRowDeleted" msprop:Generator_UserTableName="Venda" msprop:Generator_RowChangedName="VendaRowChanged" msprop:Generator_RowEvArgName="VendaRowChangeEvent" msprop:Generator_RowClassName="VendaRow">
+        <xs:element name="Venda" msprop:Generator_TableClassName="VendaDataTable" msprop:Generator_TableVarName="tableVenda" msprop:Generator_RowChangedName="VendaRowChanged" msprop:Generator_TablePropName="Venda" msprop:Generator_RowDeletingName="VendaRowDeleting" msprop:Generator_RowChangingName="VendaRowChanging" msprop:Generator_RowEvHandlerName="VendaRowChangeEventHandler" msprop:Generator_RowDeletedName="VendaRowDeleted" msprop:Generator_RowClassName="VendaRow" msprop:Generator_UserTableName="Venda" msprop:Generator_RowEvArgName="VendaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idVenda" msprop:Generator_ColumnVarNameInTable="columnidVenda" msprop:Generator_ColumnPropNameInRow="idVenda" msprop:Generator_ColumnPropNameInTable="idVendaColumn" msprop:Generator_UserColumnName="idVenda" type="xs:int" />
@@ -1559,7 +1624,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Produto" msprop:Generator_TableClassName="ProdutoDataTable" msprop:Generator_TableVarName="tableProduto" msprop:Generator_TablePropName="Produto" msprop:Generator_RowDeletingName="ProdutoRowDeleting" msprop:Generator_RowChangingName="ProdutoRowChanging" msprop:Generator_RowEvHandlerName="ProdutoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdutoRowDeleted" msprop:Generator_UserTableName="Produto" msprop:Generator_RowChangedName="ProdutoRowChanged" msprop:Generator_RowEvArgName="ProdutoRowChangeEvent" msprop:Generator_RowClassName="ProdutoRow">
+        <xs:element name="Produto" msprop:Generator_TableClassName="ProdutoDataTable" msprop:Generator_TableVarName="tableProduto" msprop:Generator_RowChangedName="ProdutoRowChanged" msprop:Generator_TablePropName="Produto" msprop:Generator_RowDeletingName="ProdutoRowDeleting" msprop:Generator_RowChangingName="ProdutoRowChanging" msprop:Generator_RowEvHandlerName="ProdutoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProdutoRowDeleted" msprop:Generator_RowClassName="ProdutoRow" msprop:Generator_UserTableName="Produto" msprop:Generator_RowEvArgName="ProdutoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idProduto" msprop:Generator_ColumnVarNameInTable="columnidProduto" msprop:Generator_ColumnPropNameInRow="idProduto" msprop:Generator_ColumnPropNameInTable="idProdutoColumn" msprop:Generator_UserColumnName="idProduto" type="xs:int" />
@@ -1584,7 +1649,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Pagamento" msprop:Generator_TableClassName="PagamentoDataTable" msprop:Generator_TableVarName="tablePagamento" msprop:Generator_TablePropName="Pagamento" msprop:Generator_RowDeletingName="PagamentoRowDeleting" msprop:Generator_RowChangingName="PagamentoRowChanging" msprop:Generator_RowEvHandlerName="PagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="PagamentoRowDeleted" msprop:Generator_UserTableName="Pagamento" msprop:Generator_RowChangedName="PagamentoRowChanged" msprop:Generator_RowEvArgName="PagamentoRowChangeEvent" msprop:Generator_RowClassName="PagamentoRow">
+        <xs:element name="Pagamento" msprop:Generator_TableClassName="PagamentoDataTable" msprop:Generator_TableVarName="tablePagamento" msprop:Generator_RowChangedName="PagamentoRowChanged" msprop:Generator_TablePropName="Pagamento" msprop:Generator_RowDeletingName="PagamentoRowDeleting" msprop:Generator_RowChangingName="PagamentoRowChanging" msprop:Generator_RowEvHandlerName="PagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="PagamentoRowDeleted" msprop:Generator_RowClassName="PagamentoRow" msprop:Generator_UserTableName="Pagamento" msprop:Generator_RowEvArgName="PagamentoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PagValor" msprop:Generator_ColumnVarNameInTable="columnPagValor" msprop:Generator_ColumnPropNameInRow="PagValor" msprop:Generator_ColumnPropNameInTable="PagValorColumn" msprop:Generator_UserColumnName="PagValor" type="xs:double" minOccurs="0" />
@@ -1595,7 +1660,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MetodoDePagamento" msprop:Generator_TableClassName="MetodoDePagamentoDataTable" msprop:Generator_TableVarName="tableMetodoDePagamento" msprop:Generator_TablePropName="MetodoDePagamento" msprop:Generator_RowDeletingName="MetodoDePagamentoRowDeleting" msprop:Generator_RowChangingName="MetodoDePagamentoRowChanging" msprop:Generator_RowEvHandlerName="MetodoDePagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="MetodoDePagamentoRowDeleted" msprop:Generator_UserTableName="MetodoDePagamento" msprop:Generator_RowChangedName="MetodoDePagamentoRowChanged" msprop:Generator_RowEvArgName="MetodoDePagamentoRowChangeEvent" msprop:Generator_RowClassName="MetodoDePagamentoRow">
+        <xs:element name="MetodoDePagamento" msprop:Generator_TableClassName="MetodoDePagamentoDataTable" msprop:Generator_TableVarName="tableMetodoDePagamento" msprop:Generator_RowChangedName="MetodoDePagamentoRowChanged" msprop:Generator_TablePropName="MetodoDePagamento" msprop:Generator_RowDeletingName="MetodoDePagamentoRowDeleting" msprop:Generator_RowChangingName="MetodoDePagamentoRowChanging" msprop:Generator_RowEvHandlerName="MetodoDePagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="MetodoDePagamentoRowDeleted" msprop:Generator_RowClassName="MetodoDePagamentoRow" msprop:Generator_UserTableName="MetodoDePagamento" msprop:Generator_RowEvArgName="MetodoDePagamentoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idMPagamento" msprop:Generator_ColumnVarNameInTable="columnidMPagamento" msprop:Generator_ColumnPropNameInRow="idMPagamento" msprop:Generator_ColumnPropNameInTable="idMPagamentoColumn" msprop:Generator_UserColumnName="idMPagamento" type="xs:int" />
@@ -1609,7 +1674,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ItensDaVenda" msprop:Generator_TableClassName="ItensDaVendaDataTable" msprop:Generator_TableVarName="tableItensDaVenda" msprop:Generator_TablePropName="ItensDaVenda" msprop:Generator_RowDeletingName="ItensDaVendaRowDeleting" msprop:Generator_RowChangingName="ItensDaVendaRowChanging" msprop:Generator_RowEvHandlerName="ItensDaVendaRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensDaVendaRowDeleted" msprop:Generator_UserTableName="ItensDaVenda" msprop:Generator_RowChangedName="ItensDaVendaRowChanged" msprop:Generator_RowEvArgName="ItensDaVendaRowChangeEvent" msprop:Generator_RowClassName="ItensDaVendaRow">
+        <xs:element name="ItensDaVenda" msprop:Generator_TableClassName="ItensDaVendaDataTable" msprop:Generator_TableVarName="tableItensDaVenda" msprop:Generator_RowChangedName="ItensDaVendaRowChanged" msprop:Generator_TablePropName="ItensDaVenda" msprop:Generator_RowDeletingName="ItensDaVendaRowDeleting" msprop:Generator_RowChangingName="ItensDaVendaRowChanging" msprop:Generator_RowEvHandlerName="ItensDaVendaRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensDaVendaRowDeleted" msprop:Generator_RowClassName="ItensDaVendaRow" msprop:Generator_UserTableName="ItensDaVenda" msprop:Generator_RowEvArgName="ItensDaVendaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idVenda" msprop:Generator_ColumnVarNameInTable="columnidVenda" msprop:Generator_ColumnPropNameInRow="idVenda" msprop:Generator_ColumnPropNameInTable="idVendaColumn" msprop:Generator_UserColumnName="idVenda" type="xs:int" minOccurs="0" />
@@ -1630,7 +1695,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="vendData" msprop:Generator_ColumnVarNameInTable="columnvendData" msprop:Generator_ColumnPropNameInRow="vendData" msprop:Generator_ColumnPropNameInTable="vendDataColumn" msprop:Generator_UserColumnName="vendData" type="xs:dateTime" minOccurs="0" />
@@ -1672,7 +1737,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Caixa" msprop:Generator_TableClassName="CaixaDataTable" msprop:Generator_TableVarName="tableCaixa" msprop:Generator_TablePropName="Caixa" msprop:Generator_RowDeletingName="CaixaRowDeleting" msprop:Generator_RowChangingName="CaixaRowChanging" msprop:Generator_RowEvHandlerName="CaixaRowChangeEventHandler" msprop:Generator_RowDeletedName="CaixaRowDeleted" msprop:Generator_UserTableName="Caixa" msprop:Generator_RowChangedName="CaixaRowChanged" msprop:Generator_RowEvArgName="CaixaRowChangeEvent" msprop:Generator_RowClassName="CaixaRow">
+        <xs:element name="Caixa" msprop:Generator_TableClassName="CaixaDataTable" msprop:Generator_TableVarName="tableCaixa" msprop:Generator_RowChangedName="CaixaRowChanged" msprop:Generator_TablePropName="Caixa" msprop:Generator_RowDeletingName="CaixaRowDeleting" msprop:Generator_RowChangingName="CaixaRowChanging" msprop:Generator_RowEvHandlerName="CaixaRowChangeEventHandler" msprop:Generator_RowDeletedName="CaixaRowDeleted" msprop:Generator_RowClassName="CaixaRow" msprop:Generator_UserTableName="Caixa" msprop:Generator_RowEvArgName="CaixaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCaixa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCaixa" msprop:Generator_ColumnPropNameInRow="idCaixa" msprop:Generator_ColumnPropNameInTable="idCaixaColumn" msprop:Generator_UserColumnName="idCaixa" type="xs:int" />
@@ -1684,7 +1749,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Caixa1" msprop:Generator_TableClassName="Caixa1DataTable" msprop:Generator_TableVarName="tableCaixa1" msprop:Generator_TablePropName="Caixa1" msprop:Generator_RowDeletingName="Caixa1RowDeleting" msprop:Generator_RowChangingName="Caixa1RowChanging" msprop:Generator_RowEvHandlerName="Caixa1RowChangeEventHandler" msprop:Generator_RowDeletedName="Caixa1RowDeleted" msprop:Generator_UserTableName="Caixa1" msprop:Generator_RowChangedName="Caixa1RowChanged" msprop:Generator_RowEvArgName="Caixa1RowChangeEvent" msprop:Generator_RowClassName="Caixa1Row">
+        <xs:element name="Caixa1" msprop:Generator_TableClassName="Caixa1DataTable" msprop:Generator_TableVarName="tableCaixa1" msprop:Generator_RowChangedName="Caixa1RowChanged" msprop:Generator_TablePropName="Caixa1" msprop:Generator_RowDeletingName="Caixa1RowDeleting" msprop:Generator_RowChangingName="Caixa1RowChanging" msprop:Generator_RowEvHandlerName="Caixa1RowChangeEventHandler" msprop:Generator_RowDeletedName="Caixa1RowDeleted" msprop:Generator_RowClassName="Caixa1Row" msprop:Generator_UserTableName="Caixa1" msprop:Generator_RowEvArgName="Caixa1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="valorAtual" msprop:Generator_ColumnVarNameInTable="columnvalorAtual" msprop:Generator_ColumnPropNameInRow="valorAtual" msprop:Generator_ColumnPropNameInTable="valorAtualColumn" msprop:Generator_UserColumnName="valorAtual" type="xs:double" minOccurs="0" />
@@ -1695,7 +1760,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="relatórioVendas" msprop:Generator_TableClassName="relatórioVendasDataTable" msprop:Generator_TableVarName="tablerelatórioVendas" msprop:Generator_TablePropName="relatórioVendas" msprop:Generator_RowDeletingName="relatórioVendasRowDeleting" msprop:Generator_RowChangingName="relatórioVendasRowChanging" msprop:Generator_RowEvHandlerName="relatórioVendasRowChangeEventHandler" msprop:Generator_RowDeletedName="relatórioVendasRowDeleted" msprop:Generator_UserTableName="relatórioVendas" msprop:Generator_RowChangedName="relatórioVendasRowChanged" msprop:Generator_RowEvArgName="relatórioVendasRowChangeEvent" msprop:Generator_RowClassName="relatórioVendasRow">
+        <xs:element name="relatórioVendas" msprop:Generator_TableClassName="relatórioVendasDataTable" msprop:Generator_TableVarName="tablerelatórioVendas" msprop:Generator_RowChangedName="relatórioVendasRowChanged" msprop:Generator_TablePropName="relatórioVendas" msprop:Generator_RowDeletingName="relatórioVendasRowDeleting" msprop:Generator_RowChangingName="relatórioVendasRowChanging" msprop:Generator_RowEvHandlerName="relatórioVendasRowChangeEventHandler" msprop:Generator_RowDeletedName="relatórioVendasRowDeleted" msprop:Generator_RowClassName="relatórioVendasRow" msprop:Generator_UserTableName="relatórioVendas" msprop:Generator_RowEvArgName="relatórioVendasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="prodNome" msprop:Generator_ColumnVarNameInTable="columnprodNome" msprop:Generator_ColumnPropNameInRow="prodNome" msprop:Generator_ColumnPropNameInTable="prodNomeColumn" msprop:Generator_UserColumnName="prodNome" minOccurs="0">
@@ -1742,7 +1807,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ItensDeEntrada" msprop:Generator_TableClassName="ItensDeEntradaDataTable" msprop:Generator_TableVarName="tableItensDeEntrada" msprop:Generator_TablePropName="ItensDeEntrada" msprop:Generator_RowDeletingName="ItensDeEntradaRowDeleting" msprop:Generator_RowChangingName="ItensDeEntradaRowChanging" msprop:Generator_RowEvHandlerName="ItensDeEntradaRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensDeEntradaRowDeleted" msprop:Generator_UserTableName="ItensDeEntrada" msprop:Generator_RowChangedName="ItensDeEntradaRowChanged" msprop:Generator_RowEvArgName="ItensDeEntradaRowChangeEvent" msprop:Generator_RowClassName="ItensDeEntradaRow">
+        <xs:element name="ItensDeEntrada" msprop:Generator_TableClassName="ItensDeEntradaDataTable" msprop:Generator_TableVarName="tableItensDeEntrada" msprop:Generator_RowChangedName="ItensDeEntradaRowChanged" msprop:Generator_TablePropName="ItensDeEntrada" msprop:Generator_RowDeletingName="ItensDeEntradaRowDeleting" msprop:Generator_RowChangingName="ItensDeEntradaRowChanging" msprop:Generator_RowEvHandlerName="ItensDeEntradaRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensDeEntradaRowDeleted" msprop:Generator_RowClassName="ItensDeEntradaRow" msprop:Generator_UserTableName="ItensDeEntrada" msprop:Generator_RowEvArgName="ItensDeEntradaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idProduto" msprop:Generator_ColumnVarNameInTable="columnidProduto" msprop:Generator_ColumnPropNameInRow="idProduto" msprop:Generator_ColumnPropNameInTable="idProdutoColumn" msprop:Generator_UserColumnName="idProduto" type="xs:int" minOccurs="0" />
@@ -1761,7 +1826,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ItensDeSaida" msprop:Generator_TableClassName="ItensDeSaidaDataTable" msprop:Generator_TableVarName="tableItensDeSaida" msprop:Generator_TablePropName="ItensDeSaida" msprop:Generator_RowDeletingName="ItensDeSaidaRowDeleting" msprop:Generator_RowChangingName="ItensDeSaidaRowChanging" msprop:Generator_RowEvHandlerName="ItensDeSaidaRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensDeSaidaRowDeleted" msprop:Generator_UserTableName="ItensDeSaida" msprop:Generator_RowChangedName="ItensDeSaidaRowChanged" msprop:Generator_RowEvArgName="ItensDeSaidaRowChangeEvent" msprop:Generator_RowClassName="ItensDeSaidaRow">
+        <xs:element name="ItensDeSaida" msprop:Generator_TableClassName="ItensDeSaidaDataTable" msprop:Generator_TableVarName="tableItensDeSaida" msprop:Generator_RowChangedName="ItensDeSaidaRowChanged" msprop:Generator_TablePropName="ItensDeSaida" msprop:Generator_RowDeletingName="ItensDeSaidaRowDeleting" msprop:Generator_RowChangingName="ItensDeSaidaRowChanging" msprop:Generator_RowEvHandlerName="ItensDeSaidaRowChangeEventHandler" msprop:Generator_RowDeletedName="ItensDeSaidaRowDeleted" msprop:Generator_RowClassName="ItensDeSaidaRow" msprop:Generator_UserTableName="ItensDeSaida" msprop:Generator_RowEvArgName="ItensDeSaidaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idSecundarioItensSaida" msprop:Generator_ColumnVarNameInTable="columnidSecundarioItensSaida" msprop:Generator_ColumnPropNameInRow="idSecundarioItensSaida" msprop:Generator_ColumnPropNameInTable="idSecundarioItensSaidaColumn" msprop:Generator_UserColumnName="idSecundarioItensSaida" type="xs:int" minOccurs="0" />
@@ -1780,7 +1845,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Observacoes_Sangria" msprop:Generator_TableClassName="Observacoes_SangriaDataTable" msprop:Generator_TableVarName="tableObservacoes_Sangria" msprop:Generator_TablePropName="Observacoes_Sangria" msprop:Generator_RowDeletingName="Observacoes_SangriaRowDeleting" msprop:Generator_RowChangingName="Observacoes_SangriaRowChanging" msprop:Generator_RowEvHandlerName="Observacoes_SangriaRowChangeEventHandler" msprop:Generator_RowDeletedName="Observacoes_SangriaRowDeleted" msprop:Generator_UserTableName="Observacoes_Sangria" msprop:Generator_RowChangedName="Observacoes_SangriaRowChanged" msprop:Generator_RowEvArgName="Observacoes_SangriaRowChangeEvent" msprop:Generator_RowClassName="Observacoes_SangriaRow">
+        <xs:element name="Observacoes_Sangria" msprop:Generator_TableClassName="Observacoes_SangriaDataTable" msprop:Generator_TableVarName="tableObservacoes_Sangria" msprop:Generator_RowChangedName="Observacoes_SangriaRowChanged" msprop:Generator_TablePropName="Observacoes_Sangria" msprop:Generator_RowDeletingName="Observacoes_SangriaRowDeleting" msprop:Generator_RowChangingName="Observacoes_SangriaRowChanging" msprop:Generator_RowEvHandlerName="Observacoes_SangriaRowChangeEventHandler" msprop:Generator_RowDeletedName="Observacoes_SangriaRowDeleted" msprop:Generator_RowClassName="Observacoes_SangriaRow" msprop:Generator_UserTableName="Observacoes_Sangria" msprop:Generator_RowEvArgName="Observacoes_SangriaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCaixa" msprop:Generator_ColumnVarNameInTable="columnidCaixa" msprop:Generator_ColumnPropNameInRow="idCaixa" msprop:Generator_ColumnPropNameInTable="idCaixaColumn" msprop:Generator_UserColumnName="idCaixa" type="xs:int" minOccurs="0" />
@@ -1794,7 +1859,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Itens_Devolucao" msprop:Generator_TableClassName="Itens_DevolucaoDataTable" msprop:Generator_TableVarName="tableItens_Devolucao" msprop:Generator_TablePropName="Itens_Devolucao" msprop:Generator_RowDeletingName="Itens_DevolucaoRowDeleting" msprop:Generator_RowChangingName="Itens_DevolucaoRowChanging" msprop:Generator_RowEvHandlerName="Itens_DevolucaoRowChangeEventHandler" msprop:Generator_RowDeletedName="Itens_DevolucaoRowDeleted" msprop:Generator_UserTableName="Itens_Devolucao" msprop:Generator_RowChangedName="Itens_DevolucaoRowChanged" msprop:Generator_RowEvArgName="Itens_DevolucaoRowChangeEvent" msprop:Generator_RowClassName="Itens_DevolucaoRow">
+        <xs:element name="Itens_Devolucao" msprop:Generator_TableClassName="Itens_DevolucaoDataTable" msprop:Generator_TableVarName="tableItens_Devolucao" msprop:Generator_RowChangedName="Itens_DevolucaoRowChanged" msprop:Generator_TablePropName="Itens_Devolucao" msprop:Generator_RowDeletingName="Itens_DevolucaoRowDeleting" msprop:Generator_RowChangingName="Itens_DevolucaoRowChanging" msprop:Generator_RowEvHandlerName="Itens_DevolucaoRowChangeEventHandler" msprop:Generator_RowDeletedName="Itens_DevolucaoRowDeleted" msprop:Generator_RowClassName="Itens_DevolucaoRow" msprop:Generator_UserTableName="Itens_Devolucao" msprop:Generator_RowEvArgName="Itens_DevolucaoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idItensDevolucao" msprop:Generator_ColumnVarNameInTable="columnidItensDevolucao" msprop:Generator_ColumnPropNameInRow="idItensDevolucao" msprop:Generator_ColumnPropNameInTable="idItensDevolucaoColumn" msprop:Generator_UserColumnName="idItensDevolucao" type="xs:int" minOccurs="0" />
@@ -1806,7 +1871,7 @@ WHERE idVenda = @idVenda</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vendas_Canceladas" msprop:Generator_TableClassName="Vendas_CanceladasDataTable" msprop:Generator_TableVarName="tableVendas_Canceladas" msprop:Generator_TablePropName="Vendas_Canceladas" msprop:Generator_RowDeletingName="Vendas_CanceladasRowDeleting" msprop:Generator_RowChangingName="Vendas_CanceladasRowChanging" msprop:Generator_RowEvHandlerName="Vendas_CanceladasRowChangeEventHandler" msprop:Generator_RowDeletedName="Vendas_CanceladasRowDeleted" msprop:Generator_UserTableName="Vendas_Canceladas" msprop:Generator_RowChangedName="Vendas_CanceladasRowChanged" msprop:Generator_RowEvArgName="Vendas_CanceladasRowChangeEvent" msprop:Generator_RowClassName="Vendas_CanceladasRow">
+        <xs:element name="Vendas_Canceladas" msprop:Generator_TableClassName="Vendas_CanceladasDataTable" msprop:Generator_TableVarName="tableVendas_Canceladas" msprop:Generator_RowChangedName="Vendas_CanceladasRowChanged" msprop:Generator_TablePropName="Vendas_Canceladas" msprop:Generator_RowDeletingName="Vendas_CanceladasRowDeleting" msprop:Generator_RowChangingName="Vendas_CanceladasRowChanging" msprop:Generator_RowEvHandlerName="Vendas_CanceladasRowChangeEventHandler" msprop:Generator_RowDeletedName="Vendas_CanceladasRowDeleted" msprop:Generator_RowClassName="Vendas_CanceladasRow" msprop:Generator_UserTableName="Vendas_Canceladas" msprop:Generator_RowEvArgName="Vendas_CanceladasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idVendaCancelada" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidVendaCancelada" msprop:Generator_ColumnPropNameInRow="idVendaCancelada" msprop:Generator_ColumnPropNameInTable="idVendaCanceladaColumn" msprop:Generator_UserColumnName="idVendaCancelada" type="xs:int" />
@@ -1815,6 +1880,22 @@ WHERE idVenda = @idVenda</CommandText>
               <xs:element name="dataCancelamento" msprop:Generator_ColumnVarNameInTable="columndataCancelamento" msprop:Generator_ColumnPropNameInRow="dataCancelamento" msprop:Generator_ColumnPropNameInTable="dataCancelamentoColumn" msprop:Generator_UserColumnName="dataCancelamento" type="xs:dateTime" minOccurs="0" />
               <xs:element name="horaCancelamento" msprop:Generator_ColumnVarNameInTable="columnhoraCancelamento" msprop:Generator_ColumnPropNameInRow="horaCancelamento" msprop:Generator_ColumnPropNameInTable="horaCancelamentoColumn" msprop:Generator_UserColumnName="horaCancelamento" type="xs:duration" minOccurs="0" />
               <xs:element name="valorDaVenda" msprop:Generator_ColumnVarNameInTable="columnvalorDaVenda" msprop:Generator_ColumnPropNameInRow="valorDaVenda" msprop:Generator_ColumnPropNameInTable="valorDaVendaColumn" msprop:Generator_UserColumnName="valorDaVenda" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Config_Sistema" msprop:Generator_TableClassName="Config_SistemaDataTable" msprop:Generator_TableVarName="tableConfig_Sistema" msprop:Generator_TablePropName="Config_Sistema" msprop:Generator_RowDeletingName="Config_SistemaRowDeleting" msprop:Generator_RowChangingName="Config_SistemaRowChanging" msprop:Generator_RowEvHandlerName="Config_SistemaRowChangeEventHandler" msprop:Generator_RowDeletedName="Config_SistemaRowDeleted" msprop:Generator_UserTableName="Config_Sistema" msprop:Generator_RowChangedName="Config_SistemaRowChanged" msprop:Generator_RowEvArgName="Config_SistemaRowChangeEvent" msprop:Generator_RowClassName="Config_SistemaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a_Bloquear" msprop:Generator_ColumnVarNameInTable="columna_Bloquear" msprop:Generator_ColumnPropNameInRow="a_Bloquear" msprop:Generator_ColumnPropNameInTable="a_BloquearColumn" msprop:Generator_UserColumnName="a_Bloquear" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="bloqueado" msprop:Generator_ColumnVarNameInTable="columnbloqueado" msprop:Generator_ColumnPropNameInRow="bloqueado" msprop:Generator_ColumnPropNameInTable="bloqueadoColumn" msprop:Generator_UserColumnName="bloqueado" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="senha" msprop:Generator_ColumnVarNameInTable="columnsenha" msprop:Generator_ColumnPropNameInRow="senha" msprop:Generator_ColumnPropNameInTable="senhaColumn" msprop:Generator_UserColumnName="senha" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="54" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dataUltimoBloqueio" msprop:Generator_ColumnVarNameInTable="columndataUltimoBloqueio" msprop:Generator_ColumnPropNameInRow="dataUltimoBloqueio" msprop:Generator_ColumnPropNameInTable="dataUltimoBloqueioColumn" msprop:Generator_UserColumnName="dataUltimoBloqueio" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1843,19 +1924,19 @@ WHERE idVenda = @idVenda</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__ItensDaVe__idPro__5DCAEF64" msdata:parent="Produto" msdata:child="relatórioVendas" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="relatórioVendas" msprop:Generator_ChildPropName="GetrelatórioVendasRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idPro__5DCAEF64" msprop:Generator_ParentPropName="ProdutoRow" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idPro__5DCAEF64" msprop:Generator_UserParentTable="Produto" />
-      <msdata:Relationship name="FK__Itens_Dev__idVen__6477ECF3" msdata:parent="Venda" msdata:child="Itens_Devolucao" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="Itens_Devolucao" msprop:Generator_ChildPropName="GetItens_DevolucaoRows" msprop:Generator_UserRelationName="FK__Itens_Dev__idVen__6477ECF3" msprop:Generator_ParentPropName="VendaRow" msprop:Generator_RelationVarName="relationFK__Itens_Dev__idVen__6477ECF3" msprop:Generator_UserParentTable="Venda" />
-      <msdata:Relationship name="FK__Observaco__idCai__02084FDA" msdata:parent="Caixa" msdata:child="Observacoes_Sangria" msdata:parentkey="idCaixa" msdata:childkey="idCaixa" msprop:Generator_UserChildTable="Observacoes_Sangria" msprop:Generator_ChildPropName="GetObservacoes_SangriaRows" msprop:Generator_UserRelationName="FK__Observaco__idCai__02084FDA" msprop:Generator_ParentPropName="CaixaRow" msprop:Generator_RelationVarName="relationFK__Observaco__idCai__02084FDA" msprop:Generator_UserParentTable="Caixa" />
-      <msdata:Relationship name="FK__ItensDeSa__idPro__5CD6CB2B" msdata:parent="Produto" msdata:child="ItensDeSaida" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="ItensDeSaida" msprop:Generator_ChildPropName="GetItensDeSaidaRows" msprop:Generator_UserRelationName="FK__ItensDeSa__idPro__5CD6CB2B" msprop:Generator_ParentPropName="ProdutoRow" msprop:Generator_RelationVarName="relationFK__ItensDeSa__idPro__5CD6CB2B" msprop:Generator_UserParentTable="Produto" />
-      <msdata:Relationship name="FK__ItensDeEn__idPro__5EBF139D" msdata:parent="Produto" msdata:child="ItensDeEntrada" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="ItensDeEntrada" msprop:Generator_ChildPropName="GetItensDeEntradaRows" msprop:Generator_UserRelationName="FK__ItensDeEn__idPro__5EBF139D" msprop:Generator_ParentPropName="ProdutoRow" msprop:Generator_RelationVarName="relationFK__ItensDeEn__idPro__5EBF139D" msprop:Generator_UserParentTable="Produto" />
-      <msdata:Relationship name="FK__ItensDaVe__idVen__5441852A1" msdata:parent="Venda" msdata:child="relatórioVendas" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="relatórioVendas" msprop:Generator_ChildPropName="GetrelatórioVendasRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idVen__5441852A1" msprop:Generator_ParentPropName="VendaRow" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idVen__5441852A1" msprop:Generator_UserParentTable="Venda" />
-      <msdata:Relationship name="FK__Venda__idCaixa__5DCAEF64" msdata:parent="Caixa" msdata:child="Venda" msdata:parentkey="idCaixa" msdata:childkey="idCaixa" msprop:Generator_UserChildTable="Venda" msprop:Generator_ChildPropName="GetVendaRows" msprop:Generator_UserRelationName="FK__Venda__idCaixa__5DCAEF64" msprop:Generator_RelationVarName="relationFK__Venda__idCaixa__5DCAEF64" msprop:Generator_UserParentTable="Caixa" msprop:Generator_ParentPropName="CaixaRow" />
-      <msdata:Relationship name="FK__ItensDaVe__idVen__5441852A" msdata:parent="Venda" msdata:child="DataTable2" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="DataTable2" msprop:Generator_ChildPropName="GetDataTable2Rows" msprop:Generator_UserRelationName="FK__ItensDaVe__idVen__5441852A" msprop:Generator_ParentPropName="VendaRow" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idVen__5441852A" msprop:Generator_UserParentTable="Venda" />
-      <msdata:Relationship name="FK__ItensDaVe__idVen__52593CB8" msdata:parent="Venda" msdata:child="ItensDaVenda" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="ItensDaVenda" msprop:Generator_ChildPropName="GetItensDaVendaRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idVen__52593CB8" msprop:Generator_ParentPropName="VendaRow" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idVen__52593CB8" msprop:Generator_UserParentTable="Venda" />
-      <msdata:Relationship name="FK__ItensDaVe__idPro__534D60F1" msdata:parent="Produto" msdata:child="ItensDaVenda" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="ItensDaVenda" msprop:Generator_ChildPropName="GetItensDaVendaRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idPro__534D60F1" msprop:Generator_ParentPropName="ProdutoRow" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idPro__534D60F1" msprop:Generator_UserParentTable="Produto" />
-      <msdata:Relationship name="FK__Pagamento__idVen__5441852A" msdata:parent="Venda" msdata:child="Pagamento" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="Pagamento" msprop:Generator_ChildPropName="GetPagamentoRows" msprop:Generator_UserRelationName="FK__Pagamento__idVen__5441852A" msprop:Generator_ParentPropName="VendaRow" msprop:Generator_RelationVarName="relationFK__Pagamento__idVen__5441852A" msprop:Generator_UserParentTable="Venda" />
-      <msdata:Relationship name="FK__Pagamento__idMPa__5165187F" msdata:parent="MetodoDePagamento" msdata:child="Pagamento" msdata:parentkey="idMPagamento" msdata:childkey="idMPagamento" msprop:Generator_UserChildTable="Pagamento" msprop:Generator_ChildPropName="GetPagamentoRows" msprop:Generator_UserRelationName="FK__Pagamento__idMPa__5165187F" msprop:Generator_RelationVarName="relationFK__Pagamento__idMPa__5165187F" msprop:Generator_UserParentTable="MetodoDePagamento" msprop:Generator_ParentPropName="MetodoDePagamentoRow" />
-      <msdata:Relationship name="FK__Vendas_Ca__idVen__49C3F6B7" msdata:parent="Venda" msdata:child="Vendas_Canceladas" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="Vendas_Canceladas" msprop:Generator_ChildPropName="GetVendas_CanceladasRows" msprop:Generator_UserRelationName="FK__Vendas_Ca__idVen__49C3F6B7" msprop:Generator_ParentPropName="VendaRow" msprop:Generator_RelationVarName="relationFK__Vendas_Ca__idVen__49C3F6B7" msprop:Generator_UserParentTable="Venda" />
+      <msdata:Relationship name="FK__ItensDaVe__idPro__5DCAEF64" msdata:parent="Produto" msdata:child="relatórioVendas" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="relatórioVendas" msprop:Generator_ChildPropName="GetrelatórioVendasRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idPro__5DCAEF64" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idPro__5DCAEF64" msprop:Generator_UserParentTable="Produto" msprop:Generator_ParentPropName="ProdutoRow" />
+      <msdata:Relationship name="FK__Itens_Dev__idVen__6477ECF3" msdata:parent="Venda" msdata:child="Itens_Devolucao" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="Itens_Devolucao" msprop:Generator_ChildPropName="GetItens_DevolucaoRows" msprop:Generator_UserRelationName="FK__Itens_Dev__idVen__6477ECF3" msprop:Generator_RelationVarName="relationFK__Itens_Dev__idVen__6477ECF3" msprop:Generator_UserParentTable="Venda" msprop:Generator_ParentPropName="VendaRow" />
+      <msdata:Relationship name="FK__Observaco__idCai__02084FDA" msdata:parent="Caixa" msdata:child="Observacoes_Sangria" msdata:parentkey="idCaixa" msdata:childkey="idCaixa" msprop:Generator_UserChildTable="Observacoes_Sangria" msprop:Generator_ChildPropName="GetObservacoes_SangriaRows" msprop:Generator_UserRelationName="FK__Observaco__idCai__02084FDA" msprop:Generator_RelationVarName="relationFK__Observaco__idCai__02084FDA" msprop:Generator_UserParentTable="Caixa" msprop:Generator_ParentPropName="CaixaRow" />
+      <msdata:Relationship name="FK__ItensDeSa__idPro__5CD6CB2B" msdata:parent="Produto" msdata:child="ItensDeSaida" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="ItensDeSaida" msprop:Generator_ChildPropName="GetItensDeSaidaRows" msprop:Generator_UserRelationName="FK__ItensDeSa__idPro__5CD6CB2B" msprop:Generator_RelationVarName="relationFK__ItensDeSa__idPro__5CD6CB2B" msprop:Generator_UserParentTable="Produto" msprop:Generator_ParentPropName="ProdutoRow" />
+      <msdata:Relationship name="FK__ItensDeEn__idPro__5EBF139D" msdata:parent="Produto" msdata:child="ItensDeEntrada" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="ItensDeEntrada" msprop:Generator_ChildPropName="GetItensDeEntradaRows" msprop:Generator_UserRelationName="FK__ItensDeEn__idPro__5EBF139D" msprop:Generator_RelationVarName="relationFK__ItensDeEn__idPro__5EBF139D" msprop:Generator_UserParentTable="Produto" msprop:Generator_ParentPropName="ProdutoRow" />
+      <msdata:Relationship name="FK__ItensDaVe__idVen__5441852A1" msdata:parent="Venda" msdata:child="relatórioVendas" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="relatórioVendas" msprop:Generator_ChildPropName="GetrelatórioVendasRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idVen__5441852A1" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idVen__5441852A1" msprop:Generator_UserParentTable="Venda" msprop:Generator_ParentPropName="VendaRow" />
+      <msdata:Relationship name="FK__Venda__idCaixa__5DCAEF64" msdata:parent="Caixa" msdata:child="Venda" msdata:parentkey="idCaixa" msdata:childkey="idCaixa" msprop:Generator_UserChildTable="Venda" msprop:Generator_ChildPropName="GetVendaRows" msprop:Generator_UserRelationName="FK__Venda__idCaixa__5DCAEF64" msprop:Generator_ParentPropName="CaixaRow" msprop:Generator_RelationVarName="relationFK__Venda__idCaixa__5DCAEF64" msprop:Generator_UserParentTable="Caixa" />
+      <msdata:Relationship name="FK__ItensDaVe__idVen__5441852A" msdata:parent="Venda" msdata:child="DataTable2" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="DataTable2" msprop:Generator_ChildPropName="GetDataTable2Rows" msprop:Generator_UserRelationName="FK__ItensDaVe__idVen__5441852A" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idVen__5441852A" msprop:Generator_UserParentTable="Venda" msprop:Generator_ParentPropName="VendaRow" />
+      <msdata:Relationship name="FK__ItensDaVe__idVen__52593CB8" msdata:parent="Venda" msdata:child="ItensDaVenda" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="ItensDaVenda" msprop:Generator_ChildPropName="GetItensDaVendaRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idVen__52593CB8" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idVen__52593CB8" msprop:Generator_UserParentTable="Venda" msprop:Generator_ParentPropName="VendaRow" />
+      <msdata:Relationship name="FK__ItensDaVe__idPro__534D60F1" msdata:parent="Produto" msdata:child="ItensDaVenda" msdata:parentkey="idProduto" msdata:childkey="idProduto" msprop:Generator_UserChildTable="ItensDaVenda" msprop:Generator_ChildPropName="GetItensDaVendaRows" msprop:Generator_UserRelationName="FK__ItensDaVe__idPro__534D60F1" msprop:Generator_RelationVarName="relationFK__ItensDaVe__idPro__534D60F1" msprop:Generator_UserParentTable="Produto" msprop:Generator_ParentPropName="ProdutoRow" />
+      <msdata:Relationship name="FK__Pagamento__idVen__5441852A" msdata:parent="Venda" msdata:child="Pagamento" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="Pagamento" msprop:Generator_ChildPropName="GetPagamentoRows" msprop:Generator_UserRelationName="FK__Pagamento__idVen__5441852A" msprop:Generator_RelationVarName="relationFK__Pagamento__idVen__5441852A" msprop:Generator_UserParentTable="Venda" msprop:Generator_ParentPropName="VendaRow" />
+      <msdata:Relationship name="FK__Pagamento__idMPa__5165187F" msdata:parent="MetodoDePagamento" msdata:child="Pagamento" msdata:parentkey="idMPagamento" msdata:childkey="idMPagamento" msprop:Generator_UserChildTable="Pagamento" msprop:Generator_ChildPropName="GetPagamentoRows" msprop:Generator_UserRelationName="FK__Pagamento__idMPa__5165187F" msprop:Generator_ParentPropName="MetodoDePagamentoRow" msprop:Generator_RelationVarName="relationFK__Pagamento__idMPa__5165187F" msprop:Generator_UserParentTable="MetodoDePagamento" />
+      <msdata:Relationship name="FK__Vendas_Ca__idVen__49C3F6B7" msdata:parent="Venda" msdata:child="Vendas_Canceladas" msdata:parentkey="idVenda" msdata:childkey="idVenda" msprop:Generator_UserChildTable="Vendas_Canceladas" msprop:Generator_ChildPropName="GetVendas_CanceladasRows" msprop:Generator_UserRelationName="FK__Vendas_Ca__idVen__49C3F6B7" msprop:Generator_RelationVarName="relationFK__Vendas_Ca__idVen__49C3F6B7" msprop:Generator_UserParentTable="Venda" msprop:Generator_ParentPropName="VendaRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
