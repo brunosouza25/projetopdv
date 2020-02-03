@@ -9,11 +9,19 @@ namespace WindowsFormsApp2
 {
     public partial class TelaDeRelatorios : UserControl
     {
+        bool existeDiretorio = Directory.Exists(@"C:\relatorios");
+
         public TelaDeRelatorios()
         {
             InitializeComponent();
+            if (!existeDiretorio)
+            {
+                Directory.CreateDirectory(@"C:\relatorios");
+            }
 
         }
+
+
 
         private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
         {
@@ -32,7 +40,7 @@ namespace WindowsFormsApp2
 
                     string aux = DateTime.Now.ToString("dd-MM-yyyy");
 
-                    string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio_" + aux.ToString() + ".pdf";
+                    string caminho = @"C:\relatorios\relatorio_" + aux.ToString() + ".pdf";
 
 
                     PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -91,7 +99,7 @@ namespace WindowsFormsApp2
 
                 string aux = DateTime.Now.ToString("dd-MM-yyyy");
 
-                string caminho = @"C:\Users\bruno\Desktop\relatorios\fechamento" + aux.ToString() + ".pdf";
+                string caminho = @"C:\relatorios\fechamento" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -377,7 +385,7 @@ namespace WindowsFormsApp2
 
                 string aux = DateTime.Now.ToString("dd-MM-yyyy");
 
-                string caminho = @"C:\Users\bruno\Desktop\relatorios\relatorio_vendas_" + aux.ToString() + ".pdf";
+                string caminho = @"C:\relatorios\relatorio_vendas_" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
