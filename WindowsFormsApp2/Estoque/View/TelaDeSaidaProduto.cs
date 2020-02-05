@@ -9,13 +9,14 @@ namespace WindowsFormsApp2.Estoque.View
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.ItensDeSaidaTableAdapter dadosSaida = new DadosTableAdapters.ItensDeSaidaTableAdapter();
 
-        int idSaida;
+        int idSaida, soma = 0;
         public string[,] itensDaLista { get; set; }
 
         public TelaDeSaidaProduto()
         {
             InitializeComponent();
             ultimoId();
+            lblTotalItens.Text = "0";
             txtBoxQnt.Text = "1";
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             lblNumSaida.Text = idSaida.ToString();
@@ -38,7 +39,7 @@ namespace WindowsFormsApp2.Estoque.View
             listaDeSaida.Items.Clear();
             var aux = dadosSaida.retornarSaidaPorId(idSaida);
             lblData.Text = Convert.ToDateTime(aux[0]["dataSaida"]).ToString("dd/MM/yyyy");
-            lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0, 5);
+            //lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0, 5);
             lblNumSaida.Text = idSaida.ToString();
             txtBoxObs.Text = aux[0]["observacoes"].ToString();
             int soma = 0;
@@ -150,6 +151,10 @@ namespace WindowsFormsApp2.Estoque.View
 
                     }
                 }
+                
+                soma += qnt;
+                lblTotalItens.Text = qnt.ToString();
+                
                 item.SubItems.Add(qnt.ToString());
                 if (listaProduto.Count == 0)
                 {

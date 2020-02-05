@@ -58,7 +58,6 @@
             this.lblData = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
@@ -372,7 +371,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.lblHora);
             this.panel5.Controls.Add(this.txtBoxQnt);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxtBoxPesquisaProd);
@@ -387,16 +385,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(855, 129);
             this.panel5.TabIndex = 0;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(759, 2);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(87, 33);
-            this.lblHora.TabIndex = 11;
-            this.lblHora.Text = "24:24";
             // 
             // txtBoxQnt
             // 
@@ -687,7 +675,6 @@
         private System.Windows.Forms.MaskedTextBox txtBoxQnt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Button btnLimpar;
     }
 }

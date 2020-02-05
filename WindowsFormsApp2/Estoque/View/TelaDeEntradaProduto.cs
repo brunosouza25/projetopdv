@@ -8,7 +8,7 @@ namespace WindowsFormsApp2.Estoque.View
     {
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
-        int idEntrada;
+        int idEntrada, soma = 0;
         public string[,] itensDaLista { get; set; }
 
         bool tipo;
@@ -16,6 +16,7 @@ namespace WindowsFormsApp2.Estoque.View
         {
             InitializeComponent();
             ultimoId();
+            lblTotalItens.Text = "0";
             txtBoxQnt.Text = "1";
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
             lblNumEntrada.Text = idEntrada.ToString();
@@ -39,7 +40,7 @@ namespace WindowsFormsApp2.Estoque.View
             listaDeEntrada.Items.Clear();
             var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
             lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
-            lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
+            //lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
             lblNumEntrada.Text = idEntrada.ToString();
             txtBoxObs.Text = aux[0]["observacoes"].ToString();
             int soma = 0;
@@ -117,7 +118,6 @@ namespace WindowsFormsApp2.Estoque.View
 
                 Produto prod = new Produto();
                 int qnt = Convert.ToInt32(txtBoxQnt.Text);
-
                 prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
                 prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
                 prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
@@ -128,6 +128,7 @@ namespace WindowsFormsApp2.Estoque.View
                     prod.prodQuantidade = 1;
                 else
                     prod.prodQuantidade = Convert.ToInt32(txtBoxQnt.Text);
+
 
 
                 ListViewItem item = new ListViewItem();
@@ -150,6 +151,8 @@ namespace WindowsFormsApp2.Estoque.View
 
                     }
                 }
+                soma += qnt;
+                lblTotalItens.Text = qnt.ToString();
                 item.SubItems.Add(qnt.ToString());
                 if (listaProduto.Count == 0)
                 {
