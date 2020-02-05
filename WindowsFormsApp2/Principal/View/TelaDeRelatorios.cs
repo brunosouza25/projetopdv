@@ -331,7 +331,7 @@ namespace WindowsFormsApp2
                         table6.AddCell(vendasCanceladas[i]["dataVenda"].ToString());
                         table6.AddCell(vendasCanceladas[i]["dataCancelamento"].ToString());
                         var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
-                        table6.AddCell("R$"+Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"]) - Convert.ToDouble(desconto[0]["valorDesconto"])).ToString("F2"));
+                        table6.AddCell("R$"+Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
                     }
                     informacao.Clear();
                     informacao.Add("\n\nVendas Canceladas \n\n" );
