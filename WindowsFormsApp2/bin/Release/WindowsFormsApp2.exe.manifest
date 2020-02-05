@@ -13,18 +13,18 @@
         <defaultAssemblyRequest permissionSetReference="Custom" />
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!--
-          Opções de Manifesto do UAC
-          Para alterar o nível de Controle de Conta de Usuário do Windows, substitua o nó
-          requestedExecutionLevel por um dos seguintes.
+        <!-- Opções de Manifesto UAC
+ Se você deseja alterar o nível de Controle de Conta de Usuário do Windows, substitua o nó requestedExecutionLevel 
+ por um dos seguintes.
 
-        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+<requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         Para utilizar a Virtualização de Arquivos e Registro para manter a compatibilidade com versões anteriores,
-         exclua o nó requestedExecutionLevel.
-    -->
+ Especificar o elemento requestedExecutionLevel desabilitará a virtualização de arquivos e Registro. 
+ Remova esse elemento se seu aplicativo requer essa virtualização para compatibilidade
+            com versões anteriores.
+        -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApp2.exe" size="773600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApp2.exe" size="773088">
       <assemblyIdentity name="WindowsFormsApp2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TOQreo7flx2O/7jTSPN8VneaHtqbo3Ej3yS1gj0u9V8=</dsig:DigestValue>
+        <dsig:DigestValue>rL3Wu6s5XsJvlmFsh2Zb317NP4MACwf2PbaDSapBy5U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -71,7 +71,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>VGcquopyOGja/1W2tb5DAQN9RytaxgwoKDZQy53F0uo=</dsig:DigestValue>
+      <dsig:DigestValue>lI6iC0gWkBRpt3j16IT5P59nSexgLrG7CHYAahKgZLY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Database_log.ldf" size="8388608" writeableType="applicationData">
@@ -80,7 +80,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BB8hQnsLOuCrcPRxAeTUfpQHHSa5aASE6rPzrUNHuXY=</dsig:DigestValue>
+      <dsig:DigestValue>jA+cGIgh10E8aPmUcajeHTKWtSnJdduRN976s5YtQVo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="WindowsFormsApp2.exe.config" size="559">
@@ -92,4 +92,21 @@
       <dsig:DigestValue>RUod47joZD3ioUbuQ8yVvi0mFosH7RIb9assnueur/k=</dsig:DigestValue>
     </hash>
   </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Uma lista das versões do Windows nas quais este aplicativo foi testado e
+           com as quais ele foi projetado para trabalhar. Remova a marca de comentário dos elementos apropriados
+           e o Windows selecionará automaticamente o ambiente mais compatível. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
 </asmv1:assembly>
