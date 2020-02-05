@@ -69,6 +69,7 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void carregarTela()
         {
+            listaVendas.Items.Clear();
             var auxVenda = detalheVenda.retornarVendId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
@@ -76,7 +77,7 @@ namespace WindowsFormsApp2.Vendas.View
             {
                 if (Convert.ToByte(auxVenda[0]["vendaEstado"]) == 1)
                 {
-
+                   
                     List<string> tipos = new List<string>();
                     for (int i = 0; i < auxProdutosVenda.Count; i++)
                     {
@@ -195,6 +196,7 @@ namespace WindowsFormsApp2.Vendas.View
                     
                 }
             }
+            carregarTela();
         }
 
     }

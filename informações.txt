@@ -1,1 +1,0 @@
-começando a implementar fechamendo do dia, criando o select no dataset e implementando na tela de relatorios para gerar o pdf

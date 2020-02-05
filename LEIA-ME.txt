@@ -1,0 +1,1 @@
+Projeto de sistema de ponto de venda para a conclusão do curso Tecnologia em Análise e desenvolvimento de Sistemas, desenvolvido na linguagem de programação C# e linguagem de banco de dados SQL, utilizando DATASET para facilitar a manipulação do banco dentro do código, utilizando a IDE Visual Studio Community

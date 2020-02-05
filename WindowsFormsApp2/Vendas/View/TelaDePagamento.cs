@@ -131,15 +131,23 @@ namespace WindowsFormsApp2
             dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "", DateTime.Now.ToString("HH:mm:ss"), valorpago);
             var aux2 = dadosVenda.GetDataByVenda();
 
-
-            if (TxtBoxDinheiro.Text != "" && TxtBoxDinheiro.Text != "0")
+            double din;
+            if (TxtBoxDinheiro.Text == "" || TxtBoxDinheiro.Text == "0")
             {
-                pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(TxtBoxDinheiro.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 1, valorDesc, idPagamento);
+                din = 0;
+            }
+            else
+            {
+                din = Convert.ToDouble(TxtBoxDinheiro.Text);
+            }
+                /*if (TxtBoxDinheiro.Text != "" && TxtBoxDinheiro.Text != "0")
+                {*/
+                pagamento.InserirPagamento(din, Convert.ToInt32(aux2[0]["idVenda"]), 1, valorDesc, idPagamento);
                 var totalCaixa = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
-                double tempTotal = Convert.ToDouble(TxtBoxDinheiro.Text) + Convert.ToDouble(totalCaixa[0]["valorAtual"]);
+                double tempTotal = din + Convert.ToDouble(totalCaixa[0]["valorAtual"]);
                 string tempTotalString = tempTotal.ToString("F2");
                 caixa.attValorAtual(Convert.ToDouble(tempTotalString), Convert.ToInt32(idCaixa[0]["idCaixa"]));
-            }
+            /*}*/
             if (txtCredVista.Text != "" && txtCredVista.Text != "0")
                 pagamento.InserirPagamento(Convert.ToDouble(Convert.ToDouble(txtCredVista.Text)), Convert.ToInt32(aux2[0]["idVenda"]), 2, valorDesc, idPagamento);
 
