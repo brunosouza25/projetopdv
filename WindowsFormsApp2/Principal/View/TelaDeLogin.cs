@@ -10,10 +10,14 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
         TelaPrincipal tela = new TelaPrincipal();
-
+        DadosTableAdapters.FuncionarioTableAdapter funcionario = new DadosTableAdapters.FuncionarioTableAdapter();
         public void validar(string login, string senha)
         {
-            if (login == "admin" && senha == "admin")
+            var func = funcionario.verificarFunc(login);
+            string name, pass;
+            name = func[0]["nomeFunc"].ToString();
+            pass = func[0]["senha"].ToString();
+            if (login == name && senha == pass)
             {
                 this.Visible = false;
                 tela.ShowDialog();
@@ -25,7 +29,6 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             validar(TxtBoxPass.Text, TxtBoxUser.Text);
-
         }
 
         private void button1_Click(object sender, EventArgs e)

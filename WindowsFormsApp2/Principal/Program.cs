@@ -39,7 +39,9 @@ namespace WindowsFormsApp2
 
             if (configSistema2[0]["bloqueado"].ToString() == "0")
             {
-                Application.Run(new TelaPrincipal());
+                TelaDeLogin login = new TelaDeLogin();
+                Application.Run(new TelaDeLogin());
+                //Application.Run(new TelaPrincipal());
             }
 
             void criptografrar()
