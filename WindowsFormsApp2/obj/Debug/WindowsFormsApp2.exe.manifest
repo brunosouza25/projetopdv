@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lDRuWraiV+kNxIJWcDxUvxbBx7VOHU+sHPJImPS8g2o=</dsig:DigestValue>
+        <dsig:DigestValue>VcpQKl60v3LHbk0oszatQMhH05YOizQQWTG+g5jzE8I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -71,7 +71,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Myrx5xLn/oJQvseP5MdZc59IHN5s1qf0dhmrxABUUYk=</dsig:DigestValue>
+      <dsig:DigestValue>EjPFgGCEY+xwjDf+zEVhy8/Ey5WavDo0/4Yxr6SjzKA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Database_log.ldf" size="8388608" writeableType="applicationData">
@@ -80,7 +80,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RE7PGhlLOlxhBi12p1c8F79Gz5iIc5Vei2sl5xBlNdw=</dsig:DigestValue>
+      <dsig:DigestValue>zf3qVR4XDrbW8OadQuiLPKM78wORqgC60mi8koPTUeI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="WindowsFormsApp2.exe.config" size="559">
