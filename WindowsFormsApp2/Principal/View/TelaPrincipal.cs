@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using WindowsFormsApp2.Vendas;
+using WindowsFormsApp2.Principal.View.Config;
 namespace WindowsFormsApp2
 {
     public partial class TelaPrincipal : Form
@@ -9,6 +10,7 @@ namespace WindowsFormsApp2
         TelaPrincipalEstoque estoque = new TelaPrincipalEstoque();
         TelaDeRelatorios relatorio = new TelaDeRelatorios();
         TelaDeVendas telaDoPdv = new TelaDeVendas();
+        TelaConfig telaDeConfig = new TelaConfig();   
 
 
 
@@ -28,6 +30,8 @@ namespace WindowsFormsApp2
             painelPrincipal.Controls.Add(telaDoPdv);
             telaDoPdv.Visible = false;
 
+            painelPrincipal.Controls.Add(telaDeConfig);
+            telaDeConfig.Visible = false;
         }
 
         public void mudarEstoque()
@@ -44,6 +48,11 @@ namespace WindowsFormsApp2
             relatorio.Visible = !relatorio.Visible;
         }
 
+        public void mudarConfig()
+        {
+            telaDeConfig.Visible = !telaDeConfig.Visible;
+        }
+
         private void BtRelatorio_Click(object sender, EventArgs e)
         {
             if (estoque.Visible)
@@ -53,6 +62,10 @@ namespace WindowsFormsApp2
             if (telaDoPdv.Visible)
             {
                 mudarCaixa();
+            }
+            if (telaDeConfig.Visible)
+            {
+                mudarConfig();
             }
             relatorio.Visible = true;
         }
@@ -66,7 +79,10 @@ namespace WindowsFormsApp2
             {
                 mudarRelatorio();
             }
-
+            if (telaDeConfig.Visible)
+            {
+                mudarConfig();
+            }
             telaDoPdv.Visible = true;
 
         }
@@ -79,11 +95,28 @@ namespace WindowsFormsApp2
             {
                 mudarRelatorio();
             }
-
+            if (telaDeConfig.Visible)
+            {
+                mudarConfig();
+            }
             estoque.Visible = true;
             estoque.estoque.carregarListaEstoque();
-
-
+        }
+        private void BtConfig_Click(object sender, EventArgs e)
+        {
+            if (telaDoPdv.Visible)
+            {
+                mudarCaixa();
+            }
+            if (estoque.Visible)
+            {
+                mudarEstoque();
+            }
+            if (relatorio.Visible)
+            {
+                mudarRelatorio();
+            }
+            telaDeConfig.Visible = true;
         }
 
         //Timer para alterar a label de data e hora
@@ -92,5 +125,7 @@ namespace WindowsFormsApp2
            Lab_Hora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
            timer1.Start();
         }
+
+
     }
 }

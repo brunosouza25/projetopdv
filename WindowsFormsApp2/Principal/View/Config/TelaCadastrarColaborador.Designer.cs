@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.cbSexo = new System.Windows.Forms.ComboBox();
+            this.lblNasc = new System.Windows.Forms.TextBox();
+            this.lvlConta = new System.Windows.Forms.TextBox();
+            this.lblAgencia = new System.Windows.Forms.TextBox();
+            this.lblBanco = new System.Windows.Forms.TextBox();
             this.lblEnd = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.TextBox();
             this.lblRg = new System.Windows.Forms.TextBox();
@@ -49,16 +49,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblBairro = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblNum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblTel = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbCargo = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lvlCidade = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.funcEstado = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -70,24 +70,24 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.funcEstado);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.lvlCidade);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cbCargo);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.lblTel);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.lblNum);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lblBairro);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Controls.Add(this.cbSexo);
+            this.panel1.Controls.Add(this.lblNasc);
+            this.panel1.Controls.Add(this.lvlConta);
+            this.panel1.Controls.Add(this.lblAgencia);
+            this.panel1.Controls.Add(this.lblBanco);
             this.panel1.Controls.Add(this.lblEnd);
             this.panel1.Controls.Add(this.lblCpf);
             this.panel1.Controls.Add(this.lblRg);
@@ -108,59 +108,61 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(360, 442);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 51);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(360, 442);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 51);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Location = new System.Drawing.Point(70, 442);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 51);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Location = new System.Drawing.Point(70, 442);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(83, 51);
+            this.btnSalvar.TabIndex = 23;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // comboBox1
+            // cbSexo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(387, 301);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 19;
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Location = new System.Drawing.Point(387, 301);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(100, 21);
+            this.cbSexo.TabIndex = 19;
             // 
-            // textBox5
+            // lblNasc
             // 
-            this.textBox5.Location = new System.Drawing.Point(198, 303);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 18;
+            this.lblNasc.Location = new System.Drawing.Point(198, 303);
+            this.lblNasc.Name = "lblNasc";
+            this.lblNasc.Size = new System.Drawing.Size(100, 20);
+            this.lblNasc.TabIndex = 18;
             // 
-            // textBox6
+            // lvlConta
             // 
-            this.textBox6.Location = new System.Drawing.Point(344, 384);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 22;
+            this.lvlConta.Location = new System.Drawing.Point(344, 384);
+            this.lvlConta.Name = "lvlConta";
+            this.lvlConta.Size = new System.Drawing.Size(100, 20);
+            this.lvlConta.TabIndex = 22;
             // 
-            // textBox7
+            // lblAgencia
             // 
-            this.textBox7.Location = new System.Drawing.Point(143, 384);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 21;
+            this.lblAgencia.Location = new System.Drawing.Point(143, 384);
+            this.lblAgencia.Name = "lblAgencia";
+            this.lblAgencia.Size = new System.Drawing.Size(100, 20);
+            this.lblAgencia.TabIndex = 21;
             // 
-            // textBox8
+            // lblBanco
             // 
-            this.textBox8.Location = new System.Drawing.Point(148, 338);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 20;
+            this.lblBanco.Location = new System.Drawing.Point(148, 338);
+            this.lblBanco.Name = "lblBanco";
+            this.lblBanco.Size = new System.Drawing.Size(100, 20);
+            this.lblBanco.TabIndex = 20;
             // 
             // lblEnd
             // 
@@ -280,12 +282,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:*";
             // 
-            // textBox1
+            // lblBairro
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 268);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 16;
+            this.lblBairro.Location = new System.Drawing.Point(199, 268);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(159, 20);
+            this.lblBairro.TabIndex = 16;
             // 
             // label10
             // 
@@ -297,12 +299,12 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "Bairro";
             // 
-            // textBox2
+            // lblNum
             // 
-            this.textBox2.Location = new System.Drawing.Point(417, 268);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(59, 20);
-            this.textBox2.TabIndex = 17;
+            this.lblNum.Location = new System.Drawing.Point(417, 268);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(59, 20);
+            this.lblNum.TabIndex = 17;
             // 
             // label11
             // 
@@ -314,12 +316,12 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Nº:";
             // 
-            // textBox3
+            // lblTel
             // 
-            this.textBox3.Location = new System.Drawing.Point(197, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 20);
-            this.textBox3.TabIndex = 13;
+            this.lblTel.Location = new System.Drawing.Point(197, 164);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(127, 20);
+            this.lblTel.TabIndex = 13;
             // 
             // label12
             // 
@@ -341,13 +343,13 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Os campos marcados com * são obrigatórios.";
             // 
-            // comboBox2
+            // cbCargo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(417, 85);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 11;
+            this.cbCargo.FormattingEnabled = true;
+            this.cbCargo.Location = new System.Drawing.Point(417, 85);
+            this.cbCargo.Name = "cbCargo";
+            this.cbCargo.Size = new System.Drawing.Size(100, 21);
+            this.cbCargo.TabIndex = 11;
             // 
             // label14
             // 
@@ -359,12 +361,12 @@
             this.label14.TabIndex = 26;
             this.label14.Text = "Cargo:";
             // 
-            // textBox4
+            // lvlCidade
             // 
-            this.textBox4.Location = new System.Drawing.Point(192, 197);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(249, 20);
-            this.textBox4.TabIndex = 14;
+            this.lvlCidade.Location = new System.Drawing.Point(192, 197);
+            this.lvlCidade.Name = "lvlCidade";
+            this.lvlCidade.Size = new System.Drawing.Size(249, 20);
+            this.lvlCidade.TabIndex = 14;
             // 
             // label15
             // 
@@ -413,13 +415,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ComboBox cbSexo;
+        private System.Windows.Forms.TextBox lblNasc;
+        private System.Windows.Forms.TextBox lvlConta;
+        private System.Windows.Forms.TextBox lblAgencia;
+        private System.Windows.Forms.TextBox lblBanco;
         private System.Windows.Forms.TextBox lblEnd;
         private System.Windows.Forms.TextBox lblCpf;
         private System.Windows.Forms.TextBox lblRg;
@@ -433,16 +435,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox lvlCidade;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbCargo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox lblTel;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox lblNum;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox lblBairro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox funcEstado;
