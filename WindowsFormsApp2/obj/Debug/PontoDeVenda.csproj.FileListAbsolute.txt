@@ -138,3 +138,6 @@ C:\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CopyComplete
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Desbloqueio.resources
+C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaCadastrarColaborador.resources
+C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaColaboladores.resources
+C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaConfig.resources

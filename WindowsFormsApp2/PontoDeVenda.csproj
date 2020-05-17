@@ -110,6 +110,24 @@
     <Compile Include="Estoque\View\TelaDeSaidaProduto.Designer.cs">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal\View\Config\TelaCadastrarColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaCadastrarColaborador.Designer.cs">
+      <DependentUpon>TelaCadastrarColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaColaboladores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaColaboladores.Designer.cs">
+      <DependentUpon>TelaColaboladores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaConfig.Designer.cs">
+      <DependentUpon>TelaConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal\View\Desbloqueio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +238,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaDeSaidaProduto.resx">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Config\TelaCadastrarColaborador.resx">
+      <DependentUpon>TelaCadastrarColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Config\TelaColaboladores.resx">
+      <DependentUpon>TelaColaboladores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Config\TelaConfig.resx">
+      <DependentUpon>TelaConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\Desbloqueio.resx">
       <DependentUpon>Desbloqueio.cs</DependentUpon>
