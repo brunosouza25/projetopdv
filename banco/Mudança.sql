@@ -1,7 +1,5 @@
 /* Lógico 2 versão: */
-drop DATABASE BD_PDV
-create database BD_PDV
-use BD_PDV
+
 
 CREATE TABLE MetodoDePagamento (
     idMPagamento INT PRIMARY KEY,
@@ -21,6 +19,7 @@ CREATE TABLE Venda (
     vendData DATE,
 	vendHora TIME,
     valorCompra FLOAT,
+	valorPago FLOAT,
 	idCaixa INT,
 	observacoes VARCHAR(300),
 	vendaEstado TINYINT
@@ -90,12 +89,14 @@ CREATE TABLE Funcionario (
     nomeFunc VARCHAR(54),
     dataNasc DATE,
     sexo TINYINT,
-    login VARCHAR(54),
+    log_in VARCHAR(54),
     senha VARCHAR(54),
+	email varchar(64),
     dataCriacao DATETIME,
-    funcEstado TINYINT
+    funcEstado TINYINT,
+	idConta_Banc TINYINT,
+	idEndereco TINYINT,
 );
-
 CREATE TABLE Cargo (
     idCargo INT PRIMARY KEY IDENTITY (1,1),
     cargoNome VARCHAR(54),
@@ -142,6 +143,15 @@ CREATE TABLE Itens_Devolucao (
     valorValeTroca FLOAT
 );*/
 
+CREATE TABLE Vendas_Canceladas(
+	idVendaCancelada INT PRIMARY KEY IDENTITY (1,1),
+	idVenda INT,
+	dataVenda DATE,
+	dataCancelamento DATE,
+	horaCancelamento TIME,
+	valorDaVenda FLOAT,
+);
+
 CREATE TABLE Config_Sistema(
 	idConfig TINYINT,
 	a_Bloquear TINYINT,
@@ -150,6 +160,19 @@ CREATE TABLE Config_Sistema(
 	dataUltimoBloqueio DATE
 );
 
+CREATE TABLE Endereco(
+	idFuncionario INT,
+	endereco VARCHAR(120),
+	bairro VARCHAR(120),
+	numero INT
+);
+
+CREATE TABLE Conta_Bancaria(
+	idFuncionario INT,
+	banco VARCHAR(120),
+	agencia int,
+	conta int
+);
 
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
 ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
@@ -161,6 +184,9 @@ ALTER TABLE ItensDeSaida ADD FOREIGN KEY (idProduto) REFERENCES Produto(idProdut
 ALTER TABLE Funcionario ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
 ALTER TABLE Observacoes_Sangria ADD FOREIGN KEY (idCaixa) REFERENCES Caixa(idCaixa)
 ALTER TABLE Itens_Devolucao ADD FOREIGN KEY (idVenda) REFERENCES Venda(idVenda)
+ALTER TABLE Vendas_Canceladas ADD FOREIGN KEY (idVenda) REFERENCES Venda(idVenda)
+
+
 
 INSERT INTO MetodoDePagamento VALUES (1,'DINHEIRO')
 INSERT INTO Caixa VALUES (0, 0, 0, '01/12/2019', 0)
@@ -176,6 +202,7 @@ INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
+insert into Funcionario values(null,'bruno',null,null,'bruno','1',null,null , 1, null, null)
 
 /*DELETE FROM Venda*/
 /*

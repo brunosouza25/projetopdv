@@ -62,7 +62,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.funcEstado);
@@ -402,12 +402,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:*";
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(194, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtEmail.Location = new System.Drawing.Point(194, 195);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(249, 20);
+            this.txtEmail.TabIndex = 14;
             // 
             // label17
             // 
@@ -469,7 +469,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox funcEstado;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label17;
     }
 }
