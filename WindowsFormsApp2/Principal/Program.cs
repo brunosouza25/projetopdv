@@ -18,7 +18,7 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            /*
             DadosTableAdapters.Config_SistemaTableAdapter config = new DadosTableAdapters.Config_SistemaTableAdapter();
             var configSistema = config.retornarConfig();
 
@@ -70,7 +70,9 @@ namespace WindowsFormsApp2
                 config.attSenha(senha2);
             }
 
-
+    */
+            TelaDeLogin login = new TelaDeLogin();
+            Application.Run(new TelaDeLogin());
         }
 
     }
