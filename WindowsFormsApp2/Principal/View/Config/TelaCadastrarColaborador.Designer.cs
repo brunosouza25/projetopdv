@@ -268,10 +268,14 @@
             // cbSexo
             // 
             this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Items.AddRange(new object[] {
+            "Masculino\t",
+            "Feminino"});
             this.cbSexo.Location = new System.Drawing.Point(389, 333);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(100, 21);
             this.cbSexo.TabIndex = 20;
+            this.cbSexo.SelectedIndexChanged += new System.EventHandler(this.cbSexo_SelectedIndexChanged);
             // 
             // txtNasc
             // 
@@ -303,7 +307,7 @@
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(200, 263);
+            this.txtEnd.Location = new System.Drawing.Point(196, 263);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(249, 20);
             this.txtEnd.TabIndex = 16;

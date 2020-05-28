@@ -15,6 +15,8 @@ namespace WindowsFormsApp2
         {
             
             var func = funcionario.verificarFunc(login);
+
+            
             string login2, pass;
             if (func.Count > 0)
             {

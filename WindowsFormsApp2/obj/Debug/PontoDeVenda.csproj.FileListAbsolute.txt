@@ -141,3 +141,5 @@ C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Desbloq
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaCadastrarColaborador.resources
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaColaboladores.resources
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaConfig.resources
+C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaCadastroLogins.resources
+C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaCargos.resources

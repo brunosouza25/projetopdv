@@ -55,7 +55,7 @@
             // 
             // BtnEntrar
             // 
-            this.BtnEntrar.Location = new System.Drawing.Point(82, 180);
+            this.BtnEntrar.Location = new System.Drawing.Point(74, 180);
             this.BtnEntrar.Name = "BtnEntrar";
             this.BtnEntrar.Size = new System.Drawing.Size(81, 35);
             this.BtnEntrar.TabIndex = 7;
@@ -65,7 +65,7 @@
             // 
             // BtnSair
             // 
-            this.BtnSair.Location = new System.Drawing.Point(328, 180);
+            this.BtnSair.Location = new System.Drawing.Point(320, 180);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(81, 35);
             this.BtnSair.TabIndex = 6;
@@ -77,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(93, 117);
+            this.label2.Location = new System.Drawing.Point(66, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 5;
@@ -85,25 +85,27 @@
             // 
             // TxtBoxPass
             // 
-            this.TxtBoxPass.Location = new System.Drawing.Point(235, 122);
+            this.TxtBoxPass.Location = new System.Drawing.Point(142, 122);
+            this.TxtBoxPass.MaxLength = 30;
             this.TxtBoxPass.Name = "TxtBoxPass";
-            this.TxtBoxPass.Size = new System.Drawing.Size(157, 20);
+            this.TxtBoxPass.Size = new System.Drawing.Size(250, 20);
             this.TxtBoxPass.TabIndex = 4;
             this.TxtBoxPass.UseSystemPasswordChar = true;
             this.TxtBoxPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBoxPass_KeyDown);
             // 
             // TxtBoxUser
             // 
-            this.TxtBoxUser.Location = new System.Drawing.Point(235, 43);
+            this.TxtBoxUser.Location = new System.Drawing.Point(142, 43);
+            this.TxtBoxUser.MaxLength = 30;
             this.TxtBoxUser.Name = "TxtBoxUser";
-            this.TxtBoxUser.Size = new System.Drawing.Size(157, 20);
+            this.TxtBoxUser.Size = new System.Drawing.Size(250, 20);
             this.TxtBoxUser.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 43);
+            this.label1.Location = new System.Drawing.Point(75, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 24);
             this.label1.TabIndex = 0;
