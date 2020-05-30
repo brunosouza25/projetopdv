@@ -62,6 +62,10 @@ namespace WindowsFormsApp2 {
         
         private CargoDataTable tableCargo;
         
+        private Permissoes_EstoqueDataTable tablePermissoes_Estoque;
+        
+        private Permissoes_VendasDataTable tablePermissoes_Vendas;
+        
         private global::System.Data.DataRelation relationFK__ItensDaVe__idPro__5DCAEF64;
         
         private global::System.Data.DataRelation relationFK__Itens_Dev__idVen__6477ECF3;
@@ -89,6 +93,10 @@ namespace WindowsFormsApp2 {
         private global::System.Data.DataRelation relationFK__Vendas_Ca__idVen__49C3F6B7;
         
         private global::System.Data.DataRelation relationFK__Funcionar__idCar__4222D4EF;
+        
+        private global::System.Data.DataRelation relationFK__Permissoe__idCar__48CFD27E;
+        
+        private global::System.Data.DataRelation relationFK__Permissoe__idCar__47DBAE45;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -174,6 +182,12 @@ namespace WindowsFormsApp2 {
                 }
                 if ((ds.Tables["Cargo"] != null)) {
                     base.Tables.Add(new CargoDataTable(ds.Tables["Cargo"]));
+                }
+                if ((ds.Tables["Permissoes_Estoque"] != null)) {
+                    base.Tables.Add(new Permissoes_EstoqueDataTable(ds.Tables["Permissoes_Estoque"]));
+                }
+                if ((ds.Tables["Permissoes_Vendas"] != null)) {
+                    base.Tables.Add(new Permissoes_VendasDataTable(ds.Tables["Permissoes_Vendas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -385,6 +399,26 @@ namespace WindowsFormsApp2 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Permissoes_EstoqueDataTable Permissoes_Estoque {
+            get {
+                return this.tablePermissoes_Estoque;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Permissoes_VendasDataTable Permissoes_Vendas {
+            get {
+                return this.tablePermissoes_Vendas;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -506,6 +540,12 @@ namespace WindowsFormsApp2 {
                 }
                 if ((ds.Tables["Cargo"] != null)) {
                     base.Tables.Add(new CargoDataTable(ds.Tables["Cargo"]));
+                }
+                if ((ds.Tables["Permissoes_Estoque"] != null)) {
+                    base.Tables.Add(new Permissoes_EstoqueDataTable(ds.Tables["Permissoes_Estoque"]));
+                }
+                if ((ds.Tables["Permissoes_Vendas"] != null)) {
+                    base.Tables.Add(new Permissoes_VendasDataTable(ds.Tables["Permissoes_Vendas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -654,6 +694,18 @@ namespace WindowsFormsApp2 {
                     this.tableCargo.InitVars();
                 }
             }
+            this.tablePermissoes_Estoque = ((Permissoes_EstoqueDataTable)(base.Tables["Permissoes_Estoque"]));
+            if ((initTable == true)) {
+                if ((this.tablePermissoes_Estoque != null)) {
+                    this.tablePermissoes_Estoque.InitVars();
+                }
+            }
+            this.tablePermissoes_Vendas = ((Permissoes_VendasDataTable)(base.Tables["Permissoes_Vendas"]));
+            if ((initTable == true)) {
+                if ((this.tablePermissoes_Vendas != null)) {
+                    this.tablePermissoes_Vendas.InitVars();
+                }
+            }
             this.relationFK__ItensDaVe__idPro__5DCAEF64 = this.Relations["FK__ItensDaVe__idPro__5DCAEF64"];
             this.relationFK__Itens_Dev__idVen__6477ECF3 = this.Relations["FK__Itens_Dev__idVen__6477ECF3"];
             this.relationFK__Observaco__idCai__02084FDA = this.Relations["FK__Observaco__idCai__02084FDA"];
@@ -668,6 +720,8 @@ namespace WindowsFormsApp2 {
             this.relationFK__Pagamento__idMPa__5165187F = this.Relations["FK__Pagamento__idMPa__5165187F"];
             this.relationFK__Vendas_Ca__idVen__49C3F6B7 = this.Relations["FK__Vendas_Ca__idVen__49C3F6B7"];
             this.relationFK__Funcionar__idCar__4222D4EF = this.Relations["FK__Funcionar__idCar__4222D4EF"];
+            this.relationFK__Permissoe__idCar__48CFD27E = this.Relations["FK__Permissoe__idCar__48CFD27E"];
+            this.relationFK__Permissoe__idCar__47DBAE45 = this.Relations["FK__Permissoe__idCar__47DBAE45"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -716,6 +770,10 @@ namespace WindowsFormsApp2 {
             base.Tables.Add(this.tableEndereco);
             this.tableCargo = new CargoDataTable();
             base.Tables.Add(this.tableCargo);
+            this.tablePermissoes_Estoque = new Permissoes_EstoqueDataTable();
+            base.Tables.Add(this.tablePermissoes_Estoque);
+            this.tablePermissoes_Vendas = new Permissoes_VendasDataTable();
+            base.Tables.Add(this.tablePermissoes_Vendas);
             this.relationFK__ItensDaVe__idPro__5DCAEF64 = new global::System.Data.DataRelation("FK__ItensDaVe__idPro__5DCAEF64", new global::System.Data.DataColumn[] {
                         this.tableProduto.idProdutoColumn}, new global::System.Data.DataColumn[] {
                         this.tablerelatórioVendas.idProdutoColumn}, false);
@@ -772,6 +830,14 @@ namespace WindowsFormsApp2 {
                         this.tableCargo.idCargoColumn}, new global::System.Data.DataColumn[] {
                         this.tableFuncionario.idCargoColumn}, false);
             this.Relations.Add(this.relationFK__Funcionar__idCar__4222D4EF);
+            this.relationFK__Permissoe__idCar__48CFD27E = new global::System.Data.DataRelation("FK__Permissoe__idCar__48CFD27E", new global::System.Data.DataColumn[] {
+                        this.tableCargo.idCargoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePermissoes_Estoque.idCargoColumn}, false);
+            this.Relations.Add(this.relationFK__Permissoe__idCar__48CFD27E);
+            this.relationFK__Permissoe__idCar__47DBAE45 = new global::System.Data.DataRelation("FK__Permissoe__idCar__47DBAE45", new global::System.Data.DataColumn[] {
+                        this.tableCargo.idCargoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePermissoes_Vendas.idCargoColumn}, false);
+            this.Relations.Add(this.relationFK__Permissoe__idCar__47DBAE45);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -890,6 +956,18 @@ namespace WindowsFormsApp2 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializePermissoes_Estoque() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializePermissoes_Vendas() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -999,6 +1077,12 @@ namespace WindowsFormsApp2 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CargoRowChangeEventHandler(object sender, CargoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Permissoes_EstoqueRowChangeEventHandler(object sender, Permissoes_EstoqueRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void Permissoes_VendasRowChangeEventHandler(object sender, Permissoes_VendasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -7429,6 +7513,646 @@ namespace WindowsFormsApp2 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Permissoes_EstoqueDataTable : global::System.Data.TypedTableBase<Permissoes_EstoqueRow> {
+            
+            private global::System.Data.DataColumn columntotal_estoque;
+            
+            private global::System.Data.DataColumn columncriacao_produtos;
+            
+            private global::System.Data.DataColumn columneditar_produtos;
+            
+            private global::System.Data.DataColumn columnentrada_produtos;
+            
+            private global::System.Data.DataColumn columnsaida_produtos;
+            
+            private global::System.Data.DataColumn columnidCargo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueDataTable() {
+                this.TableName = "Permissoes_Estoque";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Permissoes_EstoqueDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Permissoes_EstoqueDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn total_estoqueColumn {
+                get {
+                    return this.columntotal_estoque;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn criacao_produtosColumn {
+                get {
+                    return this.columncriacao_produtos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn editar_produtosColumn {
+                get {
+                    return this.columneditar_produtos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn entrada_produtosColumn {
+                get {
+                    return this.columnentrada_produtos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn saida_produtosColumn {
+                get {
+                    return this.columnsaida_produtos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idCargoColumn {
+                get {
+                    return this.columnidCargo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueRow this[int index] {
+                get {
+                    return ((Permissoes_EstoqueRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_EstoqueRowChangeEventHandler Permissoes_EstoqueRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_EstoqueRowChangeEventHandler Permissoes_EstoqueRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_EstoqueRowChangeEventHandler Permissoes_EstoqueRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_EstoqueRowChangeEventHandler Permissoes_EstoqueRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddPermissoes_EstoqueRow(Permissoes_EstoqueRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueRow AddPermissoes_EstoqueRow(bool total_estoque, bool criacao_produtos, bool editar_produtos, bool entrada_produtos, bool saida_produtos, CargoRow parentCargoRowByFK__Permissoe__idCar__48CFD27E) {
+                Permissoes_EstoqueRow rowPermissoes_EstoqueRow = ((Permissoes_EstoqueRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        total_estoque,
+                        criacao_produtos,
+                        editar_produtos,
+                        entrada_produtos,
+                        saida_produtos,
+                        null};
+                if ((parentCargoRowByFK__Permissoe__idCar__48CFD27E != null)) {
+                    columnValuesArray[5] = parentCargoRowByFK__Permissoe__idCar__48CFD27E[0];
+                }
+                rowPermissoes_EstoqueRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPermissoes_EstoqueRow);
+                return rowPermissoes_EstoqueRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Permissoes_EstoqueDataTable cln = ((Permissoes_EstoqueDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Permissoes_EstoqueDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columntotal_estoque = base.Columns["total_estoque"];
+                this.columncriacao_produtos = base.Columns["criacao_produtos"];
+                this.columneditar_produtos = base.Columns["editar_produtos"];
+                this.columnentrada_produtos = base.Columns["entrada_produtos"];
+                this.columnsaida_produtos = base.Columns["saida_produtos"];
+                this.columnidCargo = base.Columns["idCargo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columntotal_estoque = new global::System.Data.DataColumn("total_estoque", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_estoque);
+                this.columncriacao_produtos = new global::System.Data.DataColumn("criacao_produtos", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncriacao_produtos);
+                this.columneditar_produtos = new global::System.Data.DataColumn("editar_produtos", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columneditar_produtos);
+                this.columnentrada_produtos = new global::System.Data.DataColumn("entrada_produtos", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnentrada_produtos);
+                this.columnsaida_produtos = new global::System.Data.DataColumn("saida_produtos", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaida_produtos);
+                this.columnidCargo = new global::System.Data.DataColumn("idCargo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCargo);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueRow NewPermissoes_EstoqueRow() {
+                return ((Permissoes_EstoqueRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Permissoes_EstoqueRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Permissoes_EstoqueRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Permissoes_EstoqueRowChanged != null)) {
+                    this.Permissoes_EstoqueRowChanged(this, new Permissoes_EstoqueRowChangeEvent(((Permissoes_EstoqueRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Permissoes_EstoqueRowChanging != null)) {
+                    this.Permissoes_EstoqueRowChanging(this, new Permissoes_EstoqueRowChangeEvent(((Permissoes_EstoqueRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Permissoes_EstoqueRowDeleted != null)) {
+                    this.Permissoes_EstoqueRowDeleted(this, new Permissoes_EstoqueRowChangeEvent(((Permissoes_EstoqueRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Permissoes_EstoqueRowDeleting != null)) {
+                    this.Permissoes_EstoqueRowDeleting(this, new Permissoes_EstoqueRowChangeEvent(((Permissoes_EstoqueRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovePermissoes_EstoqueRow(Permissoes_EstoqueRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dados ds = new Dados();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Permissoes_EstoqueDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Permissoes_VendasDataTable : global::System.Data.TypedTableBase<Permissoes_VendasRow> {
+            
+            private global::System.Data.DataColumn columntotal_vendas;
+            
+            private global::System.Data.DataColumn columnlancar_vendas;
+            
+            private global::System.Data.DataColumn columncancelar_vendas;
+            
+            private global::System.Data.DataColumn columnsangria;
+            
+            private global::System.Data.DataColumn columndevolucoes;
+            
+            private global::System.Data.DataColumn columnidCargo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasDataTable() {
+                this.TableName = "Permissoes_Vendas";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Permissoes_VendasDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected Permissoes_VendasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn total_vendasColumn {
+                get {
+                    return this.columntotal_vendas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lancar_vendasColumn {
+                get {
+                    return this.columnlancar_vendas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cancelar_vendasColumn {
+                get {
+                    return this.columncancelar_vendas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn sangriaColumn {
+                get {
+                    return this.columnsangria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn devolucoesColumn {
+                get {
+                    return this.columndevolucoes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idCargoColumn {
+                get {
+                    return this.columnidCargo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasRow this[int index] {
+                get {
+                    return ((Permissoes_VendasRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_VendasRowChangeEventHandler Permissoes_VendasRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_VendasRowChangeEventHandler Permissoes_VendasRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_VendasRowChangeEventHandler Permissoes_VendasRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event Permissoes_VendasRowChangeEventHandler Permissoes_VendasRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddPermissoes_VendasRow(Permissoes_VendasRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasRow AddPermissoes_VendasRow(bool total_vendas, bool lancar_vendas, bool cancelar_vendas, bool sangria, bool devolucoes, CargoRow parentCargoRowByFK__Permissoe__idCar__47DBAE45) {
+                Permissoes_VendasRow rowPermissoes_VendasRow = ((Permissoes_VendasRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        total_vendas,
+                        lancar_vendas,
+                        cancelar_vendas,
+                        sangria,
+                        devolucoes,
+                        null};
+                if ((parentCargoRowByFK__Permissoe__idCar__47DBAE45 != null)) {
+                    columnValuesArray[5] = parentCargoRowByFK__Permissoe__idCar__47DBAE45[0];
+                }
+                rowPermissoes_VendasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPermissoes_VendasRow);
+                return rowPermissoes_VendasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Permissoes_VendasDataTable cln = ((Permissoes_VendasDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Permissoes_VendasDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columntotal_vendas = base.Columns["total_vendas"];
+                this.columnlancar_vendas = base.Columns["lancar_vendas"];
+                this.columncancelar_vendas = base.Columns["cancelar_vendas"];
+                this.columnsangria = base.Columns["sangria"];
+                this.columndevolucoes = base.Columns["devolucoes"];
+                this.columnidCargo = base.Columns["idCargo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columntotal_vendas = new global::System.Data.DataColumn("total_vendas", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_vendas);
+                this.columnlancar_vendas = new global::System.Data.DataColumn("lancar_vendas", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlancar_vendas);
+                this.columncancelar_vendas = new global::System.Data.DataColumn("cancelar_vendas", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncancelar_vendas);
+                this.columnsangria = new global::System.Data.DataColumn("sangria", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsangria);
+                this.columndevolucoes = new global::System.Data.DataColumn("devolucoes", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndevolucoes);
+                this.columnidCargo = new global::System.Data.DataColumn("idCargo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCargo);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasRow NewPermissoes_VendasRow() {
+                return ((Permissoes_VendasRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Permissoes_VendasRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Permissoes_VendasRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Permissoes_VendasRowChanged != null)) {
+                    this.Permissoes_VendasRowChanged(this, new Permissoes_VendasRowChangeEvent(((Permissoes_VendasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Permissoes_VendasRowChanging != null)) {
+                    this.Permissoes_VendasRowChanging(this, new Permissoes_VendasRowChangeEvent(((Permissoes_VendasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Permissoes_VendasRowDeleted != null)) {
+                    this.Permissoes_VendasRowDeleted(this, new Permissoes_VendasRowChangeEvent(((Permissoes_VendasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Permissoes_VendasRowDeleting != null)) {
+                    this.Permissoes_VendasRowDeleting(this, new Permissoes_VendasRowChangeEvent(((Permissoes_VendasRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovePermissoes_VendasRow(Permissoes_VendasRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Dados ds = new Dados();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Permissoes_VendasDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class VendaRow : global::System.Data.DataRow {
@@ -11513,6 +12237,416 @@ namespace WindowsFormsApp2 {
                     return ((FuncionarioRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Funcionar__idCar__4222D4EF"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueRow[] GetPermissoes_EstoqueRows() {
+                if ((this.Table.ChildRelations["FK__Permissoe__idCar__48CFD27E"] == null)) {
+                    return new Permissoes_EstoqueRow[0];
+                }
+                else {
+                    return ((Permissoes_EstoqueRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Permissoe__idCar__48CFD27E"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasRow[] GetPermissoes_VendasRows() {
+                if ((this.Table.ChildRelations["FK__Permissoe__idCar__47DBAE45"] == null)) {
+                    return new Permissoes_VendasRow[0];
+                }
+                else {
+                    return ((Permissoes_VendasRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Permissoe__idCar__47DBAE45"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Permissoes_EstoqueRow : global::System.Data.DataRow {
+            
+            private Permissoes_EstoqueDataTable tablePermissoes_Estoque;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Permissoes_EstoqueRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePermissoes_Estoque = ((Permissoes_EstoqueDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool total_estoque {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Estoque.total_estoqueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'total_estoque\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Estoque.total_estoqueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool criacao_produtos {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Estoque.criacao_produtosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'criacao_produtos\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Estoque.criacao_produtosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool editar_produtos {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Estoque.editar_produtosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'editar_produtos\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Estoque.editar_produtosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool entrada_produtos {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Estoque.entrada_produtosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'entrada_produtos\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Estoque.entrada_produtosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool saida_produtos {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Estoque.saida_produtosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'saida_produtos\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Estoque.saida_produtosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idCargo {
+                get {
+                    try {
+                        return ((int)(this[this.tablePermissoes_Estoque.idCargoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idCargo\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Estoque.idCargoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CargoRow CargoRow {
+                get {
+                    return ((CargoRow)(this.GetParentRow(this.Table.ParentRelations["FK__Permissoe__idCar__48CFD27E"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Permissoe__idCar__48CFD27E"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istotal_estoqueNull() {
+                return this.IsNull(this.tablePermissoes_Estoque.total_estoqueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settotal_estoqueNull() {
+                this[this.tablePermissoes_Estoque.total_estoqueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscriacao_produtosNull() {
+                return this.IsNull(this.tablePermissoes_Estoque.criacao_produtosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcriacao_produtosNull() {
+                this[this.tablePermissoes_Estoque.criacao_produtosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iseditar_produtosNull() {
+                return this.IsNull(this.tablePermissoes_Estoque.editar_produtosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Seteditar_produtosNull() {
+                this[this.tablePermissoes_Estoque.editar_produtosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isentrada_produtosNull() {
+                return this.IsNull(this.tablePermissoes_Estoque.entrada_produtosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setentrada_produtosNull() {
+                this[this.tablePermissoes_Estoque.entrada_produtosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issaida_produtosNull() {
+                return this.IsNull(this.tablePermissoes_Estoque.saida_produtosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsaida_produtosNull() {
+                this[this.tablePermissoes_Estoque.saida_produtosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidCargoNull() {
+                return this.IsNull(this.tablePermissoes_Estoque.idCargoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidCargoNull() {
+                this[this.tablePermissoes_Estoque.idCargoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Permissoes_VendasRow : global::System.Data.DataRow {
+            
+            private Permissoes_VendasDataTable tablePermissoes_Vendas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal Permissoes_VendasRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePermissoes_Vendas = ((Permissoes_VendasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool total_vendas {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Vendas.total_vendasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'total_vendas\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Vendas.total_vendasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool lancar_vendas {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Vendas.lancar_vendasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'lancar_vendas\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Vendas.lancar_vendasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool cancelar_vendas {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Vendas.cancelar_vendasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'cancelar_vendas\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Vendas.cancelar_vendasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool sangria {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Vendas.sangriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sangria\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Vendas.sangriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool devolucoes {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePermissoes_Vendas.devolucoesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'devolucoes\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Vendas.devolucoesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idCargo {
+                get {
+                    try {
+                        return ((int)(this[this.tablePermissoes_Vendas.idCargoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idCargo\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePermissoes_Vendas.idCargoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CargoRow CargoRow {
+                get {
+                    return ((CargoRow)(this.GetParentRow(this.Table.ParentRelations["FK__Permissoe__idCar__47DBAE45"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Permissoe__idCar__47DBAE45"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Istotal_vendasNull() {
+                return this.IsNull(this.tablePermissoes_Vendas.total_vendasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Settotal_vendasNull() {
+                this[this.tablePermissoes_Vendas.total_vendasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Islancar_vendasNull() {
+                return this.IsNull(this.tablePermissoes_Vendas.lancar_vendasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setlancar_vendasNull() {
+                this[this.tablePermissoes_Vendas.lancar_vendasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscancelar_vendasNull() {
+                return this.IsNull(this.tablePermissoes_Vendas.cancelar_vendasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcancelar_vendasNull() {
+                this[this.tablePermissoes_Vendas.cancelar_vendasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssangriaNull() {
+                return this.IsNull(this.tablePermissoes_Vendas.sangriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsangriaNull() {
+                this[this.tablePermissoes_Vendas.sangriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsdevolucoesNull() {
+                return this.IsNull(this.tablePermissoes_Vendas.devolucoesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetdevolucoesNull() {
+                this[this.tablePermissoes_Vendas.devolucoesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidCargoNull() {
+                return this.IsNull(this.tablePermissoes_Vendas.idCargoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidCargoNull() {
+                this[this.tablePermissoes_Vendas.idCargoColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -12147,6 +13281,74 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CargoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Permissoes_EstoqueRowChangeEvent : global::System.EventArgs {
+            
+            private Permissoes_EstoqueRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueRowChangeEvent(Permissoes_EstoqueRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_EstoqueRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class Permissoes_VendasRowChangeEvent : global::System.EventArgs {
+            
+            private Permissoes_VendasRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasRowChangeEvent(Permissoes_VendasRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Permissoes_VendasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -21128,11 +22330,38 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idCargo, cargoNome, estadoCargo FROM dbo.Cargo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"UPDATE [dbo].[Cargo] SET [cargoNome] = @cargoNome, [estadoCargo] = @estadoCargo WHERE (([idCargo] = @Original_idCargo) AND ((@IsNull_cargoNome = 1 AND [cargoNome] IS NULL) OR ([cargoNome] = @Original_cargoNome)) AND ((@IsNull_estadoCargo = 1 AND [estadoCargo] IS NULL) OR ([estadoCargo] = @Original_estadoCargo)));
+WHRE cargoNome = @cargoNome";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cargoNome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_estadoCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Cargo] ([cargoNome], [estadoCargo]) VALUES (@cargoNome, @estad" +
+                "oCargo);\r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT idCargo, estadoCargo FROM dbo.Cargo\r\nWHERE cargoNome = @cargoNome";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT * FROM Cargo";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21154,6 +22383,34 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Dados.CargoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Dados.CargoDataTable dataTable = new Dados.CargoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.CargoDataTable retornarCargo(string cargoNome) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((cargoNome == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cargoNome));
+            }
+            Dados.CargoDataTable dataTable = new Dados.CargoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.CargoDataTable retornarTodosCargos() {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             Dados.CargoDataTable dataTable = new Dados.CargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -21317,6 +22574,969 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
         public virtual int Update(string cargoNome, global::System.Nullable<byte> estadoCargo, int Original_idCargo, string Original_cargoNome, global::System.Nullable<byte> Original_estadoCargo) {
             return this.Update(cargoNome, estadoCargo, Original_idCargo, Original_cargoNome, Original_estadoCargo, Original_idCargo);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int atualizarCargo(string cargoNome, global::System.Nullable<byte> estadoCargo, int Original_idCargo, global::System.Nullable<int> IsNull_cargoNome, global::System.Nullable<int> IsNull_estadoCargo, string Original_cargoNome) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((cargoNome == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(cargoNome));
+            }
+            if ((estadoCargo.HasValue == true)) {
+                command.Parameters[1].Value = ((byte)(estadoCargo.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[2].Value = ((int)(Original_idCargo));
+            if ((IsNull_cargoNome.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(IsNull_cargoNome.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((IsNull_estadoCargo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IsNull_estadoCargo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_cargoNome == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Original_cargoNome));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int inserirCargo(string cargoNome, global::System.Nullable<byte> estadoCargo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((cargoNome == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(cargoNome));
+            }
+            if ((estadoCargo.HasValue == true)) {
+                command.Parameters[1].Value = ((byte)(estadoCargo.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Permissoes_EstoqueTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public Permissoes_EstoqueTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Permissoes_Estoque";
+            tableMapping.ColumnMappings.Add("total_estoque", "total_estoque");
+            tableMapping.ColumnMappings.Add("criacao_produtos", "criacao_produtos");
+            tableMapping.ColumnMappings.Add("editar_produtos", "editar_produtos");
+            tableMapping.ColumnMappings.Add("entrada_produtos", "entrada_produtos");
+            tableMapping.ColumnMappings.Add("saida_produtos", "saida_produtos");
+            tableMapping.ColumnMappings.Add("idCargo", "idCargo");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Permissoes_Estoque] ([total_estoque], [criacao_produtos], [edi" +
+                "tar_produtos], [entrada_produtos], [saida_produtos], [idCargo]) VALUES (@total_e" +
+                "stoque, @criacao_produtos, @editar_produtos, @entrada_produtos, @saida_produtos," +
+                " @idCargo)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_estoque", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "total_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@criacao_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "criacao_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@editar_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "editar_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entrada_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "entrada_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saida_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "saida_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT total_estoque, criacao_produtos, editar_produtos, entrada_produtos, saida_" +
+                "produtos, idCargo FROM dbo.Permissoes_Estoque";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"UPDATE       Permissoes_Estoque
+SET                total_estoque = @total_estoque, criacao_produtos = @criacao_produtos , editar_produtos = @editar_produtos , entrada_produtos = @entrada_produtos, saida_produtos = @saida_produtos
+WHERE idCargo = @idCargo";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_estoque", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@criacao_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "criacao_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@editar_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "editar_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entrada_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "entrada_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saida_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "saida_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Permissoes_Estoque] ([total_estoque], [criacao_produtos], [edi" +
+                "tar_produtos], [entrada_produtos], [saida_produtos], [idCargo]) VALUES (@total_e" +
+                "stoque, @criacao_produtos, @editar_produtos, @entrada_produtos, @saida_produtos," +
+                " @idCargo)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_estoque", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@criacao_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "criacao_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@editar_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "editar_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entrada_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "entrada_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@saida_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "saida_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT total_estoque, criacao_produtos, editar_produtos, entrada_produtos, saida_" +
+                "produtos FROM dbo.Permissoes_Estoque\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dados.Permissoes_EstoqueDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dados.Permissoes_EstoqueDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Dados.Permissoes_EstoqueDataTable dataTable = new Dados.Permissoes_EstoqueDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.Permissoes_EstoqueDataTable retornarPermissoesEstoque(global::System.Nullable<int> idCargo) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((idCargo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idCargo.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            Dados.Permissoes_EstoqueDataTable dataTable = new Dados.Permissoes_EstoqueDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Dados.Permissoes_EstoqueDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Dados dataSet) {
+            return this.Adapter.Update(dataSet, "Permissoes_Estoque");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<bool> total_estoque, global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
+            if ((total_estoque.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(total_estoque.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((criacao_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(criacao_produtos.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((editar_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(editar_produtos.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((entrada_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(entrada_produtos.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((saida_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(saida_produtos.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((idCargo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idCargo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int atualizarPermissoesEstoque(global::System.Nullable<bool> total_estoque, global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((total_estoque.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(total_estoque.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((criacao_produtos.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(criacao_produtos.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((editar_produtos.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(editar_produtos.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((entrada_produtos.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(entrada_produtos.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((saida_produtos.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(saida_produtos.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(idCargo.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int inserirPermissoesEstoque(global::System.Nullable<bool> total_estoque, global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((total_estoque.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(total_estoque.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((criacao_produtos.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(criacao_produtos.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((editar_produtos.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(editar_produtos.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((entrada_produtos.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(entrada_produtos.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((saida_produtos.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(saida_produtos.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(idCargo.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Permissoes_VendasTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public Permissoes_VendasTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Permissoes_Vendas";
+            tableMapping.ColumnMappings.Add("total_vendas", "total_vendas");
+            tableMapping.ColumnMappings.Add("lancar_vendas", "lancar_vendas");
+            tableMapping.ColumnMappings.Add("cancelar_vendas", "cancelar_vendas");
+            tableMapping.ColumnMappings.Add("sangria", "sangria");
+            tableMapping.ColumnMappings.Add("devolucoes", "devolucoes");
+            tableMapping.ColumnMappings.Add("idCargo", "idCargo");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Permissoes_Vendas] ([total_vendas], [lancar_vendas], [cancelar" +
+                "_vendas], [sangria], [devolucoes], [idCargo]) VALUES (@total_vendas, @lancar_ven" +
+                "das, @cancelar_vendas, @sangria, @devolucoes, @idCargo)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_vendas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "total_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lancar_vendas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lancar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cancelar_vendas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cancelar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sangria", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@devolucoes", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "devolucoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::WindowsFormsApp2.Properties.Settings.Default.DatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT total_vendas, lancar_vendas, cancelar_vendas, sangria, devolucoes, idCargo" +
+                " FROM dbo.Permissoes_Vendas";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "UPDATE       Permissoes_Vendas\r\nSET                total_vendas = @total_vendas ," +
+                " lancar_vendas = @lancar_vendas , cancelar_vendas = @cancelar_vendas , sangria =" +
+                " @sangria , devolucoes = @devolucoes\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lancar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "lancar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cancelar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "cancelar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sangria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "sangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@devolucoes", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "devolucoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Permissoes_Vendas] ([total_vendas], [lancar_vendas], [cancelar" +
+                "_vendas], [sangria], [devolucoes], [idCargo]) VALUES (@total_vendas, @lancar_ven" +
+                "das, @cancelar_vendas, @sangria, @devolucoes, @idCargo)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lancar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "lancar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cancelar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "cancelar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sangria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "sangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@devolucoes", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "devolucoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT total_vendas, lancar_vendas, cancelar_vendas, sangria, devolucoes \r\nFROM d" +
+                "bo.Permissoes_Vendas\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Dados.Permissoes_VendasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Dados.Permissoes_VendasDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Dados.Permissoes_VendasDataTable dataTable = new Dados.Permissoes_VendasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.Permissoes_VendasDataTable retornarPermissoesVendas(global::System.Nullable<int> idCargo) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((idCargo.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idCargo.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            Dados.Permissoes_VendasDataTable dataTable = new Dados.Permissoes_VendasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Dados.Permissoes_VendasDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Dados dataSet) {
+            return this.Adapter.Update(dataSet, "Permissoes_Vendas");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<bool> total_vendas, global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
+            if ((total_vendas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(total_vendas.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((lancar_vendas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(lancar_vendas.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((cancelar_vendas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(cancelar_vendas.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((sangria.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(sangria.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((devolucoes.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(devolucoes.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((idCargo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idCargo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int atualizarPermissoesVendas(global::System.Nullable<bool> total_vendas, global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((total_vendas.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(total_vendas.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((lancar_vendas.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(lancar_vendas.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((cancelar_vendas.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(cancelar_vendas.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((sangria.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(sangria.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((devolucoes.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(devolucoes.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(idCargo.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int inserirPermissoesVendas(global::System.Nullable<bool> total_vendas, global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((total_vendas.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(total_vendas.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((lancar_vendas.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(lancar_vendas.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((cancelar_vendas.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(cancelar_vendas.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((sangria.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(sangria.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((devolucoes.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(devolucoes.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(idCargo.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -21364,6 +23584,10 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
         private EnderecoTableAdapter _enderecoTableAdapter;
         
         private CargoTableAdapter _cargoTableAdapter;
+        
+        private Permissoes_EstoqueTableAdapter _permissoes_EstoqueTableAdapter;
+        
+        private Permissoes_VendasTableAdapter _permissoes_VendasTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -21620,6 +23844,34 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public Permissoes_EstoqueTableAdapter Permissoes_EstoqueTableAdapter {
+            get {
+                return this._permissoes_EstoqueTableAdapter;
+            }
+            set {
+                this._permissoes_EstoqueTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public Permissoes_VendasTableAdapter Permissoes_VendasTableAdapter {
+            get {
+                return this._permissoes_VendasTableAdapter;
+            }
+            set {
+                this._permissoes_VendasTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -21705,6 +23957,14 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                             && (this._cargoTableAdapter.Connection != null))) {
                     return this._cargoTableAdapter.Connection;
                 }
+                if (((this._permissoes_EstoqueTableAdapter != null) 
+                            && (this._permissoes_EstoqueTableAdapter.Connection != null))) {
+                    return this._permissoes_EstoqueTableAdapter.Connection;
+                }
+                if (((this._permissoes_VendasTableAdapter != null) 
+                            && (this._permissoes_VendasTableAdapter.Connection != null))) {
+                    return this._permissoes_VendasTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -21769,6 +24029,12 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                 if ((this._cargoTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._permissoes_EstoqueTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._permissoes_VendasTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -21798,12 +24064,12 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._metodoDePagamentoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MetodoDePagamento.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._produtoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Produto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._metodoDePagamentoTableAdapter.Update(updatedRows));
+                    result = (result + this._produtoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -21816,30 +24082,12 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._produtoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Produto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._metodoDePagamentoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MetodoDePagamento.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._produtoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._itensDaVendaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ItensDaVenda.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._itensDaVendaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._caixa1TableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Caixa1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._caixa1TableAdapter.Update(updatedRows));
+                    result = (result + this._metodoDePagamentoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -21852,48 +24100,12 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._itensDeSaidaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ItensDeSaida.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._conta_BancariaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Conta_Bancaria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._itensDeSaidaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._observacoes_SangriaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Observacoes_Sangria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._observacoes_SangriaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._itens_DevolucaoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._itens_DevolucaoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._vendas_CanceladasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._vendas_CanceladasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._config_SistemaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Config_Sistema.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._config_SistemaTableAdapter.Update(updatedRows));
+                    result = (result + this._conta_BancariaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -21906,12 +24118,75 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._conta_BancariaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Conta_Bancaria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._config_SistemaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Config_Sistema.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._conta_BancariaTableAdapter.Update(updatedRows));
+                    result = (result + this._config_SistemaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._vendas_CanceladasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._vendas_CanceladasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._itens_DevolucaoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._itens_DevolucaoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._itensDeSaidaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ItensDeSaida.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._itensDeSaidaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._permissoes_EstoqueTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Permissoes_Estoque.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._permissoes_EstoqueTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._itensDeEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ItensDeEntrada.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._itensDeEntradaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._caixa1TableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Caixa1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._caixa1TableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._itensDaVendaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ItensDaVenda.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._itensDaVendaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -21924,12 +24199,21 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._itensDeEntradaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ItensDeEntrada.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._observacoes_SangriaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Observacoes_Sangria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._itensDeEntradaTableAdapter.Update(updatedRows));
+                    result = (result + this._observacoes_SangriaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._permissoes_VendasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Permissoes_Vendas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._permissoes_VendasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -21959,11 +24243,11 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._metodoDePagamentoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MetodoDePagamento.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._produtoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Produto.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._metodoDePagamentoTableAdapter.Update(addedRows));
+                    result = (result + this._produtoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -21975,27 +24259,11 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._produtoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Produto.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._metodoDePagamentoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MetodoDePagamento.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._produtoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._itensDaVendaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ItensDaVenda.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._itensDaVendaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._caixa1TableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Caixa1.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._caixa1TableAdapter.Update(addedRows));
+                    result = (result + this._metodoDePagamentoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -22007,43 +24275,11 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._itensDeSaidaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ItensDeSaida.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._conta_BancariaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Conta_Bancaria.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._itensDeSaidaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._observacoes_SangriaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Observacoes_Sangria.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._observacoes_SangriaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._itens_DevolucaoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._itens_DevolucaoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._vendas_CanceladasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._vendas_CanceladasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._config_SistemaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Config_Sistema.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._config_SistemaTableAdapter.Update(addedRows));
+                    result = (result + this._conta_BancariaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -22055,11 +24291,67 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._conta_BancariaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Conta_Bancaria.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._config_SistemaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Config_Sistema.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._conta_BancariaTableAdapter.Update(addedRows));
+                    result = (result + this._config_SistemaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._vendas_CanceladasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._vendas_CanceladasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._itens_DevolucaoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._itens_DevolucaoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._itensDeSaidaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ItensDeSaida.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._itensDeSaidaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._permissoes_EstoqueTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Permissoes_Estoque.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._permissoes_EstoqueTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._itensDeEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ItensDeEntrada.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._itensDeEntradaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._caixa1TableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Caixa1.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._caixa1TableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._itensDaVendaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ItensDaVenda.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._itensDaVendaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -22071,11 +24363,19 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._itensDeEntradaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ItensDeEntrada.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._observacoes_SangriaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Observacoes_Sangria.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._itensDeEntradaTableAdapter.Update(addedRows));
+                    result = (result + this._observacoes_SangriaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._permissoes_VendasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Permissoes_Vendas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._permissoes_VendasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -22089,59 +24389,11 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(Dados dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._itensDeEntradaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ItensDeEntrada.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._permissoes_VendasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Permissoes_Vendas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._itensDeEntradaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._pagamentoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Pagamento.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pagamentoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._conta_BancariaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Conta_Bancaria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._conta_BancariaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._funcionarioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Funcionario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._funcionarioTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._config_SistemaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Config_Sistema.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._config_SistemaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._vendas_CanceladasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._vendas_CanceladasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._itens_DevolucaoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._itens_DevolucaoTableAdapter.Update(deletedRows));
+                    result = (result + this._permissoes_VendasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -22153,27 +24405,11 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._itensDeSaidaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ItensDeSaida.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._pagamentoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Pagamento.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._itensDeSaidaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._enderecoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Endereco.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._enderecoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._caixa1TableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Caixa1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._caixa1TableAdapter.Update(deletedRows));
+                    result = (result + this._pagamentoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -22185,11 +24421,91 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._produtoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Produto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._caixa1TableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Caixa1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._produtoTableAdapter.Update(deletedRows));
+                    result = (result + this._caixa1TableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._itensDeEntradaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ItensDeEntrada.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._itensDeEntradaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._permissoes_EstoqueTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Permissoes_Estoque.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._permissoes_EstoqueTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._itensDeSaidaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ItensDeSaida.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._itensDeSaidaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._itens_DevolucaoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Itens_Devolucao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._itens_DevolucaoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._vendas_CanceladasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Vendas_Canceladas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._vendas_CanceladasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._config_SistemaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Config_Sistema.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._config_SistemaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._funcionarioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Funcionario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._funcionarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._conta_BancariaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Conta_Bancaria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._conta_BancariaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._enderecoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Endereco.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._enderecoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._metodoDePagamentoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MetodoDePagamento.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._metodoDePagamentoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -22201,11 +24517,11 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._metodoDePagamentoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MetodoDePagamento.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._produtoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Produto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._metodoDePagamentoTableAdapter.Update(deletedRows));
+                    result = (result + this._produtoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -22346,6 +24662,16 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
             }
             if (((this._cargoTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._cargoTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
+            if (((this._permissoes_EstoqueTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._permissoes_EstoqueTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
+            if (((this._permissoes_VendasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._permissoes_VendasTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -22534,6 +24860,24 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._cargoTableAdapter.Adapter);
                     }
                 }
+                if ((this._permissoes_EstoqueTableAdapter != null)) {
+                    revertConnections.Add(this._permissoes_EstoqueTableAdapter, this._permissoes_EstoqueTableAdapter.Connection);
+                    this._permissoes_EstoqueTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._permissoes_EstoqueTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._permissoes_EstoqueTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._permissoes_EstoqueTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._permissoes_EstoqueTableAdapter.Adapter);
+                    }
+                }
+                if ((this._permissoes_VendasTableAdapter != null)) {
+                    revertConnections.Add(this._permissoes_VendasTableAdapter, this._permissoes_VendasTableAdapter.Connection);
+                    this._permissoes_VendasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._permissoes_VendasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._permissoes_VendasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._permissoes_VendasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._permissoes_VendasTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -22659,6 +25003,14 @@ SELECT idCargo, cargoNome, estadoCargo FROM Cargo WHERE (idCargo = @idCargo)";
                 if ((this._cargoTableAdapter != null)) {
                     this._cargoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cargoTableAdapter]));
                     this._cargoTableAdapter.Transaction = null;
+                }
+                if ((this._permissoes_EstoqueTableAdapter != null)) {
+                    this._permissoes_EstoqueTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._permissoes_EstoqueTableAdapter]));
+                    this._permissoes_EstoqueTableAdapter.Transaction = null;
+                }
+                if ((this._permissoes_VendasTableAdapter != null)) {
+                    this._permissoes_VendasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._permissoes_VendasTableAdapter]));
+                    this._permissoes_VendasTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

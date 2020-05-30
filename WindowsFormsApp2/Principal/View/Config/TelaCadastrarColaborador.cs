@@ -14,7 +14,7 @@ namespace WindowsFormsApp2.Principal.View.Config
     public partial class TelaCadastrarColaborador : Form
     {
         DadosTableAdapters.FuncionarioTableAdapter colaboladores = new DadosTableAdapters.FuncionarioTableAdapter();
-        DadosTableAdapters.
+        DadosTableAdapters.Car
         public TelaCadastrarColaborador()
         {
 

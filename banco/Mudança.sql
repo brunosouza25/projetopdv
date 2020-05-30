@@ -92,7 +92,8 @@ CREATE TABLE Funcionario (
     log_in VARCHAR(54),
     senha VARCHAR(54),
 	email varchar(64),
-    dataCriacao DATETIME,
+    dataCriacao DATE,
+	horaCriacao TIME,
     funcEstado TINYINT,
 	idConta_Banc TINYINT,
 	idEndereco TINYINT,
@@ -100,9 +101,27 @@ CREATE TABLE Funcionario (
 CREATE TABLE Cargo (
     idCargo INT PRIMARY KEY IDENTITY (1,1),
     cargoNome VARCHAR(54),
-    estadoCargo TINYINT
+    estadoCargo TINYINT,
 );
 
+CREATE TABLE Permissoes_Vendas(
+	total_vendas BIT,
+	lancar_vendas BIT,
+	cancelar_vendas BIT,
+	sangria BIT,
+	devolucoes BIT,
+	idCargo INT
+	
+)
+
+CREATE TABLE Permissoes_Estoque(
+	total_estoque BIT,
+	criacao_produtos BIT,
+	editar_produtos BIT,
+	entrada_produtos BIT,
+	saida_produtos BIT,
+	idCargo INT
+)
 
 CREATE TABLE Observacoes_Saida_Prod (
 	idSecundarioItensSaida INT,
@@ -185,8 +204,8 @@ ALTER TABLE Funcionario ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
 ALTER TABLE Observacoes_Sangria ADD FOREIGN KEY (idCaixa) REFERENCES Caixa(idCaixa)
 ALTER TABLE Itens_Devolucao ADD FOREIGN KEY (idVenda) REFERENCES Venda(idVenda)
 ALTER TABLE Vendas_Canceladas ADD FOREIGN KEY (idVenda) REFERENCES Venda(idVenda)
-
-
+ALTER TABLE Permissoes_Vendas ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
+ALTER TABLE Permissoes_Estoque ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
 
 INSERT INTO MetodoDePagamento VALUES (1,'DINHEIRO')
 INSERT INTO Caixa VALUES (0, 0, 0, '01/12/2019', 0)
@@ -199,6 +218,7 @@ INSERT INTO ItensDeEntrada VALUES(0, null, 0, 0, null, null, 'primeira linha par
 INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para retorno de 0')
 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
+
 
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 

@@ -21,5 +21,10 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
 
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

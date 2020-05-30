@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.cBoxSaidaDeProdutos = new System.Windows.Forms.CheckBox();
+            this.cBoxEntradaDeProdutos = new System.Windows.Forms.CheckBox();
+            this.cBoxEditarProdutos = new System.Windows.Forms.CheckBox();
+            this.cBoxCriacaoDeProdutos = new System.Windows.Forms.CheckBox();
+            this.cBoxEstoque = new System.Windows.Forms.CheckBox();
+            this.cBoxDevolucoes = new System.Windows.Forms.CheckBox();
+            this.cBoxSangria = new System.Windows.Forms.CheckBox();
+            this.cBoxCancelarVendas = new System.Windows.Forms.CheckBox();
+            this.cBoxLancarVendas = new System.Windows.Forms.CheckBox();
+            this.cBoxVendas = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -41,18 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
-            this.cBoxVendas = new System.Windows.Forms.CheckBox();
-            this.cBoxLancarVendas = new System.Windows.Forms.CheckBox();
-            this.cBoxCancelarVendas = new System.Windows.Forms.CheckBox();
-            this.cBoxSangria = new System.Windows.Forms.CheckBox();
-            this.cBoxDevolucoes = new System.Windows.Forms.CheckBox();
-            this.cBoxSaidaDeProdutos = new System.Windows.Forms.CheckBox();
-            this.cBoxEntradaDeProdutos = new System.Windows.Forms.CheckBox();
-            this.cBoxEditarProdutos = new System.Windows.Forms.CheckBox();
-            this.cBoxCriacaoDeProdutos = new System.Windows.Forms.CheckBox();
-            this.cBoxEstoque = new System.Windows.Forms.CheckBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,115 @@
             this.panel1.Size = new System.Drawing.Size(469, 477);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(336, 396);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 51);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(46, 396);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(83, 51);
+            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // cBoxSaidaDeProdutos
+            // 
+            this.cBoxSaidaDeProdutos.AutoSize = true;
+            this.cBoxSaidaDeProdutos.Location = new System.Drawing.Point(315, 343);
+            this.cBoxSaidaDeProdutos.Name = "cBoxSaidaDeProdutos";
+            this.cBoxSaidaDeProdutos.Size = new System.Drawing.Size(15, 14);
+            this.cBoxSaidaDeProdutos.TabIndex = 22;
+            this.cBoxSaidaDeProdutos.UseVisualStyleBackColor = true;
+            // 
+            // cBoxEntradaDeProdutos
+            // 
+            this.cBoxEntradaDeProdutos.AutoSize = true;
+            this.cBoxEntradaDeProdutos.Location = new System.Drawing.Point(315, 318);
+            this.cBoxEntradaDeProdutos.Name = "cBoxEntradaDeProdutos";
+            this.cBoxEntradaDeProdutos.Size = new System.Drawing.Size(15, 14);
+            this.cBoxEntradaDeProdutos.TabIndex = 21;
+            this.cBoxEntradaDeProdutos.UseVisualStyleBackColor = true;
+            // 
+            // cBoxEditarProdutos
+            // 
+            this.cBoxEditarProdutos.AutoSize = true;
+            this.cBoxEditarProdutos.Location = new System.Drawing.Point(315, 295);
+            this.cBoxEditarProdutos.Name = "cBoxEditarProdutos";
+            this.cBoxEditarProdutos.Size = new System.Drawing.Size(15, 14);
+            this.cBoxEditarProdutos.TabIndex = 20;
+            this.cBoxEditarProdutos.UseVisualStyleBackColor = true;
+            // 
+            // cBoxCriacaoDeProdutos
+            // 
+            this.cBoxCriacaoDeProdutos.AutoSize = true;
+            this.cBoxCriacaoDeProdutos.Location = new System.Drawing.Point(315, 272);
+            this.cBoxCriacaoDeProdutos.Name = "cBoxCriacaoDeProdutos";
+            this.cBoxCriacaoDeProdutos.Size = new System.Drawing.Size(15, 14);
+            this.cBoxCriacaoDeProdutos.TabIndex = 19;
+            this.cBoxCriacaoDeProdutos.UseVisualStyleBackColor = true;
+            // 
+            // cBoxEstoque
+            // 
+            this.cBoxEstoque.AutoSize = true;
+            this.cBoxEstoque.Location = new System.Drawing.Point(170, 248);
+            this.cBoxEstoque.Name = "cBoxEstoque";
+            this.cBoxEstoque.Size = new System.Drawing.Size(15, 14);
+            this.cBoxEstoque.TabIndex = 18;
+            this.cBoxEstoque.UseVisualStyleBackColor = true;
+            // 
+            // cBoxDevolucoes
+            // 
+            this.cBoxDevolucoes.AutoSize = true;
+            this.cBoxDevolucoes.Location = new System.Drawing.Point(279, 209);
+            this.cBoxDevolucoes.Name = "cBoxDevolucoes";
+            this.cBoxDevolucoes.Size = new System.Drawing.Size(15, 14);
+            this.cBoxDevolucoes.TabIndex = 17;
+            this.cBoxDevolucoes.UseVisualStyleBackColor = true;
+            // 
+            // cBoxSangria
+            // 
+            this.cBoxSangria.AutoSize = true;
+            this.cBoxSangria.Location = new System.Drawing.Point(279, 185);
+            this.cBoxSangria.Name = "cBoxSangria";
+            this.cBoxSangria.Size = new System.Drawing.Size(15, 14);
+            this.cBoxSangria.TabIndex = 16;
+            this.cBoxSangria.UseVisualStyleBackColor = true;
+            // 
+            // cBoxCancelarVendas
+            // 
+            this.cBoxCancelarVendas.AutoSize = true;
+            this.cBoxCancelarVendas.Location = new System.Drawing.Point(279, 164);
+            this.cBoxCancelarVendas.Name = "cBoxCancelarVendas";
+            this.cBoxCancelarVendas.Size = new System.Drawing.Size(15, 14);
+            this.cBoxCancelarVendas.TabIndex = 15;
+            this.cBoxCancelarVendas.UseVisualStyleBackColor = true;
+            // 
+            // cBoxLancarVendas
+            // 
+            this.cBoxLancarVendas.AutoSize = true;
+            this.cBoxLancarVendas.Location = new System.Drawing.Point(279, 140);
+            this.cBoxLancarVendas.Name = "cBoxLancarVendas";
+            this.cBoxLancarVendas.Size = new System.Drawing.Size(15, 14);
+            this.cBoxLancarVendas.TabIndex = 14;
+            this.cBoxLancarVendas.UseVisualStyleBackColor = true;
+            // 
+            // cBoxVendas
+            // 
+            this.cBoxVendas.AutoSize = true;
+            this.cBoxVendas.Location = new System.Drawing.Point(170, 115);
+            this.cBoxVendas.Name = "cBoxVendas";
+            this.cBoxVendas.Size = new System.Drawing.Size(15, 14);
+            this.cBoxVendas.TabIndex = 13;
+            this.cBoxVendas.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -205,114 +314,6 @@
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(129, 20);
             this.txtCargo.TabIndex = 1;
-            // 
-            // cBoxVendas
-            // 
-            this.cBoxVendas.AutoSize = true;
-            this.cBoxVendas.Location = new System.Drawing.Point(170, 115);
-            this.cBoxVendas.Name = "cBoxVendas";
-            this.cBoxVendas.Size = new System.Drawing.Size(15, 14);
-            this.cBoxVendas.TabIndex = 13;
-            this.cBoxVendas.UseVisualStyleBackColor = true;
-            // 
-            // cBoxLancarVendas
-            // 
-            this.cBoxLancarVendas.AutoSize = true;
-            this.cBoxLancarVendas.Location = new System.Drawing.Point(279, 140);
-            this.cBoxLancarVendas.Name = "cBoxLancarVendas";
-            this.cBoxLancarVendas.Size = new System.Drawing.Size(15, 14);
-            this.cBoxLancarVendas.TabIndex = 14;
-            this.cBoxLancarVendas.UseVisualStyleBackColor = true;
-            // 
-            // cBoxCancelarVendas
-            // 
-            this.cBoxCancelarVendas.AutoSize = true;
-            this.cBoxCancelarVendas.Location = new System.Drawing.Point(279, 164);
-            this.cBoxCancelarVendas.Name = "cBoxCancelarVendas";
-            this.cBoxCancelarVendas.Size = new System.Drawing.Size(15, 14);
-            this.cBoxCancelarVendas.TabIndex = 15;
-            this.cBoxCancelarVendas.UseVisualStyleBackColor = true;
-            // 
-            // cBoxSangria
-            // 
-            this.cBoxSangria.AutoSize = true;
-            this.cBoxSangria.Location = new System.Drawing.Point(279, 185);
-            this.cBoxSangria.Name = "cBoxSangria";
-            this.cBoxSangria.Size = new System.Drawing.Size(15, 14);
-            this.cBoxSangria.TabIndex = 16;
-            this.cBoxSangria.UseVisualStyleBackColor = true;
-            // 
-            // cBoxDevolucoes
-            // 
-            this.cBoxDevolucoes.AutoSize = true;
-            this.cBoxDevolucoes.Location = new System.Drawing.Point(279, 209);
-            this.cBoxDevolucoes.Name = "cBoxDevolucoes";
-            this.cBoxDevolucoes.Size = new System.Drawing.Size(15, 14);
-            this.cBoxDevolucoes.TabIndex = 17;
-            this.cBoxDevolucoes.UseVisualStyleBackColor = true;
-            // 
-            // cBoxSaidaDeProdutos
-            // 
-            this.cBoxSaidaDeProdutos.AutoSize = true;
-            this.cBoxSaidaDeProdutos.Location = new System.Drawing.Point(315, 343);
-            this.cBoxSaidaDeProdutos.Name = "cBoxSaidaDeProdutos";
-            this.cBoxSaidaDeProdutos.Size = new System.Drawing.Size(15, 14);
-            this.cBoxSaidaDeProdutos.TabIndex = 22;
-            this.cBoxSaidaDeProdutos.UseVisualStyleBackColor = true;
-            // 
-            // cBoxEntradaDeProdutos
-            // 
-            this.cBoxEntradaDeProdutos.AutoSize = true;
-            this.cBoxEntradaDeProdutos.Location = new System.Drawing.Point(315, 318);
-            this.cBoxEntradaDeProdutos.Name = "cBoxEntradaDeProdutos";
-            this.cBoxEntradaDeProdutos.Size = new System.Drawing.Size(15, 14);
-            this.cBoxEntradaDeProdutos.TabIndex = 21;
-            this.cBoxEntradaDeProdutos.UseVisualStyleBackColor = true;
-            // 
-            // cBoxEditarProdutos
-            // 
-            this.cBoxEditarProdutos.AutoSize = true;
-            this.cBoxEditarProdutos.Location = new System.Drawing.Point(315, 295);
-            this.cBoxEditarProdutos.Name = "cBoxEditarProdutos";
-            this.cBoxEditarProdutos.Size = new System.Drawing.Size(15, 14);
-            this.cBoxEditarProdutos.TabIndex = 20;
-            this.cBoxEditarProdutos.UseVisualStyleBackColor = true;
-            // 
-            // cBoxCriacaoDeProdutos
-            // 
-            this.cBoxCriacaoDeProdutos.AutoSize = true;
-            this.cBoxCriacaoDeProdutos.Location = new System.Drawing.Point(315, 272);
-            this.cBoxCriacaoDeProdutos.Name = "cBoxCriacaoDeProdutos";
-            this.cBoxCriacaoDeProdutos.Size = new System.Drawing.Size(15, 14);
-            this.cBoxCriacaoDeProdutos.TabIndex = 19;
-            this.cBoxCriacaoDeProdutos.UseVisualStyleBackColor = true;
-            // 
-            // cBoxEstoque
-            // 
-            this.cBoxEstoque.AutoSize = true;
-            this.cBoxEstoque.Location = new System.Drawing.Point(170, 248);
-            this.cBoxEstoque.Name = "cBoxEstoque";
-            this.cBoxEstoque.Size = new System.Drawing.Size(15, 14);
-            this.cBoxEstoque.TabIndex = 18;
-            this.cBoxEstoque.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(336, 396);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 51);
-            this.btnCancelar.TabIndex = 26;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(46, 396);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(83, 51);
-            this.btnSalvar.TabIndex = 25;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // TelaCargos
             // 
