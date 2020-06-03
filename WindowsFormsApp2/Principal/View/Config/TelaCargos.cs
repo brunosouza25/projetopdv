@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2.Principal.View.Config
 {
-    public partial class TelaCargos : Form
+    public partial class TelaCargos : UserControl
     {
         public TelaCargos()
         {
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void Bt_Criar_Prod_Click(object sender, EventArgs e)
         {
 
         }

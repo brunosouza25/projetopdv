@@ -101,7 +101,7 @@ CREATE TABLE Funcionario (
 CREATE TABLE Cargo (
     idCargo INT PRIMARY KEY IDENTITY (1,1),
     cargoNome VARCHAR(54),
-    estadoCargo TINYINT,
+    estadoCargo BIT,
 );
 
 CREATE TABLE Permissoes_Vendas(
@@ -111,7 +111,6 @@ CREATE TABLE Permissoes_Vendas(
 	sangria BIT,
 	devolucoes BIT,
 	idCargo INT
-	
 )
 
 CREATE TABLE Permissoes_Estoque(

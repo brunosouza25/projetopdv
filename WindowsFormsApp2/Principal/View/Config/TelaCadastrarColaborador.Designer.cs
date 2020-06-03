@@ -169,16 +169,19 @@
             // cbCargo
             // 
             this.cbCargo.FormattingEnabled = true;
-            this.cbCargo.Location = new System.Drawing.Point(417, 85);
+            this.cbCargo.Items.AddRange(new object[] {
+            "nenhum"});
+            this.cbCargo.Location = new System.Drawing.Point(397, 88);
             this.cbCargo.Name = "cbCargo";
-            this.cbCargo.Size = new System.Drawing.Size(100, 21);
+            this.cbCargo.Size = new System.Drawing.Size(120, 21);
             this.cbCargo.TabIndex = 11;
+            this.cbCargo.Text = "[Selecione]";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(337, 85);
+            this.label14.Location = new System.Drawing.Point(319, 85);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(72, 24);
             this.label14.TabIndex = 26;

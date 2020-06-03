@@ -16,10 +16,5 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             InitializeComponent();
         }
-
-        private void Bt_Editar_Prod_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

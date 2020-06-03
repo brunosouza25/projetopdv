@@ -12,9 +12,16 @@ namespace WindowsFormsApp2.Principal.View.Config
 {
     public partial class TelaConfig : UserControl
     {
+        TelaPrincipalColaboladores principalColaboladores = new TelaPrincipalColaboladores();
         public TelaConfig()
         {
+            PainelMainConfig.Controls.Add(principalColaboladores);
             InitializeComponent();
+        }
+
+        private void btColaboladores_Click(object sender, EventArgs e)
+        {
+            principalColaboladores.Visible = true;
         }
     }
 }

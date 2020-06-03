@@ -14,7 +14,7 @@ namespace WindowsFormsApp2.Principal.View.Config
     public partial class TelaCadastrarColaborador : Form
     {
         DadosTableAdapters.FuncionarioTableAdapter colaboladores = new DadosTableAdapters.FuncionarioTableAdapter();
-        DadosTableAdapters.Car
+        DadosTableAdapters.CargoTableAdapter cargos = new DadosTableAdapters.CargoTableAdapter();
         public TelaCadastrarColaborador()
         {
 
@@ -26,11 +26,30 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         }
 
+        public void preencher_cargos() {
+            var todosCargos = cargos.retornarTodosCargos();
+            for(int i = 0; i >= todosCargos.Count; i++)
+            {
+                cbCargo.Items.Add(todosCargos[i]["cargoNome"].ToString());
+            }
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(txtNome.Text.Length > 0 || txtEmail.Text.Length > 0)
+            if(txtNome.Text.Length > 0 && txtEmail.Text.Length > 0)
             {
-                colaboladores.criarColaborador()
+                int idCargo;
+                if(cbCargo.SelectedItem.ToString() == "")
+                {
+                    idCargo = 0;
+                }
+                else
+                {
+                    var Cargo = cargos.retornarCargo(cbCargo.SelectedItem.ToString());
+                    idCargo = Convert.ToInt32(Cargo[0]["idCargo"]);
+                }
+                colaboladores.criarColaborador(idCargo, txtNome.Text,txtNasc.Text, Convert.ToInt32(cbSexo.SelectedItem),);
+
             }
             else
             {

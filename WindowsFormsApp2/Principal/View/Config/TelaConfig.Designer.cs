@@ -81,12 +81,13 @@
             // 
             // btColaboladores
             // 
-            this.btColaboladores.Location = new System.Drawing.Point(8, 11);
+            this.btColaboladores.Location = new System.Drawing.Point(37, 11);
             this.btColaboladores.Name = "btColaboladores";
             this.btColaboladores.Size = new System.Drawing.Size(86, 40);
             this.btColaboladores.TabIndex = 0;
             this.btColaboladores.Text = "Colaboladores";
             this.btColaboladores.UseVisualStyleBackColor = true;
+            this.btColaboladores.Click += new System.EventHandler(this.btColaboladores_Click);
             // 
             // TelaConfig
             // 

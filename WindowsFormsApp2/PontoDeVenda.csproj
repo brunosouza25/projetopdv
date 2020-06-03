@@ -81,11 +81,6 @@
     <Compile Include="Dados.cs">
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Dados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Dados.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Dados1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,8 +123,14 @@
     <Compile Include="Principal\View\Config\TelaCadastroLogins.Designer.cs">
       <DependentUpon>TelaCadastroLogins.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal\View\Config\TelaCargos.cs">
+    <Compile Include="Principal\View\Config\TelaCadastroCargo.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaCadastroCargo.Designer.cs">
+      <DependentUpon>TelaCadastroCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaCargos.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Principal\View\Config\TelaCargos.Designer.cs">
       <DependentUpon>TelaCargos.cs</DependentUpon>
@@ -139,6 +140,12 @@
     </Compile>
     <Compile Include="Principal\View\Config\TelaColaboladores.Designer.cs">
       <DependentUpon>TelaColaboladores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaPrincipalColaboladores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Config\TelaPrincipalColaboladores.Designer.cs">
+      <DependentUpon>TelaPrincipalColaboladores.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal\View\Config\TelaConfig.cs">
       <SubType>UserControl</SubType>
@@ -263,11 +270,17 @@
     <EmbeddedResource Include="Principal\View\Config\TelaCadastroLogins.resx">
       <DependentUpon>TelaCadastroLogins.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Config\TelaCadastroCargo.resx">
+      <DependentUpon>TelaCadastroCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\Config\TelaCargos.resx">
       <DependentUpon>TelaCargos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\Config\TelaColaboladores.resx">
       <DependentUpon>TelaColaboladores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Config\TelaPrincipalColaboladores.resx">
+      <DependentUpon>TelaPrincipalColaboladores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\Config\TelaConfig.resx">
       <DependentUpon>TelaConfig.cs</DependentUpon>
@@ -434,10 +447,6 @@
   <ItemGroup>
     <Content Include="Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
