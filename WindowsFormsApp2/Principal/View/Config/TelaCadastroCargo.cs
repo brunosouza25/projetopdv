@@ -29,7 +29,7 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             if (txtCargo.TextLength > 0)
             {
-                cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked);
+                cargos.inserirCargo(txtCargo.Text.ToString(), Convert.ToByte(cBoxInativo.Checked));
                 int idcargo = Convert.ToInt32(cargos.retornarUltimoIdCargo());
 
                 permissoes_vendas.inserirPermissoesVendas(cBoxVendas.Checked, cBoxLancarVendas.Checked, cBoxCancelarVendas.Checked

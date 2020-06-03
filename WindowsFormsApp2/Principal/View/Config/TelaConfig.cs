@@ -15,8 +15,9 @@ namespace WindowsFormsApp2.Principal.View.Config
         TelaPrincipalColaboladores principalColaboladores = new TelaPrincipalColaboladores();
         public TelaConfig()
         {
-            PainelMainConfig.Controls.Add(principalColaboladores);
+            
             InitializeComponent();
+            painelMainConfig.Controls.Add(principalColaboladores);
         }
 
         private void btColaboladores_Click(object sender, EventArgs e)

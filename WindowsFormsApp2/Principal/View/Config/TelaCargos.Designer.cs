@@ -34,6 +34,7 @@
             this.listaProdutos = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,14 +42,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Bt_Editar_Prod = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Bt_Criar_Prod = new System.Windows.Forms.Button();
             this.panel_Total = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Bt_Editar_Prod = new System.Windows.Forms.Button();
-            this.Bt_Criar_Prod = new System.Windows.Forms.Button();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -70,7 +70,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1252, 431);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1246, 374);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -85,7 +85,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.882353F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.11765F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(960, 425);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(956, 368);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // TxtBoxPesquisaProdEstoque
@@ -95,7 +95,7 @@
             this.TxtBoxPesquisaProdEstoque.Location = new System.Drawing.Point(3, 3);
             this.TxtBoxPesquisaProdEstoque.Multiline = true;
             this.TxtBoxPesquisaProdEstoque.Name = "TxtBoxPesquisaProdEstoque";
-            this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(954, 35);
+            this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(950, 30);
             this.TxtBoxPesquisaProdEstoque.TabIndex = 1;
             // 
             // listaProdutos
@@ -110,10 +110,10 @@
             this.listaProdutos.FullRowSelect = true;
             this.listaProdutos.GridLines = true;
             this.listaProdutos.HideSelection = false;
-            this.listaProdutos.Location = new System.Drawing.Point(3, 44);
+            this.listaProdutos.Location = new System.Drawing.Point(3, 39);
             this.listaProdutos.MultiSelect = false;
             this.listaProdutos.Name = "listaProdutos";
-            this.listaProdutos.Size = new System.Drawing.Size(954, 378);
+            this.listaProdutos.Size = new System.Drawing.Size(950, 326);
             this.listaProdutos.TabIndex = 2;
             this.listaProdutos.UseCompatibleStateImageBehavior = false;
             this.listaProdutos.View = System.Windows.Forms.View.Details;
@@ -128,6 +128,11 @@
             this.columnHeader2.Text = "Cargo";
             this.columnHeader2.Width = 910;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "ID";
+            this.columnHeader3.Width = 0;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -135,13 +140,13 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel_Total, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(966, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(962, 0);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.57773F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.42227F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(286, 431);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(284, 374);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -154,13 +159,13 @@
             this.tableLayoutPanel4.Controls.Add(this.panel4, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.panel5, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 96);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 83);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.09639F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.90361F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.19444F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.80556F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(280, 332);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(278, 288);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // panel2
@@ -168,15 +173,15 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(134, 157);
+            this.panel2.Size = new System.Drawing.Size(133, 103);
             this.panel2.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(143, 3);
+            this.panel3.Location = new System.Drawing.Point(142, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(134, 157);
+            this.panel3.Size = new System.Drawing.Size(133, 103);
             this.panel3.TabIndex = 6;
             // 
             // panel4
@@ -185,9 +190,9 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.Bt_Editar_Prod);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(143, 166);
+            this.panel4.Location = new System.Drawing.Point(142, 112);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(134, 163);
+            this.panel4.Size = new System.Drawing.Size(133, 173);
             this.panel4.TabIndex = 7;
             // 
             // label6
@@ -210,15 +215,26 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Editar";
             // 
+            // Bt_Editar_Prod
+            // 
+            this.Bt_Editar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.lapis;
+            this.Bt_Editar_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bt_Editar_Prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Editar_Prod.Location = new System.Drawing.Point(0, 0);
+            this.Bt_Editar_Prod.Name = "Bt_Editar_Prod";
+            this.Bt_Editar_Prod.Size = new System.Drawing.Size(133, 123);
+            this.Bt_Editar_Prod.TabIndex = 3;
+            this.Bt_Editar_Prod.UseVisualStyleBackColor = true;
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.Bt_Criar_Prod);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 166);
+            this.panel5.Location = new System.Drawing.Point(3, 112);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(134, 163);
+            this.panel5.Size = new System.Drawing.Size(133, 173);
             this.panel5.TabIndex = 8;
             // 
             // label5
@@ -241,12 +257,24 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Cadastrar";
             // 
+            // Bt_Criar_Prod
+            // 
+            this.Bt_Criar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.criar_produto;
+            this.Bt_Criar_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Bt_Criar_Prod.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Bt_Criar_Prod.Location = new System.Drawing.Point(0, 0);
+            this.Bt_Criar_Prod.Name = "Bt_Criar_Prod";
+            this.Bt_Criar_Prod.Size = new System.Drawing.Size(133, 123);
+            this.Bt_Criar_Prod.TabIndex = 4;
+            this.Bt_Criar_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Criar_Prod.Click += new System.EventHandler(this.Bt_Criar_Prod_Click);
+            // 
             // panel_Total
             // 
             this.panel_Total.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Total.Location = new System.Drawing.Point(3, 3);
             this.panel_Total.Name = "panel_Total";
-            this.panel_Total.Size = new System.Drawing.Size(280, 87);
+            this.panel_Total.Size = new System.Drawing.Size(278, 74);
             this.panel_Total.TabIndex = 1;
             // 
             // panel1
@@ -255,36 +283,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 431);
+            this.panel1.Size = new System.Drawing.Size(1246, 374);
             this.panel1.TabIndex = 3;
-            // 
-            // Bt_Editar_Prod
-            // 
-            this.Bt_Editar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.lapis;
-            this.Bt_Editar_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Bt_Editar_Prod.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Bt_Editar_Prod.Location = new System.Drawing.Point(0, 0);
-            this.Bt_Editar_Prod.Name = "Bt_Editar_Prod";
-            this.Bt_Editar_Prod.Size = new System.Drawing.Size(134, 123);
-            this.Bt_Editar_Prod.TabIndex = 3;
-            this.Bt_Editar_Prod.UseVisualStyleBackColor = true;
-            // 
-            // Bt_Criar_Prod
-            // 
-            this.Bt_Criar_Prod.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.criar_produto;
-            this.Bt_Criar_Prod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Bt_Criar_Prod.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Bt_Criar_Prod.Location = new System.Drawing.Point(0, 0);
-            this.Bt_Criar_Prod.Name = "Bt_Criar_Prod";
-            this.Bt_Criar_Prod.Size = new System.Drawing.Size(134, 123);
-            this.Bt_Criar_Prod.TabIndex = 4;
-            this.Bt_Criar_Prod.UseVisualStyleBackColor = true;
-            this.Bt_Criar_Prod.Click += new System.EventHandler(this.Bt_Criar_Prod_Click);
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "ID";
-            this.columnHeader3.Width = 0;
             // 
             // TelaCargos
             // 
@@ -292,7 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "TelaCargos";
-            this.Size = new System.Drawing.Size(1252, 431);
+            this.Size = new System.Drawing.Size(1246, 374);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

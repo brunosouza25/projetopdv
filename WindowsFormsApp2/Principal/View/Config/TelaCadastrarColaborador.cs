@@ -48,7 +48,8 @@ namespace WindowsFormsApp2.Principal.View.Config
                     var Cargo = cargos.retornarCargo(cbCargo.SelectedItem.ToString());
                     idCargo = Convert.ToInt32(Cargo[0]["idCargo"]);
                 }
-                colaboladores.criarColaborador(idCargo, txtNome.Text,txtNasc.Text, Convert.ToInt32(cbSexo.SelectedItem),);
+                colaboladores.criarColaborador(idCargo, txtNome.Text,txtNasc.Text, Convert.ToByte(cbSexo.SelectedItem)
+                    , DateTime.Now.ToString("dd:MM"), DateTime.Now.ToString("HH:mm"), Convert.ToByte(cbInativo.Checked), txtEmail.Text);
 
             }
             else

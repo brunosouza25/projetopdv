@@ -12,6 +12,7 @@ namespace WindowsFormsApp2.Principal.View.Config
 {
     public partial class TelaCargos : UserControl
     {
+        TelaCadastroCargo cargos = new TelaCadastroCargo();
         public TelaCargos()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         private void Bt_Criar_Prod_Click(object sender, EventArgs e)
         {
-
+            cargos.ShowDialog();
         }
     }
 }

@@ -221,7 +221,7 @@ INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
-insert into Funcionario values(null,'bruno',null,null,'bruno','1',null,null , 1, null, null)
+insert into Funcionario values(null,'bruno',null,null,'bruno','1',null,null,null , 1, null, null)
 
 /*DELETE FROM Venda*/
 /*

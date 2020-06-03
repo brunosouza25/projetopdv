@@ -32,7 +32,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.funcEstado = new System.Windows.Forms.CheckBox();
+            this.cbInativo = new System.Windows.Forms.CheckBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cbCargo = new System.Windows.Forms.ComboBox();
@@ -73,7 +73,7 @@
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.funcEstado);
+            this.panel1.Controls.Add(this.cbInativo);
             this.panel1.Controls.Add(this.txtCidade);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.cbCargo);
@@ -139,15 +139,15 @@
             this.label16.TabIndex = 37;
             this.label16.Text = "Inativo:";
             // 
-            // funcEstado
+            // cbInativo
             // 
-            this.funcEstado.AutoSize = true;
-            this.funcEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.funcEstado.Location = new System.Drawing.Point(465, 137);
-            this.funcEstado.Name = "funcEstado";
-            this.funcEstado.Size = new System.Drawing.Size(15, 14);
-            this.funcEstado.TabIndex = 36;
-            this.funcEstado.UseVisualStyleBackColor = true;
+            this.cbInativo.AutoSize = true;
+            this.cbInativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInativo.Location = new System.Drawing.Point(465, 137);
+            this.cbInativo.Name = "cbInativo";
+            this.cbInativo.Size = new System.Drawing.Size(15, 14);
+            this.cbInativo.TabIndex = 36;
+            this.cbInativo.UseVisualStyleBackColor = true;
             // 
             // txtCidade
             // 
@@ -475,7 +475,7 @@
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox funcEstado;
+        private System.Windows.Forms.CheckBox cbInativo;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label17;
     }

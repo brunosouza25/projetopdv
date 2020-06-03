@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PainelMainConfig = new System.Windows.Forms.Panel();
+            this.painelMainConfig = new System.Windows.Forms.Panel();
             this.PainelPrincipalConfig = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,13 +38,13 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PainelMainConfig
+            // painelMainConfig
             // 
-            this.PainelMainConfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PainelMainConfig.Location = new System.Drawing.Point(3, 73);
-            this.PainelMainConfig.Name = "PainelMainConfig";
-            this.PainelMainConfig.Size = new System.Drawing.Size(1252, 431);
-            this.PainelMainConfig.TabIndex = 1;
+            this.painelMainConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.painelMainConfig.Location = new System.Drawing.Point(3, 73);
+            this.painelMainConfig.Name = "painelMainConfig";
+            this.painelMainConfig.Size = new System.Drawing.Size(1252, 431);
+            this.painelMainConfig.TabIndex = 1;
             // 
             // PainelPrincipalConfig
             // 
@@ -59,7 +59,7 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.PainelMainConfig, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.painelMainConfig, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -105,7 +105,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel PainelMainConfig;
+        private System.Windows.Forms.Panel painelMainConfig;
         private System.Windows.Forms.Panel PainelPrincipalConfig;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
