@@ -16,5 +16,12 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             InitializeComponent();
         }
+
+        private void Bt_Criar_Prod_Click(object sender, EventArgs e)
+        {
+            TelaCadastrarColaborador telaCadastrarColaborador = new TelaCadastrarColaborador();
+
+            telaCadastrarColaborador.ShowDialog();
+        }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cBoxInativo = new System.Windows.Forms.CheckBox();
+            this.lblAtivo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.cBoxSaidaDeProdutos = new System.Windows.Forms.CheckBox();
@@ -53,8 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
-            this.cBoxInativo = new System.Windows.Forms.CheckBox();
-            this.lblAtivo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,25 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // cBoxInativo
+            // 
+            this.cBoxInativo.AutoSize = true;
+            this.cBoxInativo.Location = new System.Drawing.Point(407, 375);
+            this.cBoxInativo.Name = "cBoxInativo";
+            this.cBoxInativo.Size = new System.Drawing.Size(15, 14);
+            this.cBoxInativo.TabIndex = 28;
+            this.cBoxInativo.UseVisualStyleBackColor = true;
+            // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtivo.Location = new System.Drawing.Point(263, 367);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(138, 24);
+            this.lblAtivo.TabIndex = 27;
+            this.lblAtivo.Text = "Cargo Inativo:";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(336, 422);
@@ -101,6 +120,7 @@
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -202,6 +222,7 @@
             this.cBoxVendas.Size = new System.Drawing.Size(15, 14);
             this.cBoxVendas.TabIndex = 13;
             this.cBoxVendas.UseVisualStyleBackColor = true;
+            this.cBoxVendas.CheckedChanged += new System.EventHandler(this.cBoxVendas_CheckedChanged);
             // 
             // label11
             // 
@@ -321,32 +342,13 @@
             this.txtCargo.Size = new System.Drawing.Size(166, 20);
             this.txtCargo.TabIndex = 1;
             // 
-            // cBoxInativo
-            // 
-            this.cBoxInativo.AutoSize = true;
-            this.cBoxInativo.Location = new System.Drawing.Point(407, 375);
-            this.cBoxInativo.Name = "cBoxInativo";
-            this.cBoxInativo.Size = new System.Drawing.Size(15, 14);
-            this.cBoxInativo.TabIndex = 28;
-            this.cBoxInativo.UseVisualStyleBackColor = true;
-            // 
-            // lblAtivo
-            // 
-            this.lblAtivo.AutoSize = true;
-            this.lblAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAtivo.Location = new System.Drawing.Point(263, 367);
-            this.lblAtivo.Name = "lblAtivo";
-            this.lblAtivo.Size = new System.Drawing.Size(138, 24);
-            this.lblAtivo.TabIndex = 27;
-            this.lblAtivo.Text = "Cargo Inativo:";
-            // 
-            // TelaCargos
+            // TelaCadastroCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(469, 497);
             this.Controls.Add(this.panel1);
-            this.Name = "TelaCargos";
+            this.Name = "TelaCadastroCargo";
             this.Text = "TelaCargos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

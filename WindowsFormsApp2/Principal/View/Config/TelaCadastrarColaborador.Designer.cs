@@ -168,6 +168,7 @@
             // 
             // cbCargo
             // 
+            this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargo.FormattingEnabled = true;
             this.cbCargo.Items.AddRange(new object[] {
             "nenhum"});
@@ -175,7 +176,6 @@
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(120, 21);
             this.cbCargo.TabIndex = 11;
-            this.cbCargo.Text = "[Selecione]";
             // 
             // label14
             // 
@@ -270,6 +270,7 @@
             // 
             // cbSexo
             // 
+            this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
             "Masculino\t",

@@ -41,9 +41,9 @@
             // painelMainConfig
             // 
             this.painelMainConfig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelMainConfig.Location = new System.Drawing.Point(3, 73);
+            this.painelMainConfig.Location = new System.Drawing.Point(3, 52);
             this.painelMainConfig.Name = "painelMainConfig";
-            this.painelMainConfig.Size = new System.Drawing.Size(1252, 431);
+            this.painelMainConfig.Size = new System.Drawing.Size(1252, 452);
             this.painelMainConfig.TabIndex = 1;
             // 
             // PainelPrincipalConfig
@@ -65,8 +65,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.00394F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.99606F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.861933F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.13807F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1258, 507);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -76,12 +76,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 64);
+            this.panel1.Size = new System.Drawing.Size(1252, 43);
             this.panel1.TabIndex = 0;
             // 
             // btColaboladores
             // 
-            this.btColaboladores.Location = new System.Drawing.Point(37, 11);
+            this.btColaboladores.Location = new System.Drawing.Point(5, 1);
             this.btColaboladores.Name = "btColaboladores";
             this.btColaboladores.Size = new System.Drawing.Size(86, 40);
             this.btColaboladores.TabIndex = 0;

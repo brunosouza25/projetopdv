@@ -12,15 +12,47 @@ namespace WindowsFormsApp2.Principal.View.Config
 {
     public partial class TelaCargos : UserControl
     {
-        TelaCadastroCargo cargos = new TelaCadastroCargo();
+        DadosTableAdapters.CargoTableAdapter cargos = new DadosTableAdapters.CargoTableAdapter();
         public TelaCargos()
         {
             InitializeComponent();
+            carregarListaCargos();
+        }
+        private void btnCadastrarCargo_Click(object sender, EventArgs e)
+        {
+            TelaCadastroCargo telaCargos = new TelaCadastroCargo();
+            telaCargos.ShowDialog();
+            carregarListaCargos();
+        }
+        public void carregarListaCargos()
+        {
+            listaCargos.Items.Clear();
+            var auxCargos = cargos.retornarTodosCargos();
+   
+
+            for (int i = 0; i < auxCargos.Count; i++)
+            {
+                ListViewItem item = new ListViewItem();
+              
+                /*MessageBox.Show(Convert.ToInt32(auxCargos[0]["estadoCargo"]).ToString());
+                if (!Convert.ToBoolean(auxCargos[i]["estadoCargo"]))
+                {
+                    item.BackColor = System.Drawing.Color.Gray;
+                }*/
+                item.SubItems.Add(auxCargos[i]["cargoNome"].ToString());
+
+                /*if (Convert.ToBoolean(auxCargos[i]["estadoCargo"]))
+                {
+                    item.SubItems.Add("Ativo");
+                }
+                item.SubItems.Add("Inativo");*/
+                listaCargos.Items.Add(item);
+            }
         }
 
-        private void Bt_Criar_Prod_Click(object sender, EventArgs e)
+        private void btnEditarCargos_Click(object sender, EventArgs e)
         {
-            cargos.ShowDialog();
+            
         }
     }
 }

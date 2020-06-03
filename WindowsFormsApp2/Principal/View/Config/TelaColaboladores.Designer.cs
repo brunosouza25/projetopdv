@@ -36,6 +36,8 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,8 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Bt_Criar_Prod = new System.Windows.Forms.Button();
             this.panel_Total = new System.Windows.Forms.Panel();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -145,6 +145,16 @@
             // 
             this.columnHeader3.Text = "Cargo";
             this.columnHeader3.Width = 114;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Situação";
+            this.columnHeader4.Width = 183;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ID";
+            this.columnHeader5.Width = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -280,6 +290,7 @@
             this.Bt_Criar_Prod.Size = new System.Drawing.Size(133, 123);
             this.Bt_Criar_Prod.TabIndex = 4;
             this.Bt_Criar_Prod.UseVisualStyleBackColor = true;
+            this.Bt_Criar_Prod.Click += new System.EventHandler(this.Bt_Criar_Prod_Click);
             // 
             // panel_Total
             // 
@@ -288,16 +299,6 @@
             this.panel_Total.Name = "panel_Total";
             this.panel_Total.Size = new System.Drawing.Size(278, 28);
             this.panel_Total.TabIndex = 1;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Situação";
-            this.columnHeader4.Width = 183;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ID";
-            this.columnHeader5.Width = 0;
             // 
             // TelaColaboladores
             // 

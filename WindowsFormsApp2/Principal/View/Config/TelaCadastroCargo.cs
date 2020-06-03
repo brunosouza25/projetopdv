@@ -29,20 +29,47 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             if (txtCargo.TextLength > 0)
             {
-                cargos.inserirCargo(txtCargo.Text.ToString(), Convert.ToByte(cBoxInativo.Checked));
-                int idcargo = Convert.ToInt32(cargos.retornarUltimoIdCargo());
+                cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked);
+
+                var idcargo = cargos.retornarUltimoIdCargo();
 
                 permissoes_vendas.inserirPermissoesVendas(cBoxVendas.Checked, cBoxLancarVendas.Checked, cBoxCancelarVendas.Checked
-                    , cBoxSangria.Checked, cBoxDevolucoes.Checked, idcargo);
+                    , cBoxSangria.Checked, cBoxDevolucoes.Checked, Convert.ToInt32(idcargo[0]["idCargo"]));
 
                 permissoes_estoque.inserirPermissoesEstoque(cBoxEstoque.Checked, cBoxCriacaoDeProdutos.Checked, cBoxEditarProdutos.Checked
-                    , cBoxEntradaDeProdutos.Checked, cBoxSaidaDeProdutos.Checked, idcargo);
+                    , cBoxEntradaDeProdutos.Checked, cBoxSaidaDeProdutos.Checked, Convert.ToInt32(idcargo[0]["idCargo"]));
+                Close();
 
             }
             else
             {
                 MessageBox.Show("Para salvar precisa inserir um nome");
             }
+        }
+
+        private void cBoxVendas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cBoxVendas.Checked)
+            {
+                cBoxVendas.Checked = true;
+                cBoxLancarVendas.Checked = true;
+                cBoxCancelarVendas.Checked = true;
+                cBoxSangria.Checked = true;
+                cBoxDevolucoes.Checked = true;
+            }
+            else
+            {
+                cBoxVendas.Checked = false;
+                cBoxLancarVendas.Checked = false;
+                cBoxCancelarVendas.Checked = false;
+                cBoxSangria.Checked = false;
+                cBoxDevolucoes.Checked = false;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -17,8 +17,8 @@ namespace WindowsFormsApp2.Principal.View.Config
         DadosTableAdapters.CargoTableAdapter cargos = new DadosTableAdapters.CargoTableAdapter();
         public TelaCadastrarColaborador()
         {
-
             InitializeComponent();
+            preencherCargos();
         }
         Colaborador colaborador = new Colaborador();
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -26,11 +26,12 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         }
 
-        public void preencher_cargos() {
+        public void preencherCargos() {
             var todosCargos = cargos.retornarTodosCargos();
-            for(int i = 0; i >= todosCargos.Count; i++)
+            for(int i = 0; i < todosCargos.Count; i++)
             {
                 cbCargo.Items.Add(todosCargos[i]["cargoNome"].ToString());
+
             }
         }
 
@@ -39,7 +40,8 @@ namespace WindowsFormsApp2.Principal.View.Config
             if(txtNome.Text.Length > 0 && txtEmail.Text.Length > 0)
             {
                 int idCargo;
-                if(cbCargo.SelectedItem.ToString() == "")
+                MessageBox.Show(cbCargo.SelectedIndex.ToString());
+                if(cbCargo.SelectedIndex == -1)
                 {
                     idCargo = 0;
                 }
@@ -48,8 +50,9 @@ namespace WindowsFormsApp2.Principal.View.Config
                     var Cargo = cargos.retornarCargo(cbCargo.SelectedItem.ToString());
                     idCargo = Convert.ToInt32(Cargo[0]["idCargo"]);
                 }
-                colaboladores.criarColaborador(idCargo, txtNome.Text,txtNasc.Text, Convert.ToByte(cbSexo.SelectedItem)
-                    , DateTime.Now.ToString("dd:MM"), DateTime.Now.ToString("HH:mm"), Convert.ToByte(cbInativo.Checked), txtEmail.Text);
+                colaboladores.cadastrarColaborador(idCargo, txtNome.Text, txtNasc.Text, Convert.ToByte(cbSexo.SelectedItem)
+                    , DateTime.Now.ToString("dd:MM"),  Convert.ToByte(cbInativo.Checked)
+                    , DateTime.Now.ToString("HH:mm"), txtEmail.Text);
 
             }
             else
