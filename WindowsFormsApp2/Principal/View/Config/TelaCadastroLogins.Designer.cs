@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbColaborador = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,25 @@
             this.panel1.Size = new System.Drawing.Size(532, 306);
             this.panel1.TabIndex = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(157, 179);
+            this.textBox1.MaxLength = 30;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 20);
+            this.textBox1.TabIndex = 30;
+            this.textBox1.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(33, 179);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 16);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Repita a senha:";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(373, 220);
@@ -79,6 +98,7 @@
             this.btnSalvar.TabIndex = 27;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label4
             // 
@@ -144,25 +164,6 @@
             this.label1.Size = new System.Drawing.Size(131, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Colaborador:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(157, 179);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 179);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 16);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Repita a senha:";
             // 
             // TelaCadastroLogins
             // 

@@ -14,7 +14,7 @@ namespace WindowsFormsApp2.Principal.View.Config
     {
         TelaColaboladores telaColaboladores = new TelaColaboladores();
         TelaCargos telaCargos = new TelaCargos();
-        TelaCadastroLogins telaLogins = new TelaCadastroLogins();
+
 
         public TelaPrincipalColaboladores()
         {
@@ -38,6 +38,12 @@ namespace WindowsFormsApp2.Principal.View.Config
 
             telaColaboladores.Visible = false;
             telaCargos.Visible = true;
+        }
+
+        private void btnLogins_Click(object sender, EventArgs e)
+        {
+            TelaCadastroLogins telaLogin = new TelaCadastroLogins();
+            telaLogin.ShowDialog();
         }
     }
 }

@@ -72,6 +72,7 @@
             this.btnLogins.TabIndex = 3;
             this.btnLogins.Text = "Logins";
             this.btnLogins.UseVisualStyleBackColor = true;
+            this.btnLogins.Click += new System.EventHandler(this.btnLogins_Click);
             // 
             // btnCargos
             // 

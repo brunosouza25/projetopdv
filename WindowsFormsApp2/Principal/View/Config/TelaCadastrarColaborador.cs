@@ -15,7 +15,7 @@ namespace WindowsFormsApp2.Principal.View.Config
     {
         DadosTableAdapters.FuncionarioTableAdapter colaboladores = new DadosTableAdapters.FuncionarioTableAdapter();
         DadosTableAdapters.CargoTableAdapter cargos = new DadosTableAdapters.CargoTableAdapter();
-        int qntCargo;
+
         public TelaCadastrarColaborador()
         {
             InitializeComponent();
@@ -29,7 +29,6 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         public void preencherCargos() {
             var todosCargos = cargos.retornarTodosCargos();
-            qntCargo = todosCargos.Count;
             for(int i = 0; i < todosCargos.Count; i++)
             {
                 cbCargo.Items.Add(todosCargos[i]["cargoNome"].ToString());
