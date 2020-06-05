@@ -15,6 +15,7 @@ namespace WindowsFormsApp2.Principal.View.Config
     {
         DadosTableAdapters.FuncionarioTableAdapter colaboladores = new DadosTableAdapters.FuncionarioTableAdapter();
         DadosTableAdapters.CargoTableAdapter cargos = new DadosTableAdapters.CargoTableAdapter();
+        int qntCargo;
         public TelaCadastrarColaborador()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         public void preencherCargos() {
             var todosCargos = cargos.retornarTodosCargos();
+            qntCargo = todosCargos.Count;
             for(int i = 0; i < todosCargos.Count; i++)
             {
                 cbCargo.Items.Add(todosCargos[i]["cargoNome"].ToString());
@@ -37,10 +39,10 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(txtNasc.Text);
             if(txtNome.Text.Length > 0 && txtEmail.Text.Length > 0)
             {
                 int idCargo;
-                MessageBox.Show(cbCargo.SelectedIndex.ToString());
                 if(cbCargo.SelectedIndex == -1)
                 {
                     idCargo = 0;
@@ -50,9 +52,16 @@ namespace WindowsFormsApp2.Principal.View.Config
                     var Cargo = cargos.retornarCargo(cbCargo.SelectedItem.ToString());
                     idCargo = Convert.ToInt32(Cargo[0]["idCargo"]);
                 }
-                colaboladores.cadastrarColaborador(idCargo, txtNome.Text, txtNasc.Text, Convert.ToByte(cbSexo.SelectedItem)
-                    , DateTime.Now.ToString("dd:MM"),  Convert.ToByte(cbInativo.Checked)
+                DateTime a;
+                if(!DateTime.TryParse(txtNasc.Text, out a)){
+                    a = new DateTime(1111, 11, 11);
+                }
+                colaboladores.cadastrarColaborador(idCargo, txtNome.Text, a.ToString(), Convert.ToByte(cbSexo.SelectedItem)
+                    , DateTime.Now.ToString("dd/MM"),  Convert.ToByte(cbInativo.Checked)
                     , DateTime.Now.ToString("HH:mm"), txtEmail.Text);
+                
+                
+                Close();
 
             }
             else

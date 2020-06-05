@@ -47,7 +47,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.cbSexo = new System.Windows.Forms.ComboBox();
-            this.txtNasc = new System.Windows.Forms.TextBox();
             this.txtConta = new System.Windows.Forms.TextBox();
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.txtBanco = new System.Windows.Forms.TextBox();
@@ -64,12 +63,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtNasc = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.txtNasc);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
@@ -88,7 +89,6 @@
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.cbSexo);
-            this.panel1.Controls.Add(this.txtNasc);
             this.panel1.Controls.Add(this.txtConta);
             this.panel1.Controls.Add(this.txtAgencia);
             this.panel1.Controls.Add(this.txtBanco);
@@ -281,13 +281,6 @@
             this.cbSexo.TabIndex = 20;
             this.cbSexo.SelectedIndexChanged += new System.EventHandler(this.cbSexo_SelectedIndexChanged);
             // 
-            // txtNasc
-            // 
-            this.txtNasc.Location = new System.Drawing.Point(200, 335);
-            this.txtNasc.Name = "txtNasc";
-            this.txtNasc.Size = new System.Drawing.Size(100, 20);
-            this.txtNasc.TabIndex = 19;
-            // 
             // txtConta
             // 
             this.txtConta.Location = new System.Drawing.Point(349, 405);
@@ -427,6 +420,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:*";
             // 
+            // txtNasc
+            // 
+            this.txtNasc.Location = new System.Drawing.Point(201, 333);
+            this.txtNasc.Mask = "00/00/0000";
+            this.txtNasc.Name = "txtNasc";
+            this.txtNasc.Size = new System.Drawing.Size(100, 20);
+            this.txtNasc.TabIndex = 40;
+            this.txtNasc.ValidatingType = typeof(System.DateTime);
+            // 
             // TelaCadastrarColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,7 +449,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.ComboBox cbSexo;
-        private System.Windows.Forms.TextBox txtNasc;
         private System.Windows.Forms.TextBox txtConta;
         private System.Windows.Forms.TextBox txtAgencia;
         private System.Windows.Forms.TextBox txtBanco;
@@ -479,5 +480,6 @@
         private System.Windows.Forms.CheckBox cbInativo;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.MaskedTextBox txtNasc;
     }
 }

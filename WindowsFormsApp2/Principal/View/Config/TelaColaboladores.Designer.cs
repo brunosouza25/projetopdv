@@ -32,7 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.TxtBoxPesquisaProdEstoque = new System.Windows.Forms.TextBox();
-            this.listaProdutos = new System.Windows.Forms.ListView();
+            this.listaColaboradores = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -89,7 +89,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.TxtBoxPesquisaProdEstoque, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.listaProdutos, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.listaColaboradores, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -109,27 +109,27 @@
             this.TxtBoxPesquisaProdEstoque.Size = new System.Drawing.Size(950, 30);
             this.TxtBoxPesquisaProdEstoque.TabIndex = 1;
             // 
-            // listaProdutos
+            // listaColaboradores
             // 
-            this.listaProdutos.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listaProdutos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listaColaboradores.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.listaColaboradores.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listaProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaProdutos.FullRowSelect = true;
-            this.listaProdutos.GridLines = true;
-            this.listaProdutos.HideSelection = false;
-            this.listaProdutos.Location = new System.Drawing.Point(3, 39);
-            this.listaProdutos.MultiSelect = false;
-            this.listaProdutos.Name = "listaProdutos";
-            this.listaProdutos.Size = new System.Drawing.Size(950, 326);
-            this.listaProdutos.TabIndex = 2;
-            this.listaProdutos.UseCompatibleStateImageBehavior = false;
-            this.listaProdutos.View = System.Windows.Forms.View.Details;
+            this.listaColaboradores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listaColaboradores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaColaboradores.FullRowSelect = true;
+            this.listaColaboradores.GridLines = true;
+            this.listaColaboradores.HideSelection = false;
+            this.listaColaboradores.Location = new System.Drawing.Point(3, 39);
+            this.listaColaboradores.MultiSelect = false;
+            this.listaColaboradores.Name = "listaColaboradores";
+            this.listaColaboradores.Size = new System.Drawing.Size(950, 326);
+            this.listaColaboradores.TabIndex = 2;
+            this.listaColaboradores.UseCompatibleStateImageBehavior = false;
+            this.listaColaboradores.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -224,7 +224,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 142);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 16);
+            this.label6.Size = new System.Drawing.Size(97, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "Colaborador";
             // 
@@ -234,7 +234,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Editar";
             // 
@@ -266,7 +266,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 142);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 16);
+            this.label5.Size = new System.Drawing.Size(97, 16);
             this.label5.TabIndex = 6;
             this.label5.Text = "Colaborador";
             // 
@@ -276,7 +276,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 16);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Cadastrar";
             // 
@@ -290,7 +290,7 @@
             this.Bt_Criar_Prod.Size = new System.Drawing.Size(133, 123);
             this.Bt_Criar_Prod.TabIndex = 4;
             this.Bt_Criar_Prod.UseVisualStyleBackColor = true;
-            this.Bt_Criar_Prod.Click += new System.EventHandler(this.Bt_Criar_Prod_Click);
+            this.Bt_Criar_Prod.Click += new System.EventHandler(this.btCadastrarColaborador);
             // 
             // panel_Total
             // 
@@ -327,7 +327,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox TxtBoxPesquisaProdEstoque;
-        private System.Windows.Forms.ListView listaProdutos;
+        private System.Windows.Forms.ListView listaColaboradores;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

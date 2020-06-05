@@ -98,11 +98,15 @@ CREATE TABLE Funcionario (
 	idConta_Banc TINYINT,
 	idEndereco TINYINT,
 );
+
+insert into Funcionario values(0,'bruno','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
+
 CREATE TABLE Cargo (
-    idCargo INT PRIMARY KEY IDENTITY (1,1),
+    idCargo INT PRIMARY KEY IDENTITY (0,1),
     cargoNome VARCHAR(54),
     estadoCargo BIT,
 );
+
 
 CREATE TABLE Permissoes_Vendas(
 	total_vendas BIT,
@@ -221,8 +225,9 @@ INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
-insert into Funcionario values(null,'bruno',null,null,'bruno','1',null,null,null , 1, null, null)
+insert into Funcionario values(null,'bruno',0,'1111/11/11','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
 
+INSERT INTO Cargo VALUES ('Nenhum', 0)
 /*DELETE FROM Venda*/
 /*
 delete from Observacoes_Sangria
