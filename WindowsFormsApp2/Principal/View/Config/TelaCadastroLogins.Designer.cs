@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxRepetirSenha = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBoxRepetirSenha);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalvar);
@@ -62,14 +62,14 @@
             this.panel1.Size = new System.Drawing.Size(532, 306);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtBoxRepetirSenha
             // 
-            this.textBox1.Location = new System.Drawing.Point(157, 179);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txtBoxRepetirSenha.Location = new System.Drawing.Point(157, 179);
+            this.txtBoxRepetirSenha.MaxLength = 30;
+            this.txtBoxRepetirSenha.Name = "txtBoxRepetirSenha";
+            this.txtBoxRepetirSenha.Size = new System.Drawing.Size(250, 20);
+            this.txtBoxRepetirSenha.TabIndex = 30;
+            this.txtBoxRepetirSenha.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -125,7 +125,7 @@
             this.txtLogin.MaxLength = 30;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(250, 20);
-            this.txtLogin.TabIndex = 15;
+            this.txtLogin.TabIndex = 17;
             // 
             // label3
             // 
@@ -149,6 +149,7 @@
             // 
             // cbColaborador
             // 
+            this.cbColaborador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbColaborador.FormattingEnabled = true;
             this.cbColaborador.Location = new System.Drawing.Point(206, 55);
             this.cbColaborador.Name = "cbColaborador";
@@ -191,7 +192,7 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxRepetirSenha;
         private System.Windows.Forms.Label label5;
     }
 }

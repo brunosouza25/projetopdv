@@ -38,7 +38,6 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(txtNasc.Text);
             if(txtNome.Text.Length > 0 && txtEmail.Text.Length > 0)
             {
                 int idCargo;
@@ -56,7 +55,7 @@ namespace WindowsFormsApp2.Principal.View.Config
                     a = new DateTime(1111, 11, 11);
                 }
                 colaboladores.cadastrarColaborador(idCargo, txtNome.Text, a.ToString(), Convert.ToByte(cbSexo.SelectedItem)
-                    , DateTime.Now.ToString("dd/MM"),  Convert.ToByte(cbInativo.Checked)
+                    , DateTime.Now.ToString("dd/MM"),  Convert.ToByte(!cbInativo.Checked)
                     , DateTime.Now.ToString("HH:mm"), txtEmail.Text);
                 
                 

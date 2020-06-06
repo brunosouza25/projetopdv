@@ -110,6 +110,7 @@
     <Compile Include="Estoque\View\TelaDeSaidaProduto.Designer.cs">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Principal\View\Config\Classes\Colaborador.cs" />
     <Compile Include="Principal\View\Config\TelaCadastrarColaborador.cs">
       <SubType>Form</SubType>

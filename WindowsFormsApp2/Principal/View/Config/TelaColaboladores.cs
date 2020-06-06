@@ -23,10 +23,10 @@ namespace WindowsFormsApp2.Principal.View.Config
         public void carregarColaboradores()
         {
             var auxColaboradores = colaboradores.retornarTodosColaboradores();
-
-            for(int i = 0; i < auxColaboradores.Count; i++)
+            listaColaboradores.Items.Clear();
+            for (int i = 0; i < auxColaboradores.Count; i++)
             {
-                listaColaboradores.Items.Clear();
+                
                 ListViewItem item = new ListViewItem();
 
                 item.SubItems.Add(auxColaboradores[i]["nomeFunc"].ToString());

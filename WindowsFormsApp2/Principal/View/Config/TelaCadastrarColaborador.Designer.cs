@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNasc = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNasc = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +112,16 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtNasc
+            // 
+            this.txtNasc.Enabled = false;
+            this.txtNasc.Location = new System.Drawing.Point(201, 333);
+            this.txtNasc.Mask = "00/00/0000";
+            this.txtNasc.Name = "txtNasc";
+            this.txtNasc.Size = new System.Drawing.Size(100, 20);
+            this.txtNasc.TabIndex = 40;
+            this.txtNasc.ValidatingType = typeof(System.DateTime);
+            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(194, 195);
@@ -151,6 +161,7 @@
             // 
             // txtCidade
             // 
+            this.txtCidade.Enabled = false;
             this.txtCidade.Location = new System.Drawing.Point(194, 229);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(249, 20);
@@ -170,8 +181,6 @@
             // 
             this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCargo.FormattingEnabled = true;
-            this.cbCargo.Items.AddRange(new object[] {
-            "nenhum"});
             this.cbCargo.Location = new System.Drawing.Point(397, 88);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(120, 21);
@@ -199,6 +208,7 @@
             // 
             // txtTel
             // 
+            this.txtTel.Enabled = false;
             this.txtTel.Location = new System.Drawing.Point(197, 164);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(127, 20);
@@ -216,6 +226,7 @@
             // 
             // txtNum
             // 
+            this.txtNum.Enabled = false;
             this.txtNum.Location = new System.Drawing.Point(419, 300);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(59, 20);
@@ -233,6 +244,7 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.Enabled = false;
             this.txtBairro.Location = new System.Drawing.Point(201, 300);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(159, 20);
@@ -271,6 +283,7 @@
             // cbSexo
             // 
             this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSexo.Enabled = false;
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
             "Masculino\t",
@@ -283,6 +296,7 @@
             // 
             // txtConta
             // 
+            this.txtConta.Enabled = false;
             this.txtConta.Location = new System.Drawing.Point(349, 405);
             this.txtConta.Name = "txtConta";
             this.txtConta.Size = new System.Drawing.Size(100, 20);
@@ -290,6 +304,7 @@
             // 
             // txtAgencia
             // 
+            this.txtAgencia.Enabled = false;
             this.txtAgencia.Location = new System.Drawing.Point(148, 405);
             this.txtAgencia.Name = "txtAgencia";
             this.txtAgencia.Size = new System.Drawing.Size(100, 20);
@@ -297,6 +312,7 @@
             // 
             // txtBanco
             // 
+            this.txtBanco.Enabled = false;
             this.txtBanco.Location = new System.Drawing.Point(150, 370);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(100, 20);
@@ -304,6 +320,7 @@
             // 
             // txtEnd
             // 
+            this.txtEnd.Enabled = false;
             this.txtEnd.Location = new System.Drawing.Point(196, 263);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(249, 20);
@@ -311,6 +328,7 @@
             // 
             // txtCpf
             // 
+            this.txtCpf.Enabled = false;
             this.txtCpf.Location = new System.Drawing.Point(198, 129);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(100, 20);
@@ -318,6 +336,7 @@
             // 
             // txtRg
             // 
+            this.txtRg.Enabled = false;
             this.txtRg.Location = new System.Drawing.Point(198, 89);
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(100, 20);
@@ -419,15 +438,6 @@
             this.label1.Size = new System.Drawing.Size(80, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:*";
-            // 
-            // txtNasc
-            // 
-            this.txtNasc.Location = new System.Drawing.Point(201, 333);
-            this.txtNasc.Mask = "00/00/0000";
-            this.txtNasc.Name = "txtNasc";
-            this.txtNasc.Size = new System.Drawing.Size(100, 20);
-            this.txtNasc.TabIndex = 40;
-            this.txtNasc.ValidatingType = typeof(System.DateTime);
             // 
             // TelaCadastrarColaborador
             // 

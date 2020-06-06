@@ -13,6 +13,7 @@ namespace WindowsFormsApp2.Principal.View.Config
     public partial class TelaCadastroLogins : Form
     {
         DadosTableAdapters.FuncionarioTableAdapter colaboradores = new DadosTableAdapters.FuncionarioTableAdapter();
+
         public TelaCadastroLogins()
         {
             InitializeComponent();
@@ -30,7 +31,12 @@ namespace WindowsFormsApp2.Principal.View.Config
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            if (txtSenha.Text == txtBoxRepetirSenha.Text && cbColaborador.SelectedItem != "")
+            {
+                var idColab = colaboradores.verificarFunc(cbColaborador.SelectedItem.ToString());
+                colaboradores.cadastrarLogin(txtLogin.Text, txtSenha.Text, Convert.ToInt32(idColab[0]["idFuncionario"]));
+            }
+            Close();
         }
     }
 }

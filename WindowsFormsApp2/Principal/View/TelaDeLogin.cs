@@ -14,24 +14,24 @@ namespace WindowsFormsApp2
         public void validar(string login, string senha)
         {
             
-            var func = funcionario.verificarFunc(login);
+            var func = funcionario.logar(login);
 
             
             string login2, pass;
             if (func.Count > 0)
             {
                 pass = func[0]["senha"].ToString();
-                if (senha == pass)
+                if (senha == pass && Convert.ToInt32(func[0]["funcEstado"]) == 1 && Convert.ToInt32(func[0]["idCargo"]) != 0)
                 {
                     this.Visible = false;
                     tela.ShowDialog();
                     Close();
                 }
                 else
-                    MessageBox.Show("Login ou senha errados");
+                    MessageBox.Show("Não foi possível fazer o Login, login ou senha podem estar errados ou usuário inativo ou sem cargo");
             }
             else
-                MessageBox.Show("Login ou senha errados");
+                MessageBox.Show("Não foi possível fazer o Login, login ou senha podem estar errados ou usuário inativo ou sem cargo");
         }
         private void button2_Click(object sender, EventArgs e)
         {
