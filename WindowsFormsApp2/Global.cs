@@ -13,6 +13,7 @@ namespace WindowsFormsApp2
 		public static bool cancelarVendas { get; set; }
 		public static bool sangria { get; set; }
 		public static bool devolucoes { get; set; }
+
 		public static int idCargo { get; set; }
 		public static int idColaborador { get; set; }
 		public static string nomeColaborador { get; set; }

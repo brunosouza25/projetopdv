@@ -99,7 +99,6 @@ CREATE TABLE Funcionario (
 	idEndereco TINYINT,
 );
 
-insert into Funcionario values(0,'bruno','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
 
 CREATE TABLE Cargo (
     idCargo INT PRIMARY KEY IDENTITY (0,1),
@@ -154,16 +153,7 @@ CREATE TABLE Itens_Devolucao (
     observacoes VARCHAR(300),
 	dataDevolucao DATE,
 	valorProduto FLOAT
-	/*valorDevolucao FLOAT*/
 );
- 
- /*verificar sobre as fk
- CREATE TABLE Vale_Troca (
-    idValeTroca INT PRIMARY KEY,
-    idItensDevolucao INT,
-    idProduto INT,
-    valorValeTroca FLOAT
-);*/
 
 CREATE TABLE Vendas_Canceladas(
 	idVendaCancelada INT PRIMARY KEY IDENTITY (1,1),
@@ -225,21 +215,10 @@ INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
-insert into Funcionario values(null,'bruno',0,'1111/11/11','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
 
 INSERT INTO Cargo VALUES ('Nenhum', 0)
-/*DELETE FROM Venda*/
-/*
-delete from Observacoes_Sangria
-delete from Caixa
-delete from Cargo
-delete from Funcionario
-delete from ItensDaVenda
-delete from ItensDeEntrada
-delete from ItensDeSaida
-delete from MetodoDePagamento
-delete from Pagamento
-delete from produto
-delete from Venda
-*/
+INSERT INTO Cargo VALUES ('adm', 1)
+insert into Funcionario values(1,'bruno','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
 
+insert into Permissoes_Estoque values (1,1,1,1,1,1)
+insert into Permissoes_Vendas values (1,1,1,1,1,1)

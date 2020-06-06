@@ -7,11 +7,11 @@ namespace WindowsFormsApp2
     public partial class TelaPrincipal : Form
     {
         String Hora = (DateTime.Now.ToString("HH:mm:ss"));
+
         TelaPrincipalEstoque estoque = new TelaPrincipalEstoque();
         TelaDeRelatorios relatorio = new TelaDeRelatorios();
         TelaDeVendas telaDoPdv = new TelaDeVendas();
         TelaConfig telaDeConfig = new TelaConfig();   
-
 
 
         public TelaPrincipal()
@@ -21,17 +21,30 @@ namespace WindowsFormsApp2
             //caixa
 
             //estoque
+            if (Global.totalEstoque == false) {
+                estoque.Enabled = false;
+            } 
+
             painelPrincipal.Controls.Add(estoque);
             estoque.Visible = false;
+                
             //relatorios
             painelPrincipal.Controls.Add(relatorio);
             relatorio.Visible = false;
             //vendas
+            
             painelPrincipal.Controls.Add(telaDoPdv);
             telaDoPdv.Visible = false;
 
             painelPrincipal.Controls.Add(telaDeConfig);
             telaDeConfig.Visible = false;
+
+            if (Global.totalVendas == false)
+            {
+                telaDoPdv.Enabled = false;
+                telaDoPdv.Visible = false;
+                btCaixa.Visible = false;
+            }
         }
 
         public void mudarEstoque()

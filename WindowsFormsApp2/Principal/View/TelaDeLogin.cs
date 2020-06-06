@@ -9,21 +9,27 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
-        TelaPrincipal tela = new TelaPrincipal();
-        DadosTableAdapters.FuncionarioTableAdapter funcionario = new DadosTableAdapters.FuncionarioTableAdapter();
+        DadosTableAdapters.FuncionarioTableAdapter colaborador = new DadosTableAdapters.FuncionarioTableAdapter();
+        DadosTableAdapters.Permissoes_EstoqueTableAdapter permissoesEstoque = new DadosTableAdapters.Permissoes_EstoqueTableAdapter();
+        DadosTableAdapters.Permissoes_VendasTableAdapter permissoesVendas = new DadosTableAdapters.Permissoes_VendasTableAdapter();
+        DadosTableAdapters.CargoTableAdapter cargo = new DadosTableAdapters.CargoTableAdapter();
         public void validar(string login, string senha)
         {
-            
-            var func = funcionario.logar(login);
 
-            
-            string login2, pass;
-            if (func.Count > 0)
+            var colab = colaborador.logar(login);
+            Global.idCargo = Convert.ToInt32(colab[0]["idCargo"]);
+            Global.idColaborador = Convert.ToInt32(colab[0]["idFuncionario"]);
+            Global.nomeColaborador = colab[0]["nomeFunc"].ToString();
+
+            string pass;
+            if (colab.Count > 0 && Global.idCargo != 0)
             {
-                pass = func[0]["senha"].ToString();
-                if (senha == pass && Convert.ToInt32(func[0]["funcEstado"]) == 1 && Convert.ToInt32(func[0]["idCargo"]) != 0)
+                pass = colab[0]["senha"].ToString();
+                if (senha == pass && Convert.ToInt32(colab[0]["funcEstado"]) == 1 && Convert.ToInt32(colab[0]["idCargo"]) != 0)
                 {
                     this.Visible = false;
+                    carregarPermissoes();
+                    TelaPrincipal tela = new TelaPrincipal();
                     tela.ShowDialog();
                     Close();
                 }
@@ -43,7 +49,25 @@ namespace WindowsFormsApp2
             Close();
         }
 
+        public void carregarPermissoes()
+        {
 
+            var auxVenda = permissoesVendas.retornarPermissoesVendas(Global.idCargo);
+            var auxEstoque = permissoesEstoque.retornarPermissoesEstoque(Global.idCargo);
+
+            Global.totalVendas = Convert.ToBoolean(auxVenda[0]["total_vendas"]);
+            Global.lancarVendas = Convert.ToBoolean(auxVenda[0]["lancar_vendas"]);
+            Global.cancelarVendas = Convert.ToBoolean(auxVenda[0]["cancelar_vendas"]);
+            Global.sangria = Convert.ToBoolean(auxVenda[0]["sangria"]);
+            Global.devolucoes = Convert.ToBoolean(auxVenda[0]["devolucoes"]);
+
+            Global.totalEstoque = Convert.ToBoolean(auxEstoque[0]["total_estoque"]);
+            Global.criacaoProduto = Convert.ToBoolean(auxEstoque[0]["criacao_produtos"]);
+            Global.editarProdutos = Convert.ToBoolean(auxEstoque[0]["editar_produtos"]);
+            Global.entradaProdutos = Convert.ToBoolean(auxEstoque[0]["entrada_produtos"]);
+            Global.saidaProdutos = Convert.ToBoolean(auxEstoque[0]["saida_produtos"]);
+
+        }
 
 
         private void TxtBoxPass_KeyDown(object sender, KeyEventArgs e)
