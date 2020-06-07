@@ -104,11 +104,11 @@ CREATE TABLE Cargo (
     idCargo INT PRIMARY KEY IDENTITY (0,1),
     cargoNome VARCHAR(54),
     estadoCargo BIT,
+	adm BIT
 );
 
 
 CREATE TABLE Permissoes_Vendas(
-	total_vendas BIT,
 	lancar_vendas BIT,
 	cancelar_vendas BIT,
 	sangria BIT,
@@ -117,7 +117,6 @@ CREATE TABLE Permissoes_Vendas(
 )
 
 CREATE TABLE Permissoes_Estoque(
-	total_estoque BIT,
 	criacao_produtos BIT,
 	editar_produtos BIT,
 	entrada_produtos BIT,
@@ -216,9 +215,11 @@ INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
 
-INSERT INTO Cargo VALUES ('Nenhum', 0)
-INSERT INTO Cargo VALUES ('adm', 1)
+INSERT INTO Cargo VALUES ('Nenhum', 0,0)
+INSERT INTO Cargo VALUES ('adm', 1,0)
 insert into Funcionario values(1,'bruno','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
+insert into Funcionario values(1,'Cybele','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
+
 
 insert into Permissoes_Estoque values (1,1,1,1,1,1)
 insert into Permissoes_Vendas values (1,1,1,1,1,1)

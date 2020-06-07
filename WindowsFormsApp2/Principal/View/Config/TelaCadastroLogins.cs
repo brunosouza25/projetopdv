@@ -25,7 +25,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             
             for (int i = 0; i < auxColaboradores.Count; i++)
             {
-                if (auxColaboradores[i]["log_in"].ToString() == String.Empty)
+                if (auxColaboradores[i]["log_in"].ToString() == String.Empty || Convert.ToInt32(auxColaboradores[i]["idFuncionario"]) == Global.idColaborador)
                     cbColaborador.Items.Add(auxColaboradores[i]["nomeFunc"].ToString());
             }
         }

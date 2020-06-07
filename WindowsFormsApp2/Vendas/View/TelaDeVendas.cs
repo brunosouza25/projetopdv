@@ -28,6 +28,12 @@ namespace WindowsFormsApp2.Vendas
 
             painelPrincipalDeVendas.Controls.Add(devolucao);
                 devolucao.Visible = false;
+
+            if(Global.devolucoes == false)
+            {
+                devolucao.Visible = false;
+                btnDevolucao.Visible = false;
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

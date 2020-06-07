@@ -35,11 +35,11 @@
             this.painel_hora = new System.Windows.Forms.Panel();
             this.Lab_Hora = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblConfiguracoes = new System.Windows.Forms.Label();
             this.btnConfig = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEstoque = new System.Windows.Forms.Label();
+            this.lblVendas = new System.Windows.Forms.Label();
             this.btCaixa = new System.Windows.Forms.Button();
             this.BtEstoque = new System.Windows.Forms.Button();
             this.BtRelatorio = new System.Windows.Forms.Button();
@@ -104,11 +104,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblConfiguracoes);
             this.panel1.Controls.Add(this.btnConfig);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblEstoque);
+            this.panel1.Controls.Add(this.lblVendas);
             this.panel1.Controls.Add(this.btCaixa);
             this.panel1.Controls.Add(this.BtEstoque);
             this.panel1.Controls.Add(this.BtRelatorio);
@@ -118,15 +118,15 @@
             this.panel1.Size = new System.Drawing.Size(626, 98);
             this.panel1.TabIndex = 5;
             // 
-            // label4
+            // lblConfiguracoes
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(403, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Configurações";
+            this.lblConfiguracoes.AutoSize = true;
+            this.lblConfiguracoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfiguracoes.Location = new System.Drawing.Point(403, 77);
+            this.lblConfiguracoes.Name = "lblConfiguracoes";
+            this.lblConfiguracoes.Size = new System.Drawing.Size(125, 20);
+            this.lblConfiguracoes.TabIndex = 7;
+            this.lblConfiguracoes.Text = "Configurações";
             // 
             // btnConfig
             // 
@@ -149,25 +149,25 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Relatórios";
             // 
-            // label2
+            // lblEstoque
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(147, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Estoque";
+            this.lblEstoque.AutoSize = true;
+            this.lblEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstoque.Location = new System.Drawing.Point(147, 77);
+            this.lblEstoque.Name = "lblEstoque";
+            this.lblEstoque.Size = new System.Drawing.Size(76, 20);
+            this.lblEstoque.TabIndex = 4;
+            this.lblEstoque.Text = "Estoque";
             // 
-            // label1
+            // lblVendas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Vendas";
+            this.lblVendas.AutoSize = true;
+            this.lblVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendas.Location = new System.Drawing.Point(21, 77);
+            this.lblVendas.Name = "lblVendas";
+            this.lblVendas.Size = new System.Drawing.Size(70, 20);
+            this.lblVendas.TabIndex = 3;
+            this.lblVendas.Text = "Vendas";
             // 
             // btCaixa
             // 
@@ -251,9 +251,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btCaixa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEstoque;
+        private System.Windows.Forms.Label lblVendas;
+        private System.Windows.Forms.Label lblConfiguracoes;
         private System.Windows.Forms.Button btnConfig;
     }
 }

@@ -68,7 +68,7 @@
             this.txtBoxRepetirSenha.MaxLength = 30;
             this.txtBoxRepetirSenha.Name = "txtBoxRepetirSenha";
             this.txtBoxRepetirSenha.Size = new System.Drawing.Size(250, 20);
-            this.txtBoxRepetirSenha.TabIndex = 30;
+            this.txtBoxRepetirSenha.TabIndex = 19;
             this.txtBoxRepetirSenha.UseSystemPasswordChar = true;
             // 
             // label5
@@ -86,7 +86,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(373, 220);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(86, 51);
-            this.btnCancelar.TabIndex = 28;
+            this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -95,7 +95,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(83, 220);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(83, 51);
-            this.btnSalvar.TabIndex = 27;
+            this.btnSalvar.TabIndex = 20;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -116,7 +116,7 @@
             this.txtSenha.MaxLength = 30;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(250, 20);
-            this.txtSenha.TabIndex = 16;
+            this.txtSenha.TabIndex = 18;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // txtLogin

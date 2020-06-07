@@ -32,6 +32,15 @@ namespace WindowsFormsApp2
                 btnAbrirCaixa.Visible = true;
                 lblCaixa.Text = "Abrir Caixa";
             }
+            if (Global.sangria == false)
+            {
+                btnSangria.Visible = false;
+            }
+            if (Global.lancarVendas == false)
+            {
+                BtnFinalizarVenda.Visible = false;
+            }
+
         }
         DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();

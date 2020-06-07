@@ -17,13 +17,14 @@ namespace WindowsFormsApp2
         {
 
             var colab = colaborador.logar(login);
-            Global.idCargo = Convert.ToInt32(colab[0]["idCargo"]);
-            Global.idColaborador = Convert.ToInt32(colab[0]["idFuncionario"]);
-            Global.nomeColaborador = colab[0]["nomeFunc"].ToString();
 
             string pass;
-            if (colab.Count > 0 && Global.idCargo != 0)
+            if (colab.Count > 0)
             {
+                Global.idCargo = Convert.ToInt32(colab[0]["idCargo"]);
+                Global.idColaborador = Convert.ToInt32(colab[0]["idFuncionario"]);
+                Global.nomeColaborador = colab[0]["nomeFunc"].ToString();
+
                 pass = colab[0]["senha"].ToString();
                 if (senha == pass && Convert.ToInt32(colab[0]["funcEstado"]) == 1 && Convert.ToInt32(colab[0]["idCargo"]) != 0)
                 {
@@ -55,13 +56,11 @@ namespace WindowsFormsApp2
             var auxVenda = permissoesVendas.retornarPermissoesVendas(Global.idCargo);
             var auxEstoque = permissoesEstoque.retornarPermissoesEstoque(Global.idCargo);
 
-            Global.totalVendas = Convert.ToBoolean(auxVenda[0]["total_vendas"]);
             Global.lancarVendas = Convert.ToBoolean(auxVenda[0]["lancar_vendas"]);
             Global.cancelarVendas = Convert.ToBoolean(auxVenda[0]["cancelar_vendas"]);
             Global.sangria = Convert.ToBoolean(auxVenda[0]["sangria"]);
             Global.devolucoes = Convert.ToBoolean(auxVenda[0]["devolucoes"]);
 
-            Global.totalEstoque = Convert.ToBoolean(auxEstoque[0]["total_estoque"]);
             Global.criacaoProduto = Convert.ToBoolean(auxEstoque[0]["criacao_produtos"]);
             Global.editarProdutos = Convert.ToBoolean(auxEstoque[0]["editar_produtos"]);
             Global.entradaProdutos = Convert.ToBoolean(auxEstoque[0]["entrada_produtos"]);

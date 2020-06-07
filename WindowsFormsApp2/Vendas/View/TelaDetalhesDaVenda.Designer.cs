@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnCancelarItem = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelarVenda = new System.Windows.Forms.Button();
@@ -49,6 +48,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtBoxDesc = new System.Windows.Forms.TextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.txtBoxCredParc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBoxDebt = new System.Windows.Forms.TextBox();
@@ -65,8 +66,6 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBoxDesc = new System.Windows.Forms.TextBox();
-            this.lblDesc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -103,7 +102,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnCancelarItem);
             this.panel4.Controls.Add(this.btnSair);
             this.panel4.Controls.Add(this.btnSalvar);
             this.panel4.Controls.Add(this.btnCancelarVenda);
@@ -116,16 +114,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(855, 86);
             this.panel4.TabIndex = 2;
-            // 
-            // btnCancelarItem
-            // 
-            this.btnCancelarItem.Location = new System.Drawing.Point(750, 3);
-            this.btnCancelarItem.Name = "btnCancelarItem";
-            this.btnCancelarItem.Size = new System.Drawing.Size(96, 32);
-            this.btnCancelarItem.TabIndex = 13;
-            this.btnCancelarItem.Text = "Cancelar Item";
-            this.btnCancelarItem.UseVisualStyleBackColor = true;
-            this.btnCancelarItem.Click += new System.EventHandler(this.btnCancelarItem_Click);
             // 
             // btnSair
             // 
@@ -290,6 +278,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(855, 192);
             this.panel2.TabIndex = 0;
+            // 
+            // txtBoxDesc
+            // 
+            this.txtBoxDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDesc.ForeColor = System.Drawing.Color.Red;
+            this.txtBoxDesc.Location = new System.Drawing.Point(692, 145);
+            this.txtBoxDesc.Name = "txtBoxDesc";
+            this.txtBoxDesc.ReadOnly = true;
+            this.txtBoxDesc.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxDesc.TabIndex = 19;
+            this.txtBoxDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.ForeColor = System.Drawing.Color.Red;
+            this.lblDesc.Location = new System.Drawing.Point(467, 146);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(123, 24);
+            this.lblDesc.TabIndex = 18;
+            this.lblDesc.Text = "Desconto: R$";
             // 
             // txtBoxCredParc
             // 
@@ -457,28 +467,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente: ";
             // 
-            // txtBoxDesc
-            // 
-            this.txtBoxDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDesc.ForeColor = System.Drawing.Color.Red;
-            this.txtBoxDesc.Location = new System.Drawing.Point(692, 145);
-            this.txtBoxDesc.Name = "txtBoxDesc";
-            this.txtBoxDesc.ReadOnly = true;
-            this.txtBoxDesc.Size = new System.Drawing.Size(100, 22);
-            this.txtBoxDesc.TabIndex = 19;
-            this.txtBoxDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.AutoSize = true;
-            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesc.ForeColor = System.Drawing.Color.Red;
-            this.lblDesc.Location = new System.Drawing.Point(467, 146);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(123, 24);
-            this.lblDesc.TabIndex = 18;
-            this.lblDesc.Text = "Desconto: R$";
-            // 
             // TelaDetalhesDaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,7 +524,6 @@
         private System.Windows.Forms.TextBox txtBoxDin;
         private System.Windows.Forms.TextBox txtBoxCredParc;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCancelarItem;
         private System.Windows.Forms.TextBox txtBoxDesc;
         private System.Windows.Forms.Label lblDesc;
     }

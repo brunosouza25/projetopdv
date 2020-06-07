@@ -7248,6 +7248,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnestadoCargo;
             
+            private global::System.Data.DataColumn columnadm;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CargoDataTable() {
@@ -7307,6 +7309,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn admColumn {
+                get {
+                    return this.columnadm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7342,12 +7352,13 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CargoRow AddCargoRow(string cargoNome, bool estadoCargo) {
+            public CargoRow AddCargoRow(string cargoNome, bool estadoCargo, bool adm) {
                 CargoRow rowCargoRow = ((CargoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         cargoNome,
-                        estadoCargo};
+                        estadoCargo,
+                        adm};
                 rowCargoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCargoRow);
                 return rowCargoRow;
@@ -7380,6 +7391,7 @@ namespace WindowsFormsApp2 {
                 this.columnidCargo = base.Columns["idCargo"];
                 this.columncargoNome = base.Columns["cargoNome"];
                 this.columnestadoCargo = base.Columns["estadoCargo"];
+                this.columnadm = base.Columns["adm"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7391,6 +7403,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columncargoNome);
                 this.columnestadoCargo = new global::System.Data.DataColumn("estadoCargo", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoCargo);
+                this.columnadm = new global::System.Data.DataColumn("adm", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnadm);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidCargo}, true));
                 this.columnidCargo.AutoIncrement = true;
@@ -7533,8 +7547,6 @@ namespace WindowsFormsApp2 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Permissoes_EstoqueDataTable : global::System.Data.TypedTableBase<Permissoes_EstoqueRow> {
             
-            private global::System.Data.DataColumn columntotal_estoque;
-            
             private global::System.Data.DataColumn columncriacao_produtos;
             
             private global::System.Data.DataColumn columneditar_produtos;
@@ -7576,14 +7588,6 @@ namespace WindowsFormsApp2 {
             protected Permissoes_EstoqueDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn total_estoqueColumn {
-                get {
-                    return this.columntotal_estoque;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7663,17 +7667,16 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Permissoes_EstoqueRow AddPermissoes_EstoqueRow(bool total_estoque, bool criacao_produtos, bool editar_produtos, bool entrada_produtos, bool saida_produtos, CargoRow parentCargoRowByFK__Permissoe__idCar__48CFD27E) {
+            public Permissoes_EstoqueRow AddPermissoes_EstoqueRow(bool criacao_produtos, bool editar_produtos, bool entrada_produtos, bool saida_produtos, CargoRow parentCargoRowByFK__Permissoe__idCar__48CFD27E) {
                 Permissoes_EstoqueRow rowPermissoes_EstoqueRow = ((Permissoes_EstoqueRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        total_estoque,
                         criacao_produtos,
                         editar_produtos,
                         entrada_produtos,
                         saida_produtos,
                         null};
                 if ((parentCargoRowByFK__Permissoe__idCar__48CFD27E != null)) {
-                    columnValuesArray[5] = parentCargoRowByFK__Permissoe__idCar__48CFD27E[0];
+                    columnValuesArray[4] = parentCargoRowByFK__Permissoe__idCar__48CFD27E[0];
                 }
                 rowPermissoes_EstoqueRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPermissoes_EstoqueRow);
@@ -7697,7 +7700,6 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columntotal_estoque = base.Columns["total_estoque"];
                 this.columncriacao_produtos = base.Columns["criacao_produtos"];
                 this.columneditar_produtos = base.Columns["editar_produtos"];
                 this.columnentrada_produtos = base.Columns["entrada_produtos"];
@@ -7708,8 +7710,6 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columntotal_estoque = new global::System.Data.DataColumn("total_estoque", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotal_estoque);
                 this.columncriacao_produtos = new global::System.Data.DataColumn("criacao_produtos", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncriacao_produtos);
                 this.columneditar_produtos = new global::System.Data.DataColumn("editar_produtos", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -7853,8 +7853,6 @@ namespace WindowsFormsApp2 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Permissoes_VendasDataTable : global::System.Data.TypedTableBase<Permissoes_VendasRow> {
             
-            private global::System.Data.DataColumn columntotal_vendas;
-            
             private global::System.Data.DataColumn columnlancar_vendas;
             
             private global::System.Data.DataColumn columncancelar_vendas;
@@ -7896,14 +7894,6 @@ namespace WindowsFormsApp2 {
             protected Permissoes_VendasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn total_vendasColumn {
-                get {
-                    return this.columntotal_vendas;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7983,17 +7973,16 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Permissoes_VendasRow AddPermissoes_VendasRow(bool total_vendas, bool lancar_vendas, bool cancelar_vendas, bool sangria, bool devolucoes, CargoRow parentCargoRowByFK__Permissoe__idCar__47DBAE45) {
+            public Permissoes_VendasRow AddPermissoes_VendasRow(bool lancar_vendas, bool cancelar_vendas, bool sangria, bool devolucoes, CargoRow parentCargoRowByFK__Permissoe__idCar__47DBAE45) {
                 Permissoes_VendasRow rowPermissoes_VendasRow = ((Permissoes_VendasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        total_vendas,
                         lancar_vendas,
                         cancelar_vendas,
                         sangria,
                         devolucoes,
                         null};
                 if ((parentCargoRowByFK__Permissoe__idCar__47DBAE45 != null)) {
-                    columnValuesArray[5] = parentCargoRowByFK__Permissoe__idCar__47DBAE45[0];
+                    columnValuesArray[4] = parentCargoRowByFK__Permissoe__idCar__47DBAE45[0];
                 }
                 rowPermissoes_VendasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPermissoes_VendasRow);
@@ -8017,7 +8006,6 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columntotal_vendas = base.Columns["total_vendas"];
                 this.columnlancar_vendas = base.Columns["lancar_vendas"];
                 this.columncancelar_vendas = base.Columns["cancelar_vendas"];
                 this.columnsangria = base.Columns["sangria"];
@@ -8028,8 +8016,6 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columntotal_vendas = new global::System.Data.DataColumn("total_vendas", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotal_vendas);
                 this.columnlancar_vendas = new global::System.Data.DataColumn("lancar_vendas", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlancar_vendas);
                 this.columncancelar_vendas = new global::System.Data.DataColumn("cancelar_vendas", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -12247,6 +12233,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool adm {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCargo.admColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'adm\' na tabela \'Cargo\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCargo.admColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscargoNomeNull() {
                 return this.IsNull(this.tableCargo.cargoNomeColumn);
             }
@@ -12267,6 +12269,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetestadoCargoNull() {
                 this[this.tableCargo.estadoCargoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsadmNull() {
+                return this.IsNull(this.tableCargo.admColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetadmNull() {
+                this[this.tableCargo.admColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12315,22 +12329,6 @@ namespace WindowsFormsApp2 {
             internal Permissoes_EstoqueRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablePermissoes_Estoque = ((Permissoes_EstoqueDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool total_estoque {
-                get {
-                    try {
-                        return ((bool)(this[this.tablePermissoes_Estoque.total_estoqueColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'total_estoque\' na tabela \'Permissoes_Estoque\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePermissoes_Estoque.total_estoqueColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12426,18 +12424,6 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Istotal_estoqueNull() {
-                return this.IsNull(this.tablePermissoes_Estoque.total_estoqueColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Settotal_estoqueNull() {
-                this[this.tablePermissoes_Estoque.total_estoqueColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Iscriacao_produtosNull() {
                 return this.IsNull(this.tablePermissoes_Estoque.criacao_produtosColumn);
             }
@@ -12509,22 +12495,6 @@ namespace WindowsFormsApp2 {
             internal Permissoes_VendasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablePermissoes_Vendas = ((Permissoes_VendasDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool total_vendas {
-                get {
-                    try {
-                        return ((bool)(this[this.tablePermissoes_Vendas.total_vendasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'total_vendas\' na tabela \'Permissoes_Vendas\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePermissoes_Vendas.total_vendasColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12616,18 +12586,6 @@ namespace WindowsFormsApp2 {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Permissoe__idCar__47DBAE45"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Istotal_vendasNull() {
-                return this.IsNull(this.tablePermissoes_Vendas.total_vendasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Settotal_vendasNull() {
-                this[this.tablePermissoes_Vendas.total_vendasColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22457,32 +22415,44 @@ WHERE        (idFuncionario = @Original_idFuncionario)";
             tableMapping.DataSetTable = "Cargo";
             tableMapping.ColumnMappings.Add("idCargo", "idCargo");
             tableMapping.ColumnMappings.Add("cargoNome", "cargoNome");
+            tableMapping.ColumnMappings.Add("estadoCargo", "estadoCargo");
+            tableMapping.ColumnMappings.Add("adm", "adm");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Cargo] WHERE (([idCargo] = @Original_idCargo) AND ((@IsNull_cargoNom" +
-                "e = 1 AND [cargoNome] IS NULL) OR ([cargoNome] = @Original_cargoNome)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Cargo] WHERE (([idCargo] = @Original_idCargo) AND ((@IsNull_cargoNome = 1 AND [cargoNome] IS NULL) OR ([cargoNome] = @Original_cargoNome)) AND ((@IsNull_estadoCargo = 1 AND [estadoCargo] IS NULL) OR ([estadoCargo] = @Original_estadoCargo)) AND ((@IsNull_adm = 1 AND [adm] IS NULL) OR ([adm] = @Original_adm)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cargoNome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cargoNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_estadoCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estadoCargo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_adm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_adm", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adm", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Cargo] ([cargoNome]) VALUES (@cargoNome);\r\nSELECT idCargo, cargoNome" +
-                " FROM Cargo WHERE (idCargo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Cargo] ([cargoNome], [estadoCargo], [adm]) VALUES (@cargoNome, @esta" +
+                "doCargo, @adm);\r\nSELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (i" +
+                "dCargo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adm", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Cargo] SET [cargoNome] = @cargoNome WHERE (([idCargo] = @Original_idCargo" +
-                ") AND ((@IsNull_cargoNome = 1 AND [cargoNome] IS NULL) OR ([cargoNome] = @Origin" +
-                "al_cargoNome)));\r\nSELECT idCargo, cargoNome FROM Cargo WHERE (idCargo = @idCargo" +
-                ")";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Cargo] SET [cargoNome] = @cargoNome, [estadoCargo] = @estadoCargo, [adm] = @adm WHERE (([idCargo] = @Original_idCargo) AND ((@IsNull_cargoNome = 1 AND [cargoNome] IS NULL) OR ([cargoNome] = @Original_cargoNome)) AND ((@IsNull_estadoCargo = 1 AND [estadoCargo] IS NULL) OR ([estadoCargo] = @Original_estadoCargo)) AND ((@IsNull_adm = 1 AND [adm] IS NULL) OR ([adm] = @Original_adm)));
+SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adm", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cargoNome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cargoNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_estadoCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estadoCargo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_adm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_adm", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adm", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -22499,19 +22469,16 @@ WHERE        (idFuncionario = @Original_idFuncionario)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idCargo, cargoNome FROM Cargo";
+            this._commandCollection[0].CommandText = "SELECT        idCargo, cargoNome, estadoCargo, adm\r\nFROM            Cargo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE [dbo].[Cargo] SET [cargoNome] = @cargoNome, [estadoCargo] = @estadoCargo WHERE (([idCargo] = @Original_idCargo) AND ((@IsNull_cargoNome = 1 AND [cargoNome] IS NULL) OR ([cargoNome] = @Original_cargoNome)) AND ((@IsNull_estadoCargo = 1 AND [estadoCargo] IS NULL) OR ([estadoCargo] = @Original_estadoCargo)));
-WHRE cargoNome = @cargoNome";
+            this._commandCollection[1].CommandText = "UPDATE [dbo].[Cargo] SET [cargoNome] = @cargoNome, [estadoCargo] = @estadoCargo W" +
+                "HERE idCargo = @idCargo\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cargoNome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_estadoCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO Cargo\r\n                         (cargoNome, estadoCargo)\r\nVALUES     " +
@@ -22521,21 +22488,24 @@ WHRE cargoNome = @cargoNome";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoCargo", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estadoCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT cargoNome, idCargo FROM Cargo WHERE (cargoNome = @cargoNome)";
+            this._commandCollection[3].CommandText = "SELECT adm, cargoNome, estadoCargo, idCargo FROM Cargo WHERE (cargoNome = @cargoN" +
+                "ome)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cargoNome", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "cargoNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT idCargo, cargoNome FROM Cargo\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[4].CommandText = "SELECT adm, cargoNome, estadoCargo, idCargo FROM Cargo WHERE (idCargo = @idCargo)" +
+                "";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT idCargo, cargoNome FROM Cargo";
+            this._commandCollection[5].CommandText = "SELECT adm, cargoNome, estadoCargo, idCargo FROM Cargo";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT TOP (1) cargoNome, idCargo FROM Cargo ORDER BY idCargo DESC";
+            this._commandCollection[6].CommandText = "SELECT TOP (1) adm, cargoNome, estadoCargo, idCargo FROM Cargo ORDER BY idCargo D" +
+                "ESC";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -22647,7 +22617,7 @@ WHRE cargoNome = @cargoNome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idCargo, string Original_cargoNome) {
+        public virtual int Delete(int Original_idCargo, string Original_cargoNome, global::System.Nullable<bool> Original_estadoCargo, global::System.Nullable<bool> Original_adm) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idCargo));
             if ((Original_cargoNome == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -22656,6 +22626,22 @@ WHRE cargoNome = @cargoNome";
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_cargoNome));
+            }
+            if ((Original_estadoCargo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_estadoCargo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_adm.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_adm.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22677,12 +22663,24 @@ WHRE cargoNome = @cargoNome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string cargoNome) {
+        public virtual int Insert(string cargoNome, global::System.Nullable<bool> estadoCargo, global::System.Nullable<bool> adm) {
             if ((cargoNome == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(cargoNome));
+            }
+            if ((estadoCargo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(estadoCargo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((adm.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(adm.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22704,23 +22702,51 @@ WHRE cargoNome = @cargoNome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string cargoNome, int Original_idCargo, string Original_cargoNome, int idCargo) {
+        public virtual int Update(string cargoNome, global::System.Nullable<bool> estadoCargo, global::System.Nullable<bool> adm, int Original_idCargo, string Original_cargoNome, global::System.Nullable<bool> Original_estadoCargo, global::System.Nullable<bool> Original_adm, int idCargo) {
             if ((cargoNome == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(cargoNome));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idCargo));
-            if ((Original_cargoNome == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((estadoCargo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((bool)(estadoCargo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_cargoNome));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(idCargo));
+            if ((adm.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(adm.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idCargo));
+            if ((Original_cargoNome == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_cargoNome));
+            }
+            if ((Original_estadoCargo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_estadoCargo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_adm.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_adm.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(idCargo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22741,15 +22767,15 @@ WHRE cargoNome = @cargoNome";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string cargoNome, int Original_idCargo, string Original_cargoNome) {
-            return this.Update(cargoNome, Original_idCargo, Original_cargoNome, Original_idCargo);
+        public virtual int Update(string cargoNome, global::System.Nullable<bool> estadoCargo, global::System.Nullable<bool> adm, int Original_idCargo, string Original_cargoNome, global::System.Nullable<bool> Original_estadoCargo, global::System.Nullable<bool> Original_adm) {
+            return this.Update(cargoNome, estadoCargo, adm, Original_idCargo, Original_cargoNome, Original_estadoCargo, Original_adm, Original_idCargo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int atualizarCargo(string cargoNome, global::System.Nullable<byte> estadoCargo, int Original_idCargo, global::System.Nullable<int> IsNull_cargoNome, global::System.Nullable<int> IsNull_estadoCargo, string Original_cargoNome) {
+        public virtual int atualizarCargo(string cargoNome, global::System.Nullable<bool> estadoCargo, int idCargo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((cargoNome == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -22758,30 +22784,12 @@ WHRE cargoNome = @cargoNome";
                 command.Parameters[0].Value = ((string)(cargoNome));
             }
             if ((estadoCargo.HasValue == true)) {
-                command.Parameters[1].Value = ((byte)(estadoCargo.Value));
+                command.Parameters[1].Value = ((bool)(estadoCargo.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            command.Parameters[2].Value = ((int)(Original_idCargo));
-            if ((IsNull_cargoNome.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(IsNull_cargoNome.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_estadoCargo.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(IsNull_estadoCargo.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_cargoNome == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(Original_cargoNome));
-            }
+            command.Parameters[2].Value = ((int)(idCargo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22956,7 +22964,6 @@ WHRE cargoNome = @cargoNome";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Permissoes_Estoque";
-            tableMapping.ColumnMappings.Add("total_estoque", "total_estoque");
             tableMapping.ColumnMappings.Add("criacao_produtos", "criacao_produtos");
             tableMapping.ColumnMappings.Add("editar_produtos", "editar_produtos");
             tableMapping.ColumnMappings.Add("entrada_produtos", "entrada_produtos");
@@ -22965,12 +22972,10 @@ WHRE cargoNome = @cargoNome";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Permissoes_Estoque] ([total_estoque], [criacao_produtos], [edi" +
-                "tar_produtos], [entrada_produtos], [saida_produtos], [idCargo]) VALUES (@total_e" +
-                "stoque, @criacao_produtos, @editar_produtos, @entrada_produtos, @saida_produtos," +
-                " @idCargo)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Permissoes_Estoque] ([criacao_produtos], [editar_produtos], [entrada" +
+                "_produtos], [saida_produtos], [idCargo]) VALUES (@criacao_produtos, @editar_prod" +
+                "utos, @entrada_produtos, @saida_produtos, @idCargo)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_estoque", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "total_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@criacao_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "criacao_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@editar_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "editar_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entrada_produtos", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "entrada_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22991,16 +22996,15 @@ WHRE cargoNome = @cargoNome";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT total_estoque, criacao_produtos, editar_produtos, entrada_produtos, saida_" +
-                "produtos, idCargo FROM dbo.Permissoes_Estoque";
+            this._commandCollection[0].CommandText = "SELECT        criacao_produtos, editar_produtos, entrada_produtos, saida_produtos" +
+                ", idCargo\r\nFROM            Permissoes_Estoque";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE       Permissoes_Estoque
-SET                total_estoque = @total_estoque, criacao_produtos = @criacao_produtos , editar_produtos = @editar_produtos , entrada_produtos = @entrada_produtos, saida_produtos = @saida_produtos
-WHERE idCargo = @idCargo";
+            this._commandCollection[1].CommandText = "UPDATE       Permissoes_Estoque\r\nSET                criacao_produtos = @criacao_p" +
+                "rodutos , editar_produtos = @editar_produtos , entrada_produtos = @entrada_produ" +
+                "tos, saida_produtos = @saida_produtos\r\nWHERE idCargo = @idCargo";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_estoque", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@criacao_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "criacao_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@editar_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "editar_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entrada_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "entrada_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23008,12 +23012,10 @@ WHERE idCargo = @idCargo";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Permissoes_Estoque] ([total_estoque], [criacao_produtos], [edi" +
-                "tar_produtos], [entrada_produtos], [saida_produtos], [idCargo]) VALUES (@total_e" +
-                "stoque, @criacao_produtos, @editar_produtos, @entrada_produtos, @saida_produtos," +
-                " @idCargo)";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Permissoes_Estoque] ([criacao_produtos], [editar_produtos], [e" +
+                "ntrada_produtos], [saida_produtos], [idCargo]) VALUES (@criacao_produtos, @edita" +
+                "r_produtos, @entrada_produtos, @saida_produtos, @idCargo)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_estoque", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_estoque", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@criacao_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "criacao_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@editar_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "editar_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@entrada_produtos", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "entrada_produtos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23021,8 +23023,8 @@ WHERE idCargo = @idCargo";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT total_estoque, criacao_produtos, editar_produtos, entrada_produtos, saida_" +
-                "produtos FROM dbo.Permissoes_Estoque\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[3].CommandText = "SELECT criacao_produtos, editar_produtos, entrada_produtos, idCargo, saida_produt" +
+                "os FROM Permissoes_Estoque WHERE (idCargo = @idCargo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -23101,42 +23103,36 @@ WHERE idCargo = @idCargo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<bool> total_estoque, global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
-            if ((total_estoque.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(total_estoque.Value));
+        public virtual int Insert(global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
+            if ((criacao_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(criacao_produtos.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((criacao_produtos.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(criacao_produtos.Value));
+            if ((editar_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(editar_produtos.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((editar_produtos.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(editar_produtos.Value));
+            if ((entrada_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(entrada_produtos.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((entrada_produtos.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(entrada_produtos.Value));
+            if ((saida_produtos.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(saida_produtos.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((saida_produtos.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(saida_produtos.Value));
+            if ((idCargo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(idCargo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((idCargo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idCargo.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23158,43 +23154,37 @@ WHERE idCargo = @idCargo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int atualizarPermissoesEstoque(global::System.Nullable<bool> total_estoque, global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
+        public virtual int atualizarPermissoesEstoque(global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((total_estoque.HasValue == true)) {
-                command.Parameters[0].Value = ((bool)(total_estoque.Value));
+            if ((criacao_produtos.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(criacao_produtos.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((criacao_produtos.HasValue == true)) {
-                command.Parameters[1].Value = ((bool)(criacao_produtos.Value));
+            if ((editar_produtos.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(editar_produtos.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((editar_produtos.HasValue == true)) {
-                command.Parameters[2].Value = ((bool)(editar_produtos.Value));
+            if ((entrada_produtos.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(entrada_produtos.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((entrada_produtos.HasValue == true)) {
-                command.Parameters[3].Value = ((bool)(entrada_produtos.Value));
+            if ((saida_produtos.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(saida_produtos.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((saida_produtos.HasValue == true)) {
-                command.Parameters[4].Value = ((bool)(saida_produtos.Value));
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idCargo.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((idCargo.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(idCargo.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23217,43 +23207,37 @@ WHERE idCargo = @idCargo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirPermissoesEstoque(global::System.Nullable<bool> total_estoque, global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
+        public virtual int inserirPermissoesEstoque(global::System.Nullable<bool> criacao_produtos, global::System.Nullable<bool> editar_produtos, global::System.Nullable<bool> entrada_produtos, global::System.Nullable<bool> saida_produtos, global::System.Nullable<int> idCargo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((total_estoque.HasValue == true)) {
-                command.Parameters[0].Value = ((bool)(total_estoque.Value));
+            if ((criacao_produtos.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(criacao_produtos.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((criacao_produtos.HasValue == true)) {
-                command.Parameters[1].Value = ((bool)(criacao_produtos.Value));
+            if ((editar_produtos.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(editar_produtos.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((editar_produtos.HasValue == true)) {
-                command.Parameters[2].Value = ((bool)(editar_produtos.Value));
+            if ((entrada_produtos.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(entrada_produtos.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((entrada_produtos.HasValue == true)) {
-                command.Parameters[3].Value = ((bool)(entrada_produtos.Value));
+            if ((saida_produtos.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(saida_produtos.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((saida_produtos.HasValue == true)) {
-                command.Parameters[4].Value = ((bool)(saida_produtos.Value));
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idCargo.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((idCargo.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(idCargo.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23394,7 +23378,6 @@ WHERE idCargo = @idCargo";
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Permissoes_Vendas";
-            tableMapping.ColumnMappings.Add("total_vendas", "total_vendas");
             tableMapping.ColumnMappings.Add("lancar_vendas", "lancar_vendas");
             tableMapping.ColumnMappings.Add("cancelar_vendas", "cancelar_vendas");
             tableMapping.ColumnMappings.Add("sangria", "sangria");
@@ -23403,11 +23386,10 @@ WHERE idCargo = @idCargo";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Permissoes_Vendas] ([total_vendas], [lancar_vendas], [cancelar" +
-                "_vendas], [sangria], [devolucoes], [idCargo]) VALUES (@total_vendas, @lancar_ven" +
-                "das, @cancelar_vendas, @sangria, @devolucoes, @idCargo)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Permissoes_Vendas] ([lancar_vendas], [cancelar_vendas], [sangria], [" +
+                "devolucoes], [idCargo]) VALUES (@lancar_vendas, @cancelar_vendas, @sangria, @dev" +
+                "olucoes, @idCargo)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_vendas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "total_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lancar_vendas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lancar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cancelar_vendas", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cancelar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sangria", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23428,16 +23410,15 @@ WHERE idCargo = @idCargo";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT total_vendas, lancar_vendas, cancelar_vendas, sangria, devolucoes, idCargo" +
-                " FROM dbo.Permissoes_Vendas";
+            this._commandCollection[0].CommandText = "SELECT        lancar_vendas, cancelar_vendas, sangria, devolucoes, idCargo\r\nFROM " +
+                "           Permissoes_Vendas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Permissoes_Vendas\r\nSET                total_vendas = @total_vendas ," +
-                " lancar_vendas = @lancar_vendas , cancelar_vendas = @cancelar_vendas , sangria =" +
-                " @sangria , devolucoes = @devolucoes\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[1].CommandText = "UPDATE       Permissoes_Vendas\r\nSET             lancar_vendas = @lancar_vendas , " +
+                "cancelar_vendas = @cancelar_vendas , sangria = @sangria , devolucoes = @devoluco" +
+                "es\r\nWHERE idCargo = @idCargo";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lancar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "lancar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cancelar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "cancelar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sangria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "sangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23445,11 +23426,10 @@ WHERE idCargo = @idCargo";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Permissoes_Vendas] ([total_vendas], [lancar_vendas], [cancelar" +
-                "_vendas], [sangria], [devolucoes], [idCargo]) VALUES (@total_vendas, @lancar_ven" +
-                "das, @cancelar_vendas, @sangria, @devolucoes, @idCargo)";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Permissoes_Vendas] ([lancar_vendas], [cancelar_vendas], [sangr" +
+                "ia], [devolucoes], [idCargo]) VALUES (@lancar_vendas, @cancelar_vendas, @sangria" +
+                ", @devolucoes, @idCargo)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "total_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lancar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "lancar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cancelar_vendas", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "cancelar_vendas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sangria", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "sangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23457,8 +23437,8 @@ WHERE idCargo = @idCargo";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT total_vendas, lancar_vendas, cancelar_vendas, sangria, devolucoes \r\nFROM d" +
-                "bo.Permissoes_Vendas\r\nWHERE idCargo = @idCargo";
+            this._commandCollection[3].CommandText = "SELECT cancelar_vendas, devolucoes, idCargo, lancar_vendas, sangria FROM Permisso" +
+                "es_Vendas WHERE (idCargo = @idCargo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -23537,42 +23517,36 @@ WHERE idCargo = @idCargo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<bool> total_vendas, global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
-            if ((total_vendas.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(total_vendas.Value));
+        public virtual int Insert(global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
+            if ((lancar_vendas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(lancar_vendas.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((lancar_vendas.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(lancar_vendas.Value));
+            if ((cancelar_vendas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(cancelar_vendas.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((cancelar_vendas.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(cancelar_vendas.Value));
+            if ((sangria.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(sangria.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((sangria.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(sangria.Value));
+            if ((devolucoes.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(devolucoes.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((devolucoes.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(devolucoes.Value));
+            if ((idCargo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(idCargo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((idCargo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idCargo.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23594,43 +23568,37 @@ WHERE idCargo = @idCargo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int atualizarPermissoesVendas(global::System.Nullable<bool> total_vendas, global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
+        public virtual int atualizarPermissoesVendas(global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((total_vendas.HasValue == true)) {
-                command.Parameters[0].Value = ((bool)(total_vendas.Value));
+            if ((lancar_vendas.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(lancar_vendas.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((lancar_vendas.HasValue == true)) {
-                command.Parameters[1].Value = ((bool)(lancar_vendas.Value));
+            if ((cancelar_vendas.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(cancelar_vendas.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((cancelar_vendas.HasValue == true)) {
-                command.Parameters[2].Value = ((bool)(cancelar_vendas.Value));
+            if ((sangria.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(sangria.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((sangria.HasValue == true)) {
-                command.Parameters[3].Value = ((bool)(sangria.Value));
+            if ((devolucoes.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(devolucoes.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((devolucoes.HasValue == true)) {
-                command.Parameters[4].Value = ((bool)(devolucoes.Value));
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idCargo.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((idCargo.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(idCargo.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23653,43 +23621,37 @@ WHERE idCargo = @idCargo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirPermissoesVendas(global::System.Nullable<bool> total_vendas, global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
+        public virtual int inserirPermissoesVendas(global::System.Nullable<bool> lancar_vendas, global::System.Nullable<bool> cancelar_vendas, global::System.Nullable<bool> sangria, global::System.Nullable<bool> devolucoes, global::System.Nullable<int> idCargo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((total_vendas.HasValue == true)) {
-                command.Parameters[0].Value = ((bool)(total_vendas.Value));
+            if ((lancar_vendas.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(lancar_vendas.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((lancar_vendas.HasValue == true)) {
-                command.Parameters[1].Value = ((bool)(lancar_vendas.Value));
+            if ((cancelar_vendas.HasValue == true)) {
+                command.Parameters[1].Value = ((bool)(cancelar_vendas.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((cancelar_vendas.HasValue == true)) {
-                command.Parameters[2].Value = ((bool)(cancelar_vendas.Value));
+            if ((sangria.HasValue == true)) {
+                command.Parameters[2].Value = ((bool)(sangria.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((sangria.HasValue == true)) {
-                command.Parameters[3].Value = ((bool)(sangria.Value));
+            if ((devolucoes.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(devolucoes.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((devolucoes.HasValue == true)) {
-                command.Parameters[4].Value = ((bool)(devolucoes.Value));
+            if ((idCargo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idCargo.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((idCargo.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(idCargo.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

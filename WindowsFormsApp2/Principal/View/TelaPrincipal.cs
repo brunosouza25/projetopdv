@@ -21,8 +21,11 @@ namespace WindowsFormsApp2
             //caixa
 
             //estoque
-            if (Global.totalEstoque == false) {
+            if (Global.entradaProdutos == false && Global.saidaProdutos == false && Global.editarProdutos == false && Global.criacaoProduto == false) {
                 estoque.Enabled = false;
+                estoque.Visible = false;
+                BtEstoque.Visible = false;
+                lblEstoque.Visible = false;
             } 
 
             painelPrincipal.Controls.Add(estoque);
@@ -39,11 +42,12 @@ namespace WindowsFormsApp2
             painelPrincipal.Controls.Add(telaDeConfig);
             telaDeConfig.Visible = false;
 
-            if (Global.totalVendas == false)
+            if (Global.cancelarVendas == false && Global.lancarVendas == false && Global.sangria == false && Global.devolucoes == false)
             {
                 telaDoPdv.Enabled = false;
                 telaDoPdv.Visible = false;
                 btCaixa.Visible = false;
+                lblVendas.Visible = false;
             }
         }
 

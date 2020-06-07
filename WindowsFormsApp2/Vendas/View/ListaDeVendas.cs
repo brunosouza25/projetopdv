@@ -24,7 +24,7 @@ namespace WindowsFormsApp2.Vendas.View
             ateData = DateTime.Now.ToString("dd/MM/yyyy");
             carregarListaVendas();
         }
-        int pesquisa;
+
         public void carregarListaVendas()
         {
             listaVendas.Items.Clear();

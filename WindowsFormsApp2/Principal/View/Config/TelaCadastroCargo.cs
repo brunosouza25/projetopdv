@@ -18,8 +18,39 @@ namespace WindowsFormsApp2.Principal.View.Config
         public TelaCadastroCargo()
         {
             InitializeComponent();
+            tipo = true;
         }
+        int idCargo;
+        Boolean tipo;
+        public TelaCadastroCargo(Boolean tipo, int idCargo)
+        {
+            InitializeComponent();
+            this.tipo = tipo;
+            this.idCargo = idCargo;
+            btnSalvar.Text = "Alterar";
+            carregarTela();
 
+        }
+        public void carregarTela()
+        {
+            var auxCargo = cargos.retornarCargoPorId(idCargo);
+            var auxVendas = permissoes_vendas.retornarPermissoesVendas(idCargo);
+            var auxEstoque = permissoes_estoque.retornarPermissoesEstoque(idCargo);
+
+            cBoxLancarVendas.Checked = Convert.ToBoolean(auxVendas[0]["lancar_vendas"]);
+            cBoxCancelarVendas.Checked = Convert.ToBoolean(auxVendas[0]["cancelar_vendas"]);
+            cBoxSangria.Checked = Convert.ToBoolean(auxVendas[0]["sangria"]);
+            cBoxDevolucoes.Checked = Convert.ToBoolean(auxVendas[0]["devolucoes"]);
+
+            cBoxCriacaoDeProdutos.Checked = Convert.ToBoolean(auxEstoque[0]["criacao_produtos"]);
+            cBoxEditarProdutos.Checked = Convert.ToBoolean(auxEstoque[0]["editar_produtos"]);
+            cBoxEntradaDeProdutos.Checked = Convert.ToBoolean(auxEstoque[0]["entrada_produtos"]);
+            cBoxSaidaDeProdutos.Checked = Convert.ToBoolean(auxEstoque[0]["saida_produtos"]);
+
+            cBoxInativo.Checked = (!Convert.ToBoolean(auxCargo[0]["estadoCargo"]));
+
+            txtCargo.Text = auxCargo[0]["cargoNome"].ToString();
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -27,23 +58,36 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtCargo.TextLength > 0)
+            if (tipo)
             {
-                cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked);
+                if (txtCargo.TextLength > 0)
+                {
+                    cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked);
 
-                var idcargo = cargos.retornarUltimoIdCargo();
+                    var idcargo = cargos.retornarUltimoIdCargo();
 
-                permissoes_vendas.inserirPermissoesVendas(cBoxVendas.Checked, cBoxLancarVendas.Checked, cBoxCancelarVendas.Checked
-                    , cBoxSangria.Checked, cBoxDevolucoes.Checked, Convert.ToInt32(idcargo[0]["idCargo"]));
+                    permissoes_vendas.inserirPermissoesVendas(cBoxLancarVendas.Checked, cBoxCancelarVendas.Checked
+                        , cBoxSangria.Checked, cBoxDevolucoes.Checked, Convert.ToInt32(idcargo[0]["idCargo"]));
 
-                permissoes_estoque.inserirPermissoesEstoque(cBoxEstoque.Checked, cBoxCriacaoDeProdutos.Checked, cBoxEditarProdutos.Checked
-                    , cBoxEntradaDeProdutos.Checked, cBoxSaidaDeProdutos.Checked, Convert.ToInt32(idcargo[0]["idCargo"]));
-                Close();
+                    permissoes_estoque.inserirPermissoesEstoque(cBoxCriacaoDeProdutos.Checked, cBoxEditarProdutos.Checked
+                        , cBoxEntradaDeProdutos.Checked, cBoxSaidaDeProdutos.Checked, Convert.ToInt32(idcargo[0]["idCargo"]));
+                    Close();
 
+                }
+                else
+                {
+                    MessageBox.Show("Para salvar precisa inserir um nome");
+                }
             }
             else
             {
-                MessageBox.Show("Para salvar precisa inserir um nome");
+                cargos.atualizarCargo(txtCargo.Text, !cBoxInativo.Checked,idCargo);
+                permissoes_vendas.atualizarPermissoesVendas(cBoxLancarVendas.Checked, cBoxCancelarVendas.Checked
+                    , cBoxSangria.Checked, cBoxDevolucoes.Checked, idCargo);
+
+                permissoes_estoque.atualizarPermissoesEstoque(cBoxCriacaoDeProdutos.Checked, cBoxEditarProdutos.Checked
+                    , cBoxEntradaDeProdutos.Checked, cBoxSaidaDeProdutos.Checked, idCargo);
+                Close();
             }
         }
 

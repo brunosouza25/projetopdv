@@ -19,7 +19,10 @@ namespace WindowsFormsApp2.Vendas.View
             InitializeComponent();
             this.codVenda = codVenda;
             carregarTela();
-
+            if (Global.cancelarVendas == false)
+            {
+                btnCancelarVenda.Visible = false;
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
