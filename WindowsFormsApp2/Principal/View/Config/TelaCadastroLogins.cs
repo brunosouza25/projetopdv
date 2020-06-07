@@ -38,5 +38,10 @@ namespace WindowsFormsApp2.Principal.View.Config
             }
             Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

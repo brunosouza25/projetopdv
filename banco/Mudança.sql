@@ -22,7 +22,8 @@ CREATE TABLE Venda (
 	valorPago FLOAT,
 	idCaixa INT,
 	observacoes VARCHAR(300),
-	vendaEstado TINYINT
+	vendaEstado TINYINT,
+	idColaborador INT
 );
 
 CREATE TABLE ItensDaVenda (

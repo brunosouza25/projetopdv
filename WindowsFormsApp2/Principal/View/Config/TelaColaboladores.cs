@@ -43,7 +43,7 @@ namespace WindowsFormsApp2.Principal.View.Config
                 {
                     item.SubItems.Add("Inativo");
                 }
-
+                item.SubItems.Add(auxColaboradores[i]["idFuncionario"].ToString());
                 listaColaboradores.Items.Add(item);
             }
         }
@@ -54,6 +54,20 @@ namespace WindowsFormsApp2.Principal.View.Config
 
             telaCadastrarColaborador.ShowDialog();
             carregarColaboradores();
+        }
+
+        private void Bt_Editar_Prod_Click(object sender, EventArgs e)
+        {
+            if(listaColaboradores.SelectedItems.Count > 0)
+            {
+                TelaCadastrarColaborador telaCadastrarColaborador = new TelaCadastrarColaborador(false, Convert.ToInt32(listaColaboradores.SelectedItems[0].SubItems[4].Text));
+                telaCadastrarColaborador.ShowDialog();
+                carregarColaboradores();
+            }
+            else
+            {
+                MessageBox.Show("Não foi selecionado nenhum colaborador");
+            }
         }
     }
 }
