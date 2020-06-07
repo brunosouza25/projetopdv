@@ -26,7 +26,13 @@ namespace WindowsFormsApp2
                 estoque.Visible = false;
                 BtEstoque.Visible = false;
                 lblEstoque.Visible = false;
-            } 
+            }
+            if (Global.adm == false)
+            {
+                telaDeConfig.Enabled = false;
+                btnConfig.Visible = false;
+                lblConfiguracoes.Visible = false;
+            }
 
             painelPrincipal.Controls.Add(estoque);
             estoque.Visible = false;

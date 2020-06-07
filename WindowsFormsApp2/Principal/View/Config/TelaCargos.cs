@@ -32,7 +32,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             var auxCargos = cargos.retornarTodosCargos();
    
 
-            for (int i = 1; i < auxCargos.Count; i++)
+            for (int i = 2; i < auxCargos.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
               

@@ -217,10 +217,10 @@ INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
 
 
 INSERT INTO Cargo VALUES ('Nenhum', 0,0)
-INSERT INTO Cargo VALUES ('adm', 1,0)
+INSERT INTO Cargo VALUES ('adm', 1,1)
 insert into Funcionario values(1,'bruno','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
-insert into Funcionario values(1,'Cybele','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
+insert into Funcionario values(1,'Cybele','1111/11/11','1','Cybele','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
 
 
-insert into Permissoes_Estoque values (1,1,1,1,1,1)
-insert into Permissoes_Vendas values (1,1,1,1,1,1)
+insert into Permissoes_Estoque values (1,1,1,1,1)
+insert into Permissoes_Vendas values (1,1,1,1,1)

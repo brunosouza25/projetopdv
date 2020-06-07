@@ -66,6 +66,13 @@ namespace WindowsFormsApp2
             Global.entradaProdutos = Convert.ToBoolean(auxEstoque[0]["entrada_produtos"]);
             Global.saidaProdutos = Convert.ToBoolean(auxEstoque[0]["saida_produtos"]);
 
+            var colab = colaborador.verificarFunc(Global.nomeColaborador);
+            var adm = cargo.retornarCargoPorId(Convert.ToInt32(colab[0]["idCargo"]));
+
+            Global.adm = Convert.ToBoolean(adm[0]["adm"]);
+            
+            
+
         }
 
 
