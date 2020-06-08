@@ -22,7 +22,7 @@ namespace WindowsFormsApp2.Principal.View.Config
         public void carregarColaboradores()
         {
             var auxColaboradores = colaboradores.retornarTodosColaboradores();
-            
+
             for (int i = 0; i < auxColaboradores.Count; i++)
             {
                 if (auxColaboradores[i]["log_in"].ToString() == String.Empty || Convert.ToInt32(auxColaboradores[i]["idFuncionario"]) == Global.idColaborador)
@@ -31,11 +31,18 @@ namespace WindowsFormsApp2.Principal.View.Config
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (txtSenha.Text == txtBoxRepetirSenha.Text && cbColaborador.SelectedItem != "")
+            var auxLogin = colaboradores.verificarDuplicataLogin(txtLogin.Text);
+
+            if (txtSenha.Text == txtBoxRepetirSenha.Text && txtLogin.Text != "" && cbColaborador.SelectedItem != "")
             {
                 var idColab = colaboradores.verificarFunc(cbColaborador.SelectedItem.ToString());
                 colaboradores.cadastrarLogin(txtLogin.Text, txtSenha.Text, Convert.ToInt32(idColab[0]["idFuncionario"]));
             }
+            else
+            {
+                MessageBox.Show("As senhas não coincidem");
+            }
+
             Close();
         }
 

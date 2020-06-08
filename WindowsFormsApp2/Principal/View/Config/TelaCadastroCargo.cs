@@ -60,7 +60,8 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             if (tipo)
             {
-                if (txtCargo.TextLength > 0)
+                var auxCargo = cargos.verificarDuplicata(txtCargo.Text);
+                if (txtCargo.TextLength > 0 && auxCargo.Count < 1)
                 {
                     cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked);
 
@@ -76,7 +77,7 @@ namespace WindowsFormsApp2.Principal.View.Config
                 }
                 else
                 {
-                    MessageBox.Show("Para salvar precisa inserir um nome");
+                    MessageBox.Show("Para salvar precisa inserir um nome ou o mesmo já existe");
                 }
             }
             else

@@ -35,3 +35,10 @@ C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.exe
 C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.pdb
 C:\projetopdv\WindowsFormsApp2\obj\Release\PontoDeVenda.csprojAssemblyReference.cache
 C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Desbloqueio.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaCadastrarColaborador.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaCadastroLogins.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaCadastroCargo.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaCargos.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaColaboladores.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaPrincipalColaboladores.resources
+C:\projetopdv\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Principal.View.Config.TelaConfig.resources

@@ -44,7 +44,8 @@ namespace WindowsFormsApp2.Principal.View.Config
                     item.SubItems.Add("Inativo");
                 }
                 item.SubItems.Add(auxColaboradores[i]["idFuncionario"].ToString());
-                listaColaboradores.Items.Add(item);
+                if(Global.nomeColaborador != auxColaboradores[i]["nomeFunc"].ToString())
+                    listaColaboradores.Items.Add(item);
             }
         }
 
