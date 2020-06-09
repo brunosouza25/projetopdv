@@ -63,7 +63,7 @@ namespace WindowsFormsApp2.Principal.View.Config
                 var auxCargo = cargos.verificarDuplicata(txtCargo.Text);
                 if (txtCargo.TextLength > 0 && auxCargo.Count < 1)
                 {
-                    cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked);
+                    cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked, false);
 
                     var idcargo = cargos.retornarUltimoIdCargo();
 

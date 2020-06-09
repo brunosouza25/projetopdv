@@ -125,9 +125,9 @@ namespace WindowsFormsApp2.Vendas.View
 
             }
             if (idCredVista >= 0)
-                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredVista]["PagValor"]).ToString("F2");
+                txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[idCredVista]["PagValor"]).ToString("F2");
             if (idCredParc >= 0)
-                txtBoxCredVista.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2");
+                txtBoxCredParc.Text = Convert.ToDouble(pagamentosVenda[idCredParc]["PagValor"]).ToString("F2");
             if (idDeb >= 0)
                 txtBoxDebt.Text = Convert.ToDouble(pagamentosVenda[idDeb]["PagValor"]).ToString("F2");
 

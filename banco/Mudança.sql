@@ -137,7 +137,10 @@ CREATE TABLE Observacoes_Venda (
 
 CREATE TABLE Observacoes_Sangria (
     idCaixa INT,
-    observacoes VARCHAR(300)
+    observacoes VARCHAR(300),
+	dataSangria DATE,
+	horaSangria TIME,
+	idColaborador INT
 );
 
 CREATE TABLE Observacoes_Entrada_Prod (
@@ -201,7 +204,7 @@ ALTER TABLE Permissoes_Vendas ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo
 ALTER TABLE Permissoes_Estoque ADD FOREIGN KEY (idCargo) REFERENCES Cargo(idCargo)
 
 INSERT INTO MetodoDePagamento VALUES (1,'DINHEIRO')
-INSERT INTO Caixa VALUES (0, 0, 0, '01/12/2019', 0)
+INSERT INTO Caixa VALUES (0, 0, 250, '01/12/2019', 0)
 
 INSERT INTO MetodoDePagamento VALUES (2,'CREDITO A VISTA')
 INSERT INTO MetodoDePagamento VALUES (3,'CREDITO PARCELADO')

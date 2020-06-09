@@ -91,6 +91,8 @@ namespace WindowsFormsApp2
                 double totalDin = 0, totalCredVista = 0, totalCredParc = 0, totalDebt = 0, descontoDevolucao = 0;
                 DadosTableAdapters.DataTable2TableAdapter fechamento = new DadosTableAdapters.DataTable2TableAdapter();
                 DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
+                DadosTableAdapters.Observacoes_SangriaTableAdapter sangria = new DadosTableAdapters.Observacoes_SangriaTableAdapter();
+
                 var varProd = fechamento.relatorio();
                 //instanciando e setando o tipo de página que vou utilizar
                 Document doc = new Document(PageSize.A4);
@@ -360,6 +362,30 @@ namespace WindowsFormsApp2
                 informacao.Add("\n\nTotal das vendas: R$" + (totalDin + totalDebt + totalCredVista + totalCredParc).ToString("F2"));
 
                 doc.Add(informacao);
+
+                /*******************************************************************************************/
+                informacao.Clear();
+                informacao.Add("\n\n" + ("Sangria"));
+
+                var auxSangria = sangria.retornarSangrias(DateTime.Now.ToString("dd/MM/yyyy"));
+
+                if(auxSangria.Count > 0) {
+                    informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
+                    informacao.Clear();
+
+                    PdfPTable table7 = new PdfPTable(3);
+                    table7.AddCell("Data da Sangria");
+                    table7.AddCell("Colaborador");
+                    table7.AddCell("Observações");
+                    for (int i = 0; i < auxSangria.Count; i++)
+                    {
+                        table7.AddCell(auxSangria[i]["idCa"]);
+                        table7.AddCell(vendasCanceladas[i]["dataVenda"].ToString());
+                        table7.AddCell(vendasCanceladas[i]["dataCancelamento"].ToString());
+                        var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
+                        table6.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
+                    }
+                }
 
                 doc.Close();
                 MessageBox.Show("Relatório gerado com sucesso!");

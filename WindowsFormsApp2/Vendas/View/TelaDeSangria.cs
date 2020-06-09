@@ -47,7 +47,8 @@ namespace WindowsFormsApp2
                         auxObs = txtBoxObs.Text.Substring(0, 299);
 
                     }
-                    obs.addObsCaixa(Convert.ToInt32(aux[0]["idCaixa"]),auxObs);
+                    obs.addObsCaixa(Convert.ToInt32(aux[0]["idCaixa"]), auxObs, DateTime.Now.ToString("dd/MM/yyyy")
+                        ,DateTime.Now.ToString("hh:mm"), Global.idColaborador); 
                     double total = Convert.ToDouble(aux[0]["valorAtual"]);  
                     caixa.attValorAtual(total - a,  Convert.ToInt32(idCaixa[0]["idCaixa"]));
                     MessageBox.Show("Sobrou R$" + (total - a) + " de fundo de caixa");

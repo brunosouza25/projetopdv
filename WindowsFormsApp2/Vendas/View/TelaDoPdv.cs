@@ -266,7 +266,7 @@ namespace WindowsFormsApp2
                         }
                     }
                     listaCaixa.Items.Remove(listaCaixa.SelectedItems[i - 1]);
-                    total -= Convert.ToDouble(item.SubItems[3].Text);
+                    total -= Convert.ToDouble(item.SubItems[4].Text);
                     LblTotal.Text = "R$: " + total.ToString("F2");
 
                 }
