@@ -10,6 +10,8 @@ namespace WindowsFormsApp2
     public partial class TelaDeRelatorios : UserControl
     {
         bool existeDiretorio = Directory.Exists(@"C:\relatorios");
+        string deData;
+        string ateData;
 
         public TelaDeRelatorios()
         {
@@ -21,15 +23,13 @@ namespace WindowsFormsApp2
 
         }
 
-
-
         private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
         {
             try
             {
                 try
                 {
-                    
+
                     DadosTableAdapters.DataTable2TableAdapter dadosProdutos = new DadosTableAdapters.DataTable2TableAdapter();
                     var varProd = dadosProdutos.GetDataBy1();
 
@@ -93,7 +93,8 @@ namespace WindowsFormsApp2
                 DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
                 DadosTableAdapters.Observacoes_SangriaTableAdapter sangria = new DadosTableAdapters.Observacoes_SangriaTableAdapter();
 
-                var varProd = fechamento.relatorio();
+                //var varProd = fechamento.relatorio();
+
                 //instanciando e setando o tipo de página que vou utilizar
                 Document doc = new Document(PageSize.A4);
                 //colocando margens no pdf
@@ -305,7 +306,7 @@ namespace WindowsFormsApp2
 
                         table5.AddCell(devolucao[i]["quantidadeDevolucao"].ToString());
 
-                        
+
                         totalDevolucao += Convert.ToDouble(devolucao[i]["valorProduto"]);
                     }
                     doc.Add(table5);
@@ -318,7 +319,7 @@ namespace WindowsFormsApp2
                 DadosTableAdapters.Vendas_CanceladasTableAdapter venda = new DadosTableAdapters.Vendas_CanceladasTableAdapter();
                 var vendasCanceladas = venda.retornarCancelamentosPorData(DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
 
-                if(vendasCanceladas.Count > 0)
+                if (vendasCanceladas.Count > 0)
                 {
                     DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
 
@@ -327,16 +328,16 @@ namespace WindowsFormsApp2
                     table6.AddCell("Data da Venda");
                     table6.AddCell("Data do Cancelamento");
                     table6.AddCell("Valor da Venda");
-                    for(int i = 0;  i < vendasCanceladas.Count; i++)
+                    for (int i = 0; i < vendasCanceladas.Count; i++)
                     {
                         table6.AddCell(vendasCanceladas[i]["idVenda"].ToString());
                         table6.AddCell(vendasCanceladas[i]["dataVenda"].ToString());
                         table6.AddCell(vendasCanceladas[i]["dataCancelamento"].ToString());
                         var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
-                        table6.AddCell("R$"+Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
+                        table6.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
                     }
                     informacao.Clear();
-                    informacao.Add("\n\nVendas Canceladas \n\n" );
+                    informacao.Add("\n\nVendas Canceladas \n\n");
                     doc.Add(informacao);
 
                     doc.Add(table6);
@@ -369,7 +370,8 @@ namespace WindowsFormsApp2
 
                 var auxSangria = sangria.retornarSangrias(DateTime.Now.ToString("dd/MM/yyyy"));
 
-                if(auxSangria.Count > 0) {
+                if (auxSangria.Count > 0)
+                {
                     informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
                     informacao.Clear();
 
@@ -474,10 +476,6 @@ namespace WindowsFormsApp2
 
         }
 
-        private void btnPerso_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -496,8 +494,67 @@ namespace WindowsFormsApp2
 
         private void btnHoje_Click(object sender, EventArgs e)
         {
+            deData = DateTime.Now.ToString("dd/MM/yyyy");
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+        }
 
+        private void btnOntem_Click(object sender, EventArgs e)
+        {
+            ateData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
+            deData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
+
+        }
+
+        private void btn7Dias_Click(object sender, EventArgs e)
+        {
+            deData = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+
+        }
+
+        private void btnEsteMes_Click(object sender, EventArgs e)
+        {
+            ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            deData = DateTime.Now.ToString("01/MM/yyyy");
+
+        }
+
+        private void btnMesPassado_Click(object sender, EventArgs e)
+        {
+
+            //DateTime ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
+
+
+
+            var data = DateTime.Now.AddMonths(-1);
+            var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
+            var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia); //possibilidade de remoção desta linha
+
+            ateData = (dataUltimoDia.ToString("01/MM/yyyy"));
+            deData = (dataUltimoDia.ToString("dd/MM/yyyy"));
+
+
+        }
+
+        private void btnUltimos3Meses_Click(object sender, EventArgs e)
+        {
+
+            var data = DateTime.Now.AddMonths(-3);
+
+            ateData = (DateTime.Now.ToString("dd/MM/yyyy"));
+            deData = (data.ToString("dd/MM/yyyy"));
+        }
+
+        private void btnPerso_Click(object sender, EventArgs e)
+        {
+            DateTime a, b;
+            if (DateTime.TryParse(txtBoxDeMes.Text, out a) && DateTime.TryParse(txtBoxAteMes.Text, out b) && b > a)
+            {
+                deData = txtBoxDeMes.Text;
+                ateData = txtBoxAteMes.Text;
+            }
+            else
+                MessageBox.Show("Datas invalidas");
         }
     }
 }
-

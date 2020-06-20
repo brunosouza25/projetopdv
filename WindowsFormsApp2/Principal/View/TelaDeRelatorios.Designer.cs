@@ -46,10 +46,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnFechamentoDiario = new System.Windows.Forms.ToolStripButton();
-            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.relatorioCaixaToolStrip = new System.Windows.Forms.ToolStrip();
-            this.relatorioCaixaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.painelPrincipal = new System.Windows.Forms.Panel();
             this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,8 +54,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.fillBy1ToolStrip.SuspendLayout();
-            this.relatorioCaixaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -217,8 +211,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.toolStrip1);
-            this.panel3.Controls.Add(this.fillBy1ToolStrip);
-            this.panel3.Controls.Add(this.relatorioCaixaToolStrip);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -229,7 +221,7 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnFechamentoDiario});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 50);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(224, 25);
             this.toolStrip1.TabIndex = 8;
@@ -242,42 +234,6 @@
             this.btnFechamentoDiario.Size = new System.Drawing.Size(113, 22);
             this.btnFechamentoDiario.Text = " Fechamento diário";
             this.btnFechamentoDiario.Click += new System.EventHandler(this.btnFechamentoDiario_Click);
-            // 
-            // fillBy1ToolStrip
-            // 
-            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillBy1ToolStripButton});
-            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.Size = new System.Drawing.Size(224, 25);
-            this.fillBy1ToolStrip.TabIndex = 6;
-            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
-            // 
-            // fillBy1ToolStripButton
-            // 
-            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
-            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(142, 22);
-            this.fillBy1ToolStripButton.Text = "Gerar relatório de vendas";
-            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.BtnSalvarPDF_Click);
-            // 
-            // relatorioCaixaToolStrip
-            // 
-            this.relatorioCaixaToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatorioCaixaToolStripButton});
-            this.relatorioCaixaToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.relatorioCaixaToolStrip.Name = "relatorioCaixaToolStrip";
-            this.relatorioCaixaToolStrip.Size = new System.Drawing.Size(224, 25);
-            this.relatorioCaixaToolStrip.TabIndex = 7;
-            this.relatorioCaixaToolStrip.Text = "relatorioCaixaToolStrip";
-            // 
-            // relatorioCaixaToolStripButton
-            // 
-            this.relatorioCaixaToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.relatorioCaixaToolStripButton.Name = "relatorioCaixaToolStripButton";
-            this.relatorioCaixaToolStripButton.Size = new System.Drawing.Size(115, 22);
-            this.relatorioCaixaToolStripButton.Text = "Relatório dos caixas";
-            this.relatorioCaixaToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
             // 
             // painelPrincipal
             // 
@@ -311,10 +267,6 @@
             this.panel3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.fillBy1ToolStrip.ResumeLayout(false);
-            this.fillBy1ToolStrip.PerformLayout();
-            this.relatorioCaixaToolStrip.ResumeLayout(false);
-            this.relatorioCaixaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -347,10 +299,6 @@
         private System.Windows.Forms.BindingSource dataTable2BindingSource;
         private Dados dados;
         private DadosTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
-        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
-        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
-        private System.Windows.Forms.ToolStrip relatorioCaixaToolStrip;
-        private System.Windows.Forms.ToolStripButton relatorioCaixaToolStripButton;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnFechamentoDiario;
     }

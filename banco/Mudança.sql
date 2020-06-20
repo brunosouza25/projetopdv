@@ -136,6 +136,7 @@ CREATE TABLE Observacoes_Venda (
 );
 
 CREATE TABLE Observacoes_Sangria (
+	idSangria INT PRIMARY KEY IDENTITY (1,1),
     idCaixa INT,
     observacoes VARCHAR(300),
 	dataSangria DATE,
