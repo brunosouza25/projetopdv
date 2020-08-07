@@ -105,12 +105,13 @@
             // 
             // btnPerso
             // 
+            this.btnPerso.BackColor = System.Drawing.Color.Silver;
             this.btnPerso.Location = new System.Drawing.Point(7, 433);
             this.btnPerso.Name = "btnPerso";
             this.btnPerso.Size = new System.Drawing.Size(274, 35);
             this.btnPerso.TabIndex = 33;
             this.btnPerso.Text = "Personalizado";
-            this.btnPerso.UseVisualStyleBackColor = true;
+            this.btnPerso.UseVisualStyleBackColor = false;
             this.btnPerso.Click += new System.EventHandler(this.btnPerso_Click);
             // 
             // label2
@@ -155,57 +156,63 @@
             // 
             // btnUltimos3Meses
             // 
+            this.btnUltimos3Meses.BackColor = System.Drawing.Color.Silver;
             this.btnUltimos3Meses.Location = new System.Drawing.Point(3, 303);
             this.btnUltimos3Meses.Name = "btnUltimos3Meses";
             this.btnUltimos3Meses.Size = new System.Drawing.Size(277, 35);
             this.btnUltimos3Meses.TabIndex = 28;
             this.btnUltimos3Meses.Text = "Ultimos 3 meses";
-            this.btnUltimos3Meses.UseVisualStyleBackColor = true;
+            this.btnUltimos3Meses.UseVisualStyleBackColor = false;
             // 
             // btnMesPassado
             // 
+            this.btnMesPassado.BackColor = System.Drawing.Color.Silver;
             this.btnMesPassado.Location = new System.Drawing.Point(3, 262);
             this.btnMesPassado.Name = "btnMesPassado";
             this.btnMesPassado.Size = new System.Drawing.Size(277, 35);
             this.btnMesPassado.TabIndex = 27;
             this.btnMesPassado.Text = "Mês passado";
-            this.btnMesPassado.UseVisualStyleBackColor = true;
+            this.btnMesPassado.UseVisualStyleBackColor = false;
             // 
             // btnEsteMes
             // 
+            this.btnEsteMes.BackColor = System.Drawing.Color.Silver;
             this.btnEsteMes.Location = new System.Drawing.Point(3, 221);
             this.btnEsteMes.Name = "btnEsteMes";
             this.btnEsteMes.Size = new System.Drawing.Size(277, 35);
             this.btnEsteMes.TabIndex = 26;
             this.btnEsteMes.Text = "Este mês";
-            this.btnEsteMes.UseVisualStyleBackColor = true;
+            this.btnEsteMes.UseVisualStyleBackColor = false;
             // 
             // btn7Dias
             // 
+            this.btn7Dias.BackColor = System.Drawing.Color.Silver;
             this.btn7Dias.Location = new System.Drawing.Point(3, 181);
             this.btn7Dias.Name = "btn7Dias";
             this.btn7Dias.Size = new System.Drawing.Size(277, 35);
             this.btn7Dias.TabIndex = 25;
             this.btn7Dias.Text = "Ultimos 7 dias";
-            this.btn7Dias.UseVisualStyleBackColor = true;
+            this.btn7Dias.UseVisualStyleBackColor = false;
             // 
             // btnOntem
             // 
+            this.btnOntem.BackColor = System.Drawing.Color.Silver;
             this.btnOntem.Location = new System.Drawing.Point(3, 142);
             this.btnOntem.Name = "btnOntem";
             this.btnOntem.Size = new System.Drawing.Size(277, 35);
             this.btnOntem.TabIndex = 24;
             this.btnOntem.Text = "Ontem";
-            this.btnOntem.UseVisualStyleBackColor = true;
+            this.btnOntem.UseVisualStyleBackColor = false;
             // 
             // btnHoje
             // 
+            this.btnHoje.BackColor = System.Drawing.Color.Silver;
             this.btnHoje.Location = new System.Drawing.Point(3, 105);
             this.btnHoje.Name = "btnHoje";
             this.btnHoje.Size = new System.Drawing.Size(277, 35);
             this.btnHoje.TabIndex = 23;
             this.btnHoje.Text = "Hoje";
-            this.btnHoje.UseVisualStyleBackColor = true;
+            this.btnHoje.UseVisualStyleBackColor = false;
             this.btnHoje.Click += new System.EventHandler(this.btnHoje_Click);
             // 
             // panel3

@@ -4,14 +4,15 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Drawing;
 
 namespace WindowsFormsApp2
 {
     public partial class TelaDeRelatorios : UserControl
     {
         bool existeDiretorio = Directory.Exists(@"C:\relatorios");
-        string deData;
-        string ateData;
+        string deData = null;
+        string ateData =  null;
 
         public TelaDeRelatorios()
         {
@@ -100,7 +101,7 @@ namespace WindowsFormsApp2
                 //colocando margens no pdf
                 doc.SetMargins(40, 40, 40, 80);
 
-                string aux = DateTime.Now.ToString("dd-MM-yyyy");
+                string aux = deData+" - "+ateData;
 
                 string caminho = @"C:\relatorios\fechamento" + aux.ToString() + ".pdf";
 
@@ -489,34 +490,56 @@ namespace WindowsFormsApp2
 
         private void btnFechamentoDiario_Click(object sender, EventArgs e)
         {
-            fechamentoCaixa();
+            if(deData != null)
+            {
+                fechamentoCaixa();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um perído primeiro");
+            }
+            
         }
-
+        private void alterarCor()
+        {
+            btnHoje.BackColor = Color.Silver;
+            btnOntem.BackColor = Color.Silver;
+            btn7Dias.BackColor = Color.Silver;
+            btnEsteMes.BackColor = Color.Silver;
+            btnMesPassado.BackColor = Color.Silver;
+            btnUltimos3Meses.BackColor = Color.Silver;
+            btnPerso.BackColor = Color.Silver;
+        }
         private void btnHoje_Click(object sender, EventArgs e)
         {
             deData = DateTime.Now.ToString("dd/MM/yyyy");
             ateData = DateTime.Now.ToString("dd/MM/yyyy");
+            btnHoje.BackColor = Color.Blue;
+            alterarCor();
         }
 
         private void btnOntem_Click(object sender, EventArgs e)
         {
             ateData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
             deData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
-
+            btnOntem.BackColor = Color.Blue;
+            alterarCor();
         }
 
         private void btn7Dias_Click(object sender, EventArgs e)
         {
             deData = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
             ateData = DateTime.Now.ToString("dd/MM/yyyy");
-
+            btn7Dias.BackColor = Color.Blue;
+            alterarCor();
         }
 
         private void btnEsteMes_Click(object sender, EventArgs e)
         {
             ateData = DateTime.Now.ToString("dd/MM/yyyy");
             deData = DateTime.Now.ToString("01/MM/yyyy");
-
+            btnEsteMes.BackColor = Color.Blue;
+            alterarCor();
         }
 
         private void btnMesPassado_Click(object sender, EventArgs e)
@@ -533,7 +556,8 @@ namespace WindowsFormsApp2
             ateData = (dataUltimoDia.ToString("01/MM/yyyy"));
             deData = (dataUltimoDia.ToString("dd/MM/yyyy"));
 
-
+            btnMesPassado.BackColor = Color.Blue;
+            alterarCor();
         }
 
         private void btnUltimos3Meses_Click(object sender, EventArgs e)
@@ -543,10 +567,14 @@ namespace WindowsFormsApp2
 
             ateData = (DateTime.Now.ToString("dd/MM/yyyy"));
             deData = (data.ToString("dd/MM/yyyy"));
+            btnUltimos3Meses.BackColor = Color.Blue;
+            alterarCor();
         }
 
         private void btnPerso_Click(object sender, EventArgs e)
         {
+            btnPerso.BackColor = Color.Blue;
+            alterarCor();
             DateTime a, b;
             if (DateTime.TryParse(txtBoxDeMes.Text, out a) && DateTime.TryParse(txtBoxAteMes.Text, out b) && b > a)
             {
