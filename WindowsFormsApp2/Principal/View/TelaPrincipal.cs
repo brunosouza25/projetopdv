@@ -55,7 +55,7 @@ namespace WindowsFormsApp2
                 btCaixa.Visible = false;
                 lblVendas.Visible = false;
             }
-            if (Global.adm = false)
+            if (Global.adm == false)
             {
                 telaDeConfig.Enabled = false;
                 telaDeConfig.Visible = false;

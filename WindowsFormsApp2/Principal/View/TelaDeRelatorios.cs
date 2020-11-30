@@ -370,7 +370,7 @@ namespace WindowsFormsApp2
                 informacao.Add("\n\n" + ("Sangria"));
 
                 var auxSangria = sangria.retornarSangrias(DateTime.Now.ToString("dd/MM/yyyy"));
-
+                /*
                 if (auxSangria.Count > 0)
                 {
                     informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
@@ -389,6 +389,7 @@ namespace WindowsFormsApp2
                         table6.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
                     }
                 }
+                */
 
                 doc.Close();
                 MessageBox.Show("Relatório gerado com sucesso!");

@@ -20,6 +20,7 @@ namespace WindowsFormsApp2
             Application.SetCompatibleTextRenderingDefault(false);
             
             DadosTableAdapters.Config_SistemaTableAdapter config = new DadosTableAdapters.Config_SistemaTableAdapter();
+            /*
             var configSistema = config.retornarConfig();
 
             string mesHoje = DateTime.Now.ToString("MM");
@@ -70,9 +71,9 @@ namespace WindowsFormsApp2
                 config.attSenha(senha2);
             }
 
-    
-            /*TelaDeLogin login = new TelaDeLogin();
-            Application.Run(new TelaDeLogin());*/
+            */
+            /*TelaDeLogin login = new TelaDeLogin();*/
+            Application.Run(new TelaDeLogin());
         }
 
     }
