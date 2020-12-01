@@ -62,9 +62,8 @@
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1685, 128);
+            this.panel2.Size = new System.Drawing.Size(1264, 104);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -72,26 +71,24 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.painel_hora, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1685, 128);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1264, 104);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // painel_hora
             // 
             this.painel_hora.Controls.Add(this.Lab_Hora);
             this.painel_hora.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painel_hora.Location = new System.Drawing.Point(846, 4);
-            this.painel_hora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.painel_hora.Location = new System.Drawing.Point(635, 3);
             this.painel_hora.Name = "painel_hora";
-            this.painel_hora.Size = new System.Drawing.Size(835, 120);
+            this.painel_hora.Size = new System.Drawing.Size(626, 98);
             this.painel_hora.TabIndex = 4;
             // 
             // Lab_Hora
@@ -99,10 +96,9 @@
             this.Lab_Hora.AutoSize = true;
             this.Lab_Hora.Dock = System.Windows.Forms.DockStyle.Right;
             this.Lab_Hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lab_Hora.Location = new System.Drawing.Point(709, 0);
-            this.Lab_Hora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lab_Hora.Location = new System.Drawing.Point(526, 0);
             this.Lab_Hora.Name = "Lab_Hora";
-            this.Lab_Hora.Size = new System.Drawing.Size(126, 46);
+            this.Lab_Hora.Size = new System.Drawing.Size(100, 37);
             this.Lab_Hora.TabIndex = 0;
             this.Lab_Hora.Text = "label1";
             // 
@@ -117,20 +113,18 @@
             this.panel1.Controls.Add(this.BtEstoque);
             this.panel1.Controls.Add(this.BtRelatorio);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 120);
+            this.panel1.Size = new System.Drawing.Size(626, 98);
             this.panel1.TabIndex = 5;
             // 
             // lblConfiguracoes
             // 
             this.lblConfiguracoes.AutoSize = true;
             this.lblConfiguracoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfiguracoes.Location = new System.Drawing.Point(537, 95);
-            this.lblConfiguracoes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConfiguracoes.Location = new System.Drawing.Point(403, 77);
             this.lblConfiguracoes.Name = "lblConfiguracoes";
-            this.lblConfiguracoes.Size = new System.Drawing.Size(152, 25);
+            this.lblConfiguracoes.Size = new System.Drawing.Size(125, 20);
             this.lblConfiguracoes.TabIndex = 7;
             this.lblConfiguracoes.Text = "Configurações";
             // 
@@ -138,10 +132,9 @@
             // 
             this.btnConfig.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.relatorios;
             this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(555, 0);
-            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfig.Location = new System.Drawing.Point(416, 0);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(127, 91);
+            this.btnConfig.Size = new System.Drawing.Size(95, 74);
             this.btnConfig.TabIndex = 6;
             this.btnConfig.UseVisualStyleBackColor = true;
             this.btnConfig.Click += new System.EventHandler(this.BtConfig_Click);
@@ -150,10 +143,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(371, 95);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(278, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 25);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Relatórios";
             // 
@@ -161,10 +153,9 @@
             // 
             this.lblEstoque.AutoSize = true;
             this.lblEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstoque.Location = new System.Drawing.Point(196, 95);
-            this.lblEstoque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstoque.Location = new System.Drawing.Point(147, 77);
             this.lblEstoque.Name = "lblEstoque";
-            this.lblEstoque.Size = new System.Drawing.Size(91, 25);
+            this.lblEstoque.Size = new System.Drawing.Size(76, 20);
             this.lblEstoque.TabIndex = 4;
             this.lblEstoque.Text = "Estoque";
             // 
@@ -172,10 +163,9 @@
             // 
             this.lblVendas.AutoSize = true;
             this.lblVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVendas.Location = new System.Drawing.Point(28, 95);
-            this.lblVendas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVendas.Location = new System.Drawing.Point(21, 77);
             this.lblVendas.Name = "lblVendas";
-            this.lblVendas.Size = new System.Drawing.Size(86, 25);
+            this.lblVendas.Size = new System.Drawing.Size(70, 20);
             this.lblVendas.TabIndex = 3;
             this.lblVendas.Text = "Vendas";
             // 
@@ -184,9 +174,8 @@
             this.btCaixa.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.caixa_de_dinheiro;
             this.btCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btCaixa.Location = new System.Drawing.Point(0, 0);
-            this.btCaixa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCaixa.Name = "btCaixa";
-            this.btCaixa.Size = new System.Drawing.Size(127, 91);
+            this.btCaixa.Size = new System.Drawing.Size(95, 74);
             this.btCaixa.TabIndex = 1;
             this.btCaixa.UseVisualStyleBackColor = true;
             this.btCaixa.Click += new System.EventHandler(this.BtCaixa_Click);
@@ -195,10 +184,9 @@
             // 
             this.BtEstoque.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.estoque;
             this.BtEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtEstoque.Location = new System.Drawing.Point(184, 0);
-            this.BtEstoque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtEstoque.Location = new System.Drawing.Point(138, 0);
             this.BtEstoque.Name = "BtEstoque";
-            this.BtEstoque.Size = new System.Drawing.Size(127, 91);
+            this.BtEstoque.Size = new System.Drawing.Size(95, 74);
             this.BtEstoque.TabIndex = 1;
             this.BtEstoque.UseVisualStyleBackColor = true;
             this.BtEstoque.Click += new System.EventHandler(this.BtEstoque_Click);
@@ -207,10 +195,9 @@
             // 
             this.BtRelatorio.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.relatorios;
             this.BtRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtRelatorio.Location = new System.Drawing.Point(368, 0);
-            this.BtRelatorio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtRelatorio.Location = new System.Drawing.Point(276, 0);
             this.BtRelatorio.Name = "BtRelatorio";
-            this.BtRelatorio.Size = new System.Drawing.Size(127, 91);
+            this.BtRelatorio.Size = new System.Drawing.Size(95, 74);
             this.BtRelatorio.TabIndex = 2;
             this.BtRelatorio.UseVisualStyleBackColor = true;
             this.BtRelatorio.Click += new System.EventHandler(this.BtRelatorio_Click);
@@ -218,10 +205,9 @@
             // painelPrincipal
             // 
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(0, 128);
-            this.painelPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.painelPrincipal.Location = new System.Drawing.Point(0, 104);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(1685, 710);
+            this.painelPrincipal.Size = new System.Drawing.Size(1264, 577);
             this.painelPrincipal.TabIndex = 2;
             // 
             // timer1
@@ -231,12 +217,11 @@
             // 
             // TelaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.painelPrincipal);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDV";

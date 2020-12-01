@@ -113,6 +113,18 @@
     <Compile Include="Estoque\View\TelaDeSaidaProduto.Designer.cs">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estoque\View\TelaInformacaoGeralProd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Estoque\View\TelaInformacaoGeralProd.Designer.cs">
+      <DependentUpon>TelaInformacaoGeralProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque\View\TelaTributacaoProd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Estoque\View\TelaTributacaoProd.Designer.cs">
+      <DependentUpon>TelaTributacaoProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Principal\View\Config\Classes\Colaborador.cs" />
     <Compile Include="Principal\View\Config\TelaCadastrarColaborador.cs">
@@ -267,6 +279,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaDeSaidaProduto.resx">
       <DependentUpon>TelaDeSaidaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\View\TelaInformacaoGeralProd.resx">
+      <DependentUpon>TelaInformacaoGeralProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque\View\TelaTributacaoProd.resx">
+      <DependentUpon>TelaTributacaoProd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\Config\TelaCadastrarColaborador.resx">
       <DependentUpon>TelaCadastrarColaborador.cs</DependentUpon>

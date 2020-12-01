@@ -29,159 +29,125 @@
         private void InitializeComponent()
         {
             this.painel_CriarProd = new System.Windows.Forms.Panel();
-            this.lblInativo = new System.Windows.Forms.Label();
-            this.ckboxInativo = new System.Windows.Forms.CheckBox();
-            this.BtCancelar = new System.Windows.Forms.Button();
-            this.TxtBoxCodBarras = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtBoxValor = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtBoxCusto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtBoxNome = new System.Windows.Forms.TextBox();
-            this.LabNomeProd = new System.Windows.Forms.Label();
-            this.BtCriar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PainelPrincipal = new System.Windows.Forms.Panel();
+            this.BtnTributacao = new System.Windows.Forms.Button();
+            this.BtnGeral = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnSalvar = new System.Windows.Forms.Button();
             this.painel_CriarProd.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // painel_CriarProd
             // 
-            this.painel_CriarProd.BackColor = System.Drawing.SystemColors.Highlight;
-            this.painel_CriarProd.Controls.Add(this.lblInativo);
-            this.painel_CriarProd.Controls.Add(this.ckboxInativo);
-            this.painel_CriarProd.Controls.Add(this.BtCancelar);
-            this.painel_CriarProd.Controls.Add(this.TxtBoxCodBarras);
-            this.painel_CriarProd.Controls.Add(this.label3);
-            this.painel_CriarProd.Controls.Add(this.TxtBoxValor);
-            this.painel_CriarProd.Controls.Add(this.label2);
-            this.painel_CriarProd.Controls.Add(this.TxtBoxCusto);
-            this.painel_CriarProd.Controls.Add(this.label1);
-            this.painel_CriarProd.Controls.Add(this.TxtBoxNome);
-            this.painel_CriarProd.Controls.Add(this.LabNomeProd);
-            this.painel_CriarProd.Controls.Add(this.BtCriar);
+            this.painel_CriarProd.BackColor = System.Drawing.SystemColors.Control;
+            this.painel_CriarProd.Controls.Add(this.tableLayoutPanel1);
             this.painel_CriarProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painel_CriarProd.Location = new System.Drawing.Point(0, 0);
             this.painel_CriarProd.Name = "painel_CriarProd";
-            this.painel_CriarProd.Size = new System.Drawing.Size(443, 450);
+            this.painel_CriarProd.Size = new System.Drawing.Size(573, 585);
             this.painel_CriarProd.TabIndex = 0;
             // 
-            // lblInativo
+            // tableLayoutPanel1
             // 
-            this.lblInativo.AutoSize = true;
-            this.lblInativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInativo.Location = new System.Drawing.Point(264, 302);
-            this.lblInativo.Name = "lblInativo";
-            this.lblInativo.Size = new System.Drawing.Size(82, 29);
-            this.lblInativo.TabIndex = 11;
-            this.lblInativo.Text = "Inativo";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.PainelPrincipal, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.230769F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.76923F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(573, 585);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // ckboxInativo
+            // panel1
             // 
-            this.ckboxInativo.AutoSize = true;
-            this.ckboxInativo.Location = new System.Drawing.Point(352, 317);
-            this.ckboxInativo.Name = "ckboxInativo";
-            this.ckboxInativo.Size = new System.Drawing.Size(15, 14);
-            this.ckboxInativo.TabIndex = 10;
-            this.ckboxInativo.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.BtnTributacao);
+            this.panel1.Controls.Add(this.BtnGeral);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(567, 41);
+            this.panel1.TabIndex = 0;
             // 
-            // BtCancelar
+            // PainelPrincipal
             // 
-            this.BtCancelar.Location = new System.Drawing.Point(283, 356);
-            this.BtCancelar.Name = "BtCancelar";
-            this.BtCancelar.Size = new System.Drawing.Size(98, 47);
-            this.BtCancelar.TabIndex = 9;
-            this.BtCancelar.Text = "Cancelar";
-            this.BtCancelar.UseVisualStyleBackColor = true;
-            this.BtCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
+            this.PainelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PainelPrincipal.Location = new System.Drawing.Point(3, 50);
+            this.PainelPrincipal.Name = "PainelPrincipal";
+            this.PainelPrincipal.Size = new System.Drawing.Size(567, 464);
+            this.PainelPrincipal.TabIndex = 1;
             // 
-            // TxtBoxCodBarras
+            // BtnTributacao
             // 
-            this.TxtBoxCodBarras.Location = new System.Drawing.Point(293, 44);
-            this.TxtBoxCodBarras.Name = "TxtBoxCodBarras";
-            this.TxtBoxCodBarras.Size = new System.Drawing.Size(128, 20);
-            this.TxtBoxCodBarras.TabIndex = 1;
+            this.BtnTributacao.Location = new System.Drawing.Point(105, 0);
+            this.BtnTributacao.Name = "BtnTributacao";
+            this.BtnTributacao.Size = new System.Drawing.Size(98, 47);
+            this.BtnTributacao.TabIndex = 15;
+            this.BtnTributacao.Text = "Tributação";
+            this.BtnTributacao.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // BtnGeral
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Cod de Barras:";
+            this.BtnGeral.Location = new System.Drawing.Point(1, 0);
+            this.BtnGeral.Name = "BtnGeral";
+            this.BtnGeral.Size = new System.Drawing.Size(98, 47);
+            this.BtnGeral.TabIndex = 14;
+            this.BtnGeral.Text = "Geral";
+            this.BtnGeral.UseVisualStyleBackColor = true;
+            this.BtnGeral.Click += new System.EventHandler(this.BtnGeral_Click);
             // 
-            // TxtBoxValor
+            // panel2
             // 
-            this.TxtBoxValor.Location = new System.Drawing.Point(293, 256);
-            this.TxtBoxValor.Name = "TxtBoxValor";
-            this.TxtBoxValor.Size = new System.Drawing.Size(128, 20);
-            this.TxtBoxValor.TabIndex = 6;
+            this.panel2.Controls.Add(this.BtnCancelar);
+            this.panel2.Controls.Add(this.BtnSalvar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 520);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(567, 62);
+            this.panel2.TabIndex = 2;
             // 
-            // label2
+            // BtnCancelar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 254);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Valor de venda:";
+            this.BtnCancelar.Location = new System.Drawing.Point(384, 8);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(98, 47);
+            this.BtnCancelar.TabIndex = 17;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
             // 
-            // TxtBoxCusto
+            // BtnSalvar
             // 
-            this.TxtBoxCusto.Location = new System.Drawing.Point(293, 185);
-            this.TxtBoxCusto.Name = "TxtBoxCusto";
-            this.TxtBoxCusto.Size = new System.Drawing.Size(128, 20);
-            this.TxtBoxCusto.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Custo:";
-            // 
-            // TxtBoxNome
-            // 
-            this.TxtBoxNome.Location = new System.Drawing.Point(293, 114);
-            this.TxtBoxNome.Name = "TxtBoxNome";
-            this.TxtBoxNome.Size = new System.Drawing.Size(128, 20);
-            this.TxtBoxNome.TabIndex = 2;
-            // 
-            // LabNomeProd
-            // 
-            this.LabNomeProd.AutoSize = true;
-            this.LabNomeProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabNomeProd.Location = new System.Drawing.Point(12, 112);
-            this.LabNomeProd.Name = "LabNomeProd";
-            this.LabNomeProd.Size = new System.Drawing.Size(201, 25);
-            this.LabNomeProd.TabIndex = 1;
-            this.LabNomeProd.Text = "Nome do Produto:";
-            // 
-            // BtCriar
-            // 
-            this.BtCriar.Location = new System.Drawing.Point(62, 356);
-            this.BtCriar.Name = "BtCriar";
-            this.BtCriar.Size = new System.Drawing.Size(98, 47);
-            this.BtCriar.TabIndex = 7;
-            this.BtCriar.Text = "Criar";
-            this.BtCriar.UseVisualStyleBackColor = true;
-            this.BtCriar.Click += new System.EventHandler(this.BtCriar_Click);
+            this.BtnSalvar.Location = new System.Drawing.Point(105, 8);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(98, 47);
+            this.BtnSalvar.TabIndex = 16;
+            this.BtnSalvar.Text = "Salvar";
+            this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // TelaCriarProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 450);
+            this.ClientSize = new System.Drawing.Size(573, 585);
             this.Controls.Add(this.painel_CriarProd);
             this.Name = "TelaCriarProd";
             this.Text = "Criar Produto";
             this.painel_CriarProd.ResumeLayout(false);
-            this.painel_CriarProd.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,17 +155,13 @@
         #endregion
 
         private System.Windows.Forms.Panel painel_CriarProd;
-        private System.Windows.Forms.TextBox TxtBoxValor;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtBoxCusto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtBoxNome;
-        private System.Windows.Forms.Label LabNomeProd;
-        private System.Windows.Forms.Button BtCriar;
-        private System.Windows.Forms.TextBox TxtBoxCodBarras;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BtCancelar;
-        private System.Windows.Forms.Label lblInativo;
-        private System.Windows.Forms.CheckBox ckboxInativo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnTributacao;
+        private System.Windows.Forms.Button BtnGeral;
+        private System.Windows.Forms.Panel PainelPrincipal;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnSalvar;
     }
 }
