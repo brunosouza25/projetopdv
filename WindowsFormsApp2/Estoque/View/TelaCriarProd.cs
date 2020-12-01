@@ -15,17 +15,16 @@ namespace WindowsFormsApp2
         string quantidade;
         private Produto prod = new Produto();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        
-        public TelaCriarProd()
-        {
-            TelaInformacaoGeralProd TelaGeral = new TelaInformacaoGeralProd();
-        }
+        TelaInformacaoGeralProd TelaGeral = new TelaInformacaoGeralProd();
+
         public TelaCriarProd(Boolean tipo)
         {
             InitializeComponent();
             this.tipo = tipo;
             BtnSalvar.Text = "Criar";
-            TelaInfor
+            TelaInformacaoGeralProd TelaGeral = new TelaInformacaoGeralProd();
+            PainelPrincipal.Controls.Add(TelaGeral);
+            TelaGeral.criarProd(tipo);
         }
         public TelaCriarProd(Boolean tipo, int codigoProd)
         {
@@ -33,9 +32,11 @@ namespace WindowsFormsApp2
             this.tipo = tipo;
             this.codigoProd = codigoProd;
             BtnSalvar.Text = "Alterar";
-            carregarTela();
-
+            PainelPrincipal.Controls.Add(TelaGeral);
+            TelaGeral.criarProd(tipo);
         }
+
+        
 
         private void BtnGeral_Click(object sender, EventArgs e)
         {
@@ -44,7 +45,8 @@ namespace WindowsFormsApp2
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-
+            TelaGeral.Criar_EditarProd();
+            Close();
         }
     }
 }

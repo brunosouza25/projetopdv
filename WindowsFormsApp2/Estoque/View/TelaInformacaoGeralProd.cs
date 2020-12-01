@@ -13,27 +13,50 @@ namespace WindowsFormsApp2.Estoque.View
         string quantidade;
         private Produto prod = new Produto();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        public TelaInformacaoGeralProd(Boolean tipo)
+
+        public TelaInformacaoGeralProd()
         {
             InitializeComponent();
+        }
+        /*
+        public TelaInformacaoGeralProd(Boolean tipo)
+        {
+            
             this.tipo = tipo;
-            BtCriar.Text = "Criar";
             lblInativo.Visible = false;
             ckboxInativo.Visible = false;
             TxtBoxCodBarras.Select();
 
 
+        }*/
+        public void criarProd(Boolean tipo)
+        {
+
+            this.tipo = tipo;
+            lblInativo.Visible = false;
+            ckboxInativo.Visible = false;
+            TxtBoxCodBarras.Select();
+
         }
+        public void editarProd(Boolean tipo, int codigoProd)
+        {
+            this.tipo = tipo;
+            this.codigoProd = codigoProd;
+
+            carregarTela();
+
+        }
+        /*
         public TelaInformacaoGeralProd(Boolean tipo, int codigoProd)
         {
             InitializeComponent();
             this.tipo = tipo;
             this.codigoProd = codigoProd;
-            BtCriar.Text = "Alterar";
+
             carregarTela();
 
         }
-
+        */
 
         private void carregarTela()
         {
@@ -45,19 +68,16 @@ namespace WindowsFormsApp2.Estoque.View
             TxtBoxValor.Text = varProd[0]["prodValor"].ToString();
             TxtBoxCodBarras.Text = varProd[0]["prodCodBarras"].ToString();
             ckboxInativo.Checked = Convert.ToBoolean(varProd[0]["prodEstado"]);
-            /*if(arquivo.Count > 4)
-            {
-                quantidade = arquivo[4];
-            }
-            else
-            {
-                quantidade = "0";
-            }*/
+
         }
 
-        private void BtCriar_Click(object sender, EventArgs e)
+        public void Criar_EditarProd()
         {
             double a, b;
+            MessageBox.Show(TxtBoxCodBarras.Text);
+            MessageBox.Show(TxtBoxCusto.Text);
+            MessageBox.Show(TxtBoxNome.Text);
+            MessageBox.Show(TxtBoxValor.Text);
             if (TxtBoxCodBarras.Text == "" | TxtBoxCusto.Text == "" | TxtBoxNome.Text == "" | TxtBoxValor.Text == "")
                 MessageBox.Show("Por favor, preencha todos os campos!");
             else if (double.TryParse(TxtBoxCusto.Text.Trim(), out a) && (double.TryParse(TxtBoxValor.Text.Trim(), out b)))
@@ -93,17 +113,11 @@ namespace WindowsFormsApp2.Estoque.View
                         checkbox,
                         codigoProd);
 
-
                 }
             }
             else
                 MessageBox.Show("Valores não permitidos");
-
         }
 
-        private void BtCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

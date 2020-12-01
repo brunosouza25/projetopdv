@@ -30,17 +30,17 @@
         {
             this.painel_CriarProd = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.PainelPrincipal = new System.Windows.Forms.Panel();
-            this.BtnTributacao = new System.Windows.Forms.Button();
-            this.BtnGeral = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnTributacao = new System.Windows.Forms.Button();
+            this.BtnGeral = new System.Windows.Forms.Button();
+            this.PainelPrincipal = new System.Windows.Forms.Panel();
             this.painel_CriarProd.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // painel_CriarProd
@@ -64,48 +64,11 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.230769F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.76923F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.21857F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.78143F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(573, 585);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.BtnTributacao);
-            this.panel1.Controls.Add(this.BtnGeral);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(567, 41);
-            this.panel1.TabIndex = 0;
-            // 
-            // PainelPrincipal
-            // 
-            this.PainelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PainelPrincipal.Location = new System.Drawing.Point(3, 50);
-            this.PainelPrincipal.Name = "PainelPrincipal";
-            this.PainelPrincipal.Size = new System.Drawing.Size(567, 464);
-            this.PainelPrincipal.TabIndex = 1;
-            // 
-            // BtnTributacao
-            // 
-            this.BtnTributacao.Location = new System.Drawing.Point(105, 0);
-            this.BtnTributacao.Name = "BtnTributacao";
-            this.BtnTributacao.Size = new System.Drawing.Size(98, 47);
-            this.BtnTributacao.TabIndex = 15;
-            this.BtnTributacao.Text = "Tributação";
-            this.BtnTributacao.UseVisualStyleBackColor = true;
-            // 
-            // BtnGeral
-            // 
-            this.BtnGeral.Location = new System.Drawing.Point(1, 0);
-            this.BtnGeral.Name = "BtnGeral";
-            this.BtnGeral.Size = new System.Drawing.Size(98, 47);
-            this.BtnGeral.TabIndex = 14;
-            this.BtnGeral.Text = "Geral";
-            this.BtnGeral.UseVisualStyleBackColor = true;
-            this.BtnGeral.Click += new System.EventHandler(this.BtnGeral_Click);
             // 
             // panel2
             // 
@@ -136,6 +99,43 @@
             this.BtnSalvar.UseVisualStyleBackColor = true;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.BtnTributacao);
+            this.panel1.Controls.Add(this.BtnGeral);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(567, 52);
+            this.panel1.TabIndex = 0;
+            // 
+            // BtnTributacao
+            // 
+            this.BtnTributacao.Location = new System.Drawing.Point(105, 2);
+            this.BtnTributacao.Name = "BtnTributacao";
+            this.BtnTributacao.Size = new System.Drawing.Size(98, 47);
+            this.BtnTributacao.TabIndex = 15;
+            this.BtnTributacao.Text = "Tributação";
+            this.BtnTributacao.UseVisualStyleBackColor = true;
+            // 
+            // BtnGeral
+            // 
+            this.BtnGeral.Location = new System.Drawing.Point(1, 2);
+            this.BtnGeral.Name = "BtnGeral";
+            this.BtnGeral.Size = new System.Drawing.Size(98, 47);
+            this.BtnGeral.TabIndex = 14;
+            this.BtnGeral.Text = "Geral";
+            this.BtnGeral.UseVisualStyleBackColor = true;
+            this.BtnGeral.Click += new System.EventHandler(this.BtnGeral_Click);
+            // 
+            // PainelPrincipal
+            // 
+            this.PainelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PainelPrincipal.Location = new System.Drawing.Point(3, 61);
+            this.PainelPrincipal.Name = "PainelPrincipal";
+            this.PainelPrincipal.Size = new System.Drawing.Size(567, 453);
+            this.PainelPrincipal.TabIndex = 1;
+            // 
             // TelaCriarProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,8 +146,8 @@
             this.Text = "Criar Produto";
             this.painel_CriarProd.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

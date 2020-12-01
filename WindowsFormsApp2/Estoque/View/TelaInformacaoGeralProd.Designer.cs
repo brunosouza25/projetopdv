@@ -31,6 +31,7 @@ namespace WindowsFormsApp2.Estoque.View
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.painel_CriarProd = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblInativo = new System.Windows.Forms.Label();
             this.ckboxInativo = new System.Windows.Forms.CheckBox();
             this.TxtBoxCodBarras = new System.Windows.Forms.TextBox();
@@ -41,9 +42,6 @@ namespace WindowsFormsApp2.Estoque.View
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBoxNome = new System.Windows.Forms.TextBox();
             this.LabNomeProd = new System.Windows.Forms.Label();
-            this.BtCriar = new System.Windows.Forms.Button();
-            this.BtCancelar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.painel_CriarProd.SuspendLayout();
             this.SuspendLayout();
@@ -59,11 +57,10 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             // painel_CriarProd
             // 
-            this.painel_CriarProd.BackColor = System.Drawing.SystemColors.Highlight;
+            this.painel_CriarProd.BackColor = System.Drawing.SystemColors.Control;
             this.painel_CriarProd.Controls.Add(this.label4);
             this.painel_CriarProd.Controls.Add(this.lblInativo);
             this.painel_CriarProd.Controls.Add(this.ckboxInativo);
-            this.painel_CriarProd.Controls.Add(this.BtCancelar);
             this.painel_CriarProd.Controls.Add(this.TxtBoxCodBarras);
             this.painel_CriarProd.Controls.Add(this.label3);
             this.painel_CriarProd.Controls.Add(this.TxtBoxValor);
@@ -72,12 +69,21 @@ namespace WindowsFormsApp2.Estoque.View
             this.painel_CriarProd.Controls.Add(this.label1);
             this.painel_CriarProd.Controls.Add(this.TxtBoxNome);
             this.painel_CriarProd.Controls.Add(this.LabNomeProd);
-            this.painel_CriarProd.Controls.Add(this.BtCriar);
             this.painel_CriarProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painel_CriarProd.Location = new System.Drawing.Point(0, 0);
             this.painel_CriarProd.Name = "painel_CriarProd";
             this.painel_CriarProd.Size = new System.Drawing.Size(561, 538);
             this.painel_CriarProd.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(231, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 31);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Geral";
             // 
             // lblInativo
             // 
@@ -92,7 +98,7 @@ namespace WindowsFormsApp2.Estoque.View
             // ckboxInativo
             // 
             this.ckboxInativo.AutoSize = true;
-            this.ckboxInativo.Location = new System.Drawing.Point(408, 355);
+            this.ckboxInativo.Location = new System.Drawing.Point(417, 349);
             this.ckboxInativo.Name = "ckboxInativo";
             this.ckboxInativo.Size = new System.Drawing.Size(15, 14);
             this.ckboxInativo.TabIndex = 10;
@@ -166,36 +172,6 @@ namespace WindowsFormsApp2.Estoque.View
             this.LabNomeProd.TabIndex = 1;
             this.LabNomeProd.Text = "Nome do Produto:";
             // 
-            // BtCriar
-            // 
-            this.BtCriar.Location = new System.Drawing.Point(118, 394);
-            this.BtCriar.Name = "BtCriar";
-            this.BtCriar.Size = new System.Drawing.Size(98, 47);
-            this.BtCriar.TabIndex = 7;
-            this.BtCriar.Text = "Criar";
-            this.BtCriar.UseVisualStyleBackColor = true;
-            this.BtCriar.Click += new System.EventHandler(this.BtCriar_Click);
-            // 
-            // BtCancelar
-            // 
-            this.BtCancelar.Location = new System.Drawing.Point(339, 394);
-            this.BtCancelar.Name = "BtCancelar";
-            this.BtCancelar.Size = new System.Drawing.Size(98, 47);
-            this.BtCancelar.TabIndex = 9;
-            this.BtCancelar.Text = "Cancelar";
-            this.BtCancelar.UseVisualStyleBackColor = true;
-            this.BtCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(231, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 31);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Geral";
-            // 
             // TelaInformacaoGeralProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,8 +200,6 @@ namespace WindowsFormsApp2.Estoque.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtBoxNome;
         private System.Windows.Forms.Label LabNomeProd;
-        private System.Windows.Forms.Button BtCancelar;
-        private System.Windows.Forms.Button BtCriar;
         private System.Windows.Forms.Label label4;
     }
 }

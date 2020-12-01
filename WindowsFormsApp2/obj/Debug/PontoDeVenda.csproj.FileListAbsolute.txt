@@ -190,3 +190,5 @@ C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\itextsharp.xml
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe.manifest
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.application
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CopyComplete
+C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaInformacaoGeralProd.resources
+C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaTributacaoProd.resources
