@@ -22,7 +22,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.tipo = tipo;
             BtnSalvar.Text = "Criar";
-            TelaInformacaoGeralProd TelaGeral = new TelaInformacaoGeralProd();
+
             PainelPrincipal.Controls.Add(TelaGeral);
             TelaGeral.criarProd(tipo);
         }

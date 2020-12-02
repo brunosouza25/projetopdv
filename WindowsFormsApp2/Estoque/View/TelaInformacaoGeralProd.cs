@@ -74,7 +74,9 @@ namespace WindowsFormsApp2.Estoque.View
         public void Criar_EditarProd()
         {
             double a, b;
-            MessageBox.Show(TxtBoxCodBarras.Text);
+
+            MessageBox.Show(Convert.ToString(TxtBoxCodBarras.Text));
+           
             MessageBox.Show(TxtBoxCusto.Text);
             MessageBox.Show(TxtBoxNome.Text);
             MessageBox.Show(TxtBoxValor.Text);
