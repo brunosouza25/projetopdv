@@ -46,9 +46,20 @@ CREATE TABLE Produto (
     prodCusto FLOAT,
     prodQuantidade INT,
     prodCodBarras VARCHAR(13),
-	prodEstado tinyint
-
+	prodEstado tinyint,
+	prodFiscal BIT,
+	pPis FLOAT,
+	pCofins FLOAT
 );
+
+CREATE TABLE FiscalProduto(
+	idProduto INT,
+	pis VARCHAR (300),
+	cofins VARCHAR (300),
+	ncm VARCHAR(300),
+	icms VARCHAR(300),
+
+)
 
 CREATE TABLE Caixa (
     idCaixa INT PRIMARY KEY IDENTITY (1,1),
@@ -173,7 +184,12 @@ CREATE TABLE Config_Sistema(
 	a_Bloquear TINYINT,
 	bloqueado TINYINT,
 	senha VARCHAR(20),
-	dataUltimoBloqueio DATE
+	dataUltimoBloqueio DATE,
+	cnpjEmpresa VARCHAR(14),
+	inscricaoEstadual VARCHAR(12),
+	cnpjSoftwareHouse VARCHAR(14),
+	assinaturaAC VARCHAR(344),
+	senhaSat varchar(32)
 );
 
 CREATE TABLE Endereco(
