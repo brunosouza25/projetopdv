@@ -52,14 +52,6 @@ CREATE TABLE Produto (
 	pCofins FLOAT
 );
 
-CREATE TABLE FiscalProduto(
-	idProduto INT,
-	pis VARCHAR (300),
-	cofins VARCHAR (300),
-	ncm VARCHAR(300),
-	icms VARCHAR(300),
-
-)
 
 CREATE TABLE Caixa (
     idCaixa INT PRIMARY KEY IDENTITY (1,1),
@@ -188,8 +180,9 @@ CREATE TABLE Config_Sistema(
 	cnpjEmpresa VARCHAR(14),
 	inscricaoEstadual VARCHAR(12),
 	cnpjSoftwareHouse VARCHAR(14),
-	assinaturaAC VARCHAR(344),
-	senhaSat varchar(32)
+	senhaSat varchar(32),
+	assinaturaAC VARCHAR(344)
+
 );
 
 CREATE TABLE Endereco(
@@ -233,7 +226,7 @@ INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 
-INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020')
+INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', '11111111111111','111111111111', '11111111111111','12345678','KjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisKjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisKjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisasdasdasdasdasdsa')
 
 
 INSERT INTO Cargo VALUES ('Nenhum', 0,0)
