@@ -1,6 +1,6 @@
 CREATE TABLE icms(
 	id INT,
-	descricao VARCHAR(100)
+	descricao VARCHAR(80)
 
 )
 

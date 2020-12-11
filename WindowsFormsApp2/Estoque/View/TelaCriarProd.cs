@@ -15,7 +15,8 @@ namespace WindowsFormsApp2
         string quantidade;
         private Produto prod = new Produto();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
-        TelaInformacaoGeralProd TelaGeral = new TelaInformacaoGeralProd();
+        TelaInformacaoGeralProd telaGeral = new TelaInformacaoGeralProd();
+        TelaTributacaoProd telaTributacao = new TelaTributacaoProd();
 
         public TelaCriarProd(Boolean tipo)
         {
@@ -23,8 +24,10 @@ namespace WindowsFormsApp2
             this.tipo = tipo;
             BtnSalvar.Text = "Criar";
 
-            PainelPrincipal.Controls.Add(TelaGeral);
-            TelaGeral.criarProd(tipo);
+            PainelPrincipal.Controls.Add(telaGeral);
+            telaTributacao.Visible = false;
+            PainelPrincipal.Controls.Add(telaTributacao);
+            telaGeral.criarProd(tipo);
         }
         public TelaCriarProd(Boolean tipo, int codigoProd)
         {
@@ -32,21 +35,33 @@ namespace WindowsFormsApp2
             this.tipo = tipo;
             this.codigoProd = codigoProd;
             BtnSalvar.Text = "Alterar";
-            PainelPrincipal.Controls.Add(TelaGeral);
-            TelaGeral.criarProd(tipo);
+            PainelPrincipal.Controls.Add(telaTributacao);
+            telaTributacao.Visible = false;
+            PainelPrincipal.Controls.Add(telaGeral);
+            telaGeral.criarProd(tipo);
         }
 
         
 
         private void BtnGeral_Click(object sender, EventArgs e)
         {
-
+            telaTributacao.Visible = false;
+            telaGeral.Visible = true;
+            
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            TelaGeral.Criar_EditarProd();
+            
+            telaGeral.Criar_EditarProd();
             Close();
+        }
+
+        private void BtnTributacao_Click(object sender, EventArgs e)
+        {
+            telaGeral.Visible = false;
+            telaTributacao.Visible = true;
+
         }
     }
 }

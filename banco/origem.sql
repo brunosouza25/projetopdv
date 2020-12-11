@@ -1,6 +1,6 @@
 CREATE TABLE origem(
 	id INT,
-	descricao VARCHAR(100)
+	descricao VARCHAR(190)
 )
 
 INSERT INTO origem 	VALUES
@@ -13,6 +13,4 @@ INSERT INTO origem 	VALUES
 (6, 'Estrangeira - Importação direta, sem similar nacional, constante em lista de Resolução CAMEX e gás natural'),
 (7, 'Estrangeira - Adquirida no mercado interno, sem similar nacional, constante em lista de Resolução CAMEX e gás natura'),
 (8, 'Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70% (setenta por cento)')
-
-
 

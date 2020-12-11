@@ -16,5 +16,6 @@ namespace WindowsFormsApp2.Estoque.View
         {
             InitializeComponent();
         }
+        
     }
 }

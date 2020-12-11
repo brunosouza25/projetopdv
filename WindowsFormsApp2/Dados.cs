@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace WindowsFormsApp2.DadosTableAdapters {
+    
+    
+    public partial class ProdutoTableAdapter {
+    }
+}

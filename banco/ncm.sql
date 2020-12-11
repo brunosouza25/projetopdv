@@ -1,9 +1,10 @@
 CREATE TABLE ncm(
 	cest VARCHAR(10),
 	ncm VARCHAR(10),
-	descricao VARCHAR(400)
+	descricao VARCHAR(520)
 	
 )
+
 
 INSERT INTO ncm (CEST, NCM, DESCRICAO) VALUES ('0100100', '38151210', 'Catalisadores em colmeia cerâmica ou metálica para conversão catalítica de gases de escape de veículos e outros catalisadores');
 INSERT INTO ncm (CEST, NCM, DESCRICAO) VALUES ('0100100', '38151290', 'Catalisadores em colmeia cerâmica ou metálica para conversão catalítica de gases de escape de veículos e outros catalisadores');

@@ -117,6 +117,7 @@
             this.BtnTributacao.TabIndex = 15;
             this.BtnTributacao.Text = "Tributação";
             this.BtnTributacao.UseVisualStyleBackColor = true;
+            this.BtnTributacao.Click += new System.EventHandler(this.BtnTributacao_Click);
             // 
             // BtnGeral
             // 

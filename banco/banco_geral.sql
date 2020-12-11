@@ -47,9 +47,15 @@ CREATE TABLE Produto (
     prodQuantidade INT,
     prodCodBarras VARCHAR(13),
 	prodEstado tinyint,
-	prodFiscal BIT,
 	pPis FLOAT,
-	pCofins FLOAT
+	pCofins FLOAT,
+	idPis INT,
+	idCofins INT,
+	idCfop varchar(4),
+	idCsosn INT,
+	idCst INT,
+	idNcm varchar(10),
+	idOrigem INT
 );
 
 

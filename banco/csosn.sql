@@ -1,5 +1,5 @@
 CREATE TABLE csosn(
-  id INT
+  id INT,
   descricao varchar(128),
 )
 
@@ -18,3 +18,4 @@ ICMS por substituição tributária'),
 (500, 'ICMS cobrado anteriormente por substituição tributária (substituído) ou por
 antecipação'),
 (900, 'Outros');
+
