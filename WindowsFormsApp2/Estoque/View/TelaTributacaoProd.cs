@@ -12,10 +12,15 @@ namespace WindowsFormsApp2.Estoque.View
 {
     public partial class TelaTributacaoProd : UserControl
     {
+        DadosTableAdapters.ProdutoTableAdapter produtos = new DadosTableAdapters.ProdutoTableAdapter();
         public TelaTributacaoProd()
         {
             InitializeComponent();
         }
-        
+        public void Criar_EditarProdTributacao()
+        {
+            double a, b;
+
+        }
     }
 }

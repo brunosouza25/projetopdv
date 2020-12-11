@@ -54,7 +54,8 @@ CREATE TABLE Produto (
 	idCfop varchar(4),
 	idCsosn INT,
 	idCst INT,
-	idNcm varchar(10),
+	ncm varchar(10),
+	cest VARCHAR (10),
 	idOrigem INT
 );
 
