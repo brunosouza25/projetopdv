@@ -20,6 +20,7 @@ namespace WindowsFormsApp2
 
         public TelaCriarProd(Boolean tipo)
         {
+
             InitializeComponent();
             this.tipo = tipo;
             BtnSalvar.Text = "Criar";
@@ -31,6 +32,7 @@ namespace WindowsFormsApp2
         }
         public TelaCriarProd(Boolean tipo, int codigoProd)
         {
+
             InitializeComponent();
             this.tipo = tipo;
             this.codigoProd = codigoProd;
@@ -38,7 +40,7 @@ namespace WindowsFormsApp2
             PainelPrincipal.Controls.Add(telaTributacao);
             telaTributacao.Visible = false;
             PainelPrincipal.Controls.Add(telaGeral);
-            telaGeral.criarProd(tipo);
+            telaGeral.editarProd(tipo, codigoProd);
         }
 
         
@@ -54,6 +56,14 @@ namespace WindowsFormsApp2
         {
             
             telaGeral.Criar_EditarProd();
+            if (tipo)
+            {
+                telaTributacao.Criar_EditarProdTributacao(true, 0);
+            }
+            else
+            {
+                telaTributacao.Criar_EditarProdTributacao(false, codigoProd);
+            }
             Close();
         }
 

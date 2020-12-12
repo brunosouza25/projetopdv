@@ -13,20 +13,19 @@ namespace WindowsFormsApp2.Estoque.View
     public partial class TelaTributacaoProd : UserControl
     {
         DadosTableAdapters.ProdutoTableAdapter produtos = new DadosTableAdapters.ProdutoTableAdapter();
+        bool tipo = false;
+        int idProduto;
+
         public TelaTributacaoProd()
         {
             InitializeComponent();
         }
-        public void Criar_EditarProdTributacao()
+        public void Criar_EditarProdTributacao(bool tipo, int codigoProduto)
         {
-            var auxIdProd = produtos.retornarUltimoIdProduto();
-            int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
-            
-
             double pPis, pCofins;
             int pis, cofins, icms, ncm, cest, origem, cfop, cst, csosn;
 
-            if (mTxtPPis.Text.Trim() == "")
+            if (mTxtPPis.Text.Trim() == "" || mTxtPPis.Text.Trim() == ",")
             {
                 pPis = 0;
             }
@@ -37,7 +36,7 @@ namespace WindowsFormsApp2.Estoque.View
 
 
 
-            if (mTxtPCofins.Text.Trim() == "")
+            if (mTxtPCofins.Text.Trim() == "" || mTxtPCofins.Text.Trim() == ",")
             {
                 pCofins = 0;
             }
@@ -64,7 +63,8 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                cofins = Convert.ToInt32(mTxtPis.Text);
+
+                cofins = Convert.ToInt32(mTxtCofins.Text);
             }
 
 
@@ -145,9 +145,16 @@ namespace WindowsFormsApp2.Estoque.View
                 csosn = Convert.ToInt32(mTxtCsosn.Text);
             }
 
-
-            produtos.inserirDadosTributacao(pPis, pCofins, pis, cofins,  csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop);
-
+            if (tipo)
+            {
+                var auxIdProd = produtos.retornarUltimoIdProduto();
+                int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
+                produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, idProd);
+            }
+            else
+            {
+                produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, codigoProduto);
+            }
             /*
         private void carregarTela()
         {
