@@ -13,6 +13,13 @@ namespace WindowsFormsApp2.Estoque.View
     public partial class TelaTributacaoProd : UserControl
     {
         DadosTableAdapters.ProdutoTableAdapter produtos = new DadosTableAdapters.ProdutoTableAdapter();
+        DadosTableAdapters.Pis_CofinsTableAdapter pis_cofins = new DadosTableAdapters.Pis_CofinsTableAdapter();
+        DadosTableAdapters.IcmsTableAdapter icms = new DadosTableAdapters.IcmsTableAdapter();
+        DadosTableAdapters.NcmTableAdapter ncm = new DadosTableAdapters.NcmTableAdapter(); //cest está junto do ncm
+        DadosTableAdapters.OrigemTableAdapter origem = new DadosTableAdapters.OrigemTableAdapter();
+        DadosTableAdapters.CfopTableAdapter cfop = new DadosTableAdapters.CfopTableAdapter();
+        DadosTableAdapters.CstTableAdapter cst = new DadosTableAdapters.CstTableAdapter();
+        DadosTableAdapters.CsosnTableAdapter csosn = new DadosTableAdapters.CsosnTableAdapter();
         bool tipo = false;
         int idProduto;
 
@@ -168,6 +175,120 @@ namespace WindowsFormsApp2.Estoque.View
             ckboxInativo.Checked = Convert.ToBoolean(varProd[0]["prodEstado"]);
 
         }*/
+        }
+        public void carregarTela(int codigoProduto)
+        {
+            this.idProduto = int codigoProduto;
+            var auxProd = produtos.retornarProdutoPorId(codigoProduto);
+            mTxtOrigem.Text(auxProd[0]["idOrigem"].ToString());
+            mTxtOrigem.
+
+        }
+
+        public void carregarPis_Cofins()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int idPis = Convert.ToInt32(auxProd[0]["idPis"]);
+            var auxPis = pis_cofins.retornarPis_CofinsPorId(idPis);
+            if(auxPis.Count < 1)
+            {
+                lblPis.Text = "Nenhum Pis selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxPis[0]["idPis"].ToString().Substring(0, 20);
+            }
+            
+        }
+        public void carregarIcms()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int auxPis = Convert.ToInt32(auxProd[0]["idIcms"]);
+
+            if (auxPis == -1)
+            {
+                lblPis.Text = "Nenhum Pis selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxProd[0]["idIcms"].ToString();
+            }
+
+        }
+
+        public void carregarNcm_Cest()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            string auxNcm = auxProd[0]["Ncm"].ToString();
+            string auxCest = auxProd[0]["Cest"].ToString();
+
+            if (auxNcm == "" || auxCest == "")
+            {
+                lblPis.Text = "Nenhum Ncm selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxProd[0]["Pis"].ToString();
+            }
+
+        }
+
+        public void carregarOrigem()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
+            if (auxPis == -1)
+            {
+                lblPis.Text = "Nenhum Pis selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxProd[0]["Pis"].ToString();
+            }
+
+        }
+
+        public void carregarCfop()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
+            if (auxPis == -1)
+            {
+                lblPis.Text = "Nenhum Pis selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxProd[0]["Pis"].ToString();
+            }
+
+        }
+        public void carregarCSt()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
+            if (auxPis == -1)
+            {
+                lblPis.Text = "Nenhum Pis selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxProd[0]["Pis"].ToString();
+            }
+
+        }
+        public void carregarCsosn()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
+            if (auxPis == -1)
+            {
+                lblPis.Text = "Nenhum Pis selecionado";
+            }
+            else
+            {
+                lblPis.Text = auxProd[0]["Pis"].ToString();
+            }
+
         }
     }
 }
