@@ -26,5 +26,7 @@ namespace WindowsFormsApp2
         public string cnpjEmpresa { get; set; }
 		public string cnpjSoftwareHouse { get; set; }
 		public string inscricaoEstadual { get; set; }
-	}
+
+        public static bool mei { get; set; }
+    }
 }

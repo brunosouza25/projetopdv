@@ -30,65 +30,78 @@ namespace WindowsFormsApp2.Estoque.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textCofinsP = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textPisP = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textCsons = new System.Windows.Forms.TextBox();
-            this.textCst = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textNcm = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textCfop = new System.Windows.Forms.TextBox();
-            this.textOrigem = new System.Windows.Forms.TextBox();
+            this.labelOrigem = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TxtPis = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.LabCofins = new System.Windows.Forms.Label();
-            this.TxtIcms = new System.Windows.Forms.TextBox();
-            this.TxtCofins = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblPis = new System.Windows.Forms.Label();
+            this.lblCofins = new System.Windows.Forms.Label();
+            this.lblIcms = new System.Windows.Forms.Label();
+            this.lblNcm = new System.Windows.Forms.Label();
+            this.lblOrigem = new System.Windows.Forms.Label();
+            this.lblCfop = new System.Windows.Forms.Label();
+            this.lblCst = new System.Windows.Forms.Label();
+            this.lblCsosn = new System.Windows.Forms.Label();
+            this.mTxtPis = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtCofins = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtIcms = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtNcm = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtCest = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mTxtOrigem = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtPPis = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtPCofins = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtCfop = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtCst = new System.Windows.Forms.MaskedTextBox();
+            this.mTxtCsosn = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textCofinsP);
+            this.panel1.Controls.Add(this.mTxtCsosn);
+            this.panel1.Controls.Add(this.mTxtCst);
+            this.panel1.Controls.Add(this.mTxtCfop);
+            this.panel1.Controls.Add(this.mTxtPCofins);
+            this.panel1.Controls.Add(this.mTxtPPis);
+            this.panel1.Controls.Add(this.mTxtOrigem);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.mTxtCest);
+            this.panel1.Controls.Add(this.mTxtNcm);
+            this.panel1.Controls.Add(this.mTxtIcms);
+            this.panel1.Controls.Add(this.mTxtCofins);
+            this.panel1.Controls.Add(this.mTxtPis);
+            this.panel1.Controls.Add(this.lblCsosn);
+            this.panel1.Controls.Add(this.lblCst);
+            this.panel1.Controls.Add(this.lblCfop);
+            this.panel1.Controls.Add(this.lblOrigem);
+            this.panel1.Controls.Add(this.lblNcm);
+            this.panel1.Controls.Add(this.lblIcms);
+            this.panel1.Controls.Add(this.lblCofins);
+            this.panel1.Controls.Add(this.lblPis);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textPisP);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textCsons);
-            this.panel1.Controls.Add(this.textCst);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textNcm);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textCfop);
-            this.panel1.Controls.Add(this.textOrigem);
+            this.panel1.Controls.Add(this.labelOrigem);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TxtPis);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.LabCofins);
-            this.panel1.Controls.Add(this.TxtIcms);
-            this.panel1.Controls.Add(this.TxtCofins);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(674, 528);
+            this.panel1.Size = new System.Drawing.Size(676, 519);
             this.panel1.TabIndex = 0;
-            // 
-            // textCofinsP
-            // 
-            this.textCofinsP.Location = new System.Drawing.Point(557, 142);
-            this.textCofinsP.Name = "textCofinsP";
-            this.textCofinsP.Size = new System.Drawing.Size(75, 20);
-            this.textCofinsP.TabIndex = 27;
             // 
             // label10
             // 
@@ -99,13 +112,6 @@ namespace WindowsFormsApp2.Estoque.View
             this.label10.Size = new System.Drawing.Size(199, 25);
             this.label10.TabIndex = 28;
             this.label10.Text = "Aliquota Cofins %";
-            // 
-            // textPisP
-            // 
-            this.textPisP.Location = new System.Drawing.Point(557, 106);
-            this.textPisP.Name = "textPisP";
-            this.textPisP.Size = new System.Drawing.Size(75, 20);
-            this.textPisP.TabIndex = 25;
             // 
             // label9
             // 
@@ -121,82 +127,47 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 319);
+            this.label7.Location = new System.Drawing.Point(352, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 25);
             this.label7.TabIndex = 21;
             this.label7.Text = "CST";
             // 
-            // textCsons
-            // 
-            this.textCsons.Location = new System.Drawing.Point(186, 364);
-            this.textCsons.Name = "textCsons";
-            this.textCsons.Size = new System.Drawing.Size(128, 20);
-            this.textCsons.TabIndex = 24;
-            // 
-            // textCst
-            // 
-            this.textCst.Location = new System.Drawing.Point(186, 326);
-            this.textCst.Name = "textCst";
-            this.textCst.Size = new System.Drawing.Size(128, 20);
-            this.textCst.TabIndex = 22;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 357);
+            this.label8.Location = new System.Drawing.Point(352, 390);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 25);
             this.label8.TabIndex = 23;
-            this.label8.Text = "CSONS";
-            // 
-            // textNcm
-            // 
-            this.textNcm.Location = new System.Drawing.Point(186, 210);
-            this.textNcm.Name = "textNcm";
-            this.textNcm.Size = new System.Drawing.Size(128, 20);
-            this.textNcm.TabIndex = 15;
+            this.label8.Text = "CSOSN";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 205);
+            this.label4.Location = new System.Drawing.Point(30, 316);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 25);
             this.label4.TabIndex = 20;
             this.label4.Text = "NCM";
             // 
-            // label5
+            // labelOrigem
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(30, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 25);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Origem";
-            // 
-            // textCfop
-            // 
-            this.textCfop.Location = new System.Drawing.Point(186, 285);
-            this.textCfop.Name = "textCfop";
-            this.textCfop.Size = new System.Drawing.Size(128, 20);
-            this.textCfop.TabIndex = 19;
-            // 
-            // textOrigem
-            // 
-            this.textOrigem.Location = new System.Drawing.Point(186, 247);
-            this.textOrigem.Name = "textOrigem";
-            this.textOrigem.Size = new System.Drawing.Size(128, 20);
-            this.textOrigem.TabIndex = 17;
+            this.labelOrigem.AutoSize = true;
+            this.labelOrigem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrigem.Location = new System.Drawing.Point(30, 414);
+            this.labelOrigem.Name = "labelOrigem";
+            this.labelOrigem.Size = new System.Drawing.Size(87, 25);
+            this.labelOrigem.TabIndex = 16;
+            this.labelOrigem.Text = "Origem";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 278);
+            this.label6.Location = new System.Drawing.Point(352, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 25);
             this.label6.TabIndex = 18;
@@ -206,18 +177,11 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(155, 18);
+            this.label2.Location = new System.Drawing.Point(256, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 31);
             this.label2.TabIndex = 14;
             this.label2.Text = "Tributação";
-            // 
-            // TxtPis
-            // 
-            this.TxtPis.Location = new System.Drawing.Point(186, 100);
-            this.TxtPis.Name = "TxtPis";
-            this.TxtPis.Size = new System.Drawing.Size(128, 20);
-            this.TxtPis.TabIndex = 8;
             // 
             // label3
             // 
@@ -233,35 +197,210 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             this.LabCofins.AutoSize = true;
             this.LabCofins.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabCofins.Location = new System.Drawing.Point(30, 130);
+            this.LabCofins.Location = new System.Drawing.Point(30, 162);
             this.LabCofins.Name = "LabCofins";
             this.LabCofins.Size = new System.Drawing.Size(79, 25);
             this.LabCofins.TabIndex = 9;
             this.LabCofins.Text = "Cofins";
             // 
-            // TxtIcms
-            // 
-            this.TxtIcms.Location = new System.Drawing.Point(186, 175);
-            this.TxtIcms.Name = "TxtIcms";
-            this.TxtIcms.Size = new System.Drawing.Size(128, 20);
-            this.TxtIcms.TabIndex = 12;
-            // 
-            // TxtCofins
-            // 
-            this.TxtCofins.Location = new System.Drawing.Point(186, 137);
-            this.TxtCofins.Name = "TxtCofins";
-            this.TxtCofins.Size = new System.Drawing.Size(128, 20);
-            this.TxtCofins.TabIndex = 10;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 168);
+            this.label1.Location = new System.Drawing.Point(30, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "ICMS";
+            // 
+            // lblPis
+            // 
+            this.lblPis.AutoSize = true;
+            this.lblPis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPis.Location = new System.Drawing.Point(32, 130);
+            this.lblPis.Name = "lblPis";
+            this.lblPis.Size = new System.Drawing.Size(30, 20);
+            this.lblPis.TabIndex = 29;
+            this.lblPis.Text = "Pis";
+            // 
+            // lblCofins
+            // 
+            this.lblCofins.AutoSize = true;
+            this.lblCofins.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCofins.Location = new System.Drawing.Point(32, 202);
+            this.lblCofins.Name = "lblCofins";
+            this.lblCofins.Size = new System.Drawing.Size(54, 20);
+            this.lblCofins.TabIndex = 30;
+            this.lblCofins.Text = "Cofins";
+            // 
+            // lblIcms
+            // 
+            this.lblIcms.AutoSize = true;
+            this.lblIcms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIcms.Location = new System.Drawing.Point(31, 279);
+            this.lblIcms.Name = "lblIcms";
+            this.lblIcms.Size = new System.Drawing.Size(49, 20);
+            this.lblIcms.TabIndex = 31;
+            this.lblIcms.Text = "ICMS";
+            // 
+            // lblNcm
+            // 
+            this.lblNcm.AutoSize = true;
+            this.lblNcm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNcm.Location = new System.Drawing.Point(31, 366);
+            this.lblNcm.Name = "lblNcm";
+            this.lblNcm.Size = new System.Drawing.Size(44, 20);
+            this.lblNcm.TabIndex = 32;
+            this.lblNcm.Text = "NCM";
+            // 
+            // lblOrigem
+            // 
+            this.lblOrigem.AutoSize = true;
+            this.lblOrigem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrigem.Location = new System.Drawing.Point(32, 450);
+            this.lblOrigem.Name = "lblOrigem";
+            this.lblOrigem.Size = new System.Drawing.Size(60, 20);
+            this.lblOrigem.TabIndex = 33;
+            this.lblOrigem.Text = "Origem";
+            // 
+            // lblCfop
+            // 
+            this.lblCfop.AutoSize = true;
+            this.lblCfop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCfop.Location = new System.Drawing.Point(353, 279);
+            this.lblCfop.Name = "lblCfop";
+            this.lblCfop.Size = new System.Drawing.Size(43, 20);
+            this.lblCfop.TabIndex = 34;
+            this.lblCfop.Text = "Cfop";
+            // 
+            // lblCst
+            // 
+            this.lblCst.AutoSize = true;
+            this.lblCst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCst.Location = new System.Drawing.Point(353, 351);
+            this.lblCst.Name = "lblCst";
+            this.lblCst.Size = new System.Drawing.Size(40, 20);
+            this.lblCst.TabIndex = 35;
+            this.lblCst.Text = "CST";
+            // 
+            // lblCsosn
+            // 
+            this.lblCsosn.AutoSize = true;
+            this.lblCsosn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCsosn.Location = new System.Drawing.Point(356, 419);
+            this.lblCsosn.Name = "lblCsosn";
+            this.lblCsosn.Size = new System.Drawing.Size(65, 20);
+            this.lblCsosn.TabIndex = 36;
+            this.lblCsosn.Text = "CSOSN";
+            // 
+            // mTxtPis
+            // 
+            this.mTxtPis.Location = new System.Drawing.Point(186, 95);
+            this.mTxtPis.Mask = "00";
+            this.mTxtPis.Name = "mTxtPis";
+            this.mTxtPis.Size = new System.Drawing.Size(100, 20);
+            this.mTxtPis.TabIndex = 0;
+            this.mTxtPis.ValidatingType = typeof(int);
+            // 
+            // mTxtCofins
+            // 
+            this.mTxtCofins.Location = new System.Drawing.Point(186, 167);
+            this.mTxtCofins.Mask = "00";
+            this.mTxtCofins.Name = "mTxtCofins";
+            this.mTxtCofins.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCofins.TabIndex = 37;
+            this.mTxtCofins.ValidatingType = typeof(int);
+            // 
+            // mTxtIcms
+            // 
+            this.mTxtIcms.Location = new System.Drawing.Point(186, 244);
+            this.mTxtIcms.Mask = "00";
+            this.mTxtIcms.Name = "mTxtIcms";
+            this.mTxtIcms.Size = new System.Drawing.Size(100, 20);
+            this.mTxtIcms.TabIndex = 38;
+            this.mTxtIcms.ValidatingType = typeof(int);
+            // 
+            // mTxtNcm
+            // 
+            this.mTxtNcm.Location = new System.Drawing.Point(190, 317);
+            this.mTxtNcm.Mask = "0000000000";
+            this.mTxtNcm.Name = "mTxtNcm";
+            this.mTxtNcm.Size = new System.Drawing.Size(100, 20);
+            this.mTxtNcm.TabIndex = 39;
+            this.mTxtNcm.ValidatingType = typeof(int);
+            // 
+            // mTxtCest
+            // 
+            this.mTxtCest.Location = new System.Drawing.Point(190, 343);
+            this.mTxtCest.Mask = "0000000000";
+            this.mTxtCest.Name = "mTxtCest";
+            this.mTxtCest.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCest.TabIndex = 40;
+            this.mTxtCest.ValidatingType = typeof(int);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(30, 337);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 25);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Cest";
+            // 
+            // mTxtOrigem
+            // 
+            this.mTxtOrigem.Location = new System.Drawing.Point(186, 420);
+            this.mTxtOrigem.Mask = "0";
+            this.mTxtOrigem.Name = "mTxtOrigem";
+            this.mTxtOrigem.Size = new System.Drawing.Size(100, 20);
+            this.mTxtOrigem.TabIndex = 42;
+            this.mTxtOrigem.ValidatingType = typeof(int);
+            // 
+            // mTxtPPis
+            // 
+            this.mTxtPPis.Location = new System.Drawing.Point(557, 101);
+            this.mTxtPPis.Mask = "0.00";
+            this.mTxtPPis.Name = "mTxtPPis";
+            this.mTxtPPis.Size = new System.Drawing.Size(100, 20);
+            this.mTxtPPis.TabIndex = 43;
+            this.mTxtPPis.ValidatingType = typeof(int);
+            // 
+            // mTxtPCofins
+            // 
+            this.mTxtPCofins.Location = new System.Drawing.Point(557, 143);
+            this.mTxtPCofins.Mask = "0.00";
+            this.mTxtPCofins.Name = "mTxtPCofins";
+            this.mTxtPCofins.Size = new System.Drawing.Size(100, 20);
+            this.mTxtPCofins.TabIndex = 44;
+            this.mTxtPCofins.ValidatingType = typeof(int);
+            // 
+            // mTxtCfop
+            // 
+            this.mTxtCfop.Location = new System.Drawing.Point(502, 249);
+            this.mTxtCfop.Mask = "0000";
+            this.mTxtCfop.Name = "mTxtCfop";
+            this.mTxtCfop.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCfop.TabIndex = 45;
+            this.mTxtCfop.ValidatingType = typeof(int);
+            // 
+            // mTxtCst
+            // 
+            this.mTxtCst.Location = new System.Drawing.Point(502, 322);
+            this.mTxtCst.Mask = "00";
+            this.mTxtCst.Name = "mTxtCst";
+            this.mTxtCst.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCst.TabIndex = 46;
+            this.mTxtCst.ValidatingType = typeof(int);
+            // 
+            // mTxtCsosn
+            // 
+            this.mTxtCsosn.Location = new System.Drawing.Point(502, 396);
+            this.mTxtCsosn.Mask = "00";
+            this.mTxtCsosn.Name = "mTxtCsosn";
+            this.mTxtCsosn.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCsosn.TabIndex = 47;
+            this.mTxtCsosn.ValidatingType = typeof(int);
             // 
             // TelaTributacaoProd
             // 
@@ -269,7 +408,7 @@ namespace WindowsFormsApp2.Estoque.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "TelaTributacaoProd";
-            this.Size = new System.Drawing.Size(674, 528);
+            this.Size = new System.Drawing.Size(676, 519);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -280,25 +419,35 @@ namespace WindowsFormsApp2.Estoque.View
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtPis;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LabCofins;
-        private System.Windows.Forms.TextBox TxtIcms;
-        private System.Windows.Forms.TextBox TxtCofins;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textCofinsP;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textPisP;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textCsons;
-        private System.Windows.Forms.TextBox textCst;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textNcm;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textCfop;
-        private System.Windows.Forms.TextBox textOrigem;
+        private System.Windows.Forms.Label labelOrigem;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNcm;
+        private System.Windows.Forms.Label lblIcms;
+        private System.Windows.Forms.Label lblCofins;
+        private System.Windows.Forms.Label lblPis;
+        private System.Windows.Forms.Label lblCsosn;
+        private System.Windows.Forms.Label lblCst;
+        private System.Windows.Forms.Label lblCfop;
+        private System.Windows.Forms.Label lblOrigem;
+        private System.Windows.Forms.MaskedTextBox mTxtCsosn;
+        private System.Windows.Forms.MaskedTextBox mTxtCst;
+        private System.Windows.Forms.MaskedTextBox mTxtCfop;
+        private System.Windows.Forms.MaskedTextBox mTxtPCofins;
+        private System.Windows.Forms.MaskedTextBox mTxtPPis;
+        private System.Windows.Forms.MaskedTextBox mTxtOrigem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox mTxtCest;
+        private System.Windows.Forms.MaskedTextBox mTxtNcm;
+        private System.Windows.Forms.MaskedTextBox mTxtIcms;
+        private System.Windows.Forms.MaskedTextBox mTxtCofins;
+        private System.Windows.Forms.MaskedTextBox mTxtPis;
     }
 }

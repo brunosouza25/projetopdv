@@ -1,5 +1,5 @@
 CREATE  TABLE Cfop (
-  id varchar(5),
+  id int,
   desc_cfop VARCHAR(500) ,
 )
 
@@ -463,5 +463,5 @@ INSERT INTO Cfop (id, desc_cfop) VALUES (7501, 'Exportação de mercadorias recebi
 INSERT INTO Cfop (id, desc_cfop) VALUES (7551, 'Venda de bem do ativo imobilizado');
 INSERT INTO Cfop (id, desc_cfop) VALUES (7553, 'Devolução de compra de bem para o ativo imobilizado');
 INSERT INTO Cfop (id, desc_cfop) VALUES (7556, 'Devolução de compra de material de uso ou consumo');
-INSERT INTO Cfop (id, desc_cfop) VALUES (7.930, 'Lançamento efetuado a título de devolução de bem cuja entrada tenha ocorrido sob amparo de regime especial aduaneiro de admissão temporária');
+INSERT INTO Cfop (id, desc_cfop) VALUES (7930, 'Lançamento efetuado a título de devolução de bem cuja entrada tenha ocorrido sob amparo de regime especial aduaneiro de admissão temporária');
 INSERT INTO Cfop (id, desc_cfop) VALUES (7949, 'Outra saída de mercadoria ou prestação de serviço não especificado');

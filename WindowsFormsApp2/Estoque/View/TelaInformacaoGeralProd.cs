@@ -75,11 +75,6 @@ namespace WindowsFormsApp2.Estoque.View
         {
             double a, b;
 
-            MessageBox.Show(Convert.ToString(TxtBoxCodBarras.Text));
-           
-            MessageBox.Show(TxtBoxCusto.Text);
-            MessageBox.Show(TxtBoxNome.Text);
-            MessageBox.Show(TxtBoxValor.Text);
             if (TxtBoxCodBarras.Text == "" | TxtBoxCusto.Text == "" | TxtBoxNome.Text == "" | TxtBoxValor.Text == "")
                 MessageBox.Show("Por favor, preencha todos os campos!");
             else if (double.TryParse(TxtBoxCusto.Text.Trim(), out a) && (double.TryParse(TxtBoxValor.Text.Trim(), out b)))
