@@ -178,14 +178,14 @@ namespace WindowsFormsApp2.Estoque.View
         }
         public void carregarTela(int codigoProduto)
         {
-            this.idProduto = int codigoProduto;
+            this.idProduto = codigoProduto;
             var auxProd = produtos.retornarProdutoPorId(codigoProduto);
             mTxtOrigem.Text(auxProd[0]["idOrigem"].ToString());
             mTxtOrigem.
 
         }
 
-        public void carregarPis_Cofins()
+        public void carregarPis()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
             int idPis = Convert.ToInt32(auxProd[0]["idPis"]);
@@ -200,18 +200,35 @@ namespace WindowsFormsApp2.Estoque.View
             }
             
         }
-        public void carregarIcms()
+
+        public void carregarCofins()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int auxPis = Convert.ToInt32(auxProd[0]["idIcms"]);
-
-            if (auxPis == -1)
+            int idPis = Convert.ToInt32(auxProd[0]["id"]);
+            var auxPis = pis_cofins.retornarPis_CofinsPorId(idPis);
+            if (auxPis.Count < 1)
             {
-                lblPis.Text = "Nenhum Pis selecionado";
+                lblCofins.Text = "Nenhum Cofins selecionado";
             }
             else
             {
-                lblPis.Text = auxProd[0]["idIcms"].ToString();
+                lblCofins.Text = auxPis[0]["id"].ToString().Substring(0, 20);
+
+            }
+
+        }
+        public void carregarIcms()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int idIcms = Convert.ToInt32(auxProd[0]["id"]);
+            var auxIcms = icms.retornarIcmsPorId(idIcms);    
+            if (auxIcms.Count < 1)
+            {
+                lblPis.Text = "Nenhum Icms selecionado";
+            }
+            else
+            {
+                lblIcms.Text = auxIcms[0]["id"].ToString().Substring(0, 20);
             }
 
         }
@@ -219,74 +236,78 @@ namespace WindowsFormsApp2.Estoque.View
         public void carregarNcm_Cest()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            string auxNcm = auxProd[0]["Ncm"].ToString();
-            string auxCest = auxProd[0]["Cest"].ToString();
-
-            if (auxNcm == "" || auxCest == "")
+            string idNcm = auxProd[0]["ncm"].ToString();
+            string idCest = auxProd[0]["cest"].ToString();
+            var auxNcm = ncm.retornarNcmECestPorId(idNcm, idCest);
+            if (auxNcm.Count < 1)
             {
-                lblPis.Text = "Nenhum Ncm selecionado";
+                lblNcm.Text = "Nenhum NCM ou Cest selecionados";
             }
             else
             {
-                lblPis.Text = auxProd[0]["Pis"].ToString();
+                lblNcm.Text = auxNcm[0]["idNcm"].ToString().Substring(0, 20);
             }
 
         }
 
-        public void carregarOrigem()
+        public void carregarIcms()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
-            if (auxPis == -1)
+            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
+            var auxIcms = icms.retornarIcmsPorId(idIcms);
+            if (auxIcms.Count < 1)
             {
-                lblPis.Text = "Nenhum Pis selecionado";
+                lblPis.Text = "Nenhum Icms selecionado";
             }
             else
             {
-                lblPis.Text = auxProd[0]["Pis"].ToString();
+                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
             }
 
         }
 
-        public void carregarCfop()
+        public void carregarIcms()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
-            if (auxPis == -1)
+            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
+            var auxIcms = icms.retornarIcmsPorId(idIcms);
+            if (auxIcms.Count < 1)
             {
-                lblPis.Text = "Nenhum Pis selecionado";
+                lblPis.Text = "Nenhum Icms selecionado";
             }
             else
             {
-                lblPis.Text = auxProd[0]["Pis"].ToString();
+                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
             }
 
         }
-        public void carregarCSt()
+        public void carregarIcms()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
-            if (auxPis == -1)
+            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
+            var auxIcms = icms.retornarIcmsPorId(idIcms);
+            if (auxIcms.Count < 1)
             {
-                lblPis.Text = "Nenhum Pis selecionado";
+                lblPis.Text = "Nenhum Icms selecionado";
             }
             else
             {
-                lblPis.Text = auxProd[0]["Pis"].ToString();
+                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
             }
 
         }
-        public void carregarCsosn()
+        public void carregarIcms()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int auxPis = Convert.ToInt32(auxProd[0]["Pis"]);
-            if (auxPis == -1)
+            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
+            var auxIcms = icms.retornarIcmsPorId(idIcms);
+            if (auxIcms.Count < 1)
             {
-                lblPis.Text = "Nenhum Pis selecionado";
+                lblPis.Text = "Nenhum Icms selecionado";
             }
             else
             {
-                lblPis.Text = auxProd[0]["Pis"].ToString();
+                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
             }
 
         }

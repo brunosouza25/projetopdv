@@ -28701,8 +28701,9 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT cest, ncm, descricao FROM dbo.Ncm\r\nwhere cest = @cest";
+            this._commandCollection[1].CommandText = "SELECT cest, ncm, descricao FROM dbo.Ncm\r\nwhere ncm = @ncm AND cest = @cest ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ncm", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ncm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cest", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "cest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -28734,13 +28735,19 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Dados.NcmDataTable retornarNcmPorId(string cest) {
+        public virtual Dados.NcmDataTable retornarNcmECestPorId(string ncm, string cest) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((cest == null)) {
+            if ((ncm == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cest));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ncm));
+            }
+            if ((cest == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(cest));
             }
             Dados.NcmDataTable dataTable = new Dados.NcmDataTable();
             this.Adapter.Fill(dataTable);
