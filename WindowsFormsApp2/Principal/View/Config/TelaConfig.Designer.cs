@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btColaboladores = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
             this.PainelPrincipalConfig.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnConfig);
             this.panel1.Controls.Add(this.btColaboladores);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -88,6 +90,15 @@
             this.btColaboladores.Text = "Colaboladores";
             this.btColaboladores.UseVisualStyleBackColor = true;
             this.btColaboladores.Click += new System.EventHandler(this.btColaboladores_Click);
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Location = new System.Drawing.Point(97, 3);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(86, 40);
+            this.btnConfig.TabIndex = 1;
+            this.btnConfig.Text = "Fiscal";
+            this.btnConfig.UseVisualStyleBackColor = true;
             // 
             // TelaConfig
             // 
@@ -110,5 +121,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btColaboladores;
+        private System.Windows.Forms.Button btnConfig;
     }
 }

@@ -127,6 +127,12 @@
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Principal\View\Config\Classes\Colaborador.cs" />
+    <Compile Include="Principal\View\Config\ConfigSistema.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Principal\View\Config\ConfigSistema.Designer.cs">
+      <DependentUpon>ConfigSistema.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal\View\Config\TelaCadastrarColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque\View\TelaTributacaoProd.resx">
       <DependentUpon>TelaTributacaoProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\View\Config\ConfigSistema.resx">
+      <DependentUpon>ConfigSistema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\View\Config\TelaCadastrarColaborador.resx">
       <DependentUpon>TelaCadastrarColaborador.cs</DependentUpon>

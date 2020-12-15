@@ -41,6 +41,7 @@ namespace WindowsFormsApp2.Estoque.View
             permitirFiscal();
             carregarTela();
         }
+       
 
         public void permitirFiscal()
         {

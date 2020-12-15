@@ -51,12 +51,14 @@ CREATE TABLE Produto (
 	pCofins FLOAT,
 	idPis INT,
 	idCofins INT,
-	idCfop varchar(4),
+	idCfop INT,
 	idCsosn INT,
 	idCst INT,
 	ncm varchar(10),
 	cest VARCHAR (10),
-	idOrigem INT
+	idOrigem INT,
+	idIcms INT,
+	fiscal BIT;
 );
 
 
@@ -184,11 +186,13 @@ CREATE TABLE Config_Sistema(
 	bloqueado TINYINT,
 	senha VARCHAR(20),
 	dataUltimoBloqueio DATE,
+	regimeTributario INT,
 	cnpjEmpresa VARCHAR(14),
 	inscricaoEstadual VARCHAR(12),
 	cnpjSoftwareHouse VARCHAR(14),
 	senhaSat varchar(32),
 	assinaturaAC VARCHAR(344)
+	
 
 );
 
