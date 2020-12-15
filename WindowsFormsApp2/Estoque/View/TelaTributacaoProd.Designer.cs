@@ -30,6 +30,19 @@ namespace WindowsFormsApp2.Estoque.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblInativo = new System.Windows.Forms.Label();
+            this.ckboxFiscal = new System.Windows.Forms.CheckBox();
+            this.mTxtCsosn = new System.Windows.Forms.TextBox();
+            this.mTxtCst = new System.Windows.Forms.TextBox();
+            this.mTxtCfop = new System.Windows.Forms.TextBox();
+            this.mTxtPPis = new System.Windows.Forms.TextBox();
+            this.mTxtPCofins = new System.Windows.Forms.TextBox();
+            this.mTxtOrigem = new System.Windows.Forms.TextBox();
+            this.mTxtCest = new System.Windows.Forms.TextBox();
+            this.mTxtNcm = new System.Windows.Forms.TextBox();
+            this.mTxtIcms = new System.Windows.Forms.TextBox();
+            this.mTxtCofins = new System.Windows.Forms.TextBox();
+            this.mTxtPis = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCsosn = new System.Windows.Forms.Label();
             this.lblCst = new System.Windows.Forms.Label();
@@ -50,19 +63,6 @@ namespace WindowsFormsApp2.Estoque.View
             this.label3 = new System.Windows.Forms.Label();
             this.LabCofins = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.mTxtPis = new System.Windows.Forms.TextBox();
-            this.mTxtCofins = new System.Windows.Forms.TextBox();
-            this.mTxtIcms = new System.Windows.Forms.TextBox();
-            this.mTxtNcm = new System.Windows.Forms.TextBox();
-            this.mTxtCest = new System.Windows.Forms.TextBox();
-            this.mTxtOrigem = new System.Windows.Forms.TextBox();
-            this.mTxtPCofins = new System.Windows.Forms.TextBox();
-            this.mTxtPPis = new System.Windows.Forms.TextBox();
-            this.mTxtCfop = new System.Windows.Forms.TextBox();
-            this.mTxtCst = new System.Windows.Forms.TextBox();
-            this.mTxtCsosn = new System.Windows.Forms.TextBox();
-            this.lblInativo = new System.Windows.Forms.Label();
-            this.ckboxFiscal = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +107,114 @@ namespace WindowsFormsApp2.Estoque.View
             this.panel1.Size = new System.Drawing.Size(676, 519);
             this.panel1.TabIndex = 0;
             // 
+            // lblInativo
+            // 
+            this.lblInativo.AutoSize = true;
+            this.lblInativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInativo.Location = new System.Drawing.Point(30, 44);
+            this.lblInativo.Name = "lblInativo";
+            this.lblInativo.Size = new System.Drawing.Size(77, 29);
+            this.lblInativo.TabIndex = 61;
+            this.lblInativo.Text = "Fiscal";
+            // 
+            // ckboxFiscal
+            // 
+            this.ckboxFiscal.AutoSize = true;
+            this.ckboxFiscal.Location = new System.Drawing.Point(127, 53);
+            this.ckboxFiscal.Name = "ckboxFiscal";
+            this.ckboxFiscal.Size = new System.Drawing.Size(15, 14);
+            this.ckboxFiscal.TabIndex = 60;
+            this.ckboxFiscal.UseVisualStyleBackColor = true;
+            this.ckboxFiscal.CheckedChanged += new System.EventHandler(this.ckboxFiscal_CheckedChanged);
+            // 
+            // mTxtCsosn
+            // 
+            this.mTxtCsosn.Location = new System.Drawing.Point(502, 395);
+            this.mTxtCsosn.MaxLength = 20;
+            this.mTxtCsosn.Name = "mTxtCsosn";
+            this.mTxtCsosn.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCsosn.TabIndex = 59;
+            // 
+            // mTxtCst
+            // 
+            this.mTxtCst.Location = new System.Drawing.Point(502, 322);
+            this.mTxtCst.MaxLength = 20;
+            this.mTxtCst.Name = "mTxtCst";
+            this.mTxtCst.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCst.TabIndex = 58;
+            // 
+            // mTxtCfop
+            // 
+            this.mTxtCfop.Location = new System.Drawing.Point(502, 250);
+            this.mTxtCfop.MaxLength = 20;
+            this.mTxtCfop.Name = "mTxtCfop";
+            this.mTxtCfop.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCfop.TabIndex = 57;
+            // 
+            // mTxtPPis
+            // 
+            this.mTxtPPis.Location = new System.Drawing.Point(557, 101);
+            this.mTxtPPis.MaxLength = 20;
+            this.mTxtPPis.Name = "mTxtPPis";
+            this.mTxtPPis.Size = new System.Drawing.Size(100, 20);
+            this.mTxtPPis.TabIndex = 56;
+            // 
+            // mTxtPCofins
+            // 
+            this.mTxtPCofins.Location = new System.Drawing.Point(557, 142);
+            this.mTxtPCofins.MaxLength = 20;
+            this.mTxtPCofins.Name = "mTxtPCofins";
+            this.mTxtPCofins.Size = new System.Drawing.Size(100, 20);
+            this.mTxtPCofins.TabIndex = 55;
+            // 
+            // mTxtOrigem
+            // 
+            this.mTxtOrigem.Location = new System.Drawing.Point(178, 422);
+            this.mTxtOrigem.MaxLength = 20;
+            this.mTxtOrigem.Name = "mTxtOrigem";
+            this.mTxtOrigem.Size = new System.Drawing.Size(100, 20);
+            this.mTxtOrigem.TabIndex = 54;
+            // 
+            // mTxtCest
+            // 
+            this.mTxtCest.Location = new System.Drawing.Point(186, 343);
+            this.mTxtCest.MaxLength = 20;
+            this.mTxtCest.Name = "mTxtCest";
+            this.mTxtCest.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCest.TabIndex = 53;
+            // 
+            // mTxtNcm
+            // 
+            this.mTxtNcm.Location = new System.Drawing.Point(186, 317);
+            this.mTxtNcm.MaxLength = 20;
+            this.mTxtNcm.Name = "mTxtNcm";
+            this.mTxtNcm.Size = new System.Drawing.Size(100, 20);
+            this.mTxtNcm.TabIndex = 52;
+            // 
+            // mTxtIcms
+            // 
+            this.mTxtIcms.Location = new System.Drawing.Point(186, 244);
+            this.mTxtIcms.MaxLength = 20;
+            this.mTxtIcms.Name = "mTxtIcms";
+            this.mTxtIcms.Size = new System.Drawing.Size(100, 20);
+            this.mTxtIcms.TabIndex = 50;
+            // 
+            // mTxtCofins
+            // 
+            this.mTxtCofins.Location = new System.Drawing.Point(186, 168);
+            this.mTxtCofins.MaxLength = 20;
+            this.mTxtCofins.Name = "mTxtCofins";
+            this.mTxtCofins.Size = new System.Drawing.Size(100, 20);
+            this.mTxtCofins.TabIndex = 49;
+            // 
+            // mTxtPis
+            // 
+            this.mTxtPis.Location = new System.Drawing.Point(186, 95);
+            this.mTxtPis.MaxLength = 20;
+            this.mTxtPis.Name = "mTxtPis";
+            this.mTxtPis.Size = new System.Drawing.Size(100, 20);
+            this.mTxtPis.TabIndex = 48;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -121,7 +229,7 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             this.lblCsosn.AutoSize = true;
             this.lblCsosn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCsosn.Location = new System.Drawing.Point(356, 419);
+            this.lblCsosn.Location = new System.Drawing.Point(353, 427);
             this.lblCsosn.Name = "lblCsosn";
             this.lblCsosn.Size = new System.Drawing.Size(65, 20);
             this.lblCsosn.TabIndex = 36;
@@ -151,7 +259,7 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             this.lblOrigem.AutoSize = true;
             this.lblOrigem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrigem.Location = new System.Drawing.Point(32, 450);
+            this.lblOrigem.Location = new System.Drawing.Point(30, 456);
             this.lblOrigem.Name = "lblOrigem";
             this.lblOrigem.Size = new System.Drawing.Size(60, 20);
             this.lblOrigem.TabIndex = 33;
@@ -251,7 +359,7 @@ namespace WindowsFormsApp2.Estoque.View
             // 
             this.labelOrigem.AutoSize = true;
             this.labelOrigem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrigem.Location = new System.Drawing.Point(30, 414);
+            this.labelOrigem.Location = new System.Drawing.Point(22, 422);
             this.labelOrigem.Name = "labelOrigem";
             this.labelOrigem.Size = new System.Drawing.Size(87, 25);
             this.labelOrigem.TabIndex = 16;
@@ -306,103 +414,6 @@ namespace WindowsFormsApp2.Estoque.View
             this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "ICMS";
-            // 
-            // mTxtPis
-            // 
-            this.mTxtPis.Location = new System.Drawing.Point(186, 95);
-            this.mTxtPis.Name = "mTxtPis";
-            this.mTxtPis.Size = new System.Drawing.Size(100, 20);
-            this.mTxtPis.TabIndex = 48;
-            // 
-            // mTxtCofins
-            // 
-            this.mTxtCofins.Location = new System.Drawing.Point(186, 168);
-            this.mTxtCofins.Name = "mTxtCofins";
-            this.mTxtCofins.Size = new System.Drawing.Size(100, 20);
-            this.mTxtCofins.TabIndex = 49;
-            // 
-            // mTxtIcms
-            // 
-            this.mTxtIcms.Location = new System.Drawing.Point(186, 244);
-            this.mTxtIcms.Name = "mTxtIcms";
-            this.mTxtIcms.Size = new System.Drawing.Size(100, 20);
-            this.mTxtIcms.TabIndex = 50;
-            // 
-            // mTxtNcm
-            // 
-            this.mTxtNcm.Location = new System.Drawing.Point(186, 317);
-            this.mTxtNcm.Name = "mTxtNcm";
-            this.mTxtNcm.Size = new System.Drawing.Size(100, 20);
-            this.mTxtNcm.TabIndex = 52;
-            // 
-            // mTxtCest
-            // 
-            this.mTxtCest.Location = new System.Drawing.Point(186, 343);
-            this.mTxtCest.Name = "mTxtCest";
-            this.mTxtCest.Size = new System.Drawing.Size(100, 20);
-            this.mTxtCest.TabIndex = 53;
-            // 
-            // mTxtOrigem
-            // 
-            this.mTxtOrigem.Location = new System.Drawing.Point(186, 414);
-            this.mTxtOrigem.Name = "mTxtOrigem";
-            this.mTxtOrigem.Size = new System.Drawing.Size(100, 20);
-            this.mTxtOrigem.TabIndex = 54;
-            // 
-            // mTxtPCofins
-            // 
-            this.mTxtPCofins.Location = new System.Drawing.Point(557, 142);
-            this.mTxtPCofins.Name = "mTxtPCofins";
-            this.mTxtPCofins.Size = new System.Drawing.Size(100, 20);
-            this.mTxtPCofins.TabIndex = 55;
-            // 
-            // mTxtPPis
-            // 
-            this.mTxtPPis.Location = new System.Drawing.Point(557, 101);
-            this.mTxtPPis.Name = "mTxtPPis";
-            this.mTxtPPis.Size = new System.Drawing.Size(100, 20);
-            this.mTxtPPis.TabIndex = 56;
-            // 
-            // mTxtCfop
-            // 
-            this.mTxtCfop.Location = new System.Drawing.Point(502, 250);
-            this.mTxtCfop.Name = "mTxtCfop";
-            this.mTxtCfop.Size = new System.Drawing.Size(100, 20);
-            this.mTxtCfop.TabIndex = 57;
-            // 
-            // mTxtCst
-            // 
-            this.mTxtCst.Location = new System.Drawing.Point(502, 322);
-            this.mTxtCst.Name = "mTxtCst";
-            this.mTxtCst.Size = new System.Drawing.Size(100, 20);
-            this.mTxtCst.TabIndex = 58;
-            // 
-            // mTxtCsosn
-            // 
-            this.mTxtCsosn.Location = new System.Drawing.Point(502, 395);
-            this.mTxtCsosn.Name = "mTxtCsosn";
-            this.mTxtCsosn.Size = new System.Drawing.Size(100, 20);
-            this.mTxtCsosn.TabIndex = 59;
-            // 
-            // lblInativo
-            // 
-            this.lblInativo.AutoSize = true;
-            this.lblInativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInativo.Location = new System.Drawing.Point(30, 44);
-            this.lblInativo.Name = "lblInativo";
-            this.lblInativo.Size = new System.Drawing.Size(77, 29);
-            this.lblInativo.TabIndex = 61;
-            this.lblInativo.Text = "Fiscal";
-            // 
-            // ckboxFiscal
-            // 
-            this.ckboxFiscal.AutoSize = true;
-            this.ckboxFiscal.Location = new System.Drawing.Point(127, 53);
-            this.ckboxFiscal.Name = "ckboxFiscal";
-            this.ckboxFiscal.Size = new System.Drawing.Size(15, 14);
-            this.ckboxFiscal.TabIndex = 60;
-            this.ckboxFiscal.UseVisualStyleBackColor = true;
-            this.ckboxFiscal.CheckedChanged += new System.EventHandler(this.ckboxFiscal_CheckedChanged);
             // 
             // TelaTributacaoProd
             // 

@@ -42,7 +42,7 @@ namespace WindowsFormsApp2
             PainelPrincipal.Controls.Add(telaGeral);
             telaTributacao.editarFiscal(tipo, codigoProd);
             telaGeral.editarProd(tipo, codigoProd);
-        }
+        }   
         private void BtnGeral_Click(object sender, EventArgs e)
         {
             telaTributacao.Visible = false;
@@ -52,18 +52,19 @@ namespace WindowsFormsApp2
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            bool fechar = false;
-            fechar = telaGeral.Criar_EditarProd();
-            if (tipo)
+            bool fechar1 = false;
+            bool fechar2 = false;
+            fechar1 = telaGeral.Criar_EditarProd();
+            if (tipo && fechar1)
             {
-                fechar = telaTributacao.SalvarTributacao(true, 0);    
+                fechar2 = telaTributacao.SalvarTributacao(true, 0);    
             }
             else
             {
-                fechar = telaTributacao.SalvarTributacao(false, codigoProd);
+                fechar2 = telaTributacao.SalvarTributacao(false, codigoProd);
             }
 
-            if (fechar)
+            if (fechar1 && fechar2)
             {
                 Close();
             }

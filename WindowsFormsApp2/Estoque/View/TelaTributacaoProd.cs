@@ -38,6 +38,7 @@ namespace WindowsFormsApp2.Estoque.View
         {
             this.tipo = tipo;
             this.idProduto = codigoProduto;
+            permitirFiscal();
             carregarTela();
         }
 
@@ -412,21 +413,37 @@ namespace WindowsFormsApp2.Estoque.View
         }
         public void carregarTela()
         {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
             carregarFiscal();
-            carregarPis(false);
-            carregarCofins(false);
-            carregarIcms(false);
-            carregarNcm_Cest(false);
-            carregarOrigem(false);
-            carregarCfop(false);
-            carregarCst(false);
-            carregarCsosn(false);
+            if (Convert.ToBoolean(auxProd[0]["fiscal"])) {
+                carregarFiscal();
+                carregarPPis();
+                carregarPis(false);
+                carregarCofins(false);
+                carregarIcms(false);
+                carregarNcm_Cest(false);
+                carregarOrigem(false);
+                carregarCfop(false);
+                carregarCst(false);
+                carregarCsosn(false);
+            }
+            else
+            {
+                ckboxFiscal.Checked = false;
+            }
+        }
+
+
+        public void carregarPPis()
+        {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            mTxtPis.Text = auxProd[0]["pPis"].ToString();
+            mTxtCofins.Text = auxProd[0]["pCofins"].ToString();
         }
         public void carregarFiscal()
         {
 
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            MessageBox.Show(auxProd[0]["fiscal"].ToString());
             ckboxFiscal.Checked = Convert.ToBoolean(auxProd[0]["fiscal"]);
         }
         public void carregarPis(bool edit_proc)
@@ -438,7 +455,7 @@ namespace WindowsFormsApp2.Estoque.View
                 idPis = Convert.ToInt32(auxProd[0]["idPis"]);
 
 
-                idPis = Convert.ToInt32(mTxtPis.Text);
+            mTxtPis.Text = idPis.ToString();
 
             var auxPis = pis_cofins.retornarPis_CofinsPorId(idPis);
             if(auxPis.Count < 1)
@@ -447,7 +464,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblPis.Text = auxPis[0]["descricao"].ToString().Substring(0, 20);
+                lblPis.Text = auxPis[0]["descricao"].ToString();
             }
             
         }
@@ -456,18 +473,10 @@ namespace WindowsFormsApp2.Estoque.View
         {
             int idCofins;
 
-            if (edit_proc)
-            {
-                var auxProd = produtos.retornarProdutoPorId(idProduto);
-                idCofins = Convert.ToInt32(auxProd[0]["idCofins"]);
-            }
-            else
-            {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            idCofins = Convert.ToInt32(auxProd[0]["idCofins"]);
 
-                idCofins = Convert.ToInt32(mTxtCofins.Text);
-            }
-
-
+            mTxtCofins.Text = idCofins.ToString();
             var auxCofins = pis_cofins.retornarPis_CofinsPorId(idCofins);
             if (auxCofins.Count < 1)
             {
@@ -475,7 +484,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblCofins.Text = auxCofins[0]["descricao"].ToString().Substring(0, 20);
+                lblCofins.Text = auxCofins[0]["descricao"].ToString();
 
             }
 
@@ -484,17 +493,9 @@ namespace WindowsFormsApp2.Estoque.View
         {
             int idIcms;
 
-            if (edit_proc)
-            {
-                var auxProd = produtos.retornarProdutoPorId(idProduto);
-                idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
-            }
-            else
-            {
-
-                idIcms = Convert.ToInt32(mTxtIcms.Text);
-            }
-
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
+            mTxtIcms.Text = idIcms.ToString();
             var auxIcms = icms.retornarIcmsPorId(idIcms);
             if (auxIcms.Count < 1)
             {
@@ -502,7 +503,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblIcms.Text = auxIcms[0]["descricao"].ToString().Substring(0, 20);
+                lblIcms.Text = auxIcms[0]["descricao"].ToString();
             }
 
         }
@@ -511,19 +512,11 @@ namespace WindowsFormsApp2.Estoque.View
         {
             int idNcm, idCest;
 
-            if (edit_proc)
-            {
-                var auxProd = produtos.retornarProdutoPorId(idProduto);
-                idNcm = Convert.ToInt32(auxProd[0]["ncm"]);
-                idCest = Convert.ToInt32(auxProd[0]["cest"]);
-            }
-            else
-            {
-
-                idNcm = Convert.ToInt32(mTxtNcm.Text);
-                idCest = Convert.ToInt32(mTxtCest.Text);
-            }
-
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            idNcm = Convert.ToInt32(auxProd[0]["ncm"]);
+            idCest = Convert.ToInt32(auxProd[0]["cest"]);
+            mTxtNcm.Text = idNcm.ToString();
+            mTxtCest.Text = idCest.ToString();
             var auxNcm = ncm.retornarNcmECestPorId(idNcm.ToString(), idCest.ToString());
             if (auxNcm.Count < 1)
             {
@@ -531,7 +524,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblNcm.Text = auxNcm[0]["descricao"].ToString().Substring(0, 20);
+                lblNcm.Text = auxNcm[0]["descricao"].ToString();
             }
 
         }
@@ -539,19 +532,10 @@ namespace WindowsFormsApp2.Estoque.View
         public void carregarOrigem(bool edit_proc)
         {
             int idOrigem;
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            idOrigem = Convert.ToInt32(auxProd[0]["IdOrigem"]);
+            mTxtOrigem.Text = idOrigem.ToString();
 
-            if (edit_proc)
-            {
-                var auxProd = produtos.retornarProdutoPorId(idProduto);
-                idOrigem = Convert.ToInt32(auxProd[0]["IdOrigem"]);
-            }
-            else
-            {
-
-                idOrigem = Convert.ToInt32(mTxtOrigem.Text);
-            }
- 
-            
             var auxOrigem = origem.retornarOrigemPorId(idOrigem);
             if (auxOrigem.Count < 1)
             {
@@ -559,7 +543,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblOrigem.Text = auxOrigem[0]["descricao"].ToString().Substring(0, 20);
+                lblOrigem.Text = auxOrigem[0]["descricao"].ToString();
             }
 
         }
@@ -567,18 +551,10 @@ namespace WindowsFormsApp2.Estoque.View
         public void carregarCfop(bool edit_proc)
         {
             int idCfop;
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            idCfop = Convert.ToInt32(auxProd[0]["idCfop"]);
+            mTxtCfop.Text = idCfop.ToString();
 
-            if (edit_proc)
-            {
-                var auxProd = produtos.retornarProdutoPorId(idProduto);
-                idCfop = Convert.ToInt32(auxProd[0]["Id"]);
-            }
-            else
-            {
-                idCfop= Convert.ToInt32(mTxtCfop.Text);
-            }
-
-           
             var auxCfop = cfop.retornarCfopPorId(idCfop);
             if (auxCfop.Count < 1)
             {
@@ -586,27 +562,16 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblCfop.Text = auxCfop[0]["desc_cfop"].ToString().Substring(0, 20);
+                lblCfop.Text = auxCfop[0]["desc_cfop"].ToString();
             }
 
         }
         public void carregarCst(bool edit_proc)
         {
+            var auxProd = produtos.retornarProdutoPorId(idProduto);
+            int idCst = Convert.ToInt32(auxProd[0]["idCst"]);
 
-            int idCst;
-
-            if (edit_proc)
-            {
-                var auxProd = produtos.retornarProdutoPorId(idProduto);
-                idCst = Convert.ToInt32(auxProd[0]["id"]);
-
-            }
-            else
-            {
-                idCst = Convert.ToInt32(mTxtCst.Text);
-            }
-            
-
+            mTxtCst.Text = idCst.ToString();
             var auxCst = cst.retornarCstPorId(idCst);
             if (auxCst.Count < 1)
             {
@@ -614,7 +579,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblCst.Text = auxCst[0]["descricao"].ToString().Substring(0, 20);
+                lblCst.Text = auxCst[0]["descricao"].ToString();
             }
 
         }
@@ -622,18 +587,9 @@ namespace WindowsFormsApp2.Estoque.View
         {
             int idCsosn;
             var auxProd = produtos.retornarProdutoPorId(idProduto);
+            idCsosn = Convert.ToInt32(auxProd[0]["idCsosn"]);
+            mTxtCsosn.Text = idCsosn.ToString();
 
-            if (edit_proc)
-            {
-                idCsosn = Convert.ToInt32(auxProd[0]["id"]); 
-               
-            }
-            else
-            {
-                idCsosn = Convert.ToInt32(mTxtCsosn.Text);
-            }
-
-            
             var auxCsosn = csosn.retornarCsosnPorId(idCsosn);
             if (auxCsosn.Count < 1)
             {
@@ -641,7 +597,7 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblCsosn.Text = auxCsosn[0]["descricao"].ToString().Substring(0, 20);
+                lblCsosn.Text = auxCsosn[0]["descricao"].ToString();
             }
 
         }

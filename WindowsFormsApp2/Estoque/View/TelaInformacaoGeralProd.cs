@@ -90,7 +90,7 @@ namespace WindowsFormsApp2.Estoque.View
                         prod.prodCusto = double.Parse(TxtBoxCusto.Text),
                         prod.prodQuantidade = 0,
                         prod.prodCodBarras = TxtBoxCodBarras.Text,
-                        0);
+                        0,false);
                     return true;
                 }
                 else

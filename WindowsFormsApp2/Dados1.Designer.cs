@@ -17954,8 +17954,8 @@ WHERE        (idProduto = @idProduto)";
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "INSERT INTO Produto\r\n                         (prodNome, prodValor, prodCusto, pr" +
-                "odQuantidade, prodCodBarras, prodEstado)\r\nVALUES        (@prodNome,@prodValor,@p" +
-                "rodCusto,@prodQuantidade,@prodCodBarras,@prodEstado)";
+                "odQuantidade, prodCodBarras, prodEstado, fiscal)\r\nVALUES        (@prodNome,@prod" +
+                "Valor,@prodCusto,@prodQuantidade,@prodCodBarras,@prodEstado,@fiscal)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodValor", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "prodValor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17963,6 +17963,7 @@ WHERE        (idProduto = @idProduto)";
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodQuantidade", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "prodQuantidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodEstado", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "prodEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
             this._commandCollection[8].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
@@ -19235,7 +19236,7 @@ WHERE        (idProduto = @idProduto)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InserirDados(string prodNome, global::System.Nullable<double> prodValor, global::System.Nullable<double> prodCusto, global::System.Nullable<int> prodQuantidade, string prodCodBarras, global::System.Nullable<byte> prodEstado) {
+        public virtual int InserirDados(string prodNome, global::System.Nullable<double> prodValor, global::System.Nullable<double> prodCusto, global::System.Nullable<int> prodQuantidade, string prodCodBarras, global::System.Nullable<byte> prodEstado, global::System.Nullable<bool> fiscal) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((prodNome == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -19272,6 +19273,12 @@ WHERE        (idProduto = @idProduto)";
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((fiscal.HasValue == true)) {
+                command.Parameters[6].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

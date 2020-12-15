@@ -50,7 +50,7 @@
             this.painel_CriarProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painel_CriarProd.Location = new System.Drawing.Point(0, 0);
             this.painel_CriarProd.Name = "painel_CriarProd";
-            this.painel_CriarProd.Size = new System.Drawing.Size(736, 585);
+            this.painel_CriarProd.Size = new System.Drawing.Size(763, 645);
             this.painel_CriarProd.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -67,7 +67,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.21857F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.78143F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(736, 585);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(763, 645);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -75,9 +75,9 @@
             this.panel2.Controls.Add(this.BtnCancelar);
             this.panel2.Controls.Add(this.BtnSalvar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 520);
+            this.panel2.Location = new System.Drawing.Point(3, 580);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(730, 62);
+            this.panel2.Size = new System.Drawing.Size(757, 62);
             this.panel2.TabIndex = 2;
             // 
             // BtnCancelar
@@ -106,7 +106,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 52);
+            this.panel1.Size = new System.Drawing.Size(757, 58);
             this.panel1.TabIndex = 0;
             // 
             // BtnTributacao
@@ -132,16 +132,16 @@
             // PainelPrincipal
             // 
             this.PainelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PainelPrincipal.Location = new System.Drawing.Point(3, 61);
+            this.PainelPrincipal.Location = new System.Drawing.Point(3, 67);
             this.PainelPrincipal.Name = "PainelPrincipal";
-            this.PainelPrincipal.Size = new System.Drawing.Size(730, 453);
+            this.PainelPrincipal.Size = new System.Drawing.Size(757, 507);
             this.PainelPrincipal.TabIndex = 1;
             // 
             // TelaCriarProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 585);
+            this.ClientSize = new System.Drawing.Size(763, 645);
             this.Controls.Add(this.painel_CriarProd);
             this.Name = "TelaCriarProd";
             this.Text = "Criar Produto";
