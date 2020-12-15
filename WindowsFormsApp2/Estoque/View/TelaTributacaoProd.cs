@@ -27,168 +27,419 @@ namespace WindowsFormsApp2.Estoque.View
         {
             InitializeComponent();
         }
+        public void criarFiscal(bool tipo)
+        {
+            this.tipo = tipo;
+
+            ckboxFiscal.Checked = false;
+            permitirFiscal();
+        }
+        public void editarFiscal(bool tipo, int codigoProduto)
+        {
+            this.tipo = tipo;
+            this.idProduto = codigoProduto;
+            carregarTela();
+        }
+
+        public void permitirFiscal()
+        {
+            if (!ckboxFiscal.Checked) {
+                mTxtCest.Enabled = false;
+                mTxtCfop.Enabled = false;
+                mTxtCofins.Enabled = false;
+                mTxtCsosn.Enabled = false;
+                mTxtCst.Enabled = false;
+                mTxtIcms.Enabled = false;
+                mTxtNcm.Enabled = false;
+                mTxtOrigem.Enabled = false;
+                mTxtPCofins.Enabled = false;
+                mTxtPis.Enabled = false;
+                mTxtPPis.Enabled = false;
+            }
+            else
+            {
+                mTxtCest.Enabled = true;
+                mTxtCfop.Enabled = true;
+                mTxtCofins.Enabled = true;
+                mTxtCsosn.Enabled = true;
+                mTxtCst.Enabled = true;
+                mTxtIcms.Enabled = true;
+                mTxtNcm.Enabled = true;
+                mTxtOrigem.Enabled = true;
+                mTxtPCofins.Enabled = true;
+                mTxtPis.Enabled = true;
+                mTxtPPis.Enabled = true;
+            }
+        }
+        /*
         public void Criar_EditarProdTributacao(bool tipo, int codigoProduto)
         {
+            this.tipo = tipo;
             double pPis, pCofins;
             int pis, cofins, icms, ncm, cest, origem, cfop, cst, csosn;
-
-            if (mTxtPPis.Text.Trim() == "" || mTxtPPis.Text.Trim() == ",")
-            {
-                pPis = 0;
-            }
-            else
-            {
-                pPis = Convert.ToDouble(mTxtPPis.Text);
-            }
-
-
-
-            if (mTxtPCofins.Text.Trim() == "" || mTxtPCofins.Text.Trim() == ",")
-            {
-                pCofins = 0;
-            }
-            else
-            {
-                pCofins = Convert.ToDouble(mTxtPCofins.Text);
-            }
-
-
-            if (mTxtPis.Text.Trim() == "")
-            {
-                pis = -1;
-            }
-            else
-            {
-                pis = Convert.ToInt32(mTxtPis.Text);
-            }
-
-
-
-            if (mTxtCofins.Text.Trim() == "")
-            {
-                cofins = -1;
-            }
-            else
-            {
-
-                cofins = Convert.ToInt32(mTxtCofins.Text);
-            }
-
-
-
-
-            if (mTxtIcms.Text == "")
-            {
-                icms = -1;
-            }
-            else
-            {
-                icms = Convert.ToInt32(mTxtIcms.Text);
-            }
-
-
-
-            if (mTxtNcm.Text == "")
-            {
-                ncm = -1;
-            }
-            else
-            {
-                ncm = Convert.ToInt32(mTxtNcm.Text);
-            }
-
-
-
-            if (mTxtCest.Text == "")
-            {
-                cest = -1;
-            }
-            else
-            {
-                cest = Convert.ToInt32(mTxtCest.Text);
-            }
-
-
-
-            if (mTxtOrigem.Text == "")
-            {
-                origem = -1;
-            }
-            else
-            {
-                origem = Convert.ToInt32(mTxtOrigem.Text);
-            }
-
-
-
-            if (mTxtCfop.Text == "")
-            {
-                cfop = -1;
-            }
-            else
-            {
-                cfop = Convert.ToInt32(mTxtCfop.Text);
-            }
-
-
-
-            if (mTxtCst.Text == "")
-            {
-                cst = -1;
-            }
-            else
-            {
-                cst = Convert.ToInt32(mTxtCst.Text);
-            }
-
-
-
-            if (mTxtCsosn.Text == "")
-            {
-                csosn = -1;
-            }
-            else
-            {
-                csosn = Convert.ToInt32(mTxtCsosn.Text);
-            }
+            carregarTela(codigoProduto);
 
             if (tipo)
             {
+                if (mTxtPPis.Text.Trim() == "" || mTxtPPis.Text.Trim() == ",")
+                {
+                    pPis = 0;
+                }
+                else
+                {
+                    pPis = Convert.ToDouble(mTxtPPis.Text);
+                }
+
+
+
+                if (mTxtPCofins.Text.Trim() == "" || mTxtPCofins.Text.Trim() == ",")
+                {
+                    pCofins = 0;
+                }
+                else
+                {
+                    pCofins = Convert.ToDouble(mTxtPCofins.Text);
+                }
+
+
+                int a;
+                if (mTxtPis.Text.Trim() == "" && int.TryParse(mTxtPis.Text.Trim(), out a))
+                {
+                    pis = -1;
+                }
+                else
+                {
+                    pis = Convert.ToInt32(mTxtPis.Text);
+                }
+
+
+
+                if (mTxtCofins.Text.Trim() == "")
+                {
+                    cofins = -1;
+                }
+                else
+                {
+
+                    cofins = Convert.ToInt32(mTxtCofins.Text);
+                }
+
+
+
+
+                if (mTxtIcms.Text == "")
+                {
+                    icms = -1;
+                }
+                else
+                {
+                    icms = Convert.ToInt32(mTxtIcms.Text);
+                }
+
+
+
+                if (mTxtNcm.Text == "")
+                {
+                    ncm = -1;
+                }
+                else
+                {
+                    ncm = Convert.ToInt32(mTxtNcm.Text);
+                }
+
+
+
+                if (mTxtCest.Text == "")
+                {
+                    cest = -1;
+                }
+                else
+                {
+                    cest = Convert.ToInt32(mTxtCest.Text);
+                }
+
+
+
+                if (mTxtOrigem.Text == "")
+                {
+                    origem = -1;
+                }
+                else
+                {
+                    origem = Convert.ToInt32(mTxtOrigem.Text);
+                }
+
+
+
+                if (mTxtCfop.Text == "")
+                {
+                    cfop = -1;
+                }
+                else
+                {
+                    cfop = Convert.ToInt32(mTxtCfop.Text);
+                }
+
+
+
+                if (mTxtCst.Text == "")
+                {
+                    cst = -1;
+                }
+                else
+                {
+                    cst = Convert.ToInt32(mTxtCst.Text);
+                }
+
+
+
+                if (mTxtCsosn.Text == "")
+                {
+                    csosn = -1;
+                }
+                else
+                {
+                    csosn = Convert.ToInt32(mTxtCsosn.Text);
+                }
                 var auxIdProd = produtos.retornarUltimoIdProduto();
                 int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
-                produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, idProd);
+                produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, icms,idProd );
             }
             else
             {
-                produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, codigoProduto);
+              //  produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, icms, codigoProduto);
+            }*/
+        /*
+    private void carregarTela()
+    {
+        Console.WriteLine(this.codigoProd);
+        var varProd = dadosProdutos.GetDataById(this.codigoProd);
+
+        TxtBoxNome.Text = varProd[0]["prodNome"].ToString();
+        TxtBoxCusto.Text = varProd[0]["prodCusto"].ToString();
+        TxtBoxValor.Text = varProd[0]["prodValor"].ToString();
+        TxtBoxCodBarras.Text = varProd[0]["prodCodBarras"].ToString();
+        ckboxInativo.Checked = Convert.ToBoolean(varProd[0]["prodEstado"]);
+
+    }
+    }*/
+
+        public bool SalvarTributacao(bool tipo, int codigoProduto)
+        {
+            if (ckboxFiscal.Checked)
+            {
+                double pPis = -1, pCofins = -1;
+                int pis = -1, cofins = -1, icms = -1, ncm = -1, cest = -1, origem = -1, cfop = -1, cst = -1, csosn = -1;
+                int a;
+                double b;
+                bool salvar = false;
+                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text != "" && mTxtCest.Text != ""
+                    && mTxtOrigem.Text != "" && mTxtCfop.Text != "" && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")
+                {
+                    if (double.TryParse(mTxtPPis.Text.Trim(), out b))
+                    {
+                        pPis = Convert.ToDouble(mTxtPPis.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Porcentagem Pis inválido");
+                        salvar = false;
+                    }
+
+
+
+                    if (double.TryParse(mTxtPCofins.Text.Trim(), out b))
+                    {
+                        pCofins = Convert.ToDouble(mTxtPCofins.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Porcentagem Cofins inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtPis.Text.Trim(), out a))
+                    {
+                        pis = Convert.ToInt32(mTxtPis.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("PIS inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCofins.Text.Trim(), out a))
+                    {
+                        cofins = Convert.ToInt32(mTxtCofins.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+
+                        salvar = false;
+                        MessageBox.Show("Cofins inválido");
+                    }
+
+
+
+
+                    if (int.TryParse(mTxtIcms.Text.Trim(), out a))
+                    {
+                        icms = Convert.ToInt32(mTxtIcms.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Icms inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtNcm.Text.Trim(), out a))
+                    {
+                        ncm = Convert.ToInt32(mTxtNcm.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Ncm inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCest.Text.Trim(), out a))
+                    {
+                        cest = Convert.ToInt32(mTxtCest.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Cest inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtOrigem.Text.Trim(), out a))
+                    {
+                        origem = Convert.ToInt32(mTxtOrigem.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Origem inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCfop.Text.Trim(), out a))
+                    {
+                        cfop = Convert.ToInt32(mTxtCfop.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Cfop inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCst.Text.Trim(), out a))
+                    {
+                        cst = Convert.ToInt32(mTxtCst.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Cst inválido");
+                    }
+
+                    if (int.TryParse(mTxtCsosn.Text.Trim(), out a))
+                    {
+                        csosn = Convert.ToInt32(mTxtCsosn.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Csosn inválido");
+                    }
+                    if (salvar)
+                    {
+                        if (tipo)
+                        {
+                            var auxIdProd = produtos.retornarUltimoIdProduto();
+                            int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
+                            produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, icms, true, idProd );
+                     
+                            return true;
+                        }
+                        else
+                        {
+                            produtos.attDadosTributacao(pPis, pCofins, pis, cofins, cfop, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, icms, ckboxFiscal.Checked, codigoProduto);
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Favor, preencher todos os campos para emissao da nota");
+                    return false;
+                }
             }
-            /*
-        private void carregarTela()
-        {
-            Console.WriteLine(this.codigoProd);
-            var varProd = dadosProdutos.GetDataById(this.codigoProd);
-
-            TxtBoxNome.Text = varProd[0]["prodNome"].ToString();
-            TxtBoxCusto.Text = varProd[0]["prodCusto"].ToString();
-            TxtBoxValor.Text = varProd[0]["prodValor"].ToString();
-            TxtBoxCodBarras.Text = varProd[0]["prodCodBarras"].ToString();
-            ckboxInativo.Checked = Convert.ToBoolean(varProd[0]["prodEstado"]);
-
-        }*/
+            else
+            {
+                return true;
+            }
         }
-        public void carregarTela(int codigoProduto)
+        public void carregarTela()
         {
-            this.idProduto = codigoProduto;
-            var auxProd = produtos.retornarProdutoPorId(codigoProduto);
-            mTxtOrigem.Text(auxProd[0]["idOrigem"].ToString());
-            mTxtOrigem.
-
+            carregarFiscal();
+            carregarPis(false);
+            carregarCofins(false);
+            carregarIcms(false);
+            carregarNcm_Cest(false);
+            carregarOrigem(false);
+            carregarCfop(false);
+            carregarCst(false);
+            carregarCsosn(false);
         }
-
-        public void carregarPis()
+        public void carregarFiscal()
         {
+
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idPis = Convert.ToInt32(auxProd[0]["idPis"]);
+            MessageBox.Show(auxProd[0]["fiscal"].ToString());
+            ckboxFiscal.Checked = Convert.ToBoolean(auxProd[0]["fiscal"]);
+        }
+        public void carregarPis(bool edit_proc)
+        {
+            int idPis;
+
+
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idPis = Convert.ToInt32(auxProd[0]["idPis"]);
+
+
+                idPis = Convert.ToInt32(mTxtPis.Text);
+
             var auxPis = pis_cofins.retornarPis_CofinsPorId(idPis);
             if(auxPis.Count < 1)
             {
@@ -196,120 +447,208 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
-                lblPis.Text = auxPis[0]["idPis"].ToString().Substring(0, 20);
+                lblPis.Text = auxPis[0]["descricao"].ToString().Substring(0, 20);
             }
             
         }
 
-        public void carregarCofins()
+        public void carregarCofins(bool edit_proc)
         {
-            var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idPis = Convert.ToInt32(auxProd[0]["id"]);
-            var auxPis = pis_cofins.retornarPis_CofinsPorId(idPis);
-            if (auxPis.Count < 1)
+            int idCofins;
+
+            if (edit_proc)
+            {
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idCofins = Convert.ToInt32(auxProd[0]["idCofins"]);
+            }
+            else
+            {
+
+                idCofins = Convert.ToInt32(mTxtCofins.Text);
+            }
+
+
+            var auxCofins = pis_cofins.retornarPis_CofinsPorId(idCofins);
+            if (auxCofins.Count < 1)
             {
                 lblCofins.Text = "Nenhum Cofins selecionado";
             }
             else
             {
-                lblCofins.Text = auxPis[0]["id"].ToString().Substring(0, 20);
+                lblCofins.Text = auxCofins[0]["descricao"].ToString().Substring(0, 20);
 
             }
 
         }
-        public void carregarIcms()
+        public void carregarIcms(bool edit_proc)
         {
-            var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idIcms = Convert.ToInt32(auxProd[0]["id"]);
-            var auxIcms = icms.retornarIcmsPorId(idIcms);    
-            if (auxIcms.Count < 1)
+            int idIcms;
+
+            if (edit_proc)
             {
-                lblPis.Text = "Nenhum Icms selecionado";
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
             }
             else
             {
-                lblIcms.Text = auxIcms[0]["id"].ToString().Substring(0, 20);
+
+                idIcms = Convert.ToInt32(mTxtIcms.Text);
+            }
+
+            var auxIcms = icms.retornarIcmsPorId(idIcms);
+            if (auxIcms.Count < 1)
+            {
+                lblIcms.Text = "Nenhum Icms selecionado";
+            }
+            else
+            {
+                lblIcms.Text = auxIcms[0]["descricao"].ToString().Substring(0, 20);
             }
 
         }
 
-        public void carregarNcm_Cest()
+        public void carregarNcm_Cest(bool edit_proc)
         {
-            var auxProd = produtos.retornarProdutoPorId(idProduto);
-            string idNcm = auxProd[0]["ncm"].ToString();
-            string idCest = auxProd[0]["cest"].ToString();
-            var auxNcm = ncm.retornarNcmECestPorId(idNcm, idCest);
+            int idNcm, idCest;
+
+            if (edit_proc)
+            {
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idNcm = Convert.ToInt32(auxProd[0]["ncm"]);
+                idCest = Convert.ToInt32(auxProd[0]["cest"]);
+            }
+            else
+            {
+
+                idNcm = Convert.ToInt32(mTxtNcm.Text);
+                idCest = Convert.ToInt32(mTxtCest.Text);
+            }
+
+            var auxNcm = ncm.retornarNcmECestPorId(idNcm.ToString(), idCest.ToString());
             if (auxNcm.Count < 1)
             {
                 lblNcm.Text = "Nenhum NCM ou Cest selecionados";
             }
             else
             {
-                lblNcm.Text = auxNcm[0]["idNcm"].ToString().Substring(0, 20);
+                lblNcm.Text = auxNcm[0]["descricao"].ToString().Substring(0, 20);
             }
 
         }
 
-        public void carregarIcms()
+        public void carregarOrigem(bool edit_proc)
         {
-            var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
-            var auxIcms = icms.retornarIcmsPorId(idIcms);
-            if (auxIcms.Count < 1)
+            int idOrigem;
+
+            if (edit_proc)
             {
-                lblPis.Text = "Nenhum Icms selecionado";
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idOrigem = Convert.ToInt32(auxProd[0]["IdOrigem"]);
             }
             else
             {
-                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
+
+                idOrigem = Convert.ToInt32(mTxtOrigem.Text);
+            }
+ 
+            
+            var auxOrigem = origem.retornarOrigemPorId(idOrigem);
+            if (auxOrigem.Count < 1)
+            {
+                lblOrigem.Text = "Nenhum Origem selecionado";
+            }
+            else
+            {
+                lblOrigem.Text = auxOrigem[0]["descricao"].ToString().Substring(0, 20);
             }
 
         }
 
-        public void carregarIcms()
+        public void carregarCfop(bool edit_proc)
         {
-            var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
-            var auxIcms = icms.retornarIcmsPorId(idIcms);
-            if (auxIcms.Count < 1)
+            int idCfop;
+
+            if (edit_proc)
             {
-                lblPis.Text = "Nenhum Icms selecionado";
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idCfop = Convert.ToInt32(auxProd[0]["Id"]);
             }
             else
             {
-                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
+                idCfop= Convert.ToInt32(mTxtCfop.Text);
+            }
+
+           
+            var auxCfop = cfop.retornarCfopPorId(idCfop);
+            if (auxCfop.Count < 1)
+            {
+                lblCfop.Text = "Nenhum Cfop selecionado";
+            }
+            else
+            {
+                lblCfop.Text = auxCfop[0]["desc_cfop"].ToString().Substring(0, 20);
             }
 
         }
-        public void carregarIcms()
+        public void carregarCst(bool edit_proc)
         {
-            var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
-            var auxIcms = icms.retornarIcmsPorId(idIcms);
-            if (auxIcms.Count < 1)
+
+            int idCst;
+
+            if (edit_proc)
             {
-                lblPis.Text = "Nenhum Icms selecionado";
+                var auxProd = produtos.retornarProdutoPorId(idProduto);
+                idCst = Convert.ToInt32(auxProd[0]["id"]);
+
             }
             else
             {
-                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
+                idCst = Convert.ToInt32(mTxtCst.Text);
+            }
+            
+
+            var auxCst = cst.retornarCstPorId(idCst);
+            if (auxCst.Count < 1)
+            {
+                lblCst.Text = "Nenhum Cst selecionado";
+            }
+            else
+            {
+                lblCst.Text = auxCst[0]["descricao"].ToString().Substring(0, 20);
             }
 
         }
-        public void carregarIcms()
+        public void carregarCsosn(bool edit_proc)
         {
+            int idCsosn;
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            int idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
-            var auxIcms = icms.retornarIcmsPorId(idIcms);
-            if (auxIcms.Count < 1)
+
+            if (edit_proc)
             {
-                lblPis.Text = "Nenhum Icms selecionado";
+                idCsosn = Convert.ToInt32(auxProd[0]["id"]); 
+               
             }
             else
             {
-                lblPis.Text = auxIcms[0]["idIcms"].ToString().Substring(0, 20);
+                idCsosn = Convert.ToInt32(mTxtCsosn.Text);
             }
 
+            
+            var auxCsosn = csosn.retornarCsosnPorId(idCsosn);
+            if (auxCsosn.Count < 1)
+            {
+                lblCsosn.Text = "Nenhum Csosn selecionado";
+            }
+            else
+            {
+                lblCsosn.Text = auxCsosn[0]["descricao"].ToString().Substring(0, 20);
+            }
+
+        }
+
+        private void ckboxFiscal_CheckedChanged(object sender, EventArgs e)
+        {
+            permitirFiscal();
         }
     }
 }

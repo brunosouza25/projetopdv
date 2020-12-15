@@ -71,12 +71,15 @@ namespace WindowsFormsApp2.Estoque.View
 
         }
 
-        public void Criar_EditarProd()
+        public bool Criar_EditarProd()
         {
             double a, b;
 
             if (TxtBoxCodBarras.Text == "" | TxtBoxCusto.Text == "" | TxtBoxNome.Text == "" | TxtBoxValor.Text == "")
+            {
                 MessageBox.Show("Por favor, preencha todos os campos!");
+                return false;
+            }
             else if (double.TryParse(TxtBoxCusto.Text.Trim(), out a) && (double.TryParse(TxtBoxValor.Text.Trim(), out b)))
             {
                 if (tipo)
@@ -88,7 +91,7 @@ namespace WindowsFormsApp2.Estoque.View
                         prod.prodQuantidade = 0,
                         prod.prodCodBarras = TxtBoxCodBarras.Text,
                         0);
-
+                    return true;
                 }
                 else
                 {
@@ -109,11 +112,14 @@ namespace WindowsFormsApp2.Estoque.View
                         TxtBoxCodBarras.Text,
                         checkbox,
                         codigoProd);
-
+                    return true;
                 }
             }
             else
+            {
                 MessageBox.Show("Valores não permitidos");
+                return false;
+            }
         }
 
     }

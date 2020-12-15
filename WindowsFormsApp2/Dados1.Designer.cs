@@ -1716,6 +1716,10 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnidCfop;
             
+            private global::System.Data.DataColumn columnidIcms;
+            
+            private global::System.Data.DataColumn columnfiscal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProdutoDataTable() {
@@ -1887,6 +1891,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idIcmsColumn {
+                get {
+                    return this.columnidIcms;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fiscalColumn {
+                get {
+                    return this.columnfiscal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1939,7 +1959,9 @@ namespace WindowsFormsApp2 {
                         string ncm, 
                         string cest, 
                         int idOrigem, 
-                        int idCfop) {
+                        int idCfop, 
+                        int idIcms, 
+                        bool fiscal) {
                 ProdutoRow rowProdutoRow = ((ProdutoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idProduto,
@@ -1958,7 +1980,9 @@ namespace WindowsFormsApp2 {
                         ncm,
                         cest,
                         idOrigem,
-                        idCfop};
+                        idCfop,
+                        idIcms,
+                        fiscal};
                 rowProdutoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProdutoRow);
                 return rowProdutoRow;
@@ -2005,6 +2029,8 @@ namespace WindowsFormsApp2 {
                 this.columncest = base.Columns["cest"];
                 this.columnidOrigem = base.Columns["idOrigem"];
                 this.columnidCfop = base.Columns["idCfop"];
+                this.columnidIcms = base.Columns["idIcms"];
+                this.columnfiscal = base.Columns["fiscal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2044,6 +2070,10 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnidOrigem);
                 this.columnidCfop = new global::System.Data.DataColumn("idCfop", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidCfop);
+                this.columnidIcms = new global::System.Data.DataColumn("idIcms", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidIcms);
+                this.columnfiscal = new global::System.Data.DataColumn("fiscal", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfiscal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidProduto}, true));
                 this.columnidProduto.AllowDBNull = false;
@@ -11002,6 +11032,38 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idIcms {
+                get {
+                    try {
+                        return ((int)(this[this.tableProduto.idIcmsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idIcms\' na tabela \'Produto\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProduto.idIcmsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool fiscal {
+                get {
+                    try {
+                        return ((bool)(this[this.tableProduto.fiscalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'fiscal\' na tabela \'Produto\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProduto.fiscalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsprodNomeNull() {
                 return this.IsNull(this.tableProduto.prodNomeColumn);
             }
@@ -11190,6 +11252,30 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidCfopNull() {
                 this[this.tableProduto.idCfopColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidIcmsNull() {
+                return this.IsNull(this.tableProduto.idIcmsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidIcmsNull() {
+                this[this.tableProduto.idIcmsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfiscalNull() {
+                return this.IsNull(this.tableProduto.fiscalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfiscalNull() {
+                this[this.tableProduto.fiscalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17600,10 +17686,32 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             tableMapping.ColumnMappings.Add("cest", "cest");
             tableMapping.ColumnMappings.Add("idOrigem", "idOrigem");
             tableMapping.ColumnMappings.Add("idCfop", "idCfop");
+            tableMapping.ColumnMappings.Add("idIcms", "idIcms");
+            tableMapping.ColumnMappings.Add("fiscal", "fiscal");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Produto] WHERE (([idProduto] = @Original_idProduto) AND ((@IsNull_prodNome = 1 AND [prodNome] IS NULL) OR ([prodNome] = @Original_prodNome)) AND ((@IsNull_prodValor = 1 AND [prodValor] IS NULL) OR ([prodValor] = @Original_prodValor)) AND ((@IsNull_prodCusto = 1 AND [prodCusto] IS NULL) OR ([prodCusto] = @Original_prodCusto)) AND ((@IsNull_prodQuantidade = 1 AND [prodQuantidade] IS NULL) OR ([prodQuantidade] = @Original_prodQuantidade)) AND ((@IsNull_prodCodBarras = 1 AND [prodCodBarras] IS NULL) OR ([prodCodBarras] = @Original_prodCodBarras)) AND ((@IsNull_prodEstado = 1 AND [prodEstado] IS NULL) OR ([prodEstado] = @Original_prodEstado)) AND ((@IsNull_pPis = 1 AND [pPis] IS NULL) OR ([pPis] = @Original_pPis)) AND ((@IsNull_pCofins = 1 AND [pCofins] IS NULL) OR ([pCofins] = @Original_pCofins)) AND ((@IsNull_idPis = 1 AND [idPis] IS NULL) OR ([idPis] = @Original_idPis)) AND ((@IsNull_idCofins = 1 AND [idCofins] IS NULL) OR ([idCofins] = @Original_idCofins)) AND ((@IsNull_idCsosn = 1 AND [idCsosn] IS NULL) OR ([idCsosn] = @Original_idCsosn)) AND ((@IsNull_idCst = 1 AND [idCst] IS NULL) OR ([idCst] = @Original_idCst)) AND ((@IsNull_ncm = 1 AND [ncm] IS NULL) OR ([ncm] = @Original_ncm)) AND ((@IsNull_cest = 1 AND [cest] IS NULL) OR ([cest] = @Original_cest)) AND ((@IsNull_idOrigem = 1 AND [idOrigem] IS NULL) OR ([idOrigem] = @Original_idOrigem)) AND ((@IsNull_idCfop = 1 AND [idCfop] IS NULL) OR ([idCfop] = @Original_idCfop)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Produto] WHERE (([idProduto] = @Original_idProduto) AND ((@IsNull_pr" +
+                "odNome = 1 AND [prodNome] IS NULL) OR ([prodNome] = @Original_prodNome)) AND ((@" +
+                "IsNull_prodValor = 1 AND [prodValor] IS NULL) OR ([prodValor] = @Original_prodVa" +
+                "lor)) AND ((@IsNull_prodCusto = 1 AND [prodCusto] IS NULL) OR ([prodCusto] = @Or" +
+                "iginal_prodCusto)) AND ((@IsNull_prodQuantidade = 1 AND [prodQuantidade] IS NULL" +
+                ") OR ([prodQuantidade] = @Original_prodQuantidade)) AND ((@IsNull_prodCodBarras " +
+                "= 1 AND [prodCodBarras] IS NULL) OR ([prodCodBarras] = @Original_prodCodBarras))" +
+                " AND ((@IsNull_prodEstado = 1 AND [prodEstado] IS NULL) OR ([prodEstado] = @Orig" +
+                "inal_prodEstado)) AND ((@IsNull_pPis = 1 AND [pPis] IS NULL) OR ([pPis] = @Origi" +
+                "nal_pPis)) AND ((@IsNull_pCofins = 1 AND [pCofins] IS NULL) OR ([pCofins] = @Ori" +
+                "ginal_pCofins)) AND ((@IsNull_idPis = 1 AND [idPis] IS NULL) OR ([idPis] = @Orig" +
+                "inal_idPis)) AND ((@IsNull_idCofins = 1 AND [idCofins] IS NULL) OR ([idCofins] =" +
+                " @Original_idCofins)) AND ((@IsNull_idCsosn = 1 AND [idCsosn] IS NULL) OR ([idCs" +
+                "osn] = @Original_idCsosn)) AND ((@IsNull_idCst = 1 AND [idCst] IS NULL) OR ([idC" +
+                "st] = @Original_idCst)) AND ((@IsNull_ncm = 1 AND [ncm] IS NULL) OR ([ncm] = @Or" +
+                "iginal_ncm)) AND ((@IsNull_cest = 1 AND [cest] IS NULL) OR ([cest] = @Original_c" +
+                "est)) AND ((@IsNull_idOrigem = 1 AND [idOrigem] IS NULL) OR ([idOrigem] = @Origi" +
+                "nal_idOrigem)) AND ((@IsNull_idCfop = 1 AND [idCfop] IS NULL) OR ([idCfop] = @Or" +
+                "iginal_idCfop)) AND ((@IsNull_idIcms = 1 AND [idIcms] IS NULL) OR ([idIcms] = @O" +
+                "riginal_idIcms)) AND ((@IsNull_fiscal = 1 AND [fiscal] IS NULL) OR ([fiscal] = @" +
+                "Original_fiscal)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idProduto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_prodNome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -17638,10 +17746,14 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idOrigem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idOrigem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCfop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCfop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idIcms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIcms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fiscal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Produto] ([prodNome], [prodValor], [prodCusto], [prodQuantidade], [prodCodBarras], [prodEstado], [pPis], [pCofins], [idPis], [idCofins], [idCsosn], [idCst], [ncm], [cest], [idOrigem], [idCfop]) VALUES (@prodNome, @prodValor, @prodCusto, @prodQuantidade, @prodCodBarras, @prodEstado, @pPis, @pCofins, @idPis, @idCofins, @idCsosn, @idCst, @ncm, @cest, @idOrigem, @idCfop);
-SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado, pPis, pCofins, idPis, idCofins, idCsosn, idCst, ncm, cest, idOrigem, idCfop FROM Produto WHERE (idProduto = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Produto] ([prodNome], [prodValor], [prodCusto], [prodQuantidade], [prodCodBarras], [prodEstado], [pPis], [pCofins], [idPis], [idCofins], [idCsosn], [idCst], [ncm], [cest], [idOrigem], [idCfop], [idIcms], [fiscal]) VALUES (@prodNome, @prodValor, @prodCusto, @prodQuantidade, @prodCodBarras, @prodEstado, @pPis, @pCofins, @idPis, @idCofins, @idCsosn, @idCst, @ncm, @cest, @idOrigem, @idCfop, @idIcms, @fiscal);
+SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado, pPis, pCofins, idPis, idCofins, idCsosn, idCst, ncm, cest, idOrigem, idCfop, idIcms, fiscal FROM Produto WHERE (idProduto = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodValor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodValor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17659,34 +17771,39 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cest", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idOrigem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idOrigem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCfop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIcms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Produto] SET [prodNome] = @prodNome, [prodValor] = @prodValor, [prodCusto" +
                 "] = @prodCusto, [prodQuantidade] = @prodQuantidade, [prodCodBarras] = @prodCodBa" +
                 "rras, [prodEstado] = @prodEstado, [pPis] = @pPis, [pCofins] = @pCofins, [idPis] " +
                 "= @idPis, [idCofins] = @idCofins, [idCsosn] = @idCsosn, [idCst] = @idCst, [ncm] " +
-                "= @ncm, [cest] = @cest, [idOrigem] = @idOrigem, [idCfop] = @idCfop WHERE (([idPr" +
-                "oduto] = @Original_idProduto) AND ((@IsNull_prodNome = 1 AND [prodNome] IS NULL)" +
-                " OR ([prodNome] = @Original_prodNome)) AND ((@IsNull_prodValor = 1 AND [prodValo" +
-                "r] IS NULL) OR ([prodValor] = @Original_prodValor)) AND ((@IsNull_prodCusto = 1 " +
-                "AND [prodCusto] IS NULL) OR ([prodCusto] = @Original_prodCusto)) AND ((@IsNull_p" +
-                "rodQuantidade = 1 AND [prodQuantidade] IS NULL) OR ([prodQuantidade] = @Original" +
-                "_prodQuantidade)) AND ((@IsNull_prodCodBarras = 1 AND [prodCodBarras] IS NULL) O" +
-                "R ([prodCodBarras] = @Original_prodCodBarras)) AND ((@IsNull_prodEstado = 1 AND " +
-                "[prodEstado] IS NULL) OR ([prodEstado] = @Original_prodEstado)) AND ((@IsNull_pP" +
-                "is = 1 AND [pPis] IS NULL) OR ([pPis] = @Original_pPis)) AND ((@IsNull_pCofins =" +
-                " 1 AND [pCofins] IS NULL) OR ([pCofins] = @Original_pCofins)) AND ((@IsNull_idPi" +
-                "s = 1 AND [idPis] IS NULL) OR ([idPis] = @Original_idPis)) AND ((@IsNull_idCofin" +
-                "s = 1 AND [idCofins] IS NULL) OR ([idCofins] = @Original_idCofins)) AND ((@IsNul" +
-                "l_idCsosn = 1 AND [idCsosn] IS NULL) OR ([idCsosn] = @Original_idCsosn)) AND ((@" +
-                "IsNull_idCst = 1 AND [idCst] IS NULL) OR ([idCst] = @Original_idCst)) AND ((@IsN" +
-                "ull_ncm = 1 AND [ncm] IS NULL) OR ([ncm] = @Original_ncm)) AND ((@IsNull_cest = " +
-                "1 AND [cest] IS NULL) OR ([cest] = @Original_cest)) AND ((@IsNull_idOrigem = 1 A" +
-                "ND [idOrigem] IS NULL) OR ([idOrigem] = @Original_idOrigem)) AND ((@IsNull_idCfo" +
-                "p = 1 AND [idCfop] IS NULL) OR ([idCfop] = @Original_idCfop)));\r\nSELECT idProdut" +
-                "o, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado, pP" +
-                "is, pCofins, idPis, idCofins, idCsosn, idCst, ncm, cest, idOrigem, idCfop FROM P" +
-                "roduto WHERE (idProduto = @idProduto)";
+                "= @ncm, [cest] = @cest, [idOrigem] = @idOrigem, [idCfop] = @idCfop, [idIcms] = @" +
+                "idIcms, [fiscal] = @fiscal WHERE (([idProduto] = @Original_idProduto) AND ((@IsN" +
+                "ull_prodNome = 1 AND [prodNome] IS NULL) OR ([prodNome] = @Original_prodNome)) A" +
+                "ND ((@IsNull_prodValor = 1 AND [prodValor] IS NULL) OR ([prodValor] = @Original_" +
+                "prodValor)) AND ((@IsNull_prodCusto = 1 AND [prodCusto] IS NULL) OR ([prodCusto]" +
+                " = @Original_prodCusto)) AND ((@IsNull_prodQuantidade = 1 AND [prodQuantidade] I" +
+                "S NULL) OR ([prodQuantidade] = @Original_prodQuantidade)) AND ((@IsNull_prodCodB" +
+                "arras = 1 AND [prodCodBarras] IS NULL) OR ([prodCodBarras] = @Original_prodCodBa" +
+                "rras)) AND ((@IsNull_prodEstado = 1 AND [prodEstado] IS NULL) OR ([prodEstado] =" +
+                " @Original_prodEstado)) AND ((@IsNull_pPis = 1 AND [pPis] IS NULL) OR ([pPis] = " +
+                "@Original_pPis)) AND ((@IsNull_pCofins = 1 AND [pCofins] IS NULL) OR ([pCofins] " +
+                "= @Original_pCofins)) AND ((@IsNull_idPis = 1 AND [idPis] IS NULL) OR ([idPis] =" +
+                " @Original_idPis)) AND ((@IsNull_idCofins = 1 AND [idCofins] IS NULL) OR ([idCof" +
+                "ins] = @Original_idCofins)) AND ((@IsNull_idCsosn = 1 AND [idCsosn] IS NULL) OR " +
+                "([idCsosn] = @Original_idCsosn)) AND ((@IsNull_idCst = 1 AND [idCst] IS NULL) OR" +
+                " ([idCst] = @Original_idCst)) AND ((@IsNull_ncm = 1 AND [ncm] IS NULL) OR ([ncm]" +
+                " = @Original_ncm)) AND ((@IsNull_cest = 1 AND [cest] IS NULL) OR ([cest] = @Orig" +
+                "inal_cest)) AND ((@IsNull_idOrigem = 1 AND [idOrigem] IS NULL) OR ([idOrigem] = " +
+                "@Original_idOrigem)) AND ((@IsNull_idCfop = 1 AND [idCfop] IS NULL) OR ([idCfop]" +
+                " = @Original_idCfop)) AND ((@IsNull_idIcms = 1 AND [idIcms] IS NULL) OR ([idIcms" +
+                "] = @Original_idIcms)) AND ((@IsNull_fiscal = 1 AND [fiscal] IS NULL) OR ([fisca" +
+                "l] = @Original_fiscal)));\r\nSELECT idProduto, prodNome, prodValor, prodCusto, pro" +
+                "dQuantidade, prodCodBarras, prodEstado, pPis, pCofins, idPis, idCofins, idCsosn," +
+                " idCst, ncm, cest, idOrigem, idCfop, idIcms, fiscal FROM Produto WHERE (idProdut" +
+                "o = @idProduto)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodValor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodValor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17704,6 +17821,8 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cest", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idOrigem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idOrigem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCfop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIcms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idProduto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_prodNome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prodNome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -17737,6 +17856,10 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idOrigem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idOrigem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCfop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCfop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idIcms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idIcms", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fiscal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -17755,7 +17878,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodB" +
                 "arras, prodEstado, pPis, pCofins, idPis, idCofins, idCsosn, idCst, ncm, cest, id" +
-                "Origem, idCfop\r\nFROM            Produto";
+                "Origem, idCfop, idIcms, fiscal\r\nFROM            Produto";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -17771,20 +17894,22 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       Produto\r\nSET                pPis = @pPis, pCofins = pCofins, idPis =" +
-                " @idPis, idCofins = @idCofins, idCfop = @idCfop, idCsosn = @idCsosn, idCst = @id" +
-                "Cst, ncm = @ncm, cest = @cest, idOrigem = @idOrigem\r\nWHERE        (idProduto = @" +
-                "idProduto)";
+            this._commandCollection[2].CommandText = @"UPDATE       Produto
+SET                pPis = @pPis, pCofins = @pCofins, idPis = @idPis, idCofins = @idCofins, idCfop = @idCfop, idCsosn = @idCsosn, idCst = @idCst, ncm = @ncm, cest = @cest, idOrigem = @idOrigem, idIcms = @idIcms, fiscal = @fiscal
+WHERE        (idProduto = @idProduto)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPis", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "pPis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pCofins", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "pCofins", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPis", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCofins", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCofins", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCfop", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCfop", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCsosn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCsosn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCst", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCst", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ncm", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ncm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cest", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "cest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idOrigem", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idOrigem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIcms", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -17802,17 +17927,16 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto WHERE (idProduto = @idProduto)";
+            this._commandCollection[5].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto WHERE (idProduto = @idProduto)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE       Produto\r\nSET               pPis= @pPis, pCofins = @pCofins, idPis = " +
-                "@idPis, idCofins = @idCpfins, idCsosn = @idCsosn, idCst = @Cst, ncm = @ncm, cest" +
-                " = @cest, idOrigem = @idOrigem, idCfop = @idCfop\r\nWHERE        (idProduto = @idP" +
-                "roduto)";
+            this._commandCollection[6].CommandText = @"UPDATE       Produto
+SET                pPis = @pPis, pCofins = @pCofins, idPis = @idPis, idCofins = @idCpfins, idCsosn = @idCsosn, idCst = @Cst, ncm = @ncm, cest = @cest, idOrigem = @idOrigem, idCfop = @idCfop, idIcms = @idIcms, fiscal = @fiscal
+WHERE        (idProduto = @idProduto)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPis", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "pPis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pCofins", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "pCofins", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17824,6 +17948,8 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cest", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "cest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idOrigem", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idOrigem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCfop", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCfop", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idIcms", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idIcms", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
@@ -17839,56 +17965,57 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodEstado", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "prodEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto WHERE (idProduto = @idProduto)";
+            this._commandCollection[8].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto WHERE (idProduto = @idProduto)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto WHERE (prodCodBarras = @prodCodBarras)";
+            this._commandCollection[9].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto WHERE (prodCodBarras = @prodCodBarras)";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = @"SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, prodValor FROM Produto WHERE (prodNome = @prodNome) AND (prodEstado = 0) AND (prodQuantidade > 0) OR (prodEstado = 0) AND (prodQuantidade > 0) AND (prodCodBarras = @prodCodBarras)";
+            this._commandCollection[10].CommandText = @"SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, idProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, prodValor FROM Produto WHERE (prodNome = @prodNome) AND (prodEstado = 0) AND (prodQuantidade > 0) OR (prodEstado = 0) AND (prodQuantidade > 0) AND (prodCodBarras = @prodCodBarras)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto WHERE (prodCodBarras = @prodCodBarras)";
+            this._commandCollection[11].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto WHERE (prodCodBarras = @prodCodBarras)";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = @"SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, prodValor FROM Produto WHERE (prodNome = @prodNome) AND (prodEstado = 0) OR (prodEstado = 0) AND (prodCodBarras = @prodCodBarras)";
+            this._commandCollection[12].CommandText = @"SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, idProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, prodValor FROM Produto WHERE (prodNome = @prodNome) AND (prodEstado = 0) OR (prodEstado = 0) AND (prodCodBarras = @prodCodBarras)";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodCodBarras", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "prodCodBarras", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto WHERE (prodNome LIKE \'%\' + @prodNome + \'%\')";
+            this._commandCollection[13].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto WHERE (prodNome LIKE \'%\' + @prodNome + \'%\')" +
+                "";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodNome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "prodNome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[14] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto WHERE (idProduto = @idProduto)";
+            this._commandCollection[14].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto WHERE (idProduto = @idProduto)";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[15].Connection = this.Connection;
-            this._commandCollection[15].CommandText = "SELECT cest, idCfop, idCofins, idCsosn, idCst, idOrigem, idPis, idProduto, ncm, p" +
-                "Cofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, prodQuantidade, pr" +
-                "odValor FROM Produto ORDER BY idProduto DESC";
+            this._commandCollection[15].CommandText = "SELECT cest, fiscal, idCfop, idCofins, idCsosn, idCst, idIcms, idOrigem, idPis, i" +
+                "dProduto, ncm, pCofins, pPis, prodCodBarras, prodCusto, prodEstado, prodNome, pr" +
+                "odQuantidade, prodValor FROM Produto ORDER BY idProduto DESC";
             this._commandCollection[15].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18124,7 +18251,9 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                     string Original_ncm, 
                     string Original_cest, 
                     global::System.Nullable<int> Original_idOrigem, 
-                    global::System.Nullable<int> Original_idCfop) {
+                    global::System.Nullable<int> Original_idCfop, 
+                    global::System.Nullable<int> Original_idIcms, 
+                    global::System.Nullable<bool> Original_fiscal) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idProduto));
             if ((Original_prodNome == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -18254,6 +18383,22 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
+            if ((Original_idIcms.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((int)(Original_idIcms.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            if ((Original_fiscal.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((bool)(Original_fiscal.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18290,7 +18435,9 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                     string ncm, 
                     string cest, 
                     global::System.Nullable<int> idOrigem, 
-                    global::System.Nullable<int> idCfop) {
+                    global::System.Nullable<int> idCfop, 
+                    global::System.Nullable<int> idIcms, 
+                    global::System.Nullable<bool> fiscal) {
             if ((prodNome == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -18387,6 +18534,18 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
+            if ((idIcms.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((int)(idIcms.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((fiscal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18424,6 +18583,8 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                     string cest, 
                     global::System.Nullable<int> idOrigem, 
                     global::System.Nullable<int> idCfop, 
+                    global::System.Nullable<int> idIcms, 
+                    global::System.Nullable<bool> fiscal, 
                     int Original_idProduto, 
                     string Original_prodNome, 
                     global::System.Nullable<double> Original_prodValor, 
@@ -18441,6 +18602,8 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                     string Original_cest, 
                     global::System.Nullable<int> Original_idOrigem, 
                     global::System.Nullable<int> Original_idCfop, 
+                    global::System.Nullable<int> Original_idIcms, 
+                    global::System.Nullable<bool> Original_fiscal, 
                     int idProduto) {
             if ((prodNome == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -18538,136 +18701,164 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_idProduto));
+            if ((idIcms.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(idIcms.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((fiscal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_idProduto));
             if ((Original_prodNome == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_prodNome));
-            }
-            if ((Original_prodValor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Original_prodValor.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_prodCusto.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_prodNome));
+            }
+            if ((Original_prodValor.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(Original_prodCusto.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(Original_prodValor.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_prodQuantidade.HasValue == true)) {
+            if ((Original_prodCusto.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_prodQuantidade.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(Original_prodCusto.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_prodCodBarras == null)) {
+            if ((Original_prodQuantidade.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_prodQuantidade.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_prodCodBarras));
-            }
-            if ((Original_prodEstado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((byte)(Original_prodEstado.Value));
-            }
-            else {
+            if ((Original_prodCodBarras == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_pPis.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_prodCodBarras));
+            }
+            if ((Original_prodEstado.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((double)(Original_pPis.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((byte)(Original_prodEstado.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((Original_pCofins.HasValue == true)) {
+            if ((Original_pPis.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((double)(Original_pCofins.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((double)(Original_pPis.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_idPis.HasValue == true)) {
+            if ((Original_pCofins.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_idPis.Value));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((double)(Original_pCofins.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((Original_idCofins.HasValue == true)) {
+            if ((Original_idPis.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_idCofins.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_idPis.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((Original_idCsosn.HasValue == true)) {
+            if ((Original_idCofins.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_idCsosn.Value));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_idCofins.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_idCst.HasValue == true)) {
+            if ((Original_idCsosn.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_idCst.Value));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_idCsosn.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((Original_ncm == null)) {
+            if ((Original_idCst.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_idCst.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_ncm));
-            }
-            if ((Original_cest == null)) {
+            if ((Original_ncm == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_cest));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_ncm));
             }
-            if ((Original_idOrigem.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Original_idOrigem.Value));
-            }
-            else {
+            if ((Original_cest == null)) {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
-            if ((Original_idCfop.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_cest));
+            }
+            if ((Original_idOrigem.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(Original_idCfop.Value));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(Original_idOrigem.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(idProduto));
+            if ((Original_idCfop.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(Original_idCfop.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            if ((Original_idIcms.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(Original_idIcms.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            if ((Original_fiscal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((bool)(Original_fiscal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(idProduto));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18705,6 +18896,8 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                     string cest, 
                     global::System.Nullable<int> idOrigem, 
                     global::System.Nullable<int> idCfop, 
+                    global::System.Nullable<int> idIcms, 
+                    global::System.Nullable<bool> fiscal, 
                     int Original_idProduto, 
                     string Original_prodNome, 
                     global::System.Nullable<double> Original_prodValor, 
@@ -18721,8 +18914,10 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
                     string Original_ncm, 
                     string Original_cest, 
                     global::System.Nullable<int> Original_idOrigem, 
-                    global::System.Nullable<int> Original_idCfop) {
-            return this.Update(prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado, pPis, pCofins, idPis, idCofins, idCsosn, idCst, ncm, cest, idOrigem, idCfop, Original_idProduto, Original_prodNome, Original_prodValor, Original_prodCusto, Original_prodQuantidade, Original_prodCodBarras, Original_prodEstado, Original_pPis, Original_pCofins, Original_idPis, Original_idCofins, Original_idCsosn, Original_idCst, Original_ncm, Original_cest, Original_idOrigem, Original_idCfop, Original_idProduto);
+                    global::System.Nullable<int> Original_idCfop, 
+                    global::System.Nullable<int> Original_idIcms, 
+                    global::System.Nullable<bool> Original_fiscal) {
+            return this.Update(prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras, prodEstado, pPis, pCofins, idPis, idCofins, idCsosn, idCst, ncm, cest, idOrigem, idCfop, idIcms, fiscal, Original_idProduto, Original_prodNome, Original_prodValor, Original_prodCusto, Original_prodQuantidade, Original_prodCodBarras, Original_prodEstado, Original_pPis, Original_pCofins, Original_idPis, Original_idCofins, Original_idCsosn, Original_idCst, Original_ncm, Original_cest, Original_idOrigem, Original_idCfop, Original_idIcms, Original_fiscal, Original_idProduto);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18783,7 +18978,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int attDadosTributacao(global::System.Nullable<double> pPis, global::System.Nullable<int> idPis, global::System.Nullable<int> idCofins, string idCfop, global::System.Nullable<int> idCsosn, global::System.Nullable<int> idCst, string ncm, string cest, global::System.Nullable<int> idOrigem, int idProduto) {
+        public virtual int attDadosTributacao(global::System.Nullable<double> pPis, global::System.Nullable<double> pCofins, global::System.Nullable<int> idPis, global::System.Nullable<int> idCofins, global::System.Nullable<int> idCfop, global::System.Nullable<int> idCsosn, global::System.Nullable<int> idCst, string ncm, string cest, global::System.Nullable<int> idOrigem, global::System.Nullable<int> idIcms, global::System.Nullable<bool> fiscal, int idProduto) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((pPis.HasValue == true)) {
                 command.Parameters[0].Value = ((double)(pPis.Value));
@@ -18791,55 +18986,73 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((idPis.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(idPis.Value));
+            if ((pCofins.HasValue == true)) {
+                command.Parameters[1].Value = ((double)(pCofins.Value));
             }
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((idCofins.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(idCofins.Value));
+            if ((idPis.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(idPis.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((idCfop == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
+            if ((idCofins.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(idCofins.Value));
             }
             else {
-                command.Parameters[3].Value = ((string)(idCfop));
+                command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((idCsosn.HasValue == true)) {
-                command.Parameters[4].Value = ((int)(idCsosn.Value));
+            if ((idCfop.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(idCfop.Value));
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((idCst.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(idCst.Value));
+            if ((idCsosn.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(idCsosn.Value));
             }
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((ncm == null)) {
-                command.Parameters[6].Value = global::System.DBNull.Value;
+            if ((idCst.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(idCst.Value));
             }
             else {
-                command.Parameters[6].Value = ((string)(ncm));
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((cest == null)) {
+            if ((ncm == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(cest));
+                command.Parameters[7].Value = ((string)(ncm));
             }
-            if ((idOrigem.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(idOrigem.Value));
-            }
-            else {
+            if ((cest == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
-            command.Parameters[9].Value = ((int)(idProduto));
+            else {
+                command.Parameters[8].Value = ((string)(cest));
+            }
+            if ((idOrigem.HasValue == true)) {
+                command.Parameters[9].Value = ((int)(idOrigem.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((idIcms.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(idIcms.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((fiscal.HasValue == true)) {
+                command.Parameters[11].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[12].Value = ((int)(idProduto));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18926,7 +19139,7 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int inserirAlterarDadosTributacao(global::System.Nullable<double> pPis, global::System.Nullable<double> pCofins, global::System.Nullable<int> idPis, global::System.Nullable<int> idCpfins, global::System.Nullable<int> idCsosn, global::System.Nullable<int> Cst, string ncm, string cest, global::System.Nullable<int> idOrigem, global::System.Nullable<int> idCfop, int idProduto) {
+        public virtual int inserirAlterarDadosTributacao(global::System.Nullable<double> pPis, global::System.Nullable<double> pCofins, global::System.Nullable<int> idPis, global::System.Nullable<int> idCpfins, global::System.Nullable<int> idCsosn, global::System.Nullable<int> Cst, string ncm, string cest, global::System.Nullable<int> idOrigem, global::System.Nullable<int> idCfop, global::System.Nullable<int> idIcms, global::System.Nullable<bool> fiscal, int idProduto) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((pPis.HasValue == true)) {
                 command.Parameters[0].Value = ((double)(pPis.Value));
@@ -18988,7 +19201,19 @@ SELECT idProduto, prodNome, prodValor, prodCusto, prodQuantidade, prodCodBarras,
             else {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
-            command.Parameters[10].Value = ((int)(idProduto));
+            if ((idIcms.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(idIcms.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((fiscal.HasValue == true)) {
+                command.Parameters[11].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[12].Value = ((int)(idProduto));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

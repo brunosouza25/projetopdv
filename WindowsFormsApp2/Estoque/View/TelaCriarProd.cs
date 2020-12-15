@@ -24,10 +24,10 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.tipo = tipo;
             BtnSalvar.Text = "Criar";
-
             PainelPrincipal.Controls.Add(telaGeral);
             telaTributacao.Visible = false;
             PainelPrincipal.Controls.Add(telaTributacao);
+            telaTributacao.criarFiscal(tipo);
             telaGeral.criarProd(tipo);
         }
         public TelaCriarProd(Boolean tipo, int codigoProd)
@@ -40,11 +40,9 @@ namespace WindowsFormsApp2
             PainelPrincipal.Controls.Add(telaTributacao);
             telaTributacao.Visible = false;
             PainelPrincipal.Controls.Add(telaGeral);
+            telaTributacao.editarFiscal(tipo, codigoProd);
             telaGeral.editarProd(tipo, codigoProd);
         }
-
-        
-
         private void BtnGeral_Click(object sender, EventArgs e)
         {
             telaTributacao.Visible = false;
@@ -54,17 +52,21 @@ namespace WindowsFormsApp2
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            
-            telaGeral.Criar_EditarProd();
+            bool fechar = false;
+            fechar = telaGeral.Criar_EditarProd();
             if (tipo)
             {
-                telaTributacao.Criar_EditarProdTributacao(true, 0);
+                fechar = telaTributacao.SalvarTributacao(true, 0);    
             }
             else
             {
-                telaTributacao.Criar_EditarProdTributacao(false, codigoProd);
+                fechar = telaTributacao.SalvarTributacao(false, codigoProd);
             }
-            Close();
+
+            if (fechar)
+            {
+                Close();
+            }
         }
 
         private void BtnTributacao_Click(object sender, EventArgs e)
