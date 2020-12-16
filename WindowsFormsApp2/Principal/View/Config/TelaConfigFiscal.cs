@@ -48,7 +48,6 @@ namespace WindowsFormsApp2.Principal.View.Config
             }
             else
             {
-                config.attFiscal(false);
                 travar_LiberarFiscal(false);
             }
         }

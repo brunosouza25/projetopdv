@@ -386,12 +386,13 @@ namespace WindowsFormsApp2.Estoque.View
                         {
                             var auxIdProd = produtos.retornarUltimoIdProduto();
                             int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
-                            produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, icms, true, idProd );
+                            produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, icms, ckboxFiscal.Checked, idProd );
                      
                             return true;
                         }
                         else
                         {
+                            MessageBox.Show(ckboxFiscal.Checked.ToString());
                             produtos.attDadosTributacao(pPis, pCofins, pis, cofins, cfop, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, icms, ckboxFiscal.Checked, codigoProduto);
                             return true;
                         }
@@ -411,7 +412,9 @@ namespace WindowsFormsApp2.Estoque.View
             }
             else
             {
+                produtos.attFIscalProduto(ckboxFiscal.Checked, codigoProduto);
                 return true;
+
             }
         }
         public void carregarTela()

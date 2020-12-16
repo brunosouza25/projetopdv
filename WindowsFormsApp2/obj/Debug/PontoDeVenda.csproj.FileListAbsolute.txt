@@ -145,7 +145,6 @@ C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaCargos.resources
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaCadastroCargo.resources
 C:\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaPrincipalColaboladores.resources
-C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.EntradaDeProdutos.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.SaidaDeProduto.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaDeEntradaProduto.resources
@@ -194,3 +193,4 @@ C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaI
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaTributacaoProd.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.ConfigSistema.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaConfigFiscal.resources
+C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
