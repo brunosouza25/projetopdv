@@ -186,14 +186,13 @@ CREATE TABLE Config_Sistema(
 	bloqueado TINYINT,
 	senha VARCHAR(20),
 	dataUltimoBloqueio DATE,
-	regimeTributario INT,
+	fiscal BIT,
+	regimeTributario VARCHAR(16),
 	cnpjEmpresa VARCHAR(14),
 	inscricaoEstadual VARCHAR(12),
 	cnpjSoftwareHouse VARCHAR(14),
 	senhaSat varchar(32),
 	assinaturaAC VARCHAR(344)
-	
-
 );
 
 CREATE TABLE Endereco(
@@ -237,7 +236,7 @@ INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 
-INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', '11111111111111','111111111111', '11111111111111','12345678','KjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisKjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisKjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisjsdhfkjshfjkahufisasdasdasdasdasdsa')
+INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '')
 
 
 INSERT INTO Cargo VALUES ('Nenhum', 0,0)

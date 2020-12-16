@@ -20,12 +20,14 @@ namespace WindowsFormsApp2.Estoque.View
         DadosTableAdapters.CfopTableAdapter cfop = new DadosTableAdapters.CfopTableAdapter();
         DadosTableAdapters.CstTableAdapter cst = new DadosTableAdapters.CstTableAdapter();
         DadosTableAdapters.CsosnTableAdapter csosn = new DadosTableAdapters.CsosnTableAdapter();
+        DadosTableAdapters.Config_SistemaTableAdapter configSistema = new DadosTableAdapters.Config_SistemaTableAdapter();
         bool tipo = false;
         int idProduto;
-
+        bool simples = false;
         public TelaTributacaoProd()
         {
             InitializeComponent();
+            var auxConfig = configSistema.retornarConfig();
         }
         public void criarFiscal(bool tipo)
         {

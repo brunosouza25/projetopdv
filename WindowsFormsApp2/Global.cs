@@ -27,6 +27,6 @@ namespace WindowsFormsApp2
 		public string cnpjSoftwareHouse { get; set; }
 		public string inscricaoEstadual { get; set; }
 
-        public static int regimeTributario { get; set; }
+        public static bool simples { get; set; }
     }
 }

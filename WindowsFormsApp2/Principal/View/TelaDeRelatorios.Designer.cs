@@ -49,6 +49,7 @@
             this.painelPrincipal = new System.Windows.Forms.Panel();
             this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCaixa = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -217,12 +218,14 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnCaixa);
             this.panel3.Controls.Add(this.toolStrip1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(224, 603);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // toolStrip1
             // 
@@ -257,6 +260,16 @@
             // dataTable2BindingSource
             // 
             this.dataTable2BindingSource.DataMember = "DataTable2";
+            // 
+            // btnCaixa
+            // 
+            this.btnCaixa.Location = new System.Drawing.Point(39, 43);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(75, 23);
+            this.btnCaixa.TabIndex = 9;
+            this.btnCaixa.Text = "button1";
+            this.btnCaixa.UseVisualStyleBackColor = true;
+            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // TelaDeRelatorios
             // 
@@ -308,5 +321,6 @@
         private DadosTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnFechamentoDiario;
+        private System.Windows.Forms.Button btnCaixa;
     }
 }

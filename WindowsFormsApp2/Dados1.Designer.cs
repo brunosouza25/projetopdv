@@ -6446,6 +6446,20 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columndataUltimoBloqueio;
             
+            private global::System.Data.DataColumn columncnpjEmpresa;
+            
+            private global::System.Data.DataColumn columninscricaoEstadual;
+            
+            private global::System.Data.DataColumn columncnpjSoftwareHouse;
+            
+            private global::System.Data.DataColumn columnsenhaSat;
+            
+            private global::System.Data.DataColumn columnassinaturaAC;
+            
+            private global::System.Data.DataColumn columnfiscal;
+            
+            private global::System.Data.DataColumn columnregimeTributario;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Config_SistemaDataTable() {
@@ -6513,6 +6527,62 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cnpjEmpresaColumn {
+                get {
+                    return this.columncnpjEmpresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn inscricaoEstadualColumn {
+                get {
+                    return this.columninscricaoEstadual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cnpjSoftwareHouseColumn {
+                get {
+                    return this.columncnpjSoftwareHouse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn senhaSatColumn {
+                get {
+                    return this.columnsenhaSat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn assinaturaACColumn {
+                get {
+                    return this.columnassinaturaAC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fiscalColumn {
+                get {
+                    return this.columnfiscal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn regimeTributarioColumn {
+                get {
+                    return this.columnregimeTributario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6548,13 +6618,20 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Config_SistemaRow AddConfig_SistemaRow(byte a_Bloquear, byte bloqueado, string senha, System.DateTime dataUltimoBloqueio) {
+            public Config_SistemaRow AddConfig_SistemaRow(byte a_Bloquear, byte bloqueado, string senha, System.DateTime dataUltimoBloqueio, string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC, bool fiscal, string regimeTributario) {
                 Config_SistemaRow rowConfig_SistemaRow = ((Config_SistemaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         a_Bloquear,
                         bloqueado,
                         senha,
-                        dataUltimoBloqueio};
+                        dataUltimoBloqueio,
+                        cnpjEmpresa,
+                        inscricaoEstadual,
+                        cnpjSoftwareHouse,
+                        senhaSat,
+                        assinaturaAC,
+                        fiscal,
+                        regimeTributario};
                 rowConfig_SistemaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConfig_SistemaRow);
                 return rowConfig_SistemaRow;
@@ -6581,6 +6658,13 @@ namespace WindowsFormsApp2 {
                 this.columnbloqueado = base.Columns["bloqueado"];
                 this.columnsenha = base.Columns["senha"];
                 this.columndataUltimoBloqueio = base.Columns["dataUltimoBloqueio"];
+                this.columncnpjEmpresa = base.Columns["cnpjEmpresa"];
+                this.columninscricaoEstadual = base.Columns["inscricaoEstadual"];
+                this.columncnpjSoftwareHouse = base.Columns["cnpjSoftwareHouse"];
+                this.columnsenhaSat = base.Columns["senhaSat"];
+                this.columnassinaturaAC = base.Columns["assinaturaAC"];
+                this.columnfiscal = base.Columns["fiscal"];
+                this.columnregimeTributario = base.Columns["regimeTributario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6594,7 +6678,27 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnsenha);
                 this.columndataUltimoBloqueio = new global::System.Data.DataColumn("dataUltimoBloqueio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndataUltimoBloqueio);
+                this.columncnpjEmpresa = new global::System.Data.DataColumn("cnpjEmpresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncnpjEmpresa);
+                this.columninscricaoEstadual = new global::System.Data.DataColumn("inscricaoEstadual", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninscricaoEstadual);
+                this.columncnpjSoftwareHouse = new global::System.Data.DataColumn("cnpjSoftwareHouse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncnpjSoftwareHouse);
+                this.columnsenhaSat = new global::System.Data.DataColumn("senhaSat", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsenhaSat);
+                this.columnassinaturaAC = new global::System.Data.DataColumn("assinaturaAC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnassinaturaAC);
+                this.columnfiscal = new global::System.Data.DataColumn("fiscal", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfiscal);
+                this.columnregimeTributario = new global::System.Data.DataColumn("regimeTributario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnregimeTributario);
                 this.columnsenha.MaxLength = 54;
+                this.columncnpjEmpresa.MaxLength = 14;
+                this.columninscricaoEstadual.MaxLength = 12;
+                this.columncnpjSoftwareHouse.MaxLength = 14;
+                this.columnsenhaSat.MaxLength = 32;
+                this.columnassinaturaAC.MaxLength = 344;
+                this.columnregimeTributario.MaxLength = 16;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14302,6 +14406,118 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cnpjEmpresa {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.cnpjEmpresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'cnpjEmpresa\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.cnpjEmpresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string inscricaoEstadual {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.inscricaoEstadualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'inscricaoEstadual\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.inscricaoEstadualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cnpjSoftwareHouse {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.cnpjSoftwareHouseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'cnpjSoftwareHouse\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.cnpjSoftwareHouseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string senhaSat {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.senhaSatColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'senhaSat\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.senhaSatColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string assinaturaAC {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.assinaturaACColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'assinaturaAC\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.assinaturaACColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool fiscal {
+                get {
+                    try {
+                        return ((bool)(this[this.tableConfig_Sistema.fiscalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'fiscal\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.fiscalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string regimeTributario {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.regimeTributarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'regimeTributario\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.regimeTributarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isa_BloquearNull() {
                 return this.IsNull(this.tableConfig_Sistema.a_BloquearColumn);
             }
@@ -14346,6 +14562,90 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdataUltimoBloqueioNull() {
                 this[this.tableConfig_Sistema.dataUltimoBloqueioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscnpjEmpresaNull() {
+                return this.IsNull(this.tableConfig_Sistema.cnpjEmpresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcnpjEmpresaNull() {
+                this[this.tableConfig_Sistema.cnpjEmpresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsinscricaoEstadualNull() {
+                return this.IsNull(this.tableConfig_Sistema.inscricaoEstadualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetinscricaoEstadualNull() {
+                this[this.tableConfig_Sistema.inscricaoEstadualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscnpjSoftwareHouseNull() {
+                return this.IsNull(this.tableConfig_Sistema.cnpjSoftwareHouseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcnpjSoftwareHouseNull() {
+                this[this.tableConfig_Sistema.cnpjSoftwareHouseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssenhaSatNull() {
+                return this.IsNull(this.tableConfig_Sistema.senhaSatColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsenhaSatNull() {
+                this[this.tableConfig_Sistema.senhaSatColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsassinaturaACNull() {
+                return this.IsNull(this.tableConfig_Sistema.assinaturaACColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetassinaturaACNull() {
+                this[this.tableConfig_Sistema.assinaturaACColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfiscalNull() {
+                return this.IsNull(this.tableConfig_Sistema.fiscalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfiscalNull() {
+                this[this.tableConfig_Sistema.fiscalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsregimeTributarioNull() {
+                return this.IsNull(this.tableConfig_Sistema.regimeTributarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetregimeTributarioNull() {
+                this[this.tableConfig_Sistema.regimeTributarioColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24720,16 +25020,29 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             tableMapping.ColumnMappings.Add("bloqueado", "bloqueado");
             tableMapping.ColumnMappings.Add("senha", "senha");
             tableMapping.ColumnMappings.Add("dataUltimoBloqueio", "dataUltimoBloqueio");
+            tableMapping.ColumnMappings.Add("cnpjEmpresa", "cnpjEmpresa");
+            tableMapping.ColumnMappings.Add("inscricaoEstadual", "inscricaoEstadual");
+            tableMapping.ColumnMappings.Add("cnpjSoftwareHouse", "cnpjSoftwareHouse");
+            tableMapping.ColumnMappings.Add("senhaSat", "senhaSat");
+            tableMapping.ColumnMappings.Add("assinaturaAC", "assinaturaAC");
+            tableMapping.ColumnMappings.Add("fiscal", "fiscal");
+            tableMapping.ColumnMappings.Add("regimeTributario", "regimeTributario");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloq" +
-                "ueio]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio], [cnpjEmpresa], [inscricaoEstadual], [cnpjSoftwareHouse], [senhaSat], [assinaturaAC], [fiscal], [regimeTributario]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio, @cnpjEmpresa, @inscricaoEstadual, @cnpjSoftwareHouse, @senhaSat, @assinaturaAC, @fiscal, @regimeTributario)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@a_Bloquear", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "a_Bloquear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bloqueado", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bloqueado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataUltimoBloqueio", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataUltimoBloqueio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjSoftwareHouse", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjSoftwareHouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24742,11 +25055,12 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio\r\nFROM            C" +
-                "onfig_Sistema";
+            this._commandCollection[0].CommandText = "SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio, cnpjEmpresa, insc" +
+                "ricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, fiscal, regimeTributar" +
+                "io\r\nFROM            Config_Sistema";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -24755,15 +25069,46 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bloqueado", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 0, 0, "bloqueado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE [dbo].[Config_Sistema] SET  [dataUltimoBloqueio] = @dataUltimoBloqueio\r\nWH" +
-                "ERE idConfig = 1";
+            this._commandCollection[2].CommandText = @"UPDATE       Config_Sistema
+SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, cnpjSoftwareHouse = @cnpjSoftwareHouse, senhaSat = @senhaSat, assinaturaAC = @assinaturaAC, regimeTributario = @regimeTributario
+WHERE idConfig = 1
+
+";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataUltimoBloqueio", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataUltimoBloqueio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjSoftwareHouse", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjSoftwareHouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 32, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 344, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.VarChar, 16, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [dbo].[Config_Sistema] SET  [senha] = @senha\r\nWHERE idConfig = 1";
+            this._commandCollection[3].CommandText = "UPDATE [dbo].[Config_Sistema] SET  [dataUltimoBloqueio] = @dataUltimoBloqueio\r\nWH" +
+                "ERE idConfig = 1";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senha", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataUltimoBloqueio", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataUltimoBloqueio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE       Config_Sistema\r\nSET                fiscal = @fiscal\r\nWHERE idConfig " +
+                "= 1\r\n";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE [dbo].[Config_Sistema] SET  [senha] = @senha\r\nWHERE idConfig = 1";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senha", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "INSERT INTO Config_Sistema\r\n                         (cnpjEmpresa, inscricaoEstad" +
+                "ual, cnpjSoftwareHouse, senhaSat, assinaturaAC)\r\nVALUES        (@cnpjEmpresa,@in" +
+                "scricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@assinaturaAC)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjSoftwareHouse", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjSoftwareHouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 32, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 344, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24810,7 +25155,7 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<byte> a_Bloquear, global::System.Nullable<byte> bloqueado, string senha, global::System.Nullable<global::System.DateTime> dataUltimoBloqueio) {
+        public virtual int Insert(global::System.Nullable<byte> a_Bloquear, global::System.Nullable<byte> bloqueado, string senha, global::System.Nullable<global::System.DateTime> dataUltimoBloqueio, string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC, global::System.Nullable<bool> fiscal, global::System.Nullable<int> regimeTributario) {
             if ((a_Bloquear.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((byte)(a_Bloquear.Value));
             }
@@ -24834,6 +25179,48 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((cnpjEmpresa == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(cnpjEmpresa));
+            }
+            if ((inscricaoEstadual == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(inscricaoEstadual));
+            }
+            if ((cnpjSoftwareHouse == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(cnpjSoftwareHouse));
+            }
+            if ((senhaSat == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(senhaSat));
+            }
+            if ((assinaturaAC == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(assinaturaAC));
+            }
+            if ((fiscal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((regimeTributario.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(regimeTributario.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -24884,8 +25271,67 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int attData(string dataUltimoBloqueio) {
+        public virtual int attDadosFiscais(string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC, string regimeTributario) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((cnpjEmpresa == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(cnpjEmpresa));
+            }
+            if ((inscricaoEstadual == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(inscricaoEstadual));
+            }
+            if ((cnpjSoftwareHouse == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(cnpjSoftwareHouse));
+            }
+            if ((senhaSat == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(senhaSat));
+            }
+            if ((assinaturaAC == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(assinaturaAC));
+            }
+            if ((regimeTributario == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(regimeTributario));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int attData(string dataUltimoBloqueio) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((dataUltimoBloqueio == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -24913,13 +25359,95 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int attFiscal(global::System.Nullable<bool> fiscal) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((fiscal.HasValue == true)) {
+                command.Parameters[0].Value = ((bool)(fiscal.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int attSenha(string senha) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((senha == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[0].Value = ((string)(senha));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int inserirDadosFiscais(string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            if ((cnpjEmpresa == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(cnpjEmpresa));
+            }
+            if ((inscricaoEstadual == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(inscricaoEstadual));
+            }
+            if ((cnpjSoftwareHouse == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(cnpjSoftwareHouse));
+            }
+            if ((senhaSat == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(senhaSat));
+            }
+            if ((assinaturaAC == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(assinaturaAC));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

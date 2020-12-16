@@ -585,5 +585,15 @@ namespace WindowsFormsApp2
             else
                 MessageBox.Show("Datas invalidas");
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            fechamentoCaixa();
+        }
     }
 }

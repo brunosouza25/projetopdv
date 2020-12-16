@@ -32,8 +32,8 @@
             this.PainelPrincipalConfig = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btColaboladores = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
+            this.btColaboladores = new System.Windows.Forms.Button();
             this.PainelPrincipalConfig.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +81,16 @@
             this.panel1.Size = new System.Drawing.Size(1252, 43);
             this.panel1.TabIndex = 0;
             // 
+            // btnConfig
+            // 
+            this.btnConfig.Location = new System.Drawing.Point(97, 1);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(86, 40);
+            this.btnConfig.TabIndex = 1;
+            this.btnConfig.Text = "Fiscal";
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
             // btColaboladores
             // 
             this.btColaboladores.Location = new System.Drawing.Point(5, 1);
@@ -90,15 +100,6 @@
             this.btColaboladores.Text = "Colaboladores";
             this.btColaboladores.UseVisualStyleBackColor = true;
             this.btColaboladores.Click += new System.EventHandler(this.btColaboladores_Click);
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Location = new System.Drawing.Point(97, 3);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(86, 40);
-            this.btnConfig.TabIndex = 1;
-            this.btnConfig.Text = "Fiscal";
-            this.btnConfig.UseVisualStyleBackColor = true;
             // 
             // TelaConfig
             // 

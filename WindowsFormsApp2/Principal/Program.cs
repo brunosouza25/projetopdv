@@ -20,8 +20,17 @@ namespace WindowsFormsApp2
             Application.SetCompatibleTextRenderingDefault(false);
             
             DadosTableAdapters.Config_SistemaTableAdapter config = new DadosTableAdapters.Config_SistemaTableAdapter();
-            /*
             var configSistema = config.retornarConfig();
+            if (configSistema[0]["regimeTributario"].ToString() == "Simples Nacional")
+            {
+                Global.simples = true;
+            }
+            else
+            {
+                Global.simples = false;
+            }
+            /*
+            
 
             string mesHoje = DateTime.Now.ToString("MM");
             string mesBloqueio = Convert.ToDateTime(configSistema[0]["dataUltimoBloqueio"]).ToString("MM");
