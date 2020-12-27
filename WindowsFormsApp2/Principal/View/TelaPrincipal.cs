@@ -11,8 +11,8 @@ namespace WindowsFormsApp2
         TelaPrincipalEstoque estoque = new TelaPrincipalEstoque();
         TelaDeRelatorios relatorio = new TelaDeRelatorios();
         TelaDeVendas telaDoPdv = new TelaDeVendas();
-        TelaConfig telaDeConfig = new TelaConfig();   
-
+        TelaConfig telaDeConfig = new TelaConfig();
+        Fiscal fiscal = new Fiscal();
 
         public TelaPrincipal()
         {
@@ -155,6 +155,9 @@ namespace WindowsFormsApp2
            timer1.Start();
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fiscal.escreverIniNfce();
+        }
     }
 }

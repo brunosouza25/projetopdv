@@ -33,6 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.painel_hora = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.Lab_Hora = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblConfiguracoes = new System.Windows.Forms.Label();
@@ -84,12 +85,24 @@
             // 
             // painel_hora
             // 
+            this.painel_hora.Controls.Add(this.button1);
             this.painel_hora.Controls.Add(this.Lab_Hora);
             this.painel_hora.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painel_hora.Location = new System.Drawing.Point(635, 3);
             this.painel_hora.Name = "painel_hora";
             this.painel_hora.Size = new System.Drawing.Size(626, 98);
             this.painel_hora.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.relatorios;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(266, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 74);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Lab_Hora
             // 
@@ -255,6 +268,7 @@
         private System.Windows.Forms.Label lblVendas;
         private System.Windows.Forms.Label lblConfiguracoes;
         private System.Windows.Forms.Button btnConfig;
+        private System.Windows.Forms.Button button1;
     }
 }
 

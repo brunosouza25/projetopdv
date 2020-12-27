@@ -125,6 +125,7 @@
     <Compile Include="Estoque\View\TelaTributacaoProd.Designer.cs">
       <DependentUpon>TelaTributacaoProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fiscal.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Principal\View\Config\Classes\Colaborador.cs" />
     <Compile Include="Principal\View\Config\ConfigSistema.cs">

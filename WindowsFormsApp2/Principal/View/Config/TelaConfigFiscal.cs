@@ -24,7 +24,9 @@ namespace WindowsFormsApp2.Principal.View.Config
             if (ckBoxFiscal.Checked)
             {
                 travar_LiberarFiscal(true);
-                if (cBoxRegimeTributario.SelectedItem != null && txtBoxCnpjEmpresa.Text != "" && txtBoxIE.Text != "" && txtBoxSenhaSat.Text != "" && rTxtBoxCodSat.Text != "")
+                if (cBoxRegimeTributario.SelectedItem != null && txtBoxCnpjEmpresa.Text != "" && txtBoxIE.Text != "" && txtBoxSenhaSat.Text != "" 
+                    && rTxtBoxCodSat.Text != "" && txtBoxRazaoSocial.Text != "" && txtBoxNomeFantasia.Text != "" && txtBoxTelefone.Text != "" && txtBoxCep.Text != "" 
+                    && txtBoxLogradouro.Text != "" && txtBoxNumero.Text != "" && txtBoxBairro.Text != "" && txtBoxCidade.Text != "" && txtBoxCodCidade.Text != "" && txtBoxUf.Text != "")
 
                 {
 
