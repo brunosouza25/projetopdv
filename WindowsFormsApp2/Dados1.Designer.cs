@@ -6460,6 +6460,26 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnregimeTributario;
             
+            private global::System.Data.DataColumn columnrazaoSocial;
+            
+            private global::System.Data.DataColumn columnnomeFantasia;
+            
+            private global::System.Data.DataColumn columntelefone;
+            
+            private global::System.Data.DataColumn columncep;
+            
+            private global::System.Data.DataColumn columnlogradouro;
+            
+            private global::System.Data.DataColumn columnnumero;
+            
+            private global::System.Data.DataColumn columnbairro;
+            
+            private global::System.Data.DataColumn columncidade;
+            
+            private global::System.Data.DataColumn columncodigoCidade;
+            
+            private global::System.Data.DataColumn columnuf;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Config_SistemaDataTable() {
@@ -6583,6 +6603,86 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn razaoSocialColumn {
+                get {
+                    return this.columnrazaoSocial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nomeFantasiaColumn {
+                get {
+                    return this.columnnomeFantasia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn telefoneColumn {
+                get {
+                    return this.columntelefone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cepColumn {
+                get {
+                    return this.columncep;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn logradouroColumn {
+                get {
+                    return this.columnlogradouro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn numeroColumn {
+                get {
+                    return this.columnnumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bairroColumn {
+                get {
+                    return this.columnbairro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cidadeColumn {
+                get {
+                    return this.columncidade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codigoCidadeColumn {
+                get {
+                    return this.columncodigoCidade;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ufColumn {
+                get {
+                    return this.columnuf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6618,7 +6718,28 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Config_SistemaRow AddConfig_SistemaRow(byte a_Bloquear, byte bloqueado, string senha, System.DateTime dataUltimoBloqueio, string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC, bool fiscal, string regimeTributario) {
+            public Config_SistemaRow AddConfig_SistemaRow(
+                        byte a_Bloquear, 
+                        byte bloqueado, 
+                        string senha, 
+                        System.DateTime dataUltimoBloqueio, 
+                        string cnpjEmpresa, 
+                        string inscricaoEstadual, 
+                        string cnpjSoftwareHouse, 
+                        string senhaSat, 
+                        string assinaturaAC, 
+                        bool fiscal, 
+                        string regimeTributario, 
+                        string razaoSocial, 
+                        string nomeFantasia, 
+                        string telefone, 
+                        string cep, 
+                        string logradouro, 
+                        string numero, 
+                        string bairro, 
+                        string cidade, 
+                        string codigoCidade, 
+                        string uf) {
                 Config_SistemaRow rowConfig_SistemaRow = ((Config_SistemaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         a_Bloquear,
@@ -6631,7 +6752,17 @@ namespace WindowsFormsApp2 {
                         senhaSat,
                         assinaturaAC,
                         fiscal,
-                        regimeTributario};
+                        regimeTributario,
+                        razaoSocial,
+                        nomeFantasia,
+                        telefone,
+                        cep,
+                        logradouro,
+                        numero,
+                        bairro,
+                        cidade,
+                        codigoCidade,
+                        uf};
                 rowConfig_SistemaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConfig_SistemaRow);
                 return rowConfig_SistemaRow;
@@ -6665,6 +6796,16 @@ namespace WindowsFormsApp2 {
                 this.columnassinaturaAC = base.Columns["assinaturaAC"];
                 this.columnfiscal = base.Columns["fiscal"];
                 this.columnregimeTributario = base.Columns["regimeTributario"];
+                this.columnrazaoSocial = base.Columns["razaoSocial"];
+                this.columnnomeFantasia = base.Columns["nomeFantasia"];
+                this.columntelefone = base.Columns["telefone"];
+                this.columncep = base.Columns["cep"];
+                this.columnlogradouro = base.Columns["logradouro"];
+                this.columnnumero = base.Columns["numero"];
+                this.columnbairro = base.Columns["bairro"];
+                this.columncidade = base.Columns["cidade"];
+                this.columncodigoCidade = base.Columns["codigoCidade"];
+                this.columnuf = base.Columns["uf"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6692,6 +6833,26 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnfiscal);
                 this.columnregimeTributario = new global::System.Data.DataColumn("regimeTributario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnregimeTributario);
+                this.columnrazaoSocial = new global::System.Data.DataColumn("razaoSocial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrazaoSocial);
+                this.columnnomeFantasia = new global::System.Data.DataColumn("nomeFantasia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnomeFantasia);
+                this.columntelefone = new global::System.Data.DataColumn("telefone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefone);
+                this.columncep = new global::System.Data.DataColumn("cep", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncep);
+                this.columnlogradouro = new global::System.Data.DataColumn("logradouro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlogradouro);
+                this.columnnumero = new global::System.Data.DataColumn("numero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero);
+                this.columnbairro = new global::System.Data.DataColumn("bairro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbairro);
+                this.columncidade = new global::System.Data.DataColumn("cidade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncidade);
+                this.columncodigoCidade = new global::System.Data.DataColumn("codigoCidade", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigoCidade);
+                this.columnuf = new global::System.Data.DataColumn("uf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuf);
                 this.columnsenha.MaxLength = 54;
                 this.columncnpjEmpresa.MaxLength = 14;
                 this.columninscricaoEstadual.MaxLength = 12;
@@ -6699,6 +6860,16 @@ namespace WindowsFormsApp2 {
                 this.columnsenhaSat.MaxLength = 32;
                 this.columnassinaturaAC.MaxLength = 344;
                 this.columnregimeTributario.MaxLength = 16;
+                this.columnrazaoSocial.MaxLength = 100;
+                this.columnnomeFantasia.MaxLength = 100;
+                this.columntelefone.MaxLength = 18;
+                this.columncep.MaxLength = 9;
+                this.columnlogradouro.MaxLength = 100;
+                this.columnnumero.MaxLength = 7;
+                this.columnbairro.MaxLength = 100;
+                this.columncidade.MaxLength = 100;
+                this.columncodigoCidade.MaxLength = 10;
+                this.columnuf.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14518,6 +14689,166 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string razaoSocial {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.razaoSocialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'razaoSocial\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.razaoSocialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nomeFantasia {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.nomeFantasiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'nomeFantasia\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.nomeFantasiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string telefone {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.telefoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'telefone\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.telefoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cep {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.cepColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'cep\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.cepColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string logradouro {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.logradouroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'logradouro\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.logradouroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string numero {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.numeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'numero\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.numeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bairro {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.bairroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'bairro\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.bairroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cidade {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.cidadeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'cidade\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.cidadeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string codigoCidade {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.codigoCidadeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'codigoCidade\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.codigoCidadeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string uf {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfig_Sistema.ufColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'uf\' na tabela \'Config_Sistema\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfig_Sistema.ufColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isa_BloquearNull() {
                 return this.IsNull(this.tableConfig_Sistema.a_BloquearColumn);
             }
@@ -14646,6 +14977,126 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetregimeTributarioNull() {
                 this[this.tableConfig_Sistema.regimeTributarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsrazaoSocialNull() {
+                return this.IsNull(this.tableConfig_Sistema.razaoSocialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetrazaoSocialNull() {
+                this[this.tableConfig_Sistema.razaoSocialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnomeFantasiaNull() {
+                return this.IsNull(this.tableConfig_Sistema.nomeFantasiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnomeFantasiaNull() {
+                this[this.tableConfig_Sistema.nomeFantasiaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IstelefoneNull() {
+                return this.IsNull(this.tableConfig_Sistema.telefoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SettelefoneNull() {
+                this[this.tableConfig_Sistema.telefoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscepNull() {
+                return this.IsNull(this.tableConfig_Sistema.cepColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcepNull() {
+                this[this.tableConfig_Sistema.cepColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IslogradouroNull() {
+                return this.IsNull(this.tableConfig_Sistema.logradouroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetlogradouroNull() {
+                this[this.tableConfig_Sistema.logradouroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsnumeroNull() {
+                return this.IsNull(this.tableConfig_Sistema.numeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetnumeroNull() {
+                this[this.tableConfig_Sistema.numeroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsbairroNull() {
+                return this.IsNull(this.tableConfig_Sistema.bairroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetbairroNull() {
+                this[this.tableConfig_Sistema.bairroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscidadeNull() {
+                return this.IsNull(this.tableConfig_Sistema.cidadeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcidadeNull() {
+                this[this.tableConfig_Sistema.cidadeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodigoCidadeNull() {
+                return this.IsNull(this.tableConfig_Sistema.codigoCidadeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodigoCidadeNull() {
+                this[this.tableConfig_Sistema.codigoCidadeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsufNull() {
+                return this.IsNull(this.tableConfig_Sistema.ufColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetufNull() {
+                this[this.tableConfig_Sistema.ufColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -25064,10 +25515,20 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             tableMapping.ColumnMappings.Add("assinaturaAC", "assinaturaAC");
             tableMapping.ColumnMappings.Add("fiscal", "fiscal");
             tableMapping.ColumnMappings.Add("regimeTributario", "regimeTributario");
+            tableMapping.ColumnMappings.Add("razaoSocial", "razaoSocial");
+            tableMapping.ColumnMappings.Add("nomeFantasia", "nomeFantasia");
+            tableMapping.ColumnMappings.Add("telefone", "telefone");
+            tableMapping.ColumnMappings.Add("cep", "cep");
+            tableMapping.ColumnMappings.Add("logradouro", "logradouro");
+            tableMapping.ColumnMappings.Add("numero", "numero");
+            tableMapping.ColumnMappings.Add("bairro", "bairro");
+            tableMapping.ColumnMappings.Add("cidade", "cidade");
+            tableMapping.ColumnMappings.Add("codigoCidade", "codigoCidade");
+            tableMapping.ColumnMappings.Add("uf", "uf");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio], [cnpjEmpresa], [inscricaoEstadual], [cnpjSoftwareHouse], [senhaSat], [assinaturaAC], [fiscal], [regimeTributario]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio, @cnpjEmpresa, @inscricaoEstadual, @cnpjSoftwareHouse, @senhaSat, @assinaturaAC, @fiscal, @regimeTributario)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio], [cnpjEmpresa], [inscricaoEstadual], [cnpjSoftwareHouse], [senhaSat], [assinaturaAC], [fiscal], [regimeTributario], [razaoSocial], [nomeFantasia], [telefone], [cep], [logradouro], [numero], [bairro], [cidade], [codigoCidade], [uf]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio, @cnpjEmpresa, @inscricaoEstadual, @cnpjSoftwareHouse, @senhaSat, @assinaturaAC, @fiscal, @regimeTributario, @razaoSocial, @nomeFantasia, @telefone, @cep, @logradouro, @numero, @bairro, @cidade, @codigoCidade, @uf)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@a_Bloquear", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "a_Bloquear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bloqueado", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bloqueado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25079,7 +25540,17 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@razaoSocial", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "razaoSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nomeFantasia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nomeFantasia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cep", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cep", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@logradouro", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "logradouro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bairro", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bairro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cidade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoCidade", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigoCidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "uf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25095,9 +25566,9 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio, cnpjEmpresa, insc" +
-                "ricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, fiscal, regimeTributar" +
-                "io\r\nFROM            Config_Sistema";
+            this._commandCollection[0].CommandText = @"SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio, cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, fiscal, regimeTributario, razaoSocial, nomeFantasia, telefone, cep, logradouro, numero, bairro, 
+                         cidade, codigoCidade, uf
+FROM            Config_Sistema";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -25107,10 +25578,9 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"UPDATE       Config_Sistema
-SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, cnpjSoftwareHouse = @cnpjSoftwareHouse, senhaSat = @senhaSat, assinaturaAC = @assinaturaAC, regimeTributario = @regimeTributario
-WHERE idConfig = 1
-
-";
+SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, cnpjSoftwareHouse = @cnpjSoftwareHouse, senhaSat = @senhaSat, assinaturaAC = @assinaturaAC, regimeTributario = @regimeTributario, 
+                         razaoSocial = @razaoSocial , nomeFantasia = @nomeFantasia , telefone = @telefone , cep = @cep , logradouro = @logradouro , numero = @numero , bairro = @bairro , cidade = @cidade , codigoCidade = @codigoCidade , uf = @uf
+WHERE        (idConfig = 1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25118,6 +25588,16 @@ WHERE idConfig = 1
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 32, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 344, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.VarChar, 16, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@razaoSocial", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "razaoSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nomeFantasia", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nomeFantasia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefone", global::System.Data.SqlDbType.VarChar, 18, global::System.Data.ParameterDirection.Input, 0, 0, "telefone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cep", global::System.Data.SqlDbType.VarChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, "cep", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@logradouro", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "logradouro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bairro", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "bairro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cidade", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "cidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigoCidade", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "codigoCidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uf", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "uf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "UPDATE [dbo].[Config_Sistema] SET  [dataUltimoBloqueio] = @dataUltimoBloqueio\r\nWH" +
@@ -25137,9 +25617,9 @@ WHERE idConfig = 1
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senha", global::System.Data.SqlDbType.VarChar, 54, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "INSERT INTO Config_Sistema\r\n                         (cnpjEmpresa, inscricaoEstad" +
-                "ual, cnpjSoftwareHouse, senhaSat, assinaturaAC)\r\nVALUES        (@cnpjEmpresa,@in" +
-                "scricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@assinaturaAC)";
+            this._commandCollection[6].CommandText = @"INSERT INTO Config_Sistema
+                         (cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, razaoSocial, nomeFantasia, telefone, cep, logradouro, numero, bairro, cidade, codigoCidade, uf)
+VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@assinaturaAC,razaoSocial,nomeFantasia,telefone,cep,logradouro,numero,bairro,cidade,codigoCidade,uf)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25192,7 +25672,28 @@ WHERE idConfig = 1
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<byte> a_Bloquear, global::System.Nullable<byte> bloqueado, string senha, global::System.Nullable<global::System.DateTime> dataUltimoBloqueio, string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC, global::System.Nullable<bool> fiscal, global::System.Nullable<int> regimeTributario) {
+        public virtual int Insert(
+                    global::System.Nullable<byte> a_Bloquear, 
+                    global::System.Nullable<byte> bloqueado, 
+                    string senha, 
+                    global::System.Nullable<global::System.DateTime> dataUltimoBloqueio, 
+                    string cnpjEmpresa, 
+                    string inscricaoEstadual, 
+                    string cnpjSoftwareHouse, 
+                    string senhaSat, 
+                    string assinaturaAC, 
+                    global::System.Nullable<bool> fiscal, 
+                    string regimeTributario, 
+                    string razaoSocial, 
+                    string nomeFantasia, 
+                    string telefone, 
+                    string cep, 
+                    string logradouro, 
+                    string numero, 
+                    string bairro, 
+                    string cidade, 
+                    string codigoCidade, 
+                    string uf) {
             if ((a_Bloquear.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((byte)(a_Bloquear.Value));
             }
@@ -25253,11 +25754,71 @@ WHERE idConfig = 1
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((regimeTributario.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(regimeTributario.Value));
+            if ((regimeTributario == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(regimeTributario));
+            }
+            if ((razaoSocial == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(razaoSocial));
+            }
+            if ((nomeFantasia == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(nomeFantasia));
+            }
+            if ((telefone == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(telefone));
+            }
+            if ((cep == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(cep));
+            }
+            if ((logradouro == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(logradouro));
+            }
+            if ((numero == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(numero));
+            }
+            if ((bairro == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(bairro));
+            }
+            if ((cidade == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(cidade));
+            }
+            if ((codigoCidade == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(codigoCidade));
+            }
+            if ((uf == null)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(uf));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -25308,7 +25869,23 @@ WHERE idConfig = 1
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int attDadosFiscais(string cnpjEmpresa, string inscricaoEstadual, string cnpjSoftwareHouse, string senhaSat, string assinaturaAC, string regimeTributario) {
+        public virtual int attDadosFiscais(
+                    string cnpjEmpresa, 
+                    string inscricaoEstadual, 
+                    string cnpjSoftwareHouse, 
+                    string senhaSat, 
+                    string assinaturaAC, 
+                    string regimeTributario, 
+                    string razaoSocial, 
+                    string nomeFantasia, 
+                    string telefone, 
+                    string cep, 
+                    string logradouro, 
+                    string numero, 
+                    string bairro, 
+                    string cidade, 
+                    string codigoCidade, 
+                    string uf) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((cnpjEmpresa == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -25345,6 +25922,66 @@ WHERE idConfig = 1
             }
             else {
                 command.Parameters[5].Value = ((string)(regimeTributario));
+            }
+            if ((razaoSocial == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(razaoSocial));
+            }
+            if ((nomeFantasia == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(nomeFantasia));
+            }
+            if ((telefone == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(telefone));
+            }
+            if ((cep == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(cep));
+            }
+            if ((logradouro == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(logradouro));
+            }
+            if ((numero == null)) {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[11].Value = ((string)(numero));
+            }
+            if ((bairro == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(bairro));
+            }
+            if ((cidade == null)) {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[13].Value = ((string)(cidade));
+            }
+            if ((codigoCidade == null)) {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[14].Value = ((string)(codigoCidade));
+            }
+            if ((uf == null)) {
+                command.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[15].Value = ((string)(uf));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

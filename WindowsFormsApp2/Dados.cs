@@ -10,9 +10,12 @@
     }
 }
 
-namespace WindowsFormsApp2.DadosTableAdapters {
-    
-    
+namespace WindowsFormsApp2.DadosTableAdapters
+{
+    partial class Config_SistemaTableAdapter
+    {
+    }
+
     public partial class ProdutoTableAdapter {
     }
 }

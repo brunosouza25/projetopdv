@@ -192,8 +192,20 @@ CREATE TABLE Config_Sistema(
 	inscricaoEstadual VARCHAR(12),
 	cnpjSoftwareHouse VARCHAR(14),
 	senhaSat varchar(32),
-	assinaturaAC VARCHAR(344)
+	assinaturaAC VARCHAR(344),
+	razaoSocial VARCHAR(100),
+	nomeFantasia VARCHAR(100),
+	telefone VARCHAR(18),
+	cep VARCHAR(9),
+	logradouro VARCHAR(100),
+	numero VARCHAR(7),
+	bairro VARCHAR(100),
+	cidade VARCHAR(100),
+	codigoCidade VARCHAR(10),
+	uf VARCHAR(5),
 );
+
+
 
 CREATE TABLE Endereco(
 	idFuncionario INT,
@@ -236,7 +248,7 @@ INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 
-INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '')
+INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)
 
 
 INSERT INTO Cargo VALUES ('Nenhum', 0,0)

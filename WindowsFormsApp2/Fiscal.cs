@@ -9,8 +9,26 @@ namespace WindowsFormsApp2
 {
     class Fiscal
     {
+        DadosTableAdapters.Config_SistemaTableAdapter sistema = new DadosTableAdapters.Config_SistemaTableAdapter();
         public void escreverIniNfce()
         {
+            var auxFiscal = sistema.retornarConfig();
+            string cnpjEmpresa = auxFiscal[0]["cnpjEmpresa"].ToString();
+            string txtBoxIE = auxFiscal[0]["inscricaoEstadual"].ToString();
+            string txtBoxSenhaSat = auxFiscal[0]["senhaSat"].ToString();
+            string txtCnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
+            string rTxtBoxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
+            string txtBoxRazaoSocial = auxFiscal[0]["razaoSocial"].ToString();
+            string txtBoxNomeFantasia = auxFiscal[0]["nomeFantasia"].ToString();
+            string txtBoxTelefone = auxFiscal[0]["telefone"].ToString();
+            string txtBoxCep = auxFiscal[0]["cep"].ToString();
+            string txtBoxLogradouro = auxFiscal[0]["logradouro"].ToString();
+            string txtBoxNumero = auxFiscal[0]["numero"].ToString(); ;
+            string txtBoxBairro = auxFiscal[0]["bairro"].ToString();
+            string txtBoxCidade = auxFiscal[0]["cidade"].ToString();
+            string txtBoxCodCidade = auxFiscal[0]["codigoCidade"].ToString();
+            string txtBoxUf = auxFiscal[0]["uf"].ToString();
+
             StreamWriter x;
             string caminho = "C:\\Users\\bruno\\Desktop\\notas\\enviar\\nota.ini";
 

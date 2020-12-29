@@ -367,7 +367,7 @@ WHERE        (idProduto = @idProduto)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attFIscalProduto" Modifier="Public" Name="attFIscalProduto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="attFIscalProduto">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attFIscalProduto" Modifier="Public" Name="attFIscalProduto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="attFIscalProduto">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Produto
@@ -380,7 +380,7 @@ WHERE idProduto = @idProduto</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttPorCodBarras" Modifier="Public" Name="AttPorCodBarras" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="AttPorCodBarras">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttPorCodBarras" Modifier="Public" Name="AttPorCodBarras" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="AttPorCodBarras">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE [dbo].[Produto] SET  [prodQuantidade] = @prodQuantidade WHERE (prodCodBarras = @prodCodBarras)</CommandText>
@@ -391,7 +391,7 @@ WHERE idProduto = @idProduto</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttQuantidade" Modifier="Public" Name="AttQuantidade" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="AttQuantidade">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttQuantidade" Modifier="Public" Name="AttQuantidade" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="AttQuantidade">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE [dbo].[Produto] SET  [prodQuantidade] = @prodQuantidade WHERE (idProduto = @idProduto)</CommandText>
@@ -412,7 +412,7 @@ WHERE idProduto = @idProduto</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="inserirAlterarDadosTributacao" Modifier="Public" Name="inserirAlterarDadosTributacao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="inserirAlterarDadosTributacao">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="inserirAlterarDadosTributacao" Modifier="Public" Name="inserirAlterarDadosTributacao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="inserirAlterarDadosTributacao">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Produto
@@ -436,7 +436,7 @@ WHERE        (idProduto = @idProduto)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InserirDados" Modifier="Public" Name="InserirDados" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InserirDados">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InserirDados" Modifier="Public" Name="InserirDados" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="InserirDados">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Produto
@@ -1733,7 +1733,7 @@ WHERE idVenda = @idVenda</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Config_Sistema" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarConfig" GetMethodModifier="Public" GetMethodName="retornarConfig" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarConfig" UserSourceName="retornarConfig">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio], [cnpjEmpresa], [inscricaoEstadual], [cnpjSoftwareHouse], [senhaSat], [assinaturaAC], [fiscal], [regimeTributario]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio, @cnpjEmpresa, @inscricaoEstadual, @cnpjSoftwareHouse, @senhaSat, @assinaturaAC, @fiscal, @regimeTributario)</CommandText>
+                    <CommandText>INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio], [cnpjEmpresa], [inscricaoEstadual], [cnpjSoftwareHouse], [senhaSat], [assinaturaAC], [fiscal], [regimeTributario], [razaoSocial], [nomeFantasia], [telefone], [cep], [logradouro], [numero], [bairro], [cidade], [codigoCidade], [uf]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio, @cnpjEmpresa, @inscricaoEstadual, @cnpjSoftwareHouse, @senhaSat, @assinaturaAC, @fiscal, @regimeTributario, @razaoSocial, @nomeFantasia, @telefone, @cep, @logradouro, @numero, @bairro, @cidade, @codigoCidade, @uf)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@a_Bloquear" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="a_Bloquear" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@bloqueado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="bloqueado" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1745,13 +1745,24 @@ WHERE idVenda = @idVenda</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@senhaSat" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="senhaSat" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@assinaturaAC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="assinaturaAC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@fiscal" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="fiscal" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@regimeTributario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="regimeTributario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@regimeTributario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="regimeTributario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@razaoSocial" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="razaoSocial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nomeFantasia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomeFantasia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@telefone" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="telefone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@cep" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@logradouro" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="logradouro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="numero" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@bairro" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="bairro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@cidade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cidade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@codigoCidade" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="codigoCidade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@uf" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="uf" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio, cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, fiscal, regimeTributario
+                    <CommandText>SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio, cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, fiscal, regimeTributario, razaoSocial, nomeFantasia, telefone, cep, logradouro, numero, bairro, 
+                         cidade, codigoCidade, uf
 FROM            Config_Sistema</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1770,6 +1781,16 @@ FROM            Config_Sistema</CommandText>
               <Mapping SourceColumn="assinaturaAC" DataSetColumn="assinaturaAC" />
               <Mapping SourceColumn="fiscal" DataSetColumn="fiscal" />
               <Mapping SourceColumn="regimeTributario" DataSetColumn="regimeTributario" />
+              <Mapping SourceColumn="razaoSocial" DataSetColumn="razaoSocial" />
+              <Mapping SourceColumn="nomeFantasia" DataSetColumn="nomeFantasia" />
+              <Mapping SourceColumn="telefone" DataSetColumn="telefone" />
+              <Mapping SourceColumn="cep" DataSetColumn="cep" />
+              <Mapping SourceColumn="logradouro" DataSetColumn="logradouro" />
+              <Mapping SourceColumn="numero" DataSetColumn="numero" />
+              <Mapping SourceColumn="bairro" DataSetColumn="bairro" />
+              <Mapping SourceColumn="cidade" DataSetColumn="cidade" />
+              <Mapping SourceColumn="codigoCidade" DataSetColumn="codigoCidade" />
+              <Mapping SourceColumn="uf" DataSetColumn="uf" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="alterarConfig" Modifier="Public" Name="alterarConfig" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="alterarConfig">
@@ -1787,10 +1808,9 @@ WHERE idConfig = 1</CommandText>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Config_Sistema
-SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, cnpjSoftwareHouse = @cnpjSoftwareHouse, senhaSat = @senhaSat, assinaturaAC = @assinaturaAC, regimeTributario = @regimeTributario
-WHERE idConfig = 1
-
-</CommandText>
+SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, cnpjSoftwareHouse = @cnpjSoftwareHouse, senhaSat = @senhaSat, assinaturaAC = @assinaturaAC, regimeTributario = @regimeTributario, 
+                         razaoSocial = @razaoSocial , nomeFantasia = @nomeFantasia , telefone = @telefone , cep = @cep , logradouro = @logradouro , numero = @numero , bairro = @bairro , cidade = @cidade , codigoCidade = @codigoCidade , uf = @uf
+WHERE        (idConfig = 1)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="cnpjEmpresa" ColumnName="cnpjEmpresa" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(14)" DbType="AnsiString" Direction="Input" ParameterName="@cnpjEmpresa" Precision="0" ProviderType="VarChar" Scale="0" Size="14" SourceColumn="cnpjEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="inscricaoEstadual" ColumnName="inscricaoEstadual" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@inscricaoEstadual" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="inscricaoEstadual" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1798,6 +1818,16 @@ WHERE idConfig = 1
                       <Parameter AllowDbNull="true" AutogeneratedName="senhaSat" ColumnName="senhaSat" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(32)" DbType="AnsiString" Direction="Input" ParameterName="@senhaSat" Precision="0" ProviderType="VarChar" Scale="0" Size="32" SourceColumn="senhaSat" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="assinaturaAC" ColumnName="assinaturaAC" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(344)" DbType="AnsiString" Direction="Input" ParameterName="@assinaturaAC" Precision="0" ProviderType="VarChar" Scale="0" Size="344" SourceColumn="assinaturaAC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="regimeTributario" ColumnName="regimeTributario" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(16)" DbType="AnsiString" Direction="Input" ParameterName="@regimeTributario" Precision="0" ProviderType="VarChar" Scale="0" Size="16" SourceColumn="regimeTributario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="razaoSocial" ColumnName="razaoSocial" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@razaoSocial" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="razaoSocial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFantasia" ColumnName="nomeFantasia" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFantasia" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="nomeFantasia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="telefone" ColumnName="telefone" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(18)" DbType="AnsiString" Direction="Input" ParameterName="@telefone" Precision="0" ProviderType="VarChar" Scale="0" Size="18" SourceColumn="telefone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="cep" ColumnName="cep" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(9)" DbType="AnsiString" Direction="Input" ParameterName="@cep" Precision="0" ProviderType="VarChar" Scale="0" Size="9" SourceColumn="cep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="logradouro" ColumnName="logradouro" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@logradouro" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="logradouro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="numero" ColumnName="numero" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(7)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" ProviderType="VarChar" Scale="0" Size="7" SourceColumn="numero" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="bairro" ColumnName="bairro" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@bairro" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="bairro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="cidade" ColumnName="cidade" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@cidade" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="cidade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="codigoCidade" ColumnName="codigoCidade" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@codigoCidade" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="codigoCidade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="uf" ColumnName="uf" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@uf" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="uf" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -1841,8 +1871,8 @@ WHERE idConfig = 1</CommandText>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Config_Sistema
-                         (cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC)
-VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@assinaturaAC)</CommandText>
+                         (cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, razaoSocial, nomeFantasia, telefone, cep, logradouro, numero, bairro, cidade, codigoCidade, uf)
+VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@assinaturaAC,razaoSocial,nomeFantasia,telefone,cep,logradouro,numero,bairro,cidade,codigoCidade,uf)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="cnpjEmpresa" ColumnName="cnpjEmpresa" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(14)" DbType="AnsiString" Direction="Input" ParameterName="@cnpjEmpresa" Precision="0" ProviderType="VarChar" Scale="0" Size="14" SourceColumn="cnpjEmpresa" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="inscricaoEstadual" ColumnName="inscricaoEstadual" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Config_Sistema" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@inscricaoEstadual" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="inscricaoEstadual" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -3188,6 +3218,76 @@ WHERE id = @id</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="razaoSocial" msprop:Generator_ColumnVarNameInTable="columnrazaoSocial" msprop:Generator_ColumnPropNameInRow="razaoSocial" msprop:Generator_ColumnPropNameInTable="razaoSocialColumn" msprop:Generator_UserColumnName="razaoSocial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomeFantasia" msprop:Generator_ColumnVarNameInTable="columnnomeFantasia" msprop:Generator_ColumnPropNameInRow="nomeFantasia" msprop:Generator_ColumnPropNameInTable="nomeFantasiaColumn" msprop:Generator_UserColumnName="nomeFantasia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefone" msprop:Generator_ColumnVarNameInTable="columntelefone" msprop:Generator_ColumnPropNameInRow="telefone" msprop:Generator_ColumnPropNameInTable="telefoneColumn" msprop:Generator_UserColumnName="telefone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="18" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cep" msprop:Generator_ColumnVarNameInTable="columncep" msprop:Generator_ColumnPropNameInRow="cep" msprop:Generator_ColumnPropNameInTable="cepColumn" msprop:Generator_UserColumnName="cep" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="logradouro" msprop:Generator_ColumnVarNameInTable="columnlogradouro" msprop:Generator_ColumnPropNameInRow="logradouro" msprop:Generator_ColumnPropNameInTable="logradouroColumn" msprop:Generator_UserColumnName="logradouro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bairro" msprop:Generator_ColumnVarNameInTable="columnbairro" msprop:Generator_ColumnPropNameInRow="bairro" msprop:Generator_ColumnPropNameInTable="bairroColumn" msprop:Generator_UserColumnName="bairro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cidade" msprop:Generator_ColumnVarNameInTable="columncidade" msprop:Generator_ColumnPropNameInRow="cidade" msprop:Generator_ColumnPropNameInTable="cidadeColumn" msprop:Generator_UserColumnName="cidade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigoCidade" msprop:Generator_ColumnVarNameInTable="columncodigoCidade" msprop:Generator_ColumnPropNameInRow="codigoCidade" msprop:Generator_ColumnPropNameInTable="codigoCidadeColumn" msprop:Generator_UserColumnName="codigoCidade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="uf" msprop:Generator_ColumnVarNameInTable="columnuf" msprop:Generator_ColumnPropNameInRow="uf" msprop:Generator_ColumnPropNameInTable="ufColumn" msprop:Generator_UserColumnName="uf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
