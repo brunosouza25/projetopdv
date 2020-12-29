@@ -15,6 +15,8 @@ namespace WindowsFormsApp2
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter produto2 = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.CaixaTableAdapter caixa = new DadosTableAdapters.CaixaTableAdapter();
+        DadosTableAdapters.Config_SistemaTableAdapter configSistema = new DadosTableAdapters.Config_SistemaTableAdapter();
+        DadosTableAdapters.ItensDaVendaTableAdapter itensDaVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
 
 
 
@@ -168,7 +170,38 @@ namespace WindowsFormsApp2
             }
             
             MessageBox.Show("Venda realizada com sucesso!");
-            Close();
+            if (MessageBox.Show("Deseja emitir cupom fiscal?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                
+                var auxFiscal = configSistema.retornarConfig();
+                if (Convert.ToBoolean(auxFiscal[0]["fiscal"]))
+                {
+                    var quantidadeItensVenda = itensDaVenda.retornarItensVenda(Convert.ToInt32(aux2[0]["idVenda"]));
+                    Boolean fiscal = true;
+                    string nomeProduto = "";
+                    for(int i = 0; i >= quantidadeItensVenda.Count; i++)
+                    {
+
+                        if (!Convert.ToBoolean(quantidadeItensVenda[i]["fiscal"])){
+                            fiscal = false;
+                            nomeProduto = quantidadeItensVenda[i]["prodNome"].ToString();
+                        }
+
+                    }
+                    if (fiscal)
+                    {
+                        Fiscal cupomFiscal = new Fiscal();
+                        cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]));
+                    }
+                    else {
+                        MessageBox.Show("Não foi possível emitir o cupom fiscal, faltam dados fiscais do produto: "+nomeProduto);
+                    }
+                }
+                else{
+                    MessageBox.Show("Não foi possível emitir o cupom fiscal, faltam dados fiscais da empresa");
+                }
+            }
+                Close();
         }
         private void BtnFinalizar_Click(object sender, EventArgs e)
         

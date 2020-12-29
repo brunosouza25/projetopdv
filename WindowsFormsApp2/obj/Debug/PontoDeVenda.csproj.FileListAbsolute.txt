@@ -193,7 +193,6 @@ C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaI
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Estoque.View.TelaTributacaoProd.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.ConfigSistema.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Principal.View.Config.TelaConfigFiscal.resources
-C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\bin\Debug\Database.mdf
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\bin\Debug\Database_log.ldf
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
@@ -243,3 +242,4 @@ C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.appl
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CopyComplete
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache

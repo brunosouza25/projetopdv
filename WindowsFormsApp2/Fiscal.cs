@@ -4,30 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
     class Fiscal
     {
         DadosTableAdapters.Config_SistemaTableAdapter sistema = new DadosTableAdapters.Config_SistemaTableAdapter();
-        public void escreverIniNfce()
+        DadosTableAdapters.fiscalTableAdapter fiscal = new DadosTableAdapters.fiscalTableAdapter();
+        DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
+        DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
+        DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
+        public void escreverIniNfce(int codigoVenda)
         {
+            double total;
             var auxFiscal = sistema.retornarConfig();
             string cnpjEmpresa = auxFiscal[0]["cnpjEmpresa"].ToString();
-            string txtBoxIE = auxFiscal[0]["inscricaoEstadual"].ToString();
-            string txtBoxSenhaSat = auxFiscal[0]["senhaSat"].ToString();
-            string txtCnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
-            string rTxtBoxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
-            string txtBoxRazaoSocial = auxFiscal[0]["razaoSocial"].ToString();
-            string txtBoxNomeFantasia = auxFiscal[0]["nomeFantasia"].ToString();
-            string txtBoxTelefone = auxFiscal[0]["telefone"].ToString();
-            string txtBoxCep = auxFiscal[0]["cep"].ToString();
-            string txtBoxLogradouro = auxFiscal[0]["logradouro"].ToString();
-            string txtBoxNumero = auxFiscal[0]["numero"].ToString(); ;
-            string txtBoxBairro = auxFiscal[0]["bairro"].ToString();
-            string txtBoxCidade = auxFiscal[0]["cidade"].ToString();
-            string txtBoxCodCidade = auxFiscal[0]["codigoCidade"].ToString();
-            string txtBoxUf = auxFiscal[0]["uf"].ToString();
+            string iE = auxFiscal[0]["inscricaoEstadual"].ToString();
+            string senhaSat = auxFiscal[0]["senhaSat"].ToString();
+            string cnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
+            string boxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
+            string razaoSocial = auxFiscal[0]["razaoSocial"].ToString();
+            string nomeFantasia = auxFiscal[0]["nomeFantasia"].ToString();
+            string telefone = auxFiscal[0]["telefone"].ToString();
+            string cep = auxFiscal[0]["cep"].ToString();
+            string logradouro = auxFiscal[0]["logradouro"].ToString();
+            string numero = auxFiscal[0]["numero"].ToString(); ;
+            string bairro = auxFiscal[0]["bairro"].ToString();
+            string cidade = auxFiscal[0]["cidade"].ToString();
+            string codCidade = auxFiscal[0]["codigoCidade"].ToString();
+            string uf = auxFiscal[0]["uf"].ToString();
+
+            fiscal.inserirFiscal(codigoVenda);
+            var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
+            int idFiscal = Convert.ToInt32(auxIdFiscal[0]["idFiscal"].ToString());
 
             StreamWriter x;
             string caminho = "C:\\Users\\bruno\\Desktop\\notas\\enviar\\nota.ini";
@@ -38,64 +48,78 @@ namespace WindowsFormsApp2
 
             x.WriteLine("[Identificacao]");
             x.WriteLine("natOp = 5.101 Venda de producao do estabelecimento");
-            x.WriteLine("nNF=000001402");
-            x.WriteLine("dhEmi = 26/07/2018 08:36:02");
+            x.WriteLine("nNF=" + idFiscal.ToString());
+            x.WriteLine("dhEmi = "+ DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
             x.WriteLine("");
 
             x.WriteLine("[Emitente]");
-            x.WriteLine("CNPJ=49952677000119");
-            x.WriteLine("IE=142552396537");
-            x.WriteLine("Razao=PROJETO ACBR");
-            x.WriteLine("Fantasia=PROJETO ACBR");
-            x.WriteLine("Fone=(11)5096-1201");
-            x.WriteLine("CEP=04615000");
-            x.WriteLine("Logradouro=Rua Cel Aureliano Camargo");
-            x.WriteLine("Numero=973");
-            x.WriteLine("Bairro = Centro");
-            x.WriteLine("CidadeCod=3554003");
-            x.WriteLine("Cidade=Tatui");
-            x.WriteLine("UF=SP");
+            x.WriteLine("CNPJ="+cnpjEmpresa);
+            x.WriteLine("IE="+iE);
+            x.WriteLine("Razao="+ razaoSocial);
+            x.WriteLine("Fantasia="+ nomeFantasia);
+            x.WriteLine("Fone="+telefone);
+            x.WriteLine("CEP=" + cep);
+            x.WriteLine("Logradouro=" + logradouro);
+            x.WriteLine("Numero=" + numero);
+            x.WriteLine("Bairro = " + bairro);
+            x.WriteLine("CidadeCod="+ codCidade);
+            x.WriteLine("Cidade="+ cidade);
+            x.WriteLine("UF=" + uf);
             x.WriteLine("");
-
-            x.WriteLine("[Produto001]");
-            x.WriteLine("CFOP=5102");
-            x.WriteLine("Codigo=77902N");
-            x.WriteLine("Descricao=KIT INDIVIDUAL");
-            x.WriteLine("NCM=84719012");
-            x.WriteLine("Unidade=UND");
-            x.WriteLine("Quantidade=1");
-            x.WriteLine("ValorUnitario=100");
-            x.WriteLine("ValorTotal=100");
-            x.WriteLine("ValorDesconto=0,00");
-            x.WriteLine("");
-
-            x.WriteLine("[ICMS001]");
-            x.WriteLine("orig=0");
-            x.WriteLine("");
+            
+            var auxItensVenda = itensVenda.retornarItensVenda(codigoVenda);
 
 
-            x.WriteLine("[PIS001]");
-            x.WriteLine("ValorBase=0,00");
-            x.WriteLine("Aliquota=0,00");
-            x.WriteLine("Valor=0,00");
-            x.WriteLine("");
+            for (int i = 0; i < auxItensVenda.Count; i++)
+            {
 
-            x.WriteLine("[COFINS001]");
-            x.WriteLine("ValorBase=0,00");
-            x.WriteLine("Aliquota=0,00");
-            x.WriteLine("Valor=0,00");
-            x.WriteLine("");
+                var auxProduto = produto.retornarProdutoPorId(Convert.ToInt32(auxItensVenda[i]["idProduto"].ToString()));
+                
+                x.WriteLine("[Produto"+ i.ToString()+"]");
+                x.WriteLine("CFOP="+auxProduto[i]["idCfop"].ToString());
+                x.WriteLine("Codigo="+auxProduto[i]["idProduto"].ToString());
+                x.WriteLine("Descricao="+ auxProduto[i]["prodNome"].ToString());
+                x.WriteLine("NCM="+auxProduto[i]["ncm"].ToString());
+                x.WriteLine("Unidade=UND");
+                x.WriteLine("Quantidade="+auxItensVenda[i]["itensQtd"].ToString());
+                x.WriteLine("ValorUnitario="+ auxProduto[i]["prodValor"].ToString());
+                double totalItens = Convert.ToDouble(auxItensVenda[i]["valorDeVenda"].ToString()) * Convert.ToInt32(auxItensVenda[i]["itensQtd"].ToString());
+                x.WriteLine("ValorTotal="+totalItens.ToString());
+                //x.WriteLine("ValorDesconto=");
+                x.WriteLine("");
+
+                x.WriteLine("[ICMS" + i.ToString() + "]");
+                x.WriteLine("orig="+auxProduto[i]["idOrigem"]);
+                x.WriteLine("");
+
+
+                x.WriteLine("[PIS" + i.ToString() + "]");
+                x.WriteLine("ValorBase="+ totalItens.ToString());
+                x.WriteLine("Aliquota=0,65%");
+                x.WriteLine("Valor="+ (totalItens * 0, 0065).ToString());
+                x.WriteLine("");
+
+                x.WriteLine("[COFINS" + i.ToString() + "]");
+                x.WriteLine("ValorBase=" +(totalItens).ToString());
+                x.WriteLine("Aliquota=3,00%");
+                x.WriteLine("Valor="+(totalItens * 0,03).ToString());
+                x.WriteLine("");
+
+                
+
+            }
 
             x.WriteLine("[Total]");
-            x.WriteLine("BaseICMS=100");
-            x.WriteLine("ValorICMS=10");
-            x.WriteLine("ValorProduto=100");
-            x.WriteLine("ValorNota=100");
+            x.WriteLine("BaseICMS="+ auxItensVenda[0]["ItensTotal"].ToString());
+            x.WriteLine("ValorICMS="+ Convert.ToDouble(auxItensVenda[0]["ItensTotal"].ToString())*0,18);
+            //x.WriteLine("ValorProduto=100");
+            x.WriteLine("ValorNota="+ auxItensVenda[0]["ItensTotal"].ToString());
 
+            var auxPagamento = pagamento.retornarPagamento(codigoVenda);
 
             x.WriteLine("[PAG001]");
             x.WriteLine("tPag=01");
-            x.WriteLine("vPag=100");
+            x.WriteLine("vPag="+ auxPagamento[0]["PagValor"].ToString());
             x.WriteLine("");
             x.Close();
             //quebra linha:\r\n 

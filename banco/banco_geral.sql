@@ -221,6 +221,12 @@ CREATE TABLE Conta_Bancaria(
 	conta int
 );
 
+create table fiscal(
+	idFiscal INT PRIMARY KEY IDENTITY (1,1)
+)
+
+insert into fiscal values (0)
+
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
 ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)
 ALTER TABLE ItensDaVenda ADD FOREIGN KEY(idProduto) REFERENCES Produto (idProduto)
@@ -259,3 +265,6 @@ insert into Funcionario values(1,'Cybele','1111/11/11','1','Cybele','1','sdasdas
 
 insert into Permissoes_Estoque values (1,1,1,1,1)
 insert into Permissoes_Vendas values (1,1,1,1,1)
+
+insert into fiscal values (0)
+

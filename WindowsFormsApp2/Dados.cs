@@ -12,6 +12,10 @@
 
 namespace WindowsFormsApp2.DadosTableAdapters
 {
+    partial class fiscalTableAdapter
+    {
+    }
+
     partial class Config_SistemaTableAdapter
     {
     }
