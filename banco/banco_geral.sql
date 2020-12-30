@@ -222,10 +222,10 @@ CREATE TABLE Conta_Bancaria(
 );
 
 create table fiscal(
-	idFiscal INT PRIMARY KEY IDENTITY (1,1)
+	idFiscal INT PRIMARY KEY IDENTITY (1,1),
+	idVenda int
 )
 
-insert into fiscal values (0)
 
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
 ALTER TABLE Pagamento ADD FOREIGN KEY(idVenda) REFERENCES Venda (idVenda)

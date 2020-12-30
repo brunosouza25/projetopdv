@@ -53,8 +53,8 @@ namespace WindowsFormsApp2
             x.WriteLine("");
 
             x.WriteLine("[Emitente]");
-            x.WriteLine("CNPJ="+cnpjEmpresa);
-            x.WriteLine("IE="+iE);
+            x.WriteLine("CNPJ="+cnpjEmpresa); //11 ou 14 caracteres
+            x.WriteLine("IE="+iE); // 12 numeros
             x.WriteLine("Razao="+ razaoSocial);
             x.WriteLine("Fantasia="+ nomeFantasia);
             x.WriteLine("Fone="+telefone);
@@ -62,9 +62,10 @@ namespace WindowsFormsApp2
             x.WriteLine("Logradouro=" + logradouro);
             x.WriteLine("Numero=" + numero);
             x.WriteLine("Bairro = " + bairro);
-            x.WriteLine("CidadeCod="+ codCidade);
+            x.WriteLine("CidadeCod="+ codCidade); //tem que ser 7
             x.WriteLine("Cidade="+ cidade);
-            x.WriteLine("UF=" + uf);
+            x.WriteLine("UF=SP"); //só pode ser maiusculo e uf que exista
+
             x.WriteLine("");
             
             var auxItensVenda = itensVenda.retornarItensVenda(codigoVenda);
@@ -74,8 +75,8 @@ namespace WindowsFormsApp2
             {
 
                 var auxProduto = produto.retornarProdutoPorId(Convert.ToInt32(auxItensVenda[i]["idProduto"].ToString()));
-                
-                x.WriteLine("[Produto"+ i.ToString()+"]");
+
+                x.WriteLine("[Produto"+ String.Format("{0:000}", i +1)+"]");
                 x.WriteLine("CFOP="+auxProduto[i]["idCfop"].ToString());
                 x.WriteLine("Codigo="+auxProduto[i]["idProduto"].ToString());
                 x.WriteLine("Descricao="+ auxProduto[i]["prodNome"].ToString());
@@ -88,18 +89,18 @@ namespace WindowsFormsApp2
                 //x.WriteLine("ValorDesconto=");
                 x.WriteLine("");
 
-                x.WriteLine("[ICMS" + i.ToString() + "]");
+                x.WriteLine("[ICMS" + String.Format("{0:000}", i + 1) + "]");
                 x.WriteLine("orig="+auxProduto[i]["idOrigem"]);
                 x.WriteLine("");
 
 
-                x.WriteLine("[PIS" + i.ToString() + "]");
+                x.WriteLine("[PIS" + String.Format("{0:000}", i + 1) + "]");
                 x.WriteLine("ValorBase="+ totalItens.ToString());
                 x.WriteLine("Aliquota=0,65%");
                 x.WriteLine("Valor="+ (totalItens * 0, 0065).ToString());
                 x.WriteLine("");
 
-                x.WriteLine("[COFINS" + i.ToString() + "]");
+                x.WriteLine("[COFINS" + String.Format("{0:000}", i + 1) + "]");
                 x.WriteLine("ValorBase=" +(totalItens).ToString());
                 x.WriteLine("Aliquota=3,00%");
                 x.WriteLine("Valor="+(totalItens * 0,03).ToString());

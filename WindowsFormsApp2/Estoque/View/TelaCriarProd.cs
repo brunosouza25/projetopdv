@@ -52,6 +52,7 @@ namespace WindowsFormsApp2
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
+            /*bug que fica criando produto sem fiscal se errar algum dado fiscal e insistir em salvar*/
             bool fechar1 = false;
             bool fechar2 = false;
             fechar1 = telaGeral.Criar_EditarProd();

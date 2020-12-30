@@ -23,10 +23,22 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             if (ckBoxFiscal.Checked)
             {
-                travar_LiberarFiscal(true);
+                /*                travar_LiberarFiscal(true);
                 if (cBoxRegimeTributario.SelectedItem != null && txtBoxCnpjEmpresa.Text != "" && txtBoxIE.Text != "" && txtBoxSenhaSat.Text != "" 
                     && rTxtBoxCodSat.Text != "" && txtBoxRazaoSocial.Text != "" && txtBoxNomeFantasia.Text != "" && txtBoxTelefone.Text != "" && txtBoxCep.Text != "" 
                     && txtBoxLogradouro.Text != "" && txtBoxNumero.Text != "" && txtBoxBairro.Text != "" && txtBoxCidade.Text != "" && txtBoxCodCidade.Text != "" && txtBoxUf.Text != "")
+*/              bool cnpjOk = false;
+                if(txtBoxCnpjEmpresa.Text.Length == 11)
+                {
+                    cnpjOk = true;
+                }
+                else if(txtBoxCnpjEmpresa.Text.Length == 14) {
+                    cnpjOk = true;
+                }
+                travar_LiberarFiscal(true);
+                if (cBoxRegimeTributario.SelectedItem != null && cnpjOk && txtBoxIE.Text.Length == 9 && txtBoxSenhaSat.Text != "" 
+                    && rTxtBoxCodSat.Text != "" && txtBoxRazaoSocial.Text.Length >= 2 && txtBoxNomeFantasia.Text.Length >= 2 && txtBoxTelefone.Text.Length >= 11 && txtBoxCep.Text.Length == 8
+                    && txtBoxLogradouro.Text.Length >= 2 && txtBoxNumero.Text != "" && txtBoxBairro.Text.Length >= 2 && txtBoxCidade.Text.Length >= 2 && txtBoxCodCidade.Text.Length == 7 && txtBoxUf.Text != "")
 
                 {
 

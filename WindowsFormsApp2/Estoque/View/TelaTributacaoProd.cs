@@ -237,8 +237,11 @@ namespace WindowsFormsApp2.Estoque.View
                 int a;
                 double b;
                 bool salvar = false;
-                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text != "" && mTxtCest.Text != ""
-                    && mTxtOrigem.Text != "" && mTxtCfop.Text != "" && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")
+
+                /*                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text != "" && mTxtCest.Text != ""
+                    && mTxtOrigem.Text != "" && mTxtCfop.Text != "" && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")*/
+                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text.Length == 7 && mTxtCest.Text != ""
+                    && mTxtOrigem.Text != "" && mTxtCfop.Text.Length == 4 && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")
                 {
                     if (double.TryParse(mTxtPPis.Text.Trim(), out b))
                     {
