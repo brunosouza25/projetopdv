@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace WindowsFormsApp2
 {
@@ -15,6 +16,7 @@ namespace WindowsFormsApp2
         DadosTableAdapters.ItensDaVendaTableAdapter itensVenda = new DadosTableAdapters.ItensDaVendaTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
+
         public void escreverIniNfce(int codigoVenda)
         {
             double total;
@@ -124,9 +126,14 @@ namespace WindowsFormsApp2
             x.WriteLine("");
             x.Close();
             //quebra linha:\r\n 
-            enviarNfe();
+
+            enviarNfce();
+            Thread.Sleep(1000);
+            imprimirNfce();
+
+
         }
-            public void escreverIniNfe()
+            /*public void escreverIniNfe()
         {
             StreamWriter x;
             string caminho = "C:\\Users\\bruno\\Desktop\\notas\\enviar\\nota.ini";
@@ -312,19 +319,45 @@ namespace WindowsFormsApp2
             x.WriteLine("");
             x.Close();
             //quebra linha:\r\n 
-            enviarNfe();
+            enviarNfce();
+            //Thread.Sleep(2000);
+            imprimirNfce();
         }
-        public void enviarNfe()
+            */
+        
+        public void enviarNfce()
         {
             StreamWriter x;
             string caminho = @"C:\Users\bruno\Desktop\notas\entrada\\enviar.txt";
 
             x = File.CreateText(caminho);
             x.WriteLine("NFe.CriarNFe(\"C:\\Users\\bruno\\desktop\\notas\\enviar\\nota.ini\\,1)");
-            //x.WriteLine("NFE.ImprimirDanfe(\"C:\\Users\bruno\\Desktop\\sat c#\\xml.xml\", \"\"Doro PDF Writer\",\"1\")");
             x.Close();
+        }
 
+        public void imprimirNfce()
+        {
+            StreamWriter x;
+            string caminho = @"C:\Users\bruno\Desktop\notas\entrada\\enviar.txt";
+            // C: \Users\bruno\Desktop\notas\temporario
+            DirectoryInfo diretorio = new DirectoryInfo(@"C:\Users\bruno\Desktop\notas\temporario");
+            FileInfo[] arquivos = diretorio.GetFiles();
+            
+            foreach (FileInfo arquivo in arquivos)
+            {
+                x = File.CreateText(caminho);
+                x.WriteLine("NFE.ImprimirDanfe(\"C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name + "\", \"\"Doro PDF Writer\",\"1\",\"\",\"\",\"\",\"\",\"\")");
+                x.Close();
+                MessageBox.Show("cupom emitido com sucesso!");
+                Thread.Sleep(1000);
+                File.Copy("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name, @"C:\Users\bruno\Desktop\notas\xmls\"+ arquivo.Name);
 
+            }
+
+            MessageBox.Show("cupom emitido com sucesso!");
+        }
+        public void apagarCopiarNfce()
+        {
 
         }
     }

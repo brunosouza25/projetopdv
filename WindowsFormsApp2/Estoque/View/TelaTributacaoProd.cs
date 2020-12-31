@@ -233,14 +233,15 @@ namespace WindowsFormsApp2.Estoque.View
             if (ckboxFiscal.Checked)
             {
                 double pPis = -1, pCofins = -1;
-                int pis = -1, cofins = -1, icms = -1, ncm = -1, cest = -1, origem = -1, cfop = -1, cst = -1, csosn = -1;
+                int pis = -1, cofins = -1, icms = -1, cest = -1, origem = -1, cfop = -1, cst = -1, csosn = -1;
                 int a;
                 double b;
                 bool salvar = false;
+                string ncm = "-1";
 
                 /*                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text != "" && mTxtCest.Text != ""
                     && mTxtOrigem.Text != "" && mTxtCfop.Text != "" && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")*/
-                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text.Length == 7 && mTxtCest.Text != ""
+                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text.Length == 8 && mTxtCest.Text != ""
                     && mTxtOrigem.Text != "" && mTxtCfop.Text.Length == 4 && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")
                 {
                     if (double.TryParse(mTxtPPis.Text.Trim(), out b))
@@ -296,7 +297,6 @@ namespace WindowsFormsApp2.Estoque.View
 
 
 
-
                     if (int.TryParse(mTxtIcms.Text.Trim(), out a))
                     {
                         icms = Convert.ToInt32(mTxtIcms.Text);
@@ -312,7 +312,7 @@ namespace WindowsFormsApp2.Estoque.View
 
                     if (int.TryParse(mTxtNcm.Text.Trim(), out a))
                     {
-                        ncm = Convert.ToInt32(mTxtNcm.Text);
+                        ncm = mTxtNcm.Text;
                         salvar = true;
                     }
                     else
@@ -389,14 +389,14 @@ namespace WindowsFormsApp2.Estoque.View
                         {
                             var auxIdProd = produtos.retornarUltimoIdProduto();
                             int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
-                            produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, cfop, icms, ckboxFiscal.Checked, idProd );
+                            produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, ncm, Convert.ToString(cest), origem, cfop, icms, ckboxFiscal.Checked, idProd );
                      
                             return true;
                         }
                         else
                         {
-                            MessageBox.Show(ckboxFiscal.Checked.ToString());
-                            produtos.attDadosTributacao(pPis, pCofins, pis, cofins, cfop, csosn, cst, Convert.ToString(ncm), Convert.ToString(cest), origem, icms, ckboxFiscal.Checked, codigoProduto);
+                            //MessageBox.Show(ckboxFiscal.Checked.ToString());
+                            produtos.attDadosTributacao(pPis, pCofins, pis, cofins, cfop, csosn, cst, ncm, Convert.ToString(cest), origem, icms, ckboxFiscal.Checked, codigoProduto);
                             return true;
                         }
                     }
@@ -435,6 +435,7 @@ namespace WindowsFormsApp2.Estoque.View
                 carregarCfop(false);
                 carregarCst(false);
                 carregarCsosn(false);
+                carregarPPis();
             }
             else
             {
@@ -446,8 +447,8 @@ namespace WindowsFormsApp2.Estoque.View
         public void carregarPPis()
         {
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            mTxtPis.Text = auxProd[0]["pPis"].ToString();
-            mTxtCofins.Text = auxProd[0]["pCofins"].ToString();
+            mTxtPPis.Text = auxProd[0]["pPis"].ToString();
+            mTxtPCofins.Text = auxProd[0]["pCofins"].ToString();
         }
         public void carregarFiscal()
         {
@@ -505,6 +506,7 @@ namespace WindowsFormsApp2.Estoque.View
             var auxProd = produtos.retornarProdutoPorId(idProduto);
             idIcms = Convert.ToInt32(auxProd[0]["idIcms"]);
             mTxtIcms.Text = idIcms.ToString();
+
             var auxIcms = icms.retornarIcmsPorId(idIcms);
             if (auxIcms.Count < 1)
             {
@@ -519,10 +521,10 @@ namespace WindowsFormsApp2.Estoque.View
 
         public void carregarNcm_Cest(bool edit_proc)
         {
-            int idNcm, idCest;
-
+            int idCest;
+            string idNcm;
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            idNcm = Convert.ToInt32(auxProd[0]["ncm"]);
+            idNcm = auxProd[0]["ncm"].ToString();
             idCest = Convert.ToInt32(auxProd[0]["cest"]);
             mTxtNcm.Text = idNcm.ToString();
             mTxtCest.Text = idCest.ToString();
@@ -559,12 +561,12 @@ namespace WindowsFormsApp2.Estoque.View
 
         public void carregarCfop(bool edit_proc)
         {
-            int idCfop;
+            //int idCfop;
             var auxProd = produtos.retornarProdutoPorId(idProduto);
-            idCfop = Convert.ToInt32(auxProd[0]["idCfop"]);
+            string idCfop = auxProd[0]["idCfop"].ToString();
             mTxtCfop.Text = idCfop.ToString();
 
-            var auxCfop = cfop.retornarCfopPorId(idCfop);
+            var auxCfop = cfop.retornarCfopPorId(idCfop.ToString());
             if (auxCfop.Count < 1)
             {
                 lblCfop.Text = "Nenhum Cfop selecionado";

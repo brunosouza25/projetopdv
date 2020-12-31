@@ -58,9 +58,9 @@ CREATE TABLE Produto (
 	cest VARCHAR (10),
 	idOrigem INT,
 	idIcms INT,
-	fiscal BIT;
+	fiscal BIT
 );
-
+INSERT INTO Produto VALUES('queijo', 10, 5, 100, '01', 0, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
 
 CREATE TABLE Caixa (
     idCaixa INT PRIMARY KEY IDENTITY (1,1),
@@ -204,6 +204,11 @@ CREATE TABLE Config_Sistema(
 	codigoCidade VARCHAR(10),
 	uf VARCHAR(5),
 );
+/*INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)*/
+
+INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 1,'Simples Nacional','45560740888', '369852147'
+,'','123456789', 'aa', 'bruno empresa' , 'bruno empresa' , '12997174899', '12460000', 'casa', '123',
+ 'vila jair', 'campos do jordão', '3509700', 'SP')
 
 
 
@@ -254,8 +259,7 @@ INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 
-INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)
-
+/*INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)*/
 
 INSERT INTO Cargo VALUES ('Nenhum', 0,0)
 INSERT INTO Cargo VALUES ('adm', 1,1)

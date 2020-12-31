@@ -2,6 +2,9 @@
 using System.Windows.Forms;
 using WindowsFormsApp2.Vendas;
 using WindowsFormsApp2.Principal.View.Config;
+using System.IO;
+using System.Linq;
+
 namespace WindowsFormsApp2
 {
     public partial class TelaPrincipal : Form
@@ -157,7 +160,14 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //fiscal.escreverIniNfce();
+            // C: \Users\bruno\Desktop\notas\temporario
+            DirectoryInfo diretorio = new DirectoryInfo(@"C:\Users\bruno\Desktop\notas\temporario");
+            FileInfo[] arquivos = diretorio.GetFiles();
+
+            foreach (FileInfo arquivo in arquivos)
+            {
+                MessageBox.Show(arquivo.Name);
+            }
         }
     }
 }
