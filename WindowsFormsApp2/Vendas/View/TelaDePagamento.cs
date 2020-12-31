@@ -191,7 +191,7 @@ namespace WindowsFormsApp2
                     if (fiscal)
                     {
                         Fiscal cupomFiscal = new Fiscal();
-                        cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]));
+                         cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]));
                     }
                     else {
                         MessageBox.Show("Não foi possível emitir o cupom fiscal, faltam dados fiscais do produto: "+nomeProduto);

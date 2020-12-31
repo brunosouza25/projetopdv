@@ -79,20 +79,20 @@ namespace WindowsFormsApp2
                 var auxProduto = produto.retornarProdutoPorId(Convert.ToInt32(auxItensVenda[i]["idProduto"].ToString()));
 
                 x.WriteLine("[Produto"+ String.Format("{0:000}", i +1)+"]");
-                x.WriteLine("CFOP="+auxProduto[i]["idCfop"].ToString());
-                x.WriteLine("Codigo="+auxProduto[i]["idProduto"].ToString());
-                x.WriteLine("Descricao="+ auxProduto[i]["prodNome"].ToString());
-                x.WriteLine("NCM="+auxProduto[i]["ncm"].ToString());
+                x.WriteLine("CFOP="+auxProduto[0]["idCfop"].ToString());
+                x.WriteLine("Codigo="+auxProduto[0]["idProduto"].ToString());
+                x.WriteLine("Descricao="+ auxProduto[0]["prodNome"].ToString());
+                x.WriteLine("NCM="+auxProduto[0]["ncm"].ToString());
                 x.WriteLine("Unidade=UND");
                 x.WriteLine("Quantidade="+auxItensVenda[i]["itensQtd"].ToString());
-                x.WriteLine("ValorUnitario="+ auxProduto[i]["prodValor"].ToString());
+                x.WriteLine("ValorUnitario="+ auxProduto[0]["prodValor"].ToString());
                 double totalItens = Convert.ToDouble(auxItensVenda[i]["valorDeVenda"].ToString()) * Convert.ToInt32(auxItensVenda[i]["itensQtd"].ToString());
                 x.WriteLine("ValorTotal="+totalItens.ToString());
                 //x.WriteLine("ValorDesconto=");
                 x.WriteLine("");
 
                 x.WriteLine("[ICMS" + String.Format("{0:000}", i + 1) + "]");
-                x.WriteLine("orig="+auxProduto[i]["idOrigem"]);
+                x.WriteLine("orig="+auxProduto[0]["idOrigem"]);
                 x.WriteLine("");
 
 
@@ -108,21 +108,27 @@ namespace WindowsFormsApp2
                 x.WriteLine("Valor="+(totalItens * 0,03).ToString());
                 x.WriteLine("");
 
-                
+
+                x.WriteLine("");
 
             }
 
             x.WriteLine("[Total]");
             x.WriteLine("BaseICMS="+ auxItensVenda[0]["ItensTotal"].ToString());
             x.WriteLine("ValorICMS="+ Convert.ToDouble(auxItensVenda[0]["ItensTotal"].ToString())*0,18);
+            x.WriteLine("ValorProduto = " + auxItensVenda[0]["ItensTotal"].ToString());
             //x.WriteLine("ValorProduto=100");
             x.WriteLine("ValorNota="+ auxItensVenda[0]["ItensTotal"].ToString());
-
             var auxPagamento = pagamento.retornarPagamento(codigoVenda);
+            for (int i = 0; i < auxPagamento.Count; i++)
+            {
+                x.WriteLine("[PAG" + String.Format("{ 0:000}", i + 1) + "]");
+                x.WriteLine("tPag=01");
+                x.WriteLine("vPag=" + auxPagamento[0]["PagValor"].ToString());
+            }
+            //tPag=3 cartão crédito
+            //tPag=4 cartão débito
 
-            x.WriteLine("[PAG001]");
-            x.WriteLine("tPag=01");
-            x.WriteLine("vPag="+ auxPagamento[0]["PagValor"].ToString());
             x.WriteLine("");
             x.Close();
             //quebra linha:\r\n 
@@ -351,6 +357,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("cupom emitido com sucesso!");
                 Thread.Sleep(1000);
                 File.Copy("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name, @"C:\Users\bruno\Desktop\notas\xmls\"+ arquivo.Name);
+                File.Delete("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name);
 
             }
 
