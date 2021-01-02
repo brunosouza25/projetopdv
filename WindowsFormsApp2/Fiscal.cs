@@ -122,9 +122,25 @@ namespace WindowsFormsApp2
             var auxPagamento = pagamento.retornarPagamento(codigoVenda);
             for (int i = 0; i < auxPagamento.Count; i++)
             {
-                x.WriteLine("[PAG" + String.Format("{ 0:000}", i + 1) + "]");
-                x.WriteLine("tPag=01");
-                x.WriteLine("vPag=" + auxPagamento[0]["PagValor"].ToString());
+                if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 1)
+                {
+                    x.WriteLine("[PAG" +    String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("tPag=01");
+                    x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
+                }
+                if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 2 || Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 3)
+                {
+                    x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("tPag=03");
+                    x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
+                }
+
+                if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 4)
+                {
+                    x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("tPag=04");
+                    x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
+                }
             }
             //tPag=3 cartão crédito
             //tPag=4 cartão débito

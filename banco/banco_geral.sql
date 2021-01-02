@@ -19,11 +19,11 @@ CREATE TABLE Venda (
     vendData DATE,
 	vendHora TIME,
     valorCompra FLOAT,
-	valorPago FLOAT,
+	/*valorPago FLOAT,*/
 	idCaixa INT,
 	observacoes VARCHAR(300),
 	vendaEstado TINYINT,
-	idColaborador INT
+	/*idColaborador INT*/
 );
 
 CREATE TABLE ItensDaVenda (
@@ -38,7 +38,7 @@ CREATE TABLE ItensDaVenda (
 	valorDeCusto FLOAT,
 	codBarras VARCHAR(13)
 );
-
+/*PAREI NO PRODUTO*/
 CREATE TABLE Produto (
     idProduto INT PRIMARY KEY IDENTITY (1,1),
     prodNome VARCHAR(50),
@@ -108,8 +108,8 @@ CREATE TABLE Funcionario (
     dataCriacao DATE,
 	horaCriacao TIME,
     funcEstado TINYINT,
-	idConta_Banc TINYINT,
-	idEndereco TINYINT,
+	/*idConta_Banc TINYINT,
+	idEndereco TINYINT,*/
 );
 
 
@@ -136,17 +136,17 @@ CREATE TABLE Permissoes_Estoque(
 	saida_produtos BIT,
 	idCargo INT
 )
-
+/*
 CREATE TABLE Observacoes_Saida_Prod (
 	idSecundarioItensSaida INT,
     observacoes VARCHAR(300)
-);
-
+);*/
+/*
 CREATE TABLE Observacoes_Venda (
     idVenda INT,
     observacoes VARCHAR(300)
 );
-
+*/
 CREATE TABLE Observacoes_Sangria (
 	idSangria INT PRIMARY KEY IDENTITY (1,1),
     idCaixa INT,
@@ -155,12 +155,12 @@ CREATE TABLE Observacoes_Sangria (
 	horaSangria TIME,
 	idColaborador INT
 );
-
+/*
 CREATE TABLE Observacoes_Entrada_Prod (
     idSecundarioItensEntrada INT,
     observacoes VARCHAR(300)
 );
-
+*/
 CREATE TABLE Itens_Devolucao (
     idItensDevolucao INT,
     idVenda INT,
@@ -202,7 +202,7 @@ CREATE TABLE Config_Sistema(
 	bairro VARCHAR(100),
 	cidade VARCHAR(100),
 	codigoCidade VARCHAR(10),
-	uf VARCHAR(5),
+	uf VARCHAR(5)
 );
 /*INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)*/
 
@@ -211,7 +211,7 @@ INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 1,'S
  'vila jair', 'campos do jordão', '3509700', 'SP')
 
 
-
+/*
 CREATE TABLE Endereco(
 	idFuncionario INT,
 	endereco VARCHAR(120),
@@ -225,11 +225,13 @@ CREATE TABLE Conta_Bancaria(
 	agencia int,
 	conta int
 );
-
+*/
 create table fiscal(
 	idFiscal INT PRIMARY KEY IDENTITY (1,1),
 	idVenda int
+	
 )
+
 
 
 ALTER TABLE Pagamento ADD FOREIGN KEY(idMPagamento) REFERENCES MetodoDePagamento (idMPagamento)
