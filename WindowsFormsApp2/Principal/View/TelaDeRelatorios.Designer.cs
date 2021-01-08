@@ -44,17 +44,14 @@
             this.btnOntem = new System.Windows.Forms.Button();
             this.btnHoje = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnFechamentoDiario = new System.Windows.Forms.ToolStripButton();
+            this.btnCaixa = new System.Windows.Forms.Button();
             this.painelPrincipal = new System.Windows.Forms.Panel();
             this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCaixa = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -219,7 +216,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btnCaixa);
-            this.panel3.Controls.Add(this.toolStrip1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -227,23 +223,15 @@
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // toolStrip1
+            // btnCaixa
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFechamentoDiario});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(224, 25);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnFechamentoDiario
-            // 
-            this.btnFechamentoDiario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnFechamentoDiario.Name = "btnFechamentoDiario";
-            this.btnFechamentoDiario.Size = new System.Drawing.Size(113, 22);
-            this.btnFechamentoDiario.Text = " Fechamento diário";
-            this.btnFechamentoDiario.Click += new System.EventHandler(this.btnFechamentoDiario_Click);
+            this.btnCaixa.Location = new System.Drawing.Point(0, 3);
+            this.btnCaixa.Name = "btnCaixa";
+            this.btnCaixa.Size = new System.Drawing.Size(224, 23);
+            this.btnCaixa.TabIndex = 9;
+            this.btnCaixa.Text = "Fechamento diário";
+            this.btnCaixa.UseVisualStyleBackColor = true;
+            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // painelPrincipal
             // 
@@ -261,16 +249,6 @@
             // 
             this.dataTable2BindingSource.DataMember = "DataTable2";
             // 
-            // btnCaixa
-            // 
-            this.btnCaixa.Location = new System.Drawing.Point(39, 43);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(75, 23);
-            this.btnCaixa.TabIndex = 9;
-            this.btnCaixa.Text = "button1";
-            this.btnCaixa.UseVisualStyleBackColor = true;
-            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
-            // 
             // TelaDeRelatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,9 +262,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -319,8 +294,6 @@
         private System.Windows.Forms.BindingSource dataTable2BindingSource;
         private Dados dados;
         private DadosTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnFechamentoDiario;
         private System.Windows.Forms.Button btnCaixa;
     }
 }

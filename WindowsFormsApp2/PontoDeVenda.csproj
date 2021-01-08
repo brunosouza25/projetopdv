@@ -384,6 +384,7 @@
     <EmbeddedResource Include="Vendas\View\TelaDeVendas.resx">
       <DependentUpon>TelaDeVendas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Dados.xsc">
       <DependentUpon>Dados.xsd</DependentUpon>
     </None>

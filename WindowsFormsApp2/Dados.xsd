@@ -343,7 +343,7 @@ WHERE        (idProduto = @idProduto)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attDadosF" Modifier="Public" Name="attDadosF" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="attDadosF">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attDadosF" Modifier="Public" Name="attDadosF" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="attDadosF">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Produto
@@ -367,7 +367,7 @@ WHERE        (idProduto = @idProduto)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attDadosTributacao" Modifier="Public" Name="attDadosTributacao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="attDadosTributacao">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attDadosTributacao" Modifier="Public" Name="attDadosTributacao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="attDadosTributacao">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Produto
@@ -391,7 +391,7 @@ WHERE        (idProduto = @idProduto)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attFIscalProduto" Modifier="Public" Name="attFIscalProduto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="attFIscalProduto">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="attFIscalProduto" Modifier="Public" Name="attFIscalProduto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="attFIscalProduto">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Produto
@@ -404,7 +404,7 @@ WHERE idProduto = @idProduto</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttPorCodBarras" Modifier="Public" Name="AttPorCodBarras" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="AttPorCodBarras">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttPorCodBarras" Modifier="Public" Name="AttPorCodBarras" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="AttPorCodBarras">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE [dbo].[Produto] SET  [prodQuantidade] = @prodQuantidade WHERE (prodCodBarras = @prodCodBarras)</CommandText>
@@ -415,7 +415,7 @@ WHERE idProduto = @idProduto</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttQuantidade" Modifier="Public" Name="AttQuantidade" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="AttQuantidade">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AttQuantidade" Modifier="Public" Name="AttQuantidade" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="AttQuantidade">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE [dbo].[Produto] SET  [prodQuantidade] = @prodQuantidade WHERE (idProduto = @idProduto)</CommandText>
@@ -436,7 +436,7 @@ WHERE idProduto = @idProduto</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="inserirAlterarDadosTributacao" Modifier="Public" Name="inserirAlterarDadosTributacao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="inserirAlterarDadosTributacao">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="inserirAlterarDadosTributacao" Modifier="Public" Name="inserirAlterarDadosTributacao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="inserirAlterarDadosTributacao">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Produto
@@ -460,7 +460,7 @@ WHERE        (idProduto = @idProduto)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InserirDados" Modifier="Public" Name="InserirDados" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="InserirDados">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InserirDados" Modifier="Public" Name="InserirDados" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="InserirDados">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Produto
@@ -1293,11 +1293,10 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeEntrada" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="normal" GetMethodModifier="Public" GetMethodName="normal" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="normal" UserSourceName="normal">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [ItensDeEntrada] ([idSecundarioItensEntrada], [idProduto], [entradaEstado], [qntItem], [dataEntrada], [observacoes], [horaEntrada]) VALUES (@idSecundarioItensEntrada, @idProduto, @entradaEstado, @qntItem, @dataEntrada, @observacoes, @horaEntrada)</CommandText>
+                    <CommandText>INSERT INTO [ItensDeEntrada] ([idSecundarioItensEntrada], [idProduto], [qntItem], [dataEntrada], [observacoes], [horaEntrada]) VALUES (@idSecundarioItensEntrada, @idProduto, @qntItem, @dataEntrada, @observacoes, @horaEntrada)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensEntrada" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idSecundarioItensEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idProduto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idProduto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@entradaEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="entradaEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@qntItem" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="qntItem" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataEntrada" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@observacoes" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="observacoes" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1306,8 +1305,9 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)</CommandText>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idSecundarioItensEntrada, idProduto, entradaEstado, qntItem, dataEntrada, observacoes, horaEntrada FROM ItensDeEntrada</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idSecundarioItensEntrada, idProduto, qntItem, dataEntrada, observacoes, horaEntrada
+FROM            ItensDeEntrada</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1315,7 +1315,6 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)</CommandText>
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="idProduto" DataSetColumn="idProduto" />
-              <Mapping SourceColumn="entradaEstado" DataSetColumn="entradaEstado" />
               <Mapping SourceColumn="qntItem" DataSetColumn="qntItem" />
               <Mapping SourceColumn="dataEntrada" DataSetColumn="dataEntrada" />
               <Mapping SourceColumn="observacoes" DataSetColumn="observacoes" />
@@ -1336,18 +1335,17 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)</CommandText>
               </DbSource>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="inserirItensEntrada" Modifier="Public" Name="inserirItensEntrada" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="inserirItensEntrada">
                 <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO ItensDeEntrada
-                         (idSecundarioItensEntrada ,qntItem, dataEntrada, horaEntrada,idProduto, observacoes, entradaEstado)
-VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@idProduto, @observacoes, @entradaEstado)</CommandText>
+                         (idSecundarioItensEntrada ,qntItem, dataEntrada, horaEntrada,idProduto, observacoes)
+VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@idProduto, @observacoes)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="idSecundarioItensEntrada" ColumnName="idSecundarioItensEntrada" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensEntrada" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idSecundarioItensEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="qntItem" ColumnName="qntItem" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@qntItem" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="qntItem" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataEntrada" ColumnName="dataEntrada" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataEntrada" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="horaEntrada" ColumnName="horaEntrada" DataSourceName="" DataTypeServer="time" DbType="AnsiString" Direction="Input" ParameterName="@horaEntrada" Precision="0" ProviderType="Time" Scale="0" Size="5" SourceColumn="horaEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="idProduto" ColumnName="idProduto" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProduto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idProduto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="observacoes" ColumnName="observacoes" DataSourceName="" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@observacoes" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="observacoes" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="entradaEstado" ColumnName="entradaEstado" DataSourceName="" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@entradaEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="entradaEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idSecundarioItensEntrada" ColumnName="idSecundarioItensEntrada" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensEntrada" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idSecundarioItensEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="qntItem" ColumnName="qntItem" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@qntItem" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="qntItem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataEntrada" ColumnName="dataEntrada" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataEntrada" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="horaEntrada" ColumnName="horaEntrada" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="time" DbType="AnsiString" Direction="Input" ParameterName="@horaEntrada" Precision="0" ProviderType="Time" Scale="0" Size="5" SourceColumn="horaEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idProduto" ColumnName="idProduto" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProduto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idProduto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="observacoes" ColumnName="observacoes" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@observacoes" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="observacoes" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -1355,7 +1353,7 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeEntrada" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarEntradaPorId" GetMethodModifier="Public" GetMethodName="retornarEntradaPorId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarEntradaPorId" UserSourceName="retornarEntradaPorId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT dataEntrada, entradaEstado, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (idSecundarioItensEntrada = @idSecundarioItensEntrada)</CommandText>
+                    <CommandText>SELECT dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (idSecundarioItensEntrada = @idSecundarioItensEntrada)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="idSecundarioItensEntrada" ColumnName="idSecundarioItensEntrada" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensEntrada" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idSecundarioItensEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1365,14 +1363,10 @@ VALUES        (@idSecundarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@i
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeEntrada" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarEntradas" GetMethodModifier="Public" GetMethodName="retornarEntradas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarEntradas" UserSourceName="retornarEntradas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT dataEntrada, idSecundarioItensEntrada
-FROM ItensDeEntrada 
-WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) 
-GROUP BY idSecundarioItensEntrada, dataEntrada 
-HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
+                    <CommandText>SELECT dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensEntrada, dataEntrada, horaEntrada, idProduto, observacoes, qntItem HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa1" ColumnName="dataEntrada" DataSourceName="BD_PDV.dbo.ItensDeEntrada" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa1" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa2" ColumnName="dataEntrada" DataSourceName="BD_PDV.dbo.ItensDeEntrada" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa2" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa1" ColumnName="dataEntrada" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa1" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa2" ColumnName="dataEntrada" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeEntrada" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa2" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataEntrada" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1380,7 +1374,7 @@ HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeEntrada" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarIdUltimaEntrada" GetMethodModifier="Public" GetMethodName="retornarIdUltimaEntrada" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarIdUltimaEntrada" UserSourceName="retornarIdUltimaEntrada">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TOP (1) dataEntrada, entradaEstado, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada ORDER BY idSecundarioItensEntrada DESC</CommandText>
+                    <CommandText>SELECT TOP (1) dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada ORDER BY idSecundarioItensEntrada DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1392,11 +1386,10 @@ HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeSaida" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[ItensDeSaida] ([idSecundarioItensSaida], [idProduto], [saidaEstado], [qntItem], [dataSaida], [horaSaida], [observacoes]) VALUES (@idSecundarioItensSaida, @idProduto, @saidaEstado, @qntItem, @dataSaida, @horaSaida, @observacoes)</CommandText>
+                    <CommandText>INSERT INTO [ItensDeSaida] ([idSecundarioItensSaida], [idProduto], [qntItem], [dataSaida], [horaSaida], [observacoes]) VALUES (@idSecundarioItensSaida, @idProduto, @qntItem, @dataSaida, @horaSaida, @observacoes)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensSaida" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idSecundarioItensSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idProduto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idProduto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@saidaEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="saidaEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@qntItem" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="qntItem" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataSaida" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@horaSaida" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="horaSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1405,8 +1398,9 @@ HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idSecundarioItensSaida, idProduto, saidaEstado, qntItem, dataSaida, horaSaida, observacoes FROM dbo.ItensDeSaida</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        idSecundarioItensSaida, idProduto, qntItem, dataSaida, horaSaida, observacoes
+FROM            ItensDeSaida</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1415,7 +1409,6 @@ HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
             <Mappings>
               <Mapping SourceColumn="idSecundarioItensSaida" DataSetColumn="idSecundarioItensSaida" />
               <Mapping SourceColumn="idProduto" DataSetColumn="idProduto" />
-              <Mapping SourceColumn="saidaEstado" DataSetColumn="saidaEstado" />
               <Mapping SourceColumn="qntItem" DataSetColumn="qntItem" />
               <Mapping SourceColumn="dataSaida" DataSetColumn="dataSaida" />
               <Mapping SourceColumn="horaSaida" DataSetColumn="horaSaida" />
@@ -1435,18 +1428,17 @@ HAVING (SUM(idSecundarioItensEntrada) &gt; 0)</CommandText>
               </DbSource>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="inserirItensSaida" Modifier="Public" Name="inserirItensSaida" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="inserirItensSaida">
                 <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO ItensDeSaida
-                         (idSecundarioItensSaida ,qntItem, dataSaida, horaSaida,idProduto, observacoes, saidaEstado)
-VALUES        (@idSecundarioItensSaida, @qntItem,@dataSaida, @horaSaida,@idProduto, @observacoes, @saidaEstado)</CommandText>
+                         (idSecundarioItensSaida ,qntItem, dataSaida, horaSaida,idProduto, observacoes)
+VALUES        (@idSecundarioItensSaida, @qntItem,@dataSaida, @horaSaida,@idProduto, @observacoes)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="idSecundarioItensSaida" ColumnName="idSecundarioItensSaida" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensSaida" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idSecundarioItensSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="qntItem" ColumnName="qntItem" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@qntItem" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="qntItem" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataSaida" ColumnName="dataSaida" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataSaida" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="horaSaida" ColumnName="horaSaida" DataSourceName="" DataTypeServer="time" DbType="AnsiString" Direction="Input" ParameterName="@horaSaida" Precision="0" ProviderType="Time" Scale="0" Size="5" SourceColumn="horaSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="idProduto" ColumnName="idProduto" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProduto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idProduto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="observacoes" ColumnName="observacoes" DataSourceName="" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@observacoes" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="observacoes" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="saidaEstado" ColumnName="saidaEstado" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@saidaEstado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="saidaEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idSecundarioItensSaida" ColumnName="idSecundarioItensSaida" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensSaida" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idSecundarioItensSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="qntItem" ColumnName="qntItem" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@qntItem" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="qntItem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataSaida" ColumnName="dataSaida" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataSaida" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="horaSaida" ColumnName="horaSaida" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="time" DbType="AnsiString" Direction="Input" ParameterName="@horaSaida" Precision="0" ProviderType="Time" Scale="0" Size="5" SourceColumn="horaSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idProduto" ColumnName="idProduto" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idProduto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idProduto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="observacoes" ColumnName="observacoes" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@observacoes" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="observacoes" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -1454,7 +1446,7 @@ VALUES        (@idSecundarioItensSaida, @qntItem,@dataSaida, @horaSaida,@idProdu
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeSaida" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarIdUltimaSaida" GetMethodModifier="Public" GetMethodName="retornarIdUltimaSaida" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarIdUltimaSaida" UserSourceName="retornarIdUltimaSaida">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TOP (1) dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem, saidaEstado FROM ItensDeSaida ORDER BY idSecundarioItensSaida DESC</CommandText>
+                    <CommandText>SELECT TOP (1) dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida ORDER BY idSecundarioItensSaida DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1462,7 +1454,7 @@ VALUES        (@idSecundarioItensSaida, @qntItem,@dataSaida, @horaSaida,@idProdu
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeSaida" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarSaidaPorId" GetMethodModifier="Public" GetMethodName="retornarSaidaPorId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarSaidaPorId" UserSourceName="retornarSaidaPorId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem, saidaEstado FROM ItensDeSaida WHERE (idSecundarioItensSaida = @idSecundarioItensSaida)</CommandText>
+                    <CommandText>SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida WHERE (idSecundarioItensSaida = @idSecundarioItensSaida)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="idSecundarioItensSaida" ColumnName="idSecundarioItensSaida" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idSecundarioItensSaida" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idSecundarioItensSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1472,14 +1464,10 @@ VALUES        (@idSecundarioItensSaida, @qntItem,@dataSaida, @horaSaida,@idProdu
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.ItensDeSaida" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarSaidas" GetMethodModifier="Public" GetMethodName="retornarSaidas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarSaidas" UserSourceName="retornarSaidas">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT dataSaida, idSecundarioItensSaida
-FROM ItensDeSaida
-WHERE (dataSaida BETWEEN @dataPesquisa1 AND @dataPesquisa2) 
-GROUP BY idSecundarioItensSaida, dataSaida
-HAVING (SUM(idSecundarioItensSaida) &gt; 0)</CommandText>
+                    <CommandText>SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida WHERE (dataSaida BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensSaida, dataSaida, observacoes, idProduto, horaSaida, qntItem HAVING (SUM(idSecundarioItensSaida) &gt; 0)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa1" ColumnName="dataSaida" DataSourceName="BD_PDV.dbo.ItensDeSaida" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa1" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa2" ColumnName="dataSaida" DataSourceName="BD_PDV.dbo.ItensDeSaida" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa2" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa1" ColumnName="dataSaida" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa1" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataPesquisa2" ColumnName="dataSaida" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.ItensDeSaida" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataPesquisa2" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataSaida" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1938,15 +1926,13 @@ VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@ass
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [Funcionario] WHERE (([idFuncionario] = @Original_idFuncionario) AND ((@IsNull_idCargo = 1 AND [idCargo] IS NULL) OR ([idCargo] = @Original_idCargo)) AND ((@IsNull_nomeFunc = 1 AND [nomeFunc] IS NULL) OR ([nomeFunc] = @Original_nomeFunc)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_funcEstado = 1 AND [funcEstado] IS NULL) OR ([funcEstado] = @Original_funcEstado)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_log_in = 1 AND [log_in] IS NULL) OR ([log_in] = @Original_log_in)) AND ((@IsNull_senha = 1 AND [senha] IS NULL) OR ([senha] = @Original_senha)) AND ((@IsNull_dataNasc = 1 AND [dataNasc] IS NULL) OR ([dataNasc] = @Original_dataNasc)) AND ((@IsNull_dataCriacao = 1 AND [dataCriacao] IS NULL) OR ([dataCriacao] = @Original_dataCriacao)) AND ((@IsNull_horaCriacao = 1 AND [horaCriacao] IS NULL) OR ([horaCriacao] = @Original_horaCriacao)))</CommandText>
+                    <CommandText>DELETE FROM [Funcionario] WHERE (([idFuncionario] = @Original_idFuncionario) AND ((@IsNull_idCargo = 1 AND [idCargo] IS NULL) OR ([idCargo] = @Original_idCargo)) AND ((@IsNull_nomeFunc = 1 AND [nomeFunc] IS NULL) OR ([nomeFunc] = @Original_nomeFunc)) AND ((@IsNull_funcEstado = 1 AND [funcEstado] IS NULL) OR ([funcEstado] = @Original_funcEstado)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_log_in = 1 AND [log_in] IS NULL) OR ([log_in] = @Original_log_in)) AND ((@IsNull_senha = 1 AND [senha] IS NULL) OR ([senha] = @Original_senha)) AND ((@IsNull_dataCriacao = 1 AND [dataCriacao] IS NULL) OR ([dataCriacao] = @Original_dataCriacao)) AND ((@IsNull_horaCriacao = 1 AND [horaCriacao] IS NULL) OR ([horaCriacao] = @Original_horaCriacao)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCargo" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nomeFunc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nomeFunc" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_funcEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="funcEstado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_email" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1955,8 +1941,6 @@ VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@ass
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_senha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_senha" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dataNasc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dataNasc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dataCriacao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dataCriacao" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_horaCriacao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="horaCriacao" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1966,17 +1950,15 @@ VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@ass
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [Funcionario] ([idCargo], [nomeFunc], [sexo], [funcEstado], [email], [log_in], [senha], [dataNasc], [dataCriacao], [horaCriacao]) VALUES (@idCargo, @nomeFunc, @sexo, @funcEstado, @email, @log_in, @senha, @dataNasc, @dataCriacao, @horaCriacao);
-SELECT idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha, dataNasc, dataCriacao, horaCriacao FROM Funcionario WHERE (idFuncionario = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [Funcionario] ([idCargo], [nomeFunc], [funcEstado], [email], [log_in], [senha], [dataCriacao], [horaCriacao]) VALUES (@idCargo, @nomeFunc, @funcEstado, @email, @log_in, @senha, @dataCriacao, @horaCriacao);
+SELECT idFuncionario, idCargo, nomeFunc, funcEstado, email, log_in, senha, dataCriacao, horaCriacao FROM Funcionario WHERE (idFuncionario = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@horaCriacao" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="horaCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -1984,24 +1966,22 @@ SELECT idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha,
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha, dataNasc, dataCriacao, horaCriacao
+                    <CommandText>SELECT        idFuncionario, idCargo, nomeFunc, funcEstado, email, log_in, senha, dataCriacao, horaCriacao
 FROM            Funcionario</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [Funcionario] SET [idCargo] = @idCargo, [nomeFunc] = @nomeFunc, [sexo] = @sexo, [funcEstado] = @funcEstado, [email] = @email, [log_in] = @log_in, [senha] = @senha, [dataNasc] = @dataNasc, [dataCriacao] = @dataCriacao, [horaCriacao] = @horaCriacao WHERE (([idFuncionario] = @Original_idFuncionario) AND ((@IsNull_idCargo = 1 AND [idCargo] IS NULL) OR ([idCargo] = @Original_idCargo)) AND ((@IsNull_nomeFunc = 1 AND [nomeFunc] IS NULL) OR ([nomeFunc] = @Original_nomeFunc)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_funcEstado = 1 AND [funcEstado] IS NULL) OR ([funcEstado] = @Original_funcEstado)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_log_in = 1 AND [log_in] IS NULL) OR ([log_in] = @Original_log_in)) AND ((@IsNull_senha = 1 AND [senha] IS NULL) OR ([senha] = @Original_senha)) AND ((@IsNull_dataNasc = 1 AND [dataNasc] IS NULL) OR ([dataNasc] = @Original_dataNasc)) AND ((@IsNull_dataCriacao = 1 AND [dataCriacao] IS NULL) OR ([dataCriacao] = @Original_dataCriacao)) AND ((@IsNull_horaCriacao = 1 AND [horaCriacao] IS NULL) OR ([horaCriacao] = @Original_horaCriacao)));
-SELECT idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha, dataNasc, dataCriacao, horaCriacao FROM Funcionario WHERE (idFuncionario = @idFuncionario)</CommandText>
+                    <CommandText>UPDATE [Funcionario] SET [idCargo] = @idCargo, [nomeFunc] = @nomeFunc, [funcEstado] = @funcEstado, [email] = @email, [log_in] = @log_in, [senha] = @senha, [dataCriacao] = @dataCriacao, [horaCriacao] = @horaCriacao WHERE (([idFuncionario] = @Original_idFuncionario) AND ((@IsNull_idCargo = 1 AND [idCargo] IS NULL) OR ([idCargo] = @Original_idCargo)) AND ((@IsNull_nomeFunc = 1 AND [nomeFunc] IS NULL) OR ([nomeFunc] = @Original_nomeFunc)) AND ((@IsNull_funcEstado = 1 AND [funcEstado] IS NULL) OR ([funcEstado] = @Original_funcEstado)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_log_in = 1 AND [log_in] IS NULL) OR ([log_in] = @Original_log_in)) AND ((@IsNull_senha = 1 AND [senha] IS NULL) OR ([senha] = @Original_senha)) AND ((@IsNull_dataCriacao = 1 AND [dataCriacao] IS NULL) OR ([dataCriacao] = @Original_dataCriacao)) AND ((@IsNull_horaCriacao = 1 AND [horaCriacao] IS NULL) OR ([horaCriacao] = @Original_horaCriacao)));
+SELECT idFuncionario, idCargo, nomeFunc, funcEstado, email, log_in, senha, dataCriacao, horaCriacao FROM Funcionario WHERE (idFuncionario = @idFuncionario)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@horaCriacao" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="horaCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -2009,8 +1989,6 @@ SELECT idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha,
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idCargo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nomeFunc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nomeFunc" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_funcEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="funcEstado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_email" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -2019,13 +1997,11 @@ SELECT idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha,
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_senha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_senha" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dataNasc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dataNasc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dataCriacao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dataCriacao" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_horaCriacao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="horaCriacao" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@Original_horaCriacao" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="horaCriacao" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -2035,12 +2011,10 @@ SELECT idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha,
               <Mapping SourceColumn="idFuncionario" DataSetColumn="idFuncionario" />
               <Mapping SourceColumn="idCargo" DataSetColumn="idCargo" />
               <Mapping SourceColumn="nomeFunc" DataSetColumn="nomeFunc" />
-              <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
               <Mapping SourceColumn="funcEstado" DataSetColumn="funcEstado" />
               <Mapping SourceColumn="email" DataSetColumn="email" />
               <Mapping SourceColumn="log_in" DataSetColumn="log_in" />
               <Mapping SourceColumn="senha" DataSetColumn="senha" />
-              <Mapping SourceColumn="dataNasc" DataSetColumn="dataNasc" />
               <Mapping SourceColumn="dataCriacao" DataSetColumn="dataCriacao" />
               <Mapping SourceColumn="horaCriacao" DataSetColumn="horaCriacao" />
             </Mappings>
@@ -2064,19 +2038,17 @@ WHERE        (idFuncionario = @idFuncionario)
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Funcionario
-SET                idCargo = @idCargo, nomeFunc = @nomeFunc, dataNasc = @dataNasc, sexo = @sexo, log_in = @log_in, senha = @senha, dataCriacao = @dataCriacao, funcEstado = @funcEstado, email = @email
+SET                idCargo = @idCargo, nomeFunc = @nomeFunc, log_in = @log_in, senha = @senha, dataCriacao = @dataCriacao, funcEstado = @funcEstado, email = @email
 WHERE        (idFuncionario = @Original_idFuncionario)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="idCargo" ColumnName="idCargo" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataNasc" ColumnName="dataNasc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="sexo" ColumnName="sexo" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="log_in" ColumnName="log_in" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="senha" ColumnName="senha" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataCriacao" ColumnName="dataCriacao" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dataCriacao" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="funcEstado" ColumnName="funcEstado" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="email" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(64)" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="64" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idCargo" ColumnName="idCargo" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="log_in" ColumnName="log_in" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="senha" ColumnName="senha" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@senha" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="senha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataCriacao" ColumnName="dataCriacao" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="funcEstado" ColumnName="funcEstado" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="email" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(64)" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="64" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -2085,16 +2057,14 @@ WHERE        (idFuncionario = @Original_idFuncionario)</CommandText>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Funcionario
-SET                idCargo = @idCargo, nomeFunc = @nomeFunc, dataNasc = @dataNasc, sexo = @sexo, funcEstado = @funcEstado, email = @email
+SET                idCargo = @idCargo, nomeFunc = @nomeFunc, funcEstado = @funcEstado, email = @email
 WHERE        (idFuncionario = @idFuncionario)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="idCargo" ColumnName="idCargo" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataNasc" ColumnName="dataNasc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="sexo" ColumnName="sexo" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="funcEstado" ColumnName="funcEstado" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="email" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(64)" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="64" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idCargo" ColumnName="idCargo" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="funcEstado" ColumnName="funcEstado" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="email" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(64)" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="64" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -2103,18 +2073,16 @@ WHERE        (idFuncionario = @idFuncionario)</CommandText>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Funcionario
-                         (idCargo, nomeFunc, dataNasc, sexo, dataCriacao, funcEstado, horaCriacao, email)
-VALUES        (@idCargo,@nomeFunc,@dataNasc,@sexo,@dataCriacao,@funcEstado,@horaCriacao,@email);   
+                         (idCargo, nomeFunc,dataCriacao, funcEstado, horaCriacao, email)
+VALUES        (@idCargo,@nomeFunc,@dataCriacao,@funcEstado,@horaCriacao,@email);    
 </CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="idCargo" ColumnName="idCargo" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataNasc" ColumnName="dataNasc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataNasc" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataNasc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="sexo" ColumnName="sexo" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="dataCriacao" ColumnName="dataCriacao" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="funcEstado" ColumnName="funcEstado" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="horaCriacao" ColumnName="horaCriacao" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="time" DbType="AnsiString" Direction="Input" ParameterName="@horaCriacao" Precision="0" ProviderType="Time" Scale="0" Size="5" SourceColumn="horaCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="email" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(64)" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="64" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="idCargo" ColumnName="idCargo" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idCargo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idCargo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataCriacao" ColumnName="dataCriacao" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@dataCriacao" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="dataCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="funcEstado" ColumnName="funcEstado" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@funcEstado" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="funcEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="horaCriacao" ColumnName="horaCriacao" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="time" DbType="AnsiString" Direction="Input" ParameterName="@horaCriacao" Precision="0" ProviderType="Time" Scale="0" Size="5" SourceColumn="horaCriacao" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="email" ColumnName="email" DataSourceName="[C:\PDV\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(64)" DbType="AnsiString" Direction="Input" ParameterName="@email" Precision="0" ProviderType="VarChar" Scale="0" Size="64" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -2137,9 +2105,7 @@ WHERE        idFuncionario = @idFuncionario
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="logar" GetMethodModifier="Public" GetMethodName="logar" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="logar" UserSourceName="logar">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idFuncionario, idCargo, nomeFunc, email, log_in, senha, funcEstado
-FROM            Funcionario
-WHERE log_in = @log_in</CommandText>
+                    <CommandText>SELECT dataCriacao, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha FROM Funcionario WHERE (log_in = @log_in)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="log_in" ColumnName="log_in" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -2149,9 +2115,7 @@ WHERE log_in = @log_in</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarColaboradorPorId" GetMethodModifier="Public" GetMethodName="retornarColaboradorPorId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarColaboradorPorId" UserSourceName="retornarColaboradorPorId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idFuncionario, idCargo, nomeFunc, funcEstado, email, dataNasc, horaCriacao, sexo, dataCriacao
-FROM            Funcionario
-WHERE idFuncionario = @idFuncionario</CommandText>
+                    <CommandText>SELECT dataCriacao, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha FROM Funcionario WHERE (idFuncionario = @idFuncionario)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="idFuncionario" ColumnName="idFuncionario" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idFuncionario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idFuncionario" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -2161,8 +2125,7 @@ WHERE idFuncionario = @idFuncionario</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarTodosColaboradores" GetMethodModifier="Public" GetMethodName="retornarTodosColaboradores" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarTodosColaboradores" UserSourceName="retornarTodosColaboradores">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idFuncionario, idCargo, nomeFunc, sexo, funcEstado, email, log_in, senha, dataNasc, dataCriacao, horaCriacao
-FROM            Funcionario</CommandText>
+                    <CommandText>SELECT dataCriacao, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha FROM Funcionario</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2170,7 +2133,7 @@ FROM            Funcionario</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="retornarUltimoIdFunc" GetMethodModifier="Public" GetMethodName="retornarUltimoIdFunc" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="retornarUltimoIdFunc" UserSourceName="retornarUltimoIdFunc">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT TOP (1) dataCriacao, dataNasc, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha, sexo FROM Funcionario ORDER BY idFuncionario DESC</CommandText>
+                    <CommandText>SELECT TOP (1) dataCriacao, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha FROM Funcionario ORDER BY idFuncionario DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2178,9 +2141,7 @@ FROM            Funcionario</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="verificarDuplicataLogin" GetMethodModifier="Public" GetMethodName="verificarDuplicataLogin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="verificarDuplicataLogin" UserSourceName="verificarDuplicataLogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        log_in
-FROM            Funcionario
-WHERE log_in = @log_in</CommandText>
+                    <CommandText>SELECT dataCriacao, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha FROM Funcionario WHERE (log_in = @log_in)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="log_in" ColumnName="log_in" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@log_in" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="log_in" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -2190,9 +2151,7 @@ WHERE log_in = @log_in</CommandText>
               <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.Funcionario" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="verificarFunc" GetMethodModifier="Public" GetMethodName="verificarFunc" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="verificarFunc" UserSourceName="verificarFunc">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idFuncionario, senha, log_in, idCargo
-FROM            Funcionario
-WHERE        (nomeFunc = @nomeFunc) AND (funcEstado = 1)</CommandText>
+                    <CommandText>SELECT dataCriacao, email, funcEstado, horaCriacao, idCargo, idFuncionario, log_in, nomeFunc, senha FROM Funcionario WHERE (nomeFunc = @nomeFunc) AND (funcEstado = 1)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="nomeFunc" ColumnName="nomeFunc" DataSourceName="[C:\PROJETOPDV\WINDOWSFORMSAPP2\DATABASE.MDF].dbo.Funcionario" DataTypeServer="varchar(54)" DbType="AnsiString" Direction="Input" ParameterName="@nomeFunc" Precision="0" ProviderType="VarChar" Scale="0" Size="54" SourceColumn="nomeFunc" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -3210,7 +3169,6 @@ ORDER BY idFiscal DESC</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idProduto" msprop:Generator_ColumnVarNameInTable="columnidProduto" msprop:Generator_ColumnPropNameInRow="idProduto" msprop:Generator_ColumnPropNameInTable="idProdutoColumn" msprop:Generator_UserColumnName="idProduto" type="xs:int" minOccurs="0" />
-              <xs:element name="entradaEstado" msprop:Generator_ColumnVarNameInTable="columnentradaEstado" msprop:Generator_ColumnPropNameInRow="entradaEstado" msprop:Generator_ColumnPropNameInTable="entradaEstadoColumn" msprop:Generator_UserColumnName="entradaEstado" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="qntItem" msprop:Generator_ColumnVarNameInTable="columnqntItem" msprop:Generator_ColumnPropNameInRow="qntItem" msprop:Generator_ColumnPropNameInTable="qntItemColumn" msprop:Generator_UserColumnName="qntItem" type="xs:int" minOccurs="0" />
               <xs:element name="dataEntrada" msprop:Generator_ColumnVarNameInTable="columndataEntrada" msprop:Generator_ColumnPropNameInRow="dataEntrada" msprop:Generator_ColumnPropNameInTable="dataEntradaColumn" msprop:Generator_UserColumnName="dataEntrada" type="xs:dateTime" minOccurs="0" />
               <xs:element name="observacoes" msprop:Generator_ColumnVarNameInTable="columnobservacoes" msprop:Generator_ColumnPropNameInRow="observacoes" msprop:Generator_ColumnPropNameInTable="observacoesColumn" msprop:Generator_UserColumnName="observacoes" minOccurs="0">
@@ -3230,7 +3188,6 @@ ORDER BY idFiscal DESC</CommandText>
             <xs:sequence>
               <xs:element name="idSecundarioItensSaida" msprop:Generator_ColumnVarNameInTable="columnidSecundarioItensSaida" msprop:Generator_ColumnPropNameInRow="idSecundarioItensSaida" msprop:Generator_ColumnPropNameInTable="idSecundarioItensSaidaColumn" msprop:Generator_UserColumnName="idSecundarioItensSaida" type="xs:int" minOccurs="0" />
               <xs:element name="idProduto" msprop:Generator_ColumnVarNameInTable="columnidProduto" msprop:Generator_ColumnPropNameInRow="idProduto" msprop:Generator_ColumnPropNameInTable="idProdutoColumn" msprop:Generator_UserColumnName="idProduto" type="xs:int" minOccurs="0" />
-              <xs:element name="saidaEstado" msprop:Generator_ColumnVarNameInTable="columnsaidaEstado" msprop:Generator_ColumnPropNameInRow="saidaEstado" msprop:Generator_ColumnPropNameInTable="saidaEstadoColumn" msprop:Generator_UserColumnName="saidaEstado" type="xs:int" minOccurs="0" />
               <xs:element name="qntItem" msprop:Generator_ColumnVarNameInTable="columnqntItem" msprop:Generator_ColumnPropNameInRow="qntItem" msprop:Generator_ColumnPropNameInTable="qntItemColumn" msprop:Generator_UserColumnName="qntItem" type="xs:int" minOccurs="0" />
               <xs:element name="dataSaida" msprop:Generator_ColumnVarNameInTable="columndataSaida" msprop:Generator_ColumnPropNameInRow="dataSaida" msprop:Generator_ColumnPropNameInTable="dataSaidaColumn" msprop:Generator_UserColumnName="dataSaida" type="xs:dateTime" minOccurs="0" />
               <xs:element name="horaSaida" msprop:Generator_ColumnVarNameInTable="columnhoraSaida" msprop:Generator_ColumnPropNameInRow="horaSaida" msprop:Generator_ColumnPropNameInTable="horaSaidaColumn" msprop:Generator_UserColumnName="horaSaida" type="xs:duration" minOccurs="0" />
@@ -3426,7 +3383,6 @@ ORDER BY idFiscal DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="sexo" msprop:Generator_ColumnVarNameInTable="columnsexo" msprop:Generator_ColumnPropNameInRow="sexo" msprop:Generator_ColumnPropNameInTable="sexoColumn" msprop:Generator_UserColumnName="sexo" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="funcEstado" msprop:Generator_ColumnVarNameInTable="columnfuncEstado" msprop:Generator_ColumnPropNameInRow="funcEstado" msprop:Generator_ColumnPropNameInTable="funcEstadoColumn" msprop:Generator_UserColumnName="funcEstado" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
                 <xs:simpleType>
@@ -3449,7 +3405,6 @@ ORDER BY idFiscal DESC</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="dataNasc" msprop:Generator_ColumnVarNameInTable="columndataNasc" msprop:Generator_ColumnPropNameInRow="dataNasc" msprop:Generator_ColumnPropNameInTable="dataNascColumn" msprop:Generator_UserColumnName="dataNasc" type="xs:dateTime" minOccurs="0" />
               <xs:element name="dataCriacao" msprop:Generator_ColumnVarNameInTable="columndataCriacao" msprop:Generator_ColumnPropNameInRow="dataCriacao" msprop:Generator_ColumnPropNameInTable="dataCriacaoColumn" msprop:Generator_UserColumnName="dataCriacao" type="xs:dateTime" minOccurs="0" />
               <xs:element name="horaCriacao" msprop:Generator_ColumnVarNameInTable="columnhoraCriacao" msprop:Generator_ColumnPropNameInRow="horaCriacao" msprop:Generator_ColumnPropNameInTable="horaCriacaoColumn" msprop:Generator_UserColumnName="horaCriacao" type="xs:duration" minOccurs="0" />
             </xs:sequence>

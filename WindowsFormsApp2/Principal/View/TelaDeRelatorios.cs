@@ -367,10 +367,10 @@ namespace WindowsFormsApp2
 
                 /*******************************************************************************************/
                 informacao.Clear();
-                informacao.Add("\n\n" + ("Sangria"));
-
+                informacao.Add("\n\n" + ("Sangria")+ "\n\n");
+                doc.Add(informacao);
                 var auxSangria = sangria.retornarSangrias(DateTime.Now.ToString("dd/MM/yyyy"));
-                /*
+                DadosTableAdapters.FuncionarioTableAdapter funcionario = new DadosTableAdapters.FuncionarioTableAdapter();
                 if (auxSangria.Count > 0)
                 {
                     informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
@@ -380,16 +380,20 @@ namespace WindowsFormsApp2
                     table7.AddCell("Data da Sangria");
                     table7.AddCell("Colaborador");
                     table7.AddCell("Observações");
+                    table7.AddCell("Valor da sangria");
                     for (int i = 0; i < auxSangria.Count; i++)
                     {
-                        table7.AddCell(auxSangria[i]["idCa"]);
-                        table7.AddCell(vendasCanceladas[i]["dataVenda"].ToString());
-                        table7.AddCell(vendasCanceladas[i]["dataCancelamento"].ToString());
-                        var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
-                        table6.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
+                        table7.AddCell(auxSangria[i]["dataSangria"].ToString());
+                        var auxFunc = funcionario.retornarColaboradorPorId(Convert.ToInt32(auxSangria[i]["idColaborador"]));
+                        table7.AddCell(auxFunc[0]["nomeFunc"].ToString());
+                        table7.AddCell(auxSangria[i]["observacoes"].ToString());
+                        table7.AddCell(auxSangria[i]["observacoes"].ToString());
+                        doc.Add(table7);
+                        //var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
+                        //table7.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
                     }
                 }
-                */
+                
 
                 doc.Close();
                 MessageBox.Show("Relatório gerado com sucesso!");

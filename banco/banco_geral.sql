@@ -75,7 +75,7 @@ CREATE TABLE ItensDeEntrada (
     /*idPrimarioItensEntrada INT PRIMARY KEY IDENTITY (1,1),*/
 	idSecundarioItensEntrada INT,
     idProduto INT,
-    entradaEstado TINYINT,
+    /*entradaEstado TINYINT,*/
     qntItem INT,
     dataEntrada DATE,
 	horaEntrada TIME,
@@ -100,8 +100,8 @@ CREATE TABLE Funcionario (
     idFuncionario INT PRIMARY KEY IDENTITY (1,1),
     idCargo INT,
     nomeFunc VARCHAR(54),
-    dataNasc DATE,
-    sexo TINYINT,
+    /*dataNasc DATE,
+    sexo TINYINT,*/
     log_in VARCHAR(54),
     senha VARCHAR(54),
 	email varchar(64),
@@ -112,6 +112,7 @@ CREATE TABLE Funcionario (
 	idEndereco TINYINT,*/
 );
 
+/*parei no cargo*/
 
 CREATE TABLE Cargo (
     idCargo INT PRIMARY KEY IDENTITY (0,1),
@@ -177,7 +178,7 @@ CREATE TABLE Vendas_Canceladas(
 	dataVenda DATE,
 	dataCancelamento DATE,
 	horaCancelamento TIME,
-	valorDaVenda FLOAT,
+	valorDaVenda FLOAT
 );
 
 CREATE TABLE Config_Sistema(

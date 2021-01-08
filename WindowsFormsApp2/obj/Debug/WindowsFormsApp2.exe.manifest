@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApp2.exe" size="1159680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApp2.exe" size="1151488">
       <assemblyIdentity name="WindowsFormsApp2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LoE3RpcZwNzttJXHGM/jK7qtcKoZ8yieRPBQgFUrw0I=</dsig:DigestValue>
+        <dsig:DigestValue>61nt5Pip0iJW7X3Rh4lPCaDVV1XIYC+FyyvIW4XAWEY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -71,7 +71,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HscBlDO0MEOf9EPX9VZDKlPEUjcbAzoNY1M0G5+jD/I=</dsig:DigestValue>
+      <dsig:DigestValue>3KjO0vcRBDwm8onkygcV+/egx5Kn+uhVxV7f5DFUgwo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Database_log.ldf" size="8388608" writeableType="applicationData">
@@ -80,7 +80,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>a7/iqApkmQQq0cwFvUlW2UdB+bfI0/zsZn2QGjlJMuU=</dsig:DigestValue>
+      <dsig:DigestValue>ZlopDXj02CFNkhkINMoXph4C3EQUNIBWnI3Wk7yGRH4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="WindowsFormsApp2.exe.config" size="559">

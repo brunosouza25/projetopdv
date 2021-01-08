@@ -75,12 +75,8 @@ namespace WindowsFormsApp2.Principal.View.Config
                         idCargo = Convert.ToInt32(Cargo[0]["idCargo"]);
                     }
                     DateTime a;
-                    if (!DateTime.TryParse(txtNasc.Text, out a))
-                    {
-                        a = new DateTime(1111, 11, 11);
-                    }
-                    colaboladores.cadastrarColaborador(idCargo, txtNome.Text, a.ToString(), Convert.ToByte(cbSexo.SelectedItem)
-                        , DateTime.Now.ToString("dd/MM"), Convert.ToByte(!cbInativo.Checked)
+
+                    colaboladores.cadastrarColaborador(idCargo, txtNome.Text, DateTime.Now.ToString("dd/MM"), Convert.ToByte(!cbInativo.Checked)
                         , DateTime.Now.ToString("HH:mm"), txtEmail.Text);
 
 
@@ -106,11 +102,7 @@ namespace WindowsFormsApp2.Principal.View.Config
                 {
                     a = new DateTime(1111, 11, 11);
                 }
-                colaboladores.atualizarColaborador(idCargo, txtNome.Text, a.ToString(), Convert.ToByte(cbSexo.SelectedItem)
-                    ,  Convert.ToByte(!cbInativo.Checked)
-                    ,  txtEmail.Text, idColaborador);
-
-
+                colaboladores.atualizarColaborador(idCargo, txtNome.Text, Convert.ToByte(!cbInativo.Checked), txtEmail.Text, idColaborador);
                 Close();
             }
 

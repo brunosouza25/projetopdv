@@ -33,7 +33,7 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             var auxLogin = colaboradores.verificarDuplicataLogin(txtLogin.Text);
 
-            if (txtSenha.Text == txtBoxRepetirSenha.Text && txtLogin.Text != "" && cbColaborador.SelectedItem != "")
+            if (txtSenha.Text == txtBoxRepetirSenha.Text && txtLogin.Text.Trim() != "" && cbColaborador.SelectedItem != "" && txtSenha.Text.Trim() != "" && txtBoxRepetirSenha.Text.Trim() != "")
             {
                 var idColab = colaboradores.verificarFunc(cbColaborador.SelectedItem.ToString());
                 colaboradores.cadastrarLogin(txtLogin.Text, txtSenha.Text, Convert.ToInt32(idColab[0]["idFuncionario"]));

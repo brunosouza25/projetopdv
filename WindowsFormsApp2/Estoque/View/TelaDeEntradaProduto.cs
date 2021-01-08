@@ -257,7 +257,7 @@ namespace WindowsFormsApp2.Estoque.View
 
                     dadosEntrada.inserirItensEntrada( idEntrada ,Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text), DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("HH:mm")
-                    , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text, 1);
+                    , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text);
                 }
                 MessageBox.Show("Produtos inserido com sucesso!");
                 Close();
