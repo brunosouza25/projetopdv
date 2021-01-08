@@ -13,6 +13,14 @@ namespace WindowsFormsApp2
             carregarSangria();
         }
 
+        public TelaDoPdv TelaDoPdv
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void carregarSangria()
         {
 

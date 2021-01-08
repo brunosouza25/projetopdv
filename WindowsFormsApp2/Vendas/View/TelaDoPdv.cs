@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
-    public partial class listaDoCaixa : UserControl
+    public partial class TelaDoPdv : UserControl
     {
-        public listaDoCaixa()
+        public TelaDoPdv()
         {
             InitializeComponent();
             BtnFinalizarVenda.Enabled = false;

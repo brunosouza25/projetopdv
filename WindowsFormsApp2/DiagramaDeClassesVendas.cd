@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WindowsFormsApp2.Vendas.View.ListaDeVendas">
+    <Position X="3.75" Y="4.5" Width="2.75" />
+    <Members>
+      <Field Name="btn7Dias" Hidden="true" />
+      <Field Name="btnEsteMes" Hidden="true" />
+      <Field Name="btnHoje" Hidden="true" />
+      <Field Name="btnMesPassado" Hidden="true" />
+      <Field Name="btnOntem" Hidden="true" />
+      <Field Name="btnPerso" Hidden="true" />
+      <Field Name="btnUltimos3Meses" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="columnHeader4" Hidden="true" />
+      <Field Name="columnHeader5" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="flowLayoutPanel1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="listaVendas" Hidden="true" />
+      <Field Name="nulo" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="txtBoxAteMes" Hidden="true" />
+      <Field Name="txtBoxDeMes" Hidden="true" />
+      <Field Name="TxtBoxPesquisaProd" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CQBAAAAwgyAJBBAGAAKBFADmI4AAWAKAQIAgAQCAASA=</HashCode>
+      <FileName>Vendas\View\ListaDeVendas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Vendas.View.TelaDeDevolucoes">
+    <Position X="0.75" Y="5.75" Width="2.25" />
+    <Members>
+      <Field Name="btn7Dias" Hidden="true" />
+      <Field Name="btnDevo" Hidden="true" />
+      <Field Name="btnEsteMes" Hidden="true" />
+      <Field Name="btnHoje" Hidden="true" />
+      <Field Name="btnMesPassado" Hidden="true" />
+      <Field Name="btnOntem" Hidden="true" />
+      <Field Name="btnPerso" Hidden="true" />
+      <Field Name="btnUltimos3Meses" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="columnHeader4" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="flowLayoutPanel1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="listaDevolucoes" Hidden="true" />
+      <Field Name="nulo" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="txtBoxAteMes" Hidden="true" />
+      <Field Name="txtBoxDeMes" Hidden="true" />
+      <Field Name="TxtBoxPesquisaProd" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQBAAQQQoiAABBACAACBEADGI4AAWAqAQAAgAQCAASA=</HashCode>
+      <FileName>Vendas\View\TelaDeDevolucoes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Vendas.View.TelaDetalhesDaVenda">
+    <Position X="11" Y="5.75" Width="2.75" />
+    <Members>
+      <Field Name="btnCancelarVenda" Hidden="true" />
+      <Field Name="btnSair" Hidden="true" />
+      <Field Name="btnSalvar" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="columnHeader4" Hidden="true" />
+      <Field Name="columnHeader5" Hidden="true" />
+      <Field Name="columnHeader6" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="lbl" Hidden="true" />
+      <Field Name="lblData" Hidden="true" />
+      <Field Name="lblDesc" Hidden="true" />
+      <Field Name="lblFuncionario" Hidden="true" />
+      <Field Name="lblNumVenda" Hidden="true" />
+      <Field Name="lblTotal" Hidden="true" />
+      <Field Name="listaVendas" Hidden="true" />
+      <Field Name="nulo" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="txtBoxCredParc" Hidden="true" />
+      <Field Name="txtBoxCredVista" Hidden="true" />
+      <Field Name="txtBoxDebt" Hidden="true" />
+      <Field Name="txtBoxDesc" Hidden="true" />
+      <Field Name="txtBoxDin" Hidden="true" />
+      <Field Name="txtBoxObs" Hidden="true" />
+      <Field Name="txtCliente" Hidden="true" />
+      <Field Name="txtFuncionario" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gBCAJEQhACABEBAgAQqMAQLyA0AAFEAJAABCAQACQSA=</HashCode>
+      <FileName>Vendas\View\TelaDetalhesDaVenda.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ListaDeVendas" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.Vendas.View.TelaDevolucao">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="btnDevolver" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="columnHeader4" Hidden="true" />
+      <Field Name="columnHeader5" Hidden="true" />
+      <Field Name="columnHeader6" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="idItens" Hidden="true" />
+      <Field Name="idProd" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="listaVendas" Hidden="true" />
+      <Field Name="nulo" Hidden="true" />
+      <Field Name="painelBase" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="TxtBoxPesquisaProd" Hidden="true" />
+      <Field Name="txtBoxQnt" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAEAEA0AiApABCAIAqAEQLygwAAHAIQAAAAEQAAECQ=</HashCode>
+      <FileName>Vendas\View\TelaDevolucao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaDeDevolucoes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.TelaDePagamento">
+    <Position X="14.25" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="BtnFinalizar" Hidden="true" />
+      <Field Name="button1" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="lblDesc" Hidden="true" />
+      <Field Name="LblFalta" Hidden="true" />
+      <Field Name="LblTotal" Hidden="true" />
+      <Field Name="lblTotalAReceber" Hidden="true" />
+      <Field Name="LblTroco" Hidden="true" />
+      <Field Name="painelPagamento" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="txtBoxDesc" Hidden="true" />
+      <Field Name="TxtBoxDinheiro" Hidden="true" />
+      <Field Name="txtCredParc" Hidden="true" />
+      <Field Name="txtCredVista" Hidden="true" />
+      <Field Name="txtDeb" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>iQAAAAEgBCAQABGCBACIAQQCg0QIBAQBAEgAAQIALQQ=</HashCode>
+      <FileName>Vendas\View\TelaDePagamento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaDoPdv" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.TelaDeSangria">
+    <Position X="11.5" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="btnCancelar" Hidden="true" />
+      <Field Name="btnConcluir" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="lblCaixa" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="txtBoxCaixaAtual" Hidden="true" />
+      <Field Name="txtBoxObs" Hidden="true" />
+      <Field Name="txtBoxSangria" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ARACAAAIACAAOJAAAAKEAAACwABAAAAQAAAAAQAAAAQ=</HashCode>
+      <FileName>Vendas\View\TelaDeSangria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaDoPdv" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.TelaDoPdv">
+    <Position X="8" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="Bt_Add_Prod" Hidden="true" />
+      <Field Name="Bt_Cancelar_Venda" Hidden="true" />
+      <Field Name="Bt_Remover_Prod" Hidden="true" />
+      <Field Name="btnAbrirCaixa" Hidden="true" />
+      <Field Name="btnFecharCaixa" Hidden="true" />
+      <Field Name="BtnFinalizarVenda" Hidden="true" />
+      <Field Name="btnSangria" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader12" Hidden="true" />
+      <Field Name="columnHeader13" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="columnHeader4" Hidden="true" />
+      <Field Name="columnHeader9" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="lblCaixa" Hidden="true" />
+      <Field Name="LblTotal" Hidden="true" />
+      <Field Name="listaCaixa" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="panel5" Hidden="true" />
+      <Field Name="panel6" Hidden="true" />
+      <Field Name="panel7" Hidden="true" />
+      <Field Name="panel8" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="tableLayoutPanel3" Hidden="true" />
+      <Field Name="tableLayoutPanel4" Hidden="true" />
+      <Field Name="tableLayoutPanel5" Hidden="true" />
+      <Field Name="TxtBoxPesquisaProd" Hidden="true" />
+      <Field Name="txtBoxQnt" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAA2AAATAHwIChECIACSKYDCwwAEFBIAoECAARgABCA=</HashCode>
+      <FileName>Vendas\View\TelaDoPdv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Vendas.TelaDeVendas">
+    <Position X="4.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="btnDevolucao" Hidden="true" />
+      <Field Name="BtnPdv" Hidden="true" />
+      <Field Name="BtnVendas" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="painelP" Hidden="true" />
+      <Field Name="painelPrincipalDeVendas" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BQAAABABQCAAAAAAAQCAAABCAAAAEAgAEEQBAQAAAEQ=</HashCode>
+      <FileName>Vendas\View\TelaDeVendas.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaDevolucao" />
+      <Property Name="ListaDeVendas" />
+      <Property Name="TelaDoPdv" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

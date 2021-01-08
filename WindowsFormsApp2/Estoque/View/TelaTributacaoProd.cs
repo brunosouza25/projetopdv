@@ -29,6 +29,15 @@ namespace WindowsFormsApp2.Estoque.View
             InitializeComponent();
             var auxConfig = configSistema.retornarConfig();
         }
+
+        public TelaCriarProd TelaCriarProd
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void criarFiscal(bool tipo)
         {
             this.tipo = tipo;

@@ -28,6 +28,14 @@ namespace WindowsFormsApp2
 
         }
 
+        public TelaDeEstoque TelaDeEstoque
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void mudarEntrada()
         {
             entrada.Visible = !entrada.Visible;

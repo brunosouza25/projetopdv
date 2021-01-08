@@ -24,6 +24,14 @@ namespace WindowsFormsApp2
 
         }
 
+        public TelaPrincipal TelaPrincipal
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
         {
             try

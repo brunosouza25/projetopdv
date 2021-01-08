@@ -66,6 +66,22 @@ namespace WindowsFormsApp2
             }
         }
 
+        public TelaConfig TelaConfig
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TelaDeLogin TelaDeLogin
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void mudarEstoque()
         {
             estoque.Visible = !estoque.Visible;

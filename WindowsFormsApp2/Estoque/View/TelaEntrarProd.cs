@@ -17,6 +17,7 @@ namespace WindowsFormsApp2
             this.tipo = tipo;
 
         }
+
         private void valida()
         {
             int a;

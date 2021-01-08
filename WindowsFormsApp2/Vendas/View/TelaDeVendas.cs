@@ -15,7 +15,7 @@ namespace WindowsFormsApp2.Vendas
     public partial class TelaDeVendas : UserControl
     {
         ListaDeVendas vendas = new ListaDeVendas();
-        listaDoCaixa pdv = new listaDoCaixa();
+        TelaDoPdv pdv = new TelaDoPdv();
         TelaDeDevolucoes devolucao = new TelaDeDevolucoes();
         public TelaDeVendas()
         {
@@ -33,6 +33,30 @@ namespace WindowsFormsApp2.Vendas
             {
                 devolucao.Visible = false;
                 btnDevolucao.Visible = false;
+            }
+        }
+
+        public TelaDevolucao TelaDevolucao
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public ListaDeVendas ListaDeVendas
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TelaDoPdv TelaDoPdv
+        {
+            get => default;
+            set
+            {
             }
         }
 

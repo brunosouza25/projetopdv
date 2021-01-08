@@ -7,6 +7,23 @@ namespace WindowsFormsApp2
     public partial class TelaDePagamento : Form
     {
         public string[,] itensDaLista { get; set; }
+
+        public TelaDoPdv TelaDoPdv
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Fiscal Fiscal
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         double total, valorDesc = 0;
         int idPagamento;
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
@@ -50,7 +67,7 @@ namespace WindowsFormsApp2
         {
             bool ok = false;
             double a, b, c, d, f;
-            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, valorPagar = 0, totalvalidar = 0;
+            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, totalvalidar = 0;
 
 
 

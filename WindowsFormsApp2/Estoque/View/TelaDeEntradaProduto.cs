@@ -294,5 +294,13 @@ namespace WindowsFormsApp2.Estoque.View
             }
             Close();
         }
+
+        public EntradaDeProdutos EntradaDeProdutos
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

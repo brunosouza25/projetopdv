@@ -23,6 +23,15 @@ namespace WindowsFormsApp2.Estoque.View
             InitializeComponent();
             carregarSaidas();
         }
+
+        internal Produto Produto
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void carregarSaidas()
         {
 

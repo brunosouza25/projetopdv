@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp2
 {
-    partial class listaDoCaixa
+    partial class TelaDoPdv
     {
 
         /// <summary> 

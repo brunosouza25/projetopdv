@@ -117,5 +117,21 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
 
         }
+
+        public TelaColaboladores TelaColaboladores
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Colaborador Colaborador
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

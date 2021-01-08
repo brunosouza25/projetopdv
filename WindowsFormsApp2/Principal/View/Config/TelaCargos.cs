@@ -20,6 +20,14 @@ namespace WindowsFormsApp2.Principal.View.Config
             carregarListaCargos();
         }
 
+        public TelaCadastroCargo TelaCadastroCargo
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void btnCadastrarCargo_Click(object sender, EventArgs e)
         {
             TelaCadastroCargo telaCargos = new TelaCadastroCargo();

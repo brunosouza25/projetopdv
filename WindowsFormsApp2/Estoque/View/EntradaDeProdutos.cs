@@ -19,6 +19,15 @@ namespace WindowsFormsApp2
             InitializeComponent();
             carregarEntradas();
         }
+
+        internal Produto Produto
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void carregarEntradas()
         {
 

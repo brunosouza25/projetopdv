@@ -22,6 +22,14 @@ namespace WindowsFormsApp2.Principal.View.Config
 
         }
 
+        public TelaConfigFiscal TelaConfigFiscal
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void btColaboladores_Click(object sender, EventArgs e)
         {
             principalColaboladores.Visible = true;

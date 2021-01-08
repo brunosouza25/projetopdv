@@ -166,7 +166,6 @@ C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaPrincipalEstoq
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.ListaDeVendas.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDetalhesDaVenda.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaDevolucao.resources
-C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.listaDoCaixa.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeRelatorios.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaCriarProd.resources
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDeEstoque.resources
@@ -243,3 +242,4 @@ C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.C
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
+C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDoPdv.resources

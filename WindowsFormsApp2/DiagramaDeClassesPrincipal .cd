@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WindowsFormsApp2.Program">
+    <Position X="1.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Principal\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.TelaDeLogin" Collapsed="true">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <Members>
+      <Field Name="BtnEntrar" Hidden="true" />
+      <Field Name="BtnSair" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="TxtBoxPass" Hidden="true" />
+      <Field Name="TxtBoxUser" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAQCAAABAAAACAAFADAAAAAAIAQGAAAwAAAAA=</HashCode>
+      <FileName>Principal\View\TelaDeLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.TelaDeRelatorios" Collapsed="true">
+    <Position X="6" Y="10.25" Width="1.5" />
+    <Members>
+      <Field Name="btn7Dias" Hidden="true" />
+      <Field Name="btnCaixa" Hidden="true" />
+      <Field Name="btnEsteMes" Hidden="true" />
+      <Field Name="btnHoje" Hidden="true" />
+      <Field Name="btnMesPassado" Hidden="true" />
+      <Field Name="btnOntem" Hidden="true" />
+      <Field Name="btnPerso" Hidden="true" />
+      <Field Name="btnUltimos3Meses" Hidden="true" />
+      <Field Name="caixa1BindingSource" Hidden="true" />
+      <Field Name="caixa1TableAdapter" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="dados" Hidden="true" />
+      <Field Name="dados1" Hidden="true" />
+      <Field Name="dataTable2BindingSource" Hidden="true" />
+      <Field Name="dataTable2TableAdapter" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="painelPrincipal" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="prodNomeDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="prodValorDataGridViewTextBoxColumn" Hidden="true" />
+      <Field Name="tableAdapterManager" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="txtBoxAteMes" Hidden="true" />
+      <Field Name="txtBoxDeMes" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ARBAAAAEgiAABBgGAIGBEoRGYgAIyACAQABgAQSaASA=</HashCode>
+      <FileName>Principal\View\TelaDeRelatorios.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaPrincipal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.TelaPrincipal">
+    <Position X="5.75" Y="5.25" Width="1.75" />
+    <Members>
+      <Field Name="btCaixa" Hidden="true" />
+      <Field Name="BtEstoque" Hidden="true" />
+      <Field Name="btnConfig" Hidden="true" />
+      <Field Name="BtRelatorio" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Field Name="fileSystemWatcher1" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="Lab_Hora" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="lblConfiguracoes" Hidden="true" />
+      <Field Name="lblEstoque" Hidden="true" />
+      <Field Name="lblVendas" Hidden="true" />
+      <Field Name="painel_hora" Hidden="true" />
+      <Field Name="painelPrincipal" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="timer1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AiQBCAAAAKAAAJCABACAAAACIEBBIGAEUEhggQoAQCA=</HashCode>
+      <FileName>Principal\View\TelaPrincipal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.Colaborador" Collapsed="true">
+    <Position X="0.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAEAAAiAAACgAAgAIgAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Principal\View\Config\Classes\Colaborador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.ConfigSistema">
+    <Position X="8.5" Y="10.5" Width="1.5" />
+    <Members>
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="painelPrincipal" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAEBAAAAAAAA=</HashCode>
+      <FileName>Principal\View\Config\ConfigSistema.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaConfig" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastrarColaborador" Collapsed="true">
+    <Position X="0.75" Y="5.25" Width="1.5" />
+    <Members>
+      <Field Name="btnCancelar" Hidden="true" />
+      <Field Name="btnSalvar" Hidden="true" />
+      <Field Name="cbCargo" Hidden="true" />
+      <Field Name="cbInativo" Hidden="true" />
+      <Field Name="cbSexo" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="txtAgencia" Hidden="true" />
+      <Field Name="txtBairro" Hidden="true" />
+      <Field Name="txtBanco" Hidden="true" />
+      <Field Name="txtCidade" Hidden="true" />
+      <Field Name="txtConta" Hidden="true" />
+      <Field Name="txtCpf" Hidden="true" />
+      <Field Name="txtEmail" Hidden="true" />
+      <Field Name="txtEnd" Hidden="true" />
+      <Field Name="txtNasc" Hidden="true" />
+      <Field Name="txtNome" Hidden="true" />
+      <Field Name="txtNum" Hidden="true" />
+      <Field Name="txtRg" Hidden="true" />
+      <Field Name="txtTel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>/xCQJAYACSAIAJAAAAiAEAQCAABgAIICCIAIAaACQAE=</HashCode>
+      <FileName>Principal\View\Config\TelaCadastrarColaborador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastroCargo">
+    <Position X="2.25" Y="9.25" Width="2.75" />
+    <Members>
+      <Field Name="btnCancelar" Hidden="true" />
+      <Field Name="btnSalvar" Hidden="true" />
+      <Field Name="cBoxCancelarVendas" Hidden="true" />
+      <Field Name="cBoxCriacaoDeProdutos" Hidden="true" />
+      <Field Name="cBoxDevolucoes" Hidden="true" />
+      <Field Name="cBoxEditarProdutos" Hidden="true" />
+      <Field Name="cBoxEntradaDeProdutos" Hidden="true" />
+      <Field Name="cBoxEstoque" Hidden="true" />
+      <Field Name="cBoxInativo" Hidden="true" />
+      <Field Name="cBoxLancarVendas" Hidden="true" />
+      <Field Name="cBoxSaidaDeProdutos" Hidden="true" />
+      <Field Name="cBoxSangria" Hidden="true" />
+      <Field Name="cBoxVendas" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="lblAtivo" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="txtCargo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MHCABAYAAGAAAJCAAAiBgAASAABIAAACAABIARBDAAA=</HashCode>
+      <FileName>Principal\View\Config\TelaCadastroCargo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastroLogins" Collapsed="true">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <Members>
+      <Field Name="btnCancelar" Hidden="true" />
+      <Field Name="btnSalvar" Hidden="true" />
+      <Field Name="cbColaborador" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="txtBoxRepetirSenha" Hidden="true" />
+      <Field Name="txtLogin" Hidden="true" />
+      <Field Name="txtSenha" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACBAAEAACCAAZAAAACAAAACAABBAAEAAAAAAQACAAA=</HashCode>
+      <FileName>Principal\View\Config\TelaCadastroLogins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCargos" Collapsed="true">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <Members>
+      <Field Name="btnCadastrarCargo" Hidden="true" />
+      <Field Name="btnEditarCargos" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="listaCargos" Hidden="true" />
+      <Field Name="panel_Total" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="panel5" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="tableLayoutPanel3" Hidden="true" />
+      <Field Name="tableLayoutPanel4" Hidden="true" />
+      <Field Name="TxtBoxPesquisaProdEstoque" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAUAjAAABAAAACRAASCAwAAAAAAgMAAAQAAACA=</HashCode>
+      <FileName>Principal\View\Config\TelaCargos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaColaboladores" Collapsed="true">
+    <Position X="0.75" Y="6" Width="1.5" />
+    <Members>
+      <Field Name="Bt_Criar_Prod" Hidden="true" />
+      <Field Name="Bt_Editar_Prod" Hidden="true" />
+      <Field Name="columnHeader1" Hidden="true" />
+      <Field Name="columnHeader2" Hidden="true" />
+      <Field Name="columnHeader3" Hidden="true" />
+      <Field Name="columnHeader4" Hidden="true" />
+      <Field Name="columnHeader5" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="listaColaboradores" Hidden="true" />
+      <Field Name="panel_Total" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="panel2" Hidden="true" />
+      <Field Name="panel3" Hidden="true" />
+      <Field Name="panel4" Hidden="true" />
+      <Field Name="panel5" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+      <Field Name="tableLayoutPanel2" Hidden="true" />
+      <Field Name="tableLayoutPanel3" Hidden="true" />
+      <Field Name="tableLayoutPanel4" Hidden="true" />
+      <Field Name="TxtBoxPesquisaProdEstoque" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAABAAAQADAAABAAAECAAAXiAwABAIQAgEAAAQAAACQ=</HashCode>
+      <FileName>Principal\View\Config\TelaColaboladores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaConfig">
+    <Position X="8.5" Y="7.75" Width="2" />
+    <Members>
+      <Field Name="btColaboladores" Hidden="true" />
+      <Field Name="btnConfig" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="painelMainConfig" Hidden="true" />
+      <Field Name="PainelPrincipalConfig" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAACAAAAEEAACAAAACAAAAACQAAAAAEQAAACI=</HashCode>
+      <FileName>Principal\View\Config\TelaConfig.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaConfigFiscal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaConfigFiscal">
+    <Position X="11.75" Y="7.75" Width="2.25" />
+    <Members>
+      <Field Name="btnCancelar" Hidden="true" />
+      <Field Name="btnSalvar" Hidden="true" />
+      <Field Name="cBoxRegimeTributario" Hidden="true" />
+      <Field Name="ckBoxFiscal" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label18" Hidden="true" />
+      <Field Name="label19" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label20" Hidden="true" />
+      <Field Name="label22" Hidden="true" />
+      <Field Name="label23" Hidden="true" />
+      <Field Name="label24" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="painelPrincipal" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="rTxtBoxCodSat" Hidden="true" />
+      <Field Name="txtBoxBairro" Hidden="true" />
+      <Field Name="txtBoxCep" Hidden="true" />
+      <Field Name="txtBoxCidade" Hidden="true" />
+      <Field Name="txtBoxCnpjEmpresa" Hidden="true" />
+      <Field Name="txtBoxCodCidade" Hidden="true" />
+      <Field Name="txtBoxIE" Hidden="true" />
+      <Field Name="txtBoxLogradouro" Hidden="true" />
+      <Field Name="txtBoxNomeFantasia" Hidden="true" />
+      <Field Name="txtBoxNumero" Hidden="true" />
+      <Field Name="txtBoxRazaoSocial" Hidden="true" />
+      <Field Name="txtBoxSenhaSat" Hidden="true" />
+      <Field Name="txtBoxTelefone" Hidden="true" />
+      <Field Name="txtBoxUf" Hidden="true" />
+      <Field Name="txtCnpjSH" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>/wCCBAgg0KEAAJkAACCEBAACAABEACAAEAFJAQQCADA=</HashCode>
+      <FileName>Principal\View\Config\TelaConfigFiscal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaPrincipalColaboladores">
+    <Position X="2.5" Y="5.25" Width="2.25" />
+    <Members>
+      <Field Name="btColaboladores" Hidden="true" />
+      <Field Name="btnCargos" Hidden="true" />
+      <Field Name="btnLogins" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="InitializeComponent" Hidden="true" />
+      <Field Name="painelPrincipal" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="tableLayoutPanel1" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAQABAAACAAAAAAIACAAAQCAEAAAAQAACBAAQBAACA=</HashCode>
+      <FileName>Principal\View\Config\TelaPrincipalColaboladores.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaPrincipal" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -25,6 +25,14 @@ namespace WindowsFormsApp2.Vendas.View
             }
         }
 
+        public ListaDeVendas ListaDeVendas
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

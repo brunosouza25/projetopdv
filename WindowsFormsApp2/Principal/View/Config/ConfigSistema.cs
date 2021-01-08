@@ -16,5 +16,13 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             InitializeComponent();
         }
+
+        public TelaConfig TelaConfig
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

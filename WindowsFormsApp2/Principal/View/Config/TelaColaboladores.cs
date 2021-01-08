@@ -20,6 +20,30 @@ namespace WindowsFormsApp2.Principal.View.Config
             carregarColaboradores();
         }
 
+        public TelaConfig TelaConfig
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TelaCadastroLogins TelaCadastroLogins
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public TelaCargos TelaCargos
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void carregarColaboradores()
         {
             var auxColaboradores = colaboradores.retornarTodosColaboradores();

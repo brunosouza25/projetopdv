@@ -311,6 +311,14 @@ namespace WindowsFormsApp2.Estoque.View
             listaProduto.Clear();
             TxtBoxPesquisaProd.Select();
         }
+
+        public SaidaDeProduto SaidaDeProduto
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
 

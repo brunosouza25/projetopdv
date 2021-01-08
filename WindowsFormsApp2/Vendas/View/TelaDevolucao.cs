@@ -29,6 +29,14 @@ namespace WindowsFormsApp2.Vendas.View
             InitializeComponent();
         }
 
+        public TelaDeDevolucoes TelaDeDevolucoes
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void listaVendas_SelectedIndexChanged(object sender, EventArgs e)
         {
 

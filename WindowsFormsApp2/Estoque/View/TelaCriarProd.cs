@@ -42,7 +42,16 @@ namespace WindowsFormsApp2
             PainelPrincipal.Controls.Add(telaGeral);
             telaTributacao.editarFiscal(tipo, codigoProd);
             telaGeral.editarProd(tipo, codigoProd);
-        }   
+        }
+
+        internal Produto Produto
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void BtnGeral_Click(object sender, EventArgs e)
         {
             telaTributacao.Visible = false;

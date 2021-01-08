@@ -11,6 +11,15 @@ namespace WindowsFormsApp2
         public int prodQuantidade { get; set; }
         public string prodCodBarras { get; set; }
         public Boolean prodEstado { get; set; }
+
+        internal EntradaDeProdutos EntradaDeProdutos
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public Produto()
          {
 

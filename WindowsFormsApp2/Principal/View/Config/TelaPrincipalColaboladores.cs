@@ -26,6 +26,13 @@ namespace WindowsFormsApp2.Principal.View.Config
             telaCargos.Visible = false;
         }
 
+        public TelaPrincipal TelaPrincipal
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         private void btColaboladores_Click(object sender, EventArgs e)
         {
