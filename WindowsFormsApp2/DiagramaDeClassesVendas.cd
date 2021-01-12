@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="WindowsFormsApp2.Vendas.View.ListaDeVendas">
-    <Position X="3.75" Y="4.5" Width="2.75" />
+    <Position X="3.5" Y="4" Width="2.75" />
     <Members>
       <Field Name="btn7Dias" Hidden="true" />
       <Field Name="btnEsteMes" Hidden="true" />
@@ -76,7 +76,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Vendas.View.TelaDetalhesDaVenda">
-    <Position X="11" Y="5.75" Width="2.75" />
+    <Position X="7.5" Y="7" Width="2.75" />
     <Members>
       <Field Name="btnCancelarVenda" Hidden="true" />
       <Field Name="btnSair" Hidden="true" />
@@ -165,7 +165,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="WindowsFormsApp2.TelaDePagamento">
-    <Position X="14.25" Y="0.75" Width="2.25" />
+    <Position X="11.75" Y="4.25" Width="2.25" />
     <Members>
       <Field Name="BtnFinalizar" Hidden="true" />
       <Field Name="button1" Hidden="true" />
@@ -198,6 +198,7 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="TelaDoPdv" />
+      <Property Name="Fiscal" />
     </ShowAsAssociation>
   </Class>
   <Class Name="WindowsFormsApp2.TelaDeSangria">
@@ -297,6 +298,13 @@
       <Property Name="ListaDeVendas" />
       <Property Name="TelaDoPdv" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="WindowsFormsApp2.Fiscal">
+    <Position X="10.75" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAQAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAQAZAA=</HashCode>
+      <FileName>Fiscal.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

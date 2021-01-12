@@ -110,6 +110,7 @@
             this.btnPerso.TabIndex = 33;
             this.btnPerso.Text = "Personalizado";
             this.btnPerso.UseVisualStyleBackColor = false;
+            this.btnPerso.Visible = false;
             this.btnPerso.Click += new System.EventHandler(this.btnPerso_Click);
             // 
             // label2
@@ -121,6 +122,7 @@
             this.label2.Size = new System.Drawing.Size(47, 25);
             this.label2.TabIndex = 32;
             this.label2.Text = "Até";
+            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -131,6 +133,7 @@
             this.label1.Size = new System.Drawing.Size(41, 25);
             this.label1.TabIndex = 31;
             this.label1.Text = "De";
+            this.label1.Visible = false;
             // 
             // txtBoxAteMes
             // 
@@ -141,6 +144,7 @@
             this.txtBoxAteMes.Size = new System.Drawing.Size(130, 35);
             this.txtBoxAteMes.TabIndex = 30;
             this.txtBoxAteMes.ValidatingType = typeof(System.DateTime);
+            this.txtBoxAteMes.Visible = false;
             // 
             // txtBoxDeMes
             // 
@@ -151,6 +155,7 @@
             this.txtBoxDeMes.Size = new System.Drawing.Size(130, 35);
             this.txtBoxDeMes.TabIndex = 29;
             this.txtBoxDeMes.ValidatingType = typeof(System.DateTime);
+            this.txtBoxDeMes.Visible = false;
             // 
             // btnUltimos3Meses
             // 
@@ -161,6 +166,7 @@
             this.btnUltimos3Meses.TabIndex = 28;
             this.btnUltimos3Meses.Text = "Ultimos 3 meses";
             this.btnUltimos3Meses.UseVisualStyleBackColor = false;
+            this.btnUltimos3Meses.Visible = false;
             // 
             // btnMesPassado
             // 
@@ -171,6 +177,7 @@
             this.btnMesPassado.TabIndex = 27;
             this.btnMesPassado.Text = "Mês passado";
             this.btnMesPassado.UseVisualStyleBackColor = false;
+            this.btnMesPassado.Visible = false;
             // 
             // btnEsteMes
             // 
@@ -181,6 +188,7 @@
             this.btnEsteMes.TabIndex = 26;
             this.btnEsteMes.Text = "Este mês";
             this.btnEsteMes.UseVisualStyleBackColor = false;
+            this.btnEsteMes.Visible = false;
             // 
             // btn7Dias
             // 
@@ -191,6 +199,7 @@
             this.btn7Dias.TabIndex = 25;
             this.btn7Dias.Text = "Ultimos 7 dias";
             this.btn7Dias.UseVisualStyleBackColor = false;
+            this.btn7Dias.Visible = false;
             // 
             // btnOntem
             // 
@@ -201,6 +210,7 @@
             this.btnOntem.TabIndex = 24;
             this.btnOntem.Text = "Ontem";
             this.btnOntem.UseVisualStyleBackColor = false;
+            this.btnOntem.Visible = false;
             // 
             // btnHoje
             // 
@@ -211,6 +221,7 @@
             this.btnHoje.TabIndex = 23;
             this.btnHoje.Text = "Hoje";
             this.btnHoje.UseVisualStyleBackColor = false;
+            this.btnHoje.Visible = false;
             this.btnHoje.Click += new System.EventHandler(this.btnHoje_Click);
             // 
             // panel3

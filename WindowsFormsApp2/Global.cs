@@ -23,9 +23,9 @@ namespace WindowsFormsApp2
         public static bool entradaProdutos { get; set; }
         public static bool saidaProdutos { get; set; }
 
-        public string cnpjEmpresa { get; set; }
-        public string cnpjSoftwareHouse { get; set; }
-        public string inscricaoEstadual { get; set; }
+        public static string cnpjEmpresa { get; set; }
+        public static string cnpjSoftwareHouse { get; set; }
+        public static string inscricaoEstadual { get; set; }
 
         public static bool simples { get; set; }
     }

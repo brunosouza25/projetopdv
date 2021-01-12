@@ -1,14 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="WindowsFormsApp2.Program">
-    <Position X="1.25" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Principal\Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WindowsFormsApp2.TelaDeLogin" Collapsed="true">
-    <Position X="9.75" Y="6.25" Width="1.5" />
+  <Class Name="WindowsFormsApp2.TelaDeLogin">
+    <Position X="2.5" Y="8.5" Width="1.75" />
     <Members>
       <Field Name="BtnEntrar" Hidden="true" />
       <Field Name="BtnSair" Hidden="true" />
@@ -27,7 +20,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.TelaDeRelatorios" Collapsed="true">
-    <Position X="6" Y="10.25" Width="1.5" />
+    <Position X="5.5" Y="11" Width="1.5" />
     <Members>
       <Field Name="btn7Dias" Hidden="true" />
       <Field Name="btnCaixa" Hidden="true" />
@@ -68,7 +61,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="WindowsFormsApp2.TelaPrincipal">
-    <Position X="5.75" Y="5.25" Width="1.75" />
+    <Position X="5.75" Y="5.75" Width="1.75" />
     <Members>
       <Field Name="btCaixa" Hidden="true" />
       <Field Name="BtEstoque" Hidden="true" />
@@ -91,22 +84,23 @@
       <Field Name="timer1" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AiQBCAAAAKAAAJCABACAAAACIEBBIGAEUEhggQoAQCA=</HashCode>
+      <HashCode>AiQFCAAAAKAAAJCABACAAAACIEBBIGAEUEhggQoAQCA=</HashCode>
       <FileName>Principal\View\TelaPrincipal.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="TelaConfig" />
+      <Property Name="TelaDeLogin" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="WindowsFormsApp2.Principal.View.Config.Colaborador" Collapsed="true">
-    <Position X="0.75" Y="6.75" Width="1.5" />
+  <Class Name="WindowsFormsApp2.Principal.View.Config.Colaborador">
+    <Position X="7.5" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAEAAAiAAACgAAgAIgAAIAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Principal\View\Config\Classes\Colaborador.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Principal.View.Config.ConfigSistema">
-    <Position X="8.5" Y="10.5" Width="1.5" />
+    <Position X="7.75" Y="8.75" Width="1.5" />
     <Members>
       <Field Name="components" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
@@ -121,8 +115,8 @@
       <Property Name="TelaConfig" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastrarColaborador" Collapsed="true">
-    <Position X="0.75" Y="5.25" Width="1.5" />
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastrarColaborador">
+    <Position X="3.5" Y="12" Width="3" />
     <Members>
       <Field Name="btnCancelar" Hidden="true" />
       <Field Name="btnSalvar" Hidden="true" />
@@ -164,13 +158,28 @@
       <Field Name="txtRg" Hidden="true" />
       <Field Name="txtTel" Hidden="true" />
     </Members>
+    <AssociationLine Name="TelaColaboladores" Type="WindowsFormsApp2.Principal.View.Config.TelaColaboladores" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="12.438" />
+        <Point X="7.224" Y="12.438" />
+        <Point X="7.224" Y="10.875" />
+        <Point X="9.5" Y="10.875" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.266" Y="-0.669" Height="0.182" Width="1.337" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>/xCQJAYACSAIAJAAAAiAEAQCAABgAIICCIAIAaACQAE=</HashCode>
+      <HashCode>/xCQJAYAGSAIAJAAAAiAEAQCAABgAIICCIAIAaACQAE=</HashCode>
       <FileName>Principal\View\Config\TelaCadastrarColaborador.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaColaboladores" />
+      <Property Name="Colaborador" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastroCargo">
-    <Position X="2.25" Y="9.25" Width="2.75" />
+    <Position X="11.75" Y="12" Width="2.75" />
     <Members>
       <Field Name="btnCancelar" Hidden="true" />
       <Field Name="btnSalvar" Hidden="true" />
@@ -208,8 +217,8 @@
       <FileName>Principal\View\Config\TelaCadastroCargo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastroLogins" Collapsed="true">
-    <Position X="8" Y="5.5" Width="1.5" />
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCadastroLogins">
+    <Position X="9.25" Y="12" Width="2" />
     <Members>
       <Field Name="btnCancelar" Hidden="true" />
       <Field Name="btnSalvar" Hidden="true" />
@@ -232,8 +241,8 @@
       <FileName>Principal\View\Config\TelaCadastroLogins.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCargos" Collapsed="true">
-    <Position X="9.75" Y="5.5" Width="1.5" />
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaCargos">
+    <Position X="12.5" Y="8.75" Width="2" />
     <Members>
       <Field Name="btnCadastrarCargo" Hidden="true" />
       <Field Name="btnEditarCargos" Hidden="true" />
@@ -261,12 +270,15 @@
       <Field Name="TxtBoxPesquisaProdEstoque" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAEAUAjAAABAAAACRAASCAwAAAAAAgMAAAQAAACA=</HashCode>
+      <HashCode>AAAAAEAUAjBAABAAAACRAASCAwAAAAAAgMAAAQAAACA=</HashCode>
       <FileName>Principal\View\Config\TelaCargos.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaCadastroCargo" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaColaboladores" Collapsed="true">
-    <Position X="0.75" Y="6" Width="1.5" />
+  <Class Name="WindowsFormsApp2.Principal.View.Config.TelaColaboladores">
+    <Position X="9.5" Y="8.75" Width="2" />
     <Members>
       <Field Name="Bt_Criar_Prod" Hidden="true" />
       <Field Name="Bt_Editar_Prod" Hidden="true" />
@@ -295,13 +307,23 @@
       <Field Name="tableLayoutPanel4" Hidden="true" />
       <Field Name="TxtBoxPesquisaProdEstoque" Hidden="true" />
     </Members>
+    <AssociationLine Name="TelaConfig" Type="WindowsFormsApp2.Principal.View.Config.TelaConfig">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.807" Y="0.154" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAABAAAQADAAABAAAECAAAXiAwABAIQAgEAAAQAAACQ=</HashCode>
+      <HashCode>AAABAAAQADBgABAAAECAAAXiAwABAIQAgEAAAQAAACQ=</HashCode>
       <FileName>Principal\View\Config\TelaColaboladores.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TelaConfig" />
+      <Property Name="TelaCadastroLogins" />
+      <Property Name="TelaCargos" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WindowsFormsApp2.Principal.View.Config.TelaConfig">
-    <Position X="8.5" Y="7.75" Width="2" />
+    <Position X="8.5" Y="5.75" Width="2" />
     <Members>
       <Field Name="btColaboladores" Hidden="true" />
       <Field Name="btnConfig" Hidden="true" />
@@ -322,7 +344,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="WindowsFormsApp2.Principal.View.Config.TelaConfigFiscal">
-    <Position X="11.75" Y="7.75" Width="2.25" />
+    <Position X="11.75" Y="5.75" Width="2.25" />
     <Members>
       <Field Name="btnCancelar" Hidden="true" />
       <Field Name="btnSalvar" Hidden="true" />
@@ -378,7 +400,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Principal.View.Config.TelaPrincipalColaboladores">
-    <Position X="2.5" Y="5.25" Width="2.25" />
+    <Position X="2.25" Y="5.75" Width="2.25" />
     <Members>
       <Field Name="btColaboladores" Hidden="true" />
       <Field Name="btnCargos" Hidden="true" />

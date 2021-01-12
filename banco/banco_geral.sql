@@ -183,17 +183,17 @@ CREATE TABLE Vendas_Canceladas(
 
 CREATE TABLE Config_Sistema(
 	idConfig TINYINT,
-	a_Bloquear TINYINT,
+	/*a_Bloquear TINYINT,
 	bloqueado TINYINT,
 	senha VARCHAR(20),
-	dataUltimoBloqueio DATE,
+	dataUltimoBloqueio DATE,*/
 	fiscal BIT,
 	regimeTributario VARCHAR(16),
 	cnpjEmpresa VARCHAR(14),
 	inscricaoEstadual VARCHAR(12),
-	cnpjSoftwareHouse VARCHAR(14),
+	/*cnpjSoftwareHouse VARCHAR(14),
 	senhaSat varchar(32),
-	assinaturaAC VARCHAR(344),
+	assinaturaAC VARCHAR(344),*/
 	razaoSocial VARCHAR(100),
 	nomeFantasia VARCHAR(100),
 	telefone VARCHAR(18),
@@ -206,7 +206,12 @@ CREATE TABLE Config_Sistema(
 	uf VARCHAR(5)
 );
 /*INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)*/
-
+create table fiscal(
+	idFiscal INT PRIMARY KEY IDENTITY (1,1),
+	idVenda int,
+	caminhoXml VARCHAR(255)
+	
+)
 INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 1,'Simples Nacional','45560740888', '369852147'
 ,'','123456789', 'aa', 'bruno empresa' , 'bruno empresa' , '12997174899', '12460000', 'casa', '123',
  'vila jair', 'campos do jordão', '3509700', 'SP')
@@ -227,11 +232,7 @@ CREATE TABLE Conta_Bancaria(
 	conta int
 );
 */
-create table fiscal(
-	idFiscal INT PRIMARY KEY IDENTITY (1,1),
-	idVenda int
-	
-)
+
 
 
 
