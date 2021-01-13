@@ -66,6 +66,7 @@
             this.lbl = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnImprimirSegundaVia = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -255,6 +256,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnImprimirSegundaVia);
             this.panel2.Controls.Add(this.txtBoxDesc);
             this.panel2.Controls.Add(this.lblDesc);
             this.panel2.Controls.Add(this.txtBoxCredParc);
@@ -467,6 +469,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente: ";
             // 
+            // btnImprimirSegundaVia
+            // 
+            this.btnImprimirSegundaVia.Location = new System.Drawing.Point(15, 126);
+            this.btnImprimirSegundaVia.Name = "btnImprimirSegundaVia";
+            this.btnImprimirSegundaVia.Size = new System.Drawing.Size(94, 44);
+            this.btnImprimirSegundaVia.TabIndex = 13;
+            this.btnImprimirSegundaVia.Text = "Imprimir Segunda Via";
+            this.btnImprimirSegundaVia.UseVisualStyleBackColor = true;
+            this.btnImprimirSegundaVia.Click += new System.EventHandler(this.btnImprimirSegundaVia_Click);
+            // 
             // TelaDetalhesDaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,5 +538,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBoxDesc;
         private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Button btnImprimirSegundaVia;
     }
 }

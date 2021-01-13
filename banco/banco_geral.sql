@@ -19,7 +19,7 @@ CREATE TABLE Venda (
     vendData DATE,
 	vendHora TIME,
     valorCompra FLOAT,
-	/*valorPago FLOAT,*/
+	valorPago FLOAT,
 	idCaixa INT,
 	observacoes VARCHAR(300),
 	vendaEstado TINYINT,
@@ -70,12 +70,11 @@ CREATE TABLE Caixa (
     dataCaixa DATETIME,
     estadoCaixa TINYINT
 );
-
 CREATE TABLE ItensDeEntrada (
     /*idPrimarioItensEntrada INT PRIMARY KEY IDENTITY (1,1),*/
 	idSecundarioItensEntrada INT,
     idProduto INT,
-    /*entradaEstado TINYINT,*/
+    entradaEstado TINYINT,
     qntItem INT,
     dataEntrada DATE,
 	horaEntrada TIME,
@@ -183,10 +182,6 @@ CREATE TABLE Vendas_Canceladas(
 
 CREATE TABLE Config_Sistema(
 	idConfig TINYINT,
-	/*a_Bloquear TINYINT,
-	bloqueado TINYINT,
-	senha VARCHAR(20),
-	dataUltimoBloqueio DATE,*/
 	fiscal BIT,
 	regimeTributario VARCHAR(16),
 	cnpjEmpresa VARCHAR(14),
@@ -212,8 +207,8 @@ create table fiscal(
 	caminhoXml VARCHAR(255)
 	
 )
-INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 1,'Simples Nacional','45560740888', '369852147'
-,'','123456789', 'aa', 'bruno empresa' , 'bruno empresa' , '12997174899', '12460000', 'casa', '123',
+INSERT INTO Config_Sistema VALUES(1, 1,'Simples Nacional','45560740888', '369852147'
+, 'bruno empresa' , 'bruno empresa' , '12997174899', '12460000', 'casa', '123',
  'vila jair', 'campos do jordão', '3509700', 'SP')
 
 
@@ -263,16 +258,17 @@ INSERT INTO ItensDeSaida VALUES(0, null, 0, 0, null, null, 'primeira linha para 
 INSERT INTO Itens_Devolucao VALUES(0, null, null, null, null, null,null)
 
 
+
 /*INSERT INTO Config_Sistema VALUES(1, null, 0, 'pontodevenda', '01/01/2020', 0,'','', '','','', '', '' , '' , '', '', '', '', '', '', '', '',)*/
 
 INSERT INTO Cargo VALUES ('Nenhum', 0,0)
 INSERT INTO Cargo VALUES ('adm', 1,1)
-insert into Funcionario values(1,'bruno','1111/11/11','1','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
-insert into Funcionario values(1,'Cybele','1111/11/11','1','Cybele','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)
+insert into Funcionario values(1,'bruno','bruno','1','sdasdasda','2020/06/04','23:23:00' , 1)
+/*insert into Funcionario values(1,'Cybele','1111/11/11','1','Cybele','1','sdasdasda','2020/06/04','23:23:00' , 1, null, null)*/
 
 
 insert into Permissoes_Estoque values (1,1,1,1,1)
 insert into Permissoes_Vendas values (1,1,1,1,1)
 
-insert into fiscal values (0)
+insert into fiscal values (0, '')
 

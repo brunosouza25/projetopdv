@@ -176,8 +176,6 @@ C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.GenerateResourc
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.CoreCompileInputs.cache
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
-C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\Database.mdf
-C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\Database_log.ldf
 C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.manifest
 C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.application
@@ -243,3 +241,5 @@ C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\bruno\Desktop\PDV ACBR\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csprojAssemblyReference.cache
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.TelaDoPdv.resources
+C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\Database.mdf
+C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\Database_log.ldf

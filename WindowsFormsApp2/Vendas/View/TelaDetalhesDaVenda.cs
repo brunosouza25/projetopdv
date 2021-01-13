@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2.Vendas.View
@@ -12,6 +14,8 @@ namespace WindowsFormsApp2.Vendas.View
         int codVenda;
         int idDin = -1, idCredVista = -1, idDeb = -1, idCredParc = -1;
         List<Produto> listaProduto = new List<Produto>();
+
+        DadosTableAdapters.fiscalTableAdapter fiscal = new DadosTableAdapters.fiscalTableAdapter();
 
 
         public TelaDetalhesDaVenda(int codVenda)
@@ -84,7 +88,25 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void btnCancelarItem_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void btnImprimirSegundaVia_Click(object sender, EventArgs e)
+        {
+            var auxFiscal = fiscal.segundaVia(codVenda);
+            string arquivo = auxFiscal[0]["caminhoXml"].ToString();
+            StreamWriter x;
+            string caminho = @"C:\Users\bruno\Desktop\notas\entrada\\enviar.txt";
+            // C: \Users\bruno\Desktop\notas\temporario
+            //DirectoryInfo diretorio = new DirectoryInfo(@"C:\Users\bruno\Desktop\notas\temporario");
+            //FileInfo[] arquivos = diretorio.GetFiles();
+
+                x = File.CreateText(caminho);
+                x.WriteLine("NFE.ImprimirDanfe("+"\""+ arquivo + "\", \"\"Doro PDF Writer\",\"1\",\"\",\"\",\"\",\"\",\"\")");
+                x.Close();
+                MessageBox.Show("cupom emitido com sucesso!"); 
+                //Thread.Sleep(1000);          
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

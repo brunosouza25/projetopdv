@@ -61,14 +61,8 @@ namespace WindowsFormsApp2.Principal.View.Config
             this.ckBoxFiscal = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.rTxtBoxCodSat = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtBoxSenhaSat = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtBoxIE = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCnpjSH = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBoxCnpjEmpresa = new System.Windows.Forms.TextBox();
@@ -149,7 +143,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(972, 695);
+            this.painelPrincipal.Size = new System.Drawing.Size(939, 570);
             this.painelPrincipal.TabIndex = 1;
             // 
             // panel1
@@ -178,14 +172,8 @@ namespace WindowsFormsApp2.Principal.View.Config
             this.panel1.Controls.Add(this.ckBoxFiscal);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Controls.Add(this.rTxtBoxCodSat);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtBoxSenhaSat);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtBoxIE);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.txtCnpjSH);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtBoxCnpjEmpresa);
@@ -193,7 +181,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 695);
+            this.panel1.Size = new System.Drawing.Size(939, 570);
             this.panel1.TabIndex = 345;
             // 
             // txtBoxUf
@@ -206,7 +194,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             // txtBoxTelefone
             // 
-            this.txtBoxTelefone.Location = new System.Drawing.Point(334, 409);
+            this.txtBoxTelefone.Location = new System.Drawing.Point(337, 321);
             this.txtBoxTelefone.MaxLength = 18;
             this.txtBoxTelefone.Name = "txtBoxTelefone";
             this.txtBoxTelefone.Size = new System.Drawing.Size(121, 20);
@@ -262,7 +250,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             // txtBoxNomeFantasia
             // 
-            this.txtBoxNomeFantasia.Location = new System.Drawing.Point(334, 365);
+            this.txtBoxNomeFantasia.Location = new System.Drawing.Point(337, 277);
             this.txtBoxNomeFantasia.MaxLength = 100;
             this.txtBoxNomeFantasia.Name = "txtBoxNomeFantasia";
             this.txtBoxNomeFantasia.Size = new System.Drawing.Size(121, 20);
@@ -270,7 +258,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             // txtBoxRazaoSocial
             // 
-            this.txtBoxRazaoSocial.Location = new System.Drawing.Point(334, 321);
+            this.txtBoxRazaoSocial.Location = new System.Drawing.Point(337, 233);
             this.txtBoxRazaoSocial.MaxLength = 100;
             this.txtBoxRazaoSocial.Name = "txtBoxRazaoSocial";
             this.txtBoxRazaoSocial.Size = new System.Drawing.Size(121, 20);
@@ -350,7 +338,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(79, 404);
+            this.label16.Location = new System.Drawing.Point(82, 316);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(96, 25);
             this.label16.TabIndex = 352;
@@ -360,7 +348,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(76, 359);
+            this.label15.Location = new System.Drawing.Point(79, 271);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(150, 25);
             this.label15.TabIndex = 351;
@@ -370,7 +358,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(76, 315);
+            this.label14.Location = new System.Drawing.Point(79, 227);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(136, 25);
             this.label14.TabIndex = 350;
@@ -399,7 +387,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(659, 612);
+            this.btnCancelar.Location = new System.Drawing.Point(678, 446);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(97, 46);
             this.btnCancelar.TabIndex = 347;
@@ -409,7 +397,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(231, 612);
+            this.btnSalvar.Location = new System.Drawing.Point(250, 446);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(97, 46);
             this.btnSalvar.TabIndex = 346;
@@ -417,46 +405,9 @@ namespace WindowsFormsApp2.Principal.View.Config
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // rTxtBoxCodSat
-            // 
-            this.rTxtBoxCodSat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rTxtBoxCodSat.Location = new System.Drawing.Point(80, 491);
-            this.rTxtBoxCodSat.Name = "rTxtBoxCodSat";
-            this.rTxtBoxCodSat.Size = new System.Drawing.Size(427, 96);
-            this.rTxtBoxCodSat.TabIndex = 344;
-            this.rTxtBoxCodSat.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(79, 446);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Código SAT:";
-            // 
-            // txtBoxSenhaSat
-            // 
-            this.txtBoxSenhaSat.Location = new System.Drawing.Point(334, 269);
-            this.txtBoxSenhaSat.MaxLength = 40;
-            this.txtBoxSenhaSat.Name = "txtBoxSenhaSat";
-            this.txtBoxSenhaSat.Size = new System.Drawing.Size(121, 20);
-            this.txtBoxSenhaSat.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(79, 269);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(191, 25);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Senha de ativação";
-            // 
             // txtBoxIE
             // 
-            this.txtBoxIE.Location = new System.Drawing.Point(334, 225);
+            this.txtBoxIE.Location = new System.Drawing.Point(334, 188);
             this.txtBoxIE.MaxLength = 9;
             this.txtBoxIE.Name = "txtBoxIE";
             this.txtBoxIE.Size = new System.Drawing.Size(121, 20);
@@ -466,30 +417,11 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(79, 225);
+            this.label9.Location = new System.Drawing.Point(79, 188);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(186, 25);
             this.label9.TabIndex = 7;
             this.label9.Text = "Inscrição estadual";
-            // 
-            // txtCnpjSH
-            // 
-            this.txtCnpjSH.Enabled = false;
-            this.txtCnpjSH.Location = new System.Drawing.Point(334, 189);
-            this.txtCnpjSH.Name = "txtCnpjSH";
-            this.txtCnpjSH.Size = new System.Drawing.Size(121, 20);
-            this.txtCnpjSH.TabIndex = 6;
-            this.txtCnpjSH.Text = "11111111111111";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(55, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(249, 25);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "CNPJ da software house";
             // 
             // label11
             // 
@@ -535,7 +467,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 695);
+            this.ClientSize = new System.Drawing.Size(939, 570);
             this.Controls.Add(this.painelPrincipal);
             this.Name = "TelaConfigFiscal";
             this.Text = "TelaConfigFiscal";
@@ -559,14 +491,8 @@ namespace WindowsFormsApp2.Principal.View.Config
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.RichTextBox rTxtBoxCodSat;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBoxSenhaSat;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBoxIE;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCnpjSH;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBoxCnpjEmpresa;

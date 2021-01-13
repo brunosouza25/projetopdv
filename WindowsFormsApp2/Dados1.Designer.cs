@@ -6445,23 +6445,9 @@ namespace WindowsFormsApp2 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Config_SistemaDataTable : global::System.Data.TypedTableBase<Config_SistemaRow> {
             
-            private global::System.Data.DataColumn columna_Bloquear;
-            
-            private global::System.Data.DataColumn columnbloqueado;
-            
-            private global::System.Data.DataColumn columnsenha;
-            
-            private global::System.Data.DataColumn columndataUltimoBloqueio;
-            
             private global::System.Data.DataColumn columncnpjEmpresa;
             
             private global::System.Data.DataColumn columninscricaoEstadual;
-            
-            private global::System.Data.DataColumn columncnpjSoftwareHouse;
-            
-            private global::System.Data.DataColumn columnsenhaSat;
-            
-            private global::System.Data.DataColumn columnassinaturaAC;
             
             private global::System.Data.DataColumn columnfiscal;
             
@@ -6522,38 +6508,6 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn a_BloquearColumn {
-                get {
-                    return this.columna_Bloquear;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn bloqueadoColumn {
-                get {
-                    return this.columnbloqueado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn senhaColumn {
-                get {
-                    return this.columnsenha;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dataUltimoBloqueioColumn {
-                get {
-                    return this.columndataUltimoBloqueio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn cnpjEmpresaColumn {
                 get {
                     return this.columncnpjEmpresa;
@@ -6565,30 +6519,6 @@ namespace WindowsFormsApp2 {
             public global::System.Data.DataColumn inscricaoEstadualColumn {
                 get {
                     return this.columninscricaoEstadual;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cnpjSoftwareHouseColumn {
-                get {
-                    return this.columncnpjSoftwareHouse;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn senhaSatColumn {
-                get {
-                    return this.columnsenhaSat;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn assinaturaACColumn {
-                get {
-                    return this.columnassinaturaAC;
                 }
             }
             
@@ -6725,39 +6655,11 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Config_SistemaRow AddConfig_SistemaRow(
-                        byte a_Bloquear, 
-                        byte bloqueado, 
-                        string senha, 
-                        System.DateTime dataUltimoBloqueio, 
-                        string cnpjEmpresa, 
-                        string inscricaoEstadual, 
-                        string cnpjSoftwareHouse, 
-                        string senhaSat, 
-                        string assinaturaAC, 
-                        bool fiscal, 
-                        string regimeTributario, 
-                        string razaoSocial, 
-                        string nomeFantasia, 
-                        string telefone, 
-                        string cep, 
-                        string logradouro, 
-                        string numero, 
-                        string bairro, 
-                        string cidade, 
-                        string codigoCidade, 
-                        string uf) {
+            public Config_SistemaRow AddConfig_SistemaRow(string cnpjEmpresa, string inscricaoEstadual, bool fiscal, string regimeTributario, string razaoSocial, string nomeFantasia, string telefone, string cep, string logradouro, string numero, string bairro, string cidade, string codigoCidade, string uf) {
                 Config_SistemaRow rowConfig_SistemaRow = ((Config_SistemaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        a_Bloquear,
-                        bloqueado,
-                        senha,
-                        dataUltimoBloqueio,
                         cnpjEmpresa,
                         inscricaoEstadual,
-                        cnpjSoftwareHouse,
-                        senhaSat,
-                        assinaturaAC,
                         fiscal,
                         regimeTributario,
                         razaoSocial,
@@ -6792,15 +6694,8 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columna_Bloquear = base.Columns["a_Bloquear"];
-                this.columnbloqueado = base.Columns["bloqueado"];
-                this.columnsenha = base.Columns["senha"];
-                this.columndataUltimoBloqueio = base.Columns["dataUltimoBloqueio"];
                 this.columncnpjEmpresa = base.Columns["cnpjEmpresa"];
                 this.columninscricaoEstadual = base.Columns["inscricaoEstadual"];
-                this.columncnpjSoftwareHouse = base.Columns["cnpjSoftwareHouse"];
-                this.columnsenhaSat = base.Columns["senhaSat"];
-                this.columnassinaturaAC = base.Columns["assinaturaAC"];
                 this.columnfiscal = base.Columns["fiscal"];
                 this.columnregimeTributario = base.Columns["regimeTributario"];
                 this.columnrazaoSocial = base.Columns["razaoSocial"];
@@ -6818,24 +6713,10 @@ namespace WindowsFormsApp2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columna_Bloquear = new global::System.Data.DataColumn("a_Bloquear", typeof(byte), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columna_Bloquear);
-                this.columnbloqueado = new global::System.Data.DataColumn("bloqueado", typeof(byte), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbloqueado);
-                this.columnsenha = new global::System.Data.DataColumn("senha", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsenha);
-                this.columndataUltimoBloqueio = new global::System.Data.DataColumn("dataUltimoBloqueio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndataUltimoBloqueio);
                 this.columncnpjEmpresa = new global::System.Data.DataColumn("cnpjEmpresa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncnpjEmpresa);
                 this.columninscricaoEstadual = new global::System.Data.DataColumn("inscricaoEstadual", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columninscricaoEstadual);
-                this.columncnpjSoftwareHouse = new global::System.Data.DataColumn("cnpjSoftwareHouse", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncnpjSoftwareHouse);
-                this.columnsenhaSat = new global::System.Data.DataColumn("senhaSat", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsenhaSat);
-                this.columnassinaturaAC = new global::System.Data.DataColumn("assinaturaAC", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnassinaturaAC);
                 this.columnfiscal = new global::System.Data.DataColumn("fiscal", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfiscal);
                 this.columnregimeTributario = new global::System.Data.DataColumn("regimeTributario", typeof(string), null, global::System.Data.MappingType.Element);
@@ -6860,12 +6741,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columncodigoCidade);
                 this.columnuf = new global::System.Data.DataColumn("uf", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuf);
-                this.columnsenha.MaxLength = 54;
                 this.columncnpjEmpresa.MaxLength = 14;
                 this.columninscricaoEstadual.MaxLength = 12;
-                this.columncnpjSoftwareHouse.MaxLength = 14;
-                this.columnsenhaSat.MaxLength = 32;
-                this.columnassinaturaAC.MaxLength = 344;
                 this.columnregimeTributario.MaxLength = 16;
                 this.columnrazaoSocial.MaxLength = 100;
                 this.columnnomeFantasia.MaxLength = 100;
@@ -10743,6 +10620,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnidVenda;
             
+            private global::System.Data.DataColumn columncaminhoXml;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public fiscalDataTable() {
@@ -10794,6 +10673,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn caminhoXmlColumn {
+                get {
+                    return this.columncaminhoXml;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10829,11 +10716,12 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fiscalRow AddfiscalRow(int idVenda) {
+            public fiscalRow AddfiscalRow(int idVenda, string caminhoXml) {
                 fiscalRow rowfiscalRow = ((fiscalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        idVenda};
+                        idVenda,
+                        caminhoXml};
                 rowfiscalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfiscalRow);
                 return rowfiscalRow;
@@ -10865,6 +10753,7 @@ namespace WindowsFormsApp2 {
             internal void InitVars() {
                 this.columnidFiscal = base.Columns["idFiscal"];
                 this.columnidVenda = base.Columns["idVenda"];
+                this.columncaminhoXml = base.Columns["caminhoXml"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10874,6 +10763,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnidFiscal);
                 this.columnidVenda = new global::System.Data.DataColumn("idVenda", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidVenda);
+                this.columncaminhoXml = new global::System.Data.DataColumn("caminhoXml", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncaminhoXml);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidFiscal}, true));
                 this.columnidFiscal.AutoIncrement = true;
@@ -10882,6 +10773,7 @@ namespace WindowsFormsApp2 {
                 this.columnidFiscal.AllowDBNull = false;
                 this.columnidFiscal.ReadOnly = true;
                 this.columnidFiscal.Unique = true;
+                this.columncaminhoXml.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14712,70 +14604,6 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte a_Bloquear {
-                get {
-                    try {
-                        return ((byte)(this[this.tableConfig_Sistema.a_BloquearColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'a_Bloquear\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.a_BloquearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte bloqueado {
-                get {
-                    try {
-                        return ((byte)(this[this.tableConfig_Sistema.bloqueadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'bloqueado\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.bloqueadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string senha {
-                get {
-                    try {
-                        return ((string)(this[this.tableConfig_Sistema.senhaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'senha\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.senhaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime dataUltimoBloqueio {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableConfig_Sistema.dataUltimoBloqueioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dataUltimoBloqueio\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.dataUltimoBloqueioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string cnpjEmpresa {
                 get {
                     try {
@@ -14803,54 +14631,6 @@ namespace WindowsFormsApp2 {
                 }
                 set {
                     this[this.tableConfig_Sistema.inscricaoEstadualColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string cnpjSoftwareHouse {
-                get {
-                    try {
-                        return ((string)(this[this.tableConfig_Sistema.cnpjSoftwareHouseColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'cnpjSoftwareHouse\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.cnpjSoftwareHouseColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string senhaSat {
-                get {
-                    try {
-                        return ((string)(this[this.tableConfig_Sistema.senhaSatColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'senhaSat\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.senhaSatColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string assinaturaAC {
-                get {
-                    try {
-                        return ((string)(this[this.tableConfig_Sistema.assinaturaACColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'assinaturaAC\' na tabela \'Config_Sistema\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConfig_Sistema.assinaturaACColumn] = value;
                 }
             }
             
@@ -15048,54 +14828,6 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isa_BloquearNull() {
-                return this.IsNull(this.tableConfig_Sistema.a_BloquearColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Seta_BloquearNull() {
-                this[this.tableConfig_Sistema.a_BloquearColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsbloqueadoNull() {
-                return this.IsNull(this.tableConfig_Sistema.bloqueadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetbloqueadoNull() {
-                this[this.tableConfig_Sistema.bloqueadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IssenhaNull() {
-                return this.IsNull(this.tableConfig_Sistema.senhaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetsenhaNull() {
-                this[this.tableConfig_Sistema.senhaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdataUltimoBloqueioNull() {
-                return this.IsNull(this.tableConfig_Sistema.dataUltimoBloqueioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdataUltimoBloqueioNull() {
-                this[this.tableConfig_Sistema.dataUltimoBloqueioColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscnpjEmpresaNull() {
                 return this.IsNull(this.tableConfig_Sistema.cnpjEmpresaColumn);
             }
@@ -15116,42 +14848,6 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetinscricaoEstadualNull() {
                 this[this.tableConfig_Sistema.inscricaoEstadualColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscnpjSoftwareHouseNull() {
-                return this.IsNull(this.tableConfig_Sistema.cnpjSoftwareHouseColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcnpjSoftwareHouseNull() {
-                this[this.tableConfig_Sistema.cnpjSoftwareHouseColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IssenhaSatNull() {
-                return this.IsNull(this.tableConfig_Sistema.senhaSatColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetsenhaSatNull() {
-                this[this.tableConfig_Sistema.senhaSatColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsassinaturaACNull() {
-                return this.IsNull(this.tableConfig_Sistema.assinaturaACColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetassinaturaACNull() {
-                this[this.tableConfig_Sistema.assinaturaACColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16857,6 +16553,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string caminhoXml {
+                get {
+                    try {
+                        return ((string)(this[this.tablefiscal.caminhoXmlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'caminhoXml\' na tabela \'fiscal\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefiscal.caminhoXmlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidVendaNull() {
                 return this.IsNull(this.tablefiscal.idVendaColumn);
             }
@@ -16865,6 +16577,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidVendaNull() {
                 this[this.tablefiscal.idVendaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscaminhoXmlNull() {
+                return this.IsNull(this.tablefiscal.caminhoXmlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcaminhoXmlNull() {
+                this[this.tablefiscal.caminhoXmlColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -25862,15 +25586,8 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Config_Sistema";
-            tableMapping.ColumnMappings.Add("a_Bloquear", "a_Bloquear");
-            tableMapping.ColumnMappings.Add("bloqueado", "bloqueado");
-            tableMapping.ColumnMappings.Add("senha", "senha");
-            tableMapping.ColumnMappings.Add("dataUltimoBloqueio", "dataUltimoBloqueio");
             tableMapping.ColumnMappings.Add("cnpjEmpresa", "cnpjEmpresa");
             tableMapping.ColumnMappings.Add("inscricaoEstadual", "inscricaoEstadual");
-            tableMapping.ColumnMappings.Add("cnpjSoftwareHouse", "cnpjSoftwareHouse");
-            tableMapping.ColumnMappings.Add("senhaSat", "senhaSat");
-            tableMapping.ColumnMappings.Add("assinaturaAC", "assinaturaAC");
             tableMapping.ColumnMappings.Add("fiscal", "fiscal");
             tableMapping.ColumnMappings.Add("regimeTributario", "regimeTributario");
             tableMapping.ColumnMappings.Add("razaoSocial", "razaoSocial");
@@ -25886,17 +25603,10 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Config_Sistema] ([a_Bloquear], [bloqueado], [senha], [dataUltimoBloqueio], [cnpjEmpresa], [inscricaoEstadual], [cnpjSoftwareHouse], [senhaSat], [assinaturaAC], [fiscal], [regimeTributario], [razaoSocial], [nomeFantasia], [telefone], [cep], [logradouro], [numero], [bairro], [cidade], [codigoCidade], [uf]) VALUES (@a_Bloquear, @bloqueado, @senha, @dataUltimoBloqueio, @cnpjEmpresa, @inscricaoEstadual, @cnpjSoftwareHouse, @senhaSat, @assinaturaAC, @fiscal, @regimeTributario, @razaoSocial, @nomeFantasia, @telefone, @cep, @logradouro, @numero, @bairro, @cidade, @codigoCidade, @uf)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Config_Sistema] ([cnpjEmpresa], [inscricaoEstadual], [fiscal], [regimeTributario], [razaoSocial], [nomeFantasia], [telefone], [cep], [logradouro], [numero], [bairro], [cidade], [codigoCidade], [uf]) VALUES (@cnpjEmpresa, @inscricaoEstadual, @fiscal, @regimeTributario, @razaoSocial, @nomeFantasia, @telefone, @cep, @logradouro, @numero, @bairro, @cidade, @codigoCidade, @uf)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@a_Bloquear", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "a_Bloquear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bloqueado", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bloqueado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senha", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataUltimoBloqueio", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataUltimoBloqueio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjSoftwareHouse", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjSoftwareHouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fiscal", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@razaoSocial", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "razaoSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25924,9 +25634,9 @@ SELECT idVendaCancelada, idVenda, dataVenda, dataCancelamento, horaCancelamento,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        a_Bloquear, bloqueado, senha, dataUltimoBloqueio, cnpjEmpresa, inscricaoEstadual, cnpjSoftwareHouse, senhaSat, assinaturaAC, fiscal, regimeTributario, razaoSocial, nomeFantasia, telefone, cep, logradouro, numero, bairro, 
-                         cidade, codigoCidade, uf
-FROM            Config_Sistema";
+            this._commandCollection[0].CommandText = "SELECT       cnpjEmpresa, inscricaoEstadual, fiscal, regimeTributario, razaoSocia" +
+                "l, nomeFantasia, telefone, cep, logradouro, numero, bairro, \r\n                  " +
+                "       cidade, codigoCidade, uf\r\nFROM            Config_Sistema";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -25936,15 +25646,12 @@ FROM            Config_Sistema";
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"UPDATE       Config_Sistema
-SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, cnpjSoftwareHouse = @cnpjSoftwareHouse, senhaSat = @senhaSat, assinaturaAC = @assinaturaAC, regimeTributario = @regimeTributario, 
-                         razaoSocial = @razaoSocial , nomeFantasia = @nomeFantasia , telefone = @telefone , cep = @cep , logradouro = @logradouro , numero = @numero , bairro = @bairro , cidade = @cidade , codigoCidade = @codigoCidade , uf = @uf
+SET                cnpjEmpresa = @cnpjEmpresa, inscricaoEstadual = @inscricaoEstadual, regimeTributario = @regimeTributario, razaoSocial = @razaoSocial, nomeFantasia = @nomeFantasia, telefone = @telefone, cep = @cep, 
+                         logradouro = @logradouro, numero = @numero, bairro = @bairro, cidade = @cidade, codigoCidade = @codigoCidade, uf = @uf
 WHERE        (idConfig = 1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjEmpresa", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjEmpresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@inscricaoEstadual", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "inscricaoEstadual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cnpjSoftwareHouse", global::System.Data.SqlDbType.VarChar, 14, global::System.Data.ParameterDirection.Input, 0, 0, "cnpjSoftwareHouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@senhaSat", global::System.Data.SqlDbType.VarChar, 32, global::System.Data.ParameterDirection.Input, 0, 0, "senhaSat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@assinaturaAC", global::System.Data.SqlDbType.VarChar, 344, global::System.Data.ParameterDirection.Input, 0, 0, "assinaturaAC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@regimeTributario", global::System.Data.SqlDbType.VarChar, 16, global::System.Data.ParameterDirection.Input, 0, 0, "regimeTributario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@razaoSocial", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "razaoSocial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nomeFantasia", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nomeFantasia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26030,153 +25737,90 @@ VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@ass
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    global::System.Nullable<byte> a_Bloquear, 
-                    global::System.Nullable<byte> bloqueado, 
-                    string senha, 
-                    global::System.Nullable<global::System.DateTime> dataUltimoBloqueio, 
-                    string cnpjEmpresa, 
-                    string inscricaoEstadual, 
-                    string cnpjSoftwareHouse, 
-                    string senhaSat, 
-                    string assinaturaAC, 
-                    global::System.Nullable<bool> fiscal, 
-                    string regimeTributario, 
-                    string razaoSocial, 
-                    string nomeFantasia, 
-                    string telefone, 
-                    string cep, 
-                    string logradouro, 
-                    string numero, 
-                    string bairro, 
-                    string cidade, 
-                    string codigoCidade, 
-                    string uf) {
-            if ((a_Bloquear.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((byte)(a_Bloquear.Value));
-            }
-            else {
+        public virtual int Insert(string cnpjEmpresa, string inscricaoEstadual, global::System.Nullable<bool> fiscal, string regimeTributario, string razaoSocial, string nomeFantasia, string telefone, string cep, string logradouro, string numero, string bairro, string cidade, string codigoCidade, string uf) {
+            if ((cnpjEmpresa == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((bloqueado.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((byte)(bloqueado.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(cnpjEmpresa));
+            }
+            if ((inscricaoEstadual == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((senha == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(inscricaoEstadual));
+            }
+            if ((fiscal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(fiscal.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(senha));
-            }
-            if ((dataUltimoBloqueio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dataUltimoBloqueio.Value));
-            }
-            else {
+            if ((regimeTributario == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((cnpjEmpresa == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(regimeTributario));
+            }
+            if ((razaoSocial == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(cnpjEmpresa));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(razaoSocial));
             }
-            if ((inscricaoEstadual == null)) {
+            if ((nomeFantasia == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(inscricaoEstadual));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(nomeFantasia));
             }
-            if ((cnpjSoftwareHouse == null)) {
+            if ((telefone == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(cnpjSoftwareHouse));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(telefone));
             }
-            if ((senhaSat == null)) {
+            if ((cep == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(senhaSat));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(cep));
             }
-            if ((assinaturaAC == null)) {
+            if ((logradouro == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(assinaturaAC));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(logradouro));
             }
-            if ((fiscal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(fiscal.Value));
-            }
-            else {
+            if ((numero == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((regimeTributario == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(numero));
+            }
+            if ((bairro == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(regimeTributario));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(bairro));
             }
-            if ((razaoSocial == null)) {
+            if ((cidade == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(razaoSocial));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(cidade));
             }
-            if ((nomeFantasia == null)) {
+            if ((codigoCidade == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(nomeFantasia));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(codigoCidade));
             }
-            if ((telefone == null)) {
+            if ((uf == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(telefone));
-            }
-            if ((cep == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(cep));
-            }
-            if ((logradouro == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(logradouro));
-            }
-            if ((numero == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(numero));
-            }
-            if ((bairro == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(bairro));
-            }
-            if ((cidade == null)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(cidade));
-            }
-            if ((codigoCidade == null)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(codigoCidade));
-            }
-            if ((uf == null)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(uf));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(uf));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -26227,23 +25871,7 @@ VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@ass
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int attDadosFiscais(
-                    string cnpjEmpresa, 
-                    string inscricaoEstadual, 
-                    string cnpjSoftwareHouse, 
-                    string senhaSat, 
-                    string assinaturaAC, 
-                    string regimeTributario, 
-                    string razaoSocial, 
-                    string nomeFantasia, 
-                    string telefone, 
-                    string cep, 
-                    string logradouro, 
-                    string numero, 
-                    string bairro, 
-                    string cidade, 
-                    string codigoCidade, 
-                    string uf) {
+        public virtual int attDadosFiscais(string cnpjEmpresa, string inscricaoEstadual, string regimeTributario, string razaoSocial, string nomeFantasia, string telefone, string cep, string logradouro, string numero, string bairro, string cidade, string codigoCidade, string uf) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((cnpjEmpresa == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -26257,89 +25885,71 @@ VALUES        (@cnpjEmpresa,@inscricaoEstadual,@cnpjSoftwareHouse,@senhaSat,@ass
             else {
                 command.Parameters[1].Value = ((string)(inscricaoEstadual));
             }
-            if ((cnpjSoftwareHouse == null)) {
+            if ((regimeTributario == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(cnpjSoftwareHouse));
+                command.Parameters[2].Value = ((string)(regimeTributario));
             }
-            if ((senhaSat == null)) {
+            if ((razaoSocial == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[3].Value = ((string)(senhaSat));
+                command.Parameters[3].Value = ((string)(razaoSocial));
             }
-            if ((assinaturaAC == null)) {
+            if ((nomeFantasia == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[4].Value = ((string)(assinaturaAC));
+                command.Parameters[4].Value = ((string)(nomeFantasia));
             }
-            if ((regimeTributario == null)) {
+            if ((telefone == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[5].Value = ((string)(regimeTributario));
+                command.Parameters[5].Value = ((string)(telefone));
             }
-            if ((razaoSocial == null)) {
+            if ((cep == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[6].Value = ((string)(razaoSocial));
+                command.Parameters[6].Value = ((string)(cep));
             }
-            if ((nomeFantasia == null)) {
+            if ((logradouro == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(nomeFantasia));
+                command.Parameters[7].Value = ((string)(logradouro));
             }
-            if ((telefone == null)) {
+            if ((numero == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[8].Value = ((string)(telefone));
+                command.Parameters[8].Value = ((string)(numero));
             }
-            if ((cep == null)) {
+            if ((bairro == null)) {
                 command.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[9].Value = ((string)(cep));
+                command.Parameters[9].Value = ((string)(bairro));
             }
-            if ((logradouro == null)) {
+            if ((cidade == null)) {
                 command.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[10].Value = ((string)(logradouro));
+                command.Parameters[10].Value = ((string)(cidade));
             }
-            if ((numero == null)) {
+            if ((codigoCidade == null)) {
                 command.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[11].Value = ((string)(numero));
+                command.Parameters[11].Value = ((string)(codigoCidade));
             }
-            if ((bairro == null)) {
+            if ((uf == null)) {
                 command.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[12].Value = ((string)(bairro));
-            }
-            if ((cidade == null)) {
-                command.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[13].Value = ((string)(cidade));
-            }
-            if ((codigoCidade == null)) {
-                command.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[14].Value = ((string)(codigoCidade));
-            }
-            if ((uf == null)) {
-                command.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[15].Value = ((string)(uf));
+                command.Parameters[12].Value = ((string)(uf));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -31651,32 +31261,40 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
             tableMapping.DataSetTable = "fiscal";
             tableMapping.ColumnMappings.Add("idFiscal", "idFiscal");
             tableMapping.ColumnMappings.Add("idVenda", "idVenda");
+            tableMapping.ColumnMappings.Add("caminhoXml", "caminhoXml");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[fiscal] WHERE (([idFiscal] = @Original_idFiscal) AND ((@IsNull" +
-                "_idVenda = 1 AND [idVenda] IS NULL) OR ([idVenda] = @Original_idVenda)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [fiscal] WHERE (([idFiscal] = @Original_idFiscal) AND ((@IsNull_idVen" +
+                "da = 1 AND [idVenda] IS NULL) OR ([idVenda] = @Original_idVenda)) AND ((@IsNull_" +
+                "caminhoXml = 1 AND [caminhoXml] IS NULL) OR ([caminhoXml] = @Original_caminhoXml" +
+                ")))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idFiscal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idFiscal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_caminhoXml", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_caminhoXml", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[fiscal] ([idVenda]) VALUES (@idVenda);\r\nSELECT idFiscal, idVen" +
-                "da FROM fiscal WHERE (idFiscal = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [fiscal] ([idVenda], [caminhoXml]) VALUES (@idVenda, @caminhoXml);\r\nS" +
+                "ELECT idFiscal, idVenda, caminhoXml FROM fiscal WHERE (idFiscal = SCOPE_IDENTITY" +
+                "())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@caminhoXml", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[fiscal] SET [idVenda] = @idVenda WHERE (([idFiscal] = @Original_idF" +
-                "iscal) AND ((@IsNull_idVenda = 1 AND [idVenda] IS NULL) OR ([idVenda] = @Origina" +
-                "l_idVenda)));\r\nSELECT idFiscal, idVenda FROM fiscal WHERE (idFiscal = @idFiscal)" +
-                "";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [fiscal] SET [idVenda] = @idVenda, [caminhoXml] = @caminhoXml WHERE (([idFiscal] = @Original_idFiscal) AND ((@IsNull_idVenda = 1 AND [idVenda] IS NULL) OR ([idVenda] = @Original_idVenda)) AND ((@IsNull_caminhoXml = 1 AND [caminhoXml] IS NULL) OR ([caminhoXml] = @Original_caminhoXml)));
+SELECT idFiscal, idVenda, caminhoXml FROM fiscal WHERE (idFiscal = @idFiscal)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@caminhoXml", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idFiscal", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idFiscal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_caminhoXml", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_caminhoXml", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idFiscal", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idFiscal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -31690,21 +31308,34 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idFiscal, idVenda FROM dbo.fiscal";
+            this._commandCollection[0].CommandText = "SELECT        idFiscal, idVenda, caminhoXml\r\nFROM            fiscal";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[fiscal] ([idVenda]) VALUES (@idVenda);\r\n";
+            this._commandCollection[1].CommandText = "UPDATE [fiscal] SET  [caminhoXml] = @caminhoXml\r\nWHERE (idFiscal = @idFiscal)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@caminhoXml", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idFiscal", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idFiscal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        TOP (1) idFiscal, idVenda\r\nFROM            fiscal\r\nORDER BY idFisca" +
-                "l DESC";
+            this._commandCollection[2].CommandText = "INSERT INTO fiscal\r\n                         (idVenda, caminhoXml)\r\nVALUES       " +
+                " (@idVenda, @caminhoXml); \r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@caminhoXml", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "caminhoXml", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT TOP (1) caminhoXml, idFiscal, idVenda FROM fiscal ORDER BY idFiscal DESC";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT        idFiscal, idVenda, caminhoXml\r\nFROM            fiscal\r\nWHERE idVend" +
+                "a = @idVenda";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31736,7 +31367,24 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Dados.fiscalDataTable retornarUltimoIdFiscal() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            Dados.fiscalDataTable dataTable = new Dados.fiscalDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Dados.fiscalDataTable segundaVia(global::System.Nullable<int> idVenda) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((idVenda.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idVenda.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             Dados.fiscalDataTable dataTable = new Dados.fiscalDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -31775,7 +31423,7 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idFiscal, global::System.Nullable<int> Original_idVenda) {
+        public virtual int Delete(int Original_idFiscal, global::System.Nullable<int> Original_idVenda, string Original_caminhoXml) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idFiscal));
             if ((Original_idVenda.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -31784,6 +31432,14 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_caminhoXml == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_caminhoXml));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -31805,12 +31461,18 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idVenda) {
+        public virtual int Insert(global::System.Nullable<int> idVenda, string caminhoXml) {
             if ((idVenda.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idVenda.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((caminhoXml == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(caminhoXml));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -31832,23 +31494,37 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> idVenda, int Original_idFiscal, global::System.Nullable<int> Original_idVenda, int idFiscal) {
+        public virtual int Update(global::System.Nullable<int> idVenda, string caminhoXml, int Original_idFiscal, global::System.Nullable<int> Original_idVenda, string Original_caminhoXml, int idFiscal) {
             if ((idVenda.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idVenda.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idFiscal));
-            if ((Original_idVenda.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idVenda.Value));
+            if ((caminhoXml == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(caminhoXml));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(idFiscal));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_idFiscal));
+            if ((Original_idVenda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idVenda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_caminhoXml == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_caminhoXml));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(idFiscal));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -31869,21 +31545,57 @@ SELECT idCargo, cargoNome, estadoCargo, adm FROM Cargo WHERE (idCargo = @idCargo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> idVenda, int Original_idFiscal, global::System.Nullable<int> Original_idVenda) {
-            return this.Update(idVenda, Original_idFiscal, Original_idVenda, Original_idFiscal);
+        public virtual int Update(global::System.Nullable<int> idVenda, string caminhoXml, int Original_idFiscal, global::System.Nullable<int> Original_idVenda, string Original_caminhoXml) {
+            return this.Update(idVenda, caminhoXml, Original_idFiscal, Original_idVenda, Original_caminhoXml, Original_idFiscal);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int inserirCaminhoXml(string caminhoXml, int idFiscal) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((caminhoXml == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(caminhoXml));
+            }
+            command.Parameters[1].Value = ((int)(idFiscal));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirFiscal(global::System.Nullable<int> idVenda) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+        public virtual int inserirFiscal(global::System.Nullable<int> idVenda, string caminhoXml) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((idVenda.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(idVenda.Value));
             }
             else {
                 command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((caminhoXml == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(caminhoXml));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

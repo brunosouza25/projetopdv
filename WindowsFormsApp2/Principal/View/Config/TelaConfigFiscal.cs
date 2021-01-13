@@ -17,6 +17,7 @@ namespace WindowsFormsApp2.Principal.View.Config
         public TelaConfigFiscal()
         {
             InitializeComponent();
+            
             carregarDadosFiscais();
         }
         public void salvarConfigFiscal()
@@ -36,20 +37,18 @@ namespace WindowsFormsApp2.Principal.View.Config
                     cnpjOk = true;
                 }
                 travar_LiberarFiscal(true);
-                if (cBoxRegimeTributario.SelectedItem != null && cnpjOk && txtBoxIE.Text.Length == 9 && txtBoxSenhaSat.Text != "" 
-                    && rTxtBoxCodSat.Text != "" && txtBoxRazaoSocial.Text.Length >= 2 && txtBoxNomeFantasia.Text.Length >= 2 && txtBoxTelefone.Text.Length >= 11 && txtBoxCep.Text.Length == 8
+                if (cBoxRegimeTributario.SelectedItem != null && cnpjOk && txtBoxIE.Text.Length == 9 && txtBoxRazaoSocial.Text.Length >= 2 && txtBoxNomeFantasia.Text.Length >= 2 && txtBoxTelefone.Text.Length >= 11 && txtBoxCep.Text.Length == 8
                     && txtBoxLogradouro.Text.Length >= 2 && txtBoxNumero.Text != "" && txtBoxBairro.Text.Length >= 2 && txtBoxCidade.Text.Length >= 2 && txtBoxCodCidade.Text.Length == 7 && txtBoxUf.Text != "")
 
                 {
 
                     ulong b;
                     if (ulong.TryParse(txtBoxCnpjEmpresa.Text.Trim(), out b) && ulong.TryParse(txtBoxIE.Text.Trim(), out b)
-                        && ulong.TryParse(txtBoxSenhaSat.Text.Trim(), out b) && ulong.TryParse(txtBoxIE.Text.Trim(), out b))
+                        && ulong.TryParse(txtBoxIE.Text.Trim(), out b))
                     {
                         config.attFiscal(true);
                         config.attDadosFiscais(
-                              txtBoxCnpjEmpresa.Text.Trim(), txtBoxIE.Text.Trim(), txtCnpjSH.Text.Trim()
-                            , txtBoxSenhaSat.Text.Trim(), rTxtBoxCodSat.Text.Trim(), cBoxRegimeTributario.SelectedItem.ToString()
+                              txtBoxCnpjEmpresa.Text.Trim(), txtBoxIE.Text.Trim(), cBoxRegimeTributario.SelectedItem.ToString()
                             , txtBoxRazaoSocial.Text.Trim(), txtBoxNomeFantasia.Text.Trim(), txtBoxTelefone.Text.Trim()
                             , txtBoxCep.Text.Trim(), txtBoxLogradouro.Text.Trim(), txtBoxNumero.Text.Trim(), txtBoxBairro.Text.Trim()
                             , txtBoxCidade.Text.Trim(), txtBoxCodCidade.Text.Trim(), txtBoxUf.Text.Trim());
@@ -75,9 +74,9 @@ namespace WindowsFormsApp2.Principal.View.Config
         {
             txtBoxCnpjEmpresa.Enabled = travar;
             txtBoxIE.Enabled = travar;
-            txtBoxSenhaSat.Enabled = travar;
-            txtCnpjSH.Enabled = false;
-            rTxtBoxCodSat.Enabled = travar;
+            //txtBoxSenhaSat.Enabled = travar;
+            //txtCnpjSH.Enabled = false;
+            //rTxtBoxCodSat.Enabled = travar;
             cBoxRegimeTributario.Enabled = travar;
             txtBoxRazaoSocial.Enabled = travar;
             txtBoxNomeFantasia.Enabled = travar;
@@ -98,9 +97,9 @@ namespace WindowsFormsApp2.Principal.View.Config
                 travar_LiberarFiscal(true);
                 txtBoxCnpjEmpresa.Text = auxConfig[0]["cnpjEmpresa"].ToString();
                 txtBoxIE.Text = auxConfig[0]["inscricaoEstadual"].ToString();
-                txtBoxSenhaSat.Text = auxConfig[0]["senhaSat"].ToString();
-                txtCnpjSH.Text = auxConfig[0]["cnpjSoftwareHouse"].ToString();
-                rTxtBoxCodSat.Text = auxConfig[0]["assinaturaAC"].ToString();
+                //txtBoxSenhaSat.Text = auxConfig[0]["senhaSat"].ToString();
+                //txtCnpjSH.Text = auxConfig[0]["cnpjSoftwareHouse"].ToString();
+                //rTxtBoxCodSat.Text = auxConfig[0]["assinaturaAC"].ToString();
                 txtBoxRazaoSocial.Text = auxConfig[0]["razaoSocial"].ToString();
                 txtBoxNomeFantasia.Text = auxConfig[0]["nomeFantasia"].ToString();
                 txtBoxTelefone.Text = auxConfig[0]["telefone"].ToString();

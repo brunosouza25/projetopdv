@@ -23,9 +23,9 @@ namespace WindowsFormsApp2
             var auxFiscal = sistema.retornarConfig();
             string cnpjEmpresa = auxFiscal[0]["cnpjEmpresa"].ToString();
             string iE = auxFiscal[0]["inscricaoEstadual"].ToString();
-            string senhaSat = auxFiscal[0]["senhaSat"].ToString();
-            string cnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
-            string boxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
+            //string senhaSat = auxFiscal[0]["senhaSat"].ToString();
+            //string cnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
+           // string boxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
             string razaoSocial = auxFiscal[0]["razaoSocial"].ToString();
             string nomeFantasia = auxFiscal[0]["nomeFantasia"].ToString();
             string telefone = auxFiscal[0]["telefone"].ToString();
@@ -37,7 +37,7 @@ namespace WindowsFormsApp2
             string codCidade = auxFiscal[0]["codigoCidade"].ToString();
             string uf = auxFiscal[0]["uf"].ToString();
 
-            fiscal.inserirFiscal(codigoVenda);
+            fiscal.inserirFiscal(codigoVenda, "");
             var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
             int idFiscal = Convert.ToInt32(auxIdFiscal[0]["idFiscal"].ToString());
 
@@ -372,6 +372,8 @@ namespace WindowsFormsApp2
                 x.Close();
                 MessageBox.Show("cupom emitido com sucesso!");
                 Thread.Sleep(1000);
+                var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
+                fiscal.inserirCaminhoXml(@"C:\Users\bruno\Desktop\notas\xmls\" + arquivo.Name, Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
                 File.Copy("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name, @"C:\Users\bruno\Desktop\notas\xmls\"+ arquivo.Name);
                 File.Delete("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name);
 

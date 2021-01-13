@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using WindowsFormsApp2;
 
@@ -186,20 +187,21 @@ namespace WindowsFormsApp2
                 produto2.AttPorCodBarras(Convert.ToInt32(prodQuant[0]["prodQuantidade"]) - Convert.ToInt32(itensDaLista[i, 4]), itensDaLista[i, 2].ToString());
             }
             
-            MessageBox.Show("Venda realizada com sucesso!");
-            if (MessageBox.Show("Deseja emitir cupom fiscal?", " ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            
+
+            try
             {
-                
                 var auxFiscal = configSistema.retornarConfig();
                 if (Convert.ToBoolean(auxFiscal[0]["fiscal"]))
                 {
                     var quantidadeItensVenda = itensDaVenda.retornarItensVenda(Convert.ToInt32(aux2[0]["idVenda"]));
                     Boolean fiscal = true;
                     string nomeProduto = "";
-                    for(int i = 0; i >= quantidadeItensVenda.Count; i++)
+                    for (int i = 0; i >= quantidadeItensVenda.Count; i++)
                     {
 
-                        if (!Convert.ToBoolean(quantidadeItensVenda[i]["fiscal"])){
+                        if (!Convert.ToBoolean(quantidadeItensVenda[i]["fiscal"]))
+                        {
                             fiscal = false;
                             nomeProduto = quantidadeItensVenda[i]["prodNome"].ToString();
                         }
@@ -208,15 +210,22 @@ namespace WindowsFormsApp2
                     if (fiscal)
                     {
                         Fiscal cupomFiscal = new Fiscal();
-                         cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]));
+                        cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]));
                     }
-                    else {
-                        MessageBox.Show("Não foi possível emitir o cupom fiscal, faltam dados fiscais do produto: "+nomeProduto);
+                    else
+                    {
+                        MessageBox.Show("Não foi possível emitir o cupom fiscal, faltam dados fiscais do produto: " + nomeProduto);
                     }
                 }
-                else{
+                else
+                {
                     MessageBox.Show("Não foi possível emitir o cupom fiscal, faltam dados fiscais da empresa");
                 }
+                MessageBox.Show("Venda realizada com sucesso!");
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show("Whoops, tivemos um erro na venda, favor contatar o suporte");
             }
                 Close();
         }
