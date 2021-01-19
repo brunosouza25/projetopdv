@@ -5493,6 +5493,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnidColaborador;
             
+            private global::System.Data.DataColumn columnvalorSangria;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Observacoes_SangriaDataTable() {
@@ -5568,6 +5570,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorSangriaColumn {
+                get {
+                    return this.columnvalorSangria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5603,14 +5613,15 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Observacoes_SangriaRow AddObservacoes_SangriaRow(CaixaRow parentCaixaRowByFK__Observaco__idCai__02084FDA, string observacoes, System.DateTime dataSangria, System.TimeSpan horaSangria, int idColaborador) {
+            public Observacoes_SangriaRow AddObservacoes_SangriaRow(CaixaRow parentCaixaRowByFK__Observaco__idCai__02084FDA, string observacoes, System.DateTime dataSangria, System.TimeSpan horaSangria, int idColaborador, double valorSangria) {
                 Observacoes_SangriaRow rowObservacoes_SangriaRow = ((Observacoes_SangriaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         observacoes,
                         dataSangria,
                         horaSangria,
-                        idColaborador};
+                        idColaborador,
+                        valorSangria};
                 if ((parentCaixaRowByFK__Observaco__idCai__02084FDA != null)) {
                     columnValuesArray[0] = parentCaixaRowByFK__Observaco__idCai__02084FDA[0];
                 }
@@ -5641,6 +5652,7 @@ namespace WindowsFormsApp2 {
                 this.columndataSangria = base.Columns["dataSangria"];
                 this.columnhoraSangria = base.Columns["horaSangria"];
                 this.columnidColaborador = base.Columns["idColaborador"];
+                this.columnvalorSangria = base.Columns["valorSangria"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5656,6 +5668,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnhoraSangria);
                 this.columnidColaborador = new global::System.Data.DataColumn("idColaborador", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidColaborador);
+                this.columnvalorSangria = new global::System.Data.DataColumn("valorSangria", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalorSangria);
                 this.columnobservacoes.MaxLength = 300;
             }
             
@@ -14147,6 +14161,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double valorSangria {
+                get {
+                    try {
+                        return ((double)(this[this.tableObservacoes_Sangria.valorSangriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'valorSangria\' na tabela \'Observacoes_Sangria\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableObservacoes_Sangria.valorSangriaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CaixaRow CaixaRow {
                 get {
                     return ((CaixaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Observaco__idCai__02084FDA"])));
@@ -14214,6 +14244,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidColaboradorNull() {
                 this[this.tableObservacoes_Sangria.idColaboradorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorSangriaNull() {
+                return this.IsNull(this.tableObservacoes_Sangria.valorSangriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorSangriaNull() {
+                this[this.tableObservacoes_Sangria.valorSangriaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -23366,7 +23408,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensEntrada", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensEntrada, dataEntrada, horaEntrada, idProduto, observacoes, qntItem HAVING (SUM(idSecundarioItensEntrada) > 0)";
+            this._commandCollection[4].CommandText = @"SELECT dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensEntrada, dataEntrada, horaEntrada, idProduto, observacoes, qntItem HAVING (count(idSecundarioItensEntrada) > 1)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23810,7 +23852,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensSaida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida WHERE (dataSaida BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensSaida, dataSaida, observacoes, idProduto, horaSaida, qntItem HAVING (SUM(idSecundarioItensSaida) > 0)";
+            this._commandCollection[5].CommandText = @"SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida WHERE (dataSaida BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensSaida, dataSaida, observacoes, idProduto, horaSaida, qntItem HAVING (count(idSecundarioItensSaida) > 1)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24198,18 +24240,20 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             tableMapping.ColumnMappings.Add("dataSangria", "dataSangria");
             tableMapping.ColumnMappings.Add("horaSangria", "horaSangria");
             tableMapping.ColumnMappings.Add("idColaborador", "idColaborador");
+            tableMapping.ColumnMappings.Add("valorSangria", "valorSangria");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [Observacoes_Sangria] ([idCaixa], [observacoes], [dataSangria], [hora" +
-                "Sangria], [idColaborador]) VALUES (@idCaixa, @observacoes, @dataSangria, @horaSa" +
-                "ngria, @idColaborador)";
+                "Sangria], [idColaborador], [valorSangria]) VALUES (@idCaixa, @observacoes, @data" +
+                "Sangria, @horaSangria, @idColaborador, @valorSangria)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCaixa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataSangria", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaSangria", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorSangria", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24225,32 +24269,33 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        idCaixa, observacoes, dataSangria, horaSangria, idColaborador\r\nFROM" +
-                "            Observacoes_Sangria";
+            this._commandCollection[0].CommandText = "SELECT        idCaixa, observacoes, dataSangria, horaSangria, idColaborador, valo" +
+                "rSangria\r\nFROM            Observacoes_Sangria";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO Observacoes_Sangria\r\n                         (idCaixa, observacoes, " +
-                "dataSangria, horaSangria, idColaborador)\r\nVALUES        (@idCaixa,@observacoes,@" +
-                "dataSangria,@horaSangria,@idColaborador)";
+                "dataSangria, horaSangria, idColaborador, valorSangria)\r\nVALUES        (@idCaixa," +
+                "@observacoes,@dataSangria,@horaSangria,@idColaborador,@valorSangria)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCaixa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCaixa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataSangria", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaSangria", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "horaSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorSangria", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idCaixa, observacoes, dataSangria, horaSangria, idColaborador\r\nFROM" +
-                "            Observacoes_Sangria\r\nWHERE (dataSangria BETWEEN @dataSangria1 AND @d" +
-                "ataSangria2)";
+            this._commandCollection[2].CommandText = "SELECT dataSangria, horaSangria, idCaixa, idColaborador, observacoes, valorSangri" +
+                "a FROM Observacoes_Sangria WHERE (dataSangria BETWEEN @dataSangria1 AND @dataSan" +
+                "gria2)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataSangria1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataSangria2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        idCaixa, observacoes, dataSangria, horaSangria, idColaborador\r\nFROM" +
-                "            Observacoes_Sangria\r\nWHERE dataSangria = @dataSangria";
+            this._commandCollection[3].CommandText = "SELECT dataSangria, horaSangria, idCaixa, idColaborador, observacoes, valorSangri" +
+                "a FROM Observacoes_Sangria WHERE (dataSangria = @dataSangria)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataSangria", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSangria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -24352,7 +24397,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idCaixa, string observacoes, global::System.Nullable<global::System.DateTime> dataSangria, global::System.Nullable<global::System.TimeSpan> horaSangria, global::System.Nullable<int> idColaborador) {
+        public virtual int Insert(global::System.Nullable<int> idCaixa, string observacoes, global::System.Nullable<global::System.DateTime> dataSangria, global::System.Nullable<global::System.TimeSpan> horaSangria, global::System.Nullable<int> idColaborador, global::System.Nullable<double> valorSangria) {
             if ((idCaixa.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idCaixa.Value));
             }
@@ -24383,6 +24428,12 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((valorSangria.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(valorSangria.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -24403,7 +24454,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int addObsCaixa(global::System.Nullable<int> idCaixa, string observacoes, string dataSangria, string horaSangria, global::System.Nullable<int> idColaborador) {
+        public virtual int addObsCaixa(global::System.Nullable<int> idCaixa, string observacoes, string dataSangria, string horaSangria, global::System.Nullable<int> idColaborador, global::System.Nullable<double> valorSangria) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((idCaixa.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(idCaixa.Value));
@@ -24434,6 +24485,12 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((valorSangria.HasValue == true)) {
+                command.Parameters[5].Value = ((double)(valorSangria.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

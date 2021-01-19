@@ -129,6 +129,37 @@ public TelaInformacaoGeralProd(Boolean tipo)
             }
         }
 
+        public bool verificar()
+        {
+            double a, b;
+
+            if (TxtBoxCodBarras.Text == "" | TxtBoxCusto.Text == "" | TxtBoxNome.Text == "" | TxtBoxValor.Text == "")
+            {
+                MessageBox.Show("Por favor, preencha todos os campos!");
+                return false;
+            }
+            else if (double.TryParse(TxtBoxCusto.Text.Trim(), out a) && (double.TryParse(TxtBoxValor.Text.Trim(), out b)))
+            {
+                if (tipo)
+                {
+                    return true;
+                }
+                else
+                {
+                    if (ckboxInativo.Checked)
+                        checkbox = 1;
+                    else
+                        checkbox = 0;
+
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Valores não permitidos");
+                return false;
+            }
+        }
     }
 
     public partial class CopyOfTelaInformacaoGeralProd : UserControl

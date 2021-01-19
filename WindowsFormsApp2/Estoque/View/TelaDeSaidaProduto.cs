@@ -293,7 +293,7 @@ namespace WindowsFormsApp2.Estoque.View
                             , DateTime.Now.ToString("HH:mm")
                             , Convert.ToInt32(listaDeSaida.Items[i].SubItems[6].Text), txtBoxObs.Text);
                         }
-                        MessageBox.Show("Produtos inserido com sucesso!");
+                        MessageBox.Show("Produtos retirados com sucesso!");
                         Close();
                     }
                     else

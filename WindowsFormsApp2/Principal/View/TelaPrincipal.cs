@@ -185,5 +185,14 @@ namespace WindowsFormsApp2
                 MessageBox.Show(arquivo.Name);
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string path = @"C:\pdv\videos\";
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            //Trocar o caminho da imagem
+            startInfo.FileName = path;
+            System.Diagnostics.Process.Start(startInfo);
+        }
     }
 }

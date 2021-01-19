@@ -153,7 +153,8 @@ CREATE TABLE Observacoes_Sangria (
     observacoes VARCHAR(300),
 	dataSangria DATE,
 	horaSangria TIME,
-	idColaborador INT
+	idColaborador INT,
+	valorSangria FLOAT
 );
 /*
 CREATE TABLE Observacoes_Entrada_Prod (

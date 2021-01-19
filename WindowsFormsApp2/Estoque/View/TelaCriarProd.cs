@@ -64,14 +64,23 @@ namespace WindowsFormsApp2
             /*bug que fica criando produto sem fiscal se errar algum dado fiscal e insistir em salvar*/
             bool fechar1 = false;
             bool fechar2 = false;
-            fechar1 = telaGeral.Criar_EditarProd();
-            if (tipo && fechar1)
+
+            fechar1 = telaGeral.verificar();
+            fechar2 = telaTributacao.verificar();
+
+            if (tipo && fechar1 && fechar2)
             {
+                telaGeral.Criar_EditarProd();
                 fechar2 = telaTributacao.SalvarTributacao(true, 0);    
+            }
+            else if(!tipo && fechar1 && fechar2)
+            {
+                telaGeral.Criar_EditarProd();
+                fechar2 = telaTributacao.SalvarTributacao(true, 0);
             }
             else
             {
-                fechar2 = telaTributacao.SalvarTributacao(false, codigoProd);
+                MessageBox.Show("faltam preencher todos os campos fiscais e não fiscais");
             }
 
             if (fechar1 && fechar2)

@@ -12,6 +12,10 @@
 
 namespace WindowsFormsApp2.DadosTableAdapters
 {
+    partial class ItensDeEntradaTableAdapter
+    {
+    }
+
     partial class FuncionarioTableAdapter
     {
     }

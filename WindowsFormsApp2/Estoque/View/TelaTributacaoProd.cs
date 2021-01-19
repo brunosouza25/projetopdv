@@ -239,7 +239,7 @@ namespace WindowsFormsApp2.Estoque.View
 
         public bool SalvarTributacao(bool tipo, int codigoProduto)
         {
-            if (ckboxFiscal.Checked)
+            if (ckboxFiscal.Checked || !ckboxFiscal.Checked )
             {
                 double pPis = -1, pCofins = -1;
                 int pis = -1, cofins = -1, icms = -1, cest = -1, origem = -1, cfop = -1, cst = -1, csosn = -1;
@@ -425,6 +425,198 @@ namespace WindowsFormsApp2.Estoque.View
             else
             {
                 produtos.attFIscalProduto(ckboxFiscal.Checked, codigoProduto);
+                return true;
+
+            }
+        }
+        public bool verificar()
+        {
+            if (ckboxFiscal.Checked || !ckboxFiscal.Checked)
+            {
+                double pPis = -1, pCofins = -1;
+                int pis = -1, cofins = -1, icms = -1, cest = -1, origem = -1, cfop = -1, cst = -1, csosn = -1;
+                int a;
+                double b;
+                bool salvar = false;
+                string ncm = "-1";
+
+                /*                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text != "" && mTxtCest.Text != ""
+                    && mTxtOrigem.Text != "" && mTxtCfop.Text != "" && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")*/
+                if (mTxtPPis.Text.Trim() != "" && mTxtPCofins.Text.Trim() != "" && mTxtPis.Text.Trim() != "" && mTxtCofins.Text.Trim() != "" && mTxtIcms.Text != "" && mTxtNcm.Text.Length == 8 && mTxtCest.Text != ""
+                    && mTxtOrigem.Text != "" && mTxtCfop.Text.Length == 4 && mTxtCfop.Text != "" && mTxtCst.Text != "" && mTxtCsosn.Text != "")
+                {
+                    if (double.TryParse(mTxtPPis.Text.Trim(), out b))
+                    {
+                        pPis = Convert.ToDouble(mTxtPPis.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Porcentagem Pis inválido");
+                        salvar = false;
+                    }
+
+
+
+                    if (double.TryParse(mTxtPCofins.Text.Trim(), out b))
+                    {
+                        pCofins = Convert.ToDouble(mTxtPCofins.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Porcentagem Cofins inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtPis.Text.Trim(), out a))
+                    {
+                        pis = Convert.ToInt32(mTxtPis.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("PIS inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCofins.Text.Trim(), out a))
+                    {
+                        cofins = Convert.ToInt32(mTxtCofins.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+
+                        salvar = false;
+                        MessageBox.Show("Cofins inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtIcms.Text.Trim(), out a))
+                    {
+                        icms = Convert.ToInt32(mTxtIcms.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Icms inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtNcm.Text.Trim(), out a))
+                    {
+                        ncm = mTxtNcm.Text;
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Ncm inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCest.Text.Trim(), out a))
+                    {
+                        cest = Convert.ToInt32(mTxtCest.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Cest inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtOrigem.Text.Trim(), out a))
+                    {
+                        origem = Convert.ToInt32(mTxtOrigem.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Origem inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCfop.Text.Trim(), out a))
+                    {
+                        cfop = Convert.ToInt32(mTxtCfop.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Cfop inválido");
+                    }
+
+
+
+                    if (int.TryParse(mTxtCst.Text.Trim(), out a))
+                    {
+                        cst = Convert.ToInt32(mTxtCst.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Cst inválido");
+                    }
+
+                    if (int.TryParse(mTxtCsosn.Text.Trim(), out a))
+                    {
+                        csosn = Convert.ToInt32(mTxtCsosn.Text);
+                        salvar = true;
+                    }
+                    else
+                    {
+                        salvar = false;
+                        MessageBox.Show("Csosn inválido");
+                    }
+                    if (salvar)
+                    {
+                        if (tipo)
+                        {
+                            var auxIdProd = produtos.retornarUltimoIdProduto();
+                            int idProd = Convert.ToInt32(auxIdProd[0]["idProduto"]);
+                            produtos.inserirAlterarDadosTributacao(pPis, pCofins, pis, cofins, csosn, cst, ncm, Convert.ToString(cest), origem, cfop, icms, ckboxFiscal.Checked, idProd);
+
+                            return true;
+                        }
+                        else
+                        {
+                            //MessageBox.Show(ckboxFiscal.Checked.ToString());
+                           
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Favor, preencher todos os campos para emissao da nota");
+                    return false;
+                }
+            }
+            else
+            {
+                
                 return true;
 
             }

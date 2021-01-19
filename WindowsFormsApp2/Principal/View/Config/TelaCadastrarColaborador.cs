@@ -44,7 +44,7 @@ namespace WindowsFormsApp2.Principal.View.Config
             var auxColab = colaboladores.retornarColaboradorPorId(idColaborador);
             txtNome.Text = auxColab[0]["nomeFunc"].ToString();
             txtEmail.Text = auxColab[0]["email"].ToString();
-            txtNasc.Text = auxColab[0]["dataNasc"].ToString();
+            //txtNasc.Text = auxColab[0]["dataNasc"].ToString();
             var auxCargo = cargos.retornarCargoPorId(Convert.ToInt32(auxColab[0]["idCargo"]));
             cbCargo.SelectedItem = auxCargo[0]["cargoNome"].ToString();
         }

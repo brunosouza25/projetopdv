@@ -153,7 +153,7 @@ namespace WindowsFormsApp2
 
                     for (int i = 0; i < dinheiro.Count(); i++)
                     {
-                        table.AddCell(Convert.ToDateTime(dinheiro[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                        table.AddCell(Convert.ToDateTime(dinheiro[i]["vendData"]).ToString("dd/MM/yyyy"));
                         table.AddCell(dinheiro[i]["idVenda"].ToString());
                         table.AddCell("Dinheiro");
                         table.AddCell("Vendedor padrão");
@@ -384,18 +384,18 @@ namespace WindowsFormsApp2
                     informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
                     informacao.Clear();
 
-                    PdfPTable table7 = new PdfPTable(3);
+                    PdfPTable table7 = new PdfPTable(4);
                     table7.AddCell("Data da Sangria");
                     table7.AddCell("Colaborador");
                     table7.AddCell("Observações");
                     table7.AddCell("Valor da sangria");
                     for (int i = 0; i < auxSangria.Count; i++)
                     {
-                        table7.AddCell(auxSangria[i]["dataSangria"].ToString());
+                        table7.AddCell(auxSangria[i]["dataSangria"].ToString()+ " "+ auxSangria[i]["horaSangria"].ToString());
                         var auxFunc = funcionario.retornarColaboradorPorId(Convert.ToInt32(auxSangria[i]["idColaborador"]));
                         table7.AddCell(auxFunc[0]["nomeFunc"].ToString());
                         table7.AddCell(auxSangria[i]["observacoes"].ToString());
-                        table7.AddCell(auxSangria[i]["observacoes"].ToString());
+                        table7.AddCell("R$"+ Convert.ToDouble(auxSangria[i]["valorSangria"]).ToString("F2"));
                         doc.Add(table7);
                         //var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
                         //table7.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
