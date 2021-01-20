@@ -1,6 +1,7 @@
 ﻿using System;
 using WindowsFormsApp2.Principal.View;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp2
 {
@@ -18,16 +19,21 @@ namespace WindowsFormsApp2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            DadosTableAdapters.Config_SistemaTableAdapter config = new DadosTableAdapters.Config_SistemaTableAdapter();
-            var configSistema = config.retornarConfig();
-            if (configSistema[0]["regimeTributario"].ToString() == "Simples Nacional")
+            try
             {
-                Global.simples = true;
-            }
-            else
+                DadosTableAdapters.Config_SistemaTableAdapter config = new DadosTableAdapters.Config_SistemaTableAdapter();
+                var configSistema = config.retornarConfig();
+                if (configSistema[0]["regimeTributario"].ToString() == "Simples Nacional")
+                {
+                    Global.simples = true;
+                }
+                else
+                {
+                    Global.simples = false;
+                }
+            }catch(IOException er)
             {
-                Global.simples = false;
+                MessageBox.Show("Erro");
             }
             /*
             

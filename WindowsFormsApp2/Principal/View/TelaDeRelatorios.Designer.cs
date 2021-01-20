@@ -44,16 +44,23 @@
             this.btnOntem = new System.Windows.Forms.Button();
             this.btnHoje = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnSangria = new System.Windows.Forms.Button();
+            this.btnRelatorioCaixa = new System.Windows.Forms.Button();
             this.btnCaixa = new System.Windows.Forms.Button();
             this.painelPrincipal = new System.Windows.Forms.Panel();
-            this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
+            this.painelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,8 +116,7 @@
             this.btnPerso.Size = new System.Drawing.Size(274, 35);
             this.btnPerso.TabIndex = 33;
             this.btnPerso.Text = "Personalizado";
-            this.btnPerso.UseVisualStyleBackColor = false;
-            this.btnPerso.Visible = false;
+            this.btnPerso.UseVisualStyleBackColor = true;
             this.btnPerso.Click += new System.EventHandler(this.btnPerso_Click);
             // 
             // label2
@@ -122,7 +128,6 @@
             this.label2.Size = new System.Drawing.Size(47, 25);
             this.label2.TabIndex = 32;
             this.label2.Text = "Até";
-            this.label2.Visible = false;
             // 
             // label1
             // 
@@ -133,7 +138,6 @@
             this.label1.Size = new System.Drawing.Size(41, 25);
             this.label1.TabIndex = 31;
             this.label1.Text = "De";
-            this.label1.Visible = false;
             // 
             // txtBoxAteMes
             // 
@@ -144,7 +148,6 @@
             this.txtBoxAteMes.Size = new System.Drawing.Size(130, 35);
             this.txtBoxAteMes.TabIndex = 30;
             this.txtBoxAteMes.ValidatingType = typeof(System.DateTime);
-            this.txtBoxAteMes.Visible = false;
             // 
             // txtBoxDeMes
             // 
@@ -155,7 +158,6 @@
             this.txtBoxDeMes.Size = new System.Drawing.Size(130, 35);
             this.txtBoxDeMes.TabIndex = 29;
             this.txtBoxDeMes.ValidatingType = typeof(System.DateTime);
-            this.txtBoxDeMes.Visible = false;
             // 
             // btnUltimos3Meses
             // 
@@ -165,8 +167,8 @@
             this.btnUltimos3Meses.Size = new System.Drawing.Size(277, 35);
             this.btnUltimos3Meses.TabIndex = 28;
             this.btnUltimos3Meses.Text = "Ultimos 3 meses";
-            this.btnUltimos3Meses.UseVisualStyleBackColor = false;
-            this.btnUltimos3Meses.Visible = false;
+            this.btnUltimos3Meses.UseVisualStyleBackColor = true;
+            this.btnUltimos3Meses.Click += new System.EventHandler(this.btnUltimos3Meses_Click);
             // 
             // btnMesPassado
             // 
@@ -176,8 +178,8 @@
             this.btnMesPassado.Size = new System.Drawing.Size(277, 35);
             this.btnMesPassado.TabIndex = 27;
             this.btnMesPassado.Text = "Mês passado";
-            this.btnMesPassado.UseVisualStyleBackColor = false;
-            this.btnMesPassado.Visible = false;
+            this.btnMesPassado.UseVisualStyleBackColor = true;
+            this.btnMesPassado.Click += new System.EventHandler(this.btnMesPassado_Click);
             // 
             // btnEsteMes
             // 
@@ -187,8 +189,8 @@
             this.btnEsteMes.Size = new System.Drawing.Size(277, 35);
             this.btnEsteMes.TabIndex = 26;
             this.btnEsteMes.Text = "Este mês";
-            this.btnEsteMes.UseVisualStyleBackColor = false;
-            this.btnEsteMes.Visible = false;
+            this.btnEsteMes.UseVisualStyleBackColor = true;
+            this.btnEsteMes.Click += new System.EventHandler(this.btnEsteMes_Click);
             // 
             // btn7Dias
             // 
@@ -198,8 +200,8 @@
             this.btn7Dias.Size = new System.Drawing.Size(277, 35);
             this.btn7Dias.TabIndex = 25;
             this.btn7Dias.Text = "Ultimos 7 dias";
-            this.btn7Dias.UseVisualStyleBackColor = false;
-            this.btn7Dias.Visible = false;
+            this.btn7Dias.UseVisualStyleBackColor = true;
+            this.btn7Dias.Click += new System.EventHandler(this.btn7Dias_Click);
             // 
             // btnOntem
             // 
@@ -209,23 +211,26 @@
             this.btnOntem.Size = new System.Drawing.Size(277, 35);
             this.btnOntem.TabIndex = 24;
             this.btnOntem.Text = "Ontem";
-            this.btnOntem.UseVisualStyleBackColor = false;
-            this.btnOntem.Visible = false;
+            this.btnOntem.UseVisualStyleBackColor = true;
+            this.btnOntem.Click += new System.EventHandler(this.btnOntem_Click);
             // 
             // btnHoje
             // 
-            this.btnHoje.BackColor = System.Drawing.Color.Silver;
+            this.btnHoje.BackColor = System.Drawing.Color.Gainsboro;
             this.btnHoje.Location = new System.Drawing.Point(3, 105);
             this.btnHoje.Name = "btnHoje";
             this.btnHoje.Size = new System.Drawing.Size(277, 35);
             this.btnHoje.TabIndex = 23;
             this.btnHoje.Text = "Hoje";
             this.btnHoje.UseVisualStyleBackColor = false;
-            this.btnHoje.Visible = false;
             this.btnHoje.Click += new System.EventHandler(this.btnHoje_Click);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.btnSangria);
+            this.panel3.Controls.Add(this.btnRelatorioCaixa);
             this.panel3.Controls.Add(this.btnCaixa);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
@@ -233,6 +238,44 @@
             this.panel3.Size = new System.Drawing.Size(224, 603);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(0, 146);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(224, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Fechamento diário";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(0, 109);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(224, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Fechamento diário";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnSangria
+            // 
+            this.btnSangria.Location = new System.Drawing.Point(0, 73);
+            this.btnSangria.Name = "btnSangria";
+            this.btnSangria.Size = new System.Drawing.Size(224, 23);
+            this.btnSangria.TabIndex = 11;
+            this.btnSangria.Text = "Fechamento diário";
+            this.btnSangria.UseVisualStyleBackColor = true;
+            this.btnSangria.Click += new System.EventHandler(this.btnSangria_Click);
+            // 
+            // btnRelatorioCaixa
+            // 
+            this.btnRelatorioCaixa.Location = new System.Drawing.Point(0, 38);
+            this.btnRelatorioCaixa.Name = "btnRelatorioCaixa";
+            this.btnRelatorioCaixa.Size = new System.Drawing.Size(224, 23);
+            this.btnRelatorioCaixa.TabIndex = 10;
+            this.btnRelatorioCaixa.Text = "Fechamento diário";
+            this.btnRelatorioCaixa.UseVisualStyleBackColor = true;
+            this.btnRelatorioCaixa.Click += new System.EventHandler(this.btnRelatorioCaixa_Click);
             // 
             // btnCaixa
             // 
@@ -242,23 +285,34 @@
             this.btnCaixa.TabIndex = 9;
             this.btnCaixa.Text = "Fechamento diário";
             this.btnCaixa.UseVisualStyleBackColor = true;
-            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
+            this.btnCaixa.Click += new System.EventHandler(this.btnFechamentoDiario);
             // 
             // painelPrincipal
             // 
+            this.painelPrincipal.Controls.Add(this.dataGridView1);
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painelPrincipal.Location = new System.Drawing.Point(233, 3);
             this.painelPrincipal.Name = "painelPrincipal";
             this.painelPrincipal.Size = new System.Drawing.Size(775, 603);
             this.painelPrincipal.TabIndex = 0;
             // 
-            // caixa1BindingSource
+            // dataGridView1
             // 
-            this.caixa1BindingSource.DataMember = "Caixa1";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.dataTable2BindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(743, 566);
+            this.dataGridView1.TabIndex = 0;
             // 
             // dataTable2BindingSource
             // 
             this.dataTable2BindingSource.DataMember = "DataTable2";
+            // 
+            // caixa1BindingSource
+            // 
+            this.caixa1BindingSource.DataMember = "Caixa1";
             // 
             // TelaDeRelatorios
             // 
@@ -273,8 +327,10 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
+            this.painelPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +362,10 @@
         private Dados dados;
         private DadosTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
         private System.Windows.Forms.Button btnCaixa;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSangria;
+        private System.Windows.Forms.Button btnRelatorioCaixa;
     }
 }

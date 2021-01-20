@@ -115,7 +115,9 @@ namespace WindowsFormsApp2
             {
                 mudarConfig();
             }
+
             relatorio.Visible = true;
+            relatorio.hoje();
         }
         private void BtCaixa_Click(object sender, EventArgs e)
         {

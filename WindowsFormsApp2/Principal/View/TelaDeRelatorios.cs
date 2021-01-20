@@ -11,8 +11,8 @@ namespace WindowsFormsApp2
     public partial class TelaDeRelatorios : UserControl
     {
         bool existeDiretorio = Directory.Exists(@"C:\relatorios");
-        string deData = null;
-        string ateData =  null;
+        DateTime deData = DateTime.Now;
+        DateTime ateData = DateTime.Now;
 
         public TelaDeRelatorios()
         {
@@ -123,7 +123,7 @@ namespace WindowsFormsApp2
                 titulo.Alignment = Element.ALIGN_CENTER;
                 titulo.Add("Fechamento do dia \n\n");
                 doc.Add(titulo);
-
+                
                 Paragraph informacao = new Paragraph();
                 informacao.Font = FontFactory.GetFont("Arial", 12, BaseColor.BLUE);
                 informacao.Alignment = Element.ALIGN_LEFT;
@@ -136,8 +136,7 @@ namespace WindowsFormsApp2
                 /*var dinheiro = fechamento.retornarFechamentoComDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("dd/MM/yyyy"));
                 if (dinheiro.Count < 1)*/
-                var dinheiro = fechamento.retornarFechamentoSemDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy")
-                  , DateTime.Now.ToString("dd/MM/yyyy"));
+                var dinheiro = fechamento.retornarFechamentoSemDevolucao("DINHEIRO", DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
 
                 if (dinheiro.Count > 0)
                 {
@@ -170,8 +169,7 @@ namespace WindowsFormsApp2
                 /*var creditoVista = fechamento.retornarFechamentoComDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
                 , DateTime.Now.ToString("dd/MM/yyyy"));
                 if (creditoVista.Count < 1)*/
-                var creditoVista = fechamento.retornarFechamentoSemDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy")
-                , DateTime.Now.ToString("dd/MM/yyyy"));
+                var creditoVista = fechamento.retornarFechamentoSemDevolucao("CREDITO A VISTA", DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
 
                 if (creditoVista.Count > 0)
                 {
@@ -268,7 +266,7 @@ namespace WindowsFormsApp2
 
                     for (int i = 0; i < debito.Count(); i++)
                     {
-                        table4.AddCell(Convert.ToDateTime(debito[i]["vendData"]).ToString("dd/MM/yyyy HH:mm:ss"));
+                        table4.AddCell(Convert.ToDateTime(debito[i]["vendData"]).ToString("dd/MM/yyyy")+" "+Convert.ToDateTime(debito[i]["vendData"]).ToString("HH:mm:ss"));
                         table4.AddCell(debito[i]["idVenda"].ToString());
                         table4.AddCell("Débito");
                         table4.AddCell("Vendedor padrão");
@@ -282,6 +280,11 @@ namespace WindowsFormsApp2
                     doc.Add(informacao);
                 }
                 informacao.Clear();
+
+
+                /***************************************************************************************/
+                /*****************************      Devoluções     *************************************/
+                /***************************************************************************************/
 
                 informacao.Font = FontFactory.GetFont("Arial", 14, BaseColor.RED);
 
@@ -324,6 +327,8 @@ namespace WindowsFormsApp2
                 }
 
                 /***************************************************************************************/
+                /*****************************  Vendas Canceladas  *************************************/
+                /***************************************************************************************/
 
                 DadosTableAdapters.Vendas_CanceladasTableAdapter venda = new DadosTableAdapters.Vendas_CanceladasTableAdapter();
                 var vendasCanceladas = venda.retornarCancelamentosPorData(DateTime.Now.ToString("dd/MM/yyyy"), DateTime.Now.ToString("dd/MM/yyyy"));
@@ -340,10 +345,11 @@ namespace WindowsFormsApp2
                     for (int i = 0; i < vendasCanceladas.Count; i++)
                     {
                         table6.AddCell(vendasCanceladas[i]["idVenda"].ToString());
-                        table6.AddCell(vendasCanceladas[i]["dataVenda"].ToString());
-                        table6.AddCell(vendasCanceladas[i]["dataCancelamento"].ToString());
+                        table6.AddCell(Convert.ToDateTime(vendasCanceladas[i]["dataVenda"]).ToString("dd/MM/yyyy"));
+                        table6.AddCell(Convert.ToDateTime(vendasCanceladas[i]["dataCancelamento"]).ToString("dd/MM/yyyy"));
+                        //+" "+        Convert.ToDateTime(vendasCanceladas[i]["horaCancelamento"]).ToString("HH:mm:ss")
                         var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
-                        table6.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
+                        table6.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])).ToString("F2"));
                     }
                     informacao.Clear();
                     informacao.Add("\n\nVendas Canceladas \n\n");
@@ -353,6 +359,9 @@ namespace WindowsFormsApp2
                 }
 
                 /***************************************************************************************/
+                /*****************************     Caixa Atual     *************************************/
+                /***************************************************************************************/
+
 
                 informacao.Clear();
                 informacao.Add("\n\n" + (totalDin + totalDebt + totalCredVista + totalCredParc).ToString("F2"));
@@ -373,11 +382,55 @@ namespace WindowsFormsApp2
 
                 doc.Add(informacao);
 
-                /*******************************************************************************************/
+                /***************************************************************************************/
+                /*****************************       Sangria       *************************************/
+                /***************************************************************************************/
+                doc = relatorioSangria(true, doc, informacao, titulo);
+
+                doc.Close();
+                MessageBox.Show("Relatório gerado com sucesso!");
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        public Document relatorioSangria(bool tipo = false, Document doc = null, Paragraph informacao = null, Paragraph titulo = null)
+        {
+            DadosTableAdapters.Observacoes_SangriaTableAdapter sangria = new DadosTableAdapters.Observacoes_SangriaTableAdapter();
+            if (tipo)
+            {
+                Document docLimpo = new Document(PageSize.A4);
+                
+                //colocando margens no pdf
+                docLimpo.SetMargins(40, 40, 40, 80);
+                doc = docLimpo;
+                string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
+
+                string caminho = @"C:\relatorios\sangria-" + aux.ToString() + ".pdf";
+
+
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
+
+                doc.Open();
+
+                Paragraph tituloLimpo = new Paragraph();
+                titulo = tituloLimpo;
+                titulo.Font = FontFactory.GetFont("Arial", 18);
+                titulo.Alignment = Element.ALIGN_CENTER;
+                titulo.Add("Sangria "+deData.ToString("dd/MM/yyyy")+" - "+ateData.ToString("dd/MM/yyyy") + " \n\n");
+                doc.Add(titulo);
+
+                Paragraph informacaoLimpo = new Paragraph();
+                informacao = informacaoLimpo;
+                informacao.Font = FontFactory.GetFont("Arial", 12, BaseColor.BLUE);
+                informacao.Alignment = Element.ALIGN_LEFT;
+            }
                 informacao.Clear();
                 informacao.Add("\n\n" + ("Sangria")+ "\n\n");
                 doc.Add(informacao);
-                var auxSangria = sangria.retornarSangrias(DateTime.Now.ToString("dd/MM/yyyy"));
+                var auxSangria = sangria.retornarSangriaPorData(deData.ToString("dd/MM/yyyy"), ateData.ToString("dd/MM/yyyy"));
                 DadosTableAdapters.FuncionarioTableAdapter funcionario = new DadosTableAdapters.FuncionarioTableAdapter();
                 if (auxSangria.Count > 0)
                 {
@@ -391,7 +444,7 @@ namespace WindowsFormsApp2
                     table7.AddCell("Valor da sangria");
                     for (int i = 0; i < auxSangria.Count; i++)
                     {
-                        table7.AddCell(auxSangria[i]["dataSangria"].ToString()+ " "+ auxSangria[i]["horaSangria"].ToString());
+                        table7.AddCell(Convert.ToDateTime(auxSangria[i]["dataSangria"]).ToString("dd/MM/yyyy")+Convert.ToDateTime(auxSangria[i]["horaSangria"]));
                         var auxFunc = funcionario.retornarColaboradorPorId(Convert.ToInt32(auxSangria[i]["idColaborador"]));
                         table7.AddCell(auxFunc[0]["nomeFunc"].ToString());
                         table7.AddCell(auxSangria[i]["observacoes"].ToString());
@@ -401,17 +454,13 @@ namespace WindowsFormsApp2
                         //table7.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
                     }
                 }
-                
-
+            if (tipo)
+            {
                 doc.Close();
                 MessageBox.Show("Relatório gerado com sucesso!");
             }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+            return doc;
         }
-
 
         private void BtnSalvarPDF_Click(object sender, EventArgs e)
         {
@@ -513,46 +562,57 @@ namespace WindowsFormsApp2
             }
             
         }
+
+        public void salvarRelatorio(string tipo)
+        {
+
+        }
         private void alterarCor()
         {
-            btnHoje.BackColor = Color.Silver;
-            btnOntem.BackColor = Color.Silver;
-            btn7Dias.BackColor = Color.Silver;
-            btnEsteMes.BackColor = Color.Silver;
-            btnMesPassado.BackColor = Color.Silver;
-            btnUltimos3Meses.BackColor = Color.Silver;
-            btnPerso.BackColor = Color.Silver;
+            btnHoje.BackColor = Color.Gainsboro;
+            btnOntem.BackColor = Color.Gainsboro;
+            btn7Dias.BackColor = Color.Gainsboro;
+            btnEsteMes.BackColor = Color.Gainsboro;
+            btnMesPassado.BackColor = Color.Gainsboro;
+            btnUltimos3Meses.BackColor = Color.Gainsboro;
+            btnPerso.BackColor = Color.Gainsboro;
         }
         private void btnHoje_Click(object sender, EventArgs e)
         {
-            deData = DateTime.Now.ToString("dd/MM/yyyy");
-            ateData = DateTime.Now.ToString("dd/MM/yyyy");
-            btnHoje.BackColor = Color.Blue;
+            deData = DateTime.Now;
+            ateData = DateTime.Now;
             alterarCor();
+            btnHoje.BackColor = Color.Gray;
         }
-
+        public void hoje()
+        {
+            deData = DateTime.Now;
+            ateData = DateTime.Now;
+            alterarCor();
+            btnHoje.BackColor = Color.Gray;
+        }
         private void btnOntem_Click(object sender, EventArgs e)
         {
-            ateData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
-            deData = DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy");
-            btnOntem.BackColor = Color.Blue;
+            ateData = DateTime.Now.AddDays(-1);
+            deData = DateTime.Now.AddDays(-1);
             alterarCor();
+            btnOntem.BackColor = Color.Gray;
         }
 
         private void btn7Dias_Click(object sender, EventArgs e)
         {
-            deData = DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy");
-            ateData = DateTime.Now.ToString("dd/MM/yyyy");
-            btn7Dias.BackColor = Color.Blue;
+            deData = DateTime.Now.AddDays(-7);
+            ateData = DateTime.Now;
             alterarCor();
+            btn7Dias.BackColor = Color.Gray;
         }
 
         private void btnEsteMes_Click(object sender, EventArgs e)
         {
-            ateData = DateTime.Now.ToString("dd/MM/yyyy");
-            deData = DateTime.Now.ToString("01/MM/yyyy");
-            btnEsteMes.BackColor = Color.Blue;
+            ateData = DateTime.Now;
+            deData = DateTime.Now;
             alterarCor();
+            btnEsteMes.BackColor = Color.Gray;
         }
 
         private void btnMesPassado_Click(object sender, EventArgs e)
@@ -566,11 +626,11 @@ namespace WindowsFormsApp2
             var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
             var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia); //possibilidade de remoção desta linha
 
-            ateData = (dataUltimoDia.ToString("01/MM/yyyy"));
-            deData = (dataUltimoDia.ToString("dd/MM/yyyy"));
+            ateData = dataUltimoDia;
+            deData = dataUltimoDia;
 
-            btnMesPassado.BackColor = Color.Blue;
             alterarCor();
+            btnMesPassado.BackColor = Color.Gray;
         }
 
         private void btnUltimos3Meses_Click(object sender, EventArgs e)
@@ -578,21 +638,21 @@ namespace WindowsFormsApp2
 
             var data = DateTime.Now.AddMonths(-3);
 
-            ateData = (DateTime.Now.ToString("dd/MM/yyyy"));
-            deData = (data.ToString("dd/MM/yyyy"));
-            btnUltimos3Meses.BackColor = Color.Blue;
+            ateData = DateTime.Now;
+            deData = data;
             alterarCor();
+            btnUltimos3Meses.BackColor = Color.Gray;
         }
 
         private void btnPerso_Click(object sender, EventArgs e)
         {
-            btnPerso.BackColor = Color.Blue;
             alterarCor();
+            btnPerso.BackColor = Color.Blue;
             DateTime a, b;
             if (DateTime.TryParse(txtBoxDeMes.Text, out a) && DateTime.TryParse(txtBoxAteMes.Text, out b) && b > a)
             {
-                deData = txtBoxDeMes.Text;
-                ateData = txtBoxAteMes.Text;
+                deData = a;
+                ateData = b;
             }
             else
                 MessageBox.Show("Datas invalidas");
@@ -603,9 +663,19 @@ namespace WindowsFormsApp2
 
         }
 
-        private void btnCaixa_Click(object sender, EventArgs e)
+        private void btnFechamentoDiario(object sender, EventArgs e)
         {
             fechamentoCaixa();
+        }
+
+        private void btnRelatorioCaixa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSangria_Click(object sender, EventArgs e)
+        {
+            relatorioSangria(true);
         }
     }
 }

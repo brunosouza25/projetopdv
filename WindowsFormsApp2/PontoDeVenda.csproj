@@ -89,6 +89,18 @@
     <Compile Include="Component1.Designer.cs">
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component2.Designer.cs">
+      <DependentUpon>Component2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component3.Designer.cs">
+      <DependentUpon>Component3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dados.cs">
       <DependentUpon>Dados.xsd</DependentUpon>
     </Compile>
@@ -392,6 +404,7 @@
     <EmbeddedResource Include="Vendas\View\TelaDeVendas.resx">
       <DependentUpon>TelaDeVendas.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="DiagramaDeClassesPrincipal .cd" />
     <None Include="DiagramaDeClassesVendas.cd" />
     <None Include="DiagramaDeClassesEstoque.cd" />

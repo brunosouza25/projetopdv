@@ -33,20 +33,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.painel_hora = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.Lab_Hora = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblConfiguracoes = new System.Windows.Forms.Label();
+            this.btnConfig = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblEstoque = new System.Windows.Forms.Label();
             this.lblVendas = new System.Windows.Forms.Label();
-            this.painelPrincipal = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnConfig = new System.Windows.Forms.Button();
             this.btCaixa = new System.Windows.Forms.Button();
             this.BtEstoque = new System.Windows.Forms.Button();
             this.BtRelatorio = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.painelPrincipal = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -95,6 +95,27 @@
             this.painel_hora.Size = new System.Drawing.Size(626, 98);
             this.painel_hora.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Manual";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.pergunta_icone;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(22, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 71);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Lab_Hora
             // 
             this.Lab_Hora.AutoSize = true;
@@ -132,6 +153,17 @@
             this.lblConfiguracoes.TabIndex = 7;
             this.lblConfiguracoes.Text = "Configurações";
             // 
+            // btnConfig
+            // 
+            this.btnConfig.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.config;
+            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfig.Location = new System.Drawing.Point(423, 0);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(84, 74);
+            this.btnConfig.TabIndex = 6;
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.BtConfig_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -161,41 +193,6 @@
             this.lblVendas.Size = new System.Drawing.Size(70, 20);
             this.lblVendas.TabIndex = 3;
             this.lblVendas.Text = "Vendas";
-            // 
-            // painelPrincipal
-            // 
-            this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(0, 104);
-            this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(1264, 577);
-            this.painelPrincipal.TabIndex = 2;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.pergunta_icone;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(22, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 71);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.config;
-            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(423, 0);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(84, 74);
-            this.btnConfig.TabIndex = 6;
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.BtConfig_Click);
             // 
             // btCaixa
             // 
@@ -230,15 +227,18 @@
             this.BtRelatorio.UseVisualStyleBackColor = true;
             this.BtRelatorio.Click += new System.EventHandler(this.BtRelatorio_Click);
             // 
-            // label1
+            // painelPrincipal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Manual";
+            this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.painelPrincipal.Location = new System.Drawing.Point(0, 104);
+            this.painelPrincipal.Name = "painelPrincipal";
+            this.painelPrincipal.Size = new System.Drawing.Size(1264, 577);
+            this.painelPrincipal.TabIndex = 2;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // TelaPrincipal
             // 
