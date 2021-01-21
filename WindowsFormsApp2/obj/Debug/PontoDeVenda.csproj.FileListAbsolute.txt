@@ -248,3 +248,4 @@ C:\pdv\projetopdv\WindowsFormsApp2\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\Interop.AcroPDFLib.dll
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\AxInterop.AcroPDFLib.dll
 C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\PontoDeVenda.csproj.ResolveComReference.cache
+C:\pdv\projetopdv\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Vendas.View.TelaEntradaDeCaixa.resources

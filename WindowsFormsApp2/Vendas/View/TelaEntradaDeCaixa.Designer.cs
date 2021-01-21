@@ -57,6 +57,7 @@ namespace WindowsFormsApp2.Vendas.View
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnConcluir
             // 
@@ -66,6 +67,7 @@ namespace WindowsFormsApp2.Vendas.View
             this.btnConcluir.TabIndex = 11;
             this.btnConcluir.Text = "Concluir";
             this.btnConcluir.UseVisualStyleBackColor = true;
+            this.btnConcluir.Click += new System.EventHandler(this.btnConcluir_Click);
             // 
             // label1
             // 
@@ -83,6 +85,7 @@ namespace WindowsFormsApp2.Vendas.View
             this.txtBoxEntrada.Name = "txtBoxEntrada";
             this.txtBoxEntrada.Size = new System.Drawing.Size(112, 20);
             this.txtBoxEntrada.TabIndex = 9;
+            this.txtBoxEntrada.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxEntrada_KeyDown);
             // 
             // TelaEntradaDeCaixa
             // 

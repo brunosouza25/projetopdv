@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-
+using WindowsFormsApp2.Vendas.View;
 namespace WindowsFormsApp2
 {
     public partial class TelaDoPdv : UserControl
@@ -81,14 +81,14 @@ namespace WindowsFormsApp2
             else
             {
 
-                var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+                /*var saldoAnterior = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
                 caixa.inserirCaixa(Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), 0, Convert.ToDouble(saldoAnterior[0]["fechamentoCaixa"]), DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"), 1);
-                MessageBox.Show("Caixa aberto com sucesso");
+                MessageBox.Show("Caixa aberto com sucesso");*/
                 btnFecharCaixa.Visible = true;
                 btnAbrirCaixa.Visible = false;
                 lblCaixa.Text = "Fechar Caixa";
-                MessageBox.Show("Caixa aberto com: R$" + saldoAnterior[0]["fechamentoCaixa"]);
-
+                /*MessageBox.Show("Caixa aberto com: R$" + saldoAnterior[0]["fechamentoCaixa"]);
+                */
                 txtBoxQnt.Enabled = true;
                 BtnFinalizarVenda.Enabled = true;
                 Bt_Add_Prod.Enabled = true;
@@ -321,7 +321,19 @@ namespace WindowsFormsApp2
 
         private void btnAbrirCaixa_Click(object sender, EventArgs e)
         {
-            travarBotoes();
+            TelaEntradaDeCaixa telaEntradaDeCaixa = new TelaEntradaDeCaixa();
+            telaEntradaDeCaixa.ShowDialog();
+            var idCaixa = caixa.pegarIDUltimoCaixa();
+            var liberar = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
+            if (Convert.ToByte(liberar[0]["estadoCaixa"]) == 1)
+            {
+                travarBotoes();
+
+            }
+            else
+            {
+                MessageBox.Show("Favor, inserir valor para abrir o caixa");
+            }
         }
 
         private void btnFecharCaixa_Click(object sender, EventArgs e)
@@ -366,11 +378,6 @@ namespace WindowsFormsApp2
                 pesquisaListaCaixa();
             }
             TxtBoxPesquisaProd.Select();
-        }
-
-        private void TxtBoxPesquisaProd_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
