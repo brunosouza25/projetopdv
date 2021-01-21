@@ -118,6 +118,7 @@ namespace WindowsFormsApp2
 
             relatorio.Visible = true;
             relatorio.hoje();
+            relatorio.limpaSelecionado();
         }
         private void BtCaixa_Click(object sender, EventArgs e)
         {

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaDeRelatorios));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -44,13 +45,14 @@
             this.btnOntem = new System.Windows.Forms.Button();
             this.btnHoje = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnVendas = new System.Windows.Forms.Button();
+            this.btnRelatorioDevolucoes = new System.Windows.Forms.Button();
             this.btnSangria = new System.Windows.Forms.Button();
             this.btnRelatorioCaixa = new System.Windows.Forms.Button();
-            this.btnCaixa = new System.Windows.Forms.Button();
+            this.btnFechamentoDiario = new System.Windows.Forms.Button();
             this.painelPrincipal = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.caixa1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
@@ -58,7 +60,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.painelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +115,7 @@
             this.btnPerso.BackColor = System.Drawing.Color.Silver;
             this.btnPerso.Location = new System.Drawing.Point(7, 433);
             this.btnPerso.Name = "btnPerso";
-            this.btnPerso.Size = new System.Drawing.Size(274, 35);
+            this.btnPerso.Size = new System.Drawing.Size(283, 35);
             this.btnPerso.TabIndex = 33;
             this.btnPerso.Text = "Personalizado";
             this.btnPerso.UseVisualStyleBackColor = true;
@@ -145,7 +147,7 @@
             this.txtBoxAteMes.Location = new System.Drawing.Point(154, 384);
             this.txtBoxAteMes.Mask = "00/00/0000";
             this.txtBoxAteMes.Name = "txtBoxAteMes";
-            this.txtBoxAteMes.Size = new System.Drawing.Size(130, 35);
+            this.txtBoxAteMes.Size = new System.Drawing.Size(125, 35);
             this.txtBoxAteMes.TabIndex = 30;
             this.txtBoxAteMes.ValidatingType = typeof(System.DateTime);
             // 
@@ -155,7 +157,7 @@
             this.txtBoxDeMes.Location = new System.Drawing.Point(13, 384);
             this.txtBoxDeMes.Mask = "00/00/0000";
             this.txtBoxDeMes.Name = "txtBoxDeMes";
-            this.txtBoxDeMes.Size = new System.Drawing.Size(130, 35);
+            this.txtBoxDeMes.Size = new System.Drawing.Size(118, 35);
             this.txtBoxDeMes.TabIndex = 29;
             this.txtBoxDeMes.ValidatingType = typeof(System.DateTime);
             // 
@@ -164,7 +166,7 @@
             this.btnUltimos3Meses.BackColor = System.Drawing.Color.Silver;
             this.btnUltimos3Meses.Location = new System.Drawing.Point(3, 303);
             this.btnUltimos3Meses.Name = "btnUltimos3Meses";
-            this.btnUltimos3Meses.Size = new System.Drawing.Size(277, 35);
+            this.btnUltimos3Meses.Size = new System.Drawing.Size(286, 35);
             this.btnUltimos3Meses.TabIndex = 28;
             this.btnUltimos3Meses.Text = "Ultimos 3 meses";
             this.btnUltimos3Meses.UseVisualStyleBackColor = true;
@@ -175,7 +177,7 @@
             this.btnMesPassado.BackColor = System.Drawing.Color.Silver;
             this.btnMesPassado.Location = new System.Drawing.Point(3, 262);
             this.btnMesPassado.Name = "btnMesPassado";
-            this.btnMesPassado.Size = new System.Drawing.Size(277, 35);
+            this.btnMesPassado.Size = new System.Drawing.Size(286, 35);
             this.btnMesPassado.TabIndex = 27;
             this.btnMesPassado.Text = "Mês passado";
             this.btnMesPassado.UseVisualStyleBackColor = true;
@@ -186,7 +188,7 @@
             this.btnEsteMes.BackColor = System.Drawing.Color.Silver;
             this.btnEsteMes.Location = new System.Drawing.Point(3, 221);
             this.btnEsteMes.Name = "btnEsteMes";
-            this.btnEsteMes.Size = new System.Drawing.Size(277, 35);
+            this.btnEsteMes.Size = new System.Drawing.Size(286, 35);
             this.btnEsteMes.TabIndex = 26;
             this.btnEsteMes.Text = "Este mês";
             this.btnEsteMes.UseVisualStyleBackColor = true;
@@ -197,7 +199,7 @@
             this.btn7Dias.BackColor = System.Drawing.Color.Silver;
             this.btn7Dias.Location = new System.Drawing.Point(3, 181);
             this.btn7Dias.Name = "btn7Dias";
-            this.btn7Dias.Size = new System.Drawing.Size(277, 35);
+            this.btn7Dias.Size = new System.Drawing.Size(286, 35);
             this.btn7Dias.TabIndex = 25;
             this.btn7Dias.Text = "Ultimos 7 dias";
             this.btn7Dias.UseVisualStyleBackColor = true;
@@ -208,7 +210,7 @@
             this.btnOntem.BackColor = System.Drawing.Color.Silver;
             this.btnOntem.Location = new System.Drawing.Point(3, 142);
             this.btnOntem.Name = "btnOntem";
-            this.btnOntem.Size = new System.Drawing.Size(277, 35);
+            this.btnOntem.Size = new System.Drawing.Size(286, 35);
             this.btnOntem.TabIndex = 24;
             this.btnOntem.Text = "Ontem";
             this.btnOntem.UseVisualStyleBackColor = true;
@@ -219,7 +221,7 @@
             this.btnHoje.BackColor = System.Drawing.Color.Gainsboro;
             this.btnHoje.Location = new System.Drawing.Point(3, 105);
             this.btnHoje.Name = "btnHoje";
-            this.btnHoje.Size = new System.Drawing.Size(277, 35);
+            this.btnHoje.Size = new System.Drawing.Size(286, 35);
             this.btnHoje.TabIndex = 23;
             this.btnHoje.Text = "Hoje";
             this.btnHoje.UseVisualStyleBackColor = false;
@@ -227,11 +229,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnVendas);
+            this.panel3.Controls.Add(this.btnRelatorioDevolucoes);
             this.panel3.Controls.Add(this.btnSangria);
             this.panel3.Controls.Add(this.btnRelatorioCaixa);
-            this.panel3.Controls.Add(this.btnCaixa);
+            this.panel3.Controls.Add(this.btnFechamentoDiario);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -239,72 +242,84 @@
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button4
+            // button2
             // 
-            this.button4.Location = new System.Drawing.Point(0, 146);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(224, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Fechamento diário";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(3, 61);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(224, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Vendas canceladas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnVendas
             // 
-            this.button3.Location = new System.Drawing.Point(0, 109);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(224, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Fechamento diário";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnVendas.Location = new System.Drawing.Point(0, 32);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(224, 23);
+            this.btnVendas.TabIndex = 13;
+            this.btnVendas.Text = "Vendas";
+            this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnRelatorioDevolucoes
+            // 
+            this.btnRelatorioDevolucoes.Location = new System.Drawing.Point(3, 161);
+            this.btnRelatorioDevolucoes.Name = "btnRelatorioDevolucoes";
+            this.btnRelatorioDevolucoes.Size = new System.Drawing.Size(224, 23);
+            this.btnRelatorioDevolucoes.TabIndex = 12;
+            this.btnRelatorioDevolucoes.Text = "Devoluções";
+            this.btnRelatorioDevolucoes.UseVisualStyleBackColor = true;
+            this.btnRelatorioDevolucoes.Click += new System.EventHandler(this.btnRelatorioDevolucoes_Click);
             // 
             // btnSangria
             // 
-            this.btnSangria.Location = new System.Drawing.Point(0, 73);
+            this.btnSangria.Location = new System.Drawing.Point(3, 125);
             this.btnSangria.Name = "btnSangria";
             this.btnSangria.Size = new System.Drawing.Size(224, 23);
             this.btnSangria.TabIndex = 11;
-            this.btnSangria.Text = "Fechamento diário";
+            this.btnSangria.Text = "Sangria";
             this.btnSangria.UseVisualStyleBackColor = true;
             this.btnSangria.Click += new System.EventHandler(this.btnSangria_Click);
             // 
             // btnRelatorioCaixa
             // 
-            this.btnRelatorioCaixa.Location = new System.Drawing.Point(0, 38);
+            this.btnRelatorioCaixa.Location = new System.Drawing.Point(3, 90);
             this.btnRelatorioCaixa.Name = "btnRelatorioCaixa";
             this.btnRelatorioCaixa.Size = new System.Drawing.Size(224, 23);
             this.btnRelatorioCaixa.TabIndex = 10;
-            this.btnRelatorioCaixa.Text = "Fechamento diário";
+            this.btnRelatorioCaixa.Text = "Caixa atual";
             this.btnRelatorioCaixa.UseVisualStyleBackColor = true;
             this.btnRelatorioCaixa.Click += new System.EventHandler(this.btnRelatorioCaixa_Click);
             // 
-            // btnCaixa
+            // btnFechamentoDiario
             // 
-            this.btnCaixa.Location = new System.Drawing.Point(0, 3);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(224, 23);
-            this.btnCaixa.TabIndex = 9;
-            this.btnCaixa.Text = "Fechamento diário";
-            this.btnCaixa.UseVisualStyleBackColor = true;
-            this.btnCaixa.Click += new System.EventHandler(this.btnFechamentoDiario);
+            this.btnFechamentoDiario.Location = new System.Drawing.Point(0, 3);
+            this.btnFechamentoDiario.Name = "btnFechamentoDiario";
+            this.btnFechamentoDiario.Size = new System.Drawing.Size(224, 23);
+            this.btnFechamentoDiario.TabIndex = 9;
+            this.btnFechamentoDiario.Text = "Fechamento diário";
+            this.btnFechamentoDiario.UseVisualStyleBackColor = true;
+            this.btnFechamentoDiario.Click += new System.EventHandler(this.btnFechamentoDiario_Click_1);
             // 
             // painelPrincipal
             // 
-            this.painelPrincipal.Controls.Add(this.dataGridView1);
+            this.painelPrincipal.Controls.Add(this.axAcroPDF1);
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painelPrincipal.Location = new System.Drawing.Point(233, 3);
             this.painelPrincipal.Name = "painelPrincipal";
             this.painelPrincipal.Size = new System.Drawing.Size(775, 603);
             this.painelPrincipal.TabIndex = 0;
             // 
-            // dataGridView1
+            // axAcroPDF1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.dataTable2BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 566);
-            this.dataGridView1.TabIndex = 0;
+            this.axAcroPDF1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axAcroPDF1.Enabled = true;
+            this.axAcroPDF1.Location = new System.Drawing.Point(0, 0);
+            this.axAcroPDF1.Name = "axAcroPDF1";
+            this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
+            this.axAcroPDF1.Size = new System.Drawing.Size(775, 603);
+            this.axAcroPDF1.TabIndex = 0;
             // 
             // dataTable2BindingSource
             // 
@@ -328,7 +343,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.painelPrincipal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caixa1BindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -361,11 +376,12 @@
         private System.Windows.Forms.BindingSource dataTable2BindingSource;
         private Dados dados;
         private DadosTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
-        private System.Windows.Forms.Button btnCaixa;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnFechamentoDiario;
+        private System.Windows.Forms.Button btnVendas;
+        private System.Windows.Forms.Button btnRelatorioDevolucoes;
         private System.Windows.Forms.Button btnSangria;
         private System.Windows.Forms.Button btnRelatorioCaixa;
+        private System.Windows.Forms.Button button2;
+        private AxAcroPDFLib.AxAcroPDF axAcroPDF1;
     }
 }

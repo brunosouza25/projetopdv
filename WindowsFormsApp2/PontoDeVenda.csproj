@@ -301,6 +301,12 @@
     <Compile Include="Vendas\View\TelaDeVendas.Designer.cs">
       <DependentUpon>TelaDeVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vendas\View\TelaEntradaDeCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendas\View\TelaEntradaDeCaixa.Designer.cs">
+      <DependentUpon>TelaEntradaDeCaixa.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Estoque\View\EntradaDeProdutos.resx">
       <DependentUpon>EntradaDeProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vendas\View\TelaDeVendas.resx">
       <DependentUpon>TelaDeVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendas\View\TelaEntradaDeCaixa.resx">
+      <DependentUpon>TelaEntradaDeCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="DiagramaDeClassesPrincipal .cd" />
@@ -519,6 +528,25 @@
     </Content>
     <None Include="Resources\config.png" />
     <None Include="Resources\pergunta icone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
