@@ -191,11 +191,17 @@ namespace WindowsFormsApp2
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string path = @"C:\pdv\videos\";
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            //Trocar o caminho da imagem
-            startInfo.FileName = path;
-            System.Diagnostics.Process.Start(startInfo);
+            try
+            {
+                string path = @"C:\pdv\videos\";
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                //Trocar o caminho da imagem
+                startInfo.FileName = path;
+                System.Diagnostics.Process.Start(startInfo);
+            }catch(Exception er)
+            {
+                MessageBox.Show(" Foi detectado um erro, favor contatar o suporte");
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace WindowsFormsApp2
 {
     public partial class TelaDeRelatorios : UserControl
     {
-        bool existeDiretorio = Directory.Exists(@"C:\relatorios");
+        bool existeDiretorio = Directory.Exists(@"C:\pdv\relatorios");
         DateTime deData = DateTime.Now;
         DateTime ateData = DateTime.Now;
         int selecionado = 0;
@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
             if (!existeDiretorio)
             {
-                Directory.CreateDirectory(@"C:\relatorios");
+                Directory.CreateDirectory(@"C:\pdv\relatorios");
             }
 
         }
@@ -47,7 +47,7 @@ namespace WindowsFormsApp2
 
                 string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
 
-                string caminho = @"C:\pdv\relatorio-temporario\fechamento diario-" + aux.ToString() + ".pdf";
+                string caminho = @"C:\pdv\relatorios\fechamento diario-" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -128,7 +128,7 @@ namespace WindowsFormsApp2
                 doc = docLimpo;
                 string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
 
-                caminho = @"C:\pdv\relatorio-temporario\vendas-" + aux.ToString() + ".pdf";
+                caminho = @"C:\pdv\relatorios\vendas-" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -323,7 +323,7 @@ namespace WindowsFormsApp2
                 doc = docLimpo;
                 string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
 
-                caminho = @"C:\pdv\relatorio-temporario\devolucoes-" + aux.ToString() + ".pdf";
+                caminho = @"C:\pdv\relatorios\devolucoes-" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -410,7 +410,7 @@ namespace WindowsFormsApp2
                 doc = docLimpo;
                 string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
 
-                caminho = @"C:\pdv\relatorio-temporario\vendas-canceladas-" + aux.ToString() + ".pdf";
+                caminho = @"C:\pdv\relatorios\vendas-canceladas-" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -475,7 +475,7 @@ namespace WindowsFormsApp2
                 doc = docLimpo;
                 string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
 
-                caminho = @"C:\pdv\relatorio-temporario\sangria-" + aux.ToString() + ".pdf";
+                caminho = @"C:\pdv\relatorios\sangria-" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
@@ -543,7 +543,7 @@ namespace WindowsFormsApp2
                 doc = docLimpo;
                 string aux = deData.ToString("dd-MM-yyyy") + " - " + ateData.ToString("dd-MM-yyyy");
 
-                caminho = @"C:\pdv\relatorio-temporario\caixa-" + aux.ToString() + ".pdf";
+                caminho = @"C:\pdv\relatorios\caixa-" + aux.ToString() + ".pdf";
 
 
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));

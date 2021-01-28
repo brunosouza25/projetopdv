@@ -23412,7 +23412,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
  FROM ItensDeEntrada
  WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) 
 GROUP BY idSecundarioItensEntrada, dataEntrada, horaEntrada, idProduto, observacoes, qntItem 
-HAVING (count(idSecundarioItensEntrada) > 0)";
+HAVING (count(idSecundarioItensEntrada) > 0) ";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

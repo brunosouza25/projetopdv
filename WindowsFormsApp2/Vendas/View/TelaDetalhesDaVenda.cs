@@ -93,20 +93,69 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void btnImprimirSegundaVia_Click(object sender, EventArgs e)
         {
-            var auxFiscal = fiscal.segundaVia(codVenda);
-            string arquivo = auxFiscal[0]["caminhoXml"].ToString();
-            StreamWriter x;
-            string caminho = @"C:\Users\bruno\Desktop\notas\entrada\\enviar.txt";
-            // C: \Users\bruno\Desktop\notas\temporario
-            //DirectoryInfo diretorio = new DirectoryInfo(@"C:\Users\bruno\Desktop\notas\temporario");
-            //FileInfo[] arquivos = diretorio.GetFiles();
+
+            try
+            {
+                if (!Directory.Exists(@"C:\pdv\fiscal\entrada\"))
+                {
+                    Directory.CreateDirectory(@"C:\pdv\fiscal\entrada\");
+                }
+                StreamWriter x;
+                string caminho = @"C:\pdv\fiscal\entrada\enviar.txt";
 
                 x = File.CreateText(caminho);
-                x.WriteLine("NFE.ImprimirDanfe("+"\""+ arquivo + "\", \"\"Doro PDF Writer\",\"1\",\"\",\"\",\"\",\"\",\"\")");
+
+                x.WriteLine("NFe.CriarNFe(\"C:\\pdv\\fiscal\\ini\\nota" + codVenda + ".ini\\,1)");
                 x.Close();
-                MessageBox.Show("cupom emitido com sucesso!"); 
-                //Thread.Sleep(1000);          
-            
+                Thread.Sleep(1000);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
+                MessageBox.Show(er.Message);
+            }
+            try
+            {
+                StreamWriter x;
+                if (!Directory.Exists(@"C:\pdv\fiscal\entrada\"))
+                {
+                    Directory.CreateDirectory(@"C:\pdv\fiscal\entrada\");
+                }
+
+                if (!Directory.Exists("C:\\pdv\\fiscal\\temporario\\"))
+                {
+                    Directory.CreateDirectory("C:\\pdv\\fiscal\\temporario\\");
+                }
+
+                if (!Directory.Exists(@"C:\pdv\fiscal\xmls\"))
+                {
+                    Directory.CreateDirectory(@"C:\pdv\fiscal\xmls\");
+                }
+                string caminho = @"C:\pdv\fiscal\entrada\enviar.txt";
+                // C: \Users\bruno\Desktop\notas\temporario
+                DirectoryInfo diretorio = new DirectoryInfo(@"C:\pdv\fiscal\temporario");
+                FileInfo[] arquivos = diretorio.GetFiles();
+
+                foreach (FileInfo arquivo in arquivos)
+                {
+                    x = File.CreateText(caminho);
+                    x.WriteLine("NFE.ImprimirDanfe(\"C:\\pdv\\fiscal\\temporario\\" + arquivo.Name + "\", \"\"Doro PDF Writer\",\"1\",\"\",\"\",\"\",\"\",\"\")");
+                    x.Close();
+                    Thread.Sleep(1000);
+                    MessageBox.Show("cupom emitido com sucesso!");
+                    File.Delete("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name);
+
+                    Thread.Sleep(1000);
+
+                }
+
+                MessageBox.Show("cupom emitido com sucesso!");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
+            }
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

@@ -162,7 +162,7 @@ namespace WindowsFormsApp2
             }
                 /*if (TxtBoxDinheiro.Text != "" && TxtBoxDinheiro.Text != "0")
                 {*/
-                pagamento.InserirPagamento(din, Convert.ToInt32(aux2[0]["idVenda"]), 1, valorDesc, idPagamento);
+                  pagamento.InserirPagamento(din, Convert.ToInt32(aux2[0]["idVenda"]), 1, valorDesc, idPagamento);
                 var totalCaixa = caixa.pegarCaixaPorID(Convert.ToInt32(idCaixa[0]["idCaixa"]));
                 double tempTotal = din + Convert.ToDouble(totalCaixa[0]["valorAtual"]);
                 string tempTotalString = tempTotal.ToString("F2");
@@ -232,6 +232,7 @@ namespace WindowsFormsApp2
         private void BtnFinalizar_Click(object sender, EventArgs e)
         
         {
+
             if (valida())
                 confirmar();
         }

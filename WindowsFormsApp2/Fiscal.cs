@@ -19,141 +19,154 @@ namespace WindowsFormsApp2
 
         public void escreverIniNfce(int codigoVenda)
         {
-            double total;
-            var auxFiscal = sistema.retornarConfig();
-            string cnpjEmpresa = auxFiscal[0]["cnpjEmpresa"].ToString();
-            string iE = auxFiscal[0]["inscricaoEstadual"].ToString();
-            //string senhaSat = auxFiscal[0]["senhaSat"].ToString();
-            //string cnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
-           // string boxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
-            string razaoSocial = auxFiscal[0]["razaoSocial"].ToString();
-            string nomeFantasia = auxFiscal[0]["nomeFantasia"].ToString();
-            string telefone = auxFiscal[0]["telefone"].ToString();
-            string cep = auxFiscal[0]["cep"].ToString();
-            string logradouro = auxFiscal[0]["logradouro"].ToString();
-            string numero = auxFiscal[0]["numero"].ToString(); ;
-            string bairro = auxFiscal[0]["bairro"].ToString();
-            string cidade = auxFiscal[0]["cidade"].ToString();
-            string codCidade = auxFiscal[0]["codigoCidade"].ToString();
-            string uf = auxFiscal[0]["uf"].ToString();
+            try {
+                double total;
+                var auxFiscal = sistema.retornarConfig();
+                string cnpjEmpresa = auxFiscal[0]["cnpjEmpresa"].ToString();
+                string iE = auxFiscal[0]["inscricaoEstadual"].ToString();
+                //string senhaSat = auxFiscal[0]["senhaSat"].ToString();
+                //string cnpjSH = auxFiscal[0]["cnpjSoftwareHouse"].ToString();
+                // string boxCodSat = auxFiscal[0]["assinaturaAC"].ToString();
+                string razaoSocial = auxFiscal[0]["razaoSocial"].ToString();
+                string nomeFantasia = auxFiscal[0]["nomeFantasia"].ToString();
+                string telefone = auxFiscal[0]["telefone"].ToString();
+                string cep = auxFiscal[0]["cep"].ToString();
+                string logradouro = auxFiscal[0]["logradouro"].ToString();
+                string numero = auxFiscal[0]["numero"].ToString(); ;
+                string bairro = auxFiscal[0]["bairro"].ToString();
+                string cidade = auxFiscal[0]["cidade"].ToString();
+                string codCidade = auxFiscal[0]["codigoCidade"].ToString();
+                string uf = auxFiscal[0]["uf"].ToString();
 
-            fiscal.inserirFiscal(codigoVenda, "");
-            var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
-            int idFiscal = Convert.ToInt32(auxIdFiscal[0]["idFiscal"].ToString());
+                fiscal.inserirFiscal(codigoVenda, "");
+                var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
+                int idFiscal = Convert.ToInt32(auxIdFiscal[0]["idFiscal"].ToString());
 
-            StreamWriter x;
-            string caminho = "C:\\Users\\bruno\\Desktop\\notas\\enviar\\nota.ini";
+                StreamWriter x;
+                if (!Directory.Exists("C:\\pdv\\fiscal\\enviar\\"))
+                {
+                    Directory.CreateDirectory("C:\\pdv\\fiscal\\enviar\\");
+                }
+                string caminho = "C:\\pdv\\fiscal\\enviar\\nota"+codigoVenda.ToString()+".ini";
 
-            x = File.CreateText(caminho);
-            x.WriteLine("[infNFe]");
-            x.WriteLine("versao = 4.00");
+                x = File.CreateText(caminho);
+                x.WriteLine("[infNFe]");
+                x.WriteLine("versao = 4.00");
 
-            x.WriteLine("[Identificacao]");
-            x.WriteLine("natOp = 5.101 Venda de producao do estabelecimento");
-            x.WriteLine("nNF=" + idFiscal.ToString());
-            x.WriteLine("dhEmi = "+ DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
-            x.WriteLine("");
-
-            x.WriteLine("[Emitente]");
-            x.WriteLine("CNPJ="+cnpjEmpresa); //11 ou 14 caracteres
-            x.WriteLine("IE="+iE); // 12 numeros
-            x.WriteLine("Razao="+ razaoSocial);
-            x.WriteLine("Fantasia="+ nomeFantasia);
-            x.WriteLine("Fone="+telefone);
-            x.WriteLine("CEP=" + cep);
-            x.WriteLine("Logradouro=" + logradouro);
-            x.WriteLine("Numero=" + numero);
-            x.WriteLine("Bairro = " + bairro);
-            x.WriteLine("CidadeCod="+ codCidade); //tem que ser 7
-            x.WriteLine("Cidade="+ cidade);
-            x.WriteLine("UF=SP"); //só pode ser maiusculo e uf que exista
-
-            x.WriteLine("");
-            
-            var auxItensVenda = itensVenda.retornarItensVenda(codigoVenda);
-
-
-            for (int i = 0; i < auxItensVenda.Count; i++)
-            {
-
-                var auxProduto = produto.retornarProdutoPorId(Convert.ToInt32(auxItensVenda[i]["idProduto"].ToString()));
-
-                x.WriteLine("[Produto"+ String.Format("{0:000}", i +1)+"]");
-                x.WriteLine("CFOP="+auxProduto[0]["idCfop"].ToString());
-                x.WriteLine("Codigo="+auxProduto[0]["idProduto"].ToString());
-                x.WriteLine("Descricao="+ auxProduto[0]["prodNome"].ToString());
-                x.WriteLine("NCM="+auxProduto[0]["ncm"].ToString());
-                x.WriteLine("Unidade=UND");
-                x.WriteLine("Quantidade="+auxItensVenda[i]["itensQtd"].ToString());
-                x.WriteLine("ValorUnitario="+ auxProduto[0]["prodValor"].ToString());
-                double totalItens = Convert.ToDouble(auxItensVenda[i]["valorDeVenda"].ToString()) * Convert.ToInt32(auxItensVenda[i]["itensQtd"].ToString());
-                x.WriteLine("ValorTotal="+totalItens.ToString());
-                //x.WriteLine("ValorDesconto=");
+                x.WriteLine("[Identificacao]");
+                x.WriteLine("natOp = 5.101 Venda de producao do estabelecimento");
+                x.WriteLine("nNF=" + idFiscal.ToString());
+                x.WriteLine("dhEmi = " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
                 x.WriteLine("");
 
-                x.WriteLine("[ICMS" + String.Format("{0:000}", i + 1) + "]");
-                x.WriteLine("orig="+auxProduto[0]["idOrigem"]);
-                x.WriteLine("");
-
-
-                x.WriteLine("[PIS" + String.Format("{0:000}", i + 1) + "]");
-                x.WriteLine("ValorBase="+ totalItens.ToString());
-                x.WriteLine("Aliquota=0,65%");
-                x.WriteLine("Valor="+ (totalItens * 0, 0065).ToString());
-                x.WriteLine("");
-
-                x.WriteLine("[COFINS" + String.Format("{0:000}", i + 1) + "]");
-                x.WriteLine("ValorBase=" +(totalItens).ToString());
-                x.WriteLine("Aliquota=3,00%");
-                x.WriteLine("Valor="+(totalItens * 0,03).ToString());
-                x.WriteLine("");
-
+                x.WriteLine("[Emitente]");
+                x.WriteLine("CNPJ=" + cnpjEmpresa); //11 ou 14 caracteres
+                x.WriteLine("IE=" + iE); // 12 numeros
+                x.WriteLine("Razao=" + razaoSocial);
+                x.WriteLine("Fantasia=" + nomeFantasia);
+                x.WriteLine("Fone=" + telefone);
+                x.WriteLine("CEP=" + cep);
+                x.WriteLine("Logradouro=" + logradouro);
+                x.WriteLine("Numero=" + numero);
+                x.WriteLine("Bairro = " + bairro);
+                x.WriteLine("CidadeCod=" + codCidade); //tem que ser 7
+                x.WriteLine("Cidade=" + cidade);
+                x.WriteLine("UF=SP"); //só pode ser maiusculo e uf que exista
 
                 x.WriteLine("");
+
+                var auxItensVenda = itensVenda.retornarItensVenda(codigoVenda);
+
+
+                for (int i = 0; i < auxItensVenda.Count; i++)
+                {
+
+                    var auxProduto = produto.retornarProdutoPorId(Convert.ToInt32(auxItensVenda[i]["idProduto"].ToString()));
+
+                    x.WriteLine("[Produto" + String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("CFOP=" + auxProduto[0]["idCfop"].ToString());
+                    x.WriteLine("Codigo=" + auxProduto[0]["idProduto"].ToString());
+                    x.WriteLine("Descricao=" + auxProduto[0]["prodNome"].ToString());
+                    x.WriteLine("NCM=" + auxProduto[0]["ncm"].ToString());
+                    x.WriteLine("Unidade=UND");
+                    x.WriteLine("Quantidade=" + auxItensVenda[i]["itensQtd"].ToString());
+                    x.WriteLine("ValorUnitario=" + auxProduto[0]["prodValor"].ToString());
+                    double totalItens = Convert.ToDouble(auxItensVenda[i]["valorDeVenda"].ToString()) * Convert.ToInt32(auxItensVenda[i]["itensQtd"].ToString());
+                    x.WriteLine("ValorTotal=" + totalItens.ToString());
+                    //x.WriteLine("ValorDesconto=");
+                    x.WriteLine("");
+
+                    x.WriteLine("[ICMS" + String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("orig=" + auxProduto[0]["idOrigem"]);
+                    x.WriteLine("");
+
+
+                    x.WriteLine("[PIS" + String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("ValorBase=" + totalItens.ToString());
+                    x.WriteLine("Aliquota=0,65%");
+                    x.WriteLine("Valor=" + (totalItens * 0, 0065).ToString());
+                    x.WriteLine("");
+
+                    x.WriteLine("[COFINS" + String.Format("{0:000}", i + 1) + "]");
+                    x.WriteLine("ValorBase=" + (totalItens).ToString());
+                    x.WriteLine("Aliquota=3,00%");
+                    x.WriteLine("Valor=" + (totalItens * 0, 03).ToString());
+                    x.WriteLine("");
+
+
+                    x.WriteLine("");
+
+                }
+
+                x.WriteLine("[Total]");
+                x.WriteLine("BaseICMS=" + auxItensVenda[0]["ItensTotal"].ToString());
+                x.WriteLine("ValorICMS=" + Convert.ToDouble(auxItensVenda[0]["ItensTotal"].ToString()) * 0, 18);
+                x.WriteLine("ValorProduto = " + auxItensVenda[0]["ItensTotal"].ToString());
+                //x.WriteLine("ValorProduto=100");
+                x.WriteLine("ValorNota=" + auxItensVenda[0]["ItensTotal"].ToString());
+                var auxPagamento = pagamento.retornarPagamento(codigoVenda);
+                for (int i = 0; i < auxPagamento.Count; i++)
+                {
+                    if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 1)
+                    {
+                        x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
+                        x.WriteLine("tPag=01");
+                        x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
+                    }
+                    if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 2 || Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 3)
+                    {
+                        x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
+                        x.WriteLine("tPag=03");
+                        x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
+                    }
+
+                    if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 4)
+                    {
+                        x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
+                        x.WriteLine("tPag=04");
+                        x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
+                    }
+                }
+                //tPag=3 cartão crédito
+                //tPag=4 cartão débito
+
+                x.WriteLine("");
+                x.Close();
+                //quebra linha:\r\n 
+
+                enviarNfce(codigoVenda);
+                Thread.Sleep(1000);
+                imprimirNfce(codigoVenda);
+                var auxIdFiscal2 = fiscal.retornarUltimoIdFiscal();
+                fiscal.inserirCaminhoXml(@"C:\pdv\fiscal\ini\nota"+ codigoVenda.ToString()+".ini", Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
+               // File.Copy("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name, @"C:\pdv\fiscal\xmls\" + arquivo.Name);
+                //File.Delete("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name);
 
             }
-
-            x.WriteLine("[Total]");
-            x.WriteLine("BaseICMS="+ auxItensVenda[0]["ItensTotal"].ToString());
-            x.WriteLine("ValorICMS="+ Convert.ToDouble(auxItensVenda[0]["ItensTotal"].ToString())*0,18);
-            x.WriteLine("ValorProduto = " + auxItensVenda[0]["ItensTotal"].ToString());
-            //x.WriteLine("ValorProduto=100");
-            x.WriteLine("ValorNota="+ auxItensVenda[0]["ItensTotal"].ToString());
-            var auxPagamento = pagamento.retornarPagamento(codigoVenda);
-            for (int i = 0; i < auxPagamento.Count; i++)
+            catch(Exception er)
             {
-                if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 1)
-                {
-                    x.WriteLine("[PAG" +    String.Format("{0:000}", i + 1) + "]");
-                    x.WriteLine("tPag=01");
-                    x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
-                }
-                if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 2 || Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 3)
-                {
-                    x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
-                    x.WriteLine("tPag=03");
-                    x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
-                }
-
-                if (Convert.ToInt32(auxPagamento[i]["idMPagamento"]) == 4)
-                {
-                    x.WriteLine("[PAG" + String.Format("{0:000}", i + 1) + "]");
-                    x.WriteLine("tPag=04");
-                    x.WriteLine("vPag=" + auxPagamento[i]["PagValor"].ToString());
-                }
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
             }
-            //tPag=3 cartão crédito
-            //tPag=4 cartão débito
-
-            x.WriteLine("");
-            x.Close();
-            //quebra linha:\r\n 
-
-            enviarNfce();
-            Thread.Sleep(1000);
-            imprimirNfce();
-
-
         }
             /*public void escreverIniNfe()
         {
@@ -347,39 +360,70 @@ namespace WindowsFormsApp2
         }
             */
         
-        public void enviarNfce()
+        public void enviarNfce(int codVenda)
         {
-            StreamWriter x;
-            string caminho = @"C:\Users\bruno\Desktop\notas\entrada\\enviar.txt";
-
-            x = File.CreateText(caminho);
-            x.WriteLine("NFe.CriarNFe(\"C:\\Users\\bruno\\desktop\\notas\\enviar\\nota.ini\\,1)");
-            x.Close();
-        }
-
-        public void imprimirNfce()
-        {
-            StreamWriter x;
-            string caminho = @"C:\Users\bruno\Desktop\notas\entrada\\enviar.txt";
-            // C: \Users\bruno\Desktop\notas\temporario
-            DirectoryInfo diretorio = new DirectoryInfo(@"C:\Users\bruno\Desktop\notas\temporario");
-            FileInfo[] arquivos = diretorio.GetFiles();
-            
-            foreach (FileInfo arquivo in arquivos)
+            try
             {
+                if (!Directory.Exists(@"C:\pdv\fiscal\entrada\"))
+                {
+                    Directory.CreateDirectory(@"C:\pdv\fiscal\entrada\");
+                }
+                StreamWriter x;
+                string caminho = @"C:\pdv\fiscal\entrada\enviar.txt";
+
                 x = File.CreateText(caminho);
-                x.WriteLine("NFE.ImprimirDanfe(\"C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name + "\", \"\"Doro PDF Writer\",\"1\",\"\",\"\",\"\",\"\",\"\")");
+                x.WriteLine("NFe.CriarNFe(\"C:\\pdv\\fiscal\\enviar\\nota"+codVenda+".ini\\,1)");
                 x.Close();
-                MessageBox.Show("cupom emitido com sucesso!");
-                Thread.Sleep(1000);
-                var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
-                fiscal.inserirCaminhoXml(@"C:\Users\bruno\Desktop\notas\xmls\" + arquivo.Name, Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
-                File.Copy("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name, @"C:\Users\bruno\Desktop\notas\xmls\"+ arquivo.Name);
-                File.Delete("C:\\Users\\bruno\\Desktop\\notas\\temporario\\" + arquivo.Name);
+                File.Copy("C:\\pdv\\fiscal\\enviar\\nota"+codVenda+".ini", @"C:\pdv\fiscal\ini\nota"+codVenda+".ini");
 
+            }catch(Exception er)
+            {
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
             }
+}
 
-            MessageBox.Show("cupom emitido com sucesso!");
+        public void imprimirNfce(int codVenda)
+        {
+            try
+            {
+                StreamWriter x;
+                if (!Directory.Exists(@"C:\pdv\fiscal\entrada\"))
+                {
+                    Directory.CreateDirectory(@"C:\pdv\fiscal\entrada\");
+                }
+
+                if (!Directory.Exists("C:\\pdv\\fiscal\\temporario\\"))
+                {
+                    Directory.CreateDirectory("C:\\pdv\\fiscal\\temporario\\");
+                } 
+                
+                if (!Directory.Exists(@"C:\pdv\fiscal\xmls\"))
+                {
+                    Directory.CreateDirectory(@"C:\pdv\fiscal\xmls\");
+                }
+                string caminho = @"C:\pdv\fiscal\entrada\enviar.txt";
+                // C: \Users\bruno\Desktop\notas\temporario
+                DirectoryInfo diretorio = new DirectoryInfo(@"C:\pdv\fiscal\temporario");
+                FileInfo[] arquivos = diretorio.GetFiles();
+
+                foreach (FileInfo arquivo in arquivos)
+                {
+                    x = File.CreateText(caminho);
+                    x.WriteLine("NFE.ImprimirDanfe(\"C:\\pdv\\fiscal\\temporario\\" + arquivo.Name + "\", \"\"Doro PDF Writer\",\"1\",\"\",\"\",\"\",\"\",\"\")");
+                    x.Close();
+                    MessageBox.Show("cupom emitido com sucesso!");
+                    Thread.Sleep(1000);
+                    File.Delete("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name);
+                    File.Delete("C:\\pdv\\fiscal\\enviar\\nota"+codVenda+".ini");
+
+                }
+
+                MessageBox.Show("cupom emitido com sucesso!");
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
+            }
         }
         public void apagarCopiarNfce()
         {
@@ -387,3 +431,5 @@ namespace WindowsFormsApp2
         }
     }
 }
+
+

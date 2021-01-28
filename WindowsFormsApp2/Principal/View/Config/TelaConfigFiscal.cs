@@ -68,10 +68,12 @@ namespace WindowsFormsApp2.Principal.View.Config
             else
             {
                 travar_LiberarFiscal(false);
+                Close();
             }
         }
         public void travar_LiberarFiscal(bool travar)
         {
+            ckBoxFiscal.Checked = travar;
             txtBoxCnpjEmpresa.Enabled = travar;
             txtBoxIE.Enabled = travar;
             //txtBoxSenhaSat.Enabled = travar;
@@ -95,6 +97,16 @@ namespace WindowsFormsApp2.Principal.View.Config
             if (Convert.ToBoolean(auxConfig[0]["fiscal"]) == true)
             {
                 travar_LiberarFiscal(true);
+                if(auxConfig[0]["regimeTributario"].ToString() == "Simples Nacional")
+                {
+                    cBoxRegimeTributario.SelectedIndex = 0;
+
+                }
+                
+                if(auxConfig[0]["regimeTributario"].ToString() == "Regime Normal")
+                {
+                    cBoxRegimeTributario.SelectedIndex = 1;
+                }
                 txtBoxCnpjEmpresa.Text = auxConfig[0]["cnpjEmpresa"].ToString();
                 txtBoxIE.Text = auxConfig[0]["inscricaoEstadual"].ToString();
                 //txtBoxSenhaSat.Text = auxConfig[0]["senhaSat"].ToString();

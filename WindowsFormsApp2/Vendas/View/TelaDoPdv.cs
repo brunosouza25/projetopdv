@@ -266,7 +266,7 @@ namespace WindowsFormsApp2
                         }
                     }
                     listaCaixa.Items.Remove(listaCaixa.SelectedItems[i - 1]);
-                    total -= Convert.ToDouble(item.SubItems[4].Text);
+                    total -= Convert.ToDouble(item.SubItems[3].Text) * Convert.ToDouble(item.SubItems[4].Text);
                     LblTotal.Text = "R$: " + total.ToString("F2");
 
                 }
@@ -277,8 +277,13 @@ namespace WindowsFormsApp2
 
         private void BtnFinalizarVenda_Click_1(object sender, EventArgs e)
         {
-           // try
+            DadosTableAdapters.Config_SistemaTableAdapter config = new DadosTableAdapters.Config_SistemaTableAdapter();
+            var auxFiscal = config.retornarConfig();
+            bool fiscal = Convert.ToBoolean(auxFiscal[0]["fiscal"]);
+            // try
             //{
+            if (fiscal)
+            {
                 if (listaCaixa.Items.Count > 0)
                 {
                     if (total > 0)
@@ -305,6 +310,11 @@ namespace WindowsFormsApp2
                 total = 0;
                 LblTotal.Text = "";
                 TxtBoxPesquisaProd.Select();
+            }
+            else
+            {
+                MessageBox.Show("Favor preencher todos os dados fiscais da empresa");
+            }
             //}
             /*catch(IOExeption er)
             {
