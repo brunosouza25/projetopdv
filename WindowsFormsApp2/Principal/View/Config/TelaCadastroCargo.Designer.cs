@@ -176,6 +176,7 @@
             this.cBoxEstoque.Size = new System.Drawing.Size(15, 14);
             this.cBoxEstoque.TabIndex = 18;
             this.cBoxEstoque.UseVisualStyleBackColor = true;
+            this.cBoxEstoque.CheckedChanged += new System.EventHandler(this.cBoxEstoque_CheckedChanged);
             // 
             // cBoxDevolucoes
             // 

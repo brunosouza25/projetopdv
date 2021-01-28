@@ -28,11 +28,20 @@ namespace WindowsFormsApp2
                 pass = colab[0]["senha"].ToString();
                 if (senha == pass && Convert.ToInt32(colab[0]["funcEstado"]) == 1 && Convert.ToInt32(colab[0]["idCargo"]) != 0)
                 {
-                    this.Visible = false;
-                    carregarPermissoes();
-                    TelaPrincipal tela = new TelaPrincipal();
-                    tela.ShowDialog();
-                    Close();
+                    var carg = cargo.retornarCargoPorId(Convert.ToInt32(colab[0]["idCargo"]));
+                    if (Convert.ToBoolean(carg[0]["estadoCargo"]))
+                    {
+                        this.Visible = false;
+                        carregarPermissoes();
+                        TelaPrincipal tela = new TelaPrincipal();
+                        tela.ShowDialog();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível fazer o Login, login ou senha podem estar errados ou usuário inativo ou sem cargo");
+
+                    }
                 }
                 else
                     MessageBox.Show("Não foi possível fazer o Login, login ou senha podem estar errados ou usuário inativo ou sem cargo");

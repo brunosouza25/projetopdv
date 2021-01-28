@@ -63,7 +63,7 @@ namespace WindowsFormsApp2.Principal.View.Config
                 var auxCargo = cargos.verificarDuplicata(txtCargo.Text);
                 if (txtCargo.TextLength > 0 && auxCargo.Count < 1)
                 {
-                    cargos.inserirCargo(txtCargo.Text.ToString(), cBoxInativo.Checked, false);
+                    cargos.inserirCargo(txtCargo.Text.ToString(), !cBoxInativo.Checked, false);
 
                     var idcargo = cargos.retornarUltimoIdCargo();
 
@@ -115,6 +115,24 @@ namespace WindowsFormsApp2.Principal.View.Config
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cBoxEstoque_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cBoxEstoque.Checked)
+            {
+                cBoxCriacaoDeProdutos.Checked = true;
+                cBoxEditarProdutos.Checked = true;
+                cBoxEntradaDeProdutos.Checked = true;
+                cBoxSaidaDeProdutos.Checked = true;
+            }
+            else
+            {
+                cBoxCriacaoDeProdutos.Checked = false;
+                cBoxEditarProdutos.Checked = false;
+                cBoxEntradaDeProdutos.Checked = false;
+                cBoxSaidaDeProdutos.Checked = false;
+            }
         }
     }
 }
