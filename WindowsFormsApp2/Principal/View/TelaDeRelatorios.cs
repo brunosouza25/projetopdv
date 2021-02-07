@@ -516,11 +516,12 @@ namespace WindowsFormsApp2
                         table7.AddCell(auxFunc[0]["nomeFunc"].ToString());
                         table7.AddCell(auxSangria[i]["observacoes"].ToString());
                         table7.AddCell("R$"+ Convert.ToDouble(auxSangria[i]["valorSangria"]).ToString("F2"));
-                        doc.Add(table7);
+                        
                         //var desconto = pagamento.retornarDescPorIdVenda(Convert.ToInt32(vendasCanceladas[i]["idVenda"]));
                         //table7.AddCell("R$" + Convert.ToDouble(Convert.ToDouble(vendasCanceladas[i]["valorDaVenda"])));
                     }
-                }
+                    doc.Add(table7);
+            }
             if (tipo)
             {
                 doc.Close();

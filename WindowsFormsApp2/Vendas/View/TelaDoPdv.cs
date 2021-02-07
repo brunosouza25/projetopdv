@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using WindowsFormsApp2.Vendas.View;
 namespace WindowsFormsApp2
@@ -102,45 +103,47 @@ namespace WindowsFormsApp2
         //FUNÇÃO PARA FAZER PESQUISA NO BANCO QUANDO DIGITADO NO TXTBOX
         private void pesquisaListaCaixa()
         {
-            var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
-            int aux = 0;
-            if (varPesquisa1.Count > 0)
-                aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
-            
-
-            if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1 || Convert.ToInt32(txtBoxQnt.Text) > aux)
-                MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo ou a quantidade inserida é maior do que contem no estoque");
-            else
+            try
             {
+                var varPesquisa1 = dadosProdutos.pegarBanco(pesquisa, pesquisa);
+                int aux = 0;
+                if (varPesquisa1.Count > 0)
+                    aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
 
-                Produto prod = new Produto();
-                prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
-                prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
-                prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
-                prod.idProduto = Convert.ToInt32(varPesquisa1[0]["idProduto"]);
 
-                int qnt = Convert.ToInt32(txtBoxQnt.Text);
-                /*if (txtBoxQnt.Text == "")
-                    prod.prodQuantidade = 1;
+                if (varPesquisa1.Count < 1 || Convert.ToInt32(varPesquisa1[0]["prodEstado"]) == 1 || Convert.ToInt32(txtBoxQnt.Text) > aux)
+                    MessageBox.Show("Não existe esse produto no estoque ou este produto está inativo ou a quantidade inserida é maior do que contem no estoque");
                 else
-                    prod.prodQuantidade = Convert.ToInt32(txtBoxQnt.Text);
-                    */
-                ListViewItem item = new ListViewItem();
-                item.SubItems.Add(prod.prodNome);
-                item.SubItems.Add(prod.prodCodBarras);
-                item.SubItems.Add(prod.prodValor.ToString());
-                bool permitido = false;
-                bool achou = false;
-
-
-               /* if (listaProduto.Count == 0)
                 {
-                    //prod.prodQuantidade = 0;
-                    listaProduto.Add(prod);
-                    permitido = true;
-                }
-                else
-                {*/
+
+                    Produto prod = new Produto();
+                    prod.prodNome = varPesquisa1[0]["prodNome"].ToString();
+                    prod.prodValor = Convert.ToDouble(varPesquisa1[0]["prodValor"]);
+                    prod.prodCodBarras = varPesquisa1[0]["prodCodBarras"].ToString();
+                    prod.idProduto = Convert.ToInt32(varPesquisa1[0]["idProduto"]);
+
+                    int qnt = Convert.ToInt32(txtBoxQnt.Text);
+                    /*if (txtBoxQnt.Text == "")
+                        prod.prodQuantidade = 1;
+                    else
+                        prod.prodQuantidade = Convert.ToInt32(txtBoxQnt.Text);
+                        */
+                    ListViewItem item = new ListViewItem();
+                    item.SubItems.Add(prod.prodNome);
+                    item.SubItems.Add(prod.prodCodBarras);
+                    item.SubItems.Add(prod.prodValor.ToString());
+                    bool permitido = false;
+                    bool achou = false;
+
+
+                    /* if (listaProduto.Count == 0)
+                     {
+                         //prod.prodQuantidade = 0;
+                         listaProduto.Add(prod);
+                         permitido = true;
+                     }
+                     else
+                     {*/
 
                     for (int j = 0; j < listaProduto.Count; j++)
                     {
@@ -158,68 +161,72 @@ namespace WindowsFormsApp2
                             }
                         }
                     }
-                //}
-                item.SubItems.Add(qnt.ToString());
+                    //}
+                    item.SubItems.Add(qnt.ToString());
 
 
 
-                if (!achou)
-                {
-                    prod.prodQuantidade = 1;
-                    listaProduto.Add(prod);
-                    permitido = true;
-                }
-                if (permitido)
-                {
-                    total += prod.prodValor * qnt;
-                    item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
-                    LblTotal.Text = "R$: " + total.ToString("F2");
-                    listaCaixa.Items.Add(item);
-                }
-
-                //=======================================================================================
-                /*permitido = false;
-                achou = false;
-                for (int j = 0; j < listaProduto.Count; j++)
-                {
-                    if (listaProduto[j].prodNome == prod.prodNome)
+                    if (!achou)
                     {
-                        aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
+                        prod.prodQuantidade = 1;
+                        listaProduto.Add(prod);
+                        permitido = true;
+                    }
+                    if (permitido)
+                    {
+                        total += prod.prodValor * qnt;
+                        item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
+                        LblTotal.Text = "R$: " + total.ToString("F2");
+                        listaCaixa.Items.Add(item);
+                    }
 
-                        if (listaProduto[j].prodQuantidade < aux)
+                    //=======================================================================================
+                    /*permitido = false;
+                    achou = false;
+                    for (int j = 0; j < listaProduto.Count; j++)
+                    {
+                        if (listaProduto[j].prodNome == prod.prodNome)
                         {
-                            listaProduto[j].prodQuantidade += 1;
-                            achou = true;
-                            permitido = true;
+                            aux = Convert.ToInt32(varPesquisa1[0]["prodQuantidade"]);
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Não tem mais esse item em estoque para ser adicionado a venda");
-                            permitido = false;
-                            achou = true;
+                            if (listaProduto[j].prodQuantidade < aux)
+                            {
+                                listaProduto[j].prodQuantidade += 1;
+                                achou = true;
+                                permitido = true;
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Não tem mais esse item em estoque para ser adicionado a venda");
+                                permitido = false;
+                                achou = true;
+                            }
                         }
                     }
-                }
-                if (!achou)
-                {
-                    prod.prodQuantidade = 1;
-                    listaProduto.Add(prod);
-                    permitido = true;
-                }
-                if (permitido)
-                {
-                    total += prod.prodValor * qnt;
-                    item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
-                    LblTotal.Text = "R$: " + total.ToString("F2");
-                    listaCaixa.Items.Add(item);
-                }/***/
-                //========================================================================================
-                item.SubItems.Add(prod.idProduto.ToString());
+                    if (!achou)
+                    {
+                        prod.prodQuantidade = 1;
+                        listaProduto.Add(prod);
+                        permitido = true;
+                    }
+                    if (permitido)
+                    {
+                        total += prod.prodValor * qnt;
+                        item.SubItems.Add("R$ " + (prod.prodValor * qnt).ToString("F2"));
+                        LblTotal.Text = "R$: " + total.ToString("F2");
+                        listaCaixa.Items.Add(item);
+                    }/***/
+                    //========================================================================================
+                    item.SubItems.Add(prod.idProduto.ToString());
 
+                }
+                TxtBoxPesquisaProd.Text = "";
+                txtBoxQnt.Text = "1";
+            }catch(IOException er)
+            {
+                MessageBox.Show("Tivemos um erro, favor consultar o suporte. Código do erro: (venda 1)");
             }
-            TxtBoxPesquisaProd.Text = "";
-            txtBoxQnt.Text = "1";
         }
 
         private void listaDoCaixa_Load(object sender, EventArgs e)

@@ -11,6 +11,7 @@ namespace WindowsFormsApp2.Vendas.View
         DadosTableAdapters.DataRelatorioTableAdapter detalheVenda = new DadosTableAdapters.DataRelatorioTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.Itens_DevolucaoTableAdapter devolucao = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
+
         int codVenda;
         int idDin = -1, idCredVista = -1, idDeb = -1, idCredParc = -1;
         List<Produto> listaProduto = new List<Produto>();
@@ -93,7 +94,7 @@ namespace WindowsFormsApp2.Vendas.View
 
         private void btnImprimirSegundaVia_Click(object sender, EventArgs e)
         {
-
+            
             try
             {
                 if (!Directory.Exists(@"C:\pdv\fiscal\entrada\"))
@@ -104,8 +105,8 @@ namespace WindowsFormsApp2.Vendas.View
                 string caminho = @"C:\pdv\fiscal\entrada\enviar.txt";
 
                 x = File.CreateText(caminho);
-
-                x.WriteLine("NFe.CriarNFe(\"C:\\pdv\\fiscal\\ini\\nota" + codVenda + ".ini\\,1)");
+                var auxFiscal = fiscal.segundaVia(codVenda);
+                x.WriteLine("NFe.CriarNFe("+auxFiscal[0]["caminhoXml"].ToString()+",1)");
                 x.Close();
                 Thread.Sleep(1000);
             }
@@ -155,6 +156,16 @@ namespace WindowsFormsApp2.Vendas.View
             {
                 MessageBox.Show("Encontramos um erro, favor contatar o suporte");
             }
+
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtFuncionario_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

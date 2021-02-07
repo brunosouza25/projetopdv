@@ -17,7 +17,7 @@ namespace WindowsFormsApp2
         DadosTableAdapters.ProdutoTableAdapter produto = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.PagamentoTableAdapter pagamento = new DadosTableAdapters.PagamentoTableAdapter();
 
-        public void escreverIniNfce(int codigoVenda)
+        public void escreverIniNfce(int codigoVenda, string tick)
         {
             try {
                 double total;
@@ -39,6 +39,7 @@ namespace WindowsFormsApp2
                 string uf = auxFiscal[0]["uf"].ToString();
 
                 fiscal.inserirFiscal(codigoVenda, "");
+                
                 var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
                 int idFiscal = Convert.ToInt32(auxIdFiscal[0]["idFiscal"].ToString());
 
@@ -47,7 +48,7 @@ namespace WindowsFormsApp2
                 {
                     Directory.CreateDirectory("C:\\pdv\\fiscal\\enviar\\");
                 }
-                string caminho = "C:\\pdv\\fiscal\\enviar\\nota"+codigoVenda.ToString()+".ini";
+                string caminho = "C:\\pdv\\fiscal\\enviar\\nota"+codigoVenda.ToString()+"_"+tick+".ini";
 
                 x = File.CreateText(caminho);
                 x.WriteLine("[infNFe]");
@@ -154,18 +155,18 @@ namespace WindowsFormsApp2
                 x.Close();
                 //quebra linha:\r\n 
 
-                enviarNfce(codigoVenda);
+                enviarNfce(codigoVenda, tick);
                 Thread.Sleep(1000);
-                imprimirNfce(codigoVenda);
+                imprimirNfce(codigoVenda, tick);
                 var auxIdFiscal2 = fiscal.retornarUltimoIdFiscal();
-                fiscal.inserirCaminhoXml(@"C:\pdv\fiscal\ini\nota"+ codigoVenda.ToString()+".ini", Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
+                fiscal.inserirCaminhoXml(@"C:\pdv\fiscal\ini\nota" + codigoVenda + "_" + tick + ".ini", Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
                // File.Copy("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name, @"C:\pdv\fiscal\xmls\" + arquivo.Name);
                 //File.Delete("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name);
 
             }
             catch(Exception er)
             {
-                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte (fiscal 1)");
             }
         }
             /*public void escreverIniNfe()
@@ -360,10 +361,11 @@ namespace WindowsFormsApp2
         }
             */
         
-        public void enviarNfce(int codVenda)
+        public void enviarNfce(int codVenda, string tick)
         {
             try
             {
+                
                 if (!Directory.Exists(@"C:\pdv\fiscal\entrada\"))
                 {
                     Directory.CreateDirectory(@"C:\pdv\fiscal\entrada\");
@@ -372,17 +374,18 @@ namespace WindowsFormsApp2
                 string caminho = @"C:\pdv\fiscal\entrada\enviar.txt";
 
                 x = File.CreateText(caminho);
-                x.WriteLine("NFe.CriarNFe(\"C:\\pdv\\fiscal\\enviar\\nota"+codVenda+".ini\\,1)");
+                x.WriteLine("NFe.CriarNFe(\"C:\\pdv\\fiscal\\enviar\\nota"+codVenda+"_"+tick+".ini\\,1)");
                 x.Close();
-                File.Copy("C:\\pdv\\fiscal\\enviar\\nota"+codVenda+".ini", @"C:\pdv\fiscal\ini\nota"+codVenda+".ini");
-
+                File.Copy("C:\\pdv\\fiscal\\enviar\\nota"+codVenda + "_" + tick + ".ini", @"C:\pdv\fiscal\ini\nota"+codVenda + "_" + tick + ".ini");
+                MessageBox.Show("");
+                
             }catch(Exception er)
             {
-                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte (fiscal 2)");
             }
 }
 
-        public void imprimirNfce(int codVenda)
+        public void imprimirNfce(int codVenda, string tick)
         {
             try
             {
@@ -414,7 +417,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("cupom emitido com sucesso!");
                     Thread.Sleep(1000);
                     File.Delete("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name);
-                    File.Delete("C:\\pdv\\fiscal\\enviar\\nota"+codVenda+".ini");
+                    File.Delete("C:\\pdv\\fiscal\\enviar\\nota"+codVenda+"_"+tick+".ini");
 
                 }
 
@@ -422,7 +425,7 @@ namespace WindowsFormsApp2
             }
             catch (Exception er)
             {
-                MessageBox.Show("Encontramos um erro, favor contatar o suporte");
+                MessageBox.Show("Encontramos um erro, favor contatar o suporte (fiscal 3)");
             }
         }
         public void apagarCopiarNfce()

@@ -95,5 +95,10 @@ namespace WindowsFormsApp2
             telaTributacao.Visible = true;
 
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -139,6 +139,7 @@ namespace WindowsFormsApp2
         }
         public void confirmar()
         {
+            
             var idCaixa = caixa.pegarIDUltimoCaixa();
             double valorpago = total - valorDesc;
 
@@ -210,7 +211,8 @@ namespace WindowsFormsApp2
                     if (fiscal)
                     {
                         Fiscal cupomFiscal = new Fiscal();
-                        cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]));
+                        string tick = DateTime.Now.Ticks.ToString();
+                        cupomFiscal.escreverIniNfce(Convert.ToInt32(aux2[0]["idVenda"]), tick);
                     }
                     else
                     {
