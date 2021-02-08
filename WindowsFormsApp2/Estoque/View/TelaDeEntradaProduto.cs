@@ -11,7 +11,7 @@ namespace WindowsFormsApp2.Estoque.View
         DadosTableAdapters.FuncionarioTableAdapter colaborador = new DadosTableAdapters.FuncionarioTableAdapter();
         int idEntrada, soma = 0;
         public string[,] itensDaLista { get; set; }
-
+        double total = 0;
         bool tipo;
         public TelaDeEntradaProduto()
         {
@@ -19,7 +19,8 @@ namespace WindowsFormsApp2.Estoque.View
             ultimoId();
             lblTotalItens.Text = "0";
             txtBoxQnt.Text = "1";
-            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            lblHora.Text = DateTime.Now.ToString("HH:dd");
             lblNumEntrada.Text = idEntrada.ToString();
             TxtBoxPesquisaProd.Select();
             btnSalvar.Visible = false;
@@ -44,6 +45,7 @@ namespace WindowsFormsApp2.Estoque.View
             var auxColaborador = colaborador.retornarColaboradorPorId(Convert.ToInt32(aux[0]["idColaborador"]));
             txtBoxFunc.Text = auxColaborador[0]["nomeFunc"].ToString();
             lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
+            lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0, 5);
             //lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
             lblNumEntrada.Text = idEntrada.ToString();
             txtBoxObs.Text = aux[0]["observacoes"].ToString();
@@ -66,7 +68,7 @@ namespace WindowsFormsApp2.Estoque.View
         }
 
         string pesquisa;
-        double total = 0;
+        
         int qnt = 0;
         List<Produto> listaProduto = new List<Produto>();
         private void valida()
@@ -81,7 +83,10 @@ namespace WindowsFormsApp2.Estoque.View
                     txtBoxQnt.Text = "";
                 }
                 else
+                {
                     pesquisaEstoque();
+                
+                }
             }
             else
             {
@@ -156,7 +161,7 @@ namespace WindowsFormsApp2.Estoque.View
                     }
                 }
                 soma += qnt;
-                lblTotalItens.Text = qnt.ToString();
+                lblTotalItens.Text = soma.ToString();
                 item.SubItems.Add(qnt.ToString());
                 if (listaProduto.Count == 0)
                 {
@@ -280,6 +285,7 @@ namespace WindowsFormsApp2.Estoque.View
             listaDeEntrada.Items.Clear();
             listaProduto.Clear();
             TxtBoxPesquisaProd.Select();
+            total = 0;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

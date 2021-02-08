@@ -140,6 +140,7 @@
             this.ClientSize = new System.Drawing.Size(573, 354);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDeSangria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sangria";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

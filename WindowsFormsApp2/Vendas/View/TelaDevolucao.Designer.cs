@@ -42,13 +42,13 @@
             this.idProd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.idItens = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
             this.TxtBoxPesquisaProd = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBoxQnt = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnDevolver = new System.Windows.Forms.Button();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.painelBase.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -181,6 +181,11 @@
             this.columnHeader5.Text = "Qnt Retirada";
             this.columnHeader5.Width = 110;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Valor de Venda";
+            this.columnHeader6.Width = 120;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.TxtBoxPesquisaProd);
@@ -243,11 +248,6 @@
             this.btnDevolver.UseVisualStyleBackColor = true;
             this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Valor de Venda";
-            this.columnHeader6.Width = 120;
-            // 
             // TelaDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +255,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.painelBase);
             this.Name = "TelaDevolucao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TelaDevolucao";
             this.painelBase.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

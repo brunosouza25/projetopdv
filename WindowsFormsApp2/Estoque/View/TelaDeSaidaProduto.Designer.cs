@@ -80,6 +80,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblHora = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -108,6 +109,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lblHora);
             this.panel5.Controls.Add(this.txtBoxQnt);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxtBoxPesquisaProd);
@@ -595,6 +597,16 @@
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader3.Width = 126;
             // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(759, 2);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(87, 33);
+            this.lblHora.TabIndex = 12;
+            this.lblHora.Text = "23:59";
+            // 
             // TelaDeSaidaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,6 +615,7 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDeSaidaProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaDeSaidaProduto";
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -676,5 +689,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label lblHora;
     }
 }

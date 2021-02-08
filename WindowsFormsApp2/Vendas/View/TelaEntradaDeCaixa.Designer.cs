@@ -94,6 +94,7 @@ namespace WindowsFormsApp2.Vendas.View
             this.ClientSize = new System.Drawing.Size(582, 234);
             this.Controls.Add(this.panel1);
             this.Name = "TelaEntradaDeCaixa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaEntradaDeCaixa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

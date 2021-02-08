@@ -80,6 +80,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxObs = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -371,6 +372,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lblHora);
             this.panel5.Controls.Add(this.txtBoxQnt);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.TxtBoxPesquisaProd);
@@ -595,6 +597,16 @@
             this.panel8.Size = new System.Drawing.Size(861, 525);
             this.panel8.TabIndex = 3;
             // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(752, 2);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(87, 33);
+            this.lblHora.TabIndex = 11;
+            this.lblHora.Text = "23:59";
+            // 
             // TelaDeEntradaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,6 +615,7 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDeEntradaProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaDeEntradaProduto";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -676,5 +689,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Label lblHora;
     }
 }

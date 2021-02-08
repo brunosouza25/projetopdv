@@ -145,6 +145,7 @@
             this.ClientSize = new System.Drawing.Size(763, 645);
             this.Controls.Add(this.painel_CriarProd);
             this.Name = "TelaCriarProd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Criar Produto";
             this.painel_CriarProd.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

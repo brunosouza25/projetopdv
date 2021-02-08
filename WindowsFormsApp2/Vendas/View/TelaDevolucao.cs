@@ -195,6 +195,7 @@ namespace WindowsFormsApp2.Vendas.View
 
                         caixa.attValorAtual(Convert.ToDouble(caixaAtual[0]["valorAtual"]) - Convert.ToDouble(produto[0]["prodValor"])*Convert.ToInt32(txtBoxQnt.Text)
                         , Convert.ToInt32(idCaixa[0]["idCaixa"]));
+                        MessageBox.Show("Item devolvida ao estoque");
 
                     }
                     else

@@ -77,9 +77,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.78978F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.21021F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 298F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.6726F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.3274F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 344F));
             this.tableLayoutPanel1.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.painelPrincipal, 1, 0);
@@ -105,9 +105,9 @@
             this.panel4.Controls.Add(this.btnOntem);
             this.panel4.Controls.Add(this.btnHoje);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(1014, 3);
+            this.panel4.Location = new System.Drawing.Point(968, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(293, 603);
+            this.panel4.Size = new System.Drawing.Size(339, 603);
             this.panel4.TabIndex = 2;
             // 
             // btnPerso
@@ -238,7 +238,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(224, 603);
+            this.panel3.Size = new System.Drawing.Size(193, 603);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -246,7 +246,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(3, 61);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(224, 23);
+            this.button2.Size = new System.Drawing.Size(197, 23);
             this.button2.TabIndex = 14;
             this.button2.Text = "Vendas canceladas";
             this.button2.UseVisualStyleBackColor = true;
@@ -256,7 +256,7 @@
             // 
             this.btnVendas.Location = new System.Drawing.Point(0, 32);
             this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(224, 23);
+            this.btnVendas.Size = new System.Drawing.Size(200, 23);
             this.btnVendas.TabIndex = 13;
             this.btnVendas.Text = "Vendas";
             this.btnVendas.UseVisualStyleBackColor = true;
@@ -266,7 +266,7 @@
             // 
             this.btnRelatorioDevolucoes.Location = new System.Drawing.Point(3, 161);
             this.btnRelatorioDevolucoes.Name = "btnRelatorioDevolucoes";
-            this.btnRelatorioDevolucoes.Size = new System.Drawing.Size(224, 23);
+            this.btnRelatorioDevolucoes.Size = new System.Drawing.Size(197, 23);
             this.btnRelatorioDevolucoes.TabIndex = 12;
             this.btnRelatorioDevolucoes.Text = "Devoluções";
             this.btnRelatorioDevolucoes.UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@
             // 
             this.btnSangria.Location = new System.Drawing.Point(3, 125);
             this.btnSangria.Name = "btnSangria";
-            this.btnSangria.Size = new System.Drawing.Size(224, 23);
+            this.btnSangria.Size = new System.Drawing.Size(197, 23);
             this.btnSangria.TabIndex = 11;
             this.btnSangria.Text = "Sangria";
             this.btnSangria.UseVisualStyleBackColor = true;
@@ -286,7 +286,7 @@
             // 
             this.btnRelatorioCaixa.Location = new System.Drawing.Point(3, 90);
             this.btnRelatorioCaixa.Name = "btnRelatorioCaixa";
-            this.btnRelatorioCaixa.Size = new System.Drawing.Size(224, 23);
+            this.btnRelatorioCaixa.Size = new System.Drawing.Size(197, 23);
             this.btnRelatorioCaixa.TabIndex = 10;
             this.btnRelatorioCaixa.Text = "Caixa atual";
             this.btnRelatorioCaixa.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@
             // 
             this.btnFechamentoDiario.Location = new System.Drawing.Point(0, 3);
             this.btnFechamentoDiario.Name = "btnFechamentoDiario";
-            this.btnFechamentoDiario.Size = new System.Drawing.Size(224, 23);
+            this.btnFechamentoDiario.Size = new System.Drawing.Size(200, 23);
             this.btnFechamentoDiario.TabIndex = 9;
             this.btnFechamentoDiario.Text = "Fechamento diário";
             this.btnFechamentoDiario.UseVisualStyleBackColor = true;
@@ -306,9 +306,9 @@
             // 
             this.painelPrincipal.Controls.Add(this.axAcroPDF1);
             this.painelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.painelPrincipal.Location = new System.Drawing.Point(233, 3);
+            this.painelPrincipal.Location = new System.Drawing.Point(202, 3);
             this.painelPrincipal.Name = "painelPrincipal";
-            this.painelPrincipal.Size = new System.Drawing.Size(775, 603);
+            this.painelPrincipal.Size = new System.Drawing.Size(760, 603);
             this.painelPrincipal.TabIndex = 0;
             // 
             // axAcroPDF1
@@ -318,7 +318,7 @@
             this.axAcroPDF1.Location = new System.Drawing.Point(0, 0);
             this.axAcroPDF1.Name = "axAcroPDF1";
             this.axAcroPDF1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF1.OcxState")));
-            this.axAcroPDF1.Size = new System.Drawing.Size(775, 603);
+            this.axAcroPDF1.Size = new System.Drawing.Size(760, 603);
             this.axAcroPDF1.TabIndex = 0;
             // 
             // dataTable2BindingSource

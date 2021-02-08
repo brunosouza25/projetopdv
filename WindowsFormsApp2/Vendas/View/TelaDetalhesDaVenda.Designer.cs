@@ -465,6 +465,7 @@
             this.ClientSize = new System.Drawing.Size(861, 525);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDetalhesDaVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaDetalhesDaVenda";
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

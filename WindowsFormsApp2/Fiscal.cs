@@ -377,7 +377,6 @@ namespace WindowsFormsApp2
                 x.WriteLine("NFe.CriarNFe(\"C:\\pdv\\fiscal\\enviar\\nota"+codVenda+"_"+tick+".ini\\,1)");
                 x.Close();
                 File.Copy("C:\\pdv\\fiscal\\enviar\\nota"+codVenda + "_" + tick + ".ini", @"C:\pdv\fiscal\ini\nota"+codVenda + "_" + tick + ".ini");
-                MessageBox.Show("");
                 
             }catch(Exception er)
             {

@@ -12,6 +12,8 @@ namespace WindowsFormsApp2.Estoque.View
 
 
         int idSaida, soma = 0;
+        double total = 0;
+
         public string[,] itensDaLista { get; set; }
 
         public TelaDeSaidaProduto()
@@ -68,7 +70,7 @@ namespace WindowsFormsApp2.Estoque.View
         }
 
         string pesquisa;
-        double total = 0;
+
         int qnt = 0;
         List<Produto> listaProduto = new List<Produto>();
 
@@ -162,7 +164,7 @@ namespace WindowsFormsApp2.Estoque.View
                 soma += qnt;
                 lblTotalItens.Text = qnt.ToString();
                 
-                item.SubItems.Add(qnt.ToString());
+                item.SubItems.Add(soma.ToString());
                 if (listaProduto.Count == 0)
                 {
                     prod.prodQuantidade = qnt;
@@ -317,6 +319,7 @@ namespace WindowsFormsApp2.Estoque.View
             listaDeSaida.Items.Clear();
             listaProduto.Clear();
             TxtBoxPesquisaProd.Select();
+            total = 0;
         }
 
         public SaidaDeProduto SaidaDeProduto
