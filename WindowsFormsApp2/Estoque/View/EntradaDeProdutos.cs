@@ -8,6 +8,7 @@ namespace WindowsFormsApp2
     public partial class EntradaDeProdutos : UserControl
     {
         DadosTableAdapters.ItensDeEntradaTableAdapter entradas = new DadosTableAdapters.ItensDeEntradaTableAdapter();
+        DadosTableAdapters.FuncionarioTableAdapter colaborador = new DadosTableAdapters.FuncionarioTableAdapter();
         string deData;
         string ateData;
 
@@ -42,10 +43,13 @@ namespace WindowsFormsApp2
 
                 ListViewItem item = new ListViewItem();
                 var auxEntradas = entradas.retornarEntradaPorId(Convert.ToInt32(varEntradas[i]["idSecundarioItensEntrada"]));
+                var auxColaborador = colaborador.retornarColaboradorPorId(Convert.ToInt32(auxEntradas[0]["idColaborador"]));
+
 
                 item.SubItems.Add(auxEntradas[0]["idSecundarioItensEntrada"].ToString());
                 item.SubItems.Add(Convert.ToDateTime(auxEntradas[0]["dataEntrada"]).ToString("dd/MM/yyyy") + " " + auxEntradas[0]["horaEntrada"].ToString().Substring(0, 5));
-                item.SubItems.Add("Funcionario padrão");
+
+                item.SubItems.Add(auxColaborador[0]["nomeFunc"].ToString());
                 if (auxEntradas[0]["observacoes"].ToString().Length >= 69)
                     item.SubItems.Add(auxEntradas[0]["observacoes"].ToString().Substring(0, 69));
                 else

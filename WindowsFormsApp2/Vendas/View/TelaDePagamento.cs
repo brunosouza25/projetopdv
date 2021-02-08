@@ -149,7 +149,7 @@ namespace WindowsFormsApp2
                 valorDesc = 0;
             else
                 valorDesc = Convert.ToDouble(txtBoxDesc.Text);
-            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "", DateTime.Now.ToString("HH:mm:ss"), valorpago);
+            dadosVenda.InserirVenda(DateTime.Now.ToString("dd/MM/yyyy"), total, Convert.ToByte(1), Convert.ToInt32(idCaixa[0]["idCaixa"]), "", DateTime.Now.ToString("HH:mm:ss"), valorpago, Global.idColaborador);
             var aux2 = dadosVenda.GetDataByVenda();
 
             double din;

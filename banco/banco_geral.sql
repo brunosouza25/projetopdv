@@ -273,3 +273,11 @@ insert into Permissoes_Vendas values (1,1,1,1,1)
 
 insert into fiscal values (0, '')
 
+ALTER TABLE venda
+ADD idColaborador int;
+
+ALTER TABLE ItensDeEntrada
+ADD idColaborador int;
+
+ALTER TABLE ItensDeSaida
+ADD idColaborador int;

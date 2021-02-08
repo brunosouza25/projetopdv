@@ -8,6 +8,7 @@ namespace WindowsFormsApp2.Estoque.View
     {
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.ItensDeEntradaTableAdapter dadosEntrada = new DadosTableAdapters.ItensDeEntradaTableAdapter();
+        DadosTableAdapters.FuncionarioTableAdapter colaborador = new DadosTableAdapters.FuncionarioTableAdapter();
         int idEntrada, soma = 0;
         public string[,] itensDaLista { get; set; }
 
@@ -22,6 +23,7 @@ namespace WindowsFormsApp2.Estoque.View
             lblNumEntrada.Text = idEntrada.ToString();
             TxtBoxPesquisaProd.Select();
             btnSalvar.Visible = false;
+            txtBoxFunc.Text = Global.nomeColaborador;
         }
         public TelaDeEntradaProduto(bool tipo, int idEntrada)
         {
@@ -39,6 +41,8 @@ namespace WindowsFormsApp2.Estoque.View
         {
             listaDeEntrada.Items.Clear();
             var aux = dadosEntrada.retornarEntradaPorId(idEntrada);
+            var auxColaborador = colaborador.retornarColaboradorPorId(Convert.ToInt32(aux[0]["idColaborador"]));
+            txtBoxFunc.Text = auxColaborador[0]["nomeFunc"].ToString();
             lblData.Text = Convert.ToDateTime(aux[0]["dataEntrada"]).ToString("dd/MM/yyyy");
             //lblHora.Text = aux[0]["horaEntrada"].ToString().Substring(0,5);
             lblNumEntrada.Text = idEntrada.ToString();
@@ -257,7 +261,7 @@ namespace WindowsFormsApp2.Estoque.View
 
                     dadosEntrada.inserirItensEntrada( idEntrada ,Convert.ToInt32(listaDeEntrada.Items[i].SubItems[4].Text), DateTime.Now.ToString("dd/MM/yyyy")
                     , DateTime.Now.ToString("HH:mm")
-                    , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text);
+                    , Convert.ToInt32(listaDeEntrada.Items[i].SubItems[6].Text), txtBoxObs.Text, Global.idColaborador);
                 }
                 MessageBox.Show("Produtos inserido com sucesso!");
                 Close();

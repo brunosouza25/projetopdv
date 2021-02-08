@@ -1385,6 +1385,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnvendHora;
             
+            private global::System.Data.DataColumn columnidColaborador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VendaDataTable() {
@@ -1476,6 +1478,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColaboradorColumn {
+                get {
+                    return this.columnidColaborador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1511,7 +1521,7 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VendaRow AddVendaRow(int idVenda, System.DateTime vendData, double valorCompra, CaixaRow parentCaixaRowByFK__Venda__idCaixa__5DCAEF64, byte vendaEstado, string observacoes, System.TimeSpan vendHora) {
+            public VendaRow AddVendaRow(int idVenda, System.DateTime vendData, double valorCompra, CaixaRow parentCaixaRowByFK__Venda__idCaixa__5DCAEF64, byte vendaEstado, string observacoes, System.TimeSpan vendHora, int idColaborador) {
                 VendaRow rowVendaRow = ((VendaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idVenda,
@@ -1520,7 +1530,8 @@ namespace WindowsFormsApp2 {
                         null,
                         vendaEstado,
                         observacoes,
-                        vendHora};
+                        vendHora,
+                        idColaborador};
                 if ((parentCaixaRowByFK__Venda__idCaixa__5DCAEF64 != null)) {
                     columnValuesArray[3] = parentCaixaRowByFK__Venda__idCaixa__5DCAEF64[0];
                 }
@@ -1560,6 +1571,7 @@ namespace WindowsFormsApp2 {
                 this.columnvendaEstado = base.Columns["vendaEstado"];
                 this.columnobservacoes = base.Columns["observacoes"];
                 this.columnvendHora = base.Columns["vendHora"];
+                this.columnidColaborador = base.Columns["idColaborador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1579,6 +1591,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnobservacoes);
                 this.columnvendHora = new global::System.Data.DataColumn("vendHora", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvendHora);
+                this.columnidColaborador = new global::System.Data.DataColumn("idColaborador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidColaborador);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidVenda}, true));
                 this.columnidVenda.AllowDBNull = false;
@@ -4853,6 +4867,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnidSecundarioItensEntrada;
             
+            private global::System.Data.DataColumn columnidColaborador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ItensDeEntradaDataTable() {
@@ -4936,6 +4952,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColaboradorColumn {
+                get {
+                    return this.columnidColaborador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4971,7 +4995,7 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ItensDeEntradaRow AddItensDeEntradaRow(ProdutoRow parentProdutoRowByFK__ItensDeEn__idPro__5EBF139D, int qntItem, System.DateTime dataEntrada, string observacoes, System.TimeSpan horaEntrada, int idSecundarioItensEntrada) {
+            public ItensDeEntradaRow AddItensDeEntradaRow(ProdutoRow parentProdutoRowByFK__ItensDeEn__idPro__5EBF139D, int qntItem, System.DateTime dataEntrada, string observacoes, System.TimeSpan horaEntrada, int idSecundarioItensEntrada, int idColaborador) {
                 ItensDeEntradaRow rowItensDeEntradaRow = ((ItensDeEntradaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4979,7 +5003,8 @@ namespace WindowsFormsApp2 {
                         dataEntrada,
                         observacoes,
                         horaEntrada,
-                        idSecundarioItensEntrada};
+                        idSecundarioItensEntrada,
+                        idColaborador};
                 if ((parentProdutoRowByFK__ItensDeEn__idPro__5EBF139D != null)) {
                     columnValuesArray[0] = parentProdutoRowByFK__ItensDeEn__idPro__5EBF139D[0];
                 }
@@ -5011,6 +5036,7 @@ namespace WindowsFormsApp2 {
                 this.columnobservacoes = base.Columns["observacoes"];
                 this.columnhoraEntrada = base.Columns["horaEntrada"];
                 this.columnidSecundarioItensEntrada = base.Columns["idSecundarioItensEntrada"];
+                this.columnidColaborador = base.Columns["idColaborador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5028,6 +5054,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnhoraEntrada);
                 this.columnidSecundarioItensEntrada = new global::System.Data.DataColumn("idSecundarioItensEntrada", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidSecundarioItensEntrada);
+                this.columnidColaborador = new global::System.Data.DataColumn("idColaborador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidColaborador);
                 this.columnobservacoes.MaxLength = 300;
             }
             
@@ -5174,6 +5202,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnobservacoes;
             
+            private global::System.Data.DataColumn columnidColaborador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ItensDeSaidaDataTable() {
@@ -5257,6 +5287,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColaboradorColumn {
+                get {
+                    return this.columnidColaborador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5292,7 +5330,7 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ItensDeSaidaRow AddItensDeSaidaRow(int idSecundarioItensSaida, ProdutoRow parentProdutoRowByFK__ItensDeSa__idPro__5CD6CB2B, int qntItem, System.DateTime dataSaida, System.TimeSpan horaSaida, string observacoes) {
+            public ItensDeSaidaRow AddItensDeSaidaRow(int idSecundarioItensSaida, ProdutoRow parentProdutoRowByFK__ItensDeSa__idPro__5CD6CB2B, int qntItem, System.DateTime dataSaida, System.TimeSpan horaSaida, string observacoes, int idColaborador) {
                 ItensDeSaidaRow rowItensDeSaidaRow = ((ItensDeSaidaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idSecundarioItensSaida,
@@ -5300,7 +5338,8 @@ namespace WindowsFormsApp2 {
                         qntItem,
                         dataSaida,
                         horaSaida,
-                        observacoes};
+                        observacoes,
+                        idColaborador};
                 if ((parentProdutoRowByFK__ItensDeSa__idPro__5CD6CB2B != null)) {
                     columnValuesArray[1] = parentProdutoRowByFK__ItensDeSa__idPro__5CD6CB2B[0];
                 }
@@ -5332,6 +5371,7 @@ namespace WindowsFormsApp2 {
                 this.columndataSaida = base.Columns["dataSaida"];
                 this.columnhoraSaida = base.Columns["horaSaida"];
                 this.columnobservacoes = base.Columns["observacoes"];
+                this.columnidColaborador = base.Columns["idColaborador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5349,6 +5389,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnhoraSaida);
                 this.columnobservacoes = new global::System.Data.DataColumn("observacoes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnobservacoes);
+                this.columnidColaborador = new global::System.Data.DataColumn("idColaborador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidColaborador);
                 this.columnobservacoes.MaxLength = 300;
             }
             
@@ -11037,6 +11079,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idColaborador {
+                get {
+                    try {
+                        return ((int)(this[this.tableVenda.idColaboradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idColaborador\' na tabela \'Venda\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVenda.idColaboradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CaixaRow CaixaRow {
                 get {
                     return ((CaixaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Venda__idCaixa__5DCAEF64"])));
@@ -11116,6 +11174,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetvendHoraNull() {
                 this[this.tableVenda.vendHoraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidColaboradorNull() {
+                return this.IsNull(this.tableVenda.idColaboradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidColaboradorNull() {
+                this[this.tableVenda.idColaboradorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13789,6 +13859,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idColaborador {
+                get {
+                    try {
+                        return ((int)(this[this.tableItensDeEntrada.idColaboradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idColaborador\' na tabela \'ItensDeEntrada\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableItensDeEntrada.idColaboradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProdutoRow ProdutoRow {
                 get {
                     return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDeEn__idPro__5EBF139D"])));
@@ -13868,6 +13954,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetidSecundarioItensEntradaNull() {
                 this[this.tableItensDeEntrada.idSecundarioItensEntradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidColaboradorNull() {
+                return this.IsNull(this.tableItensDeEntrada.idColaboradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidColaboradorNull() {
+                this[this.tableItensDeEntrada.idColaboradorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13983,6 +14081,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idColaborador {
+                get {
+                    try {
+                        return ((int)(this[this.tableItensDeSaida.idColaboradorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idColaborador\' na tabela \'ItensDeSaida\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableItensDeSaida.idColaboradorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProdutoRow ProdutoRow {
                 get {
                     return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDeSa__idPro__5CD6CB2B"])));
@@ -14062,6 +14176,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetobservacoesNull() {
                 this[this.tableItensDeSaida.observacoesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidColaboradorNull() {
+                return this.IsNull(this.tableItensDeSaida.idColaboradorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidColaboradorNull() {
+                this[this.tableItensDeSaida.idColaboradorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -17751,10 +17877,11 @@ namespace WindowsFormsApp2.DadosTableAdapters {
             tableMapping.ColumnMappings.Add("vendaEstado", "vendaEstado");
             tableMapping.ColumnMappings.Add("observacoes", "observacoes");
             tableMapping.ColumnMappings.Add("vendHora", "vendHora");
+            tableMapping.ColumnMappings.Add("idColaborador", "idColaborador");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Venda] WHERE (([idVenda] = @Original_idVenda) AND ((@IsNull_vendData = 1 AND [vendData] IS NULL) OR ([vendData] = @Original_vendData)) AND ((@IsNull_valorCompra = 1 AND [valorCompra] IS NULL) OR ([valorCompra] = @Original_valorCompra)) AND ((@IsNull_vendaEstado = 1 AND [vendaEstado] IS NULL) OR ([vendaEstado] = @Original_vendaEstado)) AND ((@IsNull_observacoes = 1 AND [observacoes] IS NULL) OR ([observacoes] = @Original_observacoes)) AND ((@IsNull_vendHora = 1 AND [vendHora] IS NULL) OR ([vendHora] = @Original_vendHora)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Venda] WHERE (([idVenda] = @Original_idVenda) AND ((@IsNull_vendData = 1 AND [vendData] IS NULL) OR ([vendData] = @Original_vendData)) AND ((@IsNull_valorCompra = 1 AND [valorCompra] IS NULL) OR ([valorCompra] = @Original_valorCompra)) AND ((@IsNull_vendaEstado = 1 AND [vendaEstado] IS NULL) OR ([vendaEstado] = @Original_vendaEstado)) AND ((@IsNull_observacoes = 1 AND [observacoes] IS NULL) OR ([observacoes] = @Original_observacoes)) AND ((@IsNull_vendHora = 1 AND [vendHora] IS NULL) OR ([vendHora] = @Original_vendHora)) AND ((@IsNull_idColaborador = 1 AND [idColaborador] IS NULL) OR ([idColaborador] = @Original_idColaborador)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_vendData", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -17767,26 +17894,30 @@ namespace WindowsFormsApp2.DadosTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_vendHora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_vendHora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Venda] ([vendData], [valorCompra], [vendaEstado], [observacoes], [vendHora]) VALUES (@vendData, @valorCompra, @vendaEstado, @observacoes, @vendHora);
-SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM Venda WHERE (idVenda = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Venda] ([vendData], [valorCompra], [vendaEstado], [observacoes], [vendHora], [idColaborador]) VALUES (@vendData, @valorCompra, @vendaEstado, @observacoes, @vendHora, @idColaborador);
+SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora, idColaborador FROM Venda WHERE (idVenda = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendData", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorCompra", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendaEstado", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendaEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendHora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Venda] SET [vendData] = @vendData, [valorCompra] = @valorCompra, [vendaEstado] = @vendaEstado, [observacoes] = @observacoes, [vendHora] = @vendHora WHERE (([idVenda] = @Original_idVenda) AND ((@IsNull_vendData = 1 AND [vendData] IS NULL) OR ([vendData] = @Original_vendData)) AND ((@IsNull_valorCompra = 1 AND [valorCompra] IS NULL) OR ([valorCompra] = @Original_valorCompra)) AND ((@IsNull_vendaEstado = 1 AND [vendaEstado] IS NULL) OR ([vendaEstado] = @Original_vendaEstado)) AND ((@IsNull_observacoes = 1 AND [observacoes] IS NULL) OR ([observacoes] = @Original_observacoes)) AND ((@IsNull_vendHora = 1 AND [vendHora] IS NULL) OR ([vendHora] = @Original_vendHora)));
-SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM Venda WHERE (idVenda = @idVenda)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Venda] SET [vendData] = @vendData, [valorCompra] = @valorCompra, [vendaEstado] = @vendaEstado, [observacoes] = @observacoes, [vendHora] = @vendHora, [idColaborador] = @idColaborador WHERE (([idVenda] = @Original_idVenda) AND ((@IsNull_vendData = 1 AND [vendData] IS NULL) OR ([vendData] = @Original_vendData)) AND ((@IsNull_valorCompra = 1 AND [valorCompra] IS NULL) OR ([valorCompra] = @Original_valorCompra)) AND ((@IsNull_vendaEstado = 1 AND [vendaEstado] IS NULL) OR ([vendaEstado] = @Original_vendaEstado)) AND ((@IsNull_observacoes = 1 AND [observacoes] IS NULL) OR ([observacoes] = @Original_observacoes)) AND ((@IsNull_vendHora = 1 AND [vendHora] IS NULL) OR ([vendHora] = @Original_vendHora)) AND ((@IsNull_idColaborador = 1 AND [idColaborador] IS NULL) OR ([idColaborador] = @Original_idColaborador)));
+SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora, idColaborador FROM Venda WHERE (idVenda = @idVenda)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendData", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorCompra", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valorCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendaEstado", global::System.Data.SqlDbType.TinyInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendaEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendHora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idVenda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_vendData", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_vendData", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -17798,6 +17929,8 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_vendHora", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_vendHora", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -17814,8 +17947,8 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora\r" +
-                "\nFROM            Venda";
+            this._commandCollection[0].CommandText = "SELECT        idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora," +
+                " idColaborador\r\nFROM            Venda";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -17825,14 +17958,15 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT TOP (1) idVenda, observacoes, valorCompra, vendData, vendHora, vendaEstado" +
-                " FROM Venda ORDER BY idVenda DESC";
+            this._commandCollection[2].CommandText = "SELECT TOP (1) idColaborador, idVenda, observacoes, valorCompra, vendData, vendHo" +
+                "ra, vendaEstado FROM Venda ORDER BY idVenda DESC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO Venda\r\n                         (vendData, valorCompra, vendaEstado, " +
-                "idCaixa, observacoes, vendHora, valorPago)\r\nVALUES        (@vendData,@valorCompr" +
-                "a,@vendaEstado,@idCaixa,@observacoes,@vendHora,@valorPago);       \r\n";
+            this._commandCollection[3].CommandText = @"INSERT INTO Venda
+                         (vendData, valorCompra, vendaEstado, idCaixa, observacoes, vendHora, valorPago, idColaborador)
+VALUES        (@vendData,@valorCompra,@vendaEstado,@idCaixa,@observacoes,@vendHora,@valorPago, @idColaborador);        
+";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendData", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorCompra", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorCompra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17841,24 +17975,25 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@vendHora", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "vendHora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valorPago", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valorPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT idVenda, observacoes, valorCompra, vendData, vendHora, vendaEstado FROM Ve" +
-                "nda WHERE (idVenda = @idVenda)";
+            this._commandCollection[4].CommandText = "SELECT        idColaborador, idVenda, observacoes, valorCompra, vendData, vendHor" +
+                "a, vendaEstado\r\nFROM            Venda\r\nWHERE        (idVenda = @idVenda)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idVenda", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idVenda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT idVenda, observacoes, valorCompra, vendData, vendHora, vendaEstado FROM Ve" +
-                "nda WHERE (vendData BETWEEN @dataPesquisa1 AND @dataPesquisa2)";
+            this._commandCollection[5].CommandText = "SELECT idColaborador, idVenda, observacoes, valorCompra, vendData, vendHora, vend" +
+                "aEstado FROM Venda WHERE (vendData BETWEEN @dataPesquisa1 AND @dataPesquisa2)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT idVenda, observacoes, valorCompra, vendData, vendHora, vendaEstado FROM Ve" +
-                "nda WHERE (vendData BETWEEN @dataPesquisa1 AND @dataPesquisa2) AND vendaEstado =" +
-                " 0";
+            this._commandCollection[6].CommandText = "SELECT idColaborador, idVenda, observacoes, valorCompra, vendData, vendHora, vend" +
+                "aEstado FROM Venda WHERE (vendData BETWEEN @dataPesquisa1 AND @dataPesquisa2) AN" +
+                "D (vendaEstado = 0)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "vendData", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17990,7 +18125,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idVenda, global::System.Nullable<global::System.DateTime> Original_vendData, global::System.Nullable<double> Original_valorCompra, global::System.Nullable<byte> Original_vendaEstado, string Original_observacoes, global::System.Nullable<global::System.TimeSpan> Original_vendHora) {
+        public virtual int Delete(int Original_idVenda, global::System.Nullable<global::System.DateTime> Original_vendData, global::System.Nullable<double> Original_valorCompra, global::System.Nullable<byte> Original_vendaEstado, string Original_observacoes, global::System.Nullable<global::System.TimeSpan> Original_vendHora, global::System.Nullable<int> Original_idColaborador) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idVenda));
             if ((Original_vendData.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -18032,6 +18167,14 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_idColaborador.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_idColaborador.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18052,7 +18195,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, string observacoes, global::System.Nullable<global::System.TimeSpan> vendHora) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, string observacoes, global::System.Nullable<global::System.TimeSpan> vendHora, global::System.Nullable<int> idColaborador) {
             if ((vendData.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(vendData.Value));
             }
@@ -18083,6 +18226,12 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((idColaborador.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idColaborador.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18103,7 +18252,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, string observacoes, global::System.Nullable<global::System.TimeSpan> vendHora, int Original_idVenda, global::System.Nullable<global::System.DateTime> Original_vendData, global::System.Nullable<double> Original_valorCompra, global::System.Nullable<byte> Original_vendaEstado, string Original_observacoes, global::System.Nullable<global::System.TimeSpan> Original_vendHora, int idVenda) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, string observacoes, global::System.Nullable<global::System.TimeSpan> vendHora, global::System.Nullable<int> idColaborador, int Original_idVenda, global::System.Nullable<global::System.DateTime> Original_vendData, global::System.Nullable<double> Original_valorCompra, global::System.Nullable<byte> Original_vendaEstado, string Original_observacoes, global::System.Nullable<global::System.TimeSpan> Original_vendHora, global::System.Nullable<int> Original_idColaborador, int idVenda) {
             if ((vendData.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(vendData.Value));
             }
@@ -18134,48 +18283,62 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idVenda));
-            if ((Original_vendData.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_vendData.Value));
+            if ((idColaborador.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(idColaborador.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idVenda));
+            if ((Original_vendData.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_vendData.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_valorCompra.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Original_valorCompra.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Original_valorCompra.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_vendaEstado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((byte)(Original_vendaEstado.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((byte)(Original_vendaEstado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_observacoes == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_observacoes));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_observacoes));
             }
             if ((Original_vendHora.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.TimeSpan)(Original_vendHora.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.TimeSpan)(Original_vendHora.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(idVenda));
+            if ((Original_idColaborador.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_idColaborador.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(idVenda));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18196,8 +18359,8 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, string observacoes, global::System.Nullable<global::System.TimeSpan> vendHora, int Original_idVenda, global::System.Nullable<global::System.DateTime> Original_vendData, global::System.Nullable<double> Original_valorCompra, global::System.Nullable<byte> Original_vendaEstado, string Original_observacoes, global::System.Nullable<global::System.TimeSpan> Original_vendHora) {
-            return this.Update(vendData, valorCompra, vendaEstado, observacoes, vendHora, Original_idVenda, Original_vendData, Original_valorCompra, Original_vendaEstado, Original_observacoes, Original_vendHora, Original_idVenda);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, string observacoes, global::System.Nullable<global::System.TimeSpan> vendHora, global::System.Nullable<int> idColaborador, int Original_idVenda, global::System.Nullable<global::System.DateTime> Original_vendData, global::System.Nullable<double> Original_valorCompra, global::System.Nullable<byte> Original_vendaEstado, string Original_observacoes, global::System.Nullable<global::System.TimeSpan> Original_vendHora, global::System.Nullable<int> Original_idColaborador) {
+            return this.Update(vendData, valorCompra, vendaEstado, observacoes, vendHora, idColaborador, Original_idVenda, Original_vendData, Original_valorCompra, Original_vendaEstado, Original_observacoes, Original_vendHora, Original_idColaborador, Original_idVenda);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18234,7 +18397,7 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InserirVenda(string vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, global::System.Nullable<int> idCaixa, string observacoes, string vendHora, global::System.Nullable<double> valorPago) {
+        public virtual int InserirVenda(string vendData, global::System.Nullable<double> valorCompra, global::System.Nullable<byte> vendaEstado, global::System.Nullable<int> idCaixa, string observacoes, string vendHora, global::System.Nullable<double> valorPago, global::System.Nullable<int> idColaborador) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((vendData == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -18277,6 +18440,12 @@ SELECT idVenda, vendData, valorCompra, vendaEstado, observacoes, vendHora FROM V
             }
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((idColaborador.HasValue == true)) {
+                command.Parameters[7].Value = ((int)(idColaborador.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23348,12 +23517,11 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             tableMapping.ColumnMappings.Add("observacoes", "observacoes");
             tableMapping.ColumnMappings.Add("horaEntrada", "horaEntrada");
             tableMapping.ColumnMappings.Add("idSecundarioItensEntrada", "idSecundarioItensEntrada");
+            tableMapping.ColumnMappings.Add("idColaborador", "idColaborador");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [ItensDeEntrada] ([idSecundarioItensEntrada], [idProduto], [qntItem]," +
-                " [dataEntrada], [observacoes], [horaEntrada]) VALUES (@idSecundarioItensEntrada," +
-                " @idProduto, @qntItem, @dataEntrada, @observacoes, @horaEntrada)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ItensDeEntrada] ([idSecundarioItensEntrada], [idProduto], [qntItem], [dataEntrada], [observacoes], [horaEntrada], [idColaborador]) VALUES (@idSecundarioItensEntrada, @idProduto, @qntItem, @dataEntrada, @observacoes, @horaEntrada, @idColaborador)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensEntrada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23361,6 +23529,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataEntrada", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaEntrada", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23377,7 +23546,7 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idSecundarioItensEntrada, idProduto, qntItem, dataEntrada, observac" +
-                "oes, horaEntrada\r\nFROM            ItensDeEntrada";
+                "oes, horaEntrada, idColaborador\r\nFROM            ItensDeEntrada";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -23388,10 +23557,9 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensEntrada", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensEntrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO ItensDeEntrada\r\n                         (idSecundarioItensEntrada ,q" +
-                "ntItem, dataEntrada, horaEntrada,idProduto, observacoes)\r\nVALUES        (@idSecu" +
-                "ndarioItensEntrada, @qntItem,@dataEntrada, @horaEntrada,@idProduto, @observacoes" +
-                ")";
+            this._commandCollection[2].CommandText = @"INSERT INTO ItensDeEntrada
+                         (idSecundarioItensEntrada, qntItem, dataEntrada, horaEntrada, idProduto, observacoes, idColaborador)
+VALUES        (@idSecundarioItensEntrada,@qntItem,@dataEntrada,@horaEntrada,@idProduto,@observacoes, @idColaborador)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensEntrada", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qntItem", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "qntItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23399,27 +23567,25 @@ WHERE        (ItensDaVenda.idVenda = @idVenda)";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaEntrada", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "horaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes" +
-                ", qntItem FROM ItensDeEntrada WHERE (idSecundarioItensEntrada = @idSecundarioIte" +
-                "nsEntrada)";
+            this._commandCollection[3].CommandText = "SELECT dataEntrada, horaEntrada, idColaborador, idProduto, idSecundarioItensEntra" +
+                "da, observacoes, qntItem FROM ItensDeEntrada WHERE (idSecundarioItensEntrada = @" +
+                "idSecundarioItensEntrada)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensEntrada", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, observacoes, qntItem
- FROM ItensDeEntrada
- WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) 
-GROUP BY idSecundarioItensEntrada, dataEntrada, horaEntrada, idProduto, observacoes, qntItem 
-HAVING (count(idSecundarioItensEntrada) > 0) ";
+            this._commandCollection[4].CommandText = @"SELECT dataEntrada, horaEntrada, idColaborador, idProduto, idSecundarioItensEntrada, observacoes, qntItem FROM ItensDeEntrada WHERE (dataEntrada BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensEntrada, dataEntrada, horaEntrada, idProduto, observacoes, qntItem, idcolaborador HAVING (COUNT(idSecundarioItensEntrada) > 0)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT TOP (1) dataEntrada, horaEntrada, idProduto, idSecundarioItensEntrada, obs" +
-                "ervacoes, qntItem FROM ItensDeEntrada ORDER BY idSecundarioItensEntrada DESC";
+            this._commandCollection[5].CommandText = "SELECT TOP (1) dataEntrada, horaEntrada, idColaborador, idProduto, idSecundarioIt" +
+                "ensEntrada, observacoes, qntItem FROM ItensDeEntrada ORDER BY idSecundarioItensE" +
+                "ntrada DESC";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -23518,7 +23684,7 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idSecundarioItensEntrada, global::System.Nullable<int> idProduto, global::System.Nullable<int> qntItem, global::System.Nullable<global::System.DateTime> dataEntrada, string observacoes, global::System.Nullable<global::System.TimeSpan> horaEntrada) {
+        public virtual int Insert(global::System.Nullable<int> idSecundarioItensEntrada, global::System.Nullable<int> idProduto, global::System.Nullable<int> qntItem, global::System.Nullable<global::System.DateTime> dataEntrada, string observacoes, global::System.Nullable<global::System.TimeSpan> horaEntrada, global::System.Nullable<int> idColaborador) {
             if ((idSecundarioItensEntrada.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idSecundarioItensEntrada.Value));
             }
@@ -23554,6 +23720,12 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((idColaborador.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(idColaborador.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23610,7 +23782,7 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirItensEntrada(global::System.Nullable<int> idSecundarioItensEntrada, global::System.Nullable<int> qntItem, string dataEntrada, string horaEntrada, global::System.Nullable<int> idProduto, string observacoes) {
+        public virtual int inserirItensEntrada(global::System.Nullable<int> idSecundarioItensEntrada, global::System.Nullable<int> qntItem, string dataEntrada, string horaEntrada, global::System.Nullable<int> idProduto, string observacoes, global::System.Nullable<int> idColaborador) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((idSecundarioItensEntrada.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(idSecundarioItensEntrada.Value));
@@ -23647,6 +23819,12 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             }
             else {
                 command.Parameters[5].Value = ((string)(observacoes));
+            }
+            if ((idColaborador.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(idColaborador.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -23793,12 +23971,14 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             tableMapping.ColumnMappings.Add("dataSaida", "dataSaida");
             tableMapping.ColumnMappings.Add("horaSaida", "horaSaida");
             tableMapping.ColumnMappings.Add("observacoes", "observacoes");
+            tableMapping.ColumnMappings.Add("idColaborador", "idColaborador");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [ItensDeSaida] ([idSecundarioItensSaida], [idProduto], [qntItem], [da" +
-                "taSaida], [horaSaida], [observacoes]) VALUES (@idSecundarioItensSaida, @idProdut" +
-                "o, @qntItem, @dataSaida, @horaSaida, @observacoes)";
+                "taSaida], [horaSaida], [observacoes], [idColaborador]) VALUES (@idSecundarioIten" +
+                "sSaida, @idProduto, @qntItem, @dataSaida, @horaSaida, @observacoes, @idColaborad" +
+                "or)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensSaida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23806,6 +23986,7 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataSaida", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaSaida", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "horaSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23822,7 +24003,7 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        idSecundarioItensSaida, idProduto, qntItem, dataSaida, horaSaida, o" +
-                "bservacoes\r\nFROM            ItensDeSaida";
+                "bservacoes, idColaborador\r\nFROM            ItensDeSaida";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -23833,9 +24014,9 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensSaida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensSaida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO ItensDeSaida\r\n                         (idSecundarioItensSaida ,qntIt" +
-                "em, dataSaida, horaSaida,idProduto, observacoes)\r\nVALUES        (@idSecundarioIt" +
-                "ensSaida, @qntItem,@dataSaida, @horaSaida,@idProduto, @observacoes)";
+            this._commandCollection[2].CommandText = @"INSERT INTO ItensDeSaida
+                         (idSecundarioItensSaida, qntItem, dataSaida, horaSaida, idProduto, observacoes, idColaborador)
+VALUES        (@idSecundarioItensSaida,@qntItem,@dataSaida,@horaSaida,@idProduto,@observacoes, @idColaborador)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensSaida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@qntItem", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "qntItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23843,20 +24024,23 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@horaSaida", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "horaSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idProduto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idProduto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idColaborador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idColaborador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT TOP (1) dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observaco" +
-                "es, qntItem FROM ItensDeSaida ORDER BY idSecundarioItensSaida DESC";
+            this._commandCollection[3].CommandText = "SELECT TOP (1) dataSaida, horaSaida, idColaborador, idProduto, idSecundarioItensS" +
+                "aida, observacoes, qntItem FROM ItensDeSaida ORDER BY idSecundarioItensSaida DES" +
+                "C";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntI" +
-                "tem FROM ItensDeSaida WHERE (idSecundarioItensSaida = @idSecundarioItensSaida)";
+            this._commandCollection[4].CommandText = "SELECT dataSaida, horaSaida, idColaborador, idProduto, idSecundarioItensSaida, ob" +
+                "servacoes, qntItem FROM ItensDeSaida WHERE (idSecundarioItensSaida = @idSecundar" +
+                "ioItensSaida)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSecundarioItensSaida", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSecundarioItensSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT dataSaida, horaSaida, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida WHERE (dataSaida BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensSaida, dataSaida, observacoes, idProduto, horaSaida, qntItem HAVING (count(idSecundarioItensSaida) > 0)";
+            this._commandCollection[5].CommandText = @"SELECT dataSaida, horaSaida, idColaborador, idProduto, idSecundarioItensSaida, observacoes, qntItem FROM ItensDeSaida WHERE (dataSaida BETWEEN @dataPesquisa1 AND @dataPesquisa2) GROUP BY idSecundarioItensSaida, dataSaida, observacoes, idProduto, horaSaida, qntItem, idcolaborador HAVING (COUNT(idSecundarioItensSaida) > 0)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dataPesquisa2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "dataSaida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23970,7 +24154,7 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idSecundarioItensSaida, global::System.Nullable<int> idProduto, global::System.Nullable<int> qntItem, global::System.Nullable<global::System.DateTime> dataSaida, global::System.Nullable<global::System.TimeSpan> horaSaida, string observacoes) {
+        public virtual int Insert(global::System.Nullable<int> idSecundarioItensSaida, global::System.Nullable<int> idProduto, global::System.Nullable<int> qntItem, global::System.Nullable<global::System.DateTime> dataSaida, global::System.Nullable<global::System.TimeSpan> horaSaida, string observacoes, global::System.Nullable<int> idColaborador) {
             if ((idSecundarioItensSaida.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idSecundarioItensSaida.Value));
             }
@@ -24006,6 +24190,12 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(observacoes));
+            }
+            if ((idColaborador.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(idColaborador.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -24062,7 +24252,7 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int inserirItensSaida(global::System.Nullable<int> idSecundarioItensSaida, global::System.Nullable<int> qntItem, string dataSaida, string horaSaida, global::System.Nullable<int> idProduto, string observacoes) {
+        public virtual int inserirItensSaida(global::System.Nullable<int> idSecundarioItensSaida, global::System.Nullable<int> qntItem, string dataSaida, string horaSaida, global::System.Nullable<int> idProduto, string observacoes, global::System.Nullable<int> idColaborador) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((idSecundarioItensSaida.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(idSecundarioItensSaida.Value));
@@ -24099,6 +24289,12 @@ HAVING (count(idSecundarioItensEntrada) > 0) ";
             }
             else {
                 command.Parameters[5].Value = ((string)(observacoes));
+            }
+            if ((idColaborador.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(idColaborador.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

@@ -13,6 +13,8 @@ namespace WindowsFormsApp2.Estoque.View
     public partial class SaidaDeProduto : UserControl
     {
         DadosTableAdapters.ItensDeSaidaTableAdapter saidas = new DadosTableAdapters.ItensDeSaidaTableAdapter();
+        DadosTableAdapters.FuncionarioTableAdapter colaborador = new DadosTableAdapters.FuncionarioTableAdapter();
+
         string deData;
         string ateData;
         public SaidaDeProduto()
@@ -46,10 +48,12 @@ namespace WindowsFormsApp2.Estoque.View
 
                 ListViewItem item = new ListViewItem();
                 var auxSaidas = saidas.retornarSaidaPorId(Convert.ToInt32(varSaidas[i]["idSecundarioItensSaida"]));
+                var auxColaborador = colaborador.retornarColaboradorPorId(Convert.ToInt32(auxSaidas[0]["idColaborador"]));
+
 
                 item.SubItems.Add(auxSaidas[0]["idSecundarioItensSaida"].ToString());
                 item.SubItems.Add(Convert.ToDateTime(auxSaidas[0]["dataSaida"]).ToString("dd/MM/yyyy") + " " + auxSaidas[0]["horaSaida"].ToString().Substring(0, 5));
-                item.SubItems.Add("Funcionario padrão");
+                item.SubItems.Add(auxColaborador[0]["nomeFunc"].ToString());
                 if (auxSaidas[0]["observacoes"].ToString().Length >= 69)
                     item.SubItems.Add(auxSaidas[0]["observacoes"].ToString().Substring(0, 69));
                 else

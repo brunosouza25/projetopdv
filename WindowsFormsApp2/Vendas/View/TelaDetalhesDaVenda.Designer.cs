@@ -65,8 +65,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -274,8 +272,6 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblData);
             this.panel2.Controls.Add(this.lbl);
-            this.panel2.Controls.Add(this.txtCliente);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -405,7 +401,7 @@
             // txtFuncionario
             // 
             this.txtFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFuncionario.Location = new System.Drawing.Point(154, 76);
+            this.txtFuncionario.Location = new System.Drawing.Point(155, 58);
             this.txtFuncionario.Name = "txtFuncionario";
             this.txtFuncionario.ReadOnly = true;
             this.txtFuncionario.Size = new System.Drawing.Size(266, 31);
@@ -416,7 +412,7 @@
             // 
             this.lblFuncionario.AutoSize = true;
             this.lblFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionario.Location = new System.Drawing.Point(9, 76);
+            this.lblFuncionario.Location = new System.Drawing.Point(10, 58);
             this.lblFuncionario.Name = "lblFuncionario";
             this.lblFuncionario.Size = new System.Drawing.Size(152, 29);
             this.lblFuncionario.TabIndex = 6;
@@ -462,25 +458,6 @@
             this.lbl.TabIndex = 2;
             this.lbl.Text = "Data:";
             // 
-            // txtCliente
-            // 
-            this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(154, 37);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(266, 31);
-            this.txtCliente.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cliente: ";
-            // 
             // TelaDetalhesDaVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,14 +484,12 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFuncionario;
         private System.Windows.Forms.Label lblFuncionario;
         private System.Windows.Forms.Label lblNumVenda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.ListView listaVendas;
         private System.Windows.Forms.ColumnHeader nulo;
         private System.Windows.Forms.ColumnHeader columnHeader1;

@@ -11,6 +11,8 @@ namespace WindowsFormsApp2.Vendas.View
         DadosTableAdapters.DataRelatorioTableAdapter detalheVenda = new DadosTableAdapters.DataRelatorioTableAdapter();
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();
         DadosTableAdapters.Itens_DevolucaoTableAdapter devolucao = new DadosTableAdapters.Itens_DevolucaoTableAdapter();
+        DadosTableAdapters.FuncionarioTableAdapter colaborador = new DadosTableAdapters.FuncionarioTableAdapter();
+        DadosTableAdapters.VendaTableAdapter vendas = new DadosTableAdapters.VendaTableAdapter();
 
         int codVenda;
         int idDin = -1, idCredVista = -1, idDeb = -1, idCredParc = -1;
@@ -190,6 +192,9 @@ namespace WindowsFormsApp2.Vendas.View
             var auxVenda = detalheVenda.retornarVendaPorId(codVenda);
             var auxProdutosVenda = detalheVenda.retornarItensDaVenda(codVenda);
             var pagamentosVenda = detalheVenda.pagamentosVenda(codVenda);
+            var venda = vendas.retornarVendaPorId(codVenda);
+            var auxColaborador = colaborador.retornarColaboradorPorId(Convert.ToInt32(venda[0]["idColaborador"]));
+            txtFuncionario.Text = auxColaborador[0]["nomeFunc"].ToString();
             txtBoxObs.Text = auxVenda[0]["observacoes"].ToString();
             if (Convert.ToByte(auxVenda[0]["vendaEstado"]) == 0)
                 btnCancelarVenda.Enabled = false;
