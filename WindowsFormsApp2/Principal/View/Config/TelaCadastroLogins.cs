@@ -31,17 +31,27 @@ namespace WindowsFormsApp2.Principal.View.Config
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            var auxLogin = colaboradores.verificarDuplicataLogin(txtLogin.Text);
-            if (txtSenha.Text == txtBoxRepetirSenha.Text && txtLogin.Text.Trim() != "" && cbColaborador.SelectedItem != null && txtSenha.Text.Trim() != "" && txtBoxRepetirSenha.Text.Trim() != "")
+             var auxLogin = colaboradores.verificarDuplicataLogin(txtLogin.Text);
+            if (txtSenha.Text == txtBoxRepetirSenha.Text && txtLogin.Text.Trim() != "" && cbColaborador.SelectedItem != null && txtSenha.Text.Trim() != "" && txtBoxRepetirSenha.Text.Trim() != "" && auxLogin.Count < 1)
             {
                 var idColab = colaboradores.verificarFunc(cbColaborador.SelectedItem.ToString());
-                colaboradores.cadastrarLogin(txtLogin.Text, txtSenha.Text, Convert.ToInt32(idColab[0]["idFuncionario"]));
-                MessageBox.Show("Login cadastrado com sucesso");
-                Close();
+                
+                if (idColab.Count > 0)
+                {
+                    colaboradores.cadastrarLogin(txtLogin.Text, txtSenha.Text, Convert.ToInt32(idColab[0]["idFuncionario"]));
+                    MessageBox.Show("Login cadastrado com sucesso");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Colaborador inativado");
+                }
+                
+
             }
             else
             {
-                MessageBox.Show("Colaborador não selecionado ou as senhas não coincidem");
+                MessageBox.Show("Colaborador não selecionado ou as senhas não coincidem ou nome de login já existente");
             }
         }
 

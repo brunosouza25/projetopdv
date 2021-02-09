@@ -230,8 +230,9 @@ namespace WindowsFormsApp2.Vendas.View
 
             lblTotal.Text = Convert.ToDouble(auxVenda[0]["valorCompra"]).ToString("F2");
 
-            lblData.Text = Convert.ToDateTime(auxVenda[0]["vendData"]).ToString("dd/MM/yyyy HH:mm");
-
+            lblData.Text = Convert.ToDateTime(auxVenda[0]["vendData"]).ToString("dd/MM/yyyy");
+            lblHora.Text = auxVenda[0]["vendHora"].ToString().Substring(0,5);
+           
             for (int i = 0; i < auxProdutosVenda.Count; i++)
             {
                 ListViewItem item = new ListViewItem();

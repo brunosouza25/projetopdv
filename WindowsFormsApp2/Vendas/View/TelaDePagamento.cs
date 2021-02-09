@@ -68,12 +68,12 @@ namespace WindowsFormsApp2
         {
             bool ok = false;
             double a, b, c, d, f;
-            double valorDin = 0, valorCredVista = 0, valorCredParc = 0, valorDeb = 0, totalvalidar = 0;
+            double valorDin = 0, valorCredVista = 0, valorCredParc = 0,  valorDeb = 0, totalvalidar = 0;
 
 
 
 
-            string valorTotal = total.ToString("F2");
+               string valorTotal = total.ToString("F2");
 
 
             if ((double.TryParse(TxtBoxDinheiro.Text.Trim(), out a) || TxtBoxDinheiro.Text == "") && ((double.TryParse(txtCredVista.Text.Trim(), out b) || txtCredVista.Text == ""))
@@ -83,7 +83,7 @@ namespace WindowsFormsApp2
                 if (TxtBoxDinheiro.Text == "")
                     valorDin = 0;
                 else
-                    valorDin = Convert.ToDouble(TxtBoxDinheiro.Text);
+                     valorDin = Convert.ToDouble(TxtBoxDinheiro.Text);
 
                 if (txtCredVista.Text == "")
                     valorCredVista = 0;
@@ -121,13 +121,13 @@ namespace WindowsFormsApp2
                 else if (somaTotal >= totalvalidar)
                 {
                     LblFalta.Text = "Falta: R$0,00";
-                    LblTroco.Text = "Troco R$" + (somaTotal - total - valorDesc).ToString("F2");
+                    LblTroco.Text = "Troco R$" + Math.Abs(somaTotal - total - valorDesc).ToString("F2");
                     ok = true;
                 }
                 else
                 {
                     LblTroco.Text = "Troco: R$0,00";
-                    LblFalta.Text = "Falta: R$" + (total - somaTotal).ToString("F2");
+                    LblFalta.Text = "Falta: R$" + ((total - somaTotal)-valorDesc).ToString("F2");
                     ok = false;
                 }
             }

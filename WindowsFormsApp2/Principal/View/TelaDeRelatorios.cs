@@ -685,7 +685,7 @@ namespace WindowsFormsApp2
         private void btnEsteMes_Click(object sender, EventArgs e)
         {
             ateData = DateTime.Now;
-            deData = DateTime.Now;
+            deData = new DateTime(ateData.Year,ateData.Month, 1);
             alterarCor();
             btnEsteMes.BackColor = Color.Gray;
         }
@@ -698,11 +698,17 @@ namespace WindowsFormsApp2
 
 
             var data = DateTime.Now.AddMonths(-1);
-            var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
+            int ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
             var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia); //possibilidade de remoção desta linha
 
-            ateData = dataUltimoDia;
-            deData = dataUltimoDia;
+            DateTime primeiroDiaDoMes = new DateTime(data.Year, data.Month, 1);
+            DateTime ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
+
+            deData = primeiroDiaDoMes;
+            alterarCor();
+
+            ateData = ultimoDiaDoMes;
+
 
             alterarCor();
             btnMesPassado.BackColor = Color.Gray;

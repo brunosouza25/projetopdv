@@ -4390,6 +4390,8 @@ namespace WindowsFormsApp2 {
             
             private global::System.Data.DataColumn columnvalorDesconto;
             
+            private global::System.Data.DataColumn columnvendHora;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public relatórioVendasDataTable() {
@@ -4561,6 +4563,14 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn vendHoraColumn {
+                get {
+                    return this.columnvendHora;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4613,7 +4623,8 @@ namespace WindowsFormsApp2 {
                         byte estadoDevolucao, 
                         int quantidadeRetirada, 
                         double valorDeVenda, 
-                        double valorDesconto) {
+                        double valorDesconto, 
+                        System.TimeSpan vendHora) {
                 relatórioVendasRow rowrelatórioVendasRow = ((relatórioVendasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         prodNome,
@@ -4632,7 +4643,8 @@ namespace WindowsFormsApp2 {
                         estadoDevolucao,
                         quantidadeRetirada,
                         valorDeVenda,
-                        valorDesconto};
+                        valorDesconto,
+                        vendHora};
                 if ((parentVendaRowByFK__ItensDaVe__idVen__5441852A1 != null)) {
                     columnValuesArray[8] = parentVendaRowByFK__ItensDaVe__idVen__5441852A1[0];
                 }
@@ -4678,6 +4690,7 @@ namespace WindowsFormsApp2 {
                 this.columnquantidadeRetirada = base.Columns["quantidadeRetirada"];
                 this.columnvalorDeVenda = base.Columns["valorDeVenda"];
                 this.columnvalorDesconto = base.Columns["valorDesconto"];
+                this.columnvendHora = base.Columns["vendHora"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4717,6 +4730,8 @@ namespace WindowsFormsApp2 {
                 base.Columns.Add(this.columnvalorDeVenda);
                 this.columnvalorDesconto = new global::System.Data.DataColumn("valorDesconto", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalorDesconto);
+                this.columnvendHora = new global::System.Data.DataColumn("vendHora", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvendHora);
                 this.columnprodNome.MaxLength = 50;
                 this.columnprodCodBarras.MaxLength = 13;
                 this.columnpagamentoTipo.MaxLength = 20;
@@ -13521,6 +13536,22 @@ namespace WindowsFormsApp2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.TimeSpan vendHora {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tablerelatórioVendas.vendHoraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'vendHora\' na tabela \'relatórioVendas\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerelatórioVendas.vendHoraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProdutoRow ProdutoRow {
                 get {
                     return ((ProdutoRow)(this.GetParentRow(this.Table.ParentRelations["FK__ItensDaVe__idPro__5DCAEF64"])));
@@ -13743,6 +13774,18 @@ namespace WindowsFormsApp2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetvalorDescontoNull() {
                 this[this.tablerelatórioVendas.valorDescontoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvendHoraNull() {
+                return this.IsNull(this.tablerelatórioVendas.vendHoraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvendHoraNull() {
+                this[this.tablerelatórioVendas.vendHoraColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -23088,6 +23131,7 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
             tableMapping.ColumnMappings.Add("quantidadeRetirada", "quantidadeRetirada");
             tableMapping.ColumnMappings.Add("valorDeVenda", "valorDeVenda");
             tableMapping.ColumnMappings.Add("valorDesconto", "valorDesconto");
+            tableMapping.ColumnMappings.Add("vendHora", "vendHora");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -23105,7 +23149,8 @@ SELECT idCaixa, aberturaCaixa, fechamentoCaixa, valorAtual, dataCaixa, estadoCai
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Produto.prodNome, Produto.prodValor, Produto.prodCodBarras, ItensDaVenda.itensQtd, ItensDaVenda.ItensTotal, Venda.vendData, MetodoDePagamento.pagamentoTipo, Pagamento.PagValor, ItensDaVenda.idVenda AS Expr1, 
-                         Venda.valorCompra, Venda.vendaEstado, Venda.observacoes, ItensDaVenda.idProduto, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeVenda, Pagamento.valorDesconto
+                         Venda.valorCompra, Venda.vendaEstado, Venda.observacoes, ItensDaVenda.idProduto, ItensDaVenda.estadoDevolucao, ItensDaVenda.quantidadeRetirada, ItensDaVenda.valorDeVenda, Pagamento.valorDesconto, 
+                         Venda.vendHora
 FROM            MetodoDePagamento INNER JOIN
                          Pagamento ON MetodoDePagamento.idMPagamento = Pagamento.idMPagamento INNER JOIN
                          Venda ON Pagamento.idVenda = Venda.idVenda INNER JOIN

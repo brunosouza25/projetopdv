@@ -22,7 +22,8 @@ namespace WindowsFormsApp2.Estoque.View
             ultimoId();
             lblTotalItens.Text = "0";
             txtBoxQnt.Text = "1";
-            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            lblHora.Text = DateTime.Now.ToString("HH:mm");
             lblNumSaida.Text = idSaida.ToString();
             TxtBoxPesquisaProd.Select();
             btnSalvar.Visible = false;
@@ -37,6 +38,7 @@ namespace WindowsFormsApp2.Estoque.View
             btnSaida.Enabled = false;
             txtBoxQnt.Enabled = false;
             TxtBoxPesquisaProd.Enabled = false;
+            btnLimpar.Enabled = false;
             carregarSaida();
         }
 
@@ -48,6 +50,7 @@ namespace WindowsFormsApp2.Estoque.View
 
             listaDeSaida.Items.Clear();
             lblData.Text = Convert.ToDateTime(aux[0]["dataSaida"]).ToString("dd/MM/yyyy");
+            lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0,5);
             //lblHora.Text = aux[0]["horaSaida"].ToString().Substring(0, 5);
             lblNumSaida.Text = idSaida.ToString();
             txtBoxObs.Text = aux[0]["observacoes"].ToString();

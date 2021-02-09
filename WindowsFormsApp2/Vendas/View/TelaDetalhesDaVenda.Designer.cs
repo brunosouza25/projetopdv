@@ -65,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lbl = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -255,6 +256,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblHora);
             this.panel2.Controls.Add(this.btnImprimirSegundaVia);
             this.panel2.Controls.Add(this.txtBoxDesc);
             this.panel2.Controls.Add(this.lblDesc);
@@ -442,7 +444,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(658, 1);
+            this.lblData.Location = new System.Drawing.Point(586, 0);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(159, 33);
             this.lblData.TabIndex = 3;
@@ -452,11 +454,21 @@
             // 
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(575, 1);
+            this.lbl.Location = new System.Drawing.Point(503, 0);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(84, 33);
             this.lbl.TabIndex = 2;
             this.lbl.Text = "Data:";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(751, 0);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(87, 33);
+            this.lblHora.TabIndex = 20;
+            this.lblHora.Text = "23:59";
             // 
             // TelaDetalhesDaVenda
             // 
@@ -517,5 +529,6 @@
         private System.Windows.Forms.TextBox txtBoxDesc;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Button btnImprimirSegundaVia;
+        private System.Windows.Forms.Label lblHora;
     }
 }

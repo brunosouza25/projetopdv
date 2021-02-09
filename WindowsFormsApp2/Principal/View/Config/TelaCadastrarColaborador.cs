@@ -97,11 +97,8 @@ namespace WindowsFormsApp2.Principal.View.Config
                     var Cargo = cargos.retornarCargo(cbCargo.SelectedItem.ToString());
                     idCargo = Convert.ToInt32(Cargo[0]["idCargo"]);
 
-                DateTime a;
-                if (!DateTime.TryParse(txtNasc.Text, out a))
-                {
-                    a = new DateTime(1111, 11, 11);
-                }
+
+                
                 colaboladores.atualizarColaborador(idCargo, txtNome.Text, Convert.ToByte(!cbInativo.Checked), txtEmail.Text, idColaborador);
                 Close();
             }

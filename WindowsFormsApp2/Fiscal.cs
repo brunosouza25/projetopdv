@@ -37,8 +37,6 @@ namespace WindowsFormsApp2
                 string cidade = auxFiscal[0]["cidade"].ToString();
                 string codCidade = auxFiscal[0]["codigoCidade"].ToString();
                 string uf = auxFiscal[0]["uf"].ToString();
-
-                fiscal.inserirFiscal(codigoVenda, "");
                 
                 var auxIdFiscal = fiscal.retornarUltimoIdFiscal();
                 int idFiscal = Convert.ToInt32(auxIdFiscal[0]["idFiscal"].ToString());

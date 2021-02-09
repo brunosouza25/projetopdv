@@ -174,6 +174,7 @@
             this.ClientSize = new System.Drawing.Size(532, 306);
             this.Controls.Add(this.panel1);
             this.Name = "TelaCadastroLogins";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaCadastroLogins";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

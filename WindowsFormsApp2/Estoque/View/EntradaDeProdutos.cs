@@ -114,13 +114,17 @@ namespace WindowsFormsApp2
 
 
             var data = DateTime.Now.AddMonths(-1);
-            var ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
+            int ultimoDia = DateTime.DaysInMonth(data.Year, data.Month);
             var dataUltimoDia = new DateTime(data.Year, data.Month, ultimoDia); //possibilidade de remoção desta linha
 
-            ateData = (dataUltimoDia.ToString("01/MM/yyyy"));
-            deData = (dataUltimoDia.ToString("dd/MM/yyyy"));
-            carregarEntradas();
+            DateTime primeiroDiaDoMes = new DateTime(data.Year, data.Month, 1);
+            DateTime ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
 
+            deData = primeiroDiaDoMes.ToString();
+
+
+            ateData = ultimoDiaDoMes.ToString();
+            carregarEntradas();
         }
 
         private void btnUltimos3Meses_Click(object sender, EventArgs e)
