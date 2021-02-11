@@ -46,7 +46,7 @@ namespace WindowsFormsApp2
             //vendas
             
             painelPrincipal.Controls.Add(telaDoPdv);
-            telaDoPdv.Visible = false;
+            telaDoPdv.Visible = true;
 
             painelPrincipal.Controls.Add(telaDeConfig);
             telaDeConfig.Visible = false;
@@ -64,6 +64,7 @@ namespace WindowsFormsApp2
                 telaDeConfig.Visible = false;
                 btnConfig.Visible = false;
             }
+            lblNome.Text= Global.nomeColaborador;
         }
 
         public TelaConfig TelaConfig

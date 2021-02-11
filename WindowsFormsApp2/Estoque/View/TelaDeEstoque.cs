@@ -16,6 +16,22 @@ namespace WindowsFormsApp2
         public TelaDeEstoque()
         {
             InitializeComponent();
+            if (Global.criacaoProduto == false)
+            {
+                Bt_Criar_Prod.Visible = false;
+            }
+            if (Global.editarProdutos == false)
+            {
+                Bt_Editar_Prod.Visible = false;
+            }
+            if (Global.entradaProdutos == false)
+            {
+                Bt_Entrar_Prod.Visible = false;
+            }
+            if (Global.saidaProdutos == false)
+            {
+                Bt_Entrar_Prod.Visible = false;
+            }
         }
 
         DadosTableAdapters.ProdutoTableAdapter dadosProdutos = new DadosTableAdapters.ProdutoTableAdapter();

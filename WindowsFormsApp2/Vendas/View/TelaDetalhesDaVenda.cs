@@ -108,7 +108,9 @@ namespace WindowsFormsApp2.Vendas.View
 
                 x = File.CreateText(caminho);
                 var auxFiscal = fiscal.segundaVia(codVenda);
+                //MessageBox.Show("NFe.CriarNFe(" + auxFiscal[0]["caminhoXml"].ToString() + ",1)");
                 x.WriteLine("NFe.CriarNFe("+auxFiscal[0]["caminhoXml"].ToString()+",1)");
+                
                 x.Close();
                 Thread.Sleep(1000);
             }

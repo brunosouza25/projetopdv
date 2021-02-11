@@ -60,7 +60,8 @@ CREATE TABLE Produto (
 	idIcms INT,
 	fiscal BIT
 );
-INSERT INTO Produto VALUES('queijo', 10, 5, 100, '01', 0, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
+
+
 
 CREATE TABLE Caixa (
     idCaixa INT PRIMARY KEY IDENTITY (1,1),
@@ -83,6 +84,8 @@ CREATE TABLE ItensDeEntrada (
 	qntCancelado int*/
 );
 
+
+
 CREATE TABLE ItensDeSaida (
     /*idPrimarioItensSaida INT PRIMARY KEY IDENTITY (1,1),*/
     idSecundarioItensSaida INT,
@@ -94,6 +97,8 @@ CREATE TABLE ItensDeSaida (
     observacoes VARCHAR(300),
 
 );
+
+
 
 CREATE TABLE Funcionario (
     idFuncionario INT PRIMARY KEY IDENTITY (1,1),
@@ -273,6 +278,8 @@ insert into Permissoes_Vendas values (1,1,1,1,1)
 
 insert into fiscal values (0, '')
 
+
+
 ALTER TABLE venda
 ADD idColaborador int;
 
@@ -281,3 +288,13 @@ ADD idColaborador int;
 
 ALTER TABLE ItensDeSaida
 ADD idColaborador int;
+
+INSERT INTO Produto VALUES('Carregador Celular', 15, 5, 80, '01', 0, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
+INSERT INTO Produto VALUES('Capinha P30 Pro', 10, 5, 1, '02', 0, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
+INSERT INTO Produto VALUES('Smartphone Huawei P30 Pro', 3500, 2000, 1, '02', 0, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
+INSERT INTO Produto VALUES('Xiaomi Mi 10', 1800, 1200, 1, '02', 1, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
+INSERT INTO Produto VALUES('Notebook Dell G5 5590', 5500, 5000, 1, '02', 0, 1,1,01,01,5102,900,00, '38151210', '0100100', 0,10,1)
+
+INSERT INTO ItensDeEntrada VALUES(1, 1, null, 100, '2021-02-09', '17:00:00', '')
+INSERT INTO ItensDeSaida VALUES(1, 1, null, 20, '2021-02-09', '17:00:00', '')
+

@@ -156,8 +156,10 @@ namespace WindowsFormsApp2
                 enviarNfce(codigoVenda, tick);
                 Thread.Sleep(1000);
                 imprimirNfce(codigoVenda, tick);
+                fiscal.inserirFiscal(codigoVenda, @"C:\pdv\fiscal\ini\nota" + codigoVenda + "_" + tick + ".ini");
                 var auxIdFiscal2 = fiscal.retornarUltimoIdFiscal();
-                fiscal.inserirCaminhoXml(@"C:\pdv\fiscal\ini\nota" + codigoVenda + "_" + tick + ".ini", Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
+                //fiscal.inserirCaminhoXml(@"C:\pdv\fiscal\ini\nota" + codigoVenda + "_" + tick + ".ini", Convert.ToInt32(auxIdFiscal[0]["idFiscal"]));
+               
                // File.Copy("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name, @"C:\pdv\fiscal\xmls\" + arquivo.Name);
                 //File.Delete("C:\\pdv\\fiscal\\temporario\\" + arquivo.Name);
 

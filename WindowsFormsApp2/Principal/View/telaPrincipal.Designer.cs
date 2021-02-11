@@ -33,6 +33,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.painel_hora = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Lab_Hora = new System.Windows.Forms.Label();
@@ -47,6 +49,7 @@
             this.BtRelatorio = new System.Windows.Forms.Button();
             this.painelPrincipal = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,8 +89,9 @@
             // 
             // painel_hora
             // 
-            this.painel_hora.Controls.Add(this.label1);
-            this.painel_hora.Controls.Add(this.button1);
+            this.painel_hora.Controls.Add(this.label4);
+            this.painel_hora.Controls.Add(this.label2);
+            this.painel_hora.Controls.Add(this.lblNome);
             this.painel_hora.Controls.Add(this.Lab_Hora);
             this.painel_hora.Dock = System.Windows.Forms.DockStyle.Fill;
             this.painel_hora.Location = new System.Drawing.Point(635, 3);
@@ -95,11 +99,31 @@
             this.painel_hora.Size = new System.Drawing.Size(626, 98);
             this.painel_hora.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 37);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Usuário:";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(171, 0);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 37);
+            this.lblNome.TabIndex = 9;
+            this.lblNome.Text = "a";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 77);
+            this.label1.Location = new System.Drawing.Point(552, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 8;
@@ -109,7 +133,7 @@
             // 
             this.button1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.pergunta_icone;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(22, 3);
+            this.button1.Location = new System.Drawing.Point(551, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 71);
             this.button1.TabIndex = 7;
@@ -131,7 +155,9 @@
             // 
             this.panel1.Controls.Add(this.lblConfiguracoes);
             this.panel1.Controls.Add(this.btnConfig);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblEstoque);
             this.panel1.Controls.Add(this.lblVendas);
             this.panel1.Controls.Add(this.btCaixa);
@@ -240,6 +266,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(259, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 42);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "SPDV";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +318,9 @@
         private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
 
